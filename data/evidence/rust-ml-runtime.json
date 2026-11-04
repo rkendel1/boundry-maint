@@ -1,0 +1,55 @@
+{
+  "project": "rust-ml-runtime",
+  "records": [
+    {
+      "project": "rust-ml-runtime",
+      "repository": "rkendel1/rust-ml-runtime",
+      "commit": "ccb81463585a38d12cf8b8892595a2e42bf0748d",
+      "collectedAt": "2026-11-04T15:00:23.704Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692",
+      "passed": false,
+      "checks": {
+        "resolution": "fail",
+        "workflows": "pass"
+      },
+      "runs": [
+        {
+          "workflow": "ci.yml",
+          "runId": 38441332118,
+          "url": "https://github.com/rkendel1/rust-ml-runtime/actions/runs/38441332118",
+          "status": "completed",
+          "conclusion": "success",
+          "headSha": "ccb81463585a38d12cf8b8892595a2e42bf0748d"
+        }
+      ],
+      "resolved": {
+        "backends/coreml|crates:serde": "1.0.229",
+        "backends/coreml|crates:tokio": "1.53.1",
+        "backends/cpu|crates:serde": "1.0.229",
+        "backends/cpu|crates:tokio": "1.53.1",
+        "backends/cuda|crates:serde": "1.0.229",
+        "backends/onnx|crates:serde": "1.0.229",
+        "backends/webgpu|crates:serde": "1.0.229",
+        "benchmarks|crates:tokio": "1.53.1",
+        "bindings/node-llama|crates:tokio": "1.53.2",
+        "bindings/node|crates:tokio": "1.53.1",
+        "bindings/node|crates:serde": "1.0.229",
+        "crates/backend|crates:serde": "1.0.229",
+        "crates/cli|crates:tokio": "1.53.1",
+        "crates/inference|crates:serde": "1.0.229",
+        "crates/model|crates:serde": "1.0.229",
+        "crates/model|crates:tokio": "1.53.1",
+        "crates/protocol|crates:serde": "1.0.229",
+        "crates/provider|crates:serde": "1.0.229",
+        "crates/runtime|crates:serde": "1.0.229",
+        "crates/runtime|crates:tokio": "1.53.1",
+        "providers/http|crates:tokio": "1.53.1",
+        "providers/http|crates:serde": "1.0.229",
+        "providers/llama|crates:tokio": "1.53.2",
+        "providers/local|crates:serde": "1.0.229",
+        "providers/server|crates:serde": "1.0.229",
+        "providers/server|crates:tokio": "1.53.1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "generatedAt": "2026-11-04T15:00:23.704Z",
+  "items": [
+    {
+      "key": "appport-services|package-lock.json|npm:@appport/protocol",
+      "project": "appport-services",
+      "root": "package-lock.json",
+      "roots": [
+        "."
+      ],
+      "package": "appport-protocol",
+      "name": "@appport/protocol",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.0.3",
+      "targetVersion": "1.3.0",
+      "declaredVersion": "^1.0.3",
+      "difference": "minor",
+      "latestSatisfiesDeclared": true,
+      "status": "update-required",
+      "priority": 3,
+      "targetPublishedAt": "2026-10-28T13:05:27.940Z",
+      "openedAt": "2026-11-04T15:00:23.704Z",
+      "updatedAt": "2026-11-04T15:00:23.704Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/appport-services:scripts/publish-packages.sh",
+            "name": "publish-packages.sh",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          }
+        ]
+      },
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-04T15:00:23.704Z",
+          "status": "update-required",
+          "version": "1.0.3",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
+        }
+      ]
+    },
+    {
+      "key": "rust-ml-runtime|bindings/node-llama/Cargo.lock|crates:tokio",
+      "project": "rust-ml-runtime",
+      "root": "bindings/node-llama/Cargo.lock",
+      "roots": [
+        "bindings/node-llama"
+      ],
+      "package": "tokio",
+      "name": "tokio",
+      "registry": "crates",
+      "ownership": "managed",
+      "currentVersion": "1.53.2",
+      "targetVersion": "1.54.1",
+      "declaredVersion": "1",
+      "difference": "minor",
+      "latestSatisfiesDeclared": true,
+      "status": "update-required",
+      "priority": 3,
+      "targetPublishedAt": "2026-10-21T21:05:43.950213Z",
+      "openedAt": "2026-11-04T15:00:23.704Z",
+      "updatedAt": "2026-11-04T15:00:23.704Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-04T15:00:23.704Z",
+          "status": "update-required",
+          "version": "1.53.2",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
+        }
+      ]
+    },
+    {
+      "key": "rust-ml-runtime|Cargo.lock|crates:tokio",
+      "project": "rust-ml-runtime",
+      "root": "Cargo.lock",
+      "roots": [
+        "backends/coreml",
+        "backends/cpu",
+        "benchmarks",
+        "bindings/node",
+        "crates/cli",
+        "crates/model",
+        "crates/runtime",
+        "providers/http",
+        "providers/server"
+      ],
+      "package": "tokio",
+      "name": "tokio",
+      "registry": "crates",
+      "ownership": "managed",
+      "currentVersion": "1.53.1",
+      "targetVersion": "1.54.1",
+      "declaredVersion": "1",
+      "difference": "minor",
+      "latestSatisfiesDeclared": true,
+      "status": "update-required",
+      "priority": 3,
+      "targetPublishedAt": "2026-10-21T21:05:43.950213Z",
+      "openedAt": "2026-11-04T15:00:23.704Z",
+      "updatedAt": "2026-11-04T15:00:23.704Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-04T15:00:23.704Z",
+          "status": "update-required",
+          "version": "1.53.1",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
+        }
+      ]
+    },
+    {
+      "key": "rust-ml-runtime|providers/llama/Cargo.lock|crates:tokio",
+      "project": "rust-ml-runtime",
+      "root": "providers/llama/Cargo.lock",
+      "roots": [
+        "providers/llama"
+      ],
+      "package": "tokio",
+      "name": "tokio",
+      "registry": "crates",
+      "ownership": "managed",
+      "currentVersion": "1.53.2",
+      "targetVersion": "1.54.1",
+      "declaredVersion": "1",
+      "difference": "minor",
+      "latestSatisfiesDeclared": true,
+      "status": "update-required",
+      "priority": 3,
+      "targetPublishedAt": "2026-10-21T21:05:43.950213Z",
+      "openedAt": "2026-11-04T15:00:23.704Z",
+      "updatedAt": "2026-11-04T15:00:23.704Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-04T15:00:23.704Z",
+          "status": "update-required",
+          "version": "1.53.2",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
+        }
+      ]
+    },
+    {
+      "key": "felt-ops|package-lock.json|npm:@feltdb/feltkit",
+      "project": "felt-ops",
+      "root": "package-lock.json",
+      "roots": [
+        "."
+      ],
+      "package": "feltdb-feltkit",
+      "name": "@feltdb/feltkit",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "0.3.13",
+      "targetVersion": "0.3.14",
+      "declaredVersion": "^0.3.13",
+      "difference": "patch",
+      "latestSatisfiesDeclared": true,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-04T14:57:05.032Z",
+      "openedAt": "2026-11-04T15:00:23.704Z",
+      "updatedAt": "2026-11-04T15:00:23.704Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/felt-ops:.github/workflows/ci.yml#verify/scenario-7-platform-upgrade-from-feltkit-0-3-12-feltdb-0-20-",
+            "name": "Scenario 7 (platform upgrade from FeltKit 0.3.12 + FeltDB 0.20.0)",
+            "result": "in-progress",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638"
+          }
+        ]
+      },
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-04T15:00:23.704Z",
+          "status": "update-required",
+          "version": "0.3.13",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
+        }
+      ]
+    },
+    {
+      "key": "feltkit|package-lock.json|npm:@appport/sdk",
+      "project": "feltkit",
+      "root": "package-lock.json",
+      "roots": [
+        "packages/sdk"
+      ],
+      "package": "appport-sdk",
+      "name": "@appport/sdk",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.4.0",
+      "targetVersion": "1.4.1",
+      "declaredVersion": "1.4.0",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-03T14:41:11.425Z",
+      "openedAt": "2026-11-04T15:00:23.704Z",
+      "updatedAt": "2026-11-04T15:00:23.704Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
+            "name": "FeltKit release check (CI mode)",
+            "result": "in-progress",
+            "enforcement": "fail",
+            "requirement": "exact",
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/41852798094"
+          }
+        ]
+      },
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-04T15:00:23.704Z",
+          "status": "update-required",
+          "version": "1.4.0",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
+        }
+      ]
+    },
+    {
+      "key": "feltkit|package-lock.json|npm:@appport/server",
+      "project": "feltkit",
+      "root": "package-lock.json",
+      "roots": [
+        "packages/sdk"
+      ],
+      "package": "appport-server",
+      "name": "@appport/server",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.1.5",
+      "targetVersion": "1.1.6",
+      "declaredVersion": "1.1.5",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-03T14:41:38.827Z",
+      "openedAt": "2026-11-04T15:00:23.704Z",
+      "updatedAt": "2026-11-04T15:00:23.704Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
+            "name": "FeltKit release check (CI mode)",
+            "result": "in-progress",
+            "enforcement": "fail",
+            "requirement": "exact",
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/41852798094"
+          }
+        ]
+      },
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-04T15:00:23.704Z",
+          "status": "update-required",
+          "version": "1.1.5",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
+        }
+      ]
+    },
+    {
+      "key": "feltkit|package-lock.json|npm:@appport/testing",
+      "project": "feltkit",
+      "root": "package-lock.json",
+      "roots": [
+        "packages/sdk"
+      ],
+      "package": "appport-testing",
+      "name": "@appport/testing",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.2.0",
+      "targetVersion": "1.2.1",
+      "declaredVersion": "1.2.0",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-03T14:42:19.611Z",
+      "openedAt": "2026-11-04T15:00:23.704Z",
+      "updatedAt": "2026-11-04T15:00:23.704Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-04T15:00:23.704Z",
+          "status": "update-required",
+          "version": "1.2.0",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
+        }
+      ]
+    }
+  ]
+}

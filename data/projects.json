@@ -1,0 +1,470 @@
+{
+  "generatedAt": "2026-11-04T15:00:23.704Z",
+  "projects": [
+    {
+      "id": "feltkit",
+      "name": "FeltKit",
+      "repository": "rkendel1/feltkit",
+      "managedPackages": [
+        "feltdb-core",
+        "feltdb-webllm",
+        "feltdb-feltkit",
+        "appport-sdk",
+        "appport-services",
+        "appport-server",
+        "appport-protocol",
+        "appport-authorization",
+        "appport-integration",
+        "appport-resolver-client",
+        "appport-testing"
+      ],
+      "missingManagedPackages": [],
+      "catalogPackagesNotManaged": [
+        "create-feltkit",
+        "typescript"
+      ],
+      "discoveredDependencyCount": 38,
+      "warnings": [],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ],
+        "headVerified": null,
+        "lastVerifiedCommit": null,
+        "lastVerifiedAt": null
+      },
+      "branch": "main",
+      "commit": "26a625598ca5d032353f8725f49e1f15af9b08d5",
+      "commitUrl": "https://github.com/rkendel1/feltkit/commit/26a625598ca5d032353f8725f49e1f15af9b08d5",
+      "roots": [
+        {
+          "path": "examples/invoices",
+          "ecosystem": "javascript",
+          "manifest": "examples/invoices/package.json",
+          "lockfile": "package-lock.json",
+          "name": "feltkit-example-invoices"
+        },
+        {
+          "path": "examples/managed",
+          "ecosystem": "javascript",
+          "manifest": "examples/managed/package.json",
+          "lockfile": "package-lock.json",
+          "name": "feltkit-example-managed"
+        },
+        {
+          "path": "examples/tasks",
+          "ecosystem": "javascript",
+          "manifest": "examples/tasks/package.json",
+          "lockfile": "package-lock.json",
+          "name": "feltkit-example-tasks"
+        },
+        {
+          "path": ".",
+          "ecosystem": "javascript",
+          "manifest": "package.json",
+          "lockfile": "package-lock.json",
+          "name": "feltkit-monorepo"
+        },
+        {
+          "path": "packages/create",
+          "ecosystem": "javascript",
+          "manifest": "packages/create/package.json",
+          "lockfile": "package-lock.json",
+          "name": "create-feltkit"
+        },
+        {
+          "path": "packages/sdk",
+          "ecosystem": "javascript",
+          "manifest": "packages/sdk/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/feltkit"
+        },
+        {
+          "path": "packages/sdk/appboundry/engine",
+          "ecosystem": "rust",
+          "manifest": "packages/sdk/appboundry/engine/Cargo.toml",
+          "lockfile": "packages/sdk/appboundry/engine/Cargo.lock",
+          "name": "feltkit-appboundry-engine"
+        }
+      ],
+      "scanStatus": "ok",
+      "error": null,
+      "lastScanned": "2026-11-04T15:00:23.704Z",
+      "lastSuccessfulScan": "2026-11-04T15:00:23.704Z"
+    },
+    {
+      "id": "appport-services",
+      "name": "AppPort Services",
+      "repository": "rkendel1/appport-services",
+      "managedPackages": [
+        "appport-protocol",
+        "appport-services",
+        "appport-runtime",
+        "feltdb-core"
+      ],
+      "missingManagedPackages": [],
+      "catalogPackagesNotManaged": [
+        "typescript"
+      ],
+      "discoveredDependencyCount": 14,
+      "warnings": [
+        "examples/services-demo/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown",
+        "packages/create-appport/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown",
+        "packages/runtime/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown"
+      ],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ],
+        "headVerified": false,
+        "lastVerifiedCommit": null,
+        "lastVerifiedAt": null
+      },
+      "branch": "main",
+      "commit": "ac20b5a8eb3d71d6fe8bd1aaf6122e459d5ce5e2",
+      "commitUrl": "https://github.com/rkendel1/appport-services/commit/ac20b5a8eb3d71d6fe8bd1aaf6122e459d5ce5e2",
+      "roots": [
+        {
+          "path": "examples/invoice-app",
+          "ecosystem": "javascript",
+          "manifest": "examples/invoice-app/package.json",
+          "lockfile": "examples/invoice-app/package-lock.json",
+          "name": "invoice-app"
+        },
+        {
+          "path": "examples/services-demo",
+          "ecosystem": "javascript",
+          "manifest": "examples/services-demo/package.json",
+          "lockfile": "package-lock.json",
+          "name": "services-demo"
+        },
+        {
+          "path": ".",
+          "ecosystem": "javascript",
+          "manifest": "package.json",
+          "lockfile": "package-lock.json",
+          "name": "@appport/services"
+        },
+        {
+          "path": "packages/create-appport",
+          "ecosystem": "javascript",
+          "manifest": "packages/create-appport/package.json",
+          "lockfile": "package-lock.json",
+          "name": "create-appport"
+        },
+        {
+          "path": "packages/runtime",
+          "ecosystem": "javascript",
+          "manifest": "packages/runtime/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@appport/runtime"
+        }
+      ],
+      "scanStatus": "ok",
+      "error": null,
+      "lastScanned": "2026-11-04T15:00:23.704Z",
+      "lastSuccessfulScan": "2026-11-04T15:00:23.704Z"
+    },
+    {
+      "id": "felt-ops",
+      "name": "Felt Ops",
+      "repository": "rkendel1/felt-ops",
+      "managedPackages": [
+        "feltdb-feltkit"
+      ],
+      "missingManagedPackages": [],
+      "catalogPackagesNotManaged": [
+        "typescript"
+      ],
+      "discoveredDependencyCount": 8,
+      "warnings": [],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ],
+        "headVerified": true,
+        "lastVerifiedCommit": "051afa35a73658f609b91dc7be3eddd8d33fb75e",
+        "lastVerifiedAt": "2026-11-04T15:00:23.704Z"
+      },
+      "branch": "claude/keen-cannon-gxv0v3",
+      "commit": "051afa35a73658f609b91dc7be3eddd8d33fb75e",
+      "commitUrl": "https://github.com/rkendel1/felt-ops/commit/051afa35a73658f609b91dc7be3eddd8d33fb75e",
+      "roots": [
+        {
+          "path": ".",
+          "ecosystem": "javascript",
+          "manifest": "package.json",
+          "lockfile": "package-lock.json",
+          "name": "companyos"
+        }
+      ],
+      "scanStatus": "ok",
+      "error": null,
+      "lastScanned": "2026-11-04T15:00:23.704Z",
+      "lastSuccessfulScan": "2026-11-04T15:00:23.704Z"
+    },
+    {
+      "id": "rust-ml-runtime",
+      "name": "Rust ML Runtime",
+      "repository": "rkendel1/rust-ml-runtime",
+      "managedPackages": [
+        "tokio",
+        "serde",
+        "rust-ml-runtime",
+        "ml-runtime-common",
+        "ml-runtime-model"
+      ],
+      "missingManagedPackages": [],
+      "catalogPackagesNotManaged": [
+        "ml-runtime-backend",
+        "ml-runtime-coreml-backend",
+        "ml-runtime-cpu-backend",
+        "ml-runtime-http-provider",
+        "ml-runtime-inference",
+        "ml-runtime-onnx-backend",
+        "ml-runtime-protocol",
+        "ml-runtime-provider"
+      ],
+      "discoveredDependencyCount": 122,
+      "warnings": [
+        "bindings/node/npm/darwin-arm64/package.json: no lockfile found; resolved versions are unknown",
+        "bindings/node/npm/darwin-x64/package.json: no lockfile found; resolved versions are unknown",
+        "bindings/node/npm/linux-arm64-gnu/package.json: no lockfile found; resolved versions are unknown",
+        "bindings/node/npm/linux-x64-gnu/package.json: no lockfile found; resolved versions are unknown",
+        "bindings/node/npm/win32-x64-msvc/package.json: no lockfile found; resolved versions are unknown",
+        "bindings/node/package.json: no lockfile found; resolved versions are unknown",
+        "bindings/typescript/package.json: no lockfile found; resolved versions are unknown",
+        "examples/consumer/package.json: no lockfile found; resolved versions are unknown",
+        "package.json: no lockfile found; resolved versions are unknown",
+        "examples/rust-consumer/Cargo.toml: no Cargo.lock found; resolved versions are unknown"
+      ],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ],
+        "headVerified": false,
+        "lastVerifiedCommit": null,
+        "lastVerifiedAt": null
+      },
+      "branch": "main",
+      "commit": "ccb81463585a38d12cf8b8892595a2e42bf0748d",
+      "commitUrl": "https://github.com/rkendel1/rust-ml-runtime/commit/ccb81463585a38d12cf8b8892595a2e42bf0748d",
+      "roots": [
+        {
+          "path": "bindings/node/npm/darwin-arm64",
+          "ecosystem": "javascript",
+          "manifest": "bindings/node/npm/darwin-arm64/package.json",
+          "lockfile": null,
+          "name": "@rust-ml-runtime/node-darwin-arm64"
+        },
+        {
+          "path": "bindings/node/npm/darwin-x64",
+          "ecosystem": "javascript",
+          "manifest": "bindings/node/npm/darwin-x64/package.json",
+          "lockfile": null,
+          "name": "@rust-ml-runtime/node-darwin-x64"
+        },
+        {
+          "path": "bindings/node/npm/linux-arm64-gnu",
+          "ecosystem": "javascript",
+          "manifest": "bindings/node/npm/linux-arm64-gnu/package.json",
+          "lockfile": null,
+          "name": "@rust-ml-runtime/node-linux-arm64-gnu"
+        },
+        {
+          "path": "bindings/node/npm/linux-x64-gnu",
+          "ecosystem": "javascript",
+          "manifest": "bindings/node/npm/linux-x64-gnu/package.json",
+          "lockfile": null,
+          "name": "@rust-ml-runtime/node-linux-x64-gnu"
+        },
+        {
+          "path": "bindings/node/npm/win32-x64-msvc",
+          "ecosystem": "javascript",
+          "manifest": "bindings/node/npm/win32-x64-msvc/package.json",
+          "lockfile": null,
+          "name": "@rust-ml-runtime/node-win32-x64-msvc"
+        },
+        {
+          "path": "bindings/node",
+          "ecosystem": "javascript",
+          "manifest": "bindings/node/package.json",
+          "lockfile": null,
+          "name": "@rust-ml-runtime/node"
+        },
+        {
+          "path": "bindings/typescript",
+          "ecosystem": "javascript",
+          "manifest": "bindings/typescript/package.json",
+          "lockfile": null,
+          "name": "@ml-runtime/core"
+        },
+        {
+          "path": "examples/consumer",
+          "ecosystem": "javascript",
+          "manifest": "examples/consumer/package.json",
+          "lockfile": null,
+          "name": "rust-ml-runtime-consumer-example"
+        },
+        {
+          "path": ".",
+          "ecosystem": "javascript",
+          "manifest": "package.json",
+          "lockfile": null,
+          "name": "rust-ml-runtime-release"
+        },
+        {
+          "path": "backends/coreml",
+          "ecosystem": "rust",
+          "manifest": "backends/coreml/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-coreml-backend"
+        },
+        {
+          "path": "backends/cpu",
+          "ecosystem": "rust",
+          "manifest": "backends/cpu/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-cpu-backend"
+        },
+        {
+          "path": "backends/cuda",
+          "ecosystem": "rust",
+          "manifest": "backends/cuda/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-cuda-backend"
+        },
+        {
+          "path": "backends/onnx",
+          "ecosystem": "rust",
+          "manifest": "backends/onnx/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-onnx-backend"
+        },
+        {
+          "path": "backends/webgpu",
+          "ecosystem": "rust",
+          "manifest": "backends/webgpu/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-webgpu-backend"
+        },
+        {
+          "path": "benchmarks",
+          "ecosystem": "rust",
+          "manifest": "benchmarks/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-benchmarks"
+        },
+        {
+          "path": "bindings/node-llama",
+          "ecosystem": "rust",
+          "manifest": "bindings/node-llama/Cargo.toml",
+          "lockfile": "bindings/node-llama/Cargo.lock",
+          "name": "ml-runtime-node-llama"
+        },
+        {
+          "path": "bindings/node",
+          "ecosystem": "rust",
+          "manifest": "bindings/node/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-node"
+        },
+        {
+          "path": "crates/backend",
+          "ecosystem": "rust",
+          "manifest": "crates/backend/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-backend"
+        },
+        {
+          "path": "crates/cli",
+          "ecosystem": "rust",
+          "manifest": "crates/cli/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-cli"
+        },
+        {
+          "path": "crates/common",
+          "ecosystem": "rust",
+          "manifest": "crates/common/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-common"
+        },
+        {
+          "path": "crates/inference",
+          "ecosystem": "rust",
+          "manifest": "crates/inference/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-inference"
+        },
+        {
+          "path": "crates/model",
+          "ecosystem": "rust",
+          "manifest": "crates/model/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-model"
+        },
+        {
+          "path": "crates/protocol",
+          "ecosystem": "rust",
+          "manifest": "crates/protocol/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-protocol"
+        },
+        {
+          "path": "crates/provider",
+          "ecosystem": "rust",
+          "manifest": "crates/provider/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-provider"
+        },
+        {
+          "path": "crates/runtime",
+          "ecosystem": "rust",
+          "manifest": "crates/runtime/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "rust-ml-runtime"
+        },
+        {
+          "path": "examples/rust-consumer",
+          "ecosystem": "rust",
+          "manifest": "examples/rust-consumer/Cargo.toml",
+          "lockfile": null,
+          "name": "rust-ml-runtime-external-consumer"
+        },
+        {
+          "path": "providers/http",
+          "ecosystem": "rust",
+          "manifest": "providers/http/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-http-provider"
+        },
+        {
+          "path": "providers/llama",
+          "ecosystem": "rust",
+          "manifest": "providers/llama/Cargo.toml",
+          "lockfile": "providers/llama/Cargo.lock",
+          "name": "ml-runtime-llama-provider"
+        },
+        {
+          "path": "providers/local",
+          "ecosystem": "rust",
+          "manifest": "providers/local/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-local-provider"
+        },
+        {
+          "path": "providers/server",
+          "ecosystem": "rust",
+          "manifest": "providers/server/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "ml-runtime-server-provider"
+        }
+      ],
+      "scanStatus": "ok",
+      "error": null,
+      "lastScanned": "2026-11-04T15:00:23.704Z",
+      "lastSuccessfulScan": "2026-11-04T15:00:23.704Z"
+    }
+  ]
+}
