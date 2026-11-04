@@ -245,7 +245,7 @@
       "name": "@feltdb/core",
       "registry": "npm",
       "ownership": "owned",
-      "repository": "rkendel1/feltdb",
+      "repository": "rkendel1/flow_db",
       "directory": "packages/core"
     },
     {
@@ -253,7 +253,7 @@
       "name": "@feltdb/react",
       "registry": "npm",
       "ownership": "owned",
-      "repository": "rkendel1/feltdb",
+      "repository": "rkendel1/flow_db",
       "directory": "packages/react"
     },
     {
@@ -261,7 +261,7 @@
       "name": "@feltdb/wasm",
       "registry": "npm",
       "ownership": "owned",
-      "repository": "rkendel1/feltdb",
+      "repository": "rkendel1/flow_db",
       "directory": "packages/wasm"
     },
     {
@@ -269,7 +269,7 @@
       "name": "@feltdb/cli",
       "registry": "npm",
       "ownership": "owned",
-      "repository": "rkendel1/feltdb",
+      "repository": "rkendel1/flow_db",
       "directory": "tools/cli"
     },
     {
@@ -277,7 +277,7 @@
       "name": "@feltdb/studio",
       "registry": "npm",
       "ownership": "owned",
-      "repository": "rkendel1/feltdb",
+      "repository": "rkendel1/flow_db",
       "directory": "packages/studio"
     },
     {
@@ -285,7 +285,7 @@
       "name": "@feltdb/webllm",
       "registry": "npm",
       "ownership": "owned",
-      "repository": "rkendel1/feltdb",
+      "repository": "rkendel1/flow_db",
       "directory": "packages/webllm"
     },
     {
@@ -293,7 +293,7 @@
       "name": "@feltdb/migration-sherpa",
       "registry": "npm",
       "ownership": "owned",
-      "repository": "rkendel1/feltdb",
+      "repository": "rkendel1/flow_db",
       "directory": "packages/migration-sherpa"
     },
     {
@@ -301,7 +301,7 @@
       "name": "create-feltdb",
       "registry": "npm",
       "ownership": "owned",
-      "repository": "rkendel1/feltdb",
+      "repository": "rkendel1/flow_db",
       "directory": "tools/create-feltdb"
     },
     {
@@ -428,6 +428,48 @@
       "ownership": "owned",
       "repository": "rkendel1/rust-ml-runtime",
       "directory": "crates/provider"
+    },
+    {
+      "id": "authboundry-core",
+      "name": "@authboundry/core",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/authboundry",
+      "directory": ".",
+      "description": "The authority boundary for an application (platform binaries @authboundry/core-* release in lockstep and are not tracked separately)"
+    },
+    {
+      "id": "authboundry",
+      "name": "authboundry",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/authboundry",
+      "directory": "packages/authboundry",
+      "description": "Compatibility redirect to @authboundry/core"
+    },
+    {
+      "id": "authboundry-bridge",
+      "name": "@authboundry/bridge",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/authboundry",
+      "directory": "packages/bridge"
+    },
+    {
+      "id": "appport-assessment",
+      "name": "@appport/assessment",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appworks",
+      "directory": "packages/assessment"
+    },
+    {
+      "id": "appport-extraction",
+      "name": "@appport/extraction",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appworks",
+      "directory": "packages/extraction"
     },
     {
       "id": "tokio",

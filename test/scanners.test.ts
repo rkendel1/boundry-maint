@@ -252,3 +252,41 @@ test("workspace membership globs", () => {
   assert.equal(isWorkspaceMember("crates/a", ".", { members: ["./crates/a"] }), true);
   assert.equal(isWorkspaceMember("crates/a", ".", { members: ["crates/*"], exclude: ["crates/a"] }), false);
 });
+
+test("several root lockfiles: the declared package manager's lockfile wins (appboundry shape)", async () => {
+  const roots = await scanJavaScript(
+    repo({
+      "package.json": { name: "mono", private: true, packageManager: "pnpm@10.33.0" },
+      "examples/app/package.json": { name: "app", dependencies: { "@appport/sdk": "^1.4.0" } },
+      // stale npm lockfile that only knows the root
+      "package-lock.json": { lockfileVersion: 3, packages: { "": { name: "mono" }, "node_modules/@appport/sdk": { version: "1.0.0" } } },
+      "pnpm-lock.yaml": `lockfileVersion: '9.0'
+importers:
+  .: {}
+  examples/app:
+    dependencies:
+      '@appport/sdk':
+        specifier: ^1.4.0
+        version: 1.4.1
+`,
+    }),
+    {},
+  );
+  const app = roots.find((r) => r.path === "examples/app")!;
+  assert.equal(app.lockfile, "pnpm-lock.yaml");
+  assert.equal(app.deps[0]!.resolved, "1.4.1");
+  assert.match(app.warnings.join(" "), /several lockfiles .* resolved from pnpm-lock\.yaml \(packageManager: pnpm\)/);
+});
+
+test("without a declared manager, the first lockfile that covers the manifest is used", async () => {
+  const roots = await scanJavaScript(
+    repo({
+      "package.json": { name: "mono" },
+      "examples/app/package.json": { name: "app", dependencies: { a: "^1.0.0" } },
+      "package-lock.json": { lockfileVersion: 3, packages: { "": {} } },
+      "pnpm-lock.yaml": "lockfileVersion: '9.0'\nimporters:\n  examples/app:\n    dependencies:\n      a:\n        specifier: ^1.0.0\n        version: 1.2.0\n",
+    }),
+    {},
+  );
+  assert.equal(roots.find((r) => r.path === "examples/app")!.deps[0]!.resolved, "1.2.0");
+});

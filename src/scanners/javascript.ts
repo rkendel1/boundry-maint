@@ -11,6 +11,13 @@ import { ancestors, dirOf, inScope, joinPath, relativeTo, type RepoFiles, type R
 const KINDS = ["dependencies", "devDependencies", "optionalDependencies", "peerDependencies"] as const satisfies readonly DependencyKind[];
 const LOCKFILES = ["package-lock.json", "npm-shrinkwrap.json", "pnpm-lock.yaml", "yarn.lock"] as const;
 
+/** Lockfile names to try, the declared package manager's own first. */
+export function preferredLockfiles(manager: string | null): string[] {
+  const own: Record<string, string[]> = { pnpm: ["pnpm-lock.yaml"], yarn: ["yarn.lock"], npm: ["npm-shrinkwrap.json", "package-lock.json"] };
+  const first = (manager && own[manager]) || [];
+  return [...first, ...LOCKFILES.filter((l) => !first.includes(l))];
+}
+
 interface Resolution {
   version: string | null;
   source: DependencySource;
@@ -215,6 +222,21 @@ export async function scanJavaScript(repo: RepoFiles, filter: RootFilter): Promi
     }
   }
 
+  /** The `packageManager` field ("pnpm@10.33.0") of the package.json in a directory, if any. */
+  const declaredPackageManager = async (d: string): Promise<string | null> => {
+    const path = joinPath(d, "package.json");
+    let pj = parsed.get(path);
+    if (!pj && all.has(path)) {
+      try {
+        pj = JSON.parse(await repo.read(path)) as PackageJson;
+      } catch {
+        return null;
+      }
+    }
+    const pm = (pj as { packageManager?: unknown } | undefined)?.packageManager;
+    return typeof pm === "string" ? (pm.split("@")[0] ?? null) : null;
+  };
+
   const roots: ScannedRoot[] = [];
   for (const manifest of manifests) {
     const dir = dirOf(manifest);
@@ -224,27 +246,39 @@ export async function scanJavaScript(repo: RepoFiles, filter: RootFilter): Promi
       roots.push({ path: dir, ecosystem: "javascript", manifest, lockfile: null, name: null, deps: [], warnings: ["package.json could not be parsed"] });
       continue;
     }
+    // Nearest directory that holds a lockfile. A repository can hold several (e.g. a stale
+    // package-lock.json next to the pnpm-lock.yaml CI actually installs from), so candidates are
+    // ordered by the package manager the repository declares, and the first that covers this
+    // manifest is used.
     let lockfile: string | null = null;
     let lockDir = ".";
-    outer: for (const a of ancestors(dir)) {
-      for (const name of LOCKFILES) {
-        if (all.has(joinPath(a, name))) {
-          lockfile = joinPath(a, name);
-          lockDir = a;
-          break outer;
+    let lock: Lock | null = null;
+    const lockDirFound = ancestors(dir).find((a) => LOCKFILES.some((name) => all.has(joinPath(a, name))));
+    if (lockDirFound !== undefined) {
+      lockDir = lockDirFound;
+      const manager = await declaredPackageManager(lockDir);
+      const candidates = preferredLockfiles(manager)
+        .map((name) => joinPath(lockDir, name))
+        .filter((f) => all.has(f));
+      const notCovering: string[] = [];
+      for (const candidate of candidates) {
+        try {
+          const l = await loadLock(candidate);
+          if (l.covers(relativeTo(dir, lockDir))) {
+            lockfile = candidate;
+            lock = l;
+            break;
+          }
+          notCovering.push(candidate);
+        } catch (e) {
+          warnings.push(`${candidate} could not be parsed: ${(e as Error).message}`);
         }
       }
-    }
-    let lock: Lock | null = null;
-    if (lockfile) {
-      try {
-        lock = await loadLock(lockfile);
-        if (!lock.covers(relativeTo(dir, lockDir))) {
-          warnings.push(`${lockfile} does not include this manifest (not a workspace member); resolved versions are unknown`);
-          lock = null;
-        }
-      } catch (e) {
-        warnings.push(`${lockfile} could not be parsed: ${(e as Error).message}`);
+      if (!lock) {
+        lockfile = candidates[0] ?? null;
+        if (notCovering.length) warnings.push(`${notCovering.join(", ")} does not include this manifest (not a workspace member); resolved versions are unknown`);
+      } else if (candidates.length > 1) {
+        warnings.push(`several lockfiles in ${lockDir === "." ? "the repository root" : lockDir}; resolved from ${lockfile}${manager ? ` (packageManager: ${manager})` : ""}`);
       }
     } else {
       warnings.push("no lockfile found; resolved versions are unknown");
