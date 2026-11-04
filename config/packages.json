@@ -1,0 +1,459 @@
+{
+  "$schema": "../schemas/package.schema.json",
+  "packages": [
+    {
+      "id": "appport-core",
+      "name": "@appport/core",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/core"
+    },
+    {
+      "id": "appport-sdk",
+      "name": "@appport/sdk",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/sdk"
+    },
+    {
+      "id": "appport-protocol",
+      "name": "@appport/protocol",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/protocol"
+    },
+    {
+      "id": "appport-schema",
+      "name": "@appport/schema",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/schema"
+    },
+    {
+      "id": "appport-client",
+      "name": "@appport/client",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/client"
+    },
+    {
+      "id": "appport-server",
+      "name": "@appport/server",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/server"
+    },
+    {
+      "id": "appport-mcp",
+      "name": "@appport/mcp",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/mcp"
+    },
+    {
+      "id": "appport-testing",
+      "name": "@appport/testing",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/testing"
+    },
+    {
+      "id": "appport-authorization",
+      "name": "@appport/authorization",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/authorization"
+    },
+    {
+      "id": "appport-integration",
+      "name": "@appport/integration",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/integration"
+    },
+    {
+      "id": "appport-contract-builder",
+      "name": "@appport/contract-builder",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/contract-builder"
+    },
+    {
+      "id": "appport-generators",
+      "name": "@appport/generators",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/generators"
+    },
+    {
+      "id": "appport-mobile",
+      "name": "@appport/mobile",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/mobile"
+    },
+    {
+      "id": "appport-transport-http",
+      "name": "@appport/transport-http",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/transports/http"
+    },
+    {
+      "id": "appport-transport-websocket",
+      "name": "@appport/transport-websocket",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/transports/websocket"
+    },
+    {
+      "id": "appport-transport-inprocess",
+      "name": "@appport/transport-inprocess",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/transports/inprocess"
+    },
+    {
+      "id": "appport-transport-tauri",
+      "name": "@appport/transport-tauri",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/transports/tauri"
+    },
+    {
+      "id": "appport-transport-electron",
+      "name": "@appport/transport-electron",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/transports/electron"
+    },
+    {
+      "id": "appport-appboundry",
+      "name": "@appport/appboundry",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/appboundry"
+    },
+    {
+      "id": "appport-cli",
+      "name": "appport",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport",
+      "directory": "packages/cli"
+    },
+    {
+      "id": "appport-services",
+      "name": "@appport/services",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport-services",
+      "directory": "."
+    },
+    {
+      "id": "appport-runtime",
+      "name": "@appport/runtime",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport-services",
+      "directory": "packages/runtime"
+    },
+    {
+      "id": "create-appport",
+      "name": "create-appport",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appport-services",
+      "directory": "packages/create-appport"
+    },
+    {
+      "id": "appport-resolver",
+      "name": "@appport/resolver",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/resolver",
+      "directory": "packages/server"
+    },
+    {
+      "id": "appport-resolver-client",
+      "name": "@appport/resolver-client",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/resolver",
+      "directory": "packages/client"
+    },
+    {
+      "id": "appport-resolver-core",
+      "name": "@appport/resolver-core",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/resolver",
+      "directory": "packages/core"
+    },
+    {
+      "id": "appport-github",
+      "name": "@appport/github",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/github-integration"
+    },
+    {
+      "id": "appport-fx",
+      "name": "@appport/fx",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/3fx",
+      "directory": "sdk"
+    },
+    {
+      "id": "appport-recipe",
+      "name": "@appport/recipe",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appworks",
+      "directory": "packages/recipe"
+    },
+    {
+      "id": "appport-recipe-distribution",
+      "name": "@appport/recipe-distribution",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/appworks",
+      "directory": "packages/recipe-distribution"
+    },
+    {
+      "id": "feltdb-core",
+      "name": "@feltdb/core",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/feltdb",
+      "directory": "packages/core"
+    },
+    {
+      "id": "feltdb-react",
+      "name": "@feltdb/react",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/feltdb",
+      "directory": "packages/react"
+    },
+    {
+      "id": "feltdb-wasm",
+      "name": "@feltdb/wasm",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/feltdb",
+      "directory": "packages/wasm"
+    },
+    {
+      "id": "feltdb-cli",
+      "name": "@feltdb/cli",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/feltdb",
+      "directory": "tools/cli"
+    },
+    {
+      "id": "feltdb-studio",
+      "name": "@feltdb/studio",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/feltdb",
+      "directory": "packages/studio"
+    },
+    {
+      "id": "feltdb-webllm",
+      "name": "@feltdb/webllm",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/feltdb",
+      "directory": "packages/webllm"
+    },
+    {
+      "id": "feltdb-migration-sherpa",
+      "name": "@feltdb/migration-sherpa",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/feltdb",
+      "directory": "packages/migration-sherpa"
+    },
+    {
+      "id": "create-feltdb",
+      "name": "create-feltdb",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/feltdb",
+      "directory": "tools/create-feltdb"
+    },
+    {
+      "id": "feltdb-feltkit",
+      "name": "@feltdb/feltkit",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/feltkit",
+      "directory": "packages/sdk"
+    },
+    {
+      "id": "create-feltkit",
+      "name": "create-feltkit",
+      "registry": "npm",
+      "ownership": "owned",
+      "repository": "rkendel1/feltkit",
+      "directory": "packages/create"
+    },
+    {
+      "id": "feltdb",
+      "name": "feltdb",
+      "registry": "crates",
+      "ownership": "owned",
+      "repository": "rkendel1/flow_db"
+    },
+    {
+      "id": "feltdb-client",
+      "name": "feltdb-client",
+      "registry": "crates",
+      "ownership": "owned",
+      "repository": "rkendel1/flow_db"
+    },
+    {
+      "id": "feltdb-server",
+      "name": "feltdb-server",
+      "registry": "crates",
+      "ownership": "owned",
+      "repository": "rkendel1/flow_db"
+    },
+    {
+      "id": "rust-ml-runtime",
+      "name": "rust-ml-runtime",
+      "registry": "crates",
+      "ownership": "owned",
+      "repository": "rkendel1/rust-ml-runtime",
+      "directory": "crates/runtime"
+    },
+    {
+      "id": "ml-runtime-backend",
+      "name": "ml-runtime-backend",
+      "registry": "crates",
+      "ownership": "owned",
+      "repository": "rkendel1/rust-ml-runtime",
+      "directory": "crates/backend"
+    },
+    {
+      "id": "ml-runtime-common",
+      "name": "ml-runtime-common",
+      "registry": "crates",
+      "ownership": "owned",
+      "repository": "rkendel1/rust-ml-runtime",
+      "directory": "crates/common"
+    },
+    {
+      "id": "ml-runtime-coreml-backend",
+      "name": "ml-runtime-coreml-backend",
+      "registry": "crates",
+      "ownership": "owned",
+      "repository": "rkendel1/rust-ml-runtime",
+      "directory": "backends/coreml"
+    },
+    {
+      "id": "ml-runtime-cpu-backend",
+      "name": "ml-runtime-cpu-backend",
+      "registry": "crates",
+      "ownership": "owned",
+      "repository": "rkendel1/rust-ml-runtime",
+      "directory": "backends/cpu"
+    },
+    {
+      "id": "ml-runtime-http-provider",
+      "name": "ml-runtime-http-provider",
+      "registry": "crates",
+      "ownership": "owned",
+      "repository": "rkendel1/rust-ml-runtime",
+      "directory": "providers/http"
+    },
+    {
+      "id": "ml-runtime-inference",
+      "name": "ml-runtime-inference",
+      "registry": "crates",
+      "ownership": "owned",
+      "repository": "rkendel1/rust-ml-runtime",
+      "directory": "crates/inference"
+    },
+    {
+      "id": "ml-runtime-model",
+      "name": "ml-runtime-model",
+      "registry": "crates",
+      "ownership": "owned",
+      "repository": "rkendel1/rust-ml-runtime",
+      "directory": "crates/model"
+    },
+    {
+      "id": "ml-runtime-onnx-backend",
+      "name": "ml-runtime-onnx-backend",
+      "registry": "crates",
+      "ownership": "owned",
+      "repository": "rkendel1/rust-ml-runtime",
+      "directory": "backends/onnx"
+    },
+    {
+      "id": "ml-runtime-protocol",
+      "name": "ml-runtime-protocol",
+      "registry": "crates",
+      "ownership": "owned",
+      "repository": "rkendel1/rust-ml-runtime",
+      "directory": "crates/protocol"
+    },
+    {
+      "id": "ml-runtime-provider",
+      "name": "ml-runtime-provider",
+      "registry": "crates",
+      "ownership": "owned",
+      "repository": "rkendel1/rust-ml-runtime",
+      "directory": "crates/provider"
+    },
+    {
+      "id": "tokio",
+      "name": "tokio",
+      "registry": "crates",
+      "ownership": "managed",
+      "repository": "tokio-rs/tokio",
+      "directory": "tokio",
+      "description": "Async runtime used across the Rust crates"
+    },
+    {
+      "id": "serde",
+      "name": "serde",
+      "registry": "crates",
+      "ownership": "managed",
+      "repository": "serde-rs/serde",
+      "directory": "serde",
+      "description": "Serialization framework used across the Rust crates"
+    },
+    {
+      "id": "typescript",
+      "name": "typescript",
+      "registry": "npm",
+      "ownership": "upstream",
+      "repository": "microsoft/TypeScript",
+      "description": "Compiler for every JavaScript package; watched for major releases"
+    }
+  ]
+}

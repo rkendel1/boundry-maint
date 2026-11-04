@@ -1,0 +1,16 @@
+# Daily full scan. Event-driven scans run through scan.yml directly.
+name: Scheduled scan
+
+on:
+  schedule:
+    - cron: "23 7 * * *"   # daily, 07:23 UTC
+
+jobs:
+  scan:
+    uses: ./.github/workflows/scan.yml
+    secrets: inherit
+    permissions:
+      contents: write
+      actions: read
+      pages: write
+      id-token: write

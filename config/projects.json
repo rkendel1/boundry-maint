@@ -1,0 +1,55 @@
+{
+  "$schema": "../schemas/project.schema.json",
+  "projects": [
+    {
+      "id": "feltkit",
+      "name": "FeltKit",
+      "repository": "rkendel1/feltkit",
+      "defaultBranch": "main",
+      "active": true,
+      "scan": { "javascript": true, "rust": true },
+      "managedPackages": [
+        "feltdb-core",
+        "feltdb-webllm",
+        "feltdb-feltkit",
+        "appport-sdk",
+        "appport-services",
+        "appport-server",
+        "appport-protocol",
+        "appport-authorization",
+        "appport-integration",
+        "appport-resolver-client",
+        "appport-testing"
+      ],
+      "verification": { "workflows": ["ci.yml"] }
+    },
+    {
+      "id": "appport-services",
+      "name": "AppPort Services",
+      "repository": "rkendel1/appport-services",
+      "active": true,
+      "ignorePaths": ["experiments"],
+      "scan": { "javascript": true, "rust": false },
+      "managedPackages": ["appport-protocol", "appport-services", "appport-runtime", "feltdb-core"],
+      "verification": { "workflows": ["ci.yml"] }
+    },
+    {
+      "id": "felt-ops",
+      "name": "Felt Ops",
+      "repository": "rkendel1/felt-ops",
+      "active": true,
+      "scan": { "javascript": true, "rust": false },
+      "managedPackages": ["feltdb-feltkit"],
+      "verification": { "workflows": ["ci.yml"] }
+    },
+    {
+      "id": "rust-ml-runtime",
+      "name": "Rust ML Runtime",
+      "repository": "rkendel1/rust-ml-runtime",
+      "active": true,
+      "scan": { "javascript": true, "rust": true },
+      "managedPackages": ["tokio", "serde", "rust-ml-runtime", "ml-runtime-common", "ml-runtime-model"],
+      "verification": { "workflows": ["ci.yml"] }
+    }
+  ]
+}

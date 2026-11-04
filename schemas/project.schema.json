@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._-]*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "repository": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.-]+\\/[A-Za-z0-9_.-]+$"
+          },
+          "defaultBranch": {
+            "description": "Branch to scan; defaults to the repository's default branch",
+            "type": "string"
+          },
+          "active": {
+            "default": true,
+            "type": "boolean"
+          },
+          "paths": {
+            "description": "Restrict this project to these directories (lets several projects share one repository)",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ignorePaths": {
+            "default": [],
+            "description": "Directories to skip, in addition to the built-in ignores",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "scan": {
+            "default": {
+              "javascript": true,
+              "rust": true
+            },
+            "type": "object",
+            "properties": {
+              "javascript": {
+                "default": true,
+                "type": "boolean"
+              },
+              "rust": {
+                "default": true,
+                "type": "boolean"
+              }
+            }
+          },
+          "managedPackages": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9._-]*$"
+            },
+            "description": "Package ids (config/packages.json) that appear in the maintenance report"
+          },
+          "verification": {
+            "type": "object",
+            "properties": {
+              "workflows": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "GitHub Actions workflow file names (e.g. ci.yml) that must succeed on a commit for it to count as verified"
+              }
+            },
+            "required": [
+              "workflows"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "repository",
+          "managedPackages"
+        ]
+      }
+    }
+  },
+  "required": [
+    "projects"
+  ]
+}

@@ -1,0 +1,71 @@
+# Collects registry, GitHub and project data, recalculates maintenance status,
+# commits data/ (the durable record), then publishes the dashboard.
+# A failed scan exits non-zero before the commit step, so previous data is never overwritten.
+name: Scan
+
+on:
+  push:
+    branches: [main]
+    paths: ["config/**", "src/**", "package.json", "package-lock.json"]
+  repository_dispatch:
+    # Sent by managed repositories (see README "Event-driven scans").
+    types: [scan, package-released, project-pushed, maintenance-started]
+  workflow_dispatch:
+  workflow_call:
+    secrets:
+      MAINTENANCE_READ_TOKEN:
+        required: false
+
+concurrency:
+  group: maintenance-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # commit data/ to this repository only
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}   # branch tip, so consecutive scans build on the latest data commit
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Check
+        run: npm run typecheck && npm test
+      - name: Record maintenance signal
+        if: github.event_name == 'repository_dispatch' && github.event.action == 'maintenance-started'
+        run: node src/index.ts record-event --file "$GITHUB_EVENT_PATH"
+      - name: Scan
+        env:
+          # Read-only token for private repositories (optional). Falls back to the built-in token,
+          # which can read public repositories and this one.
+          MAINTENANCE_READ_TOKEN: ${{ secrets.MAINTENANCE_READ_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npm run scan
+      - name: Validate artifacts
+        run: npm run validate
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "No data changes."
+            exit 0
+          fi
+          git commit -q -m "data: scan ${GITHUB_RUN_ID} (${GITHUB_EVENT_NAME})"
+          git pull -q --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+  publish:
+    needs: scan
+    uses: ./.github/workflows/publish-pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

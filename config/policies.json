@@ -1,0 +1,16 @@
+{
+  "$schema": "../schemas/policies.schema.json",
+  "trackPrereleases": false,
+  "requireUpdate": {
+    "owned": ["major", "minor", "patch"],
+    "managed": ["major", "minor"],
+    "upstream": []
+  },
+  "newReleaseDays": 7,
+  "history": {
+    "maxSnapshots": 90,
+    "releasesPerPackage": 25,
+    "closedItemRetentionDays": 30
+  },
+  "requestTimeoutMs": 20000
+}

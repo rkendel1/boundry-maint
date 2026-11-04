@@ -1,0 +1,485 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "scan": {
+      "type": "object",
+      "properties": {
+        "runId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "runUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "startedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+        },
+        "finishedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "success",
+            "partial",
+            "failed"
+          ]
+        },
+        "trigger": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "configCommit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "counts": {
+          "type": "object",
+          "properties": {
+            "packages": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "packagesFailed": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "projects": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "projectsFailed": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "installations": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "maintenanceOpen": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            }
+          },
+          "required": [
+            "packages",
+            "packagesFailed",
+            "projects",
+            "projectsFailed",
+            "installations",
+            "maintenanceOpen"
+          ],
+          "additionalProperties": false
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {
+                "type": "string",
+                "enum": [
+                  "npm",
+                  "crates",
+                  "github",
+                  "project",
+                  "verification"
+                ]
+              },
+              "target": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              },
+              "at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$"
+              }
+            },
+            "required": [
+              "source",
+              "target",
+              "message",
+              "at"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "runId",
+        "runUrl",
+        "startedAt",
+        "finishedAt",
+        "status",
+        "trigger",
+        "configCommit",
+        "counts",
+        "errors"
+      ],
+      "additionalProperties": false
+    },
+    "packages": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9._-]*$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "latestVersion": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "collection": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "latestVersion",
+          "collection"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "installations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "project": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._-]*$"
+          },
+          "root": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "registry": {
+            "type": "string",
+            "enum": [
+              "npm",
+              "crates"
+            ]
+          },
+          "resolvedVersion": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "current",
+              "patch-behind",
+              "minor-behind",
+              "major-behind",
+              "prerelease",
+              "deprecated",
+              "yanked",
+              "unavailable",
+              "unknown",
+              "local"
+            ]
+          },
+          "managed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "project",
+          "root",
+          "name",
+          "registry",
+          "resolvedVersion",
+          "status",
+          "managed"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "maintenance": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "update-available",
+              "update-required",
+              "update-in-progress",
+              "updated-unverified",
+              "updated-verified"
+            ]
+          },
+          "currentVersion": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "targetVersion": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "key",
+          "status",
+          "currentVersion",
+          "targetVersion"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "changes": {
+      "type": "object",
+      "properties": {
+        "newReleases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "package": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9._-]*$"
+              },
+              "from": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "to": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "package",
+              "from",
+              "to"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "versionChanges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "project": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9._-]*$"
+              },
+              "root": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "from": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "to": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "project",
+              "root",
+              "name",
+              "from",
+              "to"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "newDependencies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "project": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9._-]*$"
+              },
+              "root": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "version": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "project",
+              "root",
+              "name",
+              "version"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "removedDependencies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "project": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9._-]*$"
+              },
+              "root": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "project",
+              "root",
+              "name"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "statusChanges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "from": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "update-available",
+                      "update-required",
+                      "update-in-progress",
+                      "updated-unverified",
+                      "updated-verified"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "to": {
+                "type": "string",
+                "enum": [
+                  "update-available",
+                  "update-required",
+                  "update-in-progress",
+                  "updated-unverified",
+                  "updated-verified"
+                ]
+              }
+            },
+            "required": [
+              "key",
+              "from",
+              "to"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "newEvidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "project": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9._-]*$"
+              },
+              "commit": {
+                "type": "string"
+              },
+              "passed": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "project",
+              "commit",
+              "passed"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "newReleases",
+        "versionChanges",
+        "newDependencies",
+        "removedDependencies",
+        "statusChanges",
+        "newEvidence"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "scan",
+    "packages",
+    "installations",
+    "maintenance",
+    "changes"
+  ],
+  "additionalProperties": false
+}

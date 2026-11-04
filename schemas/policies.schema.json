@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "trackPrereleases": {
+      "default": false,
+      "description": "Global default; a package's own setting wins when true",
+      "type": "boolean"
+    },
+    "requireUpdate": {
+      "default": {
+        "owned": [
+          "major",
+          "minor",
+          "patch"
+        ],
+        "managed": [
+          "major",
+          "minor"
+        ],
+        "upstream": []
+      },
+      "description": "Which differences turn 'update-available' into 'update-required', per package ownership",
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "owned",
+          "managed",
+          "upstream"
+        ]
+      },
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "major",
+            "minor",
+            "patch"
+          ]
+        }
+      },
+      "required": [
+        "owned",
+        "managed",
+        "upstream"
+      ]
+    },
+    "newReleaseDays": {
+      "default": 7,
+      "description": "A release this recent counts as 'new' on the dashboard",
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "history": {
+      "default": {
+        "maxSnapshots": 90,
+        "releasesPerPackage": 25,
+        "closedItemRetentionDays": 30
+      },
+      "type": "object",
+      "properties": {
+        "maxSnapshots": {
+          "default": 90,
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+        },
+        "releasesPerPackage": {
+          "default": 25,
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991
+        },
+        "closedItemRetentionDays": {
+          "default": 30,
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      }
+    },
+    "requestTimeoutMs": {
+      "default": 20000,
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    }
+  }
+}

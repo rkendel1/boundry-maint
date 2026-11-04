@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "packages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._-]*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Name as published in the registry"
+          },
+          "registry": {
+            "type": "string",
+            "enum": [
+              "npm",
+              "crates"
+            ]
+          },
+          "ownership": {
+            "type": "string",
+            "enum": [
+              "owned",
+              "managed",
+              "upstream"
+            ]
+          },
+          "repository": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.-]+\\/[A-Za-z0-9_.-]+$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "GitHub repository holding the source, if known"
+          },
+          "directory": {
+            "description": "Path of the package inside the repository",
+            "type": "string"
+          },
+          "active": {
+            "default": true,
+            "type": "boolean"
+          },
+          "trackPrereleases": {
+            "default": false,
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "registry",
+          "ownership",
+          "repository"
+        ]
+      }
+    }
+  },
+  "required": [
+    "packages"
+  ]
+}
