@@ -7,7 +7,10 @@
       "repository": "rkendel1/feltkit",
       "defaultBranch": "main",
       "active": true,
-      "scan": { "javascript": true, "rust": true },
+      "scan": {
+        "javascript": true,
+        "rust": true
+      },
       "managedPackages": [
         "feltdb-core",
         "feltdb-webllm",
@@ -21,35 +24,290 @@
         "appport-resolver-client",
         "appport-testing"
       ],
-      "verification": { "workflows": ["ci.yml"] }
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ]
+      }
     },
     {
       "id": "appport-services",
       "name": "AppPort Services",
       "repository": "rkendel1/appport-services",
       "active": true,
-      "ignorePaths": ["experiments"],
-      "scan": { "javascript": true, "rust": false },
-      "managedPackages": ["appport-protocol", "appport-services", "appport-runtime", "feltdb-core"],
-      "verification": { "workflows": ["ci.yml"] }
+      "ignorePaths": [
+        "experiments"
+      ],
+      "scan": {
+        "javascript": true,
+        "rust": false
+      },
+      "managedPackages": [
+        "appport-protocol",
+        "appport-services",
+        "appport-runtime",
+        "feltdb-core"
+      ],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ]
+      }
     },
     {
       "id": "felt-ops",
       "name": "Felt Ops",
       "repository": "rkendel1/felt-ops",
       "active": true,
-      "scan": { "javascript": true, "rust": false },
-      "managedPackages": ["feltdb-feltkit"],
-      "verification": { "workflows": ["ci.yml"] }
+      "scan": {
+        "javascript": true,
+        "rust": false
+      },
+      "managedPackages": [
+        "feltdb-feltkit"
+      ],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ]
+      }
     },
     {
       "id": "rust-ml-runtime",
       "name": "Rust ML Runtime",
       "repository": "rkendel1/rust-ml-runtime",
       "active": true,
-      "scan": { "javascript": true, "rust": true },
-      "managedPackages": ["tokio", "serde", "rust-ml-runtime", "ml-runtime-common", "ml-runtime-model"],
-      "verification": { "workflows": ["ci.yml"] }
+      "scan": {
+        "javascript": true,
+        "rust": true
+      },
+      "managedPackages": [
+        "tokio",
+        "serde",
+        "rust-ml-runtime",
+        "ml-runtime-common",
+        "ml-runtime-model"
+      ],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ]
+      }
+    },
+    {
+      "id": "appboundry",
+      "name": "AppBoundry",
+      "repository": "rkendel1/appboundry",
+      "active": true,
+      "scan": {
+        "javascript": true,
+        "rust": true
+      },
+      "managedPackages": [
+        "appport-authorization",
+        "appport-cli",
+        "appport-client",
+        "appport-core",
+        "appport-generators",
+        "appport-mcp",
+        "appport-mobile",
+        "appport-protocol",
+        "appport-schema",
+        "appport-sdk",
+        "appport-server",
+        "appport-services",
+        "appport-transport-electron",
+        "appport-transport-http",
+        "appport-transport-inprocess",
+        "appport-transport-tauri",
+        "appport-transport-websocket",
+        "feltdb-core"
+      ],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ]
+      }
+    },
+    {
+      "id": "flow-db",
+      "name": "FeltDB (flow_db)",
+      "repository": "rkendel1/flow_db",
+      "active": true,
+      "scan": {
+        "javascript": true,
+        "rust": true
+      },
+      "managedPackages": [
+        "feltdb",
+        "feltdb-client",
+        "feltdb-core",
+        "feltdb-studio",
+        "feltdb-wasm",
+        "feltdb-webllm",
+        "serde",
+        "tokio"
+      ],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ]
+      }
+    },
+    {
+      "id": "appport",
+      "name": "AppPort",
+      "repository": "rkendel1/appport",
+      "active": true,
+      "ignorePaths": [
+        "experiments",
+        "benchmarks"
+      ],
+      "scan": {
+        "javascript": true,
+        "rust": true
+      },
+      "managedPackages": [
+        "appport-authorization",
+        "appport-client",
+        "appport-core",
+        "appport-mcp",
+        "appport-mobile",
+        "appport-protocol",
+        "appport-schema",
+        "appport-server",
+        "appport-transport-electron",
+        "appport-transport-http",
+        "appport-transport-inprocess",
+        "appport-transport-tauri",
+        "appport-transport-websocket"
+      ],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ]
+      }
+    },
+    {
+      "id": "authboundry",
+      "name": "AuthBoundry",
+      "repository": "rkendel1/authboundry",
+      "active": true,
+      "scan": {
+        "javascript": true,
+        "rust": true
+      },
+      "managedPackages": [
+        "appport-core",
+        "appport-schema",
+        "appport-services",
+        "feltdb-core",
+        "serde",
+        "tokio"
+      ],
+      "verification": {
+        "workflows": [
+          "architecture-invariants.yml",
+          "cli-smoke.yml"
+        ]
+      }
+    },
+    {
+      "id": "appworks",
+      "name": "AppWorks",
+      "repository": "rkendel1/appworks",
+      "active": true,
+      "scan": {
+        "javascript": true,
+        "rust": true
+      },
+      "managedPackages": [
+        "appport-client",
+        "appport-core",
+        "appport-github",
+        "appport-integration",
+        "appport-protocol",
+        "appport-recipe",
+        "appport-recipe-distribution",
+        "appport-schema",
+        "appport-sdk",
+        "feltdb-core"
+      ],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ]
+      }
+    },
+    {
+      "id": "compute",
+      "name": "Compute",
+      "repository": "rkendel1/compute",
+      "active": true,
+      "ignorePaths": [
+        "crates/compute-cli/tests/fixtures"
+      ],
+      "scan": {
+        "javascript": true,
+        "rust": true
+      },
+      "managedPackages": [
+        "appport-authorization",
+        "appport-core",
+        "appport-github",
+        "appport-protocol",
+        "appport-runtime",
+        "appport-schema",
+        "appport-server",
+        "appport-services",
+        "appport-transport-http",
+        "appport-transport-inprocess",
+        "appport-transport-websocket",
+        "feltdb-client",
+        "feltdb-core",
+        "serde",
+        "tokio"
+      ],
+      "verification": {
+        "workflows": [
+          "test.yml"
+        ]
+      }
+    },
+    {
+      "id": "agent-obstacle",
+      "name": "Agent Obstacle",
+      "repository": "rkendel1/agent-obstacle",
+      "active": true,
+      "scan": {
+        "javascript": true,
+        "rust": true
+      },
+      "managedPackages": [
+        "feltdb-core",
+        "feltdb-feltkit"
+      ]
+    },
+    {
+      "id": "github-integration",
+      "name": "GitHub Integration",
+      "repository": "rkendel1/github-integration",
+      "active": true,
+      "scan": {
+        "javascript": true,
+        "rust": true
+      },
+      "managedPackages": [
+        "appport-appboundry",
+        "appport-sdk",
+        "appport-services",
+        "feltdb-core"
+      ],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ]
+      }
     }
   ]
 }
