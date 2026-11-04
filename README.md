@@ -9,6 +9,7 @@ It answers:
 3. Which projects consume our packages? → **Package detail → Consuming projects**
 4. Are installed versions current with published releases? → **Projects**, `data/installations.json`
 5. What needs maintenance, and what has been updated **and verified**? → **Queue**, `data/maintenance.json`
+6. Which repositories enforce versions in CI, what do they enforce, and is it failing? → **CI Health**, `data/ci.json`
 
 **Sources of truth:** the registries own published versions, GitHub owns repository and release data, and project manifests and lockfiles own what's installed. `config/` holds the curated inventory. `data/` is the generated, durable record of each scan; it is committed so history and evidence survive. The dashboard and badges are derived from `data/` and are not a source of truth.
 
@@ -41,7 +42,7 @@ The code is TypeScript, run directly by Node ≥ 22.18 (type stripping), so ther
 ## Repository layout
 
 ```
-config/       packages.json, projects.json, policies.json   (curated; edit these)
+config/       packages.json, projects.json, policies.json, ci.json   (curated; edit these)
 schemas/      JSON Schemas generated from src/contracts.ts  (editor validation for config/)
 src/
   contracts.ts          Zod schemas: the single definition of every config and data contract
@@ -49,10 +50,11 @@ src/
   scanners/             javascript.ts, rust.ts, sources.ts (GitHub tree / local checkout)
   version/              compare.ts (semver classification), resolve.ts (npm specs, Cargo requirements)
   status/               package.ts, project.ts (installations + verification evidence), maintenance.ts (lifecycle)
+  ci/                   workflow.ts, signals.ts, discover.ts (CI discovery), runs.ts (Actions results), correlate.ts
   badges/generate.ts    SVG badges
   reports/generate.ts   Pages site + overview
   scan.ts, index.ts     pipeline + CLI
-data/         generated and committed: packages, releases, projects, installations, maintenance,
+data/         generated and committed: packages, releases, projects, installations, maintenance, ci,
               snapshot, events, evidence/<project>.json, history/<timestamp>.json
 public/       dashboard (index.html, assets/)
 test/         node:test suites, including end-to-end lifecycle and failure-preservation tests
@@ -110,20 +112,93 @@ update-available → update-required → update-in-progress → updated-unverifi
 - **updated-verified**: there is evidence for a commit in which every managed dependency resolved from the lockfile, and every workflow in `verification.workflows` concluded `success` on that same commit SHA. Evidence is stored append-only in `data/evidence/<project>.json` and records the commit, the workflow run URLs, the scan run, and the resolved versions. A project without `verification` configured can never reach *verified*, and the dashboard says so.
 - A newer release reopens a verified item. Each item keeps its own status history.
 
-Queue order: deprecated/yanked → major → minor → patch → prerelease; within each group, required before available.
+Queue order:
+
+1. CI-blocking dependency failures
+2. Deprecated or yanked installs
+3. Major updates
+4. Minor updates
+5. Patch updates
+6. Prereleases
+
+Within each group, required items come before available ones.
+
+## CI enforcement
+
+Some repositories already enforce versions in CI. Boundry Maintenance catalogues those controls and watches their results, and keeps three facts apart:
+
+| | Meaning | Comes from |
+|---|---|---|
+| **Drift** | A newer package or crate version is available | registries vs. lockfiles |
+| **Enforcement** | A CI check requires a version or version relationship | workflow files, scripts, `config/ci.json` |
+| **CI failure** | That check is failing in GitHub Actions | the Actions API (runs → jobs → steps) |
+
+**Discovery.** These repositories are inspected:
+
+- every project repository
+- every owned package's repository
+- anything listed in `config/ci.json → repositories`
+
+For each `.github/workflows/*.yml` step, discovery follows the commands it runs, including `npm run` scripts, `-w` workspaces, and the script files those execute or call. It then classifies the step two ways:
+
+- **Built-in commands** have documented behaviour, so they're *identified*. Examples: `npm ci`, `--frozen-lockfile`, `cargo … --locked`, `npm ls`, `npm outdated`, `cargo semver-checks`, and publish/pack dry runs.
+- **Scripts** are recognised from signals: registry queries, lockfile reads, semver comparisons, tags, and integrity checks. Pattern-matching can't fully understand arbitrary code, so a discovered script is never better than *partially-understood*. Its failure messages are extracted as "what the check says must be true".
+
+Each check also records:
+
+- whether it's **blocking** (`continue-on-error` and `|| true` are detected)
+- what the workflow **gates** (pull requests, pushes, tags)
+- any environment **modifiers** the script reads; a value like `report` is flagged as relaxing the check
+- its source links
+
+Scripts that look like version checks but that no workflow runs are listed as **gates that run outside CI**. Their results can't be observed.
+
+**Results** come only from GitHub's own run data. A check's result is the conclusion GitHub recorded for its *step*: passing, failing, in-progress, cancelled, skipped or unknown. Matrix jobs are aggregated. A step skipped because an earlier step failed is reported as *skipped*, not failing. Runs are read from the default branch, or from any non-PR run for tag- or dispatch-triggered workflows. Each check records its last run, last success and last failure, with links to the run and job.
+
+**Attribution.** A failed workflow isn't automatically a dependency problem. A failing check is *attributed* to a package only when one of these is true:
+
+- the step does nothing but version checking (a *dedicated* check)
+- the job log names the package next to version wording
+
+Log excerpts are read only from public repositories by default (`policies.ci.collectLogExcerpts`), because the dashboard is public. Everything else is *unattributed*. Unattributed failures appear on CI Health but are never counted as dependency failures.
+
+**Correlation.** Checks are linked to the maintenance items and installations of the same repository. An item is elevated to **CI-blocking** (priority 0) only when all of these hold:
+
+- a covering check is failing
+- that check is blocking
+- the failure is attributed to the item's package
+
+Every item shows its covering checks and their enforcement, for example "CI reports latest" or "CI enforces exact".
+
+**Annotations (`config/ci.json`).** Annotations clarify what discovery can't infer:
+
+- name, types and packages
+- a condition in words
+- `requirements`: `latest`, `exact` or a semver range, each with enforcement `fail` or `report`
+- `ignore` for false positives
+
+They can also declare a check that discovery missed. An annotated check is *identified*. For annotated requirements, the CI report shows Boundry's own reading of the current lockfiles ("holds" or "would not hold"). That reading is clearly labelled and is never presented as a CI result.
+
+The shipped annotation describes feltkit's two release checks, as read from its scripts:
+
+- **CI:** the release check runs in report mode, so being behind npm's latest for `@feltdb/core` or `@appport/services` is only reported, while exact pins fail the check.
+- **Publish:** the strict check runs, so "must be latest" fails.
+
+**CI stays authoritative.** Boundry never disables or rewrites workflows, never changes requirements, never marks a failed check as passing, and never treats its own scan as a CI run. Annotations can't set results. To standardise checks later, reusable workflows (`workflow_call`) are an option, but nothing here requires migrating existing ones.
 
 ## Failure handling
 
 - **Whole scan failed** (every registry request and every project failed, or the config is invalid): the scan exits 1 and writes nothing. The workflow stops before committing, so the last successful snapshot stays in place.
 - **Registry failure for one package**: its last-known data is kept with `collection: "stale"` and the error. The installations it affects become `unavailable`.
 - **Project unreadable**: the project is marked `inaccessible` or `failed`, its last installations are carried forward with `stale: true`, and `lastSuccessfulScan` is preserved. Open maintenance items are kept as they were, not closed.
+- **CI repository unreadable:** its last known checks are kept with `stale: true`, and their results aren't refreshed.
 - Every error is recorded in `data/snapshot.json → scan.errors`, in the workflow step summary, and on the dashboard banner. A scan with any error is `partial`.
 - Files are written atomically: either the whole set lands or none of it does.
 
 ## Setup
 
 1. **Pages:** Settings → Pages → Source: **GitHub Actions**. The dashboard is then served at `https://rkendel1.github.io/boundry-maint/`.
-2. **Private repositories:** the built-in `GITHUB_TOKEN` can read public repositories but not your other private ones. In the current catalog, `rkendel1/feltkit`, `rkendel1/appport` and `rkendel1/flow_db` are private. To scan them, create a fine-grained token with **read-only** access to those repositories (Contents, Metadata, Actions) and save it as the repository secret `MAINTENANCE_READ_TOKEN`. Without it, those projects show as `inaccessible`, and their GitHub release fields stay empty. They are never reported as current.
+2. **Private repositories:** the built-in `GITHUB_TOKEN` can read public repositories but not your other private ones. In the current catalog, `rkendel1/feltkit`, `rkendel1/appport` and `rkendel1/flow_db` are private. To scan them, create a fine-grained token with **read-only** access to those repositories (Contents, Metadata, Actions; Actions read also covers CI run and job data) and save it as the repository secret `MAINTENANCE_READ_TOKEN`. Without it, those projects show as `inaccessible`, and their GitHub release fields stay empty. They are never reported as current.
 3. **Run:** Actions → *Scan* → Run workflow. After that it runs daily (`scheduled.yml`), whenever `config/` or `src/` changes, and on repository dispatch.
 
 No credentials for publishing packages are stored or used anywhere.
@@ -152,6 +227,7 @@ Badges are generated into `/badges/` on every report run.
 
 - **Project:** `<id>-status.svg`, `<id>-dependencies.svg`, `<id>-behind.svg`, `<id>-scan.svg`
 - **Package:** `<id>-version.svg` (npm or crates.io), `<id>-release.svg` (GitHub release), `<id>-consumers.svg`
+- **Repository CI:** `ci-<owner>-<repo>.svg` (version checks passing or failing)
 
 ```markdown
 ## Maintenance
@@ -191,5 +267,7 @@ Behind an HTTPS proxy, Node's `fetch` needs `NODE_USE_ENV_PROXY=1` (Node ≥ 22.
 - Git and alternative-registry dependencies are reported with their source revision and status `unknown`. They aren't compared against crates.io or npm.
 - If the GitHub tree API truncates a very large repository, the project gets a warning, and manifests beyond the cut-off are missed.
 - `data/history/` keeps the newest `maxSnapshots` (90) snapshots on disk. Older ones are deleted from the working tree but remain in git history.
+- CI discovery reads workflow steps and the scripts they run. It doesn't open composite actions (`uses: ./.github/actions/…`) or third-party actions, and it can't see whether a workflow is a *required* status check, because branch protection needs admin access. "Blocking" means the check fails its workflow.
+- Signal-based discovery has false positives and negatives. That's why it reports confidence and supports `ignore` and declared checks.
 - Security advisories, licenses, SBOMs, automated upgrades and pull requests are out of scope for V1.
 - `@appport/chip` is published under the `@appport` scope, but its registry metadata points to `vercel/eve`, so it isn't in the owned catalog. Add it if it's yours.

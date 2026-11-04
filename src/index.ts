@@ -13,6 +13,8 @@ import { join, resolve } from "node:path";
 import { parseArgs } from "node:util";
 import { z } from "zod";
 import {
+  CiConfig,
+  CiFile,
   EventsFile,
   EvidenceFile,
   InstallationsFile,
@@ -95,6 +97,7 @@ async function validate() {
     ["maintenance.json", MaintenanceFile],
     ["snapshot.json", Snapshot],
     ["events.json", EventsFile],
+    ["ci.json", CiFile],
   ];
   for (const [f, schema] of checks) {
     try {
@@ -115,6 +118,7 @@ async function schemas() {
     ["package.schema.json", PackageCatalog, "input"],
     ["project.schema.json", ProjectCatalog, "input"],
     ["policies.schema.json", Policies, "input"],
+    ["ci.schema.json", CiConfig, "input"],
     ["snapshot.schema.json", Snapshot, "output"],
   ];
   for (const [file, schema, io] of out) {

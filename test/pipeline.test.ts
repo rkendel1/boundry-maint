@@ -192,7 +192,7 @@ test("yanked installed crate versions are flagged and never used as a target", a
   assert.equal(tokio.status, "yanked");
   assert.equal(tokio.latestVersion, "1.53.1");
   const it = await item(w.data, "tokio");
-  assert.equal(it.priority, 0, "yanked sorts first");
+  assert.equal(it.priority, 1, "yanked sorts first after CI-blocking failures");
   assert.equal(it.status, "update-required");
 });
 

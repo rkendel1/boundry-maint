@@ -5,6 +5,28 @@ import type { GithubRepoInfo } from "../contracts.ts";
 
 const API = process.env.GITHUB_API_URL ?? "https://api.github.com";
 
+export interface WorkflowRun {
+  id: number;
+  html_url: string;
+  status: string;
+  conclusion: string | null;
+  head_branch: string | null;
+  head_sha: string;
+  event: string;
+  created_at: string;
+  updated_at: string;
+  run_attempt: number;
+}
+
+export interface WorkflowJob {
+  id: number;
+  name: string;
+  html_url: string;
+  status: string;
+  conclusion: string | null;
+  steps?: { name: string; status: string; conclusion: string | null; number: number }[];
+}
+
 export class GitHub {
   private readonly token: string | null;
   private readonly timeoutMs: number;
@@ -42,18 +64,56 @@ export class GitHub {
     return res.text();
   }
 
-  async repo(repo: string) {
-    return this.json<{ default_branch: string; private: boolean; archived: boolean; pushed_at: string; html_url: string }>(`/repos/${repo}`);
+  private readonly memo = new Map<string, Promise<unknown>>();
+  /** Several scanners (projects, CI, packages) ask for the same repository data in one run; fetch it once. */
+  private once<T>(key: string, fn: () => Promise<T>): Promise<T> {
+    let p = this.memo.get(key) as Promise<T> | undefined;
+    if (!p) {
+      p = fn();
+      this.memo.set(key, p);
+    }
+    return p;
   }
 
-  async branchHead(repo: string, branch: string): Promise<string> {
-    const b = await this.json<{ commit: { sha: string } }>(`/repos/${repo}/branches/${encodeURIComponent(branch)}`);
-    return b.commit.sha;
+  repo(repo: string) {
+    return this.once(`repo:${repo}`, () =>
+      this.json<{ default_branch: string; private: boolean; archived: boolean; pushed_at: string; html_url: string }>(`/repos/${repo}`),
+    );
   }
 
-  async tree(repo: string, sha: string): Promise<{ paths: string[]; truncated: boolean }> {
-    const t = await this.json<{ tree: { path: string; type: string }[]; truncated: boolean }>(`/repos/${repo}/git/trees/${sha}?recursive=1`);
-    return { paths: t.tree.filter((e) => e.type === "blob").map((e) => e.path), truncated: t.truncated };
+  branchHead(repo: string, branch: string): Promise<string> {
+    return this.once(`head:${repo}:${branch}`, async () => {
+      const b = await this.json<{ commit: { sha: string } }>(`/repos/${repo}/branches/${encodeURIComponent(branch)}`);
+      return b.commit.sha;
+    });
+  }
+
+  tree(repo: string, sha: string): Promise<{ paths: string[]; truncated: boolean }> {
+    return this.once(`tree:${repo}:${sha}`, async () => {
+      const t = await this.json<{ tree: { path: string; type: string }[]; truncated: boolean }>(`/repos/${repo}/git/trees/${sha}?recursive=1`);
+      return { paths: t.tree.filter((e) => e.type === "blob").map((e) => e.path), truncated: t.truncated };
+    });
+  }
+
+  /** Workflow runs, newest first. `branch` null = every branch/tag (for tag- or dispatch-triggered workflows). */
+  async workflowRuns(repo: string, workflowPath: string, branch: string | null, perPage: number): Promise<WorkflowRun[]> {
+    const file = workflowPath.split("/").pop()!;
+    const q = `per_page=${perPage}&exclude_pull_requests=true${branch ? `&branch=${encodeURIComponent(branch)}` : ""}`;
+    const r = await this.optional<{ workflow_runs: WorkflowRun[] }>(`/repos/${repo}/actions/workflows/${encodeURIComponent(file)}/runs?${q}`);
+    return r?.workflow_runs ?? [];
+  }
+
+  async runJobs(repo: string, runId: number): Promise<WorkflowJob[]> {
+    return this.once(`jobs:${repo}:${runId}`, async () => {
+      const r = await this.json<{ jobs: WorkflowJob[] }>(`/repos/${repo}/actions/runs/${runId}/jobs?per_page=100&filter=latest`);
+      return r.jobs;
+    });
+  }
+
+  /** Plain-text job log (GitHub redirects to short-lived storage; credentials are not forwarded cross-origin). */
+  async jobLog(repo: string, jobId: number): Promise<string> {
+    const res = await get(`${API}/repos/${repo}/actions/jobs/${jobId}/logs`, { headers: this.headers(), timeoutMs: this.timeoutMs, retries: 1 });
+    return res.text();
   }
 
   async workflowRunsForCommit(repo: string, workflow: string, sha: string) {

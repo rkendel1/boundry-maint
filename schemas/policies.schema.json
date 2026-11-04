@@ -90,6 +90,31 @@
       "type": "integer",
       "exclusiveMinimum": 0,
       "maximum": 9007199254740991
+    },
+    "ci": {
+      "default": {
+        "collectLogExcerpts": "public",
+        "runsPerWorkflow": 20
+      },
+      "type": "object",
+      "properties": {
+        "collectLogExcerpts": {
+          "default": "public",
+          "description": "Read failing job logs to attribute failures to packages. Excerpts are published on the dashboard, so private repositories are excluded unless 'all'.",
+          "type": "string",
+          "enum": [
+            "none",
+            "public",
+            "all"
+          ]
+        },
+        "runsPerWorkflow": {
+          "default": 20,
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        }
+      }
     }
   }
 }

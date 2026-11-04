@@ -6,7 +6,7 @@
 import { cp, mkdir, rm, readFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { basename, join } from "node:path";
-import { InstallationsFile, MaintenanceFile, PackagesFile, ProjectsFile, Snapshot, type Installation, type PackageRecord } from "../contracts.ts";
+import { CiFile, InstallationsFile, MaintenanceFile, PackagesFile, ProjectsFile, Snapshot, type Installation, type PackageRecord } from "../contracts.ts";
 import { generateBadges, projectStatus } from "../badges/generate.ts";
 import { listFiles, readJson, writeAllAtomic } from "../lib/files.ts";
 import type { Policies } from "../contracts.ts";
@@ -19,6 +19,7 @@ export function overview(input: {
   installations: Installation[];
   items: ReturnType<typeof MaintenanceFile.parse>["items"];
   snapshot: Snapshot;
+  ci: CiFile | null;
   newReleaseDays: number;
   now: number;
 }) {
@@ -37,6 +38,7 @@ export function overview(input: {
     projectsWithOutdatedInstallations: [...outdatedProjects].sort(),
     outstandingMaintenance: input.items.filter((i) => i.status.startsWith("update-")).length,
     awaitingVerification: input.items.filter((i) => i.status === "updated-unverified").length,
+    ci: ciOverview(input.ci, input.items),
     lastScan: { status: input.snapshot.scan.status, at: input.snapshot.scan.finishedAt, runUrl: input.snapshot.scan.runUrl, errors: input.snapshot.scan.errors.length },
     lastSuccessfulScan: input.snapshot.scan.status === "failed" ? null : input.snapshot.scan.finishedAt,
     projectStatus: Object.fromEntries(
@@ -49,6 +51,28 @@ export function overview(input: {
         ).message,
       ]),
     ),
+  };
+}
+
+const VERSION_TYPES = new Set(["version-freshness", "version-pinning", "version-consistency", "dependency-compatibility"]);
+
+/** CI enforcement summary: repositories, version checks, and failures attributed to dependencies. */
+export function ciOverview(ci: CiFile | null, items: { ci: { blockingFailure: boolean } | null; status: string }[]) {
+  if (!ci) return null;
+  const inCi = ci.checks.filter((c) => c.workflow !== null);
+  return {
+    repositories: ci.repositories.length,
+    repositoriesUnreadable: ci.repositories.filter((r) => r.status !== "ok").length,
+    checks: ci.checks.length,
+    checksInCi: inCi.length,
+    localOnlyChecks: ci.checks.length - inCi.length,
+    passing: inCi.filter((c) => c.result === "passing").length,
+    failing: inCi.filter((c) => c.result === "failing").length,
+    dependencyFailures: inCi.filter((c) => c.result === "failing" && c.blocking && c.failure?.attribution === "confirmed" && c.types.some((t) => VERSION_TYPES.has(t))).length,
+    unattributedFailures: inCi.filter((c) => c.result === "failing" && c.failure?.attribution !== "confirmed").length,
+    blockedItems: items.filter((i) => i.ci?.blockingFailure && i.status.startsWith("update-")).length,
+    workflowsFailing: ci.workflows.filter((w) => w.result === "failing").length,
+    needsReview: ci.checks.filter((c) => c.confidence !== "identified").length,
   };
 }
 
@@ -67,6 +91,7 @@ export async function buildSite(opts: { root: string; dataDir: string; outDir: s
   const installations = (await readJson(d("installations.json"), InstallationsFile)).installations;
   const items = (await readJson(d("maintenance.json"), MaintenanceFile)).items;
   const snapshot = await readJson(d("snapshot.json"), Snapshot);
+  const ci = existsSync(d("ci.json")) ? await readJson(d("ci.json"), CiFile) : null;
 
   await cp(opts.dataDir, join(opts.outDir, "data"), { recursive: true });
 
@@ -84,12 +109,12 @@ export async function buildSite(opts: { root: string; dataDir: string; outDir: s
   const files: Record<string, unknown> = {
     [join(opts.outDir, "data/dashboard.json")]: {
       generatedAt: new Date().toISOString(),
-      overview: overview({ packages, projects, installations, items, snapshot, newReleaseDays: opts.policies.newReleaseDays, now: Date.now() }),
+      overview: overview({ packages, projects, installations, items, snapshot, ci, newReleaseDays: opts.policies.newReleaseDays, now: Date.now() }),
     },
     [join(opts.outDir, "data/history/index.json")]: { snapshots: history },
     [join(opts.outDir, ".nojekyll")]: "",
   };
-  const badges = generateBadges({ packages, projects, installations, items });
+  const badges = generateBadges({ packages, projects, installations, items, ci });
   for (const [name, svg] of Object.entries(badges)) files[join(opts.outDir, "badges", name)] = svg;
   await writeAllAtomic(files);
   return { files: Object.keys(files).length };

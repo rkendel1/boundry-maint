@@ -1,0 +1,36 @@
+{
+  "$schema": "../schemas/ci.schema.json",
+  "repositories": [],
+  "annotations": [
+    {
+      "match": { "repository": "rkendel1/feltkit", "workflow": ".github/workflows/ci.yml", "job": "test", "step": "Release check" },
+      "name": "FeltKit release check (CI mode)",
+      "types": ["version-pinning", "version-consistency", "version-freshness", "publication-validation"],
+      "condition": "@feltdb/feltkit's runtime dependencies are exact pins resolved at their pin; @feltdb/core and @appport/services are '>=floor <ceiling' ranges resolved inside the range; the lockfile's @appport/services integrity matches npm; one @feltdb/core copy. Being behind npm's latest for the floating packages is only reported in CI (FELTKIT_RELEASE_CHECK_LATEST=report).",
+      "requirements": [
+        { "package": "feltdb-core", "requirement": "latest", "enforcement": "report", "note": "fails at publish (scripts/publish-packages.mjs runs the strict check)" },
+        { "package": "appport-services", "requirement": "latest", "enforcement": "report", "note": "fails at publish (scripts/publish-packages.mjs runs the strict check)" },
+        { "package": "appport-authorization", "requirement": "exact", "enforcement": "fail" },
+        { "package": "appport-integration", "requirement": "exact", "enforcement": "fail" },
+        { "package": "appport-protocol", "requirement": "exact", "enforcement": "fail" },
+        { "package": "appport-resolver-client", "requirement": "exact", "enforcement": "fail" },
+        { "package": "appport-sdk", "requirement": "exact", "enforcement": "fail" },
+        { "package": "appport-server", "requirement": "exact", "enforcement": "fail" }
+      ],
+      "note": "Read from scripts/release-check.mjs at rkendel1/feltkit@65744b3.",
+      "reviewedAt": "2026-11-04"
+    },
+    {
+      "match": { "repository": "rkendel1/feltkit", "workflow": ".github/workflows/publish.yml", "job": "publish", "step": "Publish" },
+      "name": "FeltKit publish gate (strict)",
+      "types": ["version-freshness", "version-pinning", "version-consistency", "publication-validation"],
+      "condition": "Everything the CI release check enforces, plus: @feltdb/core and @appport/services must be npm's latest release (strict), and every runtime dependency must be published at its pin or inside its range (release gate).",
+      "requirements": [
+        { "package": "feltdb-core", "requirement": "latest", "enforcement": "fail" },
+        { "package": "appport-services", "requirement": "latest", "enforcement": "fail" }
+      ],
+      "note": "scripts/publish-packages.mjs runs test:release without FELTKIT_RELEASE_CHECK_LATEST, then release:gate. Read at rkendel1/feltkit@65744b3.",
+      "reviewedAt": "2026-11-04"
+    }
+  ]
+}

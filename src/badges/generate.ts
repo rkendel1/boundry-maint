@@ -1,5 +1,5 @@
 /** Self-contained SVG badges (flat style). No third-party badge service involved. */
-import type { Installation, MaintenanceItem, PackageRecord, ProjectRecord } from "../contracts.ts";
+import type { CiFile, Installation, MaintenanceItem, PackageRecord, ProjectRecord } from "../contracts.ts";
 
 export const COLORS = {
   green: "#2e7d32",
@@ -64,8 +64,20 @@ export function generateBadges(input: {
   projects: ProjectRecord[];
   installations: Installation[];
   items: MaintenanceItem[];
+  ci?: CiFile | null;
 }): Record<string, string> {
   const out: Record<string, string> = {};
+  // CI enforcement per repository: ci-<owner>-<repo>.svg ("version checks")
+  for (const repo of input.ci?.repositories ?? []) {
+    const checks = (input.ci?.checks ?? []).filter((c) => c.repository === repo.repository && c.workflow !== null);
+    const failing = checks.filter((c) => c.result === "failing").length;
+    const passing = checks.filter((c) => c.result === "passing").length;
+    const name = `ci-${repo.repository.replace("/", "-")}.svg`;
+    if (repo.status !== "ok") out[name] = badge("version checks", repo.status, COLORS.grey);
+    else if (!checks.length) out[name] = badge("version checks", "none found", COLORS.grey);
+    else if (failing) out[name] = badge("version checks", `${failing} failing`, COLORS.red);
+    else out[name] = badge("version checks", `${passing}/${checks.length} passing`, passing === checks.length ? COLORS.green : COLORS.grey);
+  }
   for (const p of input.projects) {
     const installs = input.installations.filter((i) => i.project === p.id);
     const items = input.items.filter((i) => i.project === p.id);

@@ -50,21 +50,22 @@ export function groupInstallations(installations: Installation[]): (Installation
   });
 }
 
+/** Queue order: 0 is reserved for CI-blocking dependency failures (set by src/ci/correlate.ts). */
 function priorityOf(diff: MaintenanceItem["difference"]): number {
   switch (diff) {
     case "deprecated":
     case "yanked":
-      return 0;
-    case "major":
       return 1;
-    case "minor":
+    case "major":
       return 2;
-    case "patch":
+    case "minor":
       return 3;
-    case "prerelease":
+    case "patch":
       return 4;
-    default:
+    case "prerelease":
       return 5;
+    default:
+      return 6;
   }
 }
 
@@ -151,6 +152,7 @@ export function computeMaintenance(opts: {
             updatedAt: now,
             closedAt: null,
             lastVerifiedCommit: prev?.lastVerifiedCommit ?? null,
+            ci: null,
             evidence: prev?.evidence ?? [],
             history: [...(prev?.history ?? []), { at: now, status, version: inst.resolvedVersion, scanRun: opts.scanRun }],
           }
@@ -221,7 +223,12 @@ export function computeMaintenance(opts: {
     if (prev && (inst.status === "unknown" || inst.status === "unavailable")) out.set(key, prev);
   }
 
-  return [...out.values()].sort(
+  return sortItems([...out.values()]);
+}
+
+/** Queue order: priority, then required before available, then stable by name. */
+export function sortItems(items: MaintenanceItem[]): MaintenanceItem[] {
+  return [...items].sort(
     (a, b) =>
       a.priority - b.priority ||
       Number(b.status === "update-required") - Number(a.status === "update-required") ||

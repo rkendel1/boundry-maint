@@ -106,3 +106,7 @@ ul.plain { padding-left: 18px; margin: 6px 0; }
   .meta { grid-template-columns: 1fr; }
   .meta dt { margin-top: 6px; }
 }
+
+/* Keep long prose cells from pushing result columns off screen. */
+td { max-width: 360px; overflow-wrap: anywhere; }
+td details, td pre { max-width: 360px; }

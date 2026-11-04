@@ -113,15 +113,76 @@ export const Policies = z.object({
     })
     .default({ maxSnapshots: 90, releasesPerPackage: 25, closedItemRetentionDays: 30 }),
   requestTimeoutMs: z.number().int().positive().default(20000),
+  ci: z
+    .object({
+      collectLogExcerpts: z
+        .enum(["none", "public", "all"])
+        .default("public")
+        .describe("Read failing job logs to attribute failures to packages. Excerpts are published on the dashboard, so private repositories are excluded unless 'all'."),
+      runsPerWorkflow: z.number().int().positive().max(100).default(20),
+    })
+    .default({ collectLogExcerpts: "public", runsPerWorkflow: 20 }),
 });
 export type Policies = z.infer<typeof Policies>;
+
+
+// ---------------------------------------------------------------------------
+// CI enforcement (config/ci.json) — annotations clarify what discovery cannot infer
+// ---------------------------------------------------------------------------
+
+export const CiCheckType = z.enum([
+  "version-freshness",
+  "version-pinning",
+  "version-consistency",
+  "release-consistency",
+  "dependency-compatibility",
+  "publication-validation",
+  "integration-validation",
+]);
+export type CiCheckType = z.infer<typeof CiCheckType>;
+
+export const CiRequirement = z.object({
+  package: Id,
+  requirement: z.string().describe('"latest", "exact" (resolved must equal the declared pin), or a semver range such as ">=0.14.0"'),
+  enforcement: z.enum(["fail", "report"]).default("fail").describe("'report' = the check prints a notice but does not fail CI"),
+  note: z.string().optional(),
+});
+export type CiRequirement = z.infer<typeof CiRequirement>;
+
+export const CiAnnotation = z.object({
+  match: z
+    .object({
+      repository: RepoSlug,
+      workflow: z.string().optional().describe("Workflow file path, e.g. .github/workflows/ci.yml"),
+      job: z.string().optional().describe("Job id (the key under jobs:)"),
+      step: z.string().optional().describe("Step display name"),
+      script: z.string().optional().describe("Script path, for checks that run outside CI"),
+    })
+    .describe("Every given field must match a discovered check (or define a new one if nothing matches)"),
+  name: z.string().optional(),
+  types: z.array(CiCheckType).optional(),
+  packages: z.array(Id).optional(),
+  requirements: z.array(CiRequirement).optional(),
+  condition: z.string().optional().describe("What must be true, in words"),
+  ignore: z.boolean().optional().describe("Not a version check; hide it"),
+  note: z.string().optional(),
+  reviewedAt: z.string().optional().describe("When a human last checked this annotation against the source"),
+});
+export type CiAnnotation = z.infer<typeof CiAnnotation>;
+
+export const CiConfig = z.object({
+  $schema: z.string().optional(),
+  repositories: z.array(RepoSlug).default([]).describe("Repositories to inspect in addition to project and owned-package repositories"),
+  annotations: z.array(CiAnnotation).default([]),
+});
+export type CiConfig = z.infer<typeof CiConfig>;
 
 // ---------------------------------------------------------------------------
 // Generated artifacts (data/*.json)
 // ---------------------------------------------------------------------------
 
 export const SourceError = z.object({
-  source: z.enum(["npm", "crates", "github", "project", "verification"]),
+  source: z.enum(["npm", "crates", "github", "project", "verification", "ci"]),
   target: z.string(),
   message: z.string(),
   at: IsoDate,
@@ -309,7 +370,26 @@ export const MaintenanceItem = z.object({
   difference: z.enum(["major", "minor", "patch", "prerelease", "deprecated", "yanked"]).nullable(),
   latestSatisfiesDeclared: z.boolean().nullable(),
   status: MaintenanceState,
-  priority: z.number().int().describe("Lower sorts first: 0 deprecation/yank, 1 major, 2 minor, 3 patch, 4 prerelease, 9 resolved"),
+  priority: z
+    .number()
+    .int()
+    .describe("Lower sorts first: 0 CI-blocking dependency failure, 1 deprecation/yank, 2 major, 3 minor, 4 patch, 5 prerelease, 9 resolved"),
+  ci: z
+    .object({
+      blockingFailure: z.boolean().describe("A version check covering this package is failing CI and the failure is attributed to it"),
+      checks: z.array(
+        z.object({
+          id: z.string(),
+          name: z.string(),
+          result: z.string(),
+          enforcement: z.enum(["fail", "report", "unknown"]),
+          requirement: z.string().nullable(),
+          runUrl: z.string().nullable(),
+        }),
+      ),
+    })
+    .nullable()
+    .default(null),
   targetPublishedAt: z.string().nullable(),
   openedAt: IsoDate,
   updatedAt: IsoDate,
@@ -356,6 +436,112 @@ export const MaintenanceEvent = z.object({
 export type MaintenanceEvent = z.infer<typeof MaintenanceEvent>;
 export const EventsFile = z.object({ events: z.array(MaintenanceEvent) });
 
+
+export const CiResult = z.enum(["passing", "failing", "in-progress", "cancelled", "skipped", "unknown"]);
+export type CiResult = z.infer<typeof CiResult>;
+
+export const CiRunRef = z.object({
+  runId: z.number(),
+  url: z.string(),
+  status: z.string(),
+  conclusion: z.string().nullable(),
+  branch: z.string().nullable(),
+  sha: z.string(),
+  event: z.string(),
+  at: z.string(),
+});
+export type CiRunRef = z.infer<typeof CiRunRef>;
+
+export const CiWorkflow = z.object({
+  repository: RepoSlug,
+  path: z.string(),
+  name: z.string(),
+  triggers: z.array(z.string()),
+  result: CiResult,
+  latestRun: CiRunRef.nullable(),
+  lastSuccess: CiRunRef.nullable(),
+  lastFailure: CiRunRef.nullable(),
+  failedJobs: z.array(z.object({ name: z.string(), url: z.string(), failedSteps: z.array(z.string()) })).describe("For the latest run"),
+  branchFilter: z.string().nullable().describe("Runs are read from this branch; null when the workflow runs on tags/dispatch"),
+});
+export type CiWorkflow = z.infer<typeof CiWorkflow>;
+
+export const CiCheck = z.object({
+  id: z.string().describe("repository:workflow#job/step, or repository:script for checks not run in CI"),
+  repository: RepoSlug,
+  name: z.string(),
+  workflow: z.string().nullable().describe("Workflow file; null when the check only runs outside CI"),
+  workflowName: z.string().nullable(),
+  job: z.string().nullable(),
+  jobName: z.string().nullable(),
+  step: z.string().nullable().describe("Step display name as GitHub shows it"),
+  types: z.array(CiCheckType),
+  packages: z.array(Id).describe("Catalog packages the check inspects"),
+  requirements: z.array(CiRequirement),
+  expectations: z
+    .array(
+      z.object({
+        package: Id,
+        requirement: z.string(),
+        enforcement: z.enum(["fail", "report"]),
+        root: z.string(),
+        installed: z.string().nullable(),
+        latest: z.string().nullable(),
+        holds: z.boolean().nullable(),
+      }),
+    )
+    .default([])
+    .describe("Boundry's own reading of each declared requirement against the scanned lockfiles. Informational; never a CI result."),
+  condition: z.string().nullable(),
+  assertions: z.array(z.string()).describe("Failure messages found in the check's source — what it says must be true"),
+  blocking: z.boolean().describe("A failure fails the workflow (no continue-on-error / '|| true')"),
+  blockingNote: z.string().nullable(),
+  gates: z.array(z.string()).describe("What a workflow failure holds up: pull requests, pushes to main, tags, releases…"),
+  modifiers: z.array(z.object({ name: z.string(), value: z.string(), relaxes: z.boolean() })).describe("Environment settings the check's source reads"),
+  dedicated: z.boolean().describe("The step does nothing but version checking, so its failure is the check's failure"),
+  confidence: z.enum(["identified", "partially-understood", "unclassified"]),
+  signals: z.array(z.string()),
+  sources: z.array(z.object({ path: z.string(), url: z.string() })),
+  annotated: z.boolean(),
+  note: z.string().nullable(),
+  result: CiResult,
+  resultNote: z.string().nullable(),
+  lastRun: CiRunRef.nullable(),
+  lastSuccess: CiRunRef.nullable(),
+  lastFailure: CiRunRef.nullable(),
+  jobUrl: z.string().nullable(),
+  failure: z
+    .object({
+      attribution: z.enum(["confirmed", "possible"]).describe("confirmed = dedicated check step, or the job log names the package"),
+      packages: z.array(Id),
+      excerpt: z.array(z.string()),
+    })
+    .nullable(),
+  stale: z.boolean(),
+});
+export type CiCheck = z.infer<typeof CiCheck>;
+
+export const CiRepository = z.object({
+  repository: RepoSlug,
+  commit: z.string().nullable(),
+  defaultBranch: z.string().nullable(),
+  private: z.boolean().nullable(),
+  status: z.enum(["ok", "inaccessible", "failed"]),
+  error: z.string().nullable(),
+  workflowCount: z.number().int(),
+  scriptsInspected: z.number().int(),
+  lastScanned: IsoDate,
+});
+export type CiRepository = z.infer<typeof CiRepository>;
+
+export const CiFile = z.object({
+  generatedAt: IsoDate,
+  repositories: z.array(CiRepository),
+  workflows: z.array(CiWorkflow),
+  checks: z.array(CiCheck),
+});
+export type CiFile = z.infer<typeof CiFile>;
+
 export const ScanSummary = z.object({
   runId: z.string().nullable(),
   runUrl: z.string().nullable(),
@@ -369,6 +555,9 @@ export const ScanSummary = z.object({
     packagesFailed: z.number().int(),
     projects: z.number().int(),
     projectsFailed: z.number().int(),
+    ciRepositories: z.number().int().default(0),
+    ciChecks: z.number().int().default(0),
+    ciChecksFailing: z.number().int().default(0),
     installations: z.number().int(),
     maintenanceOpen: z.number().int(),
   }),
@@ -383,6 +572,7 @@ export const SnapshotChanges = z.object({
   removedDependencies: z.array(z.object({ project: Id, root: z.string(), name: z.string() })),
   statusChanges: z.array(z.object({ key: z.string(), from: MaintenanceState.nullable(), to: MaintenanceState })),
   newEvidence: z.array(z.object({ project: Id, commit: z.string(), passed: z.boolean() })),
+  ciResultChanges: z.array(z.object({ id: z.string(), from: CiResult.nullable(), to: CiResult })).default([]),
 });
 export type SnapshotChanges = z.infer<typeof SnapshotChanges>;
 
@@ -395,6 +585,7 @@ export const Snapshot = z.object({
     z.object({ project: Id, root: z.string(), name: z.string(), registry: Registry, resolvedVersion: z.string().nullable(), status: InstallStatus, managed: z.boolean() }),
   ),
   maintenance: z.array(z.object({ key: z.string(), status: MaintenanceState, currentVersion: z.string().nullable(), targetVersion: z.string().nullable() })),
+  ci: z.array(z.object({ id: z.string(), result: CiResult })).default([]),
   changes: SnapshotChanges,
 });
 export type Snapshot = z.infer<typeof Snapshot>;

@@ -74,6 +74,24 @@
               "minimum": -9007199254740991,
               "maximum": 9007199254740991
             },
+            "ciRepositories": {
+              "default": 0,
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "ciChecks": {
+              "default": 0,
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
+            "ciChecksFailing": {
+              "default": 0,
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            },
             "installations": {
               "type": "integer",
               "minimum": -9007199254740991,
@@ -90,6 +108,9 @@
             "packagesFailed",
             "projects",
             "projectsFailed",
+            "ciRepositories",
+            "ciChecks",
+            "ciChecksFailing",
             "installations",
             "maintenanceOpen"
           ],
@@ -107,7 +128,8 @@
                   "crates",
                   "github",
                   "project",
-                  "verification"
+                  "verification",
+                  "ci"
                 ]
               },
               "target": {
@@ -266,6 +288,34 @@
           "status",
           "currentVersion",
           "targetVersion"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "ci": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string",
+            "enum": [
+              "passing",
+              "failing",
+              "in-progress",
+              "cancelled",
+              "skipped",
+              "unknown"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "result"
         ],
         "additionalProperties": false
       }
@@ -460,6 +510,53 @@
             ],
             "additionalProperties": false
           }
+        },
+        "ciResultChanges": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "from": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "passing",
+                      "failing",
+                      "in-progress",
+                      "cancelled",
+                      "skipped",
+                      "unknown"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "to": {
+                "type": "string",
+                "enum": [
+                  "passing",
+                  "failing",
+                  "in-progress",
+                  "cancelled",
+                  "skipped",
+                  "unknown"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "from",
+              "to"
+            ],
+            "additionalProperties": false
+          }
         }
       },
       "required": [
@@ -468,7 +565,8 @@
         "newDependencies",
         "removedDependencies",
         "statusChanges",
-        "newEvidence"
+        "newEvidence",
+        "ciResultChanges"
       ],
       "additionalProperties": false
     }
@@ -479,6 +577,7 @@
     "packages",
     "installations",
     "maintenance",
+    "ci",
     "changes"
   ],
   "additionalProperties": false

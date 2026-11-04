@@ -8,7 +8,10 @@
  */
 import { join } from "node:path";
 import { rm } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import {
+  CiConfig,
+  CiFile,
   EventsFile,
   EvidenceFile,
   InstallationsFile,
@@ -34,25 +37,32 @@ import { listFiles, readJson, readJsonIfValid, writeAllAtomic } from "./lib/file
 import { mapLimit } from "./lib/http.ts";
 import { localRepoFiles } from "./scanners/sources.ts";
 import { collectPackages, defaultFetcher, type RegistryFetcher } from "./status/package.ts";
-import { computeMaintenance } from "./status/maintenance.ts";
+import { computeMaintenance, sortItems } from "./status/maintenance.ts";
+import { collectCi, githubCiSource, type CiFileSource } from "./ci/index.ts";
+import { correlateItems, withExpectations } from "./ci/correlate.ts";
 import { githubSource, scanProject, type Discovered, type ProjectSource } from "./status/project.ts";
 
 export interface Config {
   packages: PackageCatalog;
   projects: ProjectCatalog;
   policies: Policies;
+  ci: CiConfig;
 }
 
 export async function loadConfig(root: string): Promise<Config> {
   const packages = await readJson(join(root, "config/packages.json"), PackageCatalog);
   const projects = await readJson(join(root, "config/projects.json"), ProjectCatalog);
   const policies = await readJson(join(root, "config/policies.json"), Policies);
+  const ci = existsSync(join(root, "config/ci.json")) ? await readJson(join(root, "config/ci.json"), CiConfig) : CiConfig.parse({});
   const ids = new Set(packages.packages.map((p) => p.id));
   const problems: string[] = [];
   for (const proj of projects.projects)
     for (const id of proj.managedPackages) if (!ids.has(id)) problems.push(`config/projects.json: project ${proj.id} references unknown package id "${id}"`);
+  for (const a of ci.annotations)
+    for (const id of [...(a.packages ?? []), ...(a.requirements ?? []).map((r) => r.package)])
+      if (!ids.has(id)) problems.push(`config/ci.json: annotation for ${a.match.repository} references unknown package id "${id}"`);
   if (problems.length) throw new Error(problems.join("\n"));
-  return { packages, projects, policies };
+  return { packages, projects, policies, ci };
 }
 
 export interface ScanOptions {
@@ -62,6 +72,8 @@ export interface ScanOptions {
   /** owner/repo → local checkout, for development and tests. */
   localRepos?: Map<string, string>;
   fetcher?: RegistryFetcher;
+  /** Overrides where CI discovery reads repository files (tests, local development). */
+  ciSource?: CiFileSource;
   github?: GitHub | null;
   now?: string;
   run?: { id: string | null; url: string | null; trigger: string | null; configCommit: string | null };
@@ -101,6 +113,7 @@ export async function runScan(opts: ScanOptions): Promise<ScanResult> {
   const prevMaintenance = await readJsonIfValid(data("maintenance.json"), MaintenanceFile);
   const prevSnapshot = await readJsonIfValid(data("snapshot.json"), Snapshot);
   const events = (await readJsonIfValid(data("events.json"), EventsFile))?.events ?? [];
+  const prevCi = await readJsonIfValid(data("ci.json"), CiFile);
 
   const github = opts.github !== undefined ? opts.github : new GitHub(opts.githubToken, policies.requestTimeoutMs);
   const scanRun = opts.run?.url ?? opts.run?.id ?? null;
@@ -156,7 +169,7 @@ export async function runScan(opts: ScanOptions): Promise<ScanResult> {
   }
 
   // 8. Maintenance lifecycle.
-  const items = computeMaintenance({
+  const lifecycle = computeMaintenance({
     installations,
     previous: prevMaintenance?.items ?? [],
     packages,
@@ -166,6 +179,32 @@ export async function runScan(opts: ScanOptions): Promise<ScanResult> {
     now,
     scanRun,
   });
+
+
+  // 8b. CI enforcement: every project repository, every owned package's repository, plus extras from config/ci.json.
+  const ciRepos = [
+    ...new Set([
+      ...config.projects.projects.filter((p) => p.active).map((p) => p.repository),
+      ...config.packages.packages.filter((p) => p.active && p.ownership === "owned" && p.repository).map((p) => p.repository!),
+      ...config.ci.repositories,
+    ]),
+  ].sort();
+  const ciSource = opts.ciSource ?? (opts.localRepos?.size ? localCiSource(opts.localRepos, github) : github ? githubCiSource(github) : null);
+  const ciResult = ciSource
+    ? await collectCi({
+        repositories: ciRepos,
+        source: ciSource,
+        github,
+        catalog: config.packages.packages.map((p) => ({ id: p.id, name: p.name })),
+        annotations: config.ci.annotations,
+        policies,
+        previous: prevCi,
+        now,
+      })
+    : { ci: { generatedAt: now, repositories: [], workflows: [], checks: [] }, errors: [] };
+  errors.push(...ciResult.errors);
+  const ci = { ...ciResult.ci, checks: withExpectations(ciResult.ci.checks, installations, config.projects.projects, packages) };
+  const items = sortItems(correlateItems(lifecycle, ci.checks, config.projects.projects));
 
   const packagesFailed = pkgResult.records.filter((p) => p.collection !== "ok").length;
   const activeProjects = projects.filter((p) => p.scanStatus !== "inactive");
@@ -187,6 +226,9 @@ export async function runScan(opts: ScanOptions): Promise<ScanResult> {
       packagesFailed,
       projects: activeProjects.length,
       projectsFailed,
+      ciRepositories: ci.repositories.length,
+      ciChecks: ci.checks.length,
+      ciChecksFailing: ci.checks.filter((c) => c.result === "failing").length,
       installations: installations.length,
       maintenanceOpen: items.filter((i) => i.status.startsWith("update-")).length,
     },
@@ -211,7 +253,11 @@ export async function runScan(opts: ScanOptions): Promise<ScanResult> {
       ...discovered.map((d) => ({ project: d.project, root: d.root, name: d.name, registry: d.registry, resolvedVersion: d.resolvedVersion, status: "unknown" as const, managed: false })),
     ],
     maintenance: items.map((i) => ({ key: i.key, status: i.status, currentVersion: i.currentVersion, targetVersion: i.targetVersion })),
-    changes: diffSnapshots(prevSnapshot, pkgResult.records, installations, discovered, items, newEvidence, new Set(projects.filter((p) => p.scanStatus === "ok").map((p) => p.id))),
+    ci: ci.checks.map((c) => ({ id: c.id, result: c.result })),
+    changes: {
+      ...diffSnapshots(prevSnapshot, pkgResult.records, installations, discovered, items, newEvidence, new Set(projects.filter((p) => p.scanStatus === "ok").map((p) => p.id))),
+      ciResultChanges: ciChanges(prevSnapshot, ci.checks),
+    },
   };
   const stamp = now.replace(/[:.]/g, "-");
   const files: Record<string, unknown> = {
@@ -220,6 +266,7 @@ export async function runScan(opts: ScanOptions): Promise<ScanResult> {
     [data("projects.json")]: { generatedAt: now, projects },
     [data("installations.json")]: { generatedAt: now, installations, discovered },
     [data("maintenance.json")]: { generatedAt: now, items },
+    [data("ci.json")]: ci,
     [data("snapshot.json")]: snapshot,
     [data(`history/${stamp}.json`)]: snapshot,
   };
@@ -243,7 +290,7 @@ export function diffSnapshots(
   newEvidence: EvidenceRecord[],
   scannedProjects: Set<string>,
 ): SnapshotChanges {
-  const changes: SnapshotChanges = { newReleases: [], versionChanges: [], newDependencies: [], removedDependencies: [], statusChanges: [], newEvidence: [] };
+  const changes: SnapshotChanges = { newReleases: [], versionChanges: [], newDependencies: [], removedDependencies: [], statusChanges: [], newEvidence: [], ciResultChanges: [] };
   changes.newEvidence = newEvidence.map((e) => ({ project: e.project, commit: e.commit, passed: e.passed }));
   if (!prev) return changes; // first snapshot: everything is new; nothing to compare against
   for (const p of packages) {
@@ -273,4 +320,35 @@ export function diffSnapshots(
     if (before !== item.status) changes.statusChanges.push({ key: item.key, from: before, to: item.status });
   }
   return changes;
+}
+
+function ciChanges(prev: Snapshot | null, checks: CiFile["checks"]): SnapshotChanges["ciResultChanges"] {
+  if (!prev) return [];
+  const before = new Map(prev.ci.map((c) => [c.id, c.result]));
+  return checks.filter((c) => !c.stale && before.get(c.id) !== c.result).map((c) => ({ id: c.id, from: before.get(c.id) ?? null, to: c.result }));
+}
+
+/** CI discovery from local checkouts; run results still come from GitHub when available. */
+function localCiSource(map: Map<string, string>, gh: GitHub | null): CiFileSource {
+  const remote = gh ? githubCiSource(gh) : null;
+  return async (repository) => {
+    const dir = map.get(repository);
+    if (!dir) {
+      if (remote) return remote(repository);
+      throw new Error(`no local checkout mapped for ${repository}`);
+    }
+    const { execFile } = await import("node:child_process");
+    const { promisify } = await import("node:util");
+    const { readFile } = await import("node:fs/promises");
+    const run = promisify(execFile);
+    const paths = (await run("git", ["-C", dir, "ls-files"], { maxBuffer: 64 * 1024 * 1024 })).stdout.split("\n").filter(Boolean);
+    const commit = (await run("git", ["-C", dir, "rev-parse", "HEAD"])).stdout.trim();
+    const meta = gh ? await gh.repo(repository).catch(() => null) : null;
+    return {
+      files: { paths, read: (p) => readFile(join(dir, p), "utf8") },
+      commit,
+      defaultBranch: meta?.default_branch ?? "main",
+      private: meta ? meta.private : null, // unknown: treated as private for log collection
+    };
+  };
 }

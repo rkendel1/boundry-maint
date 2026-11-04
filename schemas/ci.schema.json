@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "repositories": {
+      "default": [],
+      "description": "Repositories to inspect in addition to project and owned-package repositories",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_.-]+\\/[A-Za-z0-9_.-]+$"
+      }
+    },
+    "annotations": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "match": {
+            "type": "object",
+            "properties": {
+              "repository": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.-]+\\/[A-Za-z0-9_.-]+$"
+              },
+              "workflow": {
+                "description": "Workflow file path, e.g. .github/workflows/ci.yml",
+                "type": "string"
+              },
+              "job": {
+                "description": "Job id (the key under jobs:)",
+                "type": "string"
+              },
+              "step": {
+                "description": "Step display name",
+                "type": "string"
+              },
+              "script": {
+                "description": "Script path, for checks that run outside CI",
+                "type": "string"
+              }
+            },
+            "required": [
+              "repository"
+            ],
+            "description": "Every given field must match a discovered check (or define a new one if nothing matches)"
+          },
+          "name": {
+            "type": "string"
+          },
+          "types": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "version-freshness",
+                "version-pinning",
+                "version-consistency",
+                "release-consistency",
+                "dependency-compatibility",
+                "publication-validation",
+                "integration-validation"
+              ]
+            }
+          },
+          "packages": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9._-]*$"
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "package": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9][a-z0-9._-]*$"
+                },
+                "requirement": {
+                  "type": "string",
+                  "description": "\"latest\", \"exact\" (resolved must equal the declared pin), or a semver range such as \">=0.14.0\""
+                },
+                "enforcement": {
+                  "default": "fail",
+                  "description": "'report' = the check prints a notice but does not fail CI",
+                  "type": "string",
+                  "enum": [
+                    "fail",
+                    "report"
+                  ]
+                },
+                "note": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "package",
+                "requirement"
+              ]
+            }
+          },
+          "condition": {
+            "description": "What must be true, in words",
+            "type": "string"
+          },
+          "ignore": {
+            "description": "Not a version check; hide it",
+            "type": "boolean"
+          },
+          "note": {
+            "type": "string"
+          },
+          "reviewedAt": {
+            "description": "When a human last checked this annotation against the source",
+            "type": "string"
+          }
+        },
+        "required": [
+          "match"
+        ]
+      }
+    }
+  }
+}
