@@ -1,6 +1,6 @@
 # Collects registry, GitHub and project data, recalculates maintenance status,
 # commits data/ (the durable record), then publishes the dashboard.
-# A failed scan exits non-zero before the commit step, so previous data is never overwritten.
+# some A failed scan exits non-zero before the commit step, so previous data is never overwritten.
 name: Scan
 
 on:
