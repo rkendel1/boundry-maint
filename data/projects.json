@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T15:00:23.704Z",
+  "generatedAt": "2026-11-04T15:12:03.977Z",
   "projects": [
     {
       "id": "feltkit",
@@ -29,9 +29,9 @@
         "workflows": [
           "ci.yml"
         ],
-        "headVerified": null,
-        "lastVerifiedCommit": null,
-        "lastVerifiedAt": null
+        "headVerified": true,
+        "lastVerifiedCommit": "26a625598ca5d032353f8725f49e1f15af9b08d5",
+        "lastVerifiedAt": "2026-11-04T15:12:03.977Z"
       },
       "branch": "main",
       "commit": "26a625598ca5d032353f8725f49e1f15af9b08d5",
@@ -89,8 +89,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-04T15:00:23.704Z",
-      "lastSuccessfulScan": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z",
+      "lastSuccessfulScan": "2026-11-04T15:12:03.977Z"
     },
     {
       "id": "appport-services",
@@ -162,8 +162,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-04T15:00:23.704Z",
-      "lastSuccessfulScan": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z",
+      "lastSuccessfulScan": "2026-11-04T15:12:03.977Z"
     },
     {
       "id": "felt-ops",
@@ -183,12 +183,12 @@
           "ci.yml"
         ],
         "headVerified": true,
-        "lastVerifiedCommit": "051afa35a73658f609b91dc7be3eddd8d33fb75e",
-        "lastVerifiedAt": "2026-11-04T15:00:23.704Z"
+        "lastVerifiedCommit": "928c6982f447e598e1dcb33b3497712ba8092688",
+        "lastVerifiedAt": "2026-11-04T15:12:03.977Z"
       },
       "branch": "claude/keen-cannon-gxv0v3",
-      "commit": "051afa35a73658f609b91dc7be3eddd8d33fb75e",
-      "commitUrl": "https://github.com/rkendel1/felt-ops/commit/051afa35a73658f609b91dc7be3eddd8d33fb75e",
+      "commit": "928c6982f447e598e1dcb33b3497712ba8092688",
+      "commitUrl": "https://github.com/rkendel1/felt-ops/commit/928c6982f447e598e1dcb33b3497712ba8092688",
       "roots": [
         {
           "path": ".",
@@ -200,8 +200,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-04T15:00:23.704Z",
-      "lastSuccessfulScan": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z",
+      "lastSuccessfulScan": "2026-11-04T15:12:03.977Z"
     },
     {
       "id": "rust-ml-runtime",
@@ -463,8 +463,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-04T15:00:23.704Z",
-      "lastSuccessfulScan": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z",
+      "lastSuccessfulScan": "2026-11-04T15:12:03.977Z"
     }
   ]
 }

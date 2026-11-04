@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T15:00:23.704Z",
+  "generatedAt": "2026-11-04T15:12:03.977Z",
   "repositories": [
     {
       "repository": "rkendel1/3fx",
@@ -10,7 +10,7 @@
       "error": null,
       "workflowCount": 4,
       "scriptsInspected": 27,
-      "lastScanned": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z"
     },
     {
       "repository": "rkendel1/appport",
@@ -21,7 +21,7 @@
       "error": null,
       "workflowCount": 10,
       "scriptsInspected": 43,
-      "lastScanned": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z"
     },
     {
       "repository": "rkendel1/appport-services",
@@ -32,7 +32,7 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 2,
-      "lastScanned": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z"
     },
     {
       "repository": "rkendel1/appworks",
@@ -43,18 +43,18 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 23,
-      "lastScanned": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z"
     },
     {
       "repository": "rkendel1/felt-ops",
-      "commit": "051afa35a73658f609b91dc7be3eddd8d33fb75e",
+      "commit": "928c6982f447e598e1dcb33b3497712ba8092688",
       "defaultBranch": "claude/keen-cannon-gxv0v3",
       "private": false,
       "status": "ok",
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 4,
-      "lastScanned": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z"
     },
     {
       "repository": "rkendel1/feltdb",
@@ -65,7 +65,7 @@
       "error": "404 {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/repos#get-a-repository\",\"status\":\"404\"} (https://api.github.com/repos/rkendel1/feltdb) — the scan token cannot read this repository",
       "workflowCount": 0,
       "scriptsInspected": 0,
-      "lastScanned": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z"
     },
     {
       "repository": "rkendel1/feltkit",
@@ -76,7 +76,7 @@
       "error": null,
       "workflowCount": 2,
       "scriptsInspected": 7,
-      "lastScanned": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z"
     },
     {
       "repository": "rkendel1/flow_db",
@@ -87,7 +87,7 @@
       "error": null,
       "workflowCount": 9,
       "scriptsInspected": 149,
-      "lastScanned": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z"
     },
     {
       "repository": "rkendel1/github-integration",
@@ -98,7 +98,7 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 2,
-      "lastScanned": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z"
     },
     {
       "repository": "rkendel1/resolver",
@@ -109,7 +109,7 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 2,
-      "lastScanned": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z"
     },
     {
       "repository": "rkendel1/rust-ml-runtime",
@@ -120,7 +120,7 @@
       "error": null,
       "workflowCount": 3,
       "scriptsInspected": 15,
-      "lastScanned": "2026-11-04T15:00:23.704Z"
+      "lastScanned": "2026-11-04T15:12:03.977Z"
     }
   ],
   "workflows": [
@@ -497,26 +497,26 @@
         "pull requests",
         "manual"
       ],
-      "result": "in-progress",
+      "result": "passing",
       "latestRun": {
         "runId": 41853366638,
         "url": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638",
-        "status": "queued",
-        "conclusion": null,
-        "branch": "claude/keen-cannon-gxv0v3",
-        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
-        "event": "push",
-        "at": "2026-11-04T15:01:02Z"
-      },
-      "lastSuccess": {
-        "runId": 41760799869,
-        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41760799869",
         "status": "completed",
         "conclusion": "success",
         "branch": "claude/keen-cannon-gxv0v3",
-        "sha": "051afa35a73658f609b91dc7be3eddd8d33fb75e",
+        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
         "event": "push",
-        "at": "2026-11-04T02:27:59Z"
+        "at": "2026-11-04T15:02:21Z"
+      },
+      "lastSuccess": {
+        "runId": 41853366638,
+        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "claude/keen-cannon-gxv0v3",
+        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
+        "event": "push",
+        "at": "2026-11-04T15:02:21Z"
       },
       "lastFailure": {
         "runId": 41734620444,
@@ -540,26 +540,26 @@
         "pull requests",
         "manual"
       ],
-      "result": "in-progress",
+      "result": "passing",
       "latestRun": {
         "runId": 41852798094,
         "url": "https://github.com/rkendel1/feltkit/actions/runs/41852798094",
-        "status": "in_progress",
-        "conclusion": null,
-        "branch": "main",
-        "sha": "26a625598ca5d032353f8725f49e1f15af9b08d5",
-        "event": "push",
-        "at": "2026-11-04T14:57:47Z"
-      },
-      "lastSuccess": {
-        "runId": 41849204448,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/41849204448",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "b44d696c8bd7680a0ff6ac04afc43af667bd7846",
+        "sha": "26a625598ca5d032353f8725f49e1f15af9b08d5",
         "event": "push",
-        "at": "2026-11-04T14:43:22Z"
+        "at": "2026-11-04T15:07:27Z"
+      },
+      "lastSuccess": {
+        "runId": 41852798094,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/41852798094",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "26a625598ca5d032353f8725f49e1f15af9b08d5",
+        "event": "push",
+        "at": "2026-11-04T15:07:27Z"
       },
       "lastFailure": {
         "runId": 41849172730,
@@ -3150,32 +3150,32 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/felt-ops/blob/051afa35a73658f609b91dc7be3eddd8d33fb75e/.github/workflows/ci.yml#L20"
+          "url": "https://github.com/rkendel1/felt-ops/blob/928c6982f447e598e1dcb33b3497712ba8092688/.github/workflows/ci.yml#L20"
         }
       ],
       "annotated": false,
       "note": null,
-      "result": "in-progress",
+      "result": "passing",
       "resultNote": null,
       "lastRun": {
         "runId": 41853366638,
         "url": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638",
-        "status": "queued",
-        "conclusion": null,
-        "branch": "claude/keen-cannon-gxv0v3",
-        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
-        "event": "push",
-        "at": "2026-11-04T15:01:02Z"
-      },
-      "lastSuccess": {
-        "runId": 41760799869,
-        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41760799869",
         "status": "completed",
         "conclusion": "success",
         "branch": "claude/keen-cannon-gxv0v3",
-        "sha": "051afa35a73658f609b91dc7be3eddd8d33fb75e",
+        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
         "event": "push",
-        "at": "2026-11-04T02:27:59Z"
+        "at": "2026-11-04T15:02:21Z"
+      },
+      "lastSuccess": {
+        "runId": 41853366638,
+        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "claude/keen-cannon-gxv0v3",
+        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
+        "event": "push",
+        "at": "2026-11-04T15:02:21Z"
       },
       "lastFailure": null,
       "jobUrl": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638/job/126655305539",
@@ -3223,40 +3223,40 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/felt-ops/blob/051afa35a73658f609b91dc7be3eddd8d33fb75e/.github/workflows/ci.yml#L27"
+          "url": "https://github.com/rkendel1/felt-ops/blob/928c6982f447e598e1dcb33b3497712ba8092688/.github/workflows/ci.yml#L27"
         },
         {
           "path": "scripts/scenario-7-platform-upgrade.ts",
-          "url": "https://github.com/rkendel1/felt-ops/blob/051afa35a73658f609b91dc7be3eddd8d33fb75e/scripts/scenario-7-platform-upgrade.ts"
+          "url": "https://github.com/rkendel1/felt-ops/blob/928c6982f447e598e1dcb33b3497712ba8092688/scripts/scenario-7-platform-upgrade.ts"
         },
         {
           "path": "scripts/_platform-old-phase.ts",
-          "url": "https://github.com/rkendel1/felt-ops/blob/051afa35a73658f609b91dc7be3eddd8d33fb75e/scripts/_platform-old-phase.ts"
+          "url": "https://github.com/rkendel1/felt-ops/blob/928c6982f447e598e1dcb33b3497712ba8092688/scripts/_platform-old-phase.ts"
         }
       ],
       "annotated": false,
       "note": null,
-      "result": "in-progress",
+      "result": "passing",
       "resultNote": null,
       "lastRun": {
         "runId": 41853366638,
         "url": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638",
-        "status": "queued",
-        "conclusion": null,
-        "branch": "claude/keen-cannon-gxv0v3",
-        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
-        "event": "push",
-        "at": "2026-11-04T15:01:02Z"
-      },
-      "lastSuccess": {
-        "runId": 41760799869,
-        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41760799869",
         "status": "completed",
         "conclusion": "success",
         "branch": "claude/keen-cannon-gxv0v3",
-        "sha": "051afa35a73658f609b91dc7be3eddd8d33fb75e",
+        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
         "event": "push",
-        "at": "2026-11-04T02:27:59Z"
+        "at": "2026-11-04T15:02:21Z"
+      },
+      "lastSuccess": {
+        "runId": 41853366638,
+        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "claude/keen-cannon-gxv0v3",
+        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
+        "event": "push",
+        "at": "2026-11-04T15:02:21Z"
       },
       "lastFailure": null,
       "jobUrl": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638/job/126655305539",
@@ -3301,27 +3301,27 @@
       ],
       "annotated": false,
       "note": null,
-      "result": "in-progress",
+      "result": "passing",
       "resultNote": null,
       "lastRun": {
         "runId": 41852798094,
         "url": "https://github.com/rkendel1/feltkit/actions/runs/41852798094",
-        "status": "in_progress",
-        "conclusion": null,
-        "branch": "main",
-        "sha": "26a625598ca5d032353f8725f49e1f15af9b08d5",
-        "event": "push",
-        "at": "2026-11-04T14:57:47Z"
-      },
-      "lastSuccess": {
-        "runId": 41849204448,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/41849204448",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "b44d696c8bd7680a0ff6ac04afc43af667bd7846",
+        "sha": "26a625598ca5d032353f8725f49e1f15af9b08d5",
         "event": "push",
-        "at": "2026-11-04T14:43:22Z"
+        "at": "2026-11-04T15:07:27Z"
+      },
+      "lastSuccess": {
+        "runId": 41852798094,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/41852798094",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "26a625598ca5d032353f8725f49e1f15af9b08d5",
+        "event": "push",
+        "at": "2026-11-04T15:07:27Z"
       },
       "lastFailure": {
         "runId": 41849172730,
@@ -3539,27 +3539,27 @@
       ],
       "annotated": true,
       "note": "Read from scripts/release-check.mjs at rkendel1/feltkit@65744b3.",
-      "result": "in-progress",
+      "result": "passing",
       "resultNote": null,
       "lastRun": {
         "runId": 41852798094,
         "url": "https://github.com/rkendel1/feltkit/actions/runs/41852798094",
-        "status": "in_progress",
-        "conclusion": null,
-        "branch": "main",
-        "sha": "26a625598ca5d032353f8725f49e1f15af9b08d5",
-        "event": "push",
-        "at": "2026-11-04T14:57:47Z"
-      },
-      "lastSuccess": {
-        "runId": 41849204448,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/41849204448",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "b44d696c8bd7680a0ff6ac04afc43af667bd7846",
+        "sha": "26a625598ca5d032353f8725f49e1f15af9b08d5",
         "event": "push",
-        "at": "2026-11-04T14:43:22Z"
+        "at": "2026-11-04T15:07:27Z"
+      },
+      "lastSuccess": {
+        "runId": 41852798094,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/41852798094",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "26a625598ca5d032353f8725f49e1f15af9b08d5",
+        "event": "push",
+        "at": "2026-11-04T15:07:27Z"
       },
       "lastFailure": null,
       "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/41852798094/job/126653300947",
@@ -3604,27 +3604,27 @@
       ],
       "annotated": false,
       "note": null,
-      "result": "in-progress",
+      "result": "passing",
       "resultNote": null,
       "lastRun": {
         "runId": 41852798094,
         "url": "https://github.com/rkendel1/feltkit/actions/runs/41852798094",
-        "status": "in_progress",
-        "conclusion": null,
-        "branch": "main",
-        "sha": "26a625598ca5d032353f8725f49e1f15af9b08d5",
-        "event": "push",
-        "at": "2026-11-04T14:57:47Z"
-      },
-      "lastSuccess": {
-        "runId": 41849204448,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/41849204448",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "b44d696c8bd7680a0ff6ac04afc43af667bd7846",
+        "sha": "26a625598ca5d032353f8725f49e1f15af9b08d5",
         "event": "push",
-        "at": "2026-11-04T14:43:22Z"
+        "at": "2026-11-04T15:07:27Z"
+      },
+      "lastSuccess": {
+        "runId": 41852798094,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/41852798094",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "26a625598ca5d032353f8725f49e1f15af9b08d5",
+        "event": "push",
+        "at": "2026-11-04T15:07:27Z"
       },
       "lastFailure": {
         "runId": 41849172730,

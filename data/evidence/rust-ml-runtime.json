@@ -5,7 +5,7 @@
       "project": "rust-ml-runtime",
       "repository": "rkendel1/rust-ml-runtime",
       "commit": "ccb81463585a38d12cf8b8892595a2e42bf0748d",
-      "collectedAt": "2026-11-04T15:00:23.704Z",
+      "collectedAt": "2026-11-04T15:12:03.977Z",
       "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692",
       "passed": false,
       "checks": {

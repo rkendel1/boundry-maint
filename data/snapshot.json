@@ -3,8 +3,8 @@
   "scan": {
     "runId": "41853208692",
     "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692",
-    "startedAt": "2026-11-04T15:00:23.704Z",
-    "finishedAt": "2026-11-04T15:01:58.856Z",
+    "startedAt": "2026-11-04T15:12:03.977Z",
+    "finishedAt": "2026-11-04T15:13:30.654Z",
     "status": "partial",
     "trigger": "workflow_dispatch",
     "configCommit": "be4cf956cc90f71488da501210c5ac004ddcfd23",
@@ -17,20 +17,20 @@
       "ciChecks": 93,
       "ciChecksFailing": 1,
       "installations": 79,
-      "maintenanceOpen": 8
+      "maintenanceOpen": 7
     },
     "errors": [
       {
         "source": "github",
         "target": "rkendel1/feltdb",
         "message": "404 {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/repos#get-a-repository\",\"status\":\"404\"} (https://api.github.com/repos/rkendel1/feltdb)",
-        "at": "2026-11-04T15:00:23.704Z"
+        "at": "2026-11-04T15:12:03.977Z"
       },
       {
         "source": "ci",
         "target": "rkendel1/feltdb",
         "message": "404 {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/repos#get-a-repository\",\"status\":\"404\"} (https://api.github.com/repos/rkendel1/feltdb)",
-        "at": "2026-11-04T15:00:23.704Z"
+        "at": "2026-11-04T15:12:03.977Z"
       }
     ]
   },
@@ -450,8 +450,8 @@
       "root": ".",
       "name": "@feltdb/feltkit",
       "registry": "npm",
-      "resolvedVersion": "0.3.13",
-      "status": "patch-behind",
+      "resolvedVersion": "0.3.14",
+      "status": "current",
       "managed": true
     },
     {
@@ -2641,12 +2641,6 @@
       "targetVersion": "1.54.1"
     },
     {
-      "key": "felt-ops|package-lock.json|npm:@feltdb/feltkit",
-      "status": "update-required",
-      "currentVersion": "0.3.13",
-      "targetVersion": "0.3.14"
-    },
-    {
       "key": "feltkit|package-lock.json|npm:@appport/sdk",
       "status": "update-required",
       "currentVersion": "1.4.0",
@@ -2663,6 +2657,12 @@
       "status": "update-required",
       "currentVersion": "1.2.0",
       "targetVersion": "1.2.1"
+    },
+    {
+      "key": "felt-ops|package-lock.json|npm:@feltdb/feltkit",
+      "status": "updated-verified",
+      "currentVersion": "0.3.14",
+      "targetVersion": "0.3.14"
     }
   ],
   "ci": [
@@ -2800,23 +2800,23 @@
     },
     {
       "id": "rkendel1/felt-ops:.github/workflows/ci.yml#verify/run-npm-ci",
-      "result": "in-progress"
+      "result": "passing"
     },
     {
       "id": "rkendel1/felt-ops:.github/workflows/ci.yml#verify/scenario-7-platform-upgrade-from-feltkit-0-3-12-feltdb-0-20-",
-      "result": "in-progress"
+      "result": "passing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/install",
-      "result": "in-progress"
+      "result": "passing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
-      "result": "in-progress"
+      "result": "passing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e/install",
-      "result": "in-progress"
+      "result": "passing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/publish.yml#publish/install",
@@ -3041,27 +3041,62 @@
   ],
   "changes": {
     "newReleases": [],
-    "versionChanges": [],
-    "newDependencies": [],
-    "removedDependencies": [],
-    "statusChanges": [],
-    "newEvidence": [
-      {
-        "project": "appport-services",
-        "commit": "ac20b5a8eb3d71d6fe8bd1aaf6122e459d5ce5e2",
-        "passed": false
-      },
+    "versionChanges": [
       {
         "project": "felt-ops",
-        "commit": "051afa35a73658f609b91dc7be3eddd8d33fb75e",
+        "root": ".",
+        "name": "@feltdb/feltkit",
+        "from": "0.3.13",
+        "to": "0.3.14"
+      }
+    ],
+    "newDependencies": [],
+    "removedDependencies": [],
+    "statusChanges": [
+      {
+        "key": "felt-ops|package-lock.json|npm:@feltdb/feltkit",
+        "from": "update-required",
+        "to": "updated-verified"
+      }
+    ],
+    "newEvidence": [
+      {
+        "project": "feltkit",
+        "commit": "26a625598ca5d032353f8725f49e1f15af9b08d5",
         "passed": true
       },
       {
-        "project": "rust-ml-runtime",
-        "commit": "ccb81463585a38d12cf8b8892595a2e42bf0748d",
-        "passed": false
+        "project": "felt-ops",
+        "commit": "928c6982f447e598e1dcb33b3497712ba8092688",
+        "passed": true
       }
     ],
-    "ciResultChanges": []
+    "ciResultChanges": [
+      {
+        "id": "rkendel1/felt-ops:.github/workflows/ci.yml#verify/run-npm-ci",
+        "from": "in-progress",
+        "to": "passing"
+      },
+      {
+        "id": "rkendel1/felt-ops:.github/workflows/ci.yml#verify/scenario-7-platform-upgrade-from-feltkit-0-3-12-feltdb-0-20-",
+        "from": "in-progress",
+        "to": "passing"
+      },
+      {
+        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/install",
+        "from": "in-progress",
+        "to": "passing"
+      },
+      {
+        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
+        "from": "in-progress",
+        "to": "passing"
+      },
+      {
+        "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e/install",
+        "from": "in-progress",
+        "to": "passing"
+      }
+    ]
   }
 }
