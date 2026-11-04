@@ -1,0 +1,81 @@
+{
+  "project": "compute",
+  "records": [
+    {
+      "project": "compute",
+      "repository": "rkendel1/compute",
+      "commit": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+      "collectedAt": "2026-11-04T15:32:00.046Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41858685696",
+      "passed": false,
+      "checks": {
+        "resolution": "pass",
+        "workflows": "fail"
+      },
+      "runs": [
+        {
+          "workflow": "test.yml",
+          "runId": 41353667795,
+          "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+          "status": "completed",
+          "conclusion": "failure",
+          "headSha": "b8607ae40561183a2e4a985916bb621b6d31d1c7"
+        }
+      ],
+      "resolved": {
+        "compatibility/published-stack|npm:@appport/core": "1.0.3",
+        "compatibility/published-stack|npm:@appport/github": "1.0.2",
+        "compatibility/published-stack|npm:@appport/runtime": "0.4.6",
+        "compatibility/published-stack|npm:@appport/server": "1.0.2",
+        "compatibility/published-stack|npm:@appport/services": "0.4.11",
+        "compatibility/published-stack|npm:@appport/transport-http": "1.0.2",
+        "compatibility/published-stack|npm:@appport/transport-inprocess": "1.0.2",
+        "compatibility/published-stack|npm:@appport/transport-websocket": "1.0.2",
+        "compatibility/published-stack|npm:@feltdb/core": "0.11.9",
+        "packages/compute-appport|npm:@appport/authorization": "1.0.2",
+        "packages/compute-appport|npm:@appport/core": "1.0.3",
+        "packages/compute-appport|npm:@appport/protocol": "1.0.2",
+        "packages/compute-appport|npm:@appport/schema": "1.0.2",
+        "packages/compute-state-model|npm:@feltdb/core": "0.11.9",
+        "crates/compute-agent|crates:tokio": "1.53.1",
+        "crates/compute-cli|crates:serde": "1.0.229",
+        "crates/compute-cli|crates:tokio": "1.53.1",
+        "crates/compute-core|crates:serde": "1.0.229",
+        "crates/compute-egress|crates:serde": "1.0.229",
+        "crates/compute-egress|crates:tokio": "1.53.1",
+        "crates/compute-environment|crates:serde": "1.0.229",
+        "crates/compute-environment|crates:tokio": "1.53.1",
+        "crates/compute-guest|crates:serde": "1.0.229",
+        "crates/compute-guest|crates:tokio": "1.53.1",
+        "crates/compute-network|crates:serde": "1.0.229",
+        "crates/compute-network|crates:tokio": "1.53.1",
+        "crates/compute-placement|crates:serde": "1.0.229",
+        "crates/compute-placement|crates:tokio": "1.53.1",
+        "crates/compute-policy|crates:serde": "1.0.229",
+        "crates/compute-project|crates:serde": "1.0.229",
+        "crates/compute-provider-cloudflare|crates:serde": "1.0.229",
+        "crates/compute-provider-cloudflare|crates:tokio": "1.53.1",
+        "crates/compute-provider|crates:serde": "1.0.229",
+        "crates/compute-provider|crates:tokio": "1.53.1",
+        "crates/compute-runtime-conformance|crates:tokio": "1.53.1",
+        "crates/compute-runtime-process|crates:tokio": "1.53.1",
+        "crates/compute-runtime-process|crates:serde": "1.0.229",
+        "crates/compute-runtime-wasm|crates:tokio": "1.53.1",
+        "crates/compute-runtime|crates:serde": "1.0.229",
+        "crates/compute-runtime|crates:tokio": "1.53.1",
+        "crates/compute-stack-agent|crates:tokio": "1.53.1",
+        "crates/compute-state-feltdb|crates:feltdb-client": "0.2.1",
+        "crates/compute-state-feltdb|crates:serde": "1.0.229",
+        "crates/compute-state-feltdb|crates:tokio": "1.53.1",
+        "crates/compute-state-file|crates:serde": "1.0.229",
+        "crates/compute-state-file|crates:tokio": "1.53.1",
+        "crates/compute-state-memory|crates:tokio": "1.53.1",
+        "crates/compute-state|crates:serde": "1.0.229",
+        "crates/compute-state|crates:tokio": "1.53.1",
+        "crates/compute-worker-github|crates:serde": "1.0.229",
+        "crates/compute-worker-github|crates:tokio": "1.53.1",
+        "integration/chip-fx|crates:tokio": "1.53.3"
+      }
+    }
+  ]
+}

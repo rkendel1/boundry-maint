@@ -1,0 +1,41 @@
+{
+  "project": "flow-db",
+  "records": [
+    {
+      "project": "flow-db",
+      "repository": "rkendel1/flow_db",
+      "commit": "99e56e3421593b55966f4c18feb6c954d3001d2a",
+      "collectedAt": "2026-11-04T15:32:00.046Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41858685696",
+      "passed": false,
+      "checks": {
+        "resolution": "fail",
+        "workflows": "pass"
+      },
+      "runs": [
+        {
+          "workflow": "ci.yml",
+          "runId": 41751047630,
+          "url": "https://github.com/rkendel1/flow_db/actions/runs/41751047630",
+          "status": "completed",
+          "conclusion": "success",
+          "headSha": "99e56e3421593b55966f4c18feb6c954d3001d2a"
+        }
+      ],
+      "resolved": {
+        "apps/managed-authority-cert|npm:@feltdb/core": "0.5.5",
+        "apps/managed-authority-cert|npm:@feltdb/webllm": "0.5.5",
+        "apps/release-smoke-055|npm:@feltdb/core": "0.5.5",
+        "crates/feltdb-client|crates:serde": "1.0.229",
+        "crates/feltdb-client|crates:tokio": "1.53.1",
+        "crates/feltdb-public-api-check|crates:tokio": "1.54.0",
+        "crates/feltdb-server|crates:serde": "1.0.229",
+        "crates/feltdb-server|crates:tokio": "1.53.1",
+        "crates/feltdb-wasm|crates:serde": "1.0.229",
+        "crates/feltdb-wasm|crates:tokio": "1.53.1",
+        "crates/feltdb|crates:serde": "1.0.229",
+        "crates/feltdb|crates:tokio": "1.53.1"
+      }
+    }
+  ]
+}

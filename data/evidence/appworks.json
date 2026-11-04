@@ -1,0 +1,51 @@
+{
+  "project": "appworks",
+  "records": [
+    {
+      "project": "appworks",
+      "repository": "rkendel1/appworks",
+      "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
+      "collectedAt": "2026-11-04T15:32:00.046Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41858685696",
+      "passed": true,
+      "checks": {
+        "resolution": "pass",
+        "workflows": "pass"
+      },
+      "runs": [
+        {
+          "workflow": "ci.yml",
+          "runId": 41691893962,
+          "url": "https://github.com/rkendel1/appworks/actions/runs/41691893962",
+          "status": "completed",
+          "conclusion": "success",
+          "headSha": "4cc8ea31e74dddb72761127537f9d17daf4a58bf"
+        }
+      ],
+      "resolved": {
+        "extractions/memos-reactions|npm:@appport/protocol": "1.2.0",
+        "extractions/memos-reactions|npm:@appport/sdk": "1.2.2",
+        "extractions/memos-reactions|npm:@appport/schema": "1.1.1",
+        "packages/assessment|npm:@appport/protocol": "1.3.0",
+        "packages/assessment|npm:@appport/schema": "1.1.3",
+        "packages/extraction|npm:@appport/protocol": "1.3.0",
+        "packages/extraction|npm:@appport/schema": "1.1.3",
+        "packages/recipe-runtime|npm:@appport/core": "1.4.0",
+        "packages/recipe-runtime|npm:@appport/protocol": "1.3.0",
+        "packages/recipe-runtime|npm:@appport/schema": "1.1.3",
+        "packages/recipe-runtime|npm:@feltdb/core": "0.18.0",
+        "packages/recipe-studio|npm:@appport/protocol": "1.3.0",
+        "packages/recipe|npm:@appport/integration": "1.2.2",
+        "packages/recipe|npm:@appport/protocol": "1.3.0",
+        "packages/recipe|npm:@appport/schema": "1.1.3",
+        "packages/recipe|npm:@appport/core": "1.4.0",
+        "packages/workspace|npm:@appport/client": "1.1.5",
+        "packages/workspace|npm:@appport/github": "1.0.2",
+        "packages/workspace|npm:@appport/protocol": "1.3.0",
+        "packages/workspace|npm:@appport/schema": "1.1.3",
+        "packages/workspace|npm:@feltdb/core": "0.18.0",
+        "packages/workspace|npm:@appport/sdk": "1.4.0"
+      }
+    }
+  ]
+}

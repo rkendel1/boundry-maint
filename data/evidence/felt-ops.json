@@ -50,6 +50,31 @@
       "resolved": {
         ".|npm:@feltdb/feltkit": "0.3.14"
       }
+    },
+    {
+      "project": "felt-ops",
+      "repository": "rkendel1/felt-ops",
+      "commit": "29aa672b13d7c899c652296cad079d122843ce30",
+      "collectedAt": "2026-11-04T15:32:00.046Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41858685696",
+      "passed": true,
+      "checks": {
+        "resolution": "pass",
+        "workflows": "pass"
+      },
+      "runs": [
+        {
+          "workflow": "ci.yml",
+          "runId": 41858559509,
+          "url": "https://github.com/rkendel1/felt-ops/actions/runs/41858559509",
+          "status": "completed",
+          "conclusion": "success",
+          "headSha": "29aa672b13d7c899c652296cad079d122843ce30"
+        }
+      ],
+      "resolved": {
+        ".|npm:@feltdb/feltkit": "0.3.14"
+      }
     }
   ]
 }

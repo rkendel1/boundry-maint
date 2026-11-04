@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T15:12:03.977Z",
+  "generatedAt": "2026-11-04T15:32:00.046Z",
   "releases": [
     {
       "package": "appport-core",
@@ -3640,6 +3640,352 @@
           "publishedAt": "2026-09-23T02:18:04.954518Z",
           "yanked": false,
           "prerelease": false
+        }
+      ]
+    },
+    {
+      "package": "authboundry-core",
+      "name": "@authboundry/core",
+      "registry": "npm",
+      "latestVersion": "1.16.0",
+      "versions": [
+        {
+          "version": "1.16.0",
+          "publishedAt": "2026-11-03T19:28:32.271Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.15.3",
+          "publishedAt": "2026-09-21T18:59:37.563Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.15.2",
+          "publishedAt": "2026-09-21T17:47:33.133Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.15.1",
+          "publishedAt": "2026-09-16T13:00:43.234Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.15.0",
+          "publishedAt": "2026-09-11T16:04:59.242Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.14.1",
+          "publishedAt": "2026-09-11T15:39:00.037Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.14.0",
+          "publishedAt": "2026-09-10T21:17:04.789Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.13.0",
+          "publishedAt": "2026-09-10T20:50:25.854Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.11.0",
+          "publishedAt": "2026-09-10T19:42:30.964Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.10.0",
+          "publishedAt": "2026-09-10T19:27:42.835Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.9.0",
+          "publishedAt": "2026-09-10T17:58:39.333Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.8.0",
+          "publishedAt": "2026-09-10T17:34:11.171Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.7.0",
+          "publishedAt": "2026-09-10T17:18:33.587Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.6.0",
+          "publishedAt": "2026-09-10T16:57:46.646Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.5.0",
+          "publishedAt": "2026-09-10T16:37:45.385Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.4.0",
+          "publishedAt": "2026-09-10T16:12:45.690Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.3.0",
+          "publishedAt": "2026-09-10T15:20:29.571Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.2.0",
+          "publishedAt": "2026-09-10T14:57:01.452Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.1.1",
+          "publishedAt": "2026-09-10T14:36:15.989Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.1.0",
+          "publishedAt": "2026-09-10T14:17:56.178Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.0.0",
+          "publishedAt": "2026-09-10T13:49:16.921Z",
+          "deprecated": null,
+          "prerelease": false
+        }
+      ]
+    },
+    {
+      "package": "authboundry",
+      "name": "authboundry",
+      "registry": "npm",
+      "latestVersion": "2.16.0",
+      "versions": [
+        {
+          "version": "2.16.0",
+          "publishedAt": "2026-11-03T19:29:03.395Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.15.3",
+          "publishedAt": "2026-09-21T18:59:19.998Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.15.2",
+          "publishedAt": "2026-09-21T17:47:35.740Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.15.1",
+          "publishedAt": "2026-09-16T12:55:35.420Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.15.0",
+          "publishedAt": "2026-09-11T16:05:01.154Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.14.1",
+          "publishedAt": "2026-09-11T15:39:01.743Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.14.0",
+          "publishedAt": "2026-09-10T21:17:06.538Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.13.0",
+          "publishedAt": "2026-09-10T20:50:27.758Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.11.0",
+          "publishedAt": "2026-09-10T19:42:33.043Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.10.0",
+          "publishedAt": "2026-09-10T19:27:44.787Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.9.0",
+          "publishedAt": "2026-09-10T17:58:41.008Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.8.0",
+          "publishedAt": "2026-09-10T17:34:13.326Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.7.0",
+          "publishedAt": "2026-09-10T17:18:35.712Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.6.0",
+          "publishedAt": "2026-09-10T16:57:48.329Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.5.0",
+          "publishedAt": "2026-09-10T16:37:47.106Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.4.0",
+          "publishedAt": "2026-09-10T16:12:47.595Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.3.0",
+          "publishedAt": "2026-09-10T15:20:31.731Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.2.0",
+          "publishedAt": "2026-09-10T14:57:03.520Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.1.1",
+          "publishedAt": "2026-09-10T14:36:17.993Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.1.0",
+          "publishedAt": "2026-09-10T14:18:32.993Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "2.0.0",
+          "publishedAt": "2026-09-10T13:11:01.203Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.0.0",
+          "publishedAt": "2026-09-10T12:56:11.759Z",
+          "deprecated": "Moved to @authboundry/core. Install @authboundry/core for new applications.",
+          "prerelease": false
+        }
+      ]
+    },
+    {
+      "package": "authboundry-bridge",
+      "name": "@authboundry/bridge",
+      "registry": "npm",
+      "latestVersion": "0.1.3",
+      "versions": [
+        {
+          "version": "0.1.3",
+          "publishedAt": "2026-09-21T18:59:17.479Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.1.2",
+          "publishedAt": "2026-09-21T17:46:22.510Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.1.1",
+          "publishedAt": "2026-09-16T12:59:41.338Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.1.0",
+          "publishedAt": "2026-09-14T20:07:26.050Z",
+          "deprecated": null,
+          "prerelease": false
+        }
+      ]
+    },
+    {
+      "package": "appport-assessment",
+      "name": "@appport/assessment",
+      "registry": "npm",
+      "latestVersion": "0.1.0",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishedAt": "2026-11-03T18:17:42.488Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.0.0-stage",
+          "publishedAt": "2026-11-03T18:13:33.794Z",
+          "deprecated": null,
+          "prerelease": true
+        }
+      ]
+    },
+    {
+      "package": "appport-extraction",
+      "name": "@appport/extraction",
+      "registry": "npm",
+      "latestVersion": "0.1.0",
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishedAt": "2026-11-03T18:14:33.413Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.0.0-stage",
+          "publishedAt": "2026-11-03T18:13:37.326Z",
+          "deprecated": null,
+          "prerelease": true
         }
       ]
     },

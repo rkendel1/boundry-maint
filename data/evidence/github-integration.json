@@ -1,0 +1,33 @@
+{
+  "project": "github-integration",
+  "records": [
+    {
+      "project": "github-integration",
+      "repository": "rkendel1/github-integration",
+      "commit": "d51dcd156279fb85476479e490dcab41fcbe4fa7",
+      "collectedAt": "2026-11-04T15:32:00.046Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41858685696",
+      "passed": true,
+      "checks": {
+        "resolution": "pass",
+        "workflows": "pass"
+      },
+      "runs": [
+        {
+          "workflow": "ci.yml",
+          "runId": 36575424337,
+          "url": "https://github.com/rkendel1/github-integration/actions/runs/36575424337",
+          "status": "completed",
+          "conclusion": "success",
+          "headSha": "d51dcd156279fb85476479e490dcab41fcbe4fa7"
+        }
+      ],
+      "resolved": {
+        ".|npm:@appport/appboundry": "1.1.1",
+        ".|npm:@appport/sdk": "1.1.22",
+        ".|npm:@appport/services": "0.4.6",
+        ".|npm:@feltdb/core": "0.11.9"
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T15:12:03.977Z",
+  "generatedAt": "2026-11-04T15:32:00.046Z",
   "projects": [
     {
       "id": "feltkit",
@@ -31,7 +31,7 @@
         ],
         "headVerified": true,
         "lastVerifiedCommit": "26a625598ca5d032353f8725f49e1f15af9b08d5",
-        "lastVerifiedAt": "2026-11-04T15:12:03.977Z"
+        "lastVerifiedAt": "2026-11-04T15:32:00.046Z"
       },
       "branch": "main",
       "commit": "26a625598ca5d032353f8725f49e1f15af9b08d5",
@@ -89,8 +89,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-04T15:12:03.977Z",
-      "lastSuccessfulScan": "2026-11-04T15:12:03.977Z"
+      "lastScanned": "2026-11-04T15:32:00.046Z",
+      "lastSuccessfulScan": "2026-11-04T15:32:00.046Z"
     },
     {
       "id": "appport-services",
@@ -162,8 +162,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-04T15:12:03.977Z",
-      "lastSuccessfulScan": "2026-11-04T15:12:03.977Z"
+      "lastScanned": "2026-11-04T15:32:00.046Z",
+      "lastSuccessfulScan": "2026-11-04T15:32:00.046Z"
     },
     {
       "id": "felt-ops",
@@ -183,12 +183,12 @@
           "ci.yml"
         ],
         "headVerified": true,
-        "lastVerifiedCommit": "928c6982f447e598e1dcb33b3497712ba8092688",
-        "lastVerifiedAt": "2026-11-04T15:12:03.977Z"
+        "lastVerifiedCommit": "29aa672b13d7c899c652296cad079d122843ce30",
+        "lastVerifiedAt": "2026-11-04T15:32:00.046Z"
       },
       "branch": "claude/keen-cannon-gxv0v3",
-      "commit": "928c6982f447e598e1dcb33b3497712ba8092688",
-      "commitUrl": "https://github.com/rkendel1/felt-ops/commit/928c6982f447e598e1dcb33b3497712ba8092688",
+      "commit": "29aa672b13d7c899c652296cad079d122843ce30",
+      "commitUrl": "https://github.com/rkendel1/felt-ops/commit/29aa672b13d7c899c652296cad079d122843ce30",
       "roots": [
         {
           "path": ".",
@@ -200,8 +200,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-04T15:12:03.977Z",
-      "lastSuccessfulScan": "2026-11-04T15:12:03.977Z"
+      "lastScanned": "2026-11-04T15:32:00.046Z",
+      "lastSuccessfulScan": "2026-11-04T15:32:00.046Z"
     },
     {
       "id": "rust-ml-runtime",
@@ -463,8 +463,1473 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-04T15:12:03.977Z",
-      "lastSuccessfulScan": "2026-11-04T15:12:03.977Z"
+      "lastScanned": "2026-11-04T15:32:00.046Z",
+      "lastSuccessfulScan": "2026-11-04T15:32:00.046Z"
+    },
+    {
+      "id": "appboundry",
+      "name": "AppBoundry",
+      "repository": "rkendel1/appboundry",
+      "managedPackages": [
+        "appport-authorization",
+        "appport-cli",
+        "appport-client",
+        "appport-core",
+        "appport-generators",
+        "appport-mcp",
+        "appport-mobile",
+        "appport-protocol",
+        "appport-schema",
+        "appport-sdk",
+        "appport-server",
+        "appport-services",
+        "appport-transport-electron",
+        "appport-transport-http",
+        "appport-transport-inprocess",
+        "appport-transport-tauri",
+        "appport-transport-websocket",
+        "feltdb-core"
+      ],
+      "missingManagedPackages": [],
+      "catalogPackagesNotManaged": [
+        "typescript"
+      ],
+      "discoveredDependencyCount": 52,
+      "warnings": [
+        "apps/cloud-platform/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "apps/cloud-portal/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "deploy/platform/package.json: several lockfiles in deploy/platform; resolved from deploy/platform/pnpm-lock.yaml (packageManager: pnpm)",
+        "examples/appboundry-explorer/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "examples/appboundry/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "examples/application-capabilities/commerce/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "examples/application-capabilities/dynamic-consumer/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "examples/application-capabilities/invoicing/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "examples/application-contracts/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "examples/contract-first-taskboard/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "examples/documents/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "examples/materialization-reference/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "examples/mobile/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "examples/todos/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "examples/world/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "integrations/feltdb/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "packages/appboundry-host/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "packages/appboundry-runtime/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "packages/appboundry/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "packages/cli/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "studio/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)"
+      ],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ],
+        "headVerified": null,
+        "lastVerifiedCommit": null,
+        "lastVerifiedAt": null
+      },
+      "branch": "main",
+      "commit": "4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9",
+      "commitUrl": "https://github.com/rkendel1/appboundry/commit/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9",
+      "roots": [
+        {
+          "path": "apps/cloud-platform",
+          "ecosystem": "javascript",
+          "manifest": "apps/cloud-platform/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/cloud-platform"
+        },
+        {
+          "path": "apps/cloud-portal",
+          "ecosystem": "javascript",
+          "manifest": "apps/cloud-portal/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/cloud-portal"
+        },
+        {
+          "path": "deploy/platform",
+          "ecosystem": "javascript",
+          "manifest": "deploy/platform/package.json",
+          "lockfile": "deploy/platform/pnpm-lock.yaml",
+          "name": "appboundry-platform"
+        },
+        {
+          "path": "examples/appboundry-explorer",
+          "ecosystem": "javascript",
+          "manifest": "examples/appboundry-explorer/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/example-appboundry-explorer"
+        },
+        {
+          "path": "examples/appboundry",
+          "ecosystem": "javascript",
+          "manifest": "examples/appboundry/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/example-appboundry"
+        },
+        {
+          "path": "examples/application-capabilities/commerce",
+          "ecosystem": "javascript",
+          "manifest": "examples/application-capabilities/commerce/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/example-commerce"
+        },
+        {
+          "path": "examples/application-capabilities/dynamic-consumer",
+          "ecosystem": "javascript",
+          "manifest": "examples/application-capabilities/dynamic-consumer/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/example-dynamic-consumer"
+        },
+        {
+          "path": "examples/application-capabilities/invoicing",
+          "ecosystem": "javascript",
+          "manifest": "examples/application-capabilities/invoicing/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/example-invoicing"
+        },
+        {
+          "path": "examples/application-contracts",
+          "ecosystem": "javascript",
+          "manifest": "examples/application-contracts/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/example-application-contracts"
+        },
+        {
+          "path": "examples/contract-first-taskboard",
+          "ecosystem": "javascript",
+          "manifest": "examples/contract-first-taskboard/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/example-taskboard"
+        },
+        {
+          "path": "examples/documents",
+          "ecosystem": "javascript",
+          "manifest": "examples/documents/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/example-documents"
+        },
+        {
+          "path": "examples/materialization-reference",
+          "ecosystem": "javascript",
+          "manifest": "examples/materialization-reference/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/example-materialization-reference"
+        },
+        {
+          "path": "examples/mobile",
+          "ecosystem": "javascript",
+          "manifest": "examples/mobile/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/example-mobile"
+        },
+        {
+          "path": "examples/todos",
+          "ecosystem": "javascript",
+          "manifest": "examples/todos/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/example-todos"
+        },
+        {
+          "path": "examples/world-external-client",
+          "ecosystem": "javascript",
+          "manifest": "examples/world-external-client/package.json",
+          "lockfile": "examples/world-external-client/package-lock.json",
+          "name": "@appport/example-world-external-client"
+        },
+        {
+          "path": "examples/world",
+          "ecosystem": "javascript",
+          "manifest": "examples/world/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/example-world"
+        },
+        {
+          "path": "integrations/feltdb",
+          "ecosystem": "javascript",
+          "manifest": "integrations/feltdb/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@feltdb/appport"
+        },
+        {
+          "path": ".",
+          "ecosystem": "javascript",
+          "manifest": "package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "appport-monorepo"
+        },
+        {
+          "path": "packages/appboundry-host",
+          "ecosystem": "javascript",
+          "manifest": "packages/appboundry-host/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/appboundry-host"
+        },
+        {
+          "path": "packages/appboundry-runtime",
+          "ecosystem": "javascript",
+          "manifest": "packages/appboundry-runtime/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/appboundry-runtime"
+        },
+        {
+          "path": "packages/appboundry",
+          "ecosystem": "javascript",
+          "manifest": "packages/appboundry/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/appboundry"
+        },
+        {
+          "path": "packages/cli",
+          "ecosystem": "javascript",
+          "manifest": "packages/cli/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "appport"
+        },
+        {
+          "path": "studio",
+          "ecosystem": "javascript",
+          "manifest": "studio/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/studio"
+        },
+        {
+          "path": "examples/appboundry/appport/wasm",
+          "ecosystem": "rust",
+          "manifest": "examples/appboundry/appport/wasm/Cargo.toml",
+          "lockfile": "examples/appboundry/appport/wasm/Cargo.lock",
+          "name": "appport_appboundry"
+        },
+        {
+          "path": "examples/todos/appport/wasm",
+          "ecosystem": "rust",
+          "manifest": "examples/todos/appport/wasm/Cargo.toml",
+          "lockfile": "examples/todos/appport/wasm/Cargo.lock",
+          "name": "appport_todos"
+        },
+        {
+          "path": "external/wasm-barcode",
+          "ecosystem": "rust",
+          "manifest": "external/wasm-barcode/Cargo.toml",
+          "lockfile": "external/wasm-barcode/Cargo.lock",
+          "name": "external-barcode-wasm"
+        },
+        {
+          "path": "integrations/feltdb/test/fixtures/counter-wasm-crate",
+          "ecosystem": "rust",
+          "manifest": "integrations/feltdb/test/fixtures/counter-wasm-crate/Cargo.toml",
+          "lockfile": "integrations/feltdb/test/fixtures/counter-wasm-crate/Cargo.lock",
+          "name": "counter-wasm-fixture"
+        },
+        {
+          "path": "integrations/feltdb/test/fixtures/counter-wasm-v2-crate",
+          "ecosystem": "rust",
+          "manifest": "integrations/feltdb/test/fixtures/counter-wasm-v2-crate/Cargo.toml",
+          "lockfile": "integrations/feltdb/test/fixtures/counter-wasm-v2-crate/Cargo.lock",
+          "name": "counter-wasm-v2-fixture"
+        },
+        {
+          "path": "integrations/feltdb/test/fixtures/f5-revocation/malicious-continuation",
+          "ecosystem": "rust",
+          "manifest": "integrations/feltdb/test/fixtures/f5-revocation/malicious-continuation/Cargo.toml",
+          "lockfile": "integrations/feltdb/test/fixtures/f5-revocation/malicious-continuation/Cargo.lock",
+          "name": "f5-malicious-continuation-fixture"
+        },
+        {
+          "path": "integrations/feltdb/test/fixtures/f5-revocation/revoke-window",
+          "ecosystem": "rust",
+          "manifest": "integrations/feltdb/test/fixtures/f5-revocation/revoke-window/Cargo.toml",
+          "lockfile": "integrations/feltdb/test/fixtures/f5-revocation/revoke-window/Cargo.lock",
+          "name": "f5-revoke-window-fixture"
+        },
+        {
+          "path": "integrations/feltdb/test/fixtures/f6-sources/tracker-estimate-b",
+          "ecosystem": "rust",
+          "manifest": "integrations/feltdb/test/fixtures/f6-sources/tracker-estimate-b/Cargo.toml",
+          "lockfile": "integrations/feltdb/test/fixtures/f6-sources/tracker-estimate-b/Cargo.lock",
+          "name": "f6-tracker-estimate-b"
+        },
+        {
+          "path": "integrations/feltdb/test/fixtures/f6-sources/tracker-history-a",
+          "ecosystem": "rust",
+          "manifest": "integrations/feltdb/test/fixtures/f6-sources/tracker-history-a/Cargo.toml",
+          "lockfile": "integrations/feltdb/test/fixtures/f6-sources/tracker-history-a/Cargo.lock",
+          "name": "f6-tracker-history-a"
+        },
+        {
+          "path": "integrations/feltdb/test/fixtures/f6-sources/tracker-history-c",
+          "ecosystem": "rust",
+          "manifest": "integrations/feltdb/test/fixtures/f6-sources/tracker-history-c/Cargo.toml",
+          "lockfile": "integrations/feltdb/test/fixtures/f6-sources/tracker-history-c/Cargo.lock",
+          "name": "f6-tracker-history-c"
+        },
+        {
+          "path": "integrations/feltdb/test/fixtures/malicious-consumer",
+          "ecosystem": "rust",
+          "manifest": "integrations/feltdb/test/fixtures/malicious-consumer/Cargo.toml",
+          "lockfile": "integrations/feltdb/test/fixtures/malicious-consumer/Cargo.lock",
+          "name": "malicious-consumer-fixture"
+        },
+        {
+          "path": "integrations/feltdb/test/fixtures/malicious-forbidden-import",
+          "ecosystem": "rust",
+          "manifest": "integrations/feltdb/test/fixtures/malicious-forbidden-import/Cargo.toml",
+          "lockfile": "integrations/feltdb/test/fixtures/malicious-forbidden-import/Cargo.lock",
+          "name": "malicious-forbidden-import-fixture"
+        },
+        {
+          "path": "integrations/feltdb/test/fixtures/malicious-provider",
+          "ecosystem": "rust",
+          "manifest": "integrations/feltdb/test/fixtures/malicious-provider/Cargo.toml",
+          "lockfile": "integrations/feltdb/test/fixtures/malicious-provider/Cargo.lock",
+          "name": "malicious-provider-fixture"
+        },
+        {
+          "path": "integrations/feltdb/test/fixtures/pr31/commerce",
+          "ecosystem": "rust",
+          "manifest": "integrations/feltdb/test/fixtures/pr31/commerce/Cargo.toml",
+          "lockfile": "integrations/feltdb/test/fixtures/pr31/commerce/Cargo.lock",
+          "name": "commerce-independent"
+        },
+        {
+          "path": "integrations/feltdb/test/fixtures/pr31/invoicing-v1",
+          "ecosystem": "rust",
+          "manifest": "integrations/feltdb/test/fixtures/pr31/invoicing-v1/Cargo.toml",
+          "lockfile": "integrations/feltdb/test/fixtures/pr31/invoicing-v1/Cargo.lock",
+          "name": "invoicing-independent-v1"
+        },
+        {
+          "path": "integrations/feltdb/test/fixtures/pr31/invoicing-v2",
+          "ecosystem": "rust",
+          "manifest": "integrations/feltdb/test/fixtures/pr31/invoicing-v2/Cargo.toml",
+          "lockfile": "integrations/feltdb/test/fixtures/pr31/invoicing-v2/Cargo.lock",
+          "name": "invoicing-independent-v2"
+        }
+      ],
+      "scanStatus": "ok",
+      "error": null,
+      "lastScanned": "2026-11-04T15:32:00.046Z",
+      "lastSuccessfulScan": "2026-11-04T15:32:00.046Z"
+    },
+    {
+      "id": "flow-db",
+      "name": "FeltDB (flow_db)",
+      "repository": "rkendel1/flow_db",
+      "managedPackages": [
+        "feltdb",
+        "feltdb-client",
+        "feltdb-core",
+        "feltdb-studio",
+        "feltdb-wasm",
+        "feltdb-webllm",
+        "serde",
+        "tokio"
+      ],
+      "missingManagedPackages": [],
+      "catalogPackagesNotManaged": [
+        "typescript"
+      ],
+      "discoveredDependencyCount": 141,
+      "warnings": [
+        "artifacts/commercial-audit-2026-11/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown",
+        "packages/wasm/pkg/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown",
+        "docs/audits/enroute/probe/Cargo.toml: no Cargo.lock found; resolved versions are unknown"
+      ],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ],
+        "headVerified": false,
+        "lastVerifiedCommit": null,
+        "lastVerifiedAt": null
+      },
+      "branch": "main",
+      "commit": "99e56e3421593b55966f4c18feb6c954d3001d2a",
+      "commitUrl": "https://github.com/rkendel1/flow_db/commit/99e56e3421593b55966f4c18feb6c954d3001d2a",
+      "roots": [
+        {
+          "path": "apps/default-project",
+          "ecosystem": "javascript",
+          "manifest": "apps/default-project/package.json",
+          "lockfile": "package-lock.json",
+          "name": "feltdb-example-app"
+        },
+        {
+          "path": "apps/managed-authority-cert",
+          "ecosystem": "javascript",
+          "manifest": "apps/managed-authority-cert/package.json",
+          "lockfile": "apps/managed-authority-cert/package-lock.json",
+          "name": "managed-authority-cert"
+        },
+        {
+          "path": "apps/release-smoke-055",
+          "ecosystem": "javascript",
+          "manifest": "apps/release-smoke-055/package.json",
+          "lockfile": "apps/release-smoke-055/package-lock.json",
+          "name": "feltdb-release-smoke-055"
+        },
+        {
+          "path": "apps/relief-fabric",
+          "ecosystem": "javascript",
+          "manifest": "apps/relief-fabric/package.json",
+          "lockfile": "package-lock.json",
+          "name": "feltdb-relief-fabric"
+        },
+        {
+          "path": "apps/saas-portal",
+          "ecosystem": "javascript",
+          "manifest": "apps/saas-portal/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/saas-portal"
+        },
+        {
+          "path": "artifacts/commercial-audit-2026-11",
+          "ecosystem": "javascript",
+          "manifest": "artifacts/commercial-audit-2026-11/package.json",
+          "lockfile": "package-lock.json",
+          "name": "feltdb-commercial-audit-acceptance"
+        },
+        {
+          "path": "deploy/intent-engine",
+          "ecosystem": "javascript",
+          "manifest": "deploy/intent-engine/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/intent-engine-service"
+        },
+        {
+          "path": "examples/managed-feltkit-app",
+          "ecosystem": "javascript",
+          "manifest": "examples/managed-feltkit-app/package.json",
+          "lockfile": "package-lock.json",
+          "name": "feltdb-example-managed-feltkit-app"
+        },
+        {
+          "path": ".",
+          "ecosystem": "javascript",
+          "manifest": "package.json",
+          "lockfile": "package-lock.json",
+          "name": "feltdb-monorepo"
+        },
+        {
+          "path": "packages/ai",
+          "ecosystem": "javascript",
+          "manifest": "packages/ai/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/ai"
+        },
+        {
+          "path": "packages/client",
+          "ecosystem": "javascript",
+          "manifest": "packages/client/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/client"
+        },
+        {
+          "path": "packages/core",
+          "ecosystem": "javascript",
+          "manifest": "packages/core/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/core"
+        },
+        {
+          "path": "packages/jev",
+          "ecosystem": "javascript",
+          "manifest": "packages/jev/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/jev"
+        },
+        {
+          "path": "packages/migration-sherpa",
+          "ecosystem": "javascript",
+          "manifest": "packages/migration-sherpa/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/migration-sherpa"
+        },
+        {
+          "path": "packages/quick-start",
+          "ecosystem": "javascript",
+          "manifest": "packages/quick-start/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/quick-start"
+        },
+        {
+          "path": "packages/react",
+          "ecosystem": "javascript",
+          "manifest": "packages/react/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/react"
+        },
+        {
+          "path": "packages/studio",
+          "ecosystem": "javascript",
+          "manifest": "packages/studio/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/studio"
+        },
+        {
+          "path": "packages/wasm",
+          "ecosystem": "javascript",
+          "manifest": "packages/wasm/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/wasm"
+        },
+        {
+          "path": "packages/wasm/pkg",
+          "ecosystem": "javascript",
+          "manifest": "packages/wasm/pkg/package.json",
+          "lockfile": "package-lock.json",
+          "name": "feltdb-wasm"
+        },
+        {
+          "path": "packages/webllm",
+          "ecosystem": "javascript",
+          "manifest": "packages/webllm/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/webllm"
+        },
+        {
+          "path": "tools/cli",
+          "ecosystem": "javascript",
+          "manifest": "tools/cli/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/cli"
+        },
+        {
+          "path": "tools/create-feltdb",
+          "ecosystem": "javascript",
+          "manifest": "tools/create-feltdb/package.json",
+          "lockfile": "package-lock.json",
+          "name": "create-feltdb"
+        },
+        {
+          "path": "tools/proof",
+          "ecosystem": "javascript",
+          "manifest": "tools/proof/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@feltdb/proof"
+        },
+        {
+          "path": "website",
+          "ecosystem": "javascript",
+          "manifest": "website/package.json",
+          "lockfile": "package-lock.json",
+          "name": "feltdb-site"
+        },
+        {
+          "path": "crates/feltdb-agent-transition-contract-wasm",
+          "ecosystem": "rust",
+          "manifest": "crates/feltdb-agent-transition-contract-wasm/Cargo.toml",
+          "lockfile": "crates/feltdb-agent-transition-contract-wasm/Cargo.lock",
+          "name": "feltdb-agent-transition-contract-wasm"
+        },
+        {
+          "path": "crates/feltdb-client",
+          "ecosystem": "rust",
+          "manifest": "crates/feltdb-client/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "feltdb-client"
+        },
+        {
+          "path": "crates/feltdb-public-api-check",
+          "ecosystem": "rust",
+          "manifest": "crates/feltdb-public-api-check/Cargo.toml",
+          "lockfile": "crates/feltdb-public-api-check/Cargo.lock",
+          "name": "feltdb-public-api-check"
+        },
+        {
+          "path": "crates/feltdb-server",
+          "ecosystem": "rust",
+          "manifest": "crates/feltdb-server/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "feltdb-server"
+        },
+        {
+          "path": "crates/feltdb-state-conflict-contract-wasm",
+          "ecosystem": "rust",
+          "manifest": "crates/feltdb-state-conflict-contract-wasm/Cargo.toml",
+          "lockfile": "crates/feltdb-state-conflict-contract-wasm/Cargo.lock",
+          "name": "feltdb-state-conflict-contract-wasm"
+        },
+        {
+          "path": "crates/feltdb-state-diff-contract-wasm",
+          "ecosystem": "rust",
+          "manifest": "crates/feltdb-state-diff-contract-wasm/Cargo.toml",
+          "lockfile": "crates/feltdb-state-diff-contract-wasm/Cargo.lock",
+          "name": "feltdb-state-diff-contract-wasm"
+        },
+        {
+          "path": "crates/feltdb-trigger-contract-wasm",
+          "ecosystem": "rust",
+          "manifest": "crates/feltdb-trigger-contract-wasm/Cargo.toml",
+          "lockfile": "crates/feltdb-trigger-contract-wasm/Cargo.lock",
+          "name": "feltdb-trigger-contract-wasm"
+        },
+        {
+          "path": "crates/feltdb-wasm",
+          "ecosystem": "rust",
+          "manifest": "crates/feltdb-wasm/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "feltdb-wasm"
+        },
+        {
+          "path": "crates/feltdb",
+          "ecosystem": "rust",
+          "manifest": "crates/feltdb/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "feltdb"
+        },
+        {
+          "path": "docs/audits/enroute/probe",
+          "ecosystem": "rust",
+          "manifest": "docs/audits/enroute/probe/Cargo.toml",
+          "lockfile": null,
+          "name": "enroute-feltdb-probe"
+        }
+      ],
+      "scanStatus": "ok",
+      "error": null,
+      "lastScanned": "2026-11-04T15:32:00.046Z",
+      "lastSuccessfulScan": "2026-11-04T15:32:00.046Z"
+    },
+    {
+      "id": "appport",
+      "name": "AppPort",
+      "repository": "rkendel1/appport",
+      "managedPackages": [
+        "appport-authorization",
+        "appport-client",
+        "appport-core",
+        "appport-mcp",
+        "appport-mobile",
+        "appport-protocol",
+        "appport-schema",
+        "appport-server",
+        "appport-transport-electron",
+        "appport-transport-http",
+        "appport-transport-inprocess",
+        "appport-transport-tauri",
+        "appport-transport-websocket"
+      ],
+      "missingManagedPackages": [],
+      "catalogPackagesNotManaged": [
+        "typescript"
+      ],
+      "discoveredDependencyCount": 13,
+      "warnings": [],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ],
+        "headVerified": true,
+        "lastVerifiedCommit": "e9815a521c489ee72458105d2b4e561b1eb659a3",
+        "lastVerifiedAt": "2026-11-04T15:32:00.046Z"
+      },
+      "branch": "main",
+      "commit": "e9815a521c489ee72458105d2b4e561b1eb659a3",
+      "commitUrl": "https://github.com/rkendel1/appport/commit/e9815a521c489ee72458105d2b4e561b1eb659a3",
+      "roots": [
+        {
+          "path": "examples/world",
+          "ecosystem": "javascript",
+          "manifest": "examples/world/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/example-world"
+        },
+        {
+          "path": ".",
+          "ecosystem": "javascript",
+          "manifest": "package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "appport-protocol"
+        },
+        {
+          "path": "packages/authorization",
+          "ecosystem": "javascript",
+          "manifest": "packages/authorization/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/authorization"
+        },
+        {
+          "path": "packages/client",
+          "ecosystem": "javascript",
+          "manifest": "packages/client/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/client"
+        },
+        {
+          "path": "packages/contract-builder",
+          "ecosystem": "javascript",
+          "manifest": "packages/contract-builder/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/contract-builder"
+        },
+        {
+          "path": "packages/core",
+          "ecosystem": "javascript",
+          "manifest": "packages/core/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/core"
+        },
+        {
+          "path": "packages/generators",
+          "ecosystem": "javascript",
+          "manifest": "packages/generators/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/generators"
+        },
+        {
+          "path": "packages/integration",
+          "ecosystem": "javascript",
+          "manifest": "packages/integration/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/integration"
+        },
+        {
+          "path": "packages/mcp",
+          "ecosystem": "javascript",
+          "manifest": "packages/mcp/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/mcp"
+        },
+        {
+          "path": "packages/mobile",
+          "ecosystem": "javascript",
+          "manifest": "packages/mobile/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/mobile"
+        },
+        {
+          "path": "packages/protocol",
+          "ecosystem": "javascript",
+          "manifest": "packages/protocol/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/protocol"
+        },
+        {
+          "path": "packages/schema",
+          "ecosystem": "javascript",
+          "manifest": "packages/schema/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/schema"
+        },
+        {
+          "path": "packages/sdk",
+          "ecosystem": "javascript",
+          "manifest": "packages/sdk/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/sdk"
+        },
+        {
+          "path": "packages/server",
+          "ecosystem": "javascript",
+          "manifest": "packages/server/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/server"
+        },
+        {
+          "path": "packages/testing",
+          "ecosystem": "javascript",
+          "manifest": "packages/testing/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/testing"
+        },
+        {
+          "path": "packages/transports/electron",
+          "ecosystem": "javascript",
+          "manifest": "packages/transports/electron/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/transport-electron"
+        },
+        {
+          "path": "packages/transports/http",
+          "ecosystem": "javascript",
+          "manifest": "packages/transports/http/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/transport-http"
+        },
+        {
+          "path": "packages/transports/inprocess",
+          "ecosystem": "javascript",
+          "manifest": "packages/transports/inprocess/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/transport-inprocess"
+        },
+        {
+          "path": "packages/transports/tauri",
+          "ecosystem": "javascript",
+          "manifest": "packages/transports/tauri/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/transport-tauri"
+        },
+        {
+          "path": "packages/transports/websocket",
+          "ecosystem": "javascript",
+          "manifest": "packages/transports/websocket/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/transport-websocket"
+        }
+      ],
+      "scanStatus": "ok",
+      "error": null,
+      "lastScanned": "2026-11-04T15:32:00.046Z",
+      "lastSuccessfulScan": "2026-11-04T15:32:00.046Z"
+    },
+    {
+      "id": "authboundry",
+      "name": "AuthBoundry",
+      "repository": "rkendel1/authboundry",
+      "managedPackages": [
+        "appport-core",
+        "appport-schema",
+        "appport-services",
+        "feltdb-core",
+        "serde",
+        "tokio"
+      ],
+      "missingManagedPackages": [],
+      "catalogPackagesNotManaged": [
+        "authboundry-core",
+        "typescript"
+      ],
+      "discoveredDependencyCount": 131,
+      "warnings": [
+        "clients/js/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown",
+        "packages/authboundry/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown",
+        "packages/bridge/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown",
+        "packages/core-darwin-arm64/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown",
+        "packages/core-darwin-x64/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown",
+        "packages/core-linux-arm64/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown",
+        "packages/core-linux-x64/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown"
+      ],
+      "verification": {
+        "workflows": [
+          "architecture-invariants.yml",
+          "cli-smoke.yml"
+        ],
+        "headVerified": false,
+        "lastVerifiedCommit": null,
+        "lastVerifiedAt": null
+      },
+      "branch": "main",
+      "commit": "b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
+      "commitUrl": "https://github.com/rkendel1/authboundry/commit/b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
+      "roots": [
+        {
+          "path": "apps/web",
+          "ecosystem": "javascript",
+          "manifest": "apps/web/package.json",
+          "lockfile": "apps/web/package-lock.json",
+          "name": "@authboundry/web"
+        },
+        {
+          "path": "clients/js",
+          "ecosystem": "javascript",
+          "manifest": "clients/js/package.json",
+          "lockfile": "package-lock.json",
+          "name": null
+        },
+        {
+          "path": "examples/nextjs-stack",
+          "ecosystem": "javascript",
+          "manifest": "examples/nextjs-stack/package.json",
+          "lockfile": "examples/nextjs-stack/package-lock.json",
+          "name": "authboundry-nextjs-reference"
+        },
+        {
+          "path": ".",
+          "ecosystem": "javascript",
+          "manifest": "package.json",
+          "lockfile": "package-lock.json",
+          "name": "@authboundry/core"
+        },
+        {
+          "path": "packages/authboundry",
+          "ecosystem": "javascript",
+          "manifest": "packages/authboundry/package.json",
+          "lockfile": "package-lock.json",
+          "name": "authboundry"
+        },
+        {
+          "path": "packages/bridge",
+          "ecosystem": "javascript",
+          "manifest": "packages/bridge/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@authboundry/bridge"
+        },
+        {
+          "path": "packages/core-darwin-arm64",
+          "ecosystem": "javascript",
+          "manifest": "packages/core-darwin-arm64/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@authboundry/core-darwin-arm64"
+        },
+        {
+          "path": "packages/core-darwin-x64",
+          "ecosystem": "javascript",
+          "manifest": "packages/core-darwin-x64/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@authboundry/core-darwin-x64"
+        },
+        {
+          "path": "packages/core-linux-arm64",
+          "ecosystem": "javascript",
+          "manifest": "packages/core-linux-arm64/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@authboundry/core-linux-arm64"
+        },
+        {
+          "path": "packages/core-linux-x64",
+          "ecosystem": "javascript",
+          "manifest": "packages/core-linux-x64/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@authboundry/core-linux-x64"
+        },
+        {
+          "path": "crates/authority-bridge",
+          "ecosystem": "rust",
+          "manifest": "crates/authority-bridge/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-authboundry-authority-bridge"
+        },
+        {
+          "path": "crates/authz",
+          "ecosystem": "rust",
+          "manifest": "crates/authz/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-auth-mesh-authz"
+        },
+        {
+          "path": "crates/boundary",
+          "ecosystem": "rust",
+          "manifest": "crates/boundary/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-auth-mesh-boundary"
+        },
+        {
+          "path": "crates/cli",
+          "ecosystem": "rust",
+          "manifest": "crates/cli/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-auth-mesh-cli"
+        },
+        {
+          "path": "crates/contract",
+          "ecosystem": "rust",
+          "manifest": "crates/contract/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-auth-mesh-contract"
+        },
+        {
+          "path": "crates/discovery",
+          "ecosystem": "rust",
+          "manifest": "crates/discovery/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-auth-mesh-discovery"
+        },
+        {
+          "path": "crates/dsl",
+          "ecosystem": "rust",
+          "manifest": "crates/dsl/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-auth-mesh-dsl"
+        },
+        {
+          "path": "crates/feltdb-adapter",
+          "ecosystem": "rust",
+          "manifest": "crates/feltdb-adapter/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-feltdb-adapter"
+        },
+        {
+          "path": "crates/providers",
+          "ecosystem": "rust",
+          "manifest": "crates/providers/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-auth-mesh-providers"
+        },
+        {
+          "path": "crates/runtime",
+          "ecosystem": "rust",
+          "manifest": "crates/runtime/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-auth-mesh-runtime"
+        },
+        {
+          "path": "crates/semantic",
+          "ecosystem": "rust",
+          "manifest": "crates/semantic/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-auth-mesh-semantic"
+        },
+        {
+          "path": "crates/server",
+          "ecosystem": "rust",
+          "manifest": "crates/server/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-auth-mesh-server"
+        },
+        {
+          "path": "crates/services",
+          "ecosystem": "rust",
+          "manifest": "crates/services/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-auth-mesh-services"
+        },
+        {
+          "path": "crates/storage",
+          "ecosystem": "rust",
+          "manifest": "crates/storage/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-auth-mesh-storage"
+        },
+        {
+          "path": "crates/surface",
+          "ecosystem": "rust",
+          "manifest": "crates/surface/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "appport-auth-mesh-surface"
+        },
+        {
+          "path": "examples/saas_basic",
+          "ecosystem": "rust",
+          "manifest": "examples/saas_basic/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "saas_basic"
+        }
+      ],
+      "scanStatus": "ok",
+      "error": null,
+      "lastScanned": "2026-11-04T15:32:00.046Z",
+      "lastSuccessfulScan": "2026-11-04T15:32:00.046Z"
+    },
+    {
+      "id": "appworks",
+      "name": "AppWorks",
+      "repository": "rkendel1/appworks",
+      "managedPackages": [
+        "appport-client",
+        "appport-core",
+        "appport-github",
+        "appport-integration",
+        "appport-protocol",
+        "appport-recipe",
+        "appport-recipe-distribution",
+        "appport-schema",
+        "appport-sdk",
+        "feltdb-core"
+      ],
+      "missingManagedPackages": [],
+      "catalogPackagesNotManaged": [
+        "appport-assessment",
+        "appport-extraction",
+        "typescript"
+      ],
+      "discoveredDependencyCount": 15,
+      "warnings": [],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ],
+        "headVerified": true,
+        "lastVerifiedCommit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
+        "lastVerifiedAt": "2026-11-04T15:32:00.046Z"
+      },
+      "branch": "main",
+      "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
+      "commitUrl": "https://github.com/rkendel1/appworks/commit/4cc8ea31e74dddb72761127537f9d17daf4a58bf",
+      "roots": [
+        {
+          "path": "extractions/memos-reactions",
+          "ecosystem": "javascript",
+          "manifest": "extractions/memos-reactions/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appworks-extractions/memos-reactions"
+        },
+        {
+          "path": ".",
+          "ecosystem": "javascript",
+          "manifest": "package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "appworks"
+        },
+        {
+          "path": "packages/assessment",
+          "ecosystem": "javascript",
+          "manifest": "packages/assessment/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/assessment"
+        },
+        {
+          "path": "packages/extraction",
+          "ecosystem": "javascript",
+          "manifest": "packages/extraction/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/extraction"
+        },
+        {
+          "path": "packages/recipe-distribution",
+          "ecosystem": "javascript",
+          "manifest": "packages/recipe-distribution/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/recipe-distribution"
+        },
+        {
+          "path": "packages/recipe-runtime",
+          "ecosystem": "javascript",
+          "manifest": "packages/recipe-runtime/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/recipe-runtime"
+        },
+        {
+          "path": "packages/recipe-studio",
+          "ecosystem": "javascript",
+          "manifest": "packages/recipe-studio/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/recipe-studio"
+        },
+        {
+          "path": "packages/recipe",
+          "ecosystem": "javascript",
+          "manifest": "packages/recipe/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/recipe"
+        },
+        {
+          "path": "packages/workspace",
+          "ecosystem": "javascript",
+          "manifest": "packages/workspace/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/workspace"
+        }
+      ],
+      "scanStatus": "ok",
+      "error": null,
+      "lastScanned": "2026-11-04T15:32:00.046Z",
+      "lastSuccessfulScan": "2026-11-04T15:32:00.046Z"
+    },
+    {
+      "id": "compute",
+      "name": "Compute",
+      "repository": "rkendel1/compute",
+      "managedPackages": [
+        "appport-authorization",
+        "appport-core",
+        "appport-github",
+        "appport-protocol",
+        "appport-runtime",
+        "appport-schema",
+        "appport-server",
+        "appport-services",
+        "appport-transport-http",
+        "appport-transport-inprocess",
+        "appport-transport-websocket",
+        "feltdb-client",
+        "feltdb-core",
+        "serde",
+        "tokio"
+      ],
+      "missingManagedPackages": [],
+      "catalogPackagesNotManaged": [
+        "authboundry-core",
+        "typescript"
+      ],
+      "discoveredDependencyCount": 225,
+      "warnings": [],
+      "verification": {
+        "workflows": [
+          "test.yml"
+        ],
+        "headVerified": false,
+        "lastVerifiedCommit": null,
+        "lastVerifiedAt": null
+      },
+      "branch": "main",
+      "commit": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+      "commitUrl": "https://github.com/rkendel1/compute/commit/b8607ae40561183a2e4a985916bb621b6d31d1c7",
+      "roots": [
+        {
+          "path": "compatibility/published-stack",
+          "ecosystem": "javascript",
+          "manifest": "compatibility/published-stack/package.json",
+          "lockfile": "compatibility/published-stack/package-lock.json",
+          "name": "compute-published-stack-compatibility"
+        },
+        {
+          "path": "packages/compute-appport",
+          "ecosystem": "javascript",
+          "manifest": "packages/compute-appport/package.json",
+          "lockfile": "packages/compute-appport/package-lock.json",
+          "name": "@compute/appport"
+        },
+        {
+          "path": "packages/compute-state-model",
+          "ecosystem": "javascript",
+          "manifest": "packages/compute-state-model/package.json",
+          "lockfile": "packages/compute-state-model/package-lock.json",
+          "name": "@compute/state-model"
+        },
+        {
+          "path": "packages/compute-ui-e2e",
+          "ecosystem": "javascript",
+          "manifest": "packages/compute-ui-e2e/package.json",
+          "lockfile": "packages/compute-ui-e2e/package-lock.json",
+          "name": "@compute/ui-e2e"
+        },
+        {
+          "path": "crates/compute-agent",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-agent/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-agent"
+        },
+        {
+          "path": "crates/compute-cli",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-cli/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-cli"
+        },
+        {
+          "path": "crates/compute-core",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-core/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-core"
+        },
+        {
+          "path": "crates/compute-egress",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-egress/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-egress"
+        },
+        {
+          "path": "crates/compute-environment",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-environment/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-environment"
+        },
+        {
+          "path": "crates/compute-guest",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-guest/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-guest"
+        },
+        {
+          "path": "crates/compute-network",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-network/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-network"
+        },
+        {
+          "path": "crates/compute-placement",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-placement/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-placement"
+        },
+        {
+          "path": "crates/compute-policy",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-policy/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-policy"
+        },
+        {
+          "path": "crates/compute-project",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-project/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-project"
+        },
+        {
+          "path": "crates/compute-provider-cloudflare",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-provider-cloudflare/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-provider-cloudflare"
+        },
+        {
+          "path": "crates/compute-provider",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-provider/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-provider"
+        },
+        {
+          "path": "crates/compute-runtime-conformance",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-runtime-conformance/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-runtime-conformance"
+        },
+        {
+          "path": "crates/compute-runtime-process",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-runtime-process/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-runtime-process"
+        },
+        {
+          "path": "crates/compute-runtime-wasm",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-runtime-wasm/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-runtime-wasm"
+        },
+        {
+          "path": "crates/compute-runtime",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-runtime/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-runtime"
+        },
+        {
+          "path": "crates/compute-stack-agent",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-stack-agent/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-stack-agent"
+        },
+        {
+          "path": "crates/compute-state-feltdb",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-state-feltdb/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-state-feltdb"
+        },
+        {
+          "path": "crates/compute-state-file",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-state-file/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-state-file"
+        },
+        {
+          "path": "crates/compute-state-memory",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-state-memory/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-state-memory"
+        },
+        {
+          "path": "crates/compute-state",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-state/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-state"
+        },
+        {
+          "path": "crates/compute-worker-github",
+          "ecosystem": "rust",
+          "manifest": "crates/compute-worker-github/Cargo.toml",
+          "lockfile": "Cargo.lock",
+          "name": "compute-worker-github"
+        },
+        {
+          "path": "integration/chip-fx",
+          "ecosystem": "rust",
+          "manifest": "integration/chip-fx/Cargo.toml",
+          "lockfile": "integration/chip-fx/Cargo.lock",
+          "name": "compute-chip-fx-harness"
+        }
+      ],
+      "scanStatus": "ok",
+      "error": null,
+      "lastScanned": "2026-11-04T15:32:00.046Z",
+      "lastSuccessfulScan": "2026-11-04T15:32:00.046Z"
+    },
+    {
+      "id": "agent-obstacle",
+      "name": "Agent Obstacle",
+      "repository": "rkendel1/agent-obstacle",
+      "managedPackages": [
+        "feltdb-core",
+        "feltdb-feltkit"
+      ],
+      "missingManagedPackages": [],
+      "catalogPackagesNotManaged": [
+        "typescript"
+      ],
+      "discoveredDependencyCount": 8,
+      "warnings": [
+        "harness/evaluator/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown"
+      ],
+      "verification": null,
+      "branch": "main",
+      "commit": "cab4381994ec3e76e2d4d152142be95bd36ced60",
+      "commitUrl": "https://github.com/rkendel1/agent-obstacle/commit/cab4381994ec3e76e2d4d152142be95bd36ced60",
+      "roots": [
+        {
+          "path": "harness/evaluator",
+          "ecosystem": "javascript",
+          "manifest": "harness/evaluator/package.json",
+          "lockfile": "package-lock.json",
+          "name": "@aoc/evaluator"
+        },
+        {
+          "path": ".",
+          "ecosystem": "javascript",
+          "manifest": "package.json",
+          "lockfile": "package-lock.json",
+          "name": "agent-obstacle-course"
+        },
+        {
+          "path": "courses/course-000-calibration/v2/fixture",
+          "ecosystem": "rust",
+          "manifest": "courses/course-000-calibration/v2/fixture/Cargo.toml",
+          "lockfile": "courses/course-000-calibration/v2/fixture/Cargo.lock",
+          "name": "aoc_calibration"
+        }
+      ],
+      "scanStatus": "ok",
+      "error": null,
+      "lastScanned": "2026-11-04T15:32:00.046Z",
+      "lastSuccessfulScan": "2026-11-04T15:32:00.046Z"
+    },
+    {
+      "id": "github-integration",
+      "name": "GitHub Integration",
+      "repository": "rkendel1/github-integration",
+      "managedPackages": [
+        "appport-appboundry",
+        "appport-sdk",
+        "appport-services",
+        "feltdb-core"
+      ],
+      "missingManagedPackages": [],
+      "catalogPackagesNotManaged": [
+        "authboundry-core",
+        "typescript"
+      ],
+      "discoveredDependencyCount": 4,
+      "warnings": [],
+      "verification": {
+        "workflows": [
+          "ci.yml"
+        ],
+        "headVerified": true,
+        "lastVerifiedCommit": "d51dcd156279fb85476479e490dcab41fcbe4fa7",
+        "lastVerifiedAt": "2026-11-04T15:32:00.046Z"
+      },
+      "branch": "main",
+      "commit": "d51dcd156279fb85476479e490dcab41fcbe4fa7",
+      "commitUrl": "https://github.com/rkendel1/github-integration/commit/d51dcd156279fb85476479e490dcab41fcbe4fa7",
+      "roots": [
+        {
+          "path": ".",
+          "ecosystem": "javascript",
+          "manifest": "package.json",
+          "lockfile": "package-lock.json",
+          "name": "@appport/github"
+        }
+      ],
+      "scanStatus": "ok",
+      "error": null,
+      "lastScanned": "2026-11-04T15:32:00.046Z",
+      "lastSuccessfulScan": "2026-11-04T15:32:00.046Z"
     }
   ]
 }

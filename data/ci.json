@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T15:12:03.977Z",
+  "generatedAt": "2026-11-04T15:32:00.046Z",
   "repositories": [
     {
       "repository": "rkendel1/3fx",
@@ -10,7 +10,29 @@
       "error": null,
       "workflowCount": 4,
       "scriptsInspected": 27,
-      "lastScanned": "2026-11-04T15:12:03.977Z"
+      "lastScanned": "2026-11-04T15:32:00.046Z"
+    },
+    {
+      "repository": "rkendel1/agent-obstacle",
+      "commit": "cab4381994ec3e76e2d4d152142be95bd36ced60",
+      "defaultBranch": "main",
+      "private": false,
+      "status": "ok",
+      "error": null,
+      "workflowCount": 0,
+      "scriptsInspected": 1,
+      "lastScanned": "2026-11-04T15:32:00.046Z"
+    },
+    {
+      "repository": "rkendel1/appboundry",
+      "commit": "4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9",
+      "defaultBranch": "main",
+      "private": true,
+      "status": "ok",
+      "error": null,
+      "workflowCount": 2,
+      "scriptsInspected": 18,
+      "lastScanned": "2026-11-04T15:32:00.046Z"
     },
     {
       "repository": "rkendel1/appport",
@@ -21,7 +43,7 @@
       "error": null,
       "workflowCount": 10,
       "scriptsInspected": 43,
-      "lastScanned": "2026-11-04T15:12:03.977Z"
+      "lastScanned": "2026-11-04T15:32:00.046Z"
     },
     {
       "repository": "rkendel1/appport-services",
@@ -32,7 +54,7 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 2,
-      "lastScanned": "2026-11-04T15:12:03.977Z"
+      "lastScanned": "2026-11-04T15:32:00.046Z"
     },
     {
       "repository": "rkendel1/appworks",
@@ -43,29 +65,40 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 23,
-      "lastScanned": "2026-11-04T15:12:03.977Z"
+      "lastScanned": "2026-11-04T15:32:00.046Z"
+    },
+    {
+      "repository": "rkendel1/authboundry",
+      "commit": "b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
+      "defaultBranch": "main",
+      "private": true,
+      "status": "ok",
+      "error": null,
+      "workflowCount": 5,
+      "scriptsInspected": 14,
+      "lastScanned": "2026-11-04T15:32:00.046Z"
+    },
+    {
+      "repository": "rkendel1/compute",
+      "commit": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+      "defaultBranch": "main",
+      "private": false,
+      "status": "ok",
+      "error": null,
+      "workflowCount": 10,
+      "scriptsInspected": 3,
+      "lastScanned": "2026-11-04T15:32:00.046Z"
     },
     {
       "repository": "rkendel1/felt-ops",
-      "commit": "928c6982f447e598e1dcb33b3497712ba8092688",
+      "commit": "29aa672b13d7c899c652296cad079d122843ce30",
       "defaultBranch": "claude/keen-cannon-gxv0v3",
       "private": false,
       "status": "ok",
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 4,
-      "lastScanned": "2026-11-04T15:12:03.977Z"
-    },
-    {
-      "repository": "rkendel1/feltdb",
-      "commit": null,
-      "defaultBranch": null,
-      "private": null,
-      "status": "inaccessible",
-      "error": "404 {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/repos/repos#get-a-repository\",\"status\":\"404\"} (https://api.github.com/repos/rkendel1/feltdb) — the scan token cannot read this repository",
-      "workflowCount": 0,
-      "scriptsInspected": 0,
-      "lastScanned": "2026-11-04T15:12:03.977Z"
+      "lastScanned": "2026-11-04T15:32:00.046Z"
     },
     {
       "repository": "rkendel1/feltkit",
@@ -76,7 +109,7 @@
       "error": null,
       "workflowCount": 2,
       "scriptsInspected": 7,
-      "lastScanned": "2026-11-04T15:12:03.977Z"
+      "lastScanned": "2026-11-04T15:32:00.046Z"
     },
     {
       "repository": "rkendel1/flow_db",
@@ -87,7 +120,7 @@
       "error": null,
       "workflowCount": 9,
       "scriptsInspected": 149,
-      "lastScanned": "2026-11-04T15:12:03.977Z"
+      "lastScanned": "2026-11-04T15:32:00.046Z"
     },
     {
       "repository": "rkendel1/github-integration",
@@ -98,18 +131,18 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 2,
-      "lastScanned": "2026-11-04T15:12:03.977Z"
+      "lastScanned": "2026-11-04T15:32:00.046Z"
     },
     {
       "repository": "rkendel1/resolver",
-      "commit": "ceae2e8d7d70bca40dee4b27c3d316b014834ae7",
+      "commit": "67d24fe987a137e2e6aa967a4ed76936c9cf56b3",
       "defaultBranch": "main",
       "private": false,
       "status": "ok",
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 2,
-      "lastScanned": "2026-11-04T15:12:03.977Z"
+      "lastScanned": "2026-11-04T15:32:00.046Z"
     },
     {
       "repository": "rkendel1/rust-ml-runtime",
@@ -120,7 +153,7 @@
       "error": null,
       "workflowCount": 3,
       "scriptsInspected": 15,
-      "lastScanned": "2026-11-04T15:12:03.977Z"
+      "lastScanned": "2026-11-04T15:32:00.046Z"
     }
   ],
   "workflows": [
@@ -235,6 +268,90 @@
       "lastFailure": null,
       "failedJobs": [],
       "branchFilter": null
+    },
+    {
+      "repository": "rkendel1/appboundry",
+      "path": ".github/workflows/ci.yml",
+      "name": "CI",
+      "triggers": [
+        "pushes to main",
+        "pull requests"
+      ],
+      "result": "in-progress",
+      "latestRun": {
+        "runId": 41858412645,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41858412645",
+        "status": "in_progress",
+        "conclusion": null,
+        "branch": "main",
+        "sha": "4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9",
+        "event": "push",
+        "at": "2026-11-04T15:30:23Z"
+      },
+      "lastSuccess": {
+        "runId": 41851494731,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41851494731",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "e57e4dfbb3da925395dee128537429b01bea5dda",
+        "event": "push",
+        "at": "2026-11-04T14:55:36Z"
+      },
+      "lastFailure": {
+        "runId": 41837929320,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41837929320",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "33bb1c618b7db0d30b9e4142786b3052757f0c5f",
+        "event": "push",
+        "at": "2026-11-04T13:37:07Z"
+      },
+      "failedJobs": [],
+      "branchFilter": "main"
+    },
+    {
+      "repository": "rkendel1/appboundry",
+      "path": ".github/workflows/cloud-portal.yml",
+      "name": "cloud-portal",
+      "triggers": [
+        "pushes to main",
+        "pull requests"
+      ],
+      "result": "passing",
+      "latestRun": {
+        "runId": 41851494808,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41851494808",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "e57e4dfbb3da925395dee128537429b01bea5dda",
+        "event": "push",
+        "at": "2026-11-04T14:52:47Z"
+      },
+      "lastSuccess": {
+        "runId": 41851494808,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41851494808",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "e57e4dfbb3da925395dee128537429b01bea5dda",
+        "event": "push",
+        "at": "2026-11-04T14:52:47Z"
+      },
+      "lastFailure": {
+        "runId": 41837929369,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41837929369",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "33bb1c618b7db0d30b9e4142786b3052757f0c5f",
+        "event": "push",
+        "at": "2026-11-04T13:28:59Z"
+      },
+      "failedJobs": [],
+      "branchFilter": "main"
     },
     {
       "repository": "rkendel1/appport",
@@ -489,6 +606,598 @@
       "branchFilter": "main"
     },
     {
+      "repository": "rkendel1/authboundry",
+      "path": ".github/workflows/architecture-invariants.yml",
+      "name": "Architecture invariants",
+      "triggers": [
+        "pull requests",
+        "pushes"
+      ],
+      "result": "failing",
+      "latestRun": {
+        "runId": 41703363528,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/41703363528",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
+        "event": "push",
+        "at": "2026-11-03T19:27:26Z"
+      },
+      "lastSuccess": {
+        "runId": 41692071591,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/41692071591",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "5e4fcc3b69dc0ca7d8ac59579a63e4933b0ffd73",
+        "event": "push",
+        "at": "2026-11-03T18:20:23Z"
+      },
+      "lastFailure": {
+        "runId": 41703363528,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/41703363528",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
+        "event": "push",
+        "at": "2026-11-03T19:27:26Z"
+      },
+      "failedJobs": [
+        {
+          "name": "verify",
+          "url": "https://github.com/rkendel1/authboundry/actions/runs/41703363528/job/126152148449",
+          "failedSteps": [
+            "Run npm ci --ignore-scripts"
+          ]
+        }
+      ],
+      "branchFilter": "main"
+    },
+    {
+      "repository": "rkendel1/authboundry",
+      "path": ".github/workflows/cli-smoke.yml",
+      "name": "CLI smoke",
+      "triggers": [
+        "pull requests",
+        "pushes"
+      ],
+      "result": "passing",
+      "latestRun": {
+        "runId": 41703363098,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/41703363098",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
+        "event": "push",
+        "at": "2026-11-03T19:31:17Z"
+      },
+      "lastSuccess": {
+        "runId": 41703363098,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/41703363098",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
+        "event": "push",
+        "at": "2026-11-03T19:31:17Z"
+      },
+      "lastFailure": null,
+      "failedJobs": [],
+      "branchFilter": "main"
+    },
+    {
+      "repository": "rkendel1/authboundry",
+      "path": ".github/workflows/deploy-fly.yml",
+      "name": "Deploy to Fly.io",
+      "triggers": [
+        "manual"
+      ],
+      "result": "failing",
+      "latestRun": {
+        "runId": 35806448346,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/35806448346",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "a693090fbe28dd968ba0d4aa00e018f6f54d2e51",
+        "event": "workflow_dispatch",
+        "at": "2026-09-23T01:40:26Z"
+      },
+      "lastSuccess": {
+        "runId": 35669021503,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/35669021503",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "aff66d4338b4e4efb51487b9a0b66925aaac0486",
+        "event": "workflow_dispatch",
+        "at": "2026-09-21T23:47:38Z"
+      },
+      "lastFailure": {
+        "runId": 35806448346,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/35806448346",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "a693090fbe28dd968ba0d4aa00e018f6f54d2e51",
+        "event": "workflow_dispatch",
+        "at": "2026-09-23T01:40:26Z"
+      },
+      "failedJobs": [
+        {
+          "name": "Deploy authboundry-api",
+          "url": "https://github.com/rkendel1/authboundry/actions/runs/35806448346/job/107008279020",
+          "failedSteps": [
+            "Verify /ready"
+          ]
+        }
+      ],
+      "branchFilter": null
+    },
+    {
+      "repository": "rkendel1/authboundry",
+      "path": ".github/workflows/portal.yml",
+      "name": "portal",
+      "triggers": [
+        "pushes to main",
+        "pull requests"
+      ],
+      "result": "failing",
+      "latestRun": {
+        "runId": 41703362994,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/41703362994",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
+        "event": "push",
+        "at": "2026-11-03T19:27:27Z"
+      },
+      "lastSuccess": {
+        "runId": 39814501623,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/39814501623",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b6f7af007b6f97eafac1e1376148a9bc0efd3f80",
+        "event": "push",
+        "at": "2026-10-22T16:41:26Z"
+      },
+      "lastFailure": {
+        "runId": 41703362994,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/41703362994",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
+        "event": "push",
+        "at": "2026-11-03T19:27:27Z"
+      },
+      "failedJobs": [
+        {
+          "name": "portal",
+          "url": "https://github.com/rkendel1/authboundry/actions/runs/41703362994/job/126152146135",
+          "failedSteps": [
+            "Run npm ci --ignore-scripts"
+          ]
+        }
+      ],
+      "branchFilter": "main"
+    },
+    {
+      "repository": "rkendel1/authboundry",
+      "path": ".github/workflows/release.yml",
+      "name": "Release",
+      "triggers": [
+        "manual"
+      ],
+      "result": "failing",
+      "latestRun": {
+        "runId": 35632064255,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/35632064255",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "555bc7101202abb6991c3d0c7abab66a57ca26b8",
+        "event": "workflow_dispatch",
+        "at": "2026-09-21T17:36:57Z"
+      },
+      "lastSuccess": null,
+      "lastFailure": {
+        "runId": 35632064255,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/35632064255",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "555bc7101202abb6991c3d0c7abab66a57ca26b8",
+        "event": "workflow_dispatch",
+        "at": "2026-09-21T17:36:57Z"
+      },
+      "failedJobs": [
+        {
+          "name": "Commit binaries and publish",
+          "url": "https://github.com/rkendel1/authboundry/actions/runs/35632064255/job/106442239635",
+          "failedSteps": [
+            "Publish npm packages"
+          ]
+        }
+      ],
+      "branchFilter": null
+    },
+    {
+      "repository": "rkendel1/compute",
+      "path": ".github/workflows/chip-fx-integration.yml",
+      "name": "chip-fx-integration",
+      "triggers": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "result": "passing",
+      "latestRun": {
+        "runId": 40385469813,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40385469813",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "7572e249596932dc2b5660844afc08b8eca29f33",
+        "event": "push",
+        "at": "2026-10-26T19:18:37Z"
+      },
+      "lastSuccess": {
+        "runId": 40385469813,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40385469813",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "7572e249596932dc2b5660844afc08b8eca29f33",
+        "event": "push",
+        "at": "2026-10-26T19:18:37Z"
+      },
+      "lastFailure": {
+        "runId": 39701731947,
+        "url": "https://github.com/rkendel1/compute/actions/runs/39701731947",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "22d348bd2dcd862c50b51e82c50e6b2a6357b242",
+        "event": "push",
+        "at": "2026-10-22T00:46:58Z"
+      },
+      "failedJobs": [],
+      "branchFilter": "main"
+    },
+    {
+      "repository": "rkendel1/compute",
+      "path": ".github/workflows/cloudflare-live.yml",
+      "name": "cloudflare-live",
+      "triggers": [
+        "manual"
+      ],
+      "result": "unknown",
+      "latestRun": null,
+      "lastSuccess": null,
+      "lastFailure": null,
+      "failedJobs": [],
+      "branchFilter": null
+    },
+    {
+      "repository": "rkendel1/compute",
+      "path": ".github/workflows/configured-compatibility.yml",
+      "name": "configured-compatibility",
+      "triggers": [
+        "pull requests",
+        "pushes to main",
+        "manual",
+        "schedule"
+      ],
+      "result": "passing",
+      "latestRun": {
+        "runId": 41405864708,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41405864708",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "schedule",
+        "at": "2026-11-02T07:22:39Z"
+      },
+      "lastSuccess": {
+        "runId": 41405864708,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41405864708",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "schedule",
+        "at": "2026-11-02T07:22:39Z"
+      },
+      "lastFailure": {
+        "runId": 38454984409,
+        "url": "https://github.com/rkendel1/compute/actions/runs/38454984409",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "cf11a11093ccefe6764aa1d7938d25af77385819",
+        "event": "push",
+        "at": "2026-10-13T19:27:56Z"
+      },
+      "failedJobs": [],
+      "branchFilter": "main"
+    },
+    {
+      "repository": "rkendel1/compute",
+      "path": ".github/workflows/distribution-certification.yml",
+      "name": "distribution-certification",
+      "triggers": [
+        "called by other workflows",
+        "manual",
+        "tags v*"
+      ],
+      "result": "passing",
+      "latestRun": {
+        "runId": 40392795971,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40392795971",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "v0.1.25",
+        "sha": "0d5e5f4ef0349b74e067a91d0635fb94da84db21",
+        "event": "push",
+        "at": "2026-10-26T20:26:53Z"
+      },
+      "lastSuccess": {
+        "runId": 40392795971,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40392795971",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "v0.1.25",
+        "sha": "0d5e5f4ef0349b74e067a91d0635fb94da84db21",
+        "event": "push",
+        "at": "2026-10-26T20:26:53Z"
+      },
+      "lastFailure": {
+        "runId": 39798120691,
+        "url": "https://github.com/rkendel1/compute/actions/runs/39798120691",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "v0.1.21",
+        "sha": "8e7a85e67e05e3bf317d7c690da31ef82a3b4caf",
+        "event": "push",
+        "at": "2026-10-22T15:05:53Z"
+      },
+      "failedJobs": [],
+      "branchFilter": null
+    },
+    {
+      "repository": "rkendel1/compute",
+      "path": ".github/workflows/feltdb-consumer.yml",
+      "name": "feltdb-consumer",
+      "triggers": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "result": "passing",
+      "latestRun": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastFailure": null,
+      "failedJobs": [],
+      "branchFilter": "main"
+    },
+    {
+      "repository": "rkendel1/compute",
+      "path": ".github/workflows/live-tap.yml",
+      "name": "live-tap",
+      "triggers": [
+        "manual",
+        "schedule"
+      ],
+      "result": "passing",
+      "latestRun": {
+        "runId": 41785568971,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41785568971",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "schedule",
+        "at": "2026-11-04T06:27:18Z"
+      },
+      "lastSuccess": {
+        "runId": 41785568971,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41785568971",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "schedule",
+        "at": "2026-11-04T06:27:18Z"
+      },
+      "lastFailure": {
+        "runId": 39556842658,
+        "url": "https://github.com/rkendel1/compute/actions/runs/39556842658",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "876362214b8f14716ab819d6b599f73e9fa3b236",
+        "event": "schedule",
+        "at": "2026-10-21T06:40:15Z"
+      },
+      "failedJobs": [],
+      "branchFilter": "main"
+    },
+    {
+      "repository": "rkendel1/compute",
+      "path": ".github/workflows/microvm.yml",
+      "name": "microvm",
+      "triggers": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "result": "passing",
+      "latestRun": {
+        "runId": 41353667802,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667802",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:58:14Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667802,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667802",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:58:14Z"
+      },
+      "lastFailure": {
+        "runId": 39720493443,
+        "url": "https://github.com/rkendel1/compute/actions/runs/39720493443",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "d287ef65c5aec3bab9588b8397c65a01d1f2fc0f",
+        "event": "push",
+        "at": "2026-10-22T04:08:52Z"
+      },
+      "failedJobs": [],
+      "branchFilter": "main"
+    },
+    {
+      "repository": "rkendel1/compute",
+      "path": ".github/workflows/release-tag-guard.yml",
+      "name": "release-tag-guard",
+      "triggers": [
+        "tags V*, [0-9]*"
+      ],
+      "result": "unknown",
+      "latestRun": null,
+      "lastSuccess": null,
+      "lastFailure": null,
+      "failedJobs": [],
+      "branchFilter": null
+    },
+    {
+      "repository": "rkendel1/compute",
+      "path": ".github/workflows/stack.yml",
+      "name": "stack",
+      "triggers": [
+        "manual",
+        "schedule",
+        "pull requests",
+        "pushes to main"
+      ],
+      "result": "failing",
+      "latestRun": {
+        "runId": 41353666714,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353666714",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:45:52Z"
+      },
+      "lastSuccess": null,
+      "lastFailure": {
+        "runId": 41353666714,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353666714",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:45:52Z"
+      },
+      "failedJobs": [],
+      "branchFilter": "main"
+    },
+    {
+      "repository": "rkendel1/compute",
+      "path": ".github/workflows/test.yml",
+      "name": "test",
+      "triggers": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "result": "failing",
+      "latestRun": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "lastSuccess": {
+        "runId": 39736865244,
+        "url": "https://github.com/rkendel1/compute/actions/runs/39736865244",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b0900fe584d15e8eb1e0457ba29db1a6bd075863",
+        "event": "push",
+        "at": "2026-10-22T07:14:09Z"
+      },
+      "lastFailure": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "failedJobs": [
+        {
+          "name": "browser",
+          "url": "https://github.com/rkendel1/compute/actions/runs/41353667795/job/124989032727",
+          "failedSteps": [
+            "Install Chromium"
+          ]
+        },
+        {
+          "name": "workspace",
+          "url": "https://github.com/rkendel1/compute/actions/runs/41353667795/job/124989032900",
+          "failedSteps": [
+            "Workspace tests"
+          ]
+        }
+      ],
+      "branchFilter": "main"
+    },
+    {
       "repository": "rkendel1/felt-ops",
       "path": ".github/workflows/ci.yml",
       "name": "CI",
@@ -499,24 +1208,24 @@
       ],
       "result": "passing",
       "latestRun": {
-        "runId": 41853366638,
-        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638",
+        "runId": 41858559509,
+        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41858559509",
         "status": "completed",
         "conclusion": "success",
         "branch": "claude/keen-cannon-gxv0v3",
-        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
+        "sha": "29aa672b13d7c899c652296cad079d122843ce30",
         "event": "push",
-        "at": "2026-11-04T15:02:21Z"
+        "at": "2026-11-04T15:32:11Z"
       },
       "lastSuccess": {
-        "runId": 41853366638,
-        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638",
+        "runId": 41858559509,
+        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41858559509",
         "status": "completed",
         "conclusion": "success",
         "branch": "claude/keen-cannon-gxv0v3",
-        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
+        "sha": "29aa672b13d7c899c652296cad079d122843ce30",
         "event": "push",
-        "at": "2026-11-04T15:02:21Z"
+        "at": "2026-11-04T15:32:11Z"
       },
       "lastFailure": {
         "runId": 41734620444,
@@ -996,24 +1705,24 @@
       ],
       "result": "passing",
       "latestRun": {
-        "runId": 41843879639,
-        "url": "https://github.com/rkendel1/resolver/actions/runs/41843879639",
+        "runId": 41857570763,
+        "url": "https://github.com/rkendel1/resolver/actions/runs/41857570763",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "ceae2e8d7d70bca40dee4b27c3d316b014834ae7",
+        "sha": "67d24fe987a137e2e6aa967a4ed76936c9cf56b3",
         "event": "push",
-        "at": "2026-11-04T14:04:50Z"
+        "at": "2026-11-04T15:26:11Z"
       },
       "lastSuccess": {
-        "runId": 41843879639,
-        "url": "https://github.com/rkendel1/resolver/actions/runs/41843879639",
+        "runId": 41857570763,
+        "url": "https://github.com/rkendel1/resolver/actions/runs/41857570763",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "ceae2e8d7d70bca40dee4b27c3d316b014834ae7",
+        "sha": "67d24fe987a137e2e6aa967a4ed76936c9cf56b3",
         "event": "push",
-        "at": "2026-11-04T14:04:50Z"
+        "at": "2026-11-04T15:26:11Z"
       },
       "lastFailure": null,
       "failedJobs": [],
@@ -1263,6 +1972,605 @@
       },
       "lastFailure": null,
       "jobUrl": "https://github.com/rkendel1/3fx/actions/runs/38823843571/job/116726540355",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/appboundry:.github/workflows/ci.yml#build/run-pnpm-install-frozen-lockfile",
+      "repository": "rkendel1/appboundry",
+      "name": "pnpm install --frozen-lockfile",
+      "workflow": ".github/workflows/ci.yml",
+      "workflowName": "CI",
+      "job": "build",
+      "jobName": "build",
+      "step": "Run pnpm install --frozen-lockfile",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "the lockfile must already match the manifests (install refuses to modify it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:frozen-lockfile"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/.github/workflows/ci.yml#L41"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "in-progress",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41858412645,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41858412645",
+        "status": "in_progress",
+        "conclusion": null,
+        "branch": "main",
+        "sha": "4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9",
+        "event": "push",
+        "at": "2026-11-04T15:30:23Z"
+      },
+      "lastSuccess": {
+        "runId": 41851494731,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41851494731",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "e57e4dfbb3da925395dee128537429b01bea5dda",
+        "event": "push",
+        "at": "2026-11-04T14:55:36Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/appboundry/actions/runs/41858412645/job/126673237976",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/appboundry:.github/workflows/ci.yml#appboundry-release/install-from-the-lockfile-unchanged",
+      "repository": "rkendel1/appboundry",
+      "name": "Install from the lockfile, unchanged",
+      "workflow": ".github/workflows/ci.yml",
+      "workflowName": "CI",
+      "job": "appboundry-release",
+      "jobName": "appboundry-release",
+      "step": "Install from the lockfile, unchanged",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "the lockfile must already match the manifests (install refuses to modify it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:frozen-lockfile"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/.github/workflows/ci.yml#L100"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "in-progress",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41858412645,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41858412645",
+        "status": "in_progress",
+        "conclusion": null,
+        "branch": "main",
+        "sha": "4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9",
+        "event": "push",
+        "at": "2026-11-04T15:30:23Z"
+      },
+      "lastSuccess": {
+        "runId": 41851494731,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41851494731",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "e57e4dfbb3da925395dee128537429b01bea5dda",
+        "event": "push",
+        "at": "2026-11-04T14:55:36Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/appboundry/actions/runs/41858412645/job/126673238934",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/appboundry:.github/workflows/ci.yml#appboundry-release/release-metadata-version-not-behind-npm-not-changed-under-a-",
+      "repository": "rkendel1/appboundry",
+      "name": "Release metadata (version not behind npm, not changed under a published version; dependencies resolve on npm)",
+      "workflow": ".github/workflows/ci.yml",
+      "workflowName": "CI",
+      "job": "appboundry-release",
+      "jobName": "appboundry-release",
+      "step": "Release metadata (version not behind npm, not changed under a published version; dependencies resolve on npm)",
+      "types": [
+        "version-freshness",
+        "version-pinning",
+        "version-consistency",
+        "publication-validation"
+      ],
+      "packages": [
+        "appport-appboundry",
+        "appport-cli",
+        "appport-services",
+        "typescript"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "<pkg.version> is already published and this checkout differs from it in <differ.length> file(s) (<differ.slice(0, 5).join(\", \")><differ.length > 5 ? \", …\" : \"\">): bump packages/appboundry/package.json",
+        "<pkg.name>: cannot stage bundled dependency <name>",
+        "<pkg.name>: cannot stage bundled dependency <dependency>",
+        "<dependency>: cannot stage bundled dependency <transitive>",
+        "<pkg.name>: <dependency> needs <transitive>@<range>, but the package already depends on <transitive>@<external.get(transitive)>",
+        "<pkg.name>: staged package file must be a safe literal path: <entry>",
+        "Usage: release-stage.mjs <workspace-directory> <destination>",
+        "<name>@<value> is not published on npm"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests"
+      ],
+      "modifiers": [],
+      "dedicated": true,
+      "confidence": "partially-understood",
+      "signals": [
+        "registry-query",
+        "version-compare",
+        "publication",
+        "manifest-version",
+        "latest",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/.github/workflows/ci.yml#L109"
+        },
+        {
+          "path": "scripts/check-appboundry-release.mjs",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/scripts/check-appboundry-release.mjs"
+        },
+        {
+          "path": "scripts/release-stage.mjs",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/scripts/release-stage.mjs"
+        },
+        {
+          "path": "scripts/release-dependencies.mjs",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/scripts/release-dependencies.mjs"
+        },
+        {
+          "path": "scripts/sync-appboundry-bundles.mjs",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/scripts/sync-appboundry-bundles.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "in-progress",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41858412645,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41858412645",
+        "status": "in_progress",
+        "conclusion": null,
+        "branch": "main",
+        "sha": "4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9",
+        "event": "push",
+        "at": "2026-11-04T15:30:23Z"
+      },
+      "lastSuccess": {
+        "runId": 41851494731,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41851494731",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "e57e4dfbb3da925395dee128537429b01bea5dda",
+        "event": "push",
+        "at": "2026-11-04T14:55:36Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/appboundry/actions/runs/41858412645/job/126673238934",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/appboundry:.github/workflows/cloud-portal.yml#portal/run-pnpm-install-frozen-lockfile",
+      "repository": "rkendel1/appboundry",
+      "name": "pnpm install --frozen-lockfile",
+      "workflow": ".github/workflows/cloud-portal.yml",
+      "workflowName": "cloud-portal",
+      "job": "portal",
+      "jobName": "portal",
+      "step": "Run pnpm install --frozen-lockfile",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "the lockfile must already match the manifests (install refuses to modify it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:frozen-lockfile"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/cloud-portal.yml",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/.github/workflows/cloud-portal.yml#L28"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41851494808,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41851494808",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "e57e4dfbb3da925395dee128537429b01bea5dda",
+        "event": "push",
+        "at": "2026-11-04T14:52:47Z"
+      },
+      "lastSuccess": {
+        "runId": 41851494808,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41851494808",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "e57e4dfbb3da925395dee128537429b01bea5dda",
+        "event": "push",
+        "at": "2026-11-04T14:52:47Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/appboundry/actions/runs/41851494808/job/126648705049",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/appboundry:.github/workflows/cloud-portal.yml#portal/check-the-hand-written-portal-client-parses",
+      "repository": "rkendel1/appboundry",
+      "name": "Check the hand-written portal client parses",
+      "workflow": ".github/workflows/cloud-portal.yml",
+      "workflowName": "cloud-portal",
+      "job": "portal",
+      "jobName": "portal",
+      "step": "Check the hand-written portal client parses",
+      "types": [
+        "dependency-compatibility",
+        "publication-validation"
+      ],
+      "packages": [
+        "appport-client",
+        "appport-core",
+        "appport-schema",
+        "feltdb",
+        "typescript"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "publication",
+        "manifest-version",
+        "compatibility",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/cloud-portal.yml",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/.github/workflows/cloud-portal.yml#L31"
+        },
+        {
+          "path": "apps/cloud-platform/public/app.js",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/apps/cloud-platform/public/app.js"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41851494808,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41851494808",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "e57e4dfbb3da925395dee128537429b01bea5dda",
+        "event": "push",
+        "at": "2026-11-04T14:52:47Z"
+      },
+      "lastSuccess": {
+        "runId": 41851494808,
+        "url": "https://github.com/rkendel1/appboundry/actions/runs/41851494808",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "e57e4dfbb3da925395dee128537429b01bea5dda",
+        "event": "push",
+        "at": "2026-11-04T14:52:47Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/appboundry/actions/runs/41851494808/job/126648705049",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/appboundry:scripts/npm-release-preflight.mjs",
+      "repository": "rkendel1/appboundry",
+      "name": "npm-release-preflight.mjs",
+      "workflow": null,
+      "workflowName": null,
+      "job": null,
+      "jobName": null,
+      "step": null,
+      "types": [
+        "publication-validation"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "https://registry.npmjs.org/<encodeURIComponent(name)>/<encodeURIComponent(version)>",
+        "Cannot verify whether <name>@<version> is already published",
+        "<name>@<version> is already published; bump its package version before publishing",
+        "Cannot verify <name>@<version>: npm registry returned HTTP <response.status>"
+      ],
+      "blocking": false,
+      "blockingNote": "runs outside CI",
+      "gates": [],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "registry-query",
+        "publication"
+      ],
+      "sources": [
+        {
+          "path": "scripts/npm-release-preflight.mjs",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/scripts/npm-release-preflight.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": "Not run by any workflow. Its results are not observable here.",
+      "result": "unknown",
+      "resultNote": "Runs outside CI; no results to observe",
+      "lastRun": null,
+      "lastSuccess": null,
+      "lastFailure": null,
+      "jobUrl": null,
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/appboundry:scripts/publish-packages.mjs",
+      "repository": "rkendel1/appboundry",
+      "name": "publish-packages.mjs",
+      "workflow": null,
+      "workflowName": null,
+      "job": null,
+      "jobName": null,
+      "step": null,
+      "types": [
+        "version-freshness",
+        "publication-validation"
+      ],
+      "packages": [
+        "appport-cli",
+        "appport-sdk",
+        "appport-services",
+        "typescript"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "Refusing to publish: public release must be exactly <expected.join(\", \")> in dependency order",
+        "<pkg.name>: cannot stage bundled dependency <name>",
+        "<pkg.name>: cannot stage bundled dependency <dependency>",
+        "<dependency>: cannot stage bundled dependency <transitive>",
+        "<pkg.name>: <dependency> needs <transitive>@<range>, but the package already depends on <transitive>@<external.get(transitive)>",
+        "<pkg.name>: staged package file must be a safe literal path: <entry>",
+        "Usage: release-stage.mjs <workspace-directory> <destination>",
+        "https://registry.npmjs.org/<encodeURIComponent(name)>/<encodeURIComponent(version)>"
+      ],
+      "blocking": false,
+      "blockingNote": "runs outside CI",
+      "gates": [],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "registry-query",
+        "publication",
+        "manifest-version",
+        "latest",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": "scripts/publish-packages.mjs",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/scripts/publish-packages.mjs"
+        },
+        {
+          "path": "scripts/release-stage.mjs",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/scripts/release-stage.mjs"
+        },
+        {
+          "path": "scripts/npm-release-preflight.mjs",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/scripts/npm-release-preflight.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": "Not run by any workflow; run locally via npm run packages:publish. Its results are not observable here.",
+      "result": "unknown",
+      "resultNote": "Runs outside CI; no results to observe",
+      "lastRun": null,
+      "lastSuccess": null,
+      "lastFailure": null,
+      "jobUrl": null,
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/appboundry:scripts/release-check.mjs",
+      "repository": "rkendel1/appboundry",
+      "name": "release-check.mjs",
+      "workflow": null,
+      "workflowName": null,
+      "job": null,
+      "jobName": null,
+      "step": null,
+      "types": [
+        "version-pinning"
+      ],
+      "packages": [
+        "appport-cli",
+        "appport-services",
+        "typescript"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "<pkg.name>: expected version <releaseVersion>",
+        "<pkg.name>: <name> must resolve at <workspaceVersion>",
+        "<pkg.name>: unpublished dependency is not bundled: <name>",
+        "<pkg.name>: AppPort dependency <name> must be pinned exactly, not <version>",
+        "<pkg.name>: AppPort package <name> is published by AppPort and must not be bundled",
+        "<pkg.name>: staged artifact exposes unpublished dependencies: <unresolved.join(\", \")>",
+        "<pkg.name>: cannot stage bundled dependency <name>",
+        "<pkg.name>: cannot stage bundled dependency <dependency>"
+      ],
+      "blocking": false,
+      "blockingNote": "runs outside CI",
+      "gates": [],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "version-compare",
+        "manifest-version",
+        "latest",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": "scripts/release-check.mjs",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/scripts/release-check.mjs"
+        },
+        {
+          "path": "scripts/release-stage.mjs",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/scripts/release-stage.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": "Not run by any workflow; run locally via npm run release:check. Its results are not observable here.",
+      "result": "unknown",
+      "resultNote": "Runs outside CI; no results to observe",
+      "lastRun": null,
+      "lastSuccess": null,
+      "lastFailure": null,
+      "jobUrl": null,
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/appboundry:scripts/unpublish-packages.mjs",
+      "repository": "rkendel1/appboundry",
+      "name": "unpublish-packages.mjs",
+      "workflow": null,
+      "workflowName": null,
+      "job": null,
+      "jobName": null,
+      "step": null,
+      "types": [],
+      "packages": [
+        "appport-cli",
+        "appport-core",
+        "appport-sdk"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [],
+      "blocking": false,
+      "blockingNote": "runs outside CI",
+      "gates": [],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "unclassified",
+      "signals": [
+        "registry-query"
+      ],
+      "sources": [
+        {
+          "path": "scripts/unpublish-packages.mjs",
+          "url": "https://github.com/rkendel1/appboundry/blob/4c736aa3c844dc69932dd8cbcc3f973ce0d56fc9/scripts/unpublish-packages.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": "Not run by any workflow; run locally via npm run packages:unpublish. Its results are not observable here.",
+      "result": "unknown",
+      "resultNote": "Runs outside CI; no results to observe",
+      "lastRun": null,
+      "lastSuccess": null,
+      "lastFailure": null,
+      "jobUrl": null,
       "failure": null,
       "stale": false
     },
@@ -2794,9 +4102,11 @@
         "publication-validation"
       ],
       "packages": [
+        "appport-assessment",
         "appport-authorization",
         "appport-client",
         "appport-core",
+        "appport-extraction",
         "appport-github",
         "appport-integration",
         "appport-protocol",
@@ -2944,7 +4254,9 @@
         "version-pinning"
       ],
       "packages": [
+        "appport-assessment",
         "appport-core",
+        "appport-extraction",
         "appport-integration",
         "appport-protocol",
         "appport-recipe",
@@ -3118,6 +4430,2607 @@
       "stale": false
     },
     {
+      "id": "rkendel1/authboundry:.github/workflows/architecture-invariants.yml#verify/run-npm-ci-ignore-scripts",
+      "repository": "rkendel1/authboundry",
+      "name": "npm ci --ignore-scripts",
+      "workflow": ".github/workflows/architecture-invariants.yml",
+      "workflowName": "Architecture invariants",
+      "job": "verify",
+      "jobName": "verify",
+      "step": "Run npm ci --ignore-scripts",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "package-lock.json must satisfy package.json exactly (npm ci fails on any drift)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pull requests",
+        "pushes"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:npm-ci"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/architecture-invariants.yml",
+          "url": "https://github.com/rkendel1/authboundry/blob/b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7/.github/workflows/architecture-invariants.yml#L20"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "failing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41703363528,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/41703363528",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
+        "event": "push",
+        "at": "2026-11-03T19:27:26Z"
+      },
+      "lastSuccess": {
+        "runId": 41692071591,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/41692071591",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "5e4fcc3b69dc0ca7d8ac59579a63e4933b0ffd73",
+        "event": "push",
+        "at": "2026-11-03T18:20:23Z"
+      },
+      "lastFailure": {
+        "runId": 41703363528,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/41703363528",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
+        "event": "push",
+        "at": "2026-11-03T19:27:26Z"
+      },
+      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/41703363528/job/126152148449",
+      "failure": {
+        "attribution": "possible",
+        "packages": [],
+        "excerpt": []
+      },
+      "stale": false
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/portal.yml#portal/run-npm-ci-ignore-scripts",
+      "repository": "rkendel1/authboundry",
+      "name": "npm ci --ignore-scripts",
+      "workflow": ".github/workflows/portal.yml",
+      "workflowName": "portal",
+      "job": "portal",
+      "jobName": "portal",
+      "step": "Run npm ci --ignore-scripts",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "package-lock.json must satisfy package.json exactly (npm ci fails on any drift)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:npm-ci"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/portal.yml",
+          "url": "https://github.com/rkendel1/authboundry/blob/b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7/.github/workflows/portal.yml#L33"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "failing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41703362994,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/41703362994",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
+        "event": "push",
+        "at": "2026-11-03T19:27:27Z"
+      },
+      "lastSuccess": {
+        "runId": 39814501623,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/39814501623",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b6f7af007b6f97eafac1e1376148a9bc0efd3f80",
+        "event": "push",
+        "at": "2026-10-22T16:41:26Z"
+      },
+      "lastFailure": {
+        "runId": 41703362994,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/41703362994",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
+        "event": "push",
+        "at": "2026-11-03T19:27:27Z"
+      },
+      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/41703362994/job/126152146135",
+      "failure": {
+        "attribution": "possible",
+        "packages": [],
+        "excerpt": []
+      },
+      "stale": false
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/portal.yml#portal/run-npm-ci",
+      "repository": "rkendel1/authboundry",
+      "name": "npm ci",
+      "workflow": ".github/workflows/portal.yml",
+      "workflowName": "portal",
+      "job": "portal",
+      "jobName": "portal",
+      "step": "Run npm ci",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "package-lock.json must satisfy package.json exactly (npm ci fails on any drift)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:npm-ci"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/portal.yml",
+          "url": "https://github.com/rkendel1/authboundry/blob/b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7/.github/workflows/portal.yml#L33"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "skipped",
+      "resultNote": "skipped because an earlier step in the job failed",
+      "lastRun": {
+        "runId": 41703362994,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/41703362994",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
+        "event": "push",
+        "at": "2026-11-03T19:27:27Z"
+      },
+      "lastSuccess": {
+        "runId": 39814501623,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/39814501623",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b6f7af007b6f97eafac1e1376148a9bc0efd3f80",
+        "event": "push",
+        "at": "2026-10-22T16:41:26Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/41703362994/job/126152146135",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#commit-and-publish/verify-package-would-include-all-binaries",
+      "repository": "rkendel1/authboundry",
+      "name": "Verify package would include all binaries",
+      "workflow": ".github/workflows/release.yml",
+      "workflowName": "Release",
+      "job": "commit-and-publish",
+      "jobName": "Commit binaries and publish",
+      "step": "Verify package would include all binaries",
+      "types": [
+        "publication-validation"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "the package must build into a publishable artifact (publish/pack dry run)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:publish-dry-run"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/release.yml",
+          "url": "https://github.com/rkendel1/authboundry/blob/b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7/.github/workflows/release.yml#L105"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 35632064255,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/35632064255",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "555bc7101202abb6991c3d0c7abab66a57ca26b8",
+        "event": "workflow_dispatch",
+        "at": "2026-09-21T17:36:57Z"
+      },
+      "lastSuccess": {
+        "runId": 35632064255,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/35632064255",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "555bc7101202abb6991c3d0c7abab66a57ca26b8",
+        "event": "workflow_dispatch",
+        "at": "2026-09-21T17:36:57Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/35632064255/job/106442239635",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#commit-and-publish/publish-npm-packages",
+      "repository": "rkendel1/authboundry",
+      "name": "Publish npm packages",
+      "workflow": ".github/workflows/release.yml",
+      "workflowName": "Release",
+      "job": "commit-and-publish",
+      "jobName": "Commit binaries and publish",
+      "step": "Publish npm packages",
+      "types": [
+        "publication-validation"
+      ],
+      "packages": [
+        "authboundry",
+        "authboundry-core",
+        "typescript"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual"
+      ],
+      "modifiers": [
+        {
+          "name": "REQUIRE_ALL_RUNTIME_PACKAGES",
+          "value": "1",
+          "relaxes": false
+        }
+      ],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "registry-query",
+        "publication",
+        "manifest-version"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/release.yml",
+          "url": "https://github.com/rkendel1/authboundry/blob/b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7/.github/workflows/release.yml#L120"
+        },
+        {
+          "path": "scripts/verify-npm-package.sh",
+          "url": "https://github.com/rkendel1/authboundry/blob/b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7/scripts/verify-npm-package.sh"
+        },
+        {
+          "path": "scripts/publish-packages.sh",
+          "url": "https://github.com/rkendel1/authboundry/blob/b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7/scripts/publish-packages.sh"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "failing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 35632064255,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/35632064255",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "555bc7101202abb6991c3d0c7abab66a57ca26b8",
+        "event": "workflow_dispatch",
+        "at": "2026-09-21T17:36:57Z"
+      },
+      "lastSuccess": null,
+      "lastFailure": {
+        "runId": 35632064255,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/35632064255",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "555bc7101202abb6991c3d0c7abab66a57ca26b8",
+        "event": "workflow_dispatch",
+        "at": "2026-09-21T17:36:57Z"
+      },
+      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/35632064255/job/106442239635",
+      "failure": {
+        "attribution": "possible",
+        "packages": [],
+        "excerpt": []
+      },
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/chip-fx-integration.yml#harness/contract-boundary-and-pin-tests-native",
+      "repository": "rkendel1/compute",
+      "name": "Contract, boundary and pin tests (native)",
+      "workflow": ".github/workflows/chip-fx-integration.yml",
+      "workflowName": "chip-fx-integration",
+      "job": "harness",
+      "jobName": "harness",
+      "step": "Contract, boundary and pin tests (native)",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/chip-fx-integration.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/chip-fx-integration.yml#L38"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 40385469813,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40385469813",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "7572e249596932dc2b5660844afc08b8eca29f33",
+        "event": "push",
+        "at": "2026-10-26T19:18:37Z"
+      },
+      "lastSuccess": {
+        "runId": 40385469813,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40385469813",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "7572e249596932dc2b5660844afc08b8eca29f33",
+        "event": "push",
+        "at": "2026-10-26T19:18:37Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/40385469813/job/121792454052",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/chip-fx-integration.yml#harness/wasm-bound-crates-build-for-wasm32-no-native-provider-stack",
+      "repository": "rkendel1/compute",
+      "name": "Wasm-bound crates build for wasm32 (no native provider stack)",
+      "workflow": ".github/workflows/chip-fx-integration.yml",
+      "workflowName": "chip-fx-integration",
+      "job": "harness",
+      "jobName": "harness",
+      "step": "Wasm-bound crates build for wasm32 (no native provider stack)",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/chip-fx-integration.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/chip-fx-integration.yml#L40"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 40385469813,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40385469813",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "7572e249596932dc2b5660844afc08b8eca29f33",
+        "event": "push",
+        "at": "2026-10-26T19:18:37Z"
+      },
+      "lastSuccess": {
+        "runId": 40385469813,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40385469813",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "7572e249596932dc2b5660844afc08b8eca29f33",
+        "event": "push",
+        "at": "2026-10-26T19:18:37Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/40385469813/job/121792454052",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/cloudflare-live.yml#live/live-smoke-test",
+      "repository": "rkendel1/compute",
+      "name": "Live smoke test",
+      "workflow": ".github/workflows/cloudflare-live.yml",
+      "workflowName": "cloudflare-live",
+      "job": "live",
+      "jobName": "live",
+      "step": "Live smoke test",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/cloudflare-live.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/cloudflare-live.yml#L21"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "unknown",
+      "resultNote": "no runs",
+      "lastRun": null,
+      "lastSuccess": null,
+      "lastFailure": null,
+      "jobUrl": null,
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/configured-compatibility.yml#published-registry-stack/install-only-the-locked-published-artifacts",
+      "repository": "rkendel1/compute",
+      "name": "Install only the locked published artifacts",
+      "workflow": ".github/workflows/configured-compatibility.yml",
+      "workflowName": "configured-compatibility",
+      "job": "published-registry-stack",
+      "jobName": "published-registry-stack",
+      "step": "Install only the locked published artifacts",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "package-lock.json must satisfy package.json exactly (npm ci fails on any drift)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pull requests",
+        "pushes to main",
+        "manual",
+        "schedule"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:npm-ci"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/configured-compatibility.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/configured-compatibility.yml#L33"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41405864708,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41405864708",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "schedule",
+        "at": "2026-11-02T07:22:39Z"
+      },
+      "lastSuccess": {
+        "runId": 41405864708,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41405864708",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "schedule",
+        "at": "2026-11-02T07:22:39Z"
+      },
+      "lastFailure": {
+        "runId": 38454984409,
+        "url": "https://github.com/rkendel1/compute/actions/runs/38454984409",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "cf11a11093ccefe6764aa1d7938d25af77385819",
+        "event": "push",
+        "at": "2026-10-13T19:27:56Z"
+      },
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41405864708/job/125147606955",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/configured-compatibility.yml#published-registry-stack/verify-package-contract-and-runtime-compatibility",
+      "repository": "rkendel1/compute",
+      "name": "Verify package, contract, and runtime compatibility",
+      "workflow": ".github/workflows/configured-compatibility.yml",
+      "workflowName": "configured-compatibility",
+      "job": "published-registry-stack",
+      "jobName": "published-registry-stack",
+      "step": "Verify package, contract, and runtime compatibility",
+      "types": [
+        "version-pinning",
+        "version-consistency",
+        "dependency-compatibility"
+      ],
+      "packages": [
+        "appport-core",
+        "appport-fx",
+        "appport-github",
+        "appport-services",
+        "authboundry-core",
+        "feltdb",
+        "feltdb-core"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "Base Compute version drift",
+        "<path> has no registry integrity",
+        "stack-agent is pinned to a full commit",
+        "the profile and Cargo.toml pin different stack-agent commits",
+        "<defaultRuntime.executable> is not in the artifact and no source tree pins it",
+        "<name> has undeclared version skew"
+      ],
+      "blocking": true,
+      "blockingNote": "relaxed by SOURCE_DATE_EPOCH=0: part of the condition may only be reported",
+      "gates": [
+        "pull requests",
+        "pushes to main",
+        "manual",
+        "schedule"
+      ],
+      "modifiers": [
+        {
+          "name": "SOURCE_DATE_EPOCH",
+          "value": "0",
+          "relaxes": true
+        },
+        {
+          "name": "COMPUTE_COMPATIBILITY_EVIDENCE",
+          "value": "evidence.json",
+          "relaxes": false
+        }
+      ],
+      "dedicated": true,
+      "confidence": "partially-understood",
+      "signals": [
+        "lockfile",
+        "manifest-version",
+        "compatibility",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/configured-compatibility.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/configured-compatibility.yml#L36"
+        },
+        {
+          "path": "compatibility/published-stack/verify.mjs",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/compatibility/published-stack/verify.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41405864708,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41405864708",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "schedule",
+        "at": "2026-11-02T07:22:39Z"
+      },
+      "lastSuccess": {
+        "runId": 41405864708,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41405864708",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "schedule",
+        "at": "2026-11-02T07:22:39Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41405864708/job/125147606955",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/distribution-certification.yml#certify-linux-x86_64/run-cargo-build-release-locked",
+      "repository": "rkendel1/compute",
+      "name": "cargo build --release --locked",
+      "workflow": ".github/workflows/distribution-certification.yml",
+      "workflowName": "distribution-certification",
+      "job": "certify-linux-x86_64",
+      "jobName": "certify-linux-x86_64",
+      "step": "Run cargo build --release --locked",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "called by other workflows",
+        "manual",
+        "tags v*"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/distribution-certification.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/distribution-certification.yml#L31"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 40392795971,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40392795971",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "v0.1.25",
+        "sha": "0d5e5f4ef0349b74e067a91d0635fb94da84db21",
+        "event": "push",
+        "at": "2026-10-26T20:26:53Z"
+      },
+      "lastSuccess": {
+        "runId": 40392795971,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40392795971",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "v0.1.25",
+        "sha": "0d5e5f4ef0349b74e067a91d0635fb94da84db21",
+        "event": "push",
+        "at": "2026-10-26T20:26:53Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/40392795971/job/121817885579",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/distribution-certification.yml#certify-linux-x86_64/assemble-the-configured-product-from-published-packages",
+      "repository": "rkendel1/compute",
+      "name": "Assemble the configured product from published packages",
+      "workflow": ".github/workflows/distribution-certification.yml",
+      "workflowName": "distribution-certification",
+      "job": "certify-linux-x86_64",
+      "jobName": "certify-linux-x86_64",
+      "step": "Assemble the configured product from published packages",
+      "types": [
+        "version-consistency",
+        "version-pinning",
+        "dependency-compatibility"
+      ],
+      "packages": [
+        "appport-core",
+        "appport-fx",
+        "appport-github",
+        "appport-services",
+        "authboundry-core",
+        "feltdb",
+        "feltdb-core"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "package-lock.json must satisfy package.json exactly (npm ci fails on any drift)",
+        "Base Compute version drift",
+        "<path> has no registry integrity",
+        "stack-agent is pinned to a full commit",
+        "the profile and Cargo.toml pin different stack-agent commits",
+        "<defaultRuntime.executable> is not in the artifact and no source tree pins it",
+        "<name> has undeclared version skew"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "called by other workflows",
+        "manual",
+        "tags v*"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "builtin:npm-ci",
+        "lockfile",
+        "manifest-version",
+        "compatibility",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/distribution-certification.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/distribution-certification.yml#L61"
+        },
+        {
+          "path": "compatibility/published-stack/verify.mjs",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/compatibility/published-stack/verify.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 40392795971,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40392795971",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "v0.1.25",
+        "sha": "0d5e5f4ef0349b74e067a91d0635fb94da84db21",
+        "event": "push",
+        "at": "2026-10-26T20:26:53Z"
+      },
+      "lastSuccess": {
+        "runId": 40392795971,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40392795971",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "v0.1.25",
+        "sha": "0d5e5f4ef0349b74e067a91d0635fb94da84db21",
+        "event": "push",
+        "at": "2026-10-26T20:26:53Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/40392795971/job/121817885579",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/distribution-certification.yml#validate-macos-aarch64-preview/run-cargo-build-release-locked",
+      "repository": "rkendel1/compute",
+      "name": "cargo build --release --locked",
+      "workflow": ".github/workflows/distribution-certification.yml",
+      "workflowName": "distribution-certification",
+      "job": "validate-macos-aarch64-preview",
+      "jobName": "validate-macos-aarch64-preview",
+      "step": "Run cargo build --release --locked",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "called by other workflows",
+        "manual",
+        "tags v*"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/distribution-certification.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/distribution-certification.yml#L31"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 40392795971,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40392795971",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "v0.1.25",
+        "sha": "0d5e5f4ef0349b74e067a91d0635fb94da84db21",
+        "event": "push",
+        "at": "2026-10-26T20:26:53Z"
+      },
+      "lastSuccess": {
+        "runId": 40392795971,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40392795971",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "v0.1.25",
+        "sha": "0d5e5f4ef0349b74e067a91d0635fb94da84db21",
+        "event": "push",
+        "at": "2026-10-26T20:26:53Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/40392795971/job/121817884979",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/distribution-certification.yml#validate-macos-aarch64-preview/assemble-the-configured-preview-from-published-packages",
+      "repository": "rkendel1/compute",
+      "name": "Assemble the configured preview from published packages",
+      "workflow": ".github/workflows/distribution-certification.yml",
+      "workflowName": "distribution-certification",
+      "job": "validate-macos-aarch64-preview",
+      "jobName": "validate-macos-aarch64-preview",
+      "step": "Assemble the configured preview from published packages",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "package-lock.json must satisfy package.json exactly (npm ci fails on any drift)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "called by other workflows",
+        "manual",
+        "tags v*"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:npm-ci"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/distribution-certification.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/distribution-certification.yml#L152"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 40392795971,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40392795971",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "v0.1.25",
+        "sha": "0d5e5f4ef0349b74e067a91d0635fb94da84db21",
+        "event": "push",
+        "at": "2026-10-26T20:26:53Z"
+      },
+      "lastSuccess": {
+        "runId": 40392795971,
+        "url": "https://github.com/rkendel1/compute/actions/runs/40392795971",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "v0.1.25",
+        "sha": "0d5e5f4ef0349b74e067a91d0635fb94da84db21",
+        "event": "push",
+        "at": "2026-10-26T20:26:53Z"
+      },
+      "lastFailure": {
+        "runId": 39798120691,
+        "url": "https://github.com/rkendel1/compute/actions/runs/39798120691",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "v0.1.21",
+        "sha": "8e7a85e67e05e3bf317d7c690da31ef82a3b4caf",
+        "event": "push",
+        "at": "2026-10-22T15:05:53Z"
+      },
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/40392795971/job/121817884979",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/feltdb-consumer.yml#certify/install-the-model-compiler-lockfile-only",
+      "repository": "rkendel1/compute",
+      "name": "Install the model compiler (lockfile only)",
+      "workflow": ".github/workflows/feltdb-consumer.yml",
+      "workflowName": "feltdb-consumer",
+      "job": "certify",
+      "jobName": "certify",
+      "step": "Install the model compiler (lockfile only)",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "package-lock.json must satisfy package.json exactly (npm ci fails on any drift)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:npm-ci"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/feltdb-consumer.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/feltdb-consumer.yml#L27"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667841/job/124989032885",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/feltdb-consumer.yml#certify/verify-the-resolved-feltdb-core-is-the-certified-one",
+      "repository": "rkendel1/compute",
+      "name": "Verify the resolved @feltdb/core is the certified one",
+      "workflow": ".github/workflows/feltdb-consumer.yml",
+      "workflowName": "feltdb-consumer",
+      "job": "certify",
+      "jobName": "certify",
+      "step": "Verify the resolved @feltdb/core is the certified one",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [
+        "feltdb-core"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "MODEL_COMPILER_VERSION is not declared in compute-state-feltdb",
+        "packages/<name> locks @feltdb/core <entry.version>, not <certified>",
+        "node_modules resolves @feltdb/core <version>, not <certified>",
+        "packages/compute-state-model/package-lock.json does not lock @feltdb/core"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": true,
+      "confidence": "partially-understood",
+      "signals": [
+        "lockfile",
+        "manifest-version"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/feltdb-consumer.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/feltdb-consumer.yml#L31"
+        },
+        {
+          "path": "scripts/feltdb/verify-version.mjs",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/scripts/feltdb/verify-version.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667841/job/124989032885",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/feltdb-consumer.yml#certify/install-the-certified-feltdb-server-from-crates-io",
+      "repository": "rkendel1/compute",
+      "name": "Install the certified feltdb-server from crates.io",
+      "workflow": ".github/workflows/feltdb-consumer.yml",
+      "workflowName": "feltdb-consumer",
+      "job": "certify",
+      "jobName": "certify",
+      "step": "Install the certified feltdb-server from crates.io",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/feltdb-consumer.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/feltdb-consumer.yml#L38"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667841/job/124989032885",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/feltdb-consumer.yml#certify/build-the-previous-server-bundled-in-feltdb-core-for-compati",
+      "repository": "rkendel1/compute",
+      "name": "Build the previous server (bundled in @feltdb/core), for compatibility",
+      "workflow": ".github/workflows/feltdb-consumer.yml",
+      "workflowName": "feltdb-consumer",
+      "job": "certify",
+      "jobName": "certify",
+      "step": "Build the previous server (bundled in @feltdb/core), for compatibility",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [
+        "feltdb",
+        "feltdb-core",
+        "feltdb-server"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/feltdb-consumer.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/feltdb-consumer.yml#L45"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667841/job/124989032885",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/feltdb-consumer.yml#certify/state-backends-conform",
+      "repository": "rkendel1/compute",
+      "name": "State backends conform",
+      "workflow": ".github/workflows/feltdb-consumer.yml",
+      "workflowName": "feltdb-consumer",
+      "job": "certify",
+      "jobName": "certify",
+      "step": "State backends conform",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/feltdb-consumer.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/feltdb-consumer.yml#L51"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667841/job/124989032885",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/feltdb-consumer.yml#certify/the-feltdb-backend-against-the-certified-feltdb-server",
+      "repository": "rkendel1/compute",
+      "name": "The FeltDB backend against the certified feltdb-server",
+      "workflow": ".github/workflows/feltdb-consumer.yml",
+      "workflowName": "feltdb-consumer",
+      "job": "certify",
+      "jobName": "certify",
+      "step": "The FeltDB backend against the certified feltdb-server",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/feltdb-consumer.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/feltdb-consumer.yml#L54"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667841/job/124989032885",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/feltdb-consumer.yml#certify/the-controller-against-the-certified-feltdb-server",
+      "repository": "rkendel1/compute",
+      "name": "The controller against the certified feltdb-server",
+      "workflow": ".github/workflows/feltdb-consumer.yml",
+      "workflowName": "feltdb-consumer",
+      "job": "certify",
+      "jobName": "certify",
+      "step": "The controller against the certified feltdb-server",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/feltdb-consumer.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/feltdb-consumer.yml#L57"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667841,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667841",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:51:53Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667841/job/124989032885",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/microvm.yml#microvm/the-guest-root-filesystem",
+      "repository": "rkendel1/compute",
+      "name": "The guest root filesystem",
+      "workflow": ".github/workflows/microvm.yml",
+      "workflowName": "microvm",
+      "job": "microvm",
+      "jobName": "microvm",
+      "step": "The guest root filesystem",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/microvm.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/microvm.yml#L65"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667802,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667802",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:58:14Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667802,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667802",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:58:14Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667802/job/124989032664",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/microvm.yml#microvm/microvm-sessions",
+      "repository": "rkendel1/compute",
+      "name": "MicroVM sessions",
+      "workflow": ".github/workflows/microvm.yml",
+      "workflowName": "microvm",
+      "job": "microvm",
+      "jobName": "microvm",
+      "step": "MicroVM sessions",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/microvm.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/microvm.yml#L73"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667802,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667802",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:58:14Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667802,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667802",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:58:14Z"
+      },
+      "lastFailure": {
+        "runId": 39720493443,
+        "url": "https://github.com/rkendel1/compute/actions/runs/39720493443",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "d287ef65c5aec3bab9588b8397c65a01d1f2fc0f",
+        "event": "push",
+        "at": "2026-10-22T04:08:52Z"
+      },
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667802/job/124989032664",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/microvm.yml#microvm/guest-agent-and-egress-gateway",
+      "repository": "rkendel1/compute",
+      "name": "Guest agent and egress gateway",
+      "workflow": ".github/workflows/microvm.yml",
+      "workflowName": "microvm",
+      "job": "microvm",
+      "jobName": "microvm",
+      "step": "Guest agent and egress gateway",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/microvm.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/microvm.yml#L80"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667802,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667802",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:58:14Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667802,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667802",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:58:14Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667802/job/124989032664",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/microvm.yml#microvm/lifecycle-latency",
+      "repository": "rkendel1/compute",
+      "name": "Lifecycle latency",
+      "workflow": ".github/workflows/microvm.yml",
+      "workflowName": "microvm",
+      "job": "microvm",
+      "jobName": "microvm",
+      "step": "Lifecycle latency",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/microvm.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/microvm.yml#L84"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667802,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667802",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:58:14Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667802,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667802",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:58:14Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667802/job/124989032664",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/microvm.yml#container-engine/container-sessions-on-a-real-engine",
+      "repository": "rkendel1/compute",
+      "name": "Container sessions on a real engine",
+      "workflow": ".github/workflows/microvm.yml",
+      "workflowName": "microvm",
+      "job": "container-engine",
+      "jobName": "container-engine",
+      "step": "Container sessions on a real engine",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/microvm.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/microvm.yml#L109"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667802,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667802",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:58:14Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667802,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667802",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:58:14Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667802/job/124989032857",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/stack.yml#contract/manifest-lock-and-inventory-tests",
+      "repository": "rkendel1/compute",
+      "name": "Manifest, lock, and inventory tests",
+      "workflow": ".github/workflows/stack.yml",
+      "workflowName": "stack",
+      "job": "contract",
+      "jobName": "contract",
+      "step": "Manifest, lock, and inventory tests",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "schedule",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/stack.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/stack.yml#L46"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "unknown",
+      "resultNote": "job \"contract\" did not appear in the run (renamed, or never scheduled)",
+      "lastRun": {
+        "runId": 41353666714,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353666714",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:45:52Z"
+      },
+      "lastSuccess": null,
+      "lastFailure": null,
+      "jobUrl": null,
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/stack.yml#contract/build-compute",
+      "repository": "rkendel1/compute",
+      "name": "Build compute",
+      "workflow": ".github/workflows/stack.yml",
+      "workflowName": "stack",
+      "job": "contract",
+      "jobName": "contract",
+      "step": "Build compute",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "schedule",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/stack.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/stack.yml#L48"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "unknown",
+      "resultNote": "job \"contract\" did not appear in the run (renamed, or never scheduled)",
+      "lastRun": {
+        "runId": 41353666714,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353666714",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:45:52Z"
+      },
+      "lastSuccess": null,
+      "lastFailure": null,
+      "jobUrl": null,
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/stack.yml#candidate/build-compute",
+      "repository": "rkendel1/compute",
+      "name": "Build compute",
+      "workflow": ".github/workflows/stack.yml",
+      "workflowName": "stack",
+      "job": "candidate",
+      "jobName": "candidate",
+      "step": "Build compute",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "schedule",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/stack.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/stack.yml#L48"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "unknown",
+      "resultNote": "job \"candidate\" did not appear in the run (renamed, or never scheduled)",
+      "lastRun": {
+        "runId": 41353666714,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353666714",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:45:52Z"
+      },
+      "lastSuccess": null,
+      "lastFailure": null,
+      "jobUrl": null,
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/test.yml#workspace/install-the-published-stack",
+      "repository": "rkendel1/compute",
+      "name": "Install the published stack",
+      "workflow": ".github/workflows/test.yml",
+      "workflowName": "test",
+      "job": "workspace",
+      "jobName": "workspace",
+      "step": "Install the published stack",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "package-lock.json must satisfy package.json exactly (npm ci fails on any drift)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:npm-ci"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/test.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/test.yml#L39"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667795/job/124989032900",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/test.yml#workspace/install-pax",
+      "repository": "rkendel1/compute",
+      "name": "Install PAX",
+      "workflow": ".github/workflows/test.yml",
+      "workflowName": "test",
+      "job": "workspace",
+      "jobName": "workspace",
+      "step": "Install PAX",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/test.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/test.yml#L44"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667795/job/124989032900",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/test.yml#workspace/workspace-tests",
+      "repository": "rkendel1/compute",
+      "name": "Workspace tests",
+      "workflow": ".github/workflows/test.yml",
+      "workflowName": "test",
+      "job": "workspace",
+      "jobName": "workspace",
+      "step": "Workspace tests",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/test.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/test.yml#L46"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "failing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "lastSuccess": {
+        "runId": 39736865244,
+        "url": "https://github.com/rkendel1/compute/actions/runs/39736865244",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b0900fe584d15e8eb1e0457ba29db1a6bd075863",
+        "event": "push",
+        "at": "2026-10-22T07:14:09Z"
+      },
+      "lastFailure": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667795/job/124989032900",
+      "failure": {
+        "attribution": "possible",
+        "packages": [],
+        "excerpt": []
+      },
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/test.yml#workspace/product-acceptance",
+      "repository": "rkendel1/compute",
+      "name": "Product acceptance",
+      "workflow": ".github/workflows/test.yml",
+      "workflowName": "test",
+      "job": "workspace",
+      "jobName": "workspace",
+      "step": "Product acceptance",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/test.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/test.yml#L54"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "skipped",
+      "resultNote": "skipped because an earlier step in the job failed",
+      "lastRun": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "lastSuccess": {
+        "runId": 39736865244,
+        "url": "https://github.com/rkendel1/compute/actions/runs/39736865244",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b0900fe584d15e8eb1e0457ba29db1a6bd075863",
+        "event": "push",
+        "at": "2026-10-22T07:14:09Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667795/job/124989032900",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/test.yml#workspace/cloudflare-worker-harness",
+      "repository": "rkendel1/compute",
+      "name": "Cloudflare Worker harness",
+      "workflow": ".github/workflows/test.yml",
+      "workflowName": "test",
+      "job": "workspace",
+      "jobName": "workspace",
+      "step": "Cloudflare Worker harness",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/test.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/test.yml#L61"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "skipped",
+      "resultNote": "skipped because an earlier step in the job failed",
+      "lastRun": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "lastSuccess": {
+        "runId": 39736865244,
+        "url": "https://github.com/rkendel1/compute/actions/runs/39736865244",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b0900fe584d15e8eb1e0457ba29db1a6bd075863",
+        "event": "push",
+        "at": "2026-10-22T07:14:09Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667795/job/124989032900",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/test.yml#workspace/appport-contract",
+      "repository": "rkendel1/compute",
+      "name": "AppPort contract",
+      "workflow": ".github/workflows/test.yml",
+      "workflowName": "test",
+      "job": "workspace",
+      "jobName": "workspace",
+      "step": "AppPort contract",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "package-lock.json must satisfy package.json exactly (npm ci fails on any drift)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:npm-ci"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/test.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/test.yml#L65"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "skipped",
+      "resultNote": "skipped because an earlier step in the job failed",
+      "lastRun": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "lastSuccess": {
+        "runId": 39736865244,
+        "url": "https://github.com/rkendel1/compute/actions/runs/39736865244",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b0900fe584d15e8eb1e0457ba29db1a6bd075863",
+        "event": "push",
+        "at": "2026-10-22T07:14:09Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667795/job/124989032900",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/test.yml#browser/build-compute",
+      "repository": "rkendel1/compute",
+      "name": "Build Compute",
+      "workflow": ".github/workflows/test.yml",
+      "workflowName": "test",
+      "job": "browser",
+      "jobName": "browser",
+      "step": "Build Compute",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/test.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/test.yml#L79"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "lastSuccess": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667795/job/124989032727",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/test.yml#browser/install-chromium",
+      "repository": "rkendel1/compute",
+      "name": "Install Chromium",
+      "workflow": ".github/workflows/test.yml",
+      "workflowName": "test",
+      "job": "browser",
+      "jobName": "browser",
+      "step": "Install Chromium",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "package-lock.json must satisfy package.json exactly (npm ci fails on any drift)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:npm-ci"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/test.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/test.yml#L81"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "failing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "lastSuccess": {
+        "runId": 39736865244,
+        "url": "https://github.com/rkendel1/compute/actions/runs/39736865244",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b0900fe584d15e8eb1e0457ba29db1a6bd075863",
+        "event": "push",
+        "at": "2026-10-22T07:14:09Z"
+      },
+      "lastFailure": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667795/job/124989032727",
+      "failure": {
+        "attribution": "possible",
+        "packages": [],
+        "excerpt": []
+      },
+      "stale": false
+    },
+    {
+      "id": "rkendel1/compute:.github/workflows/test.yml#browser/work-mode-and-the-whole-product-in-the-browser",
+      "repository": "rkendel1/compute",
+      "name": "Work mode and the whole product, in the browser",
+      "workflow": ".github/workflows/test.yml",
+      "workflowName": "test",
+      "job": "browser",
+      "jobName": "browser",
+      "step": "Work mode and the whole product, in the browser",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "Cargo.lock must be up to date with every Cargo.toml (--locked refuses to update it)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual",
+        "pull requests",
+        "pushes to main"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:cargo-locked"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/test.yml",
+          "url": "https://github.com/rkendel1/compute/blob/b8607ae40561183a2e4a985916bb621b6d31d1c7/.github/workflows/test.yml#L90"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "skipped",
+      "resultNote": "skipped because an earlier step in the job failed",
+      "lastRun": {
+        "runId": 41353667795,
+        "url": "https://github.com/rkendel1/compute/actions/runs/41353667795",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
+        "event": "push",
+        "at": "2026-11-01T21:53:54Z"
+      },
+      "lastSuccess": {
+        "runId": 39736865244,
+        "url": "https://github.com/rkendel1/compute/actions/runs/39736865244",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "b0900fe584d15e8eb1e0457ba29db1a6bd075863",
+        "event": "push",
+        "at": "2026-10-22T07:14:09Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41353667795/job/124989032727",
+      "failure": null,
+      "stale": false
+    },
+    {
       "id": "rkendel1/felt-ops:.github/workflows/ci.yml#verify/run-npm-ci",
       "repository": "rkendel1/felt-ops",
       "name": "npm ci",
@@ -3150,7 +7063,7 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/felt-ops/blob/928c6982f447e598e1dcb33b3497712ba8092688/.github/workflows/ci.yml#L20"
+          "url": "https://github.com/rkendel1/felt-ops/blob/29aa672b13d7c899c652296cad079d122843ce30/.github/workflows/ci.yml#L20"
         }
       ],
       "annotated": false,
@@ -3158,27 +7071,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 41853366638,
-        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638",
+        "runId": 41858559509,
+        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41858559509",
         "status": "completed",
         "conclusion": "success",
         "branch": "claude/keen-cannon-gxv0v3",
-        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
+        "sha": "29aa672b13d7c899c652296cad079d122843ce30",
         "event": "push",
-        "at": "2026-11-04T15:02:21Z"
+        "at": "2026-11-04T15:32:11Z"
       },
       "lastSuccess": {
-        "runId": 41853366638,
-        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638",
+        "runId": 41858559509,
+        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41858559509",
         "status": "completed",
         "conclusion": "success",
         "branch": "claude/keen-cannon-gxv0v3",
-        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
+        "sha": "29aa672b13d7c899c652296cad079d122843ce30",
         "event": "push",
-        "at": "2026-11-04T15:02:21Z"
+        "at": "2026-11-04T15:32:11Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638/job/126655305539",
+      "jobUrl": "https://github.com/rkendel1/felt-ops/actions/runs/41858559509/job/126673745914",
       "failure": null,
       "stale": false
     },
@@ -3223,15 +7136,15 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/felt-ops/blob/928c6982f447e598e1dcb33b3497712ba8092688/.github/workflows/ci.yml#L27"
+          "url": "https://github.com/rkendel1/felt-ops/blob/29aa672b13d7c899c652296cad079d122843ce30/.github/workflows/ci.yml#L27"
         },
         {
           "path": "scripts/scenario-7-platform-upgrade.ts",
-          "url": "https://github.com/rkendel1/felt-ops/blob/928c6982f447e598e1dcb33b3497712ba8092688/scripts/scenario-7-platform-upgrade.ts"
+          "url": "https://github.com/rkendel1/felt-ops/blob/29aa672b13d7c899c652296cad079d122843ce30/scripts/scenario-7-platform-upgrade.ts"
         },
         {
           "path": "scripts/_platform-old-phase.ts",
-          "url": "https://github.com/rkendel1/felt-ops/blob/928c6982f447e598e1dcb33b3497712ba8092688/scripts/_platform-old-phase.ts"
+          "url": "https://github.com/rkendel1/felt-ops/blob/29aa672b13d7c899c652296cad079d122843ce30/scripts/_platform-old-phase.ts"
         }
       ],
       "annotated": false,
@@ -3239,27 +7152,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 41853366638,
-        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638",
+        "runId": 41858559509,
+        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41858559509",
         "status": "completed",
         "conclusion": "success",
         "branch": "claude/keen-cannon-gxv0v3",
-        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
+        "sha": "29aa672b13d7c899c652296cad079d122843ce30",
         "event": "push",
-        "at": "2026-11-04T15:02:21Z"
+        "at": "2026-11-04T15:32:11Z"
       },
       "lastSuccess": {
-        "runId": 41853366638,
-        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638",
+        "runId": 41858559509,
+        "url": "https://github.com/rkendel1/felt-ops/actions/runs/41858559509",
         "status": "completed",
         "conclusion": "success",
         "branch": "claude/keen-cannon-gxv0v3",
-        "sha": "928c6982f447e598e1dcb33b3497712ba8092688",
+        "sha": "29aa672b13d7c899c652296cad079d122843ce30",
         "event": "push",
-        "at": "2026-11-04T15:02:21Z"
+        "at": "2026-11-04T15:32:11Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638/job/126655305539",
+      "jobUrl": "https://github.com/rkendel1/felt-ops/actions/runs/41858559509/job/126673745914",
       "failure": null,
       "stale": false
     },
@@ -3914,6 +7827,7 @@
         "dependency-compatibility"
       ],
       "packages": [
+        "authboundry",
         "feltdb",
         "feltdb-core",
         "feltdb-server",
@@ -4071,6 +7985,7 @@
         "version-consistency"
       ],
       "packages": [
+        "authboundry",
         "feltdb",
         "feltdb-server"
       ],
@@ -7582,7 +11497,7 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/resolver/blob/ceae2e8d7d70bca40dee4b27c3d316b014834ae7/.github/workflows/ci.yml#L14"
+          "url": "https://github.com/rkendel1/resolver/blob/67d24fe987a137e2e6aa967a4ed76936c9cf56b3/.github/workflows/ci.yml#L14"
         }
       ],
       "annotated": false,
@@ -7590,27 +11505,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 41843879639,
-        "url": "https://github.com/rkendel1/resolver/actions/runs/41843879639",
+        "runId": 41857570763,
+        "url": "https://github.com/rkendel1/resolver/actions/runs/41857570763",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "ceae2e8d7d70bca40dee4b27c3d316b014834ae7",
+        "sha": "67d24fe987a137e2e6aa967a4ed76936c9cf56b3",
         "event": "push",
-        "at": "2026-11-04T14:04:50Z"
+        "at": "2026-11-04T15:26:11Z"
       },
       "lastSuccess": {
-        "runId": 41843879639,
-        "url": "https://github.com/rkendel1/resolver/actions/runs/41843879639",
+        "runId": 41857570763,
+        "url": "https://github.com/rkendel1/resolver/actions/runs/41857570763",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "ceae2e8d7d70bca40dee4b27c3d316b014834ae7",
+        "sha": "67d24fe987a137e2e6aa967a4ed76936c9cf56b3",
         "event": "push",
-        "at": "2026-11-04T14:04:50Z"
+        "at": "2026-11-04T15:26:11Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/resolver/actions/runs/41843879639/job/126622229511",
+      "jobUrl": "https://github.com/rkendel1/resolver/actions/runs/41857570763/job/126670200736",
       "failure": null,
       "stale": false
     },
@@ -7646,7 +11561,7 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/resolver/blob/ceae2e8d7d70bca40dee4b27c3d316b014834ae7/.github/workflows/ci.yml#L14"
+          "url": "https://github.com/rkendel1/resolver/blob/67d24fe987a137e2e6aa967a4ed76936c9cf56b3/.github/workflows/ci.yml#L14"
         }
       ],
       "annotated": false,
@@ -7654,27 +11569,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 41843879639,
-        "url": "https://github.com/rkendel1/resolver/actions/runs/41843879639",
+        "runId": 41857570763,
+        "url": "https://github.com/rkendel1/resolver/actions/runs/41857570763",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "ceae2e8d7d70bca40dee4b27c3d316b014834ae7",
+        "sha": "67d24fe987a137e2e6aa967a4ed76936c9cf56b3",
         "event": "push",
-        "at": "2026-11-04T14:04:50Z"
+        "at": "2026-11-04T15:26:11Z"
       },
       "lastSuccess": {
-        "runId": 41843879639,
-        "url": "https://github.com/rkendel1/resolver/actions/runs/41843879639",
+        "runId": 41857570763,
+        "url": "https://github.com/rkendel1/resolver/actions/runs/41857570763",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "ceae2e8d7d70bca40dee4b27c3d316b014834ae7",
+        "sha": "67d24fe987a137e2e6aa967a4ed76936c9cf56b3",
         "event": "push",
-        "at": "2026-11-04T14:04:50Z"
+        "at": "2026-11-04T15:26:11Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/resolver/actions/runs/41843879639/job/126622230016",
+      "jobUrl": "https://github.com/rkendel1/resolver/actions/runs/41857570763/job/126670200569",
       "failure": null,
       "stale": false
     },
@@ -7709,7 +11624,7 @@
       "sources": [
         {
           "path": "scripts/publish-packages.mjs",
-          "url": "https://github.com/rkendel1/resolver/blob/ceae2e8d7d70bca40dee4b27c3d316b014834ae7/scripts/publish-packages.mjs"
+          "url": "https://github.com/rkendel1/resolver/blob/67d24fe987a137e2e6aa967a4ed76936c9cf56b3/scripts/publish-packages.mjs"
         }
       ],
       "annotated": false,
