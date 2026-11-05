@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T15:32:00.046Z",
+  "generatedAt": "2026-11-05T07:27:04.815Z",
   "items": [
     {
       "key": "flow-db|crates/feltdb-public-api-check/Cargo.lock|crates:tokio",
@@ -19,12 +19,12 @@
       "latestSatisfiesDeclared": true,
       "status": "update-required",
       "priority": 1,
+      "ci": null,
       "targetPublishedAt": "2026-10-21T21:05:43.950213Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -53,12 +53,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-03T20:40:49.737Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -134,11 +134,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-03T14:40:24.546Z",
-      "openedAt": "2026-11-04T15:32:00.046Z",
-      "updatedAt": "2026-11-04T15:32:00.046Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -160,6 +155,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-03T14:40:24.546Z",
+      "openedAt": "2026-11-04T15:32:00.046Z",
+      "updatedAt": "2026-11-04T15:32:00.046Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -194,11 +194,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-10-28T13:05:27.940Z",
-      "openedAt": "2026-11-04T15:32:00.046Z",
-      "updatedAt": "2026-11-04T15:32:00.046Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -220,6 +215,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-10-28T13:05:27.940Z",
+      "openedAt": "2026-11-04T15:32:00.046Z",
+      "updatedAt": "2026-11-04T15:32:00.046Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -249,11 +249,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-03T14:41:11.425Z",
-      "openedAt": "2026-11-04T15:32:00.046Z",
-      "updatedAt": "2026-11-04T15:32:00.046Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -267,6 +262,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-03T14:41:11.425Z",
+      "openedAt": "2026-11-04T15:32:00.046Z",
+      "updatedAt": "2026-11-04T15:32:00.046Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -296,11 +296,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-03T20:40:49.737Z",
-      "openedAt": "2026-11-04T15:32:00.046Z",
-      "updatedAt": "2026-11-04T15:32:00.046Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -314,6 +309,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-03T20:40:49.737Z",
+      "openedAt": "2026-11-04T15:32:00.046Z",
+      "updatedAt": "2026-11-04T15:32:00.046Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -342,12 +342,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-03T14:40:24.546Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -376,12 +376,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-03T14:40:24.546Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -410,12 +410,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-03T14:40:24.546Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -444,12 +444,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-10-28T13:06:38.166Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -478,12 +478,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-04T13:45:04.257Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -512,12 +512,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-04T13:45:04.257Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -546,12 +546,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-04T13:45:04.257Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -580,12 +580,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-03T20:40:49.737Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -614,12 +614,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-03T20:40:49.737Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -648,12 +648,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-03T20:40:49.737Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -682,12 +682,12 @@
       "latestSatisfiesDeclared": true,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-10-21T21:05:43.950213Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -716,11 +716,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-03T14:40:24.546Z",
-      "openedAt": "2026-11-04T15:32:00.046Z",
-      "updatedAt": "2026-11-04T15:32:00.046Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -742,6 +737,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-03T14:40:24.546Z",
+      "openedAt": "2026-11-04T15:32:00.046Z",
+      "updatedAt": "2026-11-04T15:32:00.046Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -770,11 +770,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-03T14:40:24.546Z",
-      "openedAt": "2026-11-04T15:32:00.046Z",
-      "updatedAt": "2026-11-04T15:32:00.046Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -796,6 +791,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-03T14:40:24.546Z",
+      "openedAt": "2026-11-04T15:32:00.046Z",
+      "updatedAt": "2026-11-04T15:32:00.046Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -824,12 +824,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-10-28T13:05:27.940Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -858,12 +858,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-04T13:45:08.595Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -892,12 +892,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-10-28T13:06:38.166Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -926,12 +926,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-03T14:41:38.827Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -960,11 +960,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-04T13:45:04.257Z",
-      "openedAt": "2026-11-04T15:32:00.046Z",
-      "updatedAt": "2026-11-04T15:32:00.046Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -986,6 +981,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-04T13:45:04.257Z",
+      "openedAt": "2026-11-04T15:32:00.046Z",
+      "updatedAt": "2026-11-04T15:32:00.046Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -1014,12 +1014,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-10-28T13:06:59.604Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -1048,11 +1048,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-03T20:40:49.737Z",
-      "openedAt": "2026-11-04T15:32:00.046Z",
-      "updatedAt": "2026-11-04T15:32:00.046Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -1090,6 +1085,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-03T20:40:49.737Z",
+      "openedAt": "2026-11-04T15:32:00.046Z",
+      "updatedAt": "2026-11-04T15:32:00.046Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -1118,11 +1118,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-03T20:40:49.737Z",
-      "openedAt": "2026-11-04T15:32:00.046Z",
-      "updatedAt": "2026-11-04T15:32:00.046Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -1160,6 +1155,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-03T20:40:49.737Z",
+      "openedAt": "2026-11-04T15:32:00.046Z",
+      "updatedAt": "2026-11-04T15:32:00.046Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -1188,12 +1188,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-03T20:31:45.068922Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -1240,12 +1240,12 @@
       "latestSatisfiesDeclared": true,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-10-21T21:05:43.950213Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -1274,12 +1274,12 @@
       "latestSatisfiesDeclared": true,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-10-21T21:05:43.950213Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -1308,11 +1308,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-03T20:40:49.737Z",
-      "openedAt": "2026-11-04T15:32:00.046Z",
-      "updatedAt": "2026-11-04T15:32:00.046Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -1402,7 +1397,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41772786700"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41967428103"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1410,7 +1405,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41772786700"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41967428103"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1454,6 +1449,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-03T20:40:49.737Z",
+      "openedAt": "2026-11-04T15:32:00.046Z",
+      "updatedAt": "2026-11-04T15:32:00.046Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -1482,11 +1482,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-03T20:40:49.737Z",
-      "openedAt": "2026-11-04T15:32:00.046Z",
-      "updatedAt": "2026-11-04T15:32:00.046Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -1576,7 +1571,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41772786700"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41967428103"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1584,7 +1579,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41772786700"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41967428103"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1628,6 +1623,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-03T20:40:49.737Z",
+      "openedAt": "2026-11-04T15:32:00.046Z",
+      "updatedAt": "2026-11-04T15:32:00.046Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -1656,11 +1656,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-03T20:38:52.582Z",
-      "openedAt": "2026-11-04T15:32:00.046Z",
-      "updatedAt": "2026-11-04T15:32:00.046Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -1726,7 +1721,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41772786700"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41967428103"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1734,7 +1729,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41772786700"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41967428103"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1778,6 +1773,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-03T20:38:52.582Z",
+      "openedAt": "2026-11-04T15:32:00.046Z",
+      "updatedAt": "2026-11-04T15:32:00.046Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -1809,12 +1809,12 @@
       "latestSatisfiesDeclared": true,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-10-21T21:05:43.950213Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -1837,18 +1837,18 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.1.1",
-      "targetVersion": "1.7.2",
+      "targetVersion": "1.8.0",
       "declaredVersion": "1.1.1",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-04T14:18:41.035Z",
+      "ci": null,
+      "targetPublishedAt": "2026-11-04T20:01:00.275Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -1877,12 +1877,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-03T14:41:11.425Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -1911,12 +1911,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-04T13:45:04.257Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -1945,12 +1945,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-03T20:40:49.737Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2083,18 +2083,18 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.3.2",
-      "targetVersion": "0.3.14",
+      "targetVersion": "0.3.15",
       "declaredVersion": "^0.3.2",
       "difference": "patch",
       "latestSatisfiesDeclared": true,
       "status": "update-required",
       "priority": 4,
-      "targetPublishedAt": "2026-11-04T14:57:05.032Z",
+      "ci": null,
+      "targetPublishedAt": "2026-11-04T18:51:42.174Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2128,11 +2128,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
-      "targetPublishedAt": "2026-10-28T13:06:38.166Z",
-      "openedAt": "2026-11-04T15:32:00.046Z",
-      "updatedAt": "2026-11-04T15:32:00.046Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -2154,6 +2149,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-10-28T13:06:38.166Z",
+      "openedAt": "2026-11-04T15:32:00.046Z",
+      "updatedAt": "2026-11-04T15:32:00.046Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -2182,12 +2182,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-10-28T13:05:29.180Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2216,12 +2216,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-03T14:42:46.552Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2250,12 +2250,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-10-28T13:06:33.277Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2263,6 +2263,76 @@
           "status": "update-required",
           "version": "1.0.2",
           "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41858685696"
+        }
+      ]
+    },
+    {
+      "key": "felt-ops|package-lock.json|npm:@feltdb/feltkit",
+      "project": "felt-ops",
+      "root": "package-lock.json",
+      "roots": [
+        "."
+      ],
+      "package": "feltdb-feltkit",
+      "name": "@feltdb/feltkit",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "0.3.14",
+      "targetVersion": "0.3.15",
+      "declaredVersion": "^0.3.14",
+      "difference": "patch",
+      "latestSatisfiesDeclared": true,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-04T18:51:42.174Z",
+      "openedAt": "2026-11-05T07:27:04.815Z",
+      "updatedAt": "2026-11-05T07:27:04.815Z",
+      "closedAt": null,
+      "lastVerifiedCommit": "928c6982f447e598e1dcb33b3497712ba8092688",
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/felt-ops:.github/workflows/ci.yml#verify/scenario-7-platform-upgrade-from-feltkit-0-3-12-feltdb-0-20-",
+            "name": "Scenario 7 (platform upgrade from FeltKit 0.3.12 + FeltDB 0.20.0)",
+            "result": "passing",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/felt-ops/actions/runs/41859267814"
+          }
+        ]
+      },
+      "evidence": [
+        {
+          "commit": "928c6982f447e598e1dcb33b3497712ba8092688",
+          "at": "2026-11-04T15:12:03.977Z",
+          "runs": [
+            {
+              "workflow": "ci.yml",
+              "url": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-11-04T15:00:23.704Z",
+          "status": "update-required",
+          "version": "0.3.13",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
+        },
+        {
+          "at": "2026-11-04T15:12:03.977Z",
+          "status": "updated-verified",
+          "version": "0.3.14",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
+        },
+        {
+          "at": "2026-11-05T07:27:04.815Z",
+          "status": "update-required",
+          "version": "0.3.14",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41987289321"
         }
       ]
     },
@@ -2293,7 +2363,7 @@
             "result": "passing",
             "enforcement": "fail",
             "requirement": "exact",
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/41852798094"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/41902037849"
           }
         ]
       },
@@ -2339,7 +2409,7 @@
             "result": "passing",
             "enforcement": "fail",
             "requirement": "exact",
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/41852798094"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/41902037849"
           }
         ]
       },
@@ -2388,70 +2458,6 @@
           "at": "2026-11-04T15:00:23.704Z",
           "status": "update-required",
           "version": "1.2.0",
-          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
-        }
-      ]
-    },
-    {
-      "key": "felt-ops|package-lock.json|npm:@feltdb/feltkit",
-      "project": "felt-ops",
-      "root": "package-lock.json",
-      "roots": [
-        "."
-      ],
-      "package": "feltdb-feltkit",
-      "name": "@feltdb/feltkit",
-      "registry": "npm",
-      "ownership": "owned",
-      "currentVersion": "0.3.14",
-      "targetVersion": "0.3.14",
-      "declaredVersion": "^0.3.14",
-      "difference": "patch",
-      "latestSatisfiesDeclared": true,
-      "status": "updated-verified",
-      "priority": 9,
-      "ci": {
-        "blockingFailure": false,
-        "checks": [
-          {
-            "id": "rkendel1/felt-ops:.github/workflows/ci.yml#verify/scenario-7-platform-upgrade-from-feltkit-0-3-12-feltdb-0-20-",
-            "name": "Scenario 7 (platform upgrade from FeltKit 0.3.12 + FeltDB 0.20.0)",
-            "result": "passing",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": "https://github.com/rkendel1/felt-ops/actions/runs/41858559509"
-          }
-        ]
-      },
-      "targetPublishedAt": "2026-11-04T14:57:05.032Z",
-      "openedAt": "2026-11-04T15:00:23.704Z",
-      "updatedAt": "2026-11-04T15:12:03.977Z",
-      "closedAt": "2026-11-04T15:12:03.977Z",
-      "lastVerifiedCommit": "928c6982f447e598e1dcb33b3497712ba8092688",
-      "evidence": [
-        {
-          "commit": "928c6982f447e598e1dcb33b3497712ba8092688",
-          "at": "2026-11-04T15:12:03.977Z",
-          "runs": [
-            {
-              "workflow": "ci.yml",
-              "url": "https://github.com/rkendel1/felt-ops/actions/runs/41853366638",
-              "conclusion": "success"
-            }
-          ]
-        }
-      ],
-      "history": [
-        {
-          "at": "2026-11-04T15:00:23.704Z",
-          "status": "update-required",
-          "version": "0.3.13",
-          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
-        },
-        {
-          "at": "2026-11-04T15:12:03.977Z",
-          "status": "updated-verified",
-          "version": "0.3.14",
           "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
         }
       ]

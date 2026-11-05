@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T15:32:00.046Z",
+  "generatedAt": "2026-11-05T07:27:04.815Z",
   "releases": [
     {
       "package": "appport-core",
@@ -1277,8 +1277,20 @@
       "package": "appport-appboundry",
       "name": "@appport/appboundry",
       "registry": "npm",
-      "latestVersion": "1.7.2",
+      "latestVersion": "1.8.0",
       "versions": [
+        {
+          "version": "1.8.0",
+          "publishedAt": "2026-11-04T20:01:00.275Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "1.7.3",
+          "publishedAt": "2026-11-04T16:25:46.905Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "1.7.2",
           "publishedAt": "2026-11-04T14:18:41.035Z",
@@ -2889,8 +2901,14 @@
       "package": "feltdb-feltkit",
       "name": "@feltdb/feltkit",
       "registry": "npm",
-      "latestVersion": "0.3.14",
+      "latestVersion": "0.3.15",
       "versions": [
+        {
+          "version": "0.3.15",
+          "publishedAt": "2026-11-04T18:51:42.174Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.3.14",
           "publishedAt": "2026-11-04T14:57:05.032Z",
@@ -3005,8 +3023,14 @@
       "package": "create-feltkit",
       "name": "create-feltkit",
       "registry": "npm",
-      "latestVersion": "0.3.14",
+      "latestVersion": "0.3.15",
       "versions": [
+        {
+          "version": "0.3.15",
+          "publishedAt": "2026-11-04T18:51:14.442Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.3.14",
           "publishedAt": "2026-11-04T14:54:47.136Z",
