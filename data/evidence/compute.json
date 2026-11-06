@@ -5,8 +5,8 @@
       "project": "compute",
       "repository": "rkendel1/compute",
       "commit": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
-      "collectedAt": "2026-11-05T07:27:04.815Z",
-      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41987289321",
+      "collectedAt": "2026-11-06T07:27:45.501Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42181003900",
       "passed": false,
       "checks": {
         "resolution": "pass",
