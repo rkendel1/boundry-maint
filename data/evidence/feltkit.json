@@ -75,8 +75,8 @@
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
       "commit": "01a8182531126c47c7ad179b9f50de1fb92261c1",
-      "collectedAt": "2026-11-06T07:27:45.501Z",
-      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42181003900",
+      "collectedAt": "2026-11-07T07:26:12.977Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42351260348",
       "passed": false,
       "checks": {
         "resolution": "fail",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T07:27:45.501Z",
+  "generatedAt": "2026-11-07T07:26:12.977Z",
   "items": [
     {
       "key": "flow-db|crates/feltdb-public-api-check/Cargo.lock|crates:tokio",
@@ -1351,7 +1351,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047779"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063288"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-independently-versioned-packages",
@@ -1359,7 +1359,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/test-release-integrity-source-branch-tags-build-identity-reg",
@@ -1367,7 +1367,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/build-all-publishable-packages",
@@ -1375,7 +1375,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-the-public-api-contract-and-documented-sdk-examples",
@@ -1383,7 +1383,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/package-the-feltdb-crate-and-verify-its-source-provenance",
@@ -1391,7 +1391,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-exact-package-tarballs-in-a-clean-consumer",
@@ -1399,7 +1399,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#package-manager-matrix/certify-the-upgrade-lifecycle",
@@ -1407,7 +1407,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#attest/produce-machine-readable-ci-result",
@@ -1415,7 +1415,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#attest/verify-every-attested-npm-package-records-this-commit-as-its",
@@ -1423,15 +1423,15 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#hostile-node/run-npm-run-build-workspace-feltdb-core",
             "name": "npm run packages/core:build",
-            "result": "in-progress",
+            "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42162159267"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42338128145"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1439,7 +1439,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42162159267"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42338128145"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1525,7 +1525,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047779"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063288"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-independently-versioned-packages",
@@ -1533,7 +1533,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/test-release-integrity-source-branch-tags-build-identity-reg",
@@ -1541,7 +1541,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/build-all-publishable-packages",
@@ -1549,7 +1549,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-the-public-api-contract-and-documented-sdk-examples",
@@ -1557,7 +1557,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/package-the-feltdb-crate-and-verify-its-source-provenance",
@@ -1565,7 +1565,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-exact-package-tarballs-in-a-clean-consumer",
@@ -1573,7 +1573,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#package-manager-matrix/certify-the-upgrade-lifecycle",
@@ -1581,7 +1581,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#attest/produce-machine-readable-ci-result",
@@ -1589,7 +1589,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#attest/verify-every-attested-npm-package-records-this-commit-as-its",
@@ -1597,15 +1597,15 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#hostile-node/run-npm-run-build-workspace-feltdb-core",
             "name": "npm run packages/core:build",
-            "result": "in-progress",
+            "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42162159267"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42338128145"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1613,7 +1613,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42162159267"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42338128145"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1699,7 +1699,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/test-release-integrity-source-branch-tags-build-identity-reg",
@@ -1707,7 +1707,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/build-all-publishable-packages",
@@ -1715,7 +1715,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/package-the-feltdb-crate-and-verify-its-source-provenance",
@@ -1723,7 +1723,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-exact-package-tarballs-in-a-clean-consumer",
@@ -1731,7 +1731,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#attest/produce-machine-readable-ci-result",
@@ -1739,7 +1739,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#attest/verify-every-attested-npm-package-records-this-commit-as-its",
@@ -1747,15 +1747,15 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/41751047630"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#hostile-node/run-npm-run-build-workspace-feltdb-core",
             "name": "npm run packages/core:build",
-            "result": "in-progress",
+            "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42162159267"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42338128145"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1763,7 +1763,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42162159267"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42338128145"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -2157,11 +2157,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
-      "targetPublishedAt": "2026-11-05T17:19:58.279Z",
-      "openedAt": "2026-11-06T07:27:45.501Z",
-      "updatedAt": "2026-11-06T07:27:45.501Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -2175,6 +2170,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-05T17:19:58.279Z",
+      "openedAt": "2026-11-06T07:27:45.501Z",
+      "updatedAt": "2026-11-06T07:27:45.501Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -2203,11 +2203,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
-      "targetPublishedAt": "2026-11-05T17:20:24.821Z",
-      "openedAt": "2026-11-06T07:27:45.501Z",
-      "updatedAt": "2026-11-06T07:27:45.501Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -2229,6 +2224,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-05T17:20:24.821Z",
+      "openedAt": "2026-11-06T07:27:45.501Z",
+      "updatedAt": "2026-11-06T07:27:45.501Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
