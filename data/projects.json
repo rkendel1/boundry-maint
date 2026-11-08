@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T07:26:12.977Z",
+  "generatedAt": "2026-11-08T07:26:11.067Z",
   "projects": [
     {
       "id": "feltkit",
@@ -25,20 +25,18 @@
         "typescript"
       ],
       "discoveredDependencyCount": 48,
-      "warnings": [
-        "examples/teams/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown"
-      ],
+      "warnings": [],
       "verification": {
         "workflows": [
           "ci.yml"
         ],
-        "headVerified": false,
-        "lastVerifiedCommit": "50bc6173fc1233db552043a7afaf2f33886bd73e",
-        "lastVerifiedAt": "2026-11-05T07:27:04.815Z"
+        "headVerified": true,
+        "lastVerifiedCommit": "7111d4603630b878b558e23f4314b6203a7b2695",
+        "lastVerifiedAt": "2026-11-08T07:26:11.067Z"
       },
       "branch": "main",
-      "commit": "01a8182531126c47c7ad179b9f50de1fb92261c1",
-      "commitUrl": "https://github.com/rkendel1/feltkit/commit/01a8182531126c47c7ad179b9f50de1fb92261c1",
+      "commit": "7111d4603630b878b558e23f4314b6203a7b2695",
+      "commitUrl": "https://github.com/rkendel1/feltkit/commit/7111d4603630b878b558e23f4314b6203a7b2695",
       "roots": [
         {
           "path": "examples/invoices",
@@ -99,8 +97,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-07T07:26:12.977Z",
-      "lastSuccessfulScan": "2026-11-07T07:26:12.977Z"
+      "lastScanned": "2026-11-08T07:26:11.067Z",
+      "lastSuccessfulScan": "2026-11-08T07:26:11.067Z"
     },
     {
       "id": "appport-services",
@@ -172,8 +170,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-07T07:26:12.977Z",
-      "lastSuccessfulScan": "2026-11-07T07:26:12.977Z"
+      "lastScanned": "2026-11-08T07:26:11.067Z",
+      "lastSuccessfulScan": "2026-11-08T07:26:11.067Z"
     },
     {
       "id": "felt-ops",
@@ -194,7 +192,7 @@
         ],
         "headVerified": true,
         "lastVerifiedCommit": "d4d62b6362f90109dcbc741204c18c988fd1ff97",
-        "lastVerifiedAt": "2026-11-07T07:26:12.977Z"
+        "lastVerifiedAt": "2026-11-08T07:26:11.067Z"
       },
       "branch": "claude/keen-cannon-gxv0v3",
       "commit": "d4d62b6362f90109dcbc741204c18c988fd1ff97",
@@ -210,8 +208,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-07T07:26:12.977Z",
-      "lastSuccessfulScan": "2026-11-07T07:26:12.977Z"
+      "lastScanned": "2026-11-08T07:26:11.067Z",
+      "lastSuccessfulScan": "2026-11-08T07:26:11.067Z"
     },
     {
       "id": "rust-ml-runtime",
@@ -473,8 +471,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-07T07:26:12.977Z",
-      "lastSuccessfulScan": "2026-11-07T07:26:12.977Z"
+      "lastScanned": "2026-11-08T07:26:11.067Z",
+      "lastSuccessfulScan": "2026-11-08T07:26:11.067Z"
     },
     {
       "id": "appboundry",
@@ -538,7 +536,7 @@
         ],
         "headVerified": true,
         "lastVerifiedCommit": "4df33709721d04c403147234737a98edd717de9a",
-        "lastVerifiedAt": "2026-11-07T07:26:12.977Z"
+        "lastVerifiedAt": "2026-11-08T07:26:11.067Z"
       },
       "branch": "main",
       "commit": "4df33709721d04c403147234737a98edd717de9a",
@@ -841,8 +839,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-07T07:26:12.977Z",
-      "lastSuccessfulScan": "2026-11-07T07:26:12.977Z"
+      "lastScanned": "2026-11-08T07:26:11.067Z",
+      "lastSuccessfulScan": "2026-11-08T07:26:11.067Z"
     },
     {
       "id": "flow-db",
@@ -1121,8 +1119,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-07T07:26:12.977Z",
-      "lastSuccessfulScan": "2026-11-07T07:26:12.977Z"
+      "lastScanned": "2026-11-08T07:26:11.067Z",
+      "lastSuccessfulScan": "2026-11-08T07:26:11.067Z"
     },
     {
       "id": "appport",
@@ -1155,7 +1153,7 @@
         ],
         "headVerified": true,
         "lastVerifiedCommit": "cdecc9a8d5f428519744dfd3a143614e9c7b4dd0",
-        "lastVerifiedAt": "2026-11-07T07:26:12.977Z"
+        "lastVerifiedAt": "2026-11-08T07:26:11.067Z"
       },
       "branch": "main",
       "commit": "cdecc9a8d5f428519744dfd3a143614e9c7b4dd0",
@@ -1304,8 +1302,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-07T07:26:12.977Z",
-      "lastSuccessfulScan": "2026-11-07T07:26:12.977Z"
+      "lastScanned": "2026-11-08T07:26:11.067Z",
+      "lastSuccessfulScan": "2026-11-08T07:26:11.067Z"
     },
     {
       "id": "authboundry",
@@ -1532,8 +1530,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-07T07:26:12.977Z",
-      "lastSuccessfulScan": "2026-11-07T07:26:12.977Z"
+      "lastScanned": "2026-11-08T07:26:11.067Z",
+      "lastSuccessfulScan": "2026-11-08T07:26:11.067Z"
     },
     {
       "id": "appworks",
@@ -1565,7 +1563,7 @@
         ],
         "headVerified": true,
         "lastVerifiedCommit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "lastVerifiedAt": "2026-11-07T07:26:12.977Z"
+        "lastVerifiedAt": "2026-11-08T07:26:11.067Z"
       },
       "branch": "main",
       "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
@@ -1637,8 +1635,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-07T07:26:12.977Z",
-      "lastSuccessfulScan": "2026-11-07T07:26:12.977Z"
+      "lastScanned": "2026-11-08T07:26:11.067Z",
+      "lastSuccessfulScan": "2026-11-08T07:26:11.067Z"
     },
     {
       "id": "compute",
@@ -1872,8 +1870,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-07T07:26:12.977Z",
-      "lastSuccessfulScan": "2026-11-07T07:26:12.977Z"
+      "lastScanned": "2026-11-08T07:26:11.067Z",
+      "lastSuccessfulScan": "2026-11-08T07:26:11.067Z"
     },
     {
       "id": "agent-obstacle",
@@ -1920,8 +1918,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-07T07:26:12.977Z",
-      "lastSuccessfulScan": "2026-11-07T07:26:12.977Z"
+      "lastScanned": "2026-11-08T07:26:11.067Z",
+      "lastSuccessfulScan": "2026-11-08T07:26:11.067Z"
     },
     {
       "id": "github-integration",
@@ -1946,7 +1944,7 @@
         ],
         "headVerified": true,
         "lastVerifiedCommit": "d51dcd156279fb85476479e490dcab41fcbe4fa7",
-        "lastVerifiedAt": "2026-11-07T07:26:12.977Z"
+        "lastVerifiedAt": "2026-11-08T07:26:11.067Z"
       },
       "branch": "main",
       "commit": "d51dcd156279fb85476479e490dcab41fcbe4fa7",
@@ -1962,8 +1960,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-07T07:26:12.977Z",
-      "lastSuccessfulScan": "2026-11-07T07:26:12.977Z"
+      "lastScanned": "2026-11-08T07:26:11.067Z",
+      "lastSuccessfulScan": "2026-11-08T07:26:11.067Z"
     }
   ]
 }
