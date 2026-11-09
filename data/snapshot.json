@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "scan": {
-    "runId": "42458773250",
-    "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/42458773250",
-    "startedAt": "2026-11-08T07:26:11.067Z",
-    "finishedAt": "2026-11-08T07:27:47.386Z",
+    "runId": "42579526054",
+    "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/42579526054",
+    "startedAt": "2026-11-09T07:28:15.165Z",
+    "finishedAt": "2026-11-09T07:29:47.686Z",
     "status": "success",
     "trigger": "schedule",
-    "configCommit": "06be6827c33f55a2ac0faa49497d548225f5cfd2",
+    "configCommit": "0dac8206838b0cbae5323393e34775276cb69bda",
     "counts": {
       "packages": 62,
       "packagesFailed": 0,
@@ -11713,103 +11713,11 @@
   ],
   "changes": {
     "newReleases": [],
-    "versionChanges": [
-      {
-        "project": "feltkit",
-        "root": "examples/teams",
-        "name": "@feltdb/feltkit",
-        "from": null,
-        "to": "0.3.18"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/teams",
-        "name": "react",
-        "from": null,
-        "to": "19.2.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/teams",
-        "name": "react-dom",
-        "from": null,
-        "to": "19.2.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/teams",
-        "name": "@types/node",
-        "from": null,
-        "to": "22.19.1"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/teams",
-        "name": "@types/react",
-        "from": null,
-        "to": "19.2.2"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/teams",
-        "name": "@types/react-dom",
-        "from": null,
-        "to": "19.2.2"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/teams",
-        "name": "@vitejs/plugin-react",
-        "from": null,
-        "to": "5.1.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/teams",
-        "name": "typescript",
-        "from": null,
-        "to": "5.9.3"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/teams",
-        "name": "vite",
-        "from": null,
-        "to": "7.3.7"
-      }
-    ],
+    "versionChanges": [],
     "newDependencies": [],
     "removedDependencies": [],
-    "statusChanges": [
-      {
-        "key": "feltkit|package-lock.json|npm:@appport/sdk",
-        "from": "updated-unverified",
-        "to": "updated-verified"
-      },
-      {
-        "key": "feltkit|package-lock.json|npm:@appport/server",
-        "from": "updated-unverified",
-        "to": "updated-verified"
-      },
-      {
-        "key": "feltkit|package-lock.json|npm:@appport/testing",
-        "from": "updated-unverified",
-        "to": "updated-verified"
-      }
-    ],
-    "newEvidence": [
-      {
-        "project": "feltkit",
-        "commit": "7111d4603630b878b558e23f4314b6203a7b2695",
-        "passed": true
-      }
-    ],
-    "ciResultChanges": [
-      {
-        "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e-feltdb/install",
-        "from": null,
-        "to": "passing"
-      }
-    ]
+    "statusChanges": [],
+    "newEvidence": [],
+    "ciResultChanges": []
   }
 }

@@ -28,8 +28,8 @@
       "project": "appport",
       "repository": "rkendel1/appport",
       "commit": "cdecc9a8d5f428519744dfd3a143614e9c7b4dd0",
-      "collectedAt": "2026-11-08T07:26:11.067Z",
-      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42458773250",
+      "collectedAt": "2026-11-09T07:28:15.165Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42579526054",
       "passed": true,
       "checks": {
         "resolution": "pass",

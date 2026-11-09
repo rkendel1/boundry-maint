@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T07:26:11.067Z",
+  "generatedAt": "2026-11-09T07:28:15.165Z",
   "repositories": [
     {
       "repository": "rkendel1/3fx",
@@ -10,7 +10,7 @@
       "error": null,
       "workflowCount": 4,
       "scriptsInspected": 27,
-      "lastScanned": "2026-11-08T07:26:11.067Z"
+      "lastScanned": "2026-11-09T07:28:15.165Z"
     },
     {
       "repository": "rkendel1/agent-obstacle",
@@ -21,7 +21,7 @@
       "error": null,
       "workflowCount": 0,
       "scriptsInspected": 1,
-      "lastScanned": "2026-11-08T07:26:11.067Z"
+      "lastScanned": "2026-11-09T07:28:15.165Z"
     },
     {
       "repository": "rkendel1/appboundry",
@@ -32,7 +32,7 @@
       "error": null,
       "workflowCount": 4,
       "scriptsInspected": 21,
-      "lastScanned": "2026-11-08T07:26:11.067Z"
+      "lastScanned": "2026-11-09T07:28:15.165Z"
     },
     {
       "repository": "rkendel1/appport",
@@ -43,7 +43,7 @@
       "error": null,
       "workflowCount": 10,
       "scriptsInspected": 43,
-      "lastScanned": "2026-11-08T07:26:11.067Z"
+      "lastScanned": "2026-11-09T07:28:15.165Z"
     },
     {
       "repository": "rkendel1/appport-services",
@@ -54,7 +54,7 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 2,
-      "lastScanned": "2026-11-08T07:26:11.067Z"
+      "lastScanned": "2026-11-09T07:28:15.165Z"
     },
     {
       "repository": "rkendel1/appworks",
@@ -65,7 +65,7 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 23,
-      "lastScanned": "2026-11-08T07:26:11.067Z"
+      "lastScanned": "2026-11-09T07:28:15.165Z"
     },
     {
       "repository": "rkendel1/authboundry",
@@ -76,7 +76,7 @@
       "error": null,
       "workflowCount": 5,
       "scriptsInspected": 14,
-      "lastScanned": "2026-11-08T07:26:11.067Z"
+      "lastScanned": "2026-11-09T07:28:15.165Z"
     },
     {
       "repository": "rkendel1/compute",
@@ -87,7 +87,7 @@
       "error": null,
       "workflowCount": 10,
       "scriptsInspected": 3,
-      "lastScanned": "2026-11-08T07:26:11.067Z"
+      "lastScanned": "2026-11-09T07:28:15.165Z"
     },
     {
       "repository": "rkendel1/felt-ops",
@@ -98,7 +98,7 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 4,
-      "lastScanned": "2026-11-08T07:26:11.067Z"
+      "lastScanned": "2026-11-09T07:28:15.165Z"
     },
     {
       "repository": "rkendel1/feltkit",
@@ -109,7 +109,7 @@
       "error": null,
       "workflowCount": 2,
       "scriptsInspected": 10,
-      "lastScanned": "2026-11-08T07:26:11.067Z"
+      "lastScanned": "2026-11-09T07:28:15.165Z"
     },
     {
       "repository": "rkendel1/flow_db",
@@ -120,7 +120,7 @@
       "error": null,
       "workflowCount": 9,
       "scriptsInspected": 149,
-      "lastScanned": "2026-11-08T07:26:11.067Z"
+      "lastScanned": "2026-11-09T07:28:15.165Z"
     },
     {
       "repository": "rkendel1/github-integration",
@@ -131,7 +131,7 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 2,
-      "lastScanned": "2026-11-08T07:26:11.067Z"
+      "lastScanned": "2026-11-09T07:28:15.165Z"
     },
     {
       "repository": "rkendel1/resolver",
@@ -142,7 +142,7 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 2,
-      "lastScanned": "2026-11-08T07:26:11.067Z"
+      "lastScanned": "2026-11-09T07:28:15.165Z"
     },
     {
       "repository": "rkendel1/rust-ml-runtime",
@@ -153,7 +153,7 @@
       "error": null,
       "workflowCount": 3,
       "scriptsInspected": 15,
-      "lastScanned": "2026-11-08T07:26:11.067Z"
+      "lastScanned": "2026-11-09T07:28:15.165Z"
     }
   ],
   "workflows": [
@@ -943,24 +943,24 @@
       ],
       "result": "passing",
       "latestRun": {
-        "runId": 41405864708,
-        "url": "https://github.com/rkendel1/compute/actions/runs/41405864708",
+        "runId": 42578874414,
+        "url": "https://github.com/rkendel1/compute/actions/runs/42578874414",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-02T07:22:39Z"
+        "at": "2026-11-09T07:22:18Z"
       },
       "lastSuccess": {
-        "runId": 41405864708,
-        "url": "https://github.com/rkendel1/compute/actions/runs/41405864708",
+        "runId": 42578874414,
+        "url": "https://github.com/rkendel1/compute/actions/runs/42578874414",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-02T07:22:39Z"
+        "at": "2026-11-09T07:22:18Z"
       },
       "lastFailure": {
         "runId": 38454984409,
@@ -1062,24 +1062,24 @@
       ],
       "result": "passing",
       "latestRun": {
-        "runId": 42454611005,
-        "url": "https://github.com/rkendel1/compute/actions/runs/42454611005",
+        "runId": 42573806613,
+        "url": "https://github.com/rkendel1/compute/actions/runs/42573806613",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-08T06:24:41Z"
+        "at": "2026-11-09T06:34:12Z"
       },
       "lastSuccess": {
-        "runId": 42454611005,
-        "url": "https://github.com/rkendel1/compute/actions/runs/42454611005",
+        "runId": 42573806613,
+        "url": "https://github.com/rkendel1/compute/actions/runs/42573806613",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-08T06:24:41Z"
+        "at": "2026-11-09T06:34:12Z"
       },
       "lastFailure": {
         "runId": 39556842658,
@@ -1514,14 +1514,14 @@
       ],
       "result": "failing",
       "latestRun": {
-        "runId": 42446497256,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42446497256",
+        "runId": 42561615795,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-08T04:38:29Z"
+        "at": "2026-11-09T04:35:40Z"
       },
       "lastSuccess": {
         "runId": 41577742530,
@@ -1534,19 +1534,19 @@
         "at": "2026-11-03T04:34:16Z"
       },
       "lastFailure": {
-        "runId": 42446497256,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42446497256",
+        "runId": 42561615795,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-08T04:38:29Z"
+        "at": "2026-11-09T04:35:40Z"
       },
       "failedJobs": [
         {
           "name": "managed-disposable",
-          "url": "https://github.com/rkendel1/flow_db/actions/runs/42446497256/job/128626417528",
+          "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795/job/128979062936",
           "failedSteps": [
             "Verify disposable managed boundary"
           ]
@@ -5123,24 +5123,24 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 41405864708,
-        "url": "https://github.com/rkendel1/compute/actions/runs/41405864708",
+        "runId": 42578874414,
+        "url": "https://github.com/rkendel1/compute/actions/runs/42578874414",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-02T07:22:39Z"
+        "at": "2026-11-09T07:22:18Z"
       },
       "lastSuccess": {
-        "runId": 41405864708,
-        "url": "https://github.com/rkendel1/compute/actions/runs/41405864708",
+        "runId": 42578874414,
+        "url": "https://github.com/rkendel1/compute/actions/runs/42578874414",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-02T07:22:39Z"
+        "at": "2026-11-09T07:22:18Z"
       },
       "lastFailure": {
         "runId": 38454984409,
@@ -5152,7 +5152,7 @@
         "event": "push",
         "at": "2026-10-13T19:27:56Z"
       },
-      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41405864708/job/125147606955",
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/42578874414/job/129032654526",
       "failure": null,
       "stale": false
     },
@@ -5233,27 +5233,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 41405864708,
-        "url": "https://github.com/rkendel1/compute/actions/runs/41405864708",
+        "runId": 42578874414,
+        "url": "https://github.com/rkendel1/compute/actions/runs/42578874414",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-02T07:22:39Z"
+        "at": "2026-11-09T07:22:18Z"
       },
       "lastSuccess": {
-        "runId": 41405864708,
-        "url": "https://github.com/rkendel1/compute/actions/runs/41405864708",
+        "runId": 42578874414,
+        "url": "https://github.com/rkendel1/compute/actions/runs/42578874414",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-02T07:22:39Z"
+        "at": "2026-11-09T07:22:18Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/41405864708/job/125147606955",
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/42578874414/job/129032654526",
       "failure": null,
       "stale": false
     },
@@ -9858,27 +9858,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42446497256,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42446497256",
+        "runId": 42561615795,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-08T04:38:29Z"
+        "at": "2026-11-09T04:35:40Z"
       },
       "lastSuccess": {
-        "runId": 42446497256,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42446497256",
+        "runId": 42561615795,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-08T04:38:29Z"
+        "at": "2026-11-09T04:35:40Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42446497256/job/128626417684",
+      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42561615795/job/128979063136",
       "failure": null,
       "stale": false
     },
@@ -9987,27 +9987,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42446497256,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42446497256",
+        "runId": 42561615795,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-08T04:38:29Z"
+        "at": "2026-11-09T04:35:40Z"
       },
       "lastSuccess": {
-        "runId": 42446497256,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42446497256",
+        "runId": 42561615795,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-08T04:38:29Z"
+        "at": "2026-11-09T04:35:40Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42446497256/job/128626417684",
+      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42561615795/job/128979063136",
       "failure": null,
       "stale": false
     },
@@ -10051,27 +10051,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42446497256,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42446497256",
+        "runId": 42561615795,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-08T04:38:29Z"
+        "at": "2026-11-09T04:35:40Z"
       },
       "lastSuccess": {
-        "runId": 42446497256,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42446497256",
+        "runId": 42561615795,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-08T04:38:29Z"
+        "at": "2026-11-09T04:35:40Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42446497256/job/128626417528",
+      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42561615795/job/128979062936",
       "failure": null,
       "stale": false
     },
@@ -10180,27 +10180,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42446497256,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42446497256",
+        "runId": 42561615795,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-08T04:38:29Z"
+        "at": "2026-11-09T04:35:40Z"
       },
       "lastSuccess": {
-        "runId": 42446497256,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42446497256",
+        "runId": 42561615795,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-08T04:38:29Z"
+        "at": "2026-11-09T04:35:40Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42446497256/job/128626417528",
+      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42561615795/job/128979062936",
       "failure": null,
       "stale": false
     },
