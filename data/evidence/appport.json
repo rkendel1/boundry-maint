@@ -46,6 +46,29 @@
         }
       ],
       "resolved": {}
+    },
+    {
+      "project": "appport",
+      "repository": "rkendel1/appport",
+      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "collectedAt": "2026-11-10T07:27:01.195Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534",
+      "passed": true,
+      "checks": {
+        "resolution": "pass",
+        "workflows": "pass"
+      },
+      "runs": [
+        {
+          "workflow": "ci.yml",
+          "runId": 42765259366,
+          "url": "https://github.com/rkendel1/appport/actions/runs/42765259366",
+          "status": "completed",
+          "conclusion": "success",
+          "headSha": "e3e615f34819a0f2fc727cb3db0569890286c271"
+        }
+      ],
+      "resolved": {}
     }
   ]
 }

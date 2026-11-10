@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T07:28:15.165Z",
+  "generatedAt": "2026-11-10T07:27:01.195Z",
   "repositories": [
     {
       "repository": "rkendel1/3fx",
@@ -10,7 +10,7 @@
       "error": null,
       "workflowCount": 4,
       "scriptsInspected": 27,
-      "lastScanned": "2026-11-09T07:28:15.165Z"
+      "lastScanned": "2026-11-10T07:27:01.195Z"
     },
     {
       "repository": "rkendel1/agent-obstacle",
@@ -21,7 +21,7 @@
       "error": null,
       "workflowCount": 0,
       "scriptsInspected": 1,
-      "lastScanned": "2026-11-09T07:28:15.165Z"
+      "lastScanned": "2026-11-10T07:27:01.195Z"
     },
     {
       "repository": "rkendel1/appboundry",
@@ -32,29 +32,29 @@
       "error": null,
       "workflowCount": 4,
       "scriptsInspected": 21,
-      "lastScanned": "2026-11-09T07:28:15.165Z"
+      "lastScanned": "2026-11-10T07:27:01.195Z"
     },
     {
       "repository": "rkendel1/appport",
-      "commit": "cdecc9a8d5f428519744dfd3a143614e9c7b4dd0",
+      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
       "defaultBranch": "main",
       "private": true,
       "status": "ok",
       "error": null,
       "workflowCount": 10,
-      "scriptsInspected": 43,
-      "lastScanned": "2026-11-09T07:28:15.165Z"
+      "scriptsInspected": 44,
+      "lastScanned": "2026-11-10T07:27:01.195Z"
     },
     {
       "repository": "rkendel1/appport-services",
-      "commit": "3622623cdaf23a89ff1abcefe2d70a3cf731b1ac",
+      "commit": "0456f7c0c3dda291d6eba96004836ef08948558f",
       "defaultBranch": "main",
       "private": false,
       "status": "ok",
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 2,
-      "lastScanned": "2026-11-09T07:28:15.165Z"
+      "lastScanned": "2026-11-10T07:27:01.195Z"
     },
     {
       "repository": "rkendel1/appworks",
@@ -65,7 +65,7 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 23,
-      "lastScanned": "2026-11-09T07:28:15.165Z"
+      "lastScanned": "2026-11-10T07:27:01.195Z"
     },
     {
       "repository": "rkendel1/authboundry",
@@ -76,7 +76,7 @@
       "error": null,
       "workflowCount": 5,
       "scriptsInspected": 14,
-      "lastScanned": "2026-11-09T07:28:15.165Z"
+      "lastScanned": "2026-11-10T07:27:01.195Z"
     },
     {
       "repository": "rkendel1/compute",
@@ -87,7 +87,7 @@
       "error": null,
       "workflowCount": 10,
       "scriptsInspected": 3,
-      "lastScanned": "2026-11-09T07:28:15.165Z"
+      "lastScanned": "2026-11-10T07:27:01.195Z"
     },
     {
       "repository": "rkendel1/felt-ops",
@@ -98,18 +98,18 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 4,
-      "lastScanned": "2026-11-09T07:28:15.165Z"
+      "lastScanned": "2026-11-10T07:27:01.195Z"
     },
     {
       "repository": "rkendel1/feltkit",
-      "commit": "7111d4603630b878b558e23f4314b6203a7b2695",
+      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
       "defaultBranch": "main",
       "private": true,
       "status": "ok",
       "error": null,
       "workflowCount": 2,
-      "scriptsInspected": 10,
-      "lastScanned": "2026-11-09T07:28:15.165Z"
+      "scriptsInspected": 17,
+      "lastScanned": "2026-11-10T07:27:01.195Z"
     },
     {
       "repository": "rkendel1/flow_db",
@@ -120,7 +120,7 @@
       "error": null,
       "workflowCount": 9,
       "scriptsInspected": 149,
-      "lastScanned": "2026-11-09T07:28:15.165Z"
+      "lastScanned": "2026-11-10T07:27:01.195Z"
     },
     {
       "repository": "rkendel1/github-integration",
@@ -131,18 +131,18 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 2,
-      "lastScanned": "2026-11-09T07:28:15.165Z"
+      "lastScanned": "2026-11-10T07:27:01.195Z"
     },
     {
       "repository": "rkendel1/resolver",
-      "commit": "b0dd5a7185fb6ab4bce54c7040eff60d12babe28",
+      "commit": "a4d52580ddbc8d5685f10769816c61811906a98f",
       "defaultBranch": "main",
       "private": false,
       "status": "ok",
       "error": null,
       "workflowCount": 1,
-      "scriptsInspected": 2,
-      "lastScanned": "2026-11-09T07:28:15.165Z"
+      "scriptsInspected": 3,
+      "lastScanned": "2026-11-10T07:27:01.195Z"
     },
     {
       "repository": "rkendel1/rust-ml-runtime",
@@ -153,7 +153,7 @@
       "error": null,
       "workflowCount": 3,
       "scriptsInspected": 15,
-      "lastScanned": "2026-11-09T07:28:15.165Z"
+      "lastScanned": "2026-11-10T07:27:01.195Z"
     }
   ],
   "workflows": [
@@ -500,24 +500,24 @@
       ],
       "result": "passing",
       "latestRun": {
-        "runId": 42073468516,
-        "url": "https://github.com/rkendel1/appport/actions/runs/42073468516",
+        "runId": 42765259366,
+        "url": "https://github.com/rkendel1/appport/actions/runs/42765259366",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "cdecc9a8d5f428519744dfd3a143614e9c7b4dd0",
+        "sha": "e3e615f34819a0f2fc727cb3db0569890286c271",
         "event": "push",
-        "at": "2026-11-05T17:38:02Z"
+        "at": "2026-11-10T06:46:31Z"
       },
       "lastSuccess": {
-        "runId": 42073468516,
-        "url": "https://github.com/rkendel1/appport/actions/runs/42073468516",
+        "runId": 42765259366,
+        "url": "https://github.com/rkendel1/appport/actions/runs/42765259366",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "cdecc9a8d5f428519744dfd3a143614e9c7b4dd0",
+        "sha": "e3e615f34819a0f2fc727cb3db0569890286c271",
         "event": "push",
-        "at": "2026-11-05T17:38:02Z"
+        "at": "2026-11-10T06:46:31Z"
       },
       "lastFailure": {
         "runId": 42037021907,
@@ -587,26 +587,35 @@
       ],
       "result": "passing",
       "latestRun": {
-        "runId": 42146456784,
-        "url": "https://github.com/rkendel1/appport-services/actions/runs/42146456784",
+        "runId": 42683148374,
+        "url": "https://github.com/rkendel1/appport-services/actions/runs/42683148374",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "3622623cdaf23a89ff1abcefe2d70a3cf731b1ac",
+        "sha": "0456f7c0c3dda291d6eba96004836ef08948558f",
         "event": "push",
-        "at": "2026-11-06T01:53:44Z"
+        "at": "2026-11-09T19:28:22Z"
       },
       "lastSuccess": {
-        "runId": 42146456784,
-        "url": "https://github.com/rkendel1/appport-services/actions/runs/42146456784",
+        "runId": 42683148374,
+        "url": "https://github.com/rkendel1/appport-services/actions/runs/42683148374",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "3622623cdaf23a89ff1abcefe2d70a3cf731b1ac",
+        "sha": "0456f7c0c3dda291d6eba96004836ef08948558f",
         "event": "push",
-        "at": "2026-11-06T01:53:44Z"
+        "at": "2026-11-09T19:28:22Z"
       },
-      "lastFailure": null,
+      "lastFailure": {
+        "runId": 42681923430,
+        "url": "https://github.com/rkendel1/appport-services/actions/runs/42681923430",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "ff3440f2d3b64ed7beeb83015ebd1457ec5349df",
+        "event": "push",
+        "at": "2026-11-09T19:17:42Z"
+      },
       "failedJobs": [],
       "branchFilter": "main"
     },
@@ -1062,35 +1071,26 @@
       ],
       "result": "passing",
       "latestRun": {
-        "runId": 42573806613,
-        "url": "https://github.com/rkendel1/compute/actions/runs/42573806613",
+        "runId": 42768461860,
+        "url": "https://github.com/rkendel1/compute/actions/runs/42768461860",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-09T06:34:12Z"
+        "at": "2026-11-10T06:26:22Z"
       },
       "lastSuccess": {
-        "runId": 42573806613,
-        "url": "https://github.com/rkendel1/compute/actions/runs/42573806613",
+        "runId": 42768461860,
+        "url": "https://github.com/rkendel1/compute/actions/runs/42768461860",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-09T06:34:12Z"
+        "at": "2026-11-10T06:26:22Z"
       },
-      "lastFailure": {
-        "runId": 39556842658,
-        "url": "https://github.com/rkendel1/compute/actions/runs/39556842658",
-        "status": "completed",
-        "conclusion": "failure",
-        "branch": "main",
-        "sha": "876362214b8f14716ab819d6b599f73e9fa3b236",
-        "event": "schedule",
-        "at": "2026-10-21T06:40:15Z"
-      },
+      "lastFailure": null,
       "failedJobs": [],
       "branchFilter": "main"
     },
@@ -1287,38 +1287,46 @@
         "pull requests",
         "manual"
       ],
-      "result": "passing",
+      "result": "failing",
       "latestRun": {
-        "runId": 42457562940,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/42457562940",
-        "status": "completed",
-        "conclusion": "success",
-        "branch": "main",
-        "sha": "7111d4603630b878b558e23f4314b6203a7b2695",
-        "event": "push",
-        "at": "2026-11-08T07:18:44Z"
-      },
-      "lastSuccess": {
-        "runId": 42457562940,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/42457562940",
-        "status": "completed",
-        "conclusion": "success",
-        "branch": "main",
-        "sha": "7111d4603630b878b558e23f4314b6203a7b2695",
-        "event": "push",
-        "at": "2026-11-08T07:18:44Z"
-      },
-      "lastFailure": {
-        "runId": 42436408087,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/42436408087",
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
-        "sha": "48380d7de56ce24a953867e0c1db3c0c587a4bed",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
         "event": "push",
-        "at": "2026-11-08T02:06:52Z"
+        "at": "2026-11-10T06:10:35Z"
       },
-      "failedJobs": [],
+      "lastSuccess": {
+        "runId": 42729231038,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42729231038",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "72e7abd9b95e5936c3a9096398d4563c45b8be7e",
+        "event": "push",
+        "at": "2026-11-10T00:47:05Z"
+      },
+      "lastFailure": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "failedJobs": [
+        {
+          "name": "composition-matrix-consumer",
+          "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822607",
+          "failedSteps": [
+            "The installed package is the release set as intended"
+          ]
+        }
+      ],
       "branchFilter": "main"
     },
     {
@@ -1331,14 +1339,14 @@
       ],
       "result": "skipped",
       "latestRun": {
-        "runId": 42457562970,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/42457562970",
+        "runId": 42765162990,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162990",
         "status": "completed",
         "conclusion": "skipped",
         "branch": "main",
-        "sha": "7111d4603630b878b558e23f4314b6203a7b2695",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
         "event": "push",
-        "at": "2026-11-08T07:08:40Z"
+        "at": "2026-11-10T05:55:49Z"
       },
       "lastSuccess": null,
       "lastFailure": null,
@@ -1514,14 +1522,14 @@
       ],
       "result": "failing",
       "latestRun": {
-        "runId": 42561615795,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
+        "runId": 42755416820,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42755416820",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-09T04:35:40Z"
+        "at": "2026-11-10T04:39:26Z"
       },
       "lastSuccess": {
         "runId": 41577742530,
@@ -1534,19 +1542,19 @@
         "at": "2026-11-03T04:34:16Z"
       },
       "lastFailure": {
-        "runId": 42561615795,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
+        "runId": 42755416820,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42755416820",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-09T04:35:40Z"
+        "at": "2026-11-10T04:39:26Z"
       },
       "failedJobs": [
         {
           "name": "managed-disposable",
-          "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795/job/128979062936",
+          "url": "https://github.com/rkendel1/flow_db/actions/runs/42755416820/job/129628552352",
           "failedSteps": [
             "Verify disposable managed boundary"
           ]
@@ -1741,26 +1749,26 @@
         "pushes",
         "pull requests"
       ],
-      "result": "failing",
+      "result": "passing",
       "latestRun": {
-        "runId": 42092492358,
-        "url": "https://github.com/rkendel1/resolver/actions/runs/42092492358",
-        "status": "completed",
-        "conclusion": "failure",
-        "branch": "main",
-        "sha": "b0dd5a7185fb6ab4bce54c7040eff60d12babe28",
-        "event": "push",
-        "at": "2026-11-05T19:18:19Z"
-      },
-      "lastSuccess": {
-        "runId": 42075117576,
-        "url": "https://github.com/rkendel1/resolver/actions/runs/42075117576",
+        "runId": 42755710872,
+        "url": "https://github.com/rkendel1/resolver/actions/runs/42755710872",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "3e60dfed6445b48462239182735cd7a533fa7849",
+        "sha": "a4d52580ddbc8d5685f10769816c61811906a98f",
         "event": "push",
-        "at": "2026-11-05T17:30:22Z"
+        "at": "2026-11-10T04:26:21Z"
+      },
+      "lastSuccess": {
+        "runId": 42755710872,
+        "url": "https://github.com/rkendel1/resolver/actions/runs/42755710872",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "a4d52580ddbc8d5685f10769816c61811906a98f",
+        "event": "push",
+        "at": "2026-11-10T04:26:21Z"
       },
       "lastFailure": {
         "runId": 42092492358,
@@ -1772,15 +1780,7 @@
         "event": "push",
         "at": "2026-11-05T19:18:19Z"
       },
-      "failedJobs": [
-        {
-          "name": "test",
-          "url": "https://github.com/rkendel1/resolver/actions/runs/42092492358/job/127473883352",
-          "failedSteps": [
-            "Run npm run build"
-          ]
-        }
-      ],
+      "failedJobs": [],
       "branchFilter": "main"
     },
     {
@@ -2706,7 +2706,7 @@
       "sources": [
         {
           "path": ".github/workflows/agent-benchmark.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/agent-benchmark.yml#L25"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/agent-benchmark.yml#L25"
         }
       ],
       "annotated": false,
@@ -2752,7 +2752,7 @@
       "sources": [
         {
           "path": ".github/workflows/appport-conformance-repair.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/appport-conformance-repair.yml#L44"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/appport-conformance-repair.yml#L44"
         }
       ],
       "annotated": false,
@@ -2798,7 +2798,7 @@
       "sources": [
         {
           "path": ".github/workflows/appport-conformance-repair.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/appport-conformance-repair.yml#L46"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/appport-conformance-repair.yml#L46"
         }
       ],
       "annotated": false,
@@ -2844,7 +2844,7 @@
       "sources": [
         {
           "path": ".github/workflows/appport-native-agent.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/appport-native-agent.yml#L51"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/appport-native-agent.yml#L51"
         }
       ],
       "annotated": false,
@@ -2890,7 +2890,7 @@
       "sources": [
         {
           "path": ".github/workflows/appport-native-agent.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/appport-native-agent.yml#L53"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/appport-native-agent.yml#L53"
         }
       ],
       "annotated": false,
@@ -2936,7 +2936,7 @@
       "sources": [
         {
           "path": ".github/workflows/appport-native-generation.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/appport-native-generation.yml#L41"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/appport-native-generation.yml#L41"
         }
       ],
       "annotated": false,
@@ -2982,7 +2982,7 @@
       "sources": [
         {
           "path": ".github/workflows/appport-native-generation.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/appport-native-generation.yml#L43"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/appport-native-generation.yml#L43"
         }
       ],
       "annotated": false,
@@ -3028,7 +3028,7 @@
       "sources": [
         {
           "path": ".github/workflows/appport-native-scaling.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/appport-native-scaling.yml#L67"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/appport-native-scaling.yml#L67"
         }
       ],
       "annotated": false,
@@ -3074,7 +3074,7 @@
       "sources": [
         {
           "path": ".github/workflows/appport-native-scaling.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/appport-native-scaling.yml#L71"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/appport-native-scaling.yml#L71"
         }
       ],
       "annotated": false,
@@ -3120,7 +3120,7 @@
       "sources": [
         {
           "path": ".github/workflows/capability-reuse.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/capability-reuse.yml#L49"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/capability-reuse.yml#L49"
         }
       ],
       "annotated": false,
@@ -3166,7 +3166,7 @@
       "sources": [
         {
           "path": ".github/workflows/capability-reuse.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/capability-reuse.yml#L51"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/capability-reuse.yml#L51"
         }
       ],
       "annotated": false,
@@ -3212,7 +3212,7 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/ci.yml#L33"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/ci.yml#L33"
         }
       ],
       "annotated": false,
@@ -3220,27 +3220,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42073468516,
-        "url": "https://github.com/rkendel1/appport/actions/runs/42073468516",
+        "runId": 42765259366,
+        "url": "https://github.com/rkendel1/appport/actions/runs/42765259366",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "cdecc9a8d5f428519744dfd3a143614e9c7b4dd0",
+        "sha": "e3e615f34819a0f2fc727cb3db0569890286c271",
         "event": "push",
-        "at": "2026-11-05T17:38:02Z"
+        "at": "2026-11-10T06:46:31Z"
       },
       "lastSuccess": {
-        "runId": 42073468516,
-        "url": "https://github.com/rkendel1/appport/actions/runs/42073468516",
+        "runId": 42765259366,
+        "url": "https://github.com/rkendel1/appport/actions/runs/42765259366",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "cdecc9a8d5f428519744dfd3a143614e9c7b4dd0",
+        "sha": "e3e615f34819a0f2fc727cb3db0569890286c271",
         "event": "push",
-        "at": "2026-11-05T17:38:02Z"
+        "at": "2026-11-10T06:46:31Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/appport/actions/runs/42073468516/job/127407328967",
+      "jobUrl": "https://github.com/rkendel1/appport/actions/runs/42765259366/job/129660147010",
       "failure": null,
       "stale": false
     },
@@ -3288,11 +3288,11 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/ci.yml#L49"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/ci.yml#L49"
         },
         {
           "path": "scripts/check-tarballs.mjs",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/scripts/check-tarballs.mjs"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/scripts/check-tarballs.mjs"
         }
       ],
       "annotated": false,
@@ -3300,24 +3300,24 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42073468516,
-        "url": "https://github.com/rkendel1/appport/actions/runs/42073468516",
+        "runId": 42765259366,
+        "url": "https://github.com/rkendel1/appport/actions/runs/42765259366",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "cdecc9a8d5f428519744dfd3a143614e9c7b4dd0",
+        "sha": "e3e615f34819a0f2fc727cb3db0569890286c271",
         "event": "push",
-        "at": "2026-11-05T17:38:02Z"
+        "at": "2026-11-10T06:46:31Z"
       },
       "lastSuccess": {
-        "runId": 42073468516,
-        "url": "https://github.com/rkendel1/appport/actions/runs/42073468516",
+        "runId": 42765259366,
+        "url": "https://github.com/rkendel1/appport/actions/runs/42765259366",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "cdecc9a8d5f428519744dfd3a143614e9c7b4dd0",
+        "sha": "e3e615f34819a0f2fc727cb3db0569890286c271",
         "event": "push",
-        "at": "2026-11-05T17:38:02Z"
+        "at": "2026-11-10T06:46:31Z"
       },
       "lastFailure": {
         "runId": 42037021907,
@@ -3329,7 +3329,7 @@
         "event": "push",
         "at": "2026-11-05T14:25:11Z"
       },
-      "jobUrl": "https://github.com/rkendel1/appport/actions/runs/42073468516/job/127407328967",
+      "jobUrl": "https://github.com/rkendel1/appport/actions/runs/42765259366/job/129660147010",
       "failure": null,
       "stale": false
     },
@@ -3381,15 +3381,15 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/ci.yml#L52"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/ci.yml#L52"
         },
         {
           "path": "scripts/test-installed-consumer.mjs",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/scripts/test-installed-consumer.mjs"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/scripts/test-installed-consumer.mjs"
         },
         {
           "path": "scripts/check-tarballs.mjs",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/scripts/check-tarballs.mjs"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/scripts/check-tarballs.mjs"
         }
       ],
       "annotated": false,
@@ -3397,27 +3397,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42073468516,
-        "url": "https://github.com/rkendel1/appport/actions/runs/42073468516",
+        "runId": 42765259366,
+        "url": "https://github.com/rkendel1/appport/actions/runs/42765259366",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "cdecc9a8d5f428519744dfd3a143614e9c7b4dd0",
+        "sha": "e3e615f34819a0f2fc727cb3db0569890286c271",
         "event": "push",
-        "at": "2026-11-05T17:38:02Z"
+        "at": "2026-11-10T06:46:31Z"
       },
       "lastSuccess": {
-        "runId": 42073468516,
-        "url": "https://github.com/rkendel1/appport/actions/runs/42073468516",
+        "runId": 42765259366,
+        "url": "https://github.com/rkendel1/appport/actions/runs/42765259366",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "cdecc9a8d5f428519744dfd3a143614e9c7b4dd0",
+        "sha": "e3e615f34819a0f2fc727cb3db0569890286c271",
         "event": "push",
-        "at": "2026-11-05T17:38:02Z"
+        "at": "2026-11-10T06:46:31Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/appport/actions/runs/42073468516/job/127407328967",
+      "jobUrl": "https://github.com/rkendel1/appport/actions/runs/42765259366/job/129660147010",
       "failure": null,
       "stale": false
     },
@@ -3453,7 +3453,7 @@
       "sources": [
         {
           "path": ".github/workflows/evidence-gated-completion.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/evidence-gated-completion.yml#L50"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/evidence-gated-completion.yml#L50"
         }
       ],
       "annotated": false,
@@ -3499,7 +3499,7 @@
       "sources": [
         {
           "path": ".github/workflows/evidence-gated-completion.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/evidence-gated-completion.yml#L52"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/evidence-gated-completion.yml#L52"
         }
       ],
       "annotated": false,
@@ -3545,7 +3545,7 @@
       "sources": [
         {
           "path": ".github/workflows/graph-guided-discovery.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/graph-guided-discovery.yml#L58"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/graph-guided-discovery.yml#L58"
         }
       ],
       "annotated": false,
@@ -3591,7 +3591,7 @@
       "sources": [
         {
           "path": ".github/workflows/graph-guided-discovery.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/graph-guided-discovery.yml#L60"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/graph-guided-discovery.yml#L60"
         }
       ],
       "annotated": false,
@@ -3637,7 +3637,7 @@
       "sources": [
         {
           "path": ".github/workflows/legacy-migration.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/legacy-migration.yml#L34"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/legacy-migration.yml#L34"
         }
       ],
       "annotated": false,
@@ -3683,7 +3683,7 @@
       "sources": [
         {
           "path": ".github/workflows/legacy-migration.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/legacy-migration.yml#L57"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/legacy-migration.yml#L57"
         }
       ],
       "annotated": false,
@@ -3746,15 +3746,15 @@
       "sources": [
         {
           "path": ".github/workflows/legacy-migration.yml",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/.github/workflows/legacy-migration.yml#L59"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/.github/workflows/legacy-migration.yml#L59"
         },
         {
           "path": "experiments/legacy-migration/scripts/use-workspace-packages.mjs",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/experiments/legacy-migration/scripts/use-workspace-packages.mjs"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/experiments/legacy-migration/scripts/use-workspace-packages.mjs"
         },
         {
           "path": "scripts/check-tarballs.mjs",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/scripts/check-tarballs.mjs"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/scripts/check-tarballs.mjs"
         }
       ],
       "annotated": false,
@@ -3815,15 +3815,15 @@
       "sources": [
         {
           "path": "scripts/publish-packages.mjs",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/scripts/publish-packages.mjs"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/scripts/publish-packages.mjs"
         },
         {
           "path": "scripts/check-tarballs.mjs",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/scripts/check-tarballs.mjs"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/scripts/check-tarballs.mjs"
         },
         {
           "path": "scripts/test-installed-consumer.mjs",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/scripts/test-installed-consumer.mjs"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/scripts/test-installed-consumer.mjs"
         }
       ],
       "annotated": false,
@@ -3871,7 +3871,7 @@
       "sources": [
         {
           "path": "scripts/publish-simple.mjs",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/scripts/publish-simple.mjs"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/scripts/publish-simple.mjs"
         }
       ],
       "annotated": false,
@@ -3917,7 +3917,7 @@
       "sources": [
         {
           "path": "scripts/test-publish.mjs",
-          "url": "https://github.com/rkendel1/appport/blob/cdecc9a8d5f428519744dfd3a143614e9c7b4dd0/scripts/test-publish.mjs"
+          "url": "https://github.com/rkendel1/appport/blob/e3e615f34819a0f2fc727cb3db0569890286c271/scripts/test-publish.mjs"
         }
       ],
       "annotated": false,
@@ -3963,7 +3963,7 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/appport-services/blob/3622623cdaf23a89ff1abcefe2d70a3cf731b1ac/.github/workflows/ci.yml#L21"
+          "url": "https://github.com/rkendel1/appport-services/blob/0456f7c0c3dda291d6eba96004836ef08948558f/.github/workflows/ci.yml#L21"
         }
       ],
       "annotated": false,
@@ -3971,27 +3971,36 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42146456784,
-        "url": "https://github.com/rkendel1/appport-services/actions/runs/42146456784",
+        "runId": 42683148374,
+        "url": "https://github.com/rkendel1/appport-services/actions/runs/42683148374",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "3622623cdaf23a89ff1abcefe2d70a3cf731b1ac",
+        "sha": "0456f7c0c3dda291d6eba96004836ef08948558f",
         "event": "push",
-        "at": "2026-11-06T01:53:44Z"
+        "at": "2026-11-09T19:28:22Z"
       },
       "lastSuccess": {
-        "runId": 42146456784,
-        "url": "https://github.com/rkendel1/appport-services/actions/runs/42146456784",
+        "runId": 42683148374,
+        "url": "https://github.com/rkendel1/appport-services/actions/runs/42683148374",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "3622623cdaf23a89ff1abcefe2d70a3cf731b1ac",
+        "sha": "0456f7c0c3dda291d6eba96004836ef08948558f",
         "event": "push",
-        "at": "2026-11-06T01:53:44Z"
+        "at": "2026-11-09T19:28:22Z"
       },
-      "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/appport-services/actions/runs/42146456784/job/127658993708",
+      "lastFailure": {
+        "runId": 42681923430,
+        "url": "https://github.com/rkendel1/appport-services/actions/runs/42681923430",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "ff3440f2d3b64ed7beeb83015ebd1457ec5349df",
+        "event": "push",
+        "at": "2026-11-09T19:17:42Z"
+      },
+      "jobUrl": "https://github.com/rkendel1/appport-services/actions/runs/42683148374/job/129382781554",
       "failure": null,
       "stale": false
     },
@@ -4036,11 +4045,11 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/appport-services/blob/3622623cdaf23a89ff1abcefe2d70a3cf731b1ac/.github/workflows/ci.yml#L23"
+          "url": "https://github.com/rkendel1/appport-services/blob/0456f7c0c3dda291d6eba96004836ef08948558f/.github/workflows/ci.yml#L23"
         },
         {
           "path": "scripts/release-versions.mjs",
-          "url": "https://github.com/rkendel1/appport-services/blob/3622623cdaf23a89ff1abcefe2d70a3cf731b1ac/scripts/release-versions.mjs"
+          "url": "https://github.com/rkendel1/appport-services/blob/0456f7c0c3dda291d6eba96004836ef08948558f/scripts/release-versions.mjs"
         }
       ],
       "annotated": false,
@@ -4048,27 +4057,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42146456784,
-        "url": "https://github.com/rkendel1/appport-services/actions/runs/42146456784",
+        "runId": 42683148374,
+        "url": "https://github.com/rkendel1/appport-services/actions/runs/42683148374",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "3622623cdaf23a89ff1abcefe2d70a3cf731b1ac",
+        "sha": "0456f7c0c3dda291d6eba96004836ef08948558f",
         "event": "push",
-        "at": "2026-11-06T01:53:44Z"
+        "at": "2026-11-09T19:28:22Z"
       },
       "lastSuccess": {
-        "runId": 42146456784,
-        "url": "https://github.com/rkendel1/appport-services/actions/runs/42146456784",
+        "runId": 42683148374,
+        "url": "https://github.com/rkendel1/appport-services/actions/runs/42683148374",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "3622623cdaf23a89ff1abcefe2d70a3cf731b1ac",
+        "sha": "0456f7c0c3dda291d6eba96004836ef08948558f",
         "event": "push",
-        "at": "2026-11-06T01:53:44Z"
+        "at": "2026-11-09T19:28:22Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/appport-services/actions/runs/42146456784/job/127658993708",
+      "jobUrl": "https://github.com/rkendel1/appport-services/actions/runs/42683148374/job/129382781554",
       "failure": null,
       "stale": false
     },
@@ -4114,11 +4123,11 @@
       "sources": [
         {
           "path": "scripts/publish-packages.sh",
-          "url": "https://github.com/rkendel1/appport-services/blob/3622623cdaf23a89ff1abcefe2d70a3cf731b1ac/scripts/publish-packages.sh"
+          "url": "https://github.com/rkendel1/appport-services/blob/0456f7c0c3dda291d6eba96004836ef08948558f/scripts/publish-packages.sh"
         },
         {
           "path": "scripts/release-versions.mjs",
-          "url": "https://github.com/rkendel1/appport-services/blob/3622623cdaf23a89ff1abcefe2d70a3cf731b1ac/scripts/release-versions.mjs"
+          "url": "https://github.com/rkendel1/appport-services/blob/0456f7c0c3dda291d6eba96004836ef08948558f/scripts/release-versions.mjs"
         }
       ],
       "annotated": false,
@@ -7318,7 +7327,7 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/feltkit/blob/7111d4603630b878b558e23f4314b6203a7b2695/.github/workflows/ci.yml#L40"
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/ci.yml#L40"
         }
       ],
       "annotated": false,
@@ -7326,27 +7335,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42457562940,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/42457562940",
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
         "status": "completed",
-        "conclusion": "success",
+        "conclusion": "failure",
         "branch": "main",
-        "sha": "7111d4603630b878b558e23f4314b6203a7b2695",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
         "event": "push",
-        "at": "2026-11-08T07:18:44Z"
+        "at": "2026-11-10T06:10:35Z"
       },
       "lastSuccess": {
-        "runId": 42457562940,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/42457562940",
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
         "status": "completed",
-        "conclusion": "success",
+        "conclusion": "failure",
         "branch": "main",
-        "sha": "7111d4603630b878b558e23f4314b6203a7b2695",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
         "event": "push",
-        "at": "2026-11-08T07:18:44Z"
+        "at": "2026-11-10T06:10:35Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42457562940/job/128659731885",
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822663",
       "failure": null,
       "stale": false
     },
@@ -7445,8 +7454,8 @@
           "requirement": "latest",
           "enforcement": "report",
           "root": "packages/sdk",
-          "installed": "0.15.0",
-          "latest": "0.15.0",
+          "installed": "0.16.0",
+          "latest": "0.16.0",
           "holds": true
         },
         {
@@ -7454,8 +7463,8 @@
           "requirement": "exact",
           "enforcement": "fail",
           "root": "packages/sdk",
-          "installed": "1.1.0",
-          "latest": "1.1.0",
+          "installed": "1.1.1",
+          "latest": "1.1.1",
           "holds": true
         },
         {
@@ -7463,8 +7472,8 @@
           "requirement": "exact",
           "enforcement": "fail",
           "root": "packages/sdk",
-          "installed": "1.2.4",
-          "latest": "1.2.4",
+          "installed": "1.2.5",
+          "latest": "1.2.5",
           "holds": true
         },
         {
@@ -7472,8 +7481,8 @@
           "requirement": "exact",
           "enforcement": "fail",
           "root": "packages/sdk",
-          "installed": "1.4.1",
-          "latest": "1.4.1",
+          "installed": "1.5.0",
+          "latest": "1.5.0",
           "holds": true
         },
         {
@@ -7490,8 +7499,8 @@
           "requirement": "exact",
           "enforcement": "fail",
           "root": "packages/sdk",
-          "installed": "1.6.0",
-          "latest": "1.6.0",
+          "installed": "1.7.0",
+          "latest": "1.7.0",
           "holds": true
         },
         {
@@ -7499,8 +7508,8 @@
           "requirement": "exact",
           "enforcement": "fail",
           "root": "packages/sdk",
-          "installed": "1.3.0",
-          "latest": "1.3.0",
+          "installed": "1.3.1",
+          "latest": "1.3.1",
           "holds": true
         }
       ],
@@ -7543,11 +7552,11 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/feltkit/blob/7111d4603630b878b558e23f4314b6203a7b2695/.github/workflows/ci.yml#L79"
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/ci.yml#L113"
         },
         {
           "path": "scripts/release-check.mjs",
-          "url": "https://github.com/rkendel1/feltkit/blob/7111d4603630b878b558e23f4314b6203a7b2695/scripts/release-check.mjs"
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/scripts/release-check.mjs"
         }
       ],
       "annotated": true,
@@ -7555,28 +7564,999 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42457562940,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/42457562940",
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
         "status": "completed",
-        "conclusion": "success",
+        "conclusion": "failure",
         "branch": "main",
-        "sha": "7111d4603630b878b558e23f4314b6203a7b2695",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
         "event": "push",
-        "at": "2026-11-08T07:18:44Z"
+        "at": "2026-11-10T06:10:35Z"
       },
       "lastSuccess": {
-        "runId": 42457562940,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/42457562940",
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822663",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix/install",
+      "repository": "rkendel1/feltkit",
+      "name": "Install",
+      "workflow": ".github/workflows/ci.yml",
+      "workflowName": "CI",
+      "job": "composition-matrix",
+      "jobName": "composition-matrix",
+      "step": "Install",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "package-lock.json must satisfy package.json exactly (npm ci fails on any drift)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests",
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:npm-ci"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/ci.yml#L40"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": "4 matrix jobs",
+      "lastRun": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastSuccess": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822466",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix/invalid-combinations-are-refused-as-stated",
+      "repository": "rkendel1/feltkit",
+      "name": "Invalid combinations are refused as stated",
+      "workflow": ".github/workflows/ci.yml",
+      "workflowName": "CI",
+      "job": "composition-matrix",
+      "jobName": "composition-matrix",
+      "step": "Invalid combinations are refused as stated",
+      "types": [
+        "version-pinning",
+        "version-consistency"
+      ],
+      "packages": [
+        "appport-sdk",
+        "appport-services",
+        "create-feltkit",
+        "feltdb-core",
+        "feltdb-feltkit",
+        "typescript"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "accepted: expected refusal /<c.refusal.pattern>/ at <c.refusal.stage>",
+        "refused at <stage> with \"<message.slice(0, 300).replace(/ /g, \" \")>\", expected /<c.refusal.pattern>/",
+        "refused at <stage>, expected at <c.refusal.stage>",
+        "create reported integrity <result.integrity>",
+        "evolution: plan --include ops.operator: a reviewable authorization change is not a blocker",
+        "the foundation template pins @feltdb/feltkit <template.dependencies[\"@feltdb/feltkit\"]>, the SDK is <sdkVersion>",
+        "the installed package's dependency ranges differ from the source package.json",
+        "feltkit version\\"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests",
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "lockfile",
+        "manifest-version",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/ci.yml#L148"
+        },
+        {
+          "path": "packages/sdk/test/matrix/run.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/run.ts"
+        },
+        {
+          "path": "packages/sdk/test/matrix/expected.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/expected.ts"
+        },
+        {
+          "path": "scripts/matrix-consumer.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/scripts/matrix-consumer.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": "4 matrix jobs",
+      "lastRun": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastSuccess": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822466",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix/level-a-shard-matrix-shard-of-4-every-valid-case",
+      "repository": "rkendel1/feltkit",
+      "name": "Level A, shard ${{ matrix.shard }} of 4 (every valid case)",
+      "workflow": ".github/workflows/ci.yml",
+      "workflowName": "CI",
+      "job": "composition-matrix",
+      "jobName": "composition-matrix",
+      "step": "Level A, shard ${{ matrix.shard }} of 4 (every valid case)",
+      "types": [
+        "version-pinning",
+        "version-consistency"
+      ],
+      "packages": [
+        "appport-sdk",
+        "appport-services",
+        "create-feltkit",
+        "feltdb-core",
+        "feltdb-feltkit",
+        "typescript"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "accepted: expected refusal /<c.refusal.pattern>/ at <c.refusal.stage>",
+        "refused at <stage> with \"<message.slice(0, 300).replace(/ /g, \" \")>\", expected /<c.refusal.pattern>/",
+        "refused at <stage>, expected at <c.refusal.stage>",
+        "create reported integrity <result.integrity>",
+        "evolution: plan --include ops.operator: a reviewable authorization change is not a blocker",
+        "the foundation template pins @feltdb/feltkit <template.dependencies[\"@feltdb/feltkit\"]>, the SDK is <sdkVersion>",
+        "the installed package's dependency ranges differ from the source package.json",
+        "feltkit version\\"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests",
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "lockfile",
+        "manifest-version",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/ci.yml#L152"
+        },
+        {
+          "path": "packages/sdk/test/matrix/run.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/run.ts"
+        },
+        {
+          "path": "packages/sdk/test/matrix/expected.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/expected.ts"
+        },
+        {
+          "path": "scripts/matrix-consumer.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/scripts/matrix-consumer.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": "4 matrix jobs",
+      "lastRun": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastSuccess": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822466",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix/level-b-shard-matrix-shard-of-4-the-real-cli-on-disk-resumes",
+      "repository": "rkendel1/feltkit",
+      "name": "Level B, shard ${{ matrix.shard }} of 4 (the real CLI on disk; resumes from the ledger)",
+      "workflow": ".github/workflows/ci.yml",
+      "workflowName": "CI",
+      "job": "composition-matrix",
+      "jobName": "composition-matrix",
+      "step": "Level B, shard ${{ matrix.shard }} of 4 (the real CLI on disk; resumes from the ledger)",
+      "types": [
+        "version-pinning",
+        "version-consistency"
+      ],
+      "packages": [
+        "appport-sdk",
+        "appport-services",
+        "create-feltkit",
+        "feltdb-core",
+        "feltdb-feltkit",
+        "typescript"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "accepted: expected refusal /<c.refusal.pattern>/ at <c.refusal.stage>",
+        "refused at <stage> with \"<message.slice(0, 300).replace(/ /g, \" \")>\", expected /<c.refusal.pattern>/",
+        "refused at <stage>, expected at <c.refusal.stage>",
+        "create reported integrity <result.integrity>",
+        "evolution: plan --include ops.operator: a reviewable authorization change is not a blocker",
+        "the foundation template pins @feltdb/feltkit <template.dependencies[\"@feltdb/feltkit\"]>, the SDK is <sdkVersion>",
+        "the installed package's dependency ranges differ from the source package.json",
+        "feltkit version\\"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests",
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "lockfile",
+        "manifest-version",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/ci.yml#L162"
+        },
+        {
+          "path": "packages/sdk/test/matrix/run.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/run.ts"
+        },
+        {
+          "path": "packages/sdk/test/matrix/expected.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/expected.ts"
+        },
+        {
+          "path": "scripts/matrix-consumer.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/scripts/matrix-consumer.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": "4 matrix jobs",
+      "lastRun": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastSuccess": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822466",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/install",
+      "repository": "rkendel1/feltkit",
+      "name": "Install",
+      "workflow": ".github/workflows/ci.yml",
+      "workflowName": "CI",
+      "job": "composition-matrix-consumer",
+      "jobName": "composition-matrix-consumer",
+      "step": "Install",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "package-lock.json must satisfy package.json exactly (npm ci fails on any drift)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests",
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:npm-ci"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/ci.yml#L40"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastSuccess": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822607",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/prepare-the-consumer-build-npm-pack-install-the-tarballs-int",
+      "repository": "rkendel1/feltkit",
+      "name": "Prepare the consumer (build, npm pack, install the tarballs into an isolated project)",
+      "workflow": ".github/workflows/ci.yml",
+      "workflowName": "CI",
+      "job": "composition-matrix-consumer",
+      "jobName": "composition-matrix-consumer",
+      "step": "Prepare the consumer (build, npm pack, install the tarballs into an isolated project)",
+      "types": [
+        "version-pinning",
+        "version-consistency"
+      ],
+      "packages": [
+        "appport-sdk",
+        "appport-services",
+        "create-feltkit",
+        "feltdb-core",
+        "feltdb-feltkit",
+        "typescript"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "the foundation template pins @feltdb/feltkit <template.dependencies[\"@feltdb/feltkit\"]>, the SDK is <sdkVersion>",
+        "the installed package's dependency ranges differ from the source package.json",
+        "feltkit version\\",
+        "<findings.length> finding(s) about the installed @feltdb/feltkit <version>: a consumer does not get the release set as intended",
+        "accepted: expected refusal /<c.refusal.pattern>/ at <c.refusal.stage>",
+        "refused at <stage> with \"<message.slice(0, 300).replace(/ /g, \" \")>\", expected /<c.refusal.pattern>/",
+        "refused at <stage>, expected at <c.refusal.stage>",
+        "create reported integrity <result.integrity>"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests",
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "lockfile",
+        "manifest-version",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/ci.yml#L195"
+        },
+        {
+          "path": "scripts/matrix-consumer.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/scripts/matrix-consumer.mjs"
+        },
+        {
+          "path": "packages/sdk/test/matrix/run.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/run.ts"
+        },
+        {
+          "path": "packages/sdk/test/matrix/expected.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/expected.ts"
+        },
+        {
+          "path": "packages/create/sync-template.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/create/sync-template.mjs"
+        },
+        {
+          "path": "packages/sdk/scripts/build-dashboard.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/scripts/build-dashboard.mjs"
+        },
+        {
+          "path": "packages/sdk/scripts/copy-docs.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/scripts/copy-docs.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastSuccess": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822607",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/invalid-combinations-against-the-installed-package",
+      "repository": "rkendel1/feltkit",
+      "name": "Invalid combinations against the installed package",
+      "workflow": ".github/workflows/ci.yml",
+      "workflowName": "CI",
+      "job": "composition-matrix-consumer",
+      "jobName": "composition-matrix-consumer",
+      "step": "Invalid combinations against the installed package",
+      "types": [
+        "version-pinning",
+        "version-consistency"
+      ],
+      "packages": [
+        "appport-sdk",
+        "appport-services",
+        "create-feltkit",
+        "feltdb-core",
+        "feltdb-feltkit",
+        "typescript"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "the foundation template pins @feltdb/feltkit <template.dependencies[\"@feltdb/feltkit\"]>, the SDK is <sdkVersion>",
+        "the installed package's dependency ranges differ from the source package.json",
+        "feltkit version\\",
+        "<findings.length> finding(s) about the installed @feltdb/feltkit <version>: a consumer does not get the release set as intended",
+        "accepted: expected refusal /<c.refusal.pattern>/ at <c.refusal.stage>",
+        "refused at <stage> with \"<message.slice(0, 300).replace(/ /g, \" \")>\", expected /<c.refusal.pattern>/",
+        "refused at <stage>, expected at <c.refusal.stage>",
+        "create reported integrity <result.integrity>"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests",
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "lockfile",
+        "manifest-version",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/ci.yml#L198"
+        },
+        {
+          "path": "scripts/matrix-consumer.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/scripts/matrix-consumer.mjs"
+        },
+        {
+          "path": "packages/sdk/test/matrix/run.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/run.ts"
+        },
+        {
+          "path": "packages/sdk/test/matrix/expected.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/expected.ts"
+        },
+        {
+          "path": "packages/create/sync-template.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/create/sync-template.mjs"
+        },
+        {
+          "path": "packages/sdk/scripts/build-dashboard.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/scripts/build-dashboard.mjs"
+        },
+        {
+          "path": "packages/sdk/scripts/copy-docs.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/scripts/copy-docs.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastSuccess": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822607",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/level-a-against-the-installed-package-every-valid-case",
+      "repository": "rkendel1/feltkit",
+      "name": "Level A against the installed package (every valid case)",
+      "workflow": ".github/workflows/ci.yml",
+      "workflowName": "CI",
+      "job": "composition-matrix-consumer",
+      "jobName": "composition-matrix-consumer",
+      "step": "Level A against the installed package (every valid case)",
+      "types": [
+        "version-pinning",
+        "version-consistency"
+      ],
+      "packages": [
+        "appport-sdk",
+        "appport-services",
+        "create-feltkit",
+        "feltdb-core",
+        "feltdb-feltkit",
+        "typescript"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "the foundation template pins @feltdb/feltkit <template.dependencies[\"@feltdb/feltkit\"]>, the SDK is <sdkVersion>",
+        "the installed package's dependency ranges differ from the source package.json",
+        "feltkit version\\",
+        "<findings.length> finding(s) about the installed @feltdb/feltkit <version>: a consumer does not get the release set as intended",
+        "accepted: expected refusal /<c.refusal.pattern>/ at <c.refusal.stage>",
+        "refused at <stage> with \"<message.slice(0, 300).replace(/ /g, \" \")>\", expected /<c.refusal.pattern>/",
+        "refused at <stage>, expected at <c.refusal.stage>",
+        "create reported integrity <result.integrity>"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests",
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "lockfile",
+        "manifest-version",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/ci.yml#L201"
+        },
+        {
+          "path": "scripts/matrix-consumer.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/scripts/matrix-consumer.mjs"
+        },
+        {
+          "path": "packages/sdk/test/matrix/run.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/run.ts"
+        },
+        {
+          "path": "packages/sdk/test/matrix/expected.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/expected.ts"
+        },
+        {
+          "path": "packages/create/sync-template.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/create/sync-template.mjs"
+        },
+        {
+          "path": "packages/sdk/scripts/build-dashboard.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/scripts/build-dashboard.mjs"
+        },
+        {
+          "path": "packages/sdk/scripts/copy-docs.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/scripts/copy-docs.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastSuccess": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822607",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/level-b-slice-against-the-installed-package",
+      "repository": "rkendel1/feltkit",
+      "name": "Level B slice against the installed package",
+      "workflow": ".github/workflows/ci.yml",
+      "workflowName": "CI",
+      "job": "composition-matrix-consumer",
+      "jobName": "composition-matrix-consumer",
+      "step": "Level B slice against the installed package",
+      "types": [
+        "version-pinning",
+        "version-consistency"
+      ],
+      "packages": [
+        "appport-sdk",
+        "appport-services",
+        "create-feltkit",
+        "feltdb-core",
+        "feltdb-feltkit",
+        "typescript"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "the foundation template pins @feltdb/feltkit <template.dependencies[\"@feltdb/feltkit\"]>, the SDK is <sdkVersion>",
+        "the installed package's dependency ranges differ from the source package.json",
+        "feltkit version\\",
+        "<findings.length> finding(s) about the installed @feltdb/feltkit <version>: a consumer does not get the release set as intended",
+        "accepted: expected refusal /<c.refusal.pattern>/ at <c.refusal.stage>",
+        "refused at <stage> with \"<message.slice(0, 300).replace(/ /g, \" \")>\", expected /<c.refusal.pattern>/",
+        "refused at <stage>, expected at <c.refusal.stage>",
+        "create reported integrity <result.integrity>"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests",
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "lockfile",
+        "manifest-version",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/ci.yml#L204"
+        },
+        {
+          "path": "scripts/matrix-consumer.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/scripts/matrix-consumer.mjs"
+        },
+        {
+          "path": "packages/sdk/test/matrix/run.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/run.ts"
+        },
+        {
+          "path": "packages/sdk/test/matrix/expected.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/expected.ts"
+        },
+        {
+          "path": "packages/create/sync-template.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/create/sync-template.mjs"
+        },
+        {
+          "path": "packages/sdk/scripts/build-dashboard.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/scripts/build-dashboard.mjs"
+        },
+        {
+          "path": "packages/sdk/scripts/copy-docs.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/scripts/copy-docs.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastSuccess": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822607",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/the-installed-package-is-the-release-set-as-intended",
+      "repository": "rkendel1/feltkit",
+      "name": "The installed package is the release set as intended",
+      "workflow": ".github/workflows/ci.yml",
+      "workflowName": "CI",
+      "job": "composition-matrix-consumer",
+      "jobName": "composition-matrix-consumer",
+      "step": "The installed package is the release set as intended",
+      "types": [
+        "version-pinning",
+        "version-consistency"
+      ],
+      "packages": [
+        "appport-sdk",
+        "appport-services",
+        "create-feltkit",
+        "feltdb-core",
+        "feltdb-feltkit",
+        "typescript"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "the foundation template pins @feltdb/feltkit <template.dependencies[\"@feltdb/feltkit\"]>, the SDK is <sdkVersion>",
+        "the installed package's dependency ranges differ from the source package.json",
+        "feltkit version\\",
+        "<findings.length> finding(s) about the installed @feltdb/feltkit <version>: a consumer does not get the release set as intended",
+        "accepted: expected refusal /<c.refusal.pattern>/ at <c.refusal.stage>",
+        "refused at <stage> with \"<message.slice(0, 300).replace(/ /g, \" \")>\", expected /<c.refusal.pattern>/",
+        "refused at <stage>, expected at <c.refusal.stage>",
+        "create reported integrity <result.integrity>"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pushes to main",
+        "pull requests",
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "lockfile",
+        "manifest-version",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/ci.yml",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/ci.yml#L209"
+        },
+        {
+          "path": "scripts/matrix-consumer.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/scripts/matrix-consumer.mjs"
+        },
+        {
+          "path": "packages/sdk/test/matrix/run.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/run.ts"
+        },
+        {
+          "path": "packages/sdk/test/matrix/expected.ts",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/test/matrix/expected.ts"
+        },
+        {
+          "path": "packages/create/sync-template.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/create/sync-template.mjs"
+        },
+        {
+          "path": "packages/sdk/scripts/build-dashboard.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/scripts/build-dashboard.mjs"
+        },
+        {
+          "path": "packages/sdk/scripts/copy-docs.mjs",
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/scripts/copy-docs.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "failing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "lastSuccess": {
+        "runId": 42729231038,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42729231038",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "7111d4603630b878b558e23f4314b6203a7b2695",
+        "sha": "72e7abd9b95e5936c3a9096398d4563c45b8be7e",
         "event": "push",
-        "at": "2026-11-08T07:18:44Z"
+        "at": "2026-11-10T00:47:05Z"
       },
-      "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42457562940/job/128659731885",
-      "failure": null,
+      "lastFailure": {
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
+        "event": "push",
+        "at": "2026-11-10T06:10:35Z"
+      },
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822607",
+      "failure": {
+        "attribution": "possible",
+        "packages": [],
+        "excerpt": []
+      },
       "stale": false
     },
     {
@@ -7612,7 +8592,7 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/feltkit/blob/7111d4603630b878b558e23f4314b6203a7b2695/.github/workflows/ci.yml#L40"
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/ci.yml#L40"
         }
       ],
       "annotated": false,
@@ -7620,27 +8600,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42457562940,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/42457562940",
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
         "status": "completed",
-        "conclusion": "success",
+        "conclusion": "failure",
         "branch": "main",
-        "sha": "7111d4603630b878b558e23f4314b6203a7b2695",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
         "event": "push",
-        "at": "2026-11-08T07:18:44Z"
+        "at": "2026-11-10T06:10:35Z"
       },
       "lastSuccess": {
-        "runId": 42457562940,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/42457562940",
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
         "status": "completed",
-        "conclusion": "success",
+        "conclusion": "failure",
         "branch": "main",
-        "sha": "7111d4603630b878b558e23f4314b6203a7b2695",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
         "event": "push",
-        "at": "2026-11-08T07:18:44Z"
+        "at": "2026-11-10T06:10:35Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42457562940/job/128659732096",
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822318",
       "failure": null,
       "stale": false
     },
@@ -7677,7 +8657,7 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/feltkit/blob/7111d4603630b878b558e23f4314b6203a7b2695/.github/workflows/ci.yml#L40"
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/ci.yml#L40"
         }
       ],
       "annotated": false,
@@ -7685,27 +8665,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42457562940,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/42457562940",
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
         "status": "completed",
-        "conclusion": "success",
+        "conclusion": "failure",
         "branch": "main",
-        "sha": "7111d4603630b878b558e23f4314b6203a7b2695",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
         "event": "push",
-        "at": "2026-11-08T07:18:44Z"
+        "at": "2026-11-10T06:10:35Z"
       },
       "lastSuccess": {
-        "runId": 42457562940,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/42457562940",
+        "runId": 42765162920,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162920",
         "status": "completed",
-        "conclusion": "success",
+        "conclusion": "failure",
         "branch": "main",
-        "sha": "7111d4603630b878b558e23f4314b6203a7b2695",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
         "event": "push",
-        "at": "2026-11-08T07:18:44Z"
+        "at": "2026-11-10T06:10:35Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42457562940/job/128659732024",
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920/job/129659822675",
       "failure": null,
       "stale": false
     },
@@ -7741,7 +8721,7 @@
       "sources": [
         {
           "path": ".github/workflows/publish.yml",
-          "url": "https://github.com/rkendel1/feltkit/blob/7111d4603630b878b558e23f4314b6203a7b2695/.github/workflows/publish.yml#L81"
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/publish.yml#L81"
         }
       ],
       "annotated": false,
@@ -7749,18 +8729,18 @@
       "result": "skipped",
       "resultNote": "job skipped",
       "lastRun": {
-        "runId": 42457562970,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/42457562970",
+        "runId": 42765162990,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162990",
         "status": "completed",
         "conclusion": "skipped",
         "branch": "main",
-        "sha": "7111d4603630b878b558e23f4314b6203a7b2695",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
         "event": "push",
-        "at": "2026-11-08T07:08:40Z"
+        "at": "2026-11-10T05:55:49Z"
       },
       "lastSuccess": null,
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42457562970/job/128659733598",
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162990/job/129659857525",
       "failure": null,
       "stale": false
     },
@@ -7821,8 +8801,8 @@
           "requirement": "latest",
           "enforcement": "fail",
           "root": "packages/sdk",
-          "installed": "0.15.0",
-          "latest": "0.15.0",
+          "installed": "0.16.0",
+          "latest": "0.16.0",
           "holds": true
         }
       ],
@@ -7858,31 +8838,31 @@
       "sources": [
         {
           "path": ".github/workflows/publish.yml",
-          "url": "https://github.com/rkendel1/feltkit/blob/7111d4603630b878b558e23f4314b6203a7b2695/.github/workflows/publish.yml#L13"
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/.github/workflows/publish.yml#L13"
         },
         {
           "path": "scripts/publish-packages.mjs",
-          "url": "https://github.com/rkendel1/feltkit/blob/7111d4603630b878b558e23f4314b6203a7b2695/scripts/publish-packages.mjs"
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/scripts/publish-packages.mjs"
         },
         {
           "path": "packages/create/sync-template.mjs",
-          "url": "https://github.com/rkendel1/feltkit/blob/7111d4603630b878b558e23f4314b6203a7b2695/packages/create/sync-template.mjs"
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/create/sync-template.mjs"
         },
         {
           "path": "packages/sdk/scripts/build-dashboard.mjs",
-          "url": "https://github.com/rkendel1/feltkit/blob/7111d4603630b878b558e23f4314b6203a7b2695/packages/sdk/scripts/build-dashboard.mjs"
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/scripts/build-dashboard.mjs"
         },
         {
           "path": "packages/sdk/scripts/copy-docs.mjs",
-          "url": "https://github.com/rkendel1/feltkit/blob/7111d4603630b878b558e23f4314b6203a7b2695/packages/sdk/scripts/copy-docs.mjs"
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/packages/sdk/scripts/copy-docs.mjs"
         },
         {
           "path": "scripts/release-check.mjs",
-          "url": "https://github.com/rkendel1/feltkit/blob/7111d4603630b878b558e23f4314b6203a7b2695/scripts/release-check.mjs"
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/scripts/release-check.mjs"
         },
         {
           "path": "scripts/release-gate.mjs",
-          "url": "https://github.com/rkendel1/feltkit/blob/7111d4603630b878b558e23f4314b6203a7b2695/scripts/release-gate.mjs"
+          "url": "https://github.com/rkendel1/feltkit/blob/319ec4b0279c28aeb45662960d0af00c34348688/scripts/release-gate.mjs"
         }
       ],
       "annotated": true,
@@ -7890,18 +8870,18 @@
       "result": "skipped",
       "resultNote": "job skipped",
       "lastRun": {
-        "runId": 42457562970,
-        "url": "https://github.com/rkendel1/feltkit/actions/runs/42457562970",
+        "runId": 42765162990,
+        "url": "https://github.com/rkendel1/feltkit/actions/runs/42765162990",
         "status": "completed",
         "conclusion": "skipped",
         "branch": "main",
-        "sha": "7111d4603630b878b558e23f4314b6203a7b2695",
+        "sha": "319ec4b0279c28aeb45662960d0af00c34348688",
         "event": "push",
-        "at": "2026-11-08T07:08:40Z"
+        "at": "2026-11-10T05:55:49Z"
       },
       "lastSuccess": null,
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42457562970/job/128659733598",
+      "jobUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162990/job/129659857525",
       "failure": null,
       "stale": false
     },
@@ -9858,27 +10838,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42561615795,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
+        "runId": 42755416820,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42755416820",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-09T04:35:40Z"
+        "at": "2026-11-10T04:39:26Z"
       },
       "lastSuccess": {
-        "runId": 42561615795,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
+        "runId": 42755416820,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42755416820",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-09T04:35:40Z"
+        "at": "2026-11-10T04:39:26Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42561615795/job/128979063136",
+      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820/job/129628552669",
       "failure": null,
       "stale": false
     },
@@ -9987,27 +10967,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42561615795,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
+        "runId": 42755416820,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42755416820",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-09T04:35:40Z"
+        "at": "2026-11-10T04:39:26Z"
       },
       "lastSuccess": {
-        "runId": 42561615795,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
+        "runId": 42755416820,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42755416820",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-09T04:35:40Z"
+        "at": "2026-11-10T04:39:26Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42561615795/job/128979063136",
+      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820/job/129628552669",
       "failure": null,
       "stale": false
     },
@@ -10051,27 +11031,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42561615795,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
+        "runId": 42755416820,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42755416820",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-09T04:35:40Z"
+        "at": "2026-11-10T04:39:26Z"
       },
       "lastSuccess": {
-        "runId": 42561615795,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
+        "runId": 42755416820,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42755416820",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-09T04:35:40Z"
+        "at": "2026-11-10T04:39:26Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42561615795/job/128979062936",
+      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820/job/129628552352",
       "failure": null,
       "stale": false
     },
@@ -10180,27 +11160,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42561615795,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
+        "runId": 42755416820,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42755416820",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-09T04:35:40Z"
+        "at": "2026-11-10T04:39:26Z"
       },
       "lastSuccess": {
-        "runId": 42561615795,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/42561615795",
+        "runId": 42755416820,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/42755416820",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "c72c1be545f59945b806ebeaf8253fa998c041fe",
         "event": "schedule",
-        "at": "2026-11-09T04:35:40Z"
+        "at": "2026-11-10T04:39:26Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42561615795/job/128979062936",
+      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820/job/129628552352",
       "failure": null,
       "stale": false
     },
@@ -11653,7 +12633,7 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/resolver/blob/b0dd5a7185fb6ab4bce54c7040eff60d12babe28/.github/workflows/ci.yml#L14"
+          "url": "https://github.com/rkendel1/resolver/blob/a4d52580ddbc8d5685f10769816c61811906a98f/.github/workflows/ci.yml#L14"
         }
       ],
       "annotated": false,
@@ -11661,27 +12641,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42092492358,
-        "url": "https://github.com/rkendel1/resolver/actions/runs/42092492358",
+        "runId": 42755710872,
+        "url": "https://github.com/rkendel1/resolver/actions/runs/42755710872",
         "status": "completed",
-        "conclusion": "failure",
+        "conclusion": "success",
         "branch": "main",
-        "sha": "b0dd5a7185fb6ab4bce54c7040eff60d12babe28",
+        "sha": "a4d52580ddbc8d5685f10769816c61811906a98f",
         "event": "push",
-        "at": "2026-11-05T19:18:19Z"
+        "at": "2026-11-10T04:26:21Z"
       },
       "lastSuccess": {
-        "runId": 42092492358,
-        "url": "https://github.com/rkendel1/resolver/actions/runs/42092492358",
+        "runId": 42755710872,
+        "url": "https://github.com/rkendel1/resolver/actions/runs/42755710872",
         "status": "completed",
-        "conclusion": "failure",
+        "conclusion": "success",
         "branch": "main",
-        "sha": "b0dd5a7185fb6ab4bce54c7040eff60d12babe28",
+        "sha": "a4d52580ddbc8d5685f10769816c61811906a98f",
         "event": "push",
-        "at": "2026-11-05T19:18:19Z"
+        "at": "2026-11-10T04:26:21Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/resolver/actions/runs/42092492358/job/127473883352",
+      "jobUrl": "https://github.com/rkendel1/resolver/actions/runs/42755710872/job/129629481853",
       "failure": null,
       "stale": false
     },
@@ -11717,7 +12697,7 @@
       "sources": [
         {
           "path": ".github/workflows/ci.yml",
-          "url": "https://github.com/rkendel1/resolver/blob/b0dd5a7185fb6ab4bce54c7040eff60d12babe28/.github/workflows/ci.yml#L14"
+          "url": "https://github.com/rkendel1/resolver/blob/a4d52580ddbc8d5685f10769816c61811906a98f/.github/workflows/ci.yml#L14"
         }
       ],
       "annotated": false,
@@ -11725,27 +12705,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42092492358,
-        "url": "https://github.com/rkendel1/resolver/actions/runs/42092492358",
+        "runId": 42755710872,
+        "url": "https://github.com/rkendel1/resolver/actions/runs/42755710872",
         "status": "completed",
-        "conclusion": "failure",
+        "conclusion": "success",
         "branch": "main",
-        "sha": "b0dd5a7185fb6ab4bce54c7040eff60d12babe28",
+        "sha": "a4d52580ddbc8d5685f10769816c61811906a98f",
         "event": "push",
-        "at": "2026-11-05T19:18:19Z"
+        "at": "2026-11-10T04:26:21Z"
       },
       "lastSuccess": {
-        "runId": 42092492358,
-        "url": "https://github.com/rkendel1/resolver/actions/runs/42092492358",
+        "runId": 42755710872,
+        "url": "https://github.com/rkendel1/resolver/actions/runs/42755710872",
         "status": "completed",
-        "conclusion": "failure",
+        "conclusion": "success",
         "branch": "main",
-        "sha": "b0dd5a7185fb6ab4bce54c7040eff60d12babe28",
+        "sha": "a4d52580ddbc8d5685f10769816c61811906a98f",
         "event": "push",
-        "at": "2026-11-05T19:18:19Z"
+        "at": "2026-11-10T04:26:21Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/resolver/actions/runs/42092492358/job/127473882971",
+      "jobUrl": "https://github.com/rkendel1/resolver/actions/runs/42755710872/job/129629481567",
       "failure": null,
       "stale": false
     },
@@ -11780,7 +12760,7 @@
       "sources": [
         {
           "path": "scripts/publish-packages.mjs",
-          "url": "https://github.com/rkendel1/resolver/blob/b0dd5a7185fb6ab4bce54c7040eff60d12babe28/scripts/publish-packages.mjs"
+          "url": "https://github.com/rkendel1/resolver/blob/a4d52580ddbc8d5685f10769816c61811906a98f/scripts/publish-packages.mjs"
         }
       ],
       "annotated": false,

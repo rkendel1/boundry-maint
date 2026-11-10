@@ -5,8 +5,8 @@
       "project": "authboundry",
       "repository": "rkendel1/authboundry",
       "commit": "b8ed659b52f8d5da5b81d1410e7cad7f8184bdb7",
-      "collectedAt": "2026-11-09T07:28:15.165Z",
-      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42579526054",
+      "collectedAt": "2026-11-10T07:27:01.195Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534",
       "passed": false,
       "checks": {
         "resolution": "pass",

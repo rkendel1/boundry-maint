@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T07:28:15.165Z",
+  "generatedAt": "2026-11-10T07:27:01.195Z",
   "items": [
     {
       "key": "flow-db|crates/feltdb-public-api-check/Cargo.lock|crates:tokio",
@@ -70,29 +70,93 @@
       ]
     },
     {
-      "key": "appport-services|package-lock.json|npm:@appport/protocol",
-      "project": "appport-services",
-      "root": "package-lock.json",
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/protocol",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
       "roots": [
-        "."
+        "examples/application-capabilities/commerce",
+        "examples/application-capabilities/dynamic-consumer",
+        "examples/application-capabilities/invoicing",
+        "examples/contract-first-taskboard",
+        "examples/documents",
+        "examples/world",
+        "integrations/feltdb",
+        "packages/appboundry-host",
+        "packages/appboundry-runtime",
+        "packages/cli",
+        "studio"
       ],
       "package": "appport-protocol",
       "name": "@appport/protocol",
       "registry": "npm",
       "ownership": "owned",
-      "currentVersion": "1.0.3",
-      "targetVersion": "1.4.1",
-      "declaredVersion": "^1.0.3",
+      "currentVersion": "1.4.1",
+      "targetVersion": "1.5.0",
+      "declaredVersion": "1.4.1",
       "difference": "minor",
-      "latestSatisfiesDeclared": true,
+      "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "targetPublishedAt": "2026-11-09T19:19:37.663Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "1.4.1",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/sdk",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "examples/appboundry",
+        "examples/documents",
+        "examples/materialization-reference",
+        "examples/todos",
+        "packages/appboundry",
+        "packages/appboundry-runtime",
+        "packages/cli",
+        "studio"
+      ],
+      "package": "appport-sdk",
+      "name": "@appport/sdk",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.6.0",
+      "targetVersion": "1.7.0",
+      "declaredVersion": "1.6.0",
+      "difference": "minor",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 3,
+      "targetPublishedAt": "2026-11-09T19:17:19.765Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
           {
-            "id": "rkendel1/appport-services:scripts/publish-packages.sh",
-            "name": "publish-packages.sh",
+            "id": "rkendel1/appboundry:scripts/publish-packages.mjs",
+            "name": "publish-packages.mjs",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          },
+          {
+            "id": "rkendel1/appboundry:scripts/unpublish-packages.mjs",
+            "name": "unpublish-packages.mjs",
             "result": "unknown",
             "enforcement": "unknown",
             "requirement": null,
@@ -100,18 +164,83 @@
           }
         ]
       },
-      "targetPublishedAt": "2026-11-05T17:21:43.819Z",
-      "openedAt": "2026-11-04T15:00:23.704Z",
-      "updatedAt": "2026-11-04T15:00:23.704Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
-          "at": "2026-11-04T15:00:23.704Z",
+          "at": "2026-11-10T07:27:01.195Z",
           "status": "update-required",
-          "version": "1.0.3",
-          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
+          "version": "1.6.0",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/services",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "packages/appboundry-host"
+      ],
+      "package": "appport-services",
+      "name": "@appport/services",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "0.15.0",
+      "targetVersion": "0.16.0",
+      "declaredVersion": "0.15.0",
+      "difference": "minor",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 3,
+      "targetPublishedAt": "2026-11-09T19:31:17.936Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/appboundry:.github/workflows/appboundry-release.yml#appboundry-release/release-metadata-version-not-behind-npm-not-changed-under-a-",
+            "name": "Release metadata (version not behind npm, not changed under a published version; dependencies resolve on npm)",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          },
+          {
+            "id": "rkendel1/appboundry:scripts/publish-packages.mjs",
+            "name": "publish-packages.mjs",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          },
+          {
+            "id": "rkendel1/appboundry:scripts/release-check.mjs",
+            "name": "release-check.mjs",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          },
+          {
+            "id": "rkendel1/appboundry:scripts/verify-runtime-release.mjs",
+            "name": "verify-runtime-release.mjs",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          }
+        ]
+      },
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "0.15.0",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
         }
       ]
     },
@@ -128,7 +257,7 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.4.0",
-      "targetVersion": "1.7.0",
+      "targetVersion": "1.7.1",
       "declaredVersion": "1.4.0",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
@@ -155,7 +284,7 @@
           }
         ]
       },
-      "targetPublishedAt": "2026-11-05T17:20:58.302Z",
+      "targetPublishedAt": "2026-11-09T19:17:21.122Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -188,7 +317,7 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.2.0",
-      "targetVersion": "1.4.1",
+      "targetVersion": "1.5.0",
       "declaredVersion": "1.2.0",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
@@ -215,7 +344,7 @@
           }
         ]
       },
-      "targetPublishedAt": "2026-11-05T17:21:43.819Z",
+      "targetPublishedAt": "2026-11-09T19:19:37.663Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -243,7 +372,7 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.2.2",
-      "targetVersion": "1.6.0",
+      "targetVersion": "1.7.0",
       "declaredVersion": "1.2.2",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
@@ -262,7 +391,7 @@
           }
         ]
       },
-      "targetPublishedAt": "2026-11-05T17:20:03.812Z",
+      "targetPublishedAt": "2026-11-09T19:17:19.765Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -336,14 +465,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.0.2",
-      "targetVersion": "1.7.0",
+      "targetVersion": "1.7.1",
       "declaredVersion": "1.0.2",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-05T17:20:58.302Z",
+      "targetPublishedAt": "2026-11-09T19:17:21.122Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -370,14 +499,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.0.2",
-      "targetVersion": "1.7.0",
+      "targetVersion": "1.7.1",
       "declaredVersion": "1.0.2",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-05T17:20:58.302Z",
+      "targetPublishedAt": "2026-11-09T19:17:21.122Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -404,14 +533,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.0.2",
-      "targetVersion": "1.7.0",
+      "targetVersion": "1.7.1",
       "declaredVersion": "1.0.2",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-05T17:20:58.302Z",
+      "targetPublishedAt": "2026-11-09T19:17:21.122Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -438,14 +567,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.0.1",
-      "targetVersion": "1.1.5",
+      "targetVersion": "1.1.6",
       "declaredVersion": "1.0.1",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-05T17:19:33.812Z",
+      "targetPublishedAt": "2026-11-09T19:16:26.656Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -472,14 +601,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.4.5",
-      "targetVersion": "0.15.0",
+      "targetVersion": "0.16.0",
       "declaredVersion": "0.4.5",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-04T13:45:04.257Z",
+      "targetPublishedAt": "2026-11-09T19:31:17.936Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -506,14 +635,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.4.5",
-      "targetVersion": "0.15.0",
+      "targetVersion": "0.16.0",
       "declaredVersion": "0.4.5",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-04T13:45:04.257Z",
+      "targetPublishedAt": "2026-11-09T19:31:17.936Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -540,14 +669,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.4.5",
-      "targetVersion": "0.15.0",
+      "targetVersion": "0.16.0",
       "declaredVersion": "0.4.5",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-04T13:45:04.257Z",
+      "targetPublishedAt": "2026-11-09T19:31:17.936Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -710,14 +839,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.0.2",
-      "targetVersion": "1.1.0",
+      "targetVersion": "1.1.1",
       "declaredVersion": "1.0.2",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-05T17:19:36.446Z",
+      "targetPublishedAt": "2026-11-09T19:18:41.503Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -744,7 +873,7 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.0.3",
-      "targetVersion": "1.7.0",
+      "targetVersion": "1.7.1",
       "declaredVersion": "1.0.3",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
@@ -771,7 +900,7 @@
           }
         ]
       },
-      "targetPublishedAt": "2026-11-05T17:20:58.302Z",
+      "targetPublishedAt": "2026-11-09T19:17:21.122Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -798,7 +927,7 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.0.3",
-      "targetVersion": "1.7.0",
+      "targetVersion": "1.7.1",
       "declaredVersion": "1.0.3",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
@@ -825,7 +954,7 @@
           }
         ]
       },
-      "targetPublishedAt": "2026-11-05T17:20:58.302Z",
+      "targetPublishedAt": "2026-11-09T19:17:21.122Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -852,14 +981,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.0.2",
-      "targetVersion": "1.4.1",
+      "targetVersion": "1.5.0",
       "declaredVersion": "1.0.2",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-05T17:21:43.819Z",
+      "targetPublishedAt": "2026-11-09T19:19:37.663Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -886,14 +1015,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.4.6",
-      "targetVersion": "0.14.0",
+      "targetVersion": "0.15.0",
       "declaredVersion": "0.4.6",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-04T13:45:08.595Z",
+      "targetPublishedAt": "2026-11-09T19:30:30.768Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -920,14 +1049,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.0.2",
-      "targetVersion": "1.1.5",
+      "targetVersion": "1.1.6",
       "declaredVersion": "1.0.2",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-05T17:19:33.812Z",
+      "targetPublishedAt": "2026-11-09T19:16:26.656Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -954,14 +1083,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.0.2",
-      "targetVersion": "1.3.0",
+      "targetVersion": "1.3.1",
       "declaredVersion": "1.0.2",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-05T17:20:59.396Z",
+      "targetPublishedAt": "2026-11-09T19:17:01.826Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -988,7 +1117,7 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.4.11",
-      "targetVersion": "0.15.0",
+      "targetVersion": "0.16.0",
       "declaredVersion": "0.4.11",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
@@ -1015,7 +1144,7 @@
           }
         ]
       },
-      "targetPublishedAt": "2026-11-04T13:45:04.257Z",
+      "targetPublishedAt": "2026-11-09T19:31:17.936Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -1042,14 +1171,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.0.2",
-      "targetVersion": "1.1.7",
+      "targetVersion": "1.1.8",
       "declaredVersion": "1.0.2",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-05T17:20:09.379Z",
+      "targetPublishedAt": "2026-11-09T19:18:24.733Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -1431,7 +1560,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42561615795"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1439,7 +1568,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42561615795"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1605,7 +1734,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42561615795"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1613,7 +1742,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42561615795"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1755,7 +1884,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42561615795"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1763,7 +1892,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42561615795"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1905,14 +2034,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.1.22",
-      "targetVersion": "1.6.0",
+      "targetVersion": "1.7.0",
       "declaredVersion": "1.1.22",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-05T17:20:03.812Z",
+      "targetPublishedAt": "2026-11-09T19:17:19.765Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -1939,14 +2068,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.4.6",
-      "targetVersion": "0.15.0",
+      "targetVersion": "0.16.0",
       "declaredVersion": "0.4.6",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-04T13:45:04.257Z",
+      "targetPublishedAt": "2026-11-09T19:31:17.936Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -2140,6 +2269,555 @@
       ]
     },
     {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/authorization",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "examples/application-capabilities/commerce",
+        "examples/application-capabilities/invoicing",
+        "examples/contract-first-taskboard",
+        "examples/documents",
+        "examples/world",
+        "integrations/feltdb",
+        "packages/appboundry-host"
+      ],
+      "package": "appport-authorization",
+      "name": "@appport/authorization",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.1.0",
+      "targetVersion": "1.1.1",
+      "declaredVersion": "1.1.0",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-09T19:18:41.503Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "1.1.0",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/client",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "examples/application-capabilities/commerce",
+        "examples/application-capabilities/dynamic-consumer",
+        "examples/application-capabilities/invoicing",
+        "examples/contract-first-taskboard",
+        "examples/documents",
+        "examples/world",
+        "packages/cli"
+      ],
+      "package": "appport-client",
+      "name": "@appport/client",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.1.7",
+      "targetVersion": "1.1.8",
+      "declaredVersion": "1.1.7",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-09T19:16:30.974Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/appboundry:.github/workflows/cloud-portal.yml#portal/check-the-hand-written-portal-client-parses",
+            "name": "Check the hand-written portal client parses",
+            "result": "passing",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/42267213337"
+          }
+        ]
+      },
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "1.1.7",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/core",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "apps/cloud-portal",
+        "examples/appboundry-explorer",
+        "examples/application-capabilities/commerce",
+        "examples/application-capabilities/invoicing",
+        "examples/application-contracts",
+        "examples/contract-first-taskboard",
+        "examples/documents",
+        "examples/world",
+        "integrations/feltdb",
+        "packages/appboundry",
+        "packages/appboundry-host",
+        "packages/appboundry-runtime",
+        "packages/cli",
+        "studio"
+      ],
+      "package": "appport-core",
+      "name": "@appport/core",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.7.0",
+      "targetVersion": "1.7.1",
+      "declaredVersion": "1.7.0",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-09T19:17:21.122Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/appboundry:.github/workflows/cloud-portal.yml#portal/check-the-hand-written-portal-client-parses",
+            "name": "Check the hand-written portal client parses",
+            "result": "passing",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/42267213337"
+          },
+          {
+            "id": "rkendel1/appboundry:scripts/unpublish-packages.mjs",
+            "name": "unpublish-packages.mjs",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          }
+        ]
+      },
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "1.7.0",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/generators",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "examples/application-capabilities/commerce",
+        "examples/application-capabilities/invoicing",
+        "examples/contract-first-taskboard",
+        "packages/cli"
+      ],
+      "package": "appport-generators",
+      "name": "@appport/generators",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.0.9",
+      "targetVersion": "1.0.10",
+      "declaredVersion": "1.0.9",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-09T19:16:55.959Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "1.0.9",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/mcp",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "packages/appboundry-host",
+        "packages/cli"
+      ],
+      "package": "appport-mcp",
+      "name": "@appport/mcp",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.3.7",
+      "targetVersion": "1.3.8",
+      "declaredVersion": "1.3.7",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-09T19:18:35.732Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "1.3.7",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/mobile",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "packages/cli"
+      ],
+      "package": "appport-mobile",
+      "name": "@appport/mobile",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.0.11",
+      "targetVersion": "1.0.12",
+      "declaredVersion": "1.0.11",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-09T19:17:12.062Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "1.0.11",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/schema",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "apps/cloud-portal",
+        "examples/appboundry-explorer",
+        "examples/application-capabilities/commerce",
+        "examples/application-capabilities/dynamic-consumer",
+        "examples/application-capabilities/invoicing",
+        "examples/application-contracts",
+        "examples/contract-first-taskboard",
+        "examples/documents",
+        "examples/world",
+        "integrations/feltdb",
+        "packages/appboundry-host",
+        "packages/appboundry-runtime",
+        "packages/cli"
+      ],
+      "package": "appport-schema",
+      "name": "@appport/schema",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.1.5",
+      "targetVersion": "1.1.6",
+      "declaredVersion": "1.1.5",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-09T19:16:26.656Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/appboundry:.github/workflows/cloud-portal.yml#portal/check-the-hand-written-portal-client-parses",
+            "name": "Check the hand-written portal client parses",
+            "result": "passing",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/42267213337"
+          }
+        ]
+      },
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "1.1.5",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/server",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "examples/application-capabilities/commerce",
+        "examples/application-capabilities/dynamic-consumer",
+        "examples/application-capabilities/invoicing",
+        "examples/contract-first-taskboard",
+        "examples/documents",
+        "examples/world",
+        "packages/appboundry-host",
+        "packages/cli"
+      ],
+      "package": "appport-server",
+      "name": "@appport/server",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.3.0",
+      "targetVersion": "1.3.1",
+      "declaredVersion": "1.3.0",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-09T19:17:01.826Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "1.3.0",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-electron",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "examples/documents"
+      ],
+      "package": "appport-transport-electron",
+      "name": "@appport/transport-electron",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.0.13",
+      "targetVersion": "1.0.14",
+      "declaredVersion": "1.0.13",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-09T19:18:01.266Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "1.0.13",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-http",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "examples/application-capabilities/commerce",
+        "examples/application-capabilities/dynamic-consumer",
+        "examples/application-capabilities/invoicing",
+        "examples/contract-first-taskboard",
+        "examples/documents",
+        "examples/world",
+        "packages/cli"
+      ],
+      "package": "appport-transport-http",
+      "name": "@appport/transport-http",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.1.7",
+      "targetVersion": "1.1.8",
+      "declaredVersion": "1.1.7",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-09T19:18:24.733Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "1.1.7",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-inprocess",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "examples/application-capabilities/commerce",
+        "examples/application-capabilities/invoicing",
+        "examples/contract-first-taskboard",
+        "examples/documents",
+        "packages/cli"
+      ],
+      "package": "appport-transport-inprocess",
+      "name": "@appport/transport-inprocess",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.0.13",
+      "targetVersion": "1.0.14",
+      "declaredVersion": "1.0.13",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-09T19:17:09.049Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "1.0.13",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-tauri",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "examples/documents"
+      ],
+      "package": "appport-transport-tauri",
+      "name": "@appport/transport-tauri",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.0.11",
+      "targetVersion": "1.0.12",
+      "declaredVersion": "1.0.11",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-09T19:17:06.629Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "1.0.11",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-websocket",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "examples/application-capabilities/commerce",
+        "examples/application-capabilities/invoicing",
+        "examples/contract-first-taskboard",
+        "examples/documents",
+        "examples/world",
+        "packages/cli"
+      ],
+      "package": "appport-transport-websocket",
+      "name": "@appport/transport-websocket",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.0.11",
+      "targetVersion": "1.0.12",
+      "declaredVersion": "1.0.11",
+      "difference": "patch",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 4,
+      "targetPublishedAt": "2026-11-09T19:18:26.177Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "1.0.11",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
       "key": "appworks|pnpm-lock.yaml|npm:@appport/client",
       "project": "appworks",
       "root": "pnpm-lock.yaml",
@@ -2151,7 +2829,7 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.1.5",
-      "targetVersion": "1.1.7",
+      "targetVersion": "1.1.8",
       "declaredVersion": "1.1.5",
       "difference": "patch",
       "latestSatisfiesDeclared": false,
@@ -2170,7 +2848,7 @@
           }
         ]
       },
-      "targetPublishedAt": "2026-11-05T17:19:58.279Z",
+      "targetPublishedAt": "2026-11-09T19:16:30.974Z",
       "openedAt": "2026-11-06T07:27:45.501Z",
       "updatedAt": "2026-11-06T07:27:45.501Z",
       "closedAt": null,
@@ -2197,7 +2875,7 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.2.2",
-      "targetVersion": "1.2.4",
+      "targetVersion": "1.2.5",
       "declaredVersion": "1.2.2",
       "difference": "patch",
       "latestSatisfiesDeclared": false,
@@ -2224,7 +2902,7 @@
           }
         ]
       },
-      "targetPublishedAt": "2026-11-05T17:20:24.821Z",
+      "targetPublishedAt": "2026-11-09T19:17:18.507Z",
       "openedAt": "2026-11-06T07:27:45.501Z",
       "updatedAt": "2026-11-06T07:27:45.501Z",
       "closedAt": null,
@@ -2256,7 +2934,7 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.1.1",
-      "targetVersion": "1.1.5",
+      "targetVersion": "1.1.6",
       "declaredVersion": "1.1.1",
       "difference": "patch",
       "latestSatisfiesDeclared": false,
@@ -2283,7 +2961,7 @@
           }
         ]
       },
-      "targetPublishedAt": "2026-11-05T17:19:33.812Z",
+      "targetPublishedAt": "2026-11-09T19:16:26.656Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -2310,14 +2988,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.0.2",
-      "targetVersion": "1.0.13",
+      "targetVersion": "1.0.14",
       "declaredVersion": "1.0.2",
       "difference": "patch",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
       "ci": null,
-      "targetPublishedAt": "2026-11-05T17:23:06.755Z",
+      "targetPublishedAt": "2026-11-09T19:17:09.049Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -2344,14 +3022,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.0.2",
-      "targetVersion": "1.0.11",
+      "targetVersion": "1.0.12",
       "declaredVersion": "1.0.2",
       "difference": "patch",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
       "ci": null,
-      "targetPublishedAt": "2026-11-05T17:21:32.944Z",
+      "targetPublishedAt": "2026-11-09T19:18:26.177Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -2437,6 +3115,58 @@
       ]
     },
     {
+      "key": "appport-services|package-lock.json|npm:@appport/protocol",
+      "project": "appport-services",
+      "root": "package-lock.json",
+      "roots": [
+        "."
+      ],
+      "package": "appport-protocol",
+      "name": "@appport/protocol",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "1.5.0",
+      "targetVersion": "1.4.1",
+      "declaredVersion": ">=1.5.0",
+      "difference": "minor",
+      "latestSatisfiesDeclared": true,
+      "status": "updated-unverified",
+      "priority": 9,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/appport-services:scripts/publish-packages.sh",
+            "name": "publish-packages.sh",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          }
+        ]
+      },
+      "targetPublishedAt": "2026-11-05T17:21:43.819Z",
+      "openedAt": "2026-11-04T15:00:23.704Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-04T15:00:23.704Z",
+          "status": "update-required",
+          "version": "1.0.3",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41853208692"
+        },
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "updated-unverified",
+          "version": "1.5.0",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        }
+      ]
+    },
+    {
       "key": "feltkit|package-lock.json|npm:@appport/sdk",
       "project": "feltkit",
       "root": "package-lock.json",
@@ -2447,12 +3177,12 @@
       "name": "@appport/sdk",
       "registry": "npm",
       "ownership": "owned",
-      "currentVersion": "1.6.0",
+      "currentVersion": "1.7.0",
       "targetVersion": "1.4.1",
-      "declaredVersion": "1.6.0",
+      "declaredVersion": "1.7.0",
       "difference": "patch",
       "latestSatisfiesDeclared": false,
-      "status": "updated-verified",
+      "status": "updated-unverified",
       "priority": 9,
       "ci": {
         "blockingFailure": false,
@@ -2463,14 +3193,78 @@
             "result": "passing",
             "enforcement": "fail",
             "requirement": "exact",
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42457562940"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
+          },
+          {
+            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix/invalid-combinations-are-refused-as-stated",
+            "name": "Invalid combinations are refused as stated",
+            "result": "passing",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
+          },
+          {
+            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix/level-a-shard-matrix-shard-of-4-every-valid-case",
+            "name": "Level A, shard ${{ matrix.shard }} of 4 (every valid case)",
+            "result": "passing",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
+          },
+          {
+            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix/level-b-shard-matrix-shard-of-4-the-real-cli-on-disk-resumes",
+            "name": "Level B, shard ${{ matrix.shard }} of 4 (the real CLI on disk; resumes from the ledger)",
+            "result": "passing",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
+          },
+          {
+            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/prepare-the-consumer-build-npm-pack-install-the-tarballs-int",
+            "name": "Prepare the consumer (build, npm pack, install the tarballs into an isolated project)",
+            "result": "passing",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
+          },
+          {
+            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/invalid-combinations-against-the-installed-package",
+            "name": "Invalid combinations against the installed package",
+            "result": "passing",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
+          },
+          {
+            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/level-a-against-the-installed-package-every-valid-case",
+            "name": "Level A against the installed package (every valid case)",
+            "result": "passing",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
+          },
+          {
+            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/level-b-slice-against-the-installed-package",
+            "name": "Level B slice against the installed package",
+            "result": "passing",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
+          },
+          {
+            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/the-installed-package-is-the-release-set-as-intended",
+            "name": "The installed package is the release set as intended",
+            "result": "failing",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
           }
         ]
       },
       "targetPublishedAt": "2026-11-03T14:41:11.425Z",
       "openedAt": "2026-11-04T15:00:23.704Z",
-      "updatedAt": "2026-11-08T07:26:11.067Z",
-      "closedAt": "2026-11-08T07:26:11.067Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
       "lastVerifiedCommit": "7111d4603630b878b558e23f4314b6203a7b2695",
       "evidence": [
         {
@@ -2503,6 +3297,12 @@
           "status": "updated-verified",
           "version": "1.6.0",
           "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42458773250"
+        },
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "updated-unverified",
+          "version": "1.7.0",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
         }
       ]
     },
@@ -2517,12 +3317,12 @@
       "name": "@appport/server",
       "registry": "npm",
       "ownership": "owned",
-      "currentVersion": "1.3.0",
+      "currentVersion": "1.3.1",
       "targetVersion": "1.1.6",
-      "declaredVersion": "1.3.0",
+      "declaredVersion": "1.3.1",
       "difference": "patch",
       "latestSatisfiesDeclared": false,
-      "status": "updated-verified",
+      "status": "updated-unverified",
       "priority": 9,
       "ci": {
         "blockingFailure": false,
@@ -2533,14 +3333,14 @@
             "result": "passing",
             "enforcement": "fail",
             "requirement": "exact",
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42457562940"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
           }
         ]
       },
       "targetPublishedAt": "2026-11-03T14:41:38.827Z",
       "openedAt": "2026-11-04T15:00:23.704Z",
-      "updatedAt": "2026-11-08T07:26:11.067Z",
-      "closedAt": "2026-11-08T07:26:11.067Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
       "lastVerifiedCommit": "7111d4603630b878b558e23f4314b6203a7b2695",
       "evidence": [
         {
@@ -2573,6 +3373,12 @@
           "status": "updated-verified",
           "version": "1.3.0",
           "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42458773250"
+        },
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "updated-unverified",
+          "version": "1.3.1",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
         }
       ]
     },
@@ -2587,18 +3393,18 @@
       "name": "@appport/testing",
       "registry": "npm",
       "ownership": "owned",
-      "currentVersion": "1.2.3",
+      "currentVersion": "1.2.4",
       "targetVersion": "1.2.1",
-      "declaredVersion": "1.2.3",
+      "declaredVersion": "1.2.4",
       "difference": "patch",
       "latestSatisfiesDeclared": false,
-      "status": "updated-verified",
+      "status": "updated-unverified",
       "priority": 9,
       "ci": null,
       "targetPublishedAt": "2026-11-03T14:42:19.611Z",
       "openedAt": "2026-11-04T15:00:23.704Z",
-      "updatedAt": "2026-11-08T07:26:11.067Z",
-      "closedAt": "2026-11-08T07:26:11.067Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
       "lastVerifiedCommit": "7111d4603630b878b558e23f4314b6203a7b2695",
       "evidence": [
         {
@@ -2631,6 +3437,12 @@
           "status": "updated-verified",
           "version": "1.2.3",
           "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42458773250"
+        },
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "updated-unverified",
+          "version": "1.2.4",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
         }
       ]
     }
