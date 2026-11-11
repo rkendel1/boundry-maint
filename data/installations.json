@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-10T07:27:01.195Z",
+  "generatedAt": "2026-11-11T07:26:45.077Z",
   "installations": [
     {
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
       "root": "examples/invoices",
       "manifest": "examples/invoices/package.json",
       "lockfile": "package-lock.json",
@@ -14,11 +14,11 @@
       "registry": "npm",
       "kind": "dependencies",
       "optional": false,
-      "declaredVersion": "0.3.18",
-      "resolvedVersion": "0.3.18",
+      "declaredVersion": "0.3.22",
+      "resolvedVersion": "0.3.22",
       "source": "workspace",
       "sourceRevision": "packages/sdk",
-      "latestVersion": "0.3.18",
+      "latestVersion": "0.3.22",
       "latestSatisfiesDeclared": null,
       "lockfileInSync": null,
       "status": "local",
@@ -28,12 +28,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
       "root": "examples/managed",
       "manifest": "examples/managed/package.json",
       "lockfile": "package-lock.json",
@@ -43,11 +43,11 @@
       "registry": "npm",
       "kind": "dependencies",
       "optional": false,
-      "declaredVersion": "0.3.18",
-      "resolvedVersion": "0.3.18",
+      "declaredVersion": "0.3.22",
+      "resolvedVersion": "0.3.22",
       "source": "workspace",
       "sourceRevision": "packages/sdk",
-      "latestVersion": "0.3.18",
+      "latestVersion": "0.3.22",
       "latestSatisfiesDeclared": null,
       "lockfileInSync": null,
       "status": "local",
@@ -57,12 +57,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
       "root": "examples/managed",
       "manifest": "examples/managed/package.json",
       "lockfile": "package-lock.json",
@@ -86,12 +86,12 @@
         "evidenceAt": "2026-11-09T07:28:15.165Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
       "root": "examples/tasks",
       "manifest": "examples/tasks/package.json",
       "lockfile": "package-lock.json",
@@ -101,11 +101,11 @@
       "registry": "npm",
       "kind": "dependencies",
       "optional": false,
-      "declaredVersion": "0.3.18",
-      "resolvedVersion": "0.3.18",
+      "declaredVersion": "0.3.22",
+      "resolvedVersion": "0.3.22",
       "source": "workspace",
       "sourceRevision": "packages/sdk",
-      "latestVersion": "0.3.18",
+      "latestVersion": "0.3.22",
       "latestSatisfiesDeclared": null,
       "lockfileInSync": null,
       "status": "local",
@@ -115,70 +115,70 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
-      "root": "examples/teams",
-      "manifest": "examples/teams/package.json",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
+      "root": "examples/tasks",
+      "manifest": "examples/tasks/package.json",
       "lockfile": "package-lock.json",
       "ecosystem": "javascript",
-      "package": "feltdb-feltkit",
-      "name": "@feltdb/feltkit",
+      "package": "feltdb-webllm",
+      "name": "@feltdb/webllm",
       "registry": "npm",
       "kind": "dependencies",
       "optional": false,
-      "declaredVersion": "0.3.18",
-      "resolvedVersion": "0.3.18",
-      "source": "workspace",
-      "sourceRevision": "packages/sdk",
-      "latestVersion": "0.3.18",
-      "latestSatisfiesDeclared": null,
-      "lockfileInSync": null,
-      "status": "local",
-      "verification": {
-        "verified": false,
-        "commit": null,
-        "evidenceAt": null
-      },
-      "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
-    },
-    {
-      "project": "feltkit",
-      "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
-      "root": "packages/create/template-foundation",
-      "manifest": "packages/create/template-foundation/package.json",
-      "lockfile": "package-lock.json",
-      "ecosystem": "javascript",
-      "package": "feltdb-feltkit",
-      "name": "@feltdb/feltkit",
-      "registry": "npm",
-      "kind": "dependencies",
-      "optional": false,
-      "declaredVersion": "0.3.18",
-      "resolvedVersion": null,
+      "declaredVersion": ">=0.21.0 <1.0.0",
+      "resolvedVersion": "0.21.0",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "0.3.18",
+      "latestVersion": "0.21.0",
       "latestSatisfiesDeclared": true,
-      "lockfileInSync": null,
-      "status": "unknown",
+      "lockfileInSync": true,
+      "status": "current",
       "verification": {
         "verified": false,
         "commit": null,
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
+      "root": "packages/create",
+      "manifest": "packages/create/package.json",
+      "lockfile": "package-lock.json",
+      "ecosystem": "javascript",
+      "package": "feltdb-feltkit",
+      "name": "@feltdb/feltkit",
+      "registry": "npm",
+      "kind": "dependencies",
+      "optional": false,
+      "declaredVersion": "0.3.22",
+      "resolvedVersion": "0.3.22",
+      "source": "workspace",
+      "sourceRevision": "packages/sdk",
+      "latestVersion": "0.3.22",
+      "latestSatisfiesDeclared": null,
+      "lockfileInSync": null,
+      "status": "local",
+      "verification": {
+        "verified": false,
+        "commit": null,
+        "evidenceAt": null
+      },
+      "stale": false,
+      "lastScanned": "2026-11-11T07:26:45.077Z"
+    },
+    {
+      "project": "feltkit",
+      "repository": "rkendel1/feltkit",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "package-lock.json",
@@ -202,12 +202,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "package-lock.json",
@@ -231,12 +231,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "package-lock.json",
@@ -260,12 +260,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "package-lock.json",
@@ -275,40 +275,11 @@
       "registry": "npm",
       "kind": "dependencies",
       "optional": false,
-      "declaredVersion": "0.2.2",
-      "resolvedVersion": "0.2.2",
+      "declaredVersion": "0.2.3",
+      "resolvedVersion": "0.2.3",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "0.2.2",
-      "latestSatisfiesDeclared": true,
-      "lockfileInSync": true,
-      "status": "current",
-      "verification": {
-        "verified": true,
-        "commit": "7111d4603630b878b558e23f4314b6203a7b2695",
-        "evidenceAt": "2026-11-09T07:28:15.165Z"
-      },
-      "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
-    },
-    {
-      "project": "feltkit",
-      "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
-      "root": "packages/sdk",
-      "manifest": "packages/sdk/package.json",
-      "lockfile": "package-lock.json",
-      "ecosystem": "javascript",
-      "package": "appport-sdk",
-      "name": "@appport/sdk",
-      "registry": "npm",
-      "kind": "dependencies",
-      "optional": false,
-      "declaredVersion": "1.7.0",
-      "resolvedVersion": "1.7.0",
-      "source": "registry",
-      "sourceRevision": null,
-      "latestVersion": "1.7.0",
+      "latestVersion": "0.2.3",
       "latestSatisfiesDeclared": true,
       "lockfileInSync": true,
       "status": "current",
@@ -318,12 +289,41 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
+      "root": "packages/sdk",
+      "manifest": "packages/sdk/package.json",
+      "lockfile": "package-lock.json",
+      "ecosystem": "javascript",
+      "package": "appport-sdk",
+      "name": "@appport/sdk",
+      "registry": "npm",
+      "kind": "dependencies",
+      "optional": false,
+      "declaredVersion": "1.8.0",
+      "resolvedVersion": "1.8.0",
+      "source": "registry",
+      "sourceRevision": null,
+      "latestVersion": "1.8.0",
+      "latestSatisfiesDeclared": true,
+      "lockfileInSync": true,
+      "status": "current",
+      "verification": {
+        "verified": false,
+        "commit": null,
+        "evidenceAt": null
+      },
+      "stale": false,
+      "lastScanned": "2026-11-11T07:26:45.077Z"
+    },
+    {
+      "project": "feltkit",
+      "repository": "rkendel1/feltkit",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "package-lock.json",
@@ -347,12 +347,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "package-lock.json",
@@ -376,12 +376,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "package-lock.json",
@@ -405,12 +405,12 @@
         "evidenceAt": "2026-11-09T07:28:15.165Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "package-lock.json",
@@ -434,12 +434,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "feltkit",
       "repository": "rkendel1/feltkit",
-      "commit": "319ec4b0279c28aeb45662960d0af00c34348688",
+      "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "package-lock.json",
@@ -463,12 +463,12 @@
         "evidenceAt": "2026-11-09T07:28:15.165Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport-services",
       "repository": "rkendel1/appport-services",
-      "commit": "0456f7c0c3dda291d6eba96004836ef08948558f",
+      "commit": "808b5c1db555a35a1286eb03a0dfa6860f3d83f6",
       "root": "examples/invoice-app",
       "manifest": "examples/invoice-app/package.json",
       "lockfile": "examples/invoice-app/package-lock.json",
@@ -492,12 +492,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport-services",
       "repository": "rkendel1/appport-services",
-      "commit": "0456f7c0c3dda291d6eba96004836ef08948558f",
+      "commit": "808b5c1db555a35a1286eb03a0dfa6860f3d83f6",
       "root": "examples/services-demo",
       "manifest": "examples/services-demo/package.json",
       "lockfile": "package-lock.json",
@@ -521,12 +521,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport-services",
       "repository": "rkendel1/appport-services",
-      "commit": "0456f7c0c3dda291d6eba96004836ef08948558f",
+      "commit": "808b5c1db555a35a1286eb03a0dfa6860f3d83f6",
       "root": ".",
       "manifest": "package.json",
       "lockfile": "package-lock.json",
@@ -550,12 +550,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport-services",
       "repository": "rkendel1/appport-services",
-      "commit": "0456f7c0c3dda291d6eba96004836ef08948558f",
+      "commit": "808b5c1db555a35a1286eb03a0dfa6860f3d83f6",
       "root": ".",
       "manifest": "package.json",
       "lockfile": "package-lock.json",
@@ -579,12 +579,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport-services",
       "repository": "rkendel1/appport-services",
-      "commit": "0456f7c0c3dda291d6eba96004836ef08948558f",
+      "commit": "808b5c1db555a35a1286eb03a0dfa6860f3d83f6",
       "root": "packages/create-appport",
       "manifest": "packages/create-appport/package.json",
       "lockfile": "package-lock.json",
@@ -608,12 +608,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport-services",
       "repository": "rkendel1/appport-services",
-      "commit": "0456f7c0c3dda291d6eba96004836ef08948558f",
+      "commit": "808b5c1db555a35a1286eb03a0dfa6860f3d83f6",
       "root": "packages/runtime",
       "manifest": "packages/runtime/package.json",
       "lockfile": "package-lock.json",
@@ -637,7 +637,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "felt-ops",
@@ -656,17 +656,17 @@
       "resolvedVersion": "0.3.14",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "0.3.18",
+      "latestVersion": "0.3.22",
       "latestSatisfiesDeclared": true,
       "lockfileInSync": true,
       "status": "patch-behind",
       "verification": {
         "verified": true,
         "commit": "d4d62b6362f90109dcbc741204c18c988fd1ff97",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -695,7 +695,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -724,7 +724,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -753,7 +753,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -782,7 +782,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -811,7 +811,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -840,7 +840,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -869,7 +869,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -898,7 +898,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -927,7 +927,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -956,7 +956,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -985,7 +985,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1014,7 +1014,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1043,7 +1043,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1072,7 +1072,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1101,7 +1101,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1130,7 +1130,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1159,7 +1159,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1188,7 +1188,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1217,7 +1217,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1246,7 +1246,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1275,7 +1275,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1304,7 +1304,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1333,7 +1333,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1362,7 +1362,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1391,7 +1391,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1420,7 +1420,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1449,7 +1449,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1478,7 +1478,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1507,7 +1507,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1536,7 +1536,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1565,7 +1565,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1594,7 +1594,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1623,7 +1623,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1652,7 +1652,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1681,7 +1681,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1710,7 +1710,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1739,7 +1739,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1768,7 +1768,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1797,7 +1797,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1826,7 +1826,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1855,7 +1855,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1884,7 +1884,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1913,7 +1913,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1942,7 +1942,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -1971,7 +1971,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -2000,7 +2000,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -2029,7 +2029,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -2058,7 +2058,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -2087,7 +2087,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -2116,7 +2116,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -2145,7 +2145,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -2174,7 +2174,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -2203,7 +2203,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -2232,7 +2232,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -2261,7 +2261,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -2290,7 +2290,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -2319,7 +2319,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "rust-ml-runtime",
@@ -2348,12 +2348,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "apps/cloud-portal",
       "manifest": "apps/cloud-portal/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2377,12 +2377,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "apps/cloud-portal",
       "manifest": "apps/cloud-portal/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2406,12 +2406,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "deploy/platform",
       "manifest": "deploy/platform/package.json",
       "lockfile": "deploy/platform/pnpm-lock.yaml",
@@ -2435,12 +2435,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/appboundry-explorer",
       "manifest": "examples/appboundry-explorer/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2464,12 +2464,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/appboundry-explorer",
       "manifest": "examples/appboundry-explorer/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2493,12 +2493,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/appboundry",
       "manifest": "examples/appboundry/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2512,7 +2512,7 @@
       "resolvedVersion": "1.6.0",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "1.7.0",
+      "latestVersion": "1.8.0",
       "latestSatisfiesDeclared": false,
       "lockfileInSync": true,
       "status": "minor-behind",
@@ -2522,12 +2522,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/appboundry",
       "manifest": "examples/appboundry/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2551,12 +2551,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/commerce",
       "manifest": "examples/application-capabilities/commerce/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2580,12 +2580,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/commerce",
       "manifest": "examples/application-capabilities/commerce/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2609,12 +2609,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/commerce",
       "manifest": "examples/application-capabilities/commerce/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2638,12 +2638,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/commerce",
       "manifest": "examples/application-capabilities/commerce/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2667,12 +2667,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/commerce",
       "manifest": "examples/application-capabilities/commerce/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2696,12 +2696,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/commerce",
       "manifest": "examples/application-capabilities/commerce/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2725,12 +2725,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/commerce",
       "manifest": "examples/application-capabilities/commerce/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2754,12 +2754,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/commerce",
       "manifest": "examples/application-capabilities/commerce/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2783,12 +2783,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/commerce",
       "manifest": "examples/application-capabilities/commerce/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2812,12 +2812,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/commerce",
       "manifest": "examples/application-capabilities/commerce/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2841,12 +2841,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/commerce",
       "manifest": "examples/application-capabilities/commerce/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2870,12 +2870,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/dynamic-consumer",
       "manifest": "examples/application-capabilities/dynamic-consumer/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2899,12 +2899,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/dynamic-consumer",
       "manifest": "examples/application-capabilities/dynamic-consumer/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2928,12 +2928,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/dynamic-consumer",
       "manifest": "examples/application-capabilities/dynamic-consumer/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2957,12 +2957,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/dynamic-consumer",
       "manifest": "examples/application-capabilities/dynamic-consumer/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -2986,12 +2986,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/dynamic-consumer",
       "manifest": "examples/application-capabilities/dynamic-consumer/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3015,12 +3015,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/invoicing",
       "manifest": "examples/application-capabilities/invoicing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3044,12 +3044,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/invoicing",
       "manifest": "examples/application-capabilities/invoicing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3073,12 +3073,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/invoicing",
       "manifest": "examples/application-capabilities/invoicing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3102,12 +3102,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/invoicing",
       "manifest": "examples/application-capabilities/invoicing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3131,12 +3131,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/invoicing",
       "manifest": "examples/application-capabilities/invoicing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3160,12 +3160,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/invoicing",
       "manifest": "examples/application-capabilities/invoicing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3189,12 +3189,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/invoicing",
       "manifest": "examples/application-capabilities/invoicing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3218,12 +3218,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/invoicing",
       "manifest": "examples/application-capabilities/invoicing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3247,12 +3247,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/invoicing",
       "manifest": "examples/application-capabilities/invoicing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3276,12 +3276,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/invoicing",
       "manifest": "examples/application-capabilities/invoicing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3305,12 +3305,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-capabilities/invoicing",
       "manifest": "examples/application-capabilities/invoicing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3334,12 +3334,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-contracts",
       "manifest": "examples/application-contracts/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3363,12 +3363,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/application-contracts",
       "manifest": "examples/application-contracts/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3392,12 +3392,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/contract-first-taskboard",
       "manifest": "examples/contract-first-taskboard/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3421,12 +3421,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/contract-first-taskboard",
       "manifest": "examples/contract-first-taskboard/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3450,12 +3450,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/contract-first-taskboard",
       "manifest": "examples/contract-first-taskboard/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3479,12 +3479,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/contract-first-taskboard",
       "manifest": "examples/contract-first-taskboard/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3508,12 +3508,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/contract-first-taskboard",
       "manifest": "examples/contract-first-taskboard/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3537,12 +3537,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/contract-first-taskboard",
       "manifest": "examples/contract-first-taskboard/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3566,12 +3566,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/contract-first-taskboard",
       "manifest": "examples/contract-first-taskboard/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3595,12 +3595,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/contract-first-taskboard",
       "manifest": "examples/contract-first-taskboard/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3624,12 +3624,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/contract-first-taskboard",
       "manifest": "examples/contract-first-taskboard/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3653,12 +3653,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/contract-first-taskboard",
       "manifest": "examples/contract-first-taskboard/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3682,12 +3682,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/contract-first-taskboard",
       "manifest": "examples/contract-first-taskboard/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3711,12 +3711,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/documents",
       "manifest": "examples/documents/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3730,7 +3730,7 @@
       "resolvedVersion": "1.6.0",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "1.7.0",
+      "latestVersion": "1.8.0",
       "latestSatisfiesDeclared": false,
       "lockfileInSync": true,
       "status": "minor-behind",
@@ -3740,12 +3740,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/documents",
       "manifest": "examples/documents/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3769,12 +3769,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/documents",
       "manifest": "examples/documents/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3798,12 +3798,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/documents",
       "manifest": "examples/documents/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3827,12 +3827,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/documents",
       "manifest": "examples/documents/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3856,12 +3856,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/documents",
       "manifest": "examples/documents/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3885,12 +3885,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/documents",
       "manifest": "examples/documents/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3914,12 +3914,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/documents",
       "manifest": "examples/documents/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3943,12 +3943,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/documents",
       "manifest": "examples/documents/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -3972,12 +3972,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/documents",
       "manifest": "examples/documents/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4001,12 +4001,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/documents",
       "manifest": "examples/documents/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4030,12 +4030,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/documents",
       "manifest": "examples/documents/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4059,12 +4059,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/documents",
       "manifest": "examples/documents/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4088,12 +4088,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/materialization-reference",
       "manifest": "examples/materialization-reference/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4107,7 +4107,7 @@
       "resolvedVersion": "1.6.0",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "1.7.0",
+      "latestVersion": "1.8.0",
       "latestSatisfiesDeclared": false,
       "lockfileInSync": true,
       "status": "minor-behind",
@@ -4117,12 +4117,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/materialization-reference",
       "manifest": "examples/materialization-reference/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4146,12 +4146,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/todos",
       "manifest": "examples/todos/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4165,7 +4165,7 @@
       "resolvedVersion": "1.6.0",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "1.7.0",
+      "latestVersion": "1.8.0",
       "latestSatisfiesDeclared": false,
       "lockfileInSync": true,
       "status": "minor-behind",
@@ -4175,12 +4175,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/todos",
       "manifest": "examples/todos/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4204,12 +4204,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4233,12 +4233,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4262,12 +4262,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4291,12 +4291,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4320,12 +4320,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4349,12 +4349,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4378,12 +4378,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4407,12 +4407,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4436,12 +4436,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "integrations/feltdb",
       "manifest": "integrations/feltdb/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4465,12 +4465,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "integrations/feltdb",
       "manifest": "integrations/feltdb/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4494,12 +4494,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "integrations/feltdb",
       "manifest": "integrations/feltdb/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4523,12 +4523,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "integrations/feltdb",
       "manifest": "integrations/feltdb/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4552,12 +4552,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "integrations/feltdb",
       "manifest": "integrations/feltdb/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4581,12 +4581,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry-host",
       "manifest": "packages/appboundry-host/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4610,12 +4610,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry-host",
       "manifest": "packages/appboundry-host/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4639,12 +4639,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry-host",
       "manifest": "packages/appboundry-host/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4668,12 +4668,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry-host",
       "manifest": "packages/appboundry-host/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4697,12 +4697,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry-host",
       "manifest": "packages/appboundry-host/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4726,12 +4726,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry-host",
       "manifest": "packages/appboundry-host/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4755,12 +4755,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry-host",
       "manifest": "packages/appboundry-host/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4784,12 +4784,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry-host",
       "manifest": "packages/appboundry-host/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4813,12 +4813,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry-runtime",
       "manifest": "packages/appboundry-runtime/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4842,12 +4842,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry-runtime",
       "manifest": "packages/appboundry-runtime/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4871,12 +4871,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry-runtime",
       "manifest": "packages/appboundry-runtime/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4900,12 +4900,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry-runtime",
       "manifest": "packages/appboundry-runtime/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4919,7 +4919,7 @@
       "resolvedVersion": "1.6.0",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "1.7.0",
+      "latestVersion": "1.8.0",
       "latestSatisfiesDeclared": false,
       "lockfileInSync": true,
       "status": "minor-behind",
@@ -4929,12 +4929,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry",
       "manifest": "packages/appboundry/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4958,12 +4958,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry",
       "manifest": "packages/appboundry/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -4977,7 +4977,7 @@
       "resolvedVersion": "1.6.0",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "1.7.0",
+      "latestVersion": "1.8.0",
       "latestSatisfiesDeclared": false,
       "lockfileInSync": true,
       "status": "minor-behind",
@@ -4987,12 +4987,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/appboundry",
       "manifest": "packages/appboundry/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5016,12 +5016,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/cli",
       "manifest": "packages/cli/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5035,7 +5035,7 @@
       "resolvedVersion": "1.6.0",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "1.7.0",
+      "latestVersion": "1.8.0",
       "latestSatisfiesDeclared": false,
       "lockfileInSync": true,
       "status": "minor-behind",
@@ -5045,12 +5045,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/cli",
       "manifest": "packages/cli/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5074,12 +5074,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/cli",
       "manifest": "packages/cli/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5103,12 +5103,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/cli",
       "manifest": "packages/cli/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5132,12 +5132,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/cli",
       "manifest": "packages/cli/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5161,12 +5161,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/cli",
       "manifest": "packages/cli/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5190,12 +5190,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/cli",
       "manifest": "packages/cli/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5219,12 +5219,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/cli",
       "manifest": "packages/cli/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5248,12 +5248,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/cli",
       "manifest": "packages/cli/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5277,12 +5277,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/cli",
       "manifest": "packages/cli/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5306,12 +5306,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/cli",
       "manifest": "packages/cli/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5335,12 +5335,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "packages/cli",
       "manifest": "packages/cli/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5364,12 +5364,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "studio",
       "manifest": "studio/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5393,12 +5393,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "studio",
       "manifest": "studio/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5422,12 +5422,12 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
-      "commit": "4df33709721d04c403147234737a98edd717de9a",
+      "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
       "root": "studio",
       "manifest": "studio/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -5441,7 +5441,7 @@
       "resolvedVersion": "1.6.0",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "1.7.0",
+      "latestVersion": "1.8.0",
       "latestSatisfiesDeclared": false,
       "lockfileInSync": true,
       "status": "minor-behind",
@@ -5451,7 +5451,7 @@
         "evidenceAt": "2026-11-10T07:27:01.195Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5480,7 +5480,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5509,7 +5509,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5538,7 +5538,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5567,7 +5567,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5596,7 +5596,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5625,7 +5625,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5654,7 +5654,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5683,7 +5683,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5712,7 +5712,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5741,7 +5741,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5770,7 +5770,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5799,7 +5799,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5828,7 +5828,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5857,7 +5857,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5886,7 +5886,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5915,7 +5915,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5944,7 +5944,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -5973,7 +5973,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6002,7 +6002,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6031,7 +6031,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6060,7 +6060,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6089,7 +6089,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6118,7 +6118,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6147,7 +6147,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6176,7 +6176,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6205,7 +6205,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6234,7 +6234,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6263,7 +6263,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6292,7 +6292,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6321,7 +6321,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6350,7 +6350,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6379,7 +6379,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6408,7 +6408,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6437,7 +6437,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "flow-db",
@@ -6466,12 +6466,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6495,12 +6495,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6524,12 +6524,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6553,12 +6553,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6582,12 +6582,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6611,12 +6611,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6640,12 +6640,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6669,12 +6669,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "examples/world",
       "manifest": "examples/world/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6698,12 +6698,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/authorization",
       "manifest": "packages/authorization/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6727,12 +6727,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/client",
       "manifest": "packages/client/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6756,12 +6756,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/contract-builder",
       "manifest": "packages/contract-builder/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6785,12 +6785,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/contract-builder",
       "manifest": "packages/contract-builder/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6814,12 +6814,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/core",
       "manifest": "packages/core/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6843,12 +6843,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/core",
       "manifest": "packages/core/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6872,12 +6872,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/core",
       "manifest": "packages/core/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6901,12 +6901,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/generators",
       "manifest": "packages/generators/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6930,12 +6930,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/generators",
       "manifest": "packages/generators/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6959,12 +6959,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/integration",
       "manifest": "packages/integration/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -6988,12 +6988,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/integration",
       "manifest": "packages/integration/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7017,12 +7017,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/mcp",
       "manifest": "packages/mcp/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7046,12 +7046,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/mcp",
       "manifest": "packages/mcp/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7075,12 +7075,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/mobile",
       "manifest": "packages/mobile/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7104,12 +7104,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/mobile",
       "manifest": "packages/mobile/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7133,12 +7133,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/mobile",
       "manifest": "packages/mobile/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7162,12 +7162,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/mobile",
       "manifest": "packages/mobile/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7191,12 +7191,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/schema",
       "manifest": "packages/schema/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7220,12 +7220,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7249,12 +7249,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7278,12 +7278,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7307,12 +7307,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7336,12 +7336,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7365,12 +7365,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7394,12 +7394,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7423,12 +7423,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7452,12 +7452,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7481,12 +7481,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7510,12 +7510,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7539,12 +7539,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7568,12 +7568,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/sdk",
       "manifest": "packages/sdk/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7597,12 +7597,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/server",
       "manifest": "packages/server/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7626,12 +7626,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/server",
       "manifest": "packages/server/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7655,12 +7655,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/server",
       "manifest": "packages/server/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7684,12 +7684,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/testing",
       "manifest": "packages/testing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7713,12 +7713,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/testing",
       "manifest": "packages/testing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7742,12 +7742,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/testing",
       "manifest": "packages/testing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7771,12 +7771,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/testing",
       "manifest": "packages/testing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7800,12 +7800,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/testing",
       "manifest": "packages/testing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7829,12 +7829,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/testing",
       "manifest": "packages/testing/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7858,12 +7858,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/transports/electron",
       "manifest": "packages/transports/electron/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7887,12 +7887,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/transports/electron",
       "manifest": "packages/transports/electron/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7916,12 +7916,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/transports/electron",
       "manifest": "packages/transports/electron/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7945,12 +7945,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/transports/http",
       "manifest": "packages/transports/http/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -7974,12 +7974,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/transports/http",
       "manifest": "packages/transports/http/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -8003,12 +8003,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/transports/inprocess",
       "manifest": "packages/transports/inprocess/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -8032,12 +8032,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/transports/inprocess",
       "manifest": "packages/transports/inprocess/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -8061,12 +8061,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/transports/inprocess",
       "manifest": "packages/transports/inprocess/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -8090,12 +8090,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/transports/tauri",
       "manifest": "packages/transports/tauri/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -8119,12 +8119,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/transports/tauri",
       "manifest": "packages/transports/tauri/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -8148,12 +8148,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/transports/websocket",
       "manifest": "packages/transports/websocket/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -8177,12 +8177,12 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appport",
       "repository": "rkendel1/appport",
-      "commit": "e3e615f34819a0f2fc727cb3db0569890286c271",
+      "commit": "8ca13e114881afacebe3d332591fc78703217d24",
       "root": "packages/transports/websocket",
       "manifest": "packages/transports/websocket/package.json",
       "lockfile": "pnpm-lock.yaml",
@@ -8206,7 +8206,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8235,7 +8235,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8264,7 +8264,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8293,7 +8293,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8322,7 +8322,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8351,7 +8351,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8380,7 +8380,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8409,7 +8409,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8438,7 +8438,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8467,7 +8467,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8496,7 +8496,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8525,7 +8525,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8554,7 +8554,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8583,7 +8583,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8612,7 +8612,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8641,7 +8641,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8670,7 +8670,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8699,7 +8699,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8728,7 +8728,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8757,7 +8757,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "authboundry",
@@ -8786,7 +8786,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -8812,10 +8812,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -8834,17 +8834,17 @@
       "resolvedVersion": "1.2.2",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "1.7.0",
+      "latestVersion": "1.8.0",
       "latestSatisfiesDeclared": false,
       "lockfileInSync": true,
       "status": "minor-behind",
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -8870,10 +8870,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -8899,10 +8899,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -8928,10 +8928,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -8957,10 +8957,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -8986,10 +8986,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9018,7 +9018,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9044,10 +9044,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9073,10 +9073,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9105,7 +9105,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9131,10 +9131,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9160,10 +9160,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9189,10 +9189,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9221,7 +9221,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9250,7 +9250,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9276,10 +9276,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9305,10 +9305,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9334,10 +9334,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9363,10 +9363,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9392,10 +9392,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9421,10 +9421,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9450,10 +9450,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9479,10 +9479,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9508,10 +9508,10 @@
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9530,17 +9530,17 @@
       "resolvedVersion": "1.4.0",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "1.7.0",
+      "latestVersion": "1.8.0",
       "latestSatisfiesDeclared": false,
       "lockfileInSync": true,
       "status": "minor-behind",
       "verification": {
         "verified": true,
         "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "appworks",
@@ -9569,7 +9569,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -9598,7 +9598,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -9627,7 +9627,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -9656,7 +9656,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -9685,7 +9685,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -9714,7 +9714,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -9743,7 +9743,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -9772,7 +9772,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -9801,7 +9801,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -9830,7 +9830,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -9859,7 +9859,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -9888,7 +9888,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -9917,7 +9917,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -9946,7 +9946,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -9975,7 +9975,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10004,7 +10004,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10033,7 +10033,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10062,7 +10062,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10091,7 +10091,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10120,7 +10120,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10149,7 +10149,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10178,7 +10178,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10207,7 +10207,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10236,7 +10236,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10265,7 +10265,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10294,7 +10294,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10323,7 +10323,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10352,7 +10352,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10381,7 +10381,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10410,7 +10410,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10439,7 +10439,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10468,7 +10468,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10497,7 +10497,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10526,7 +10526,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10555,7 +10555,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10584,7 +10584,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10613,7 +10613,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10642,7 +10642,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10671,7 +10671,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10700,7 +10700,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10729,7 +10729,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10758,7 +10758,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10787,7 +10787,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10816,7 +10816,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10845,7 +10845,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10874,7 +10874,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10903,7 +10903,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10932,7 +10932,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10961,7 +10961,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -10990,7 +10990,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -11019,7 +11019,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -11048,7 +11048,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "compute",
@@ -11077,7 +11077,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "agent-obstacle",
@@ -11106,7 +11106,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "agent-obstacle",
@@ -11125,7 +11125,7 @@
       "resolvedVersion": "0.3.2",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "0.3.18",
+      "latestVersion": "0.3.22",
       "latestSatisfiesDeclared": true,
       "lockfileInSync": true,
       "status": "patch-behind",
@@ -11135,7 +11135,7 @@
         "evidenceAt": null
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "github-integration",
@@ -11161,10 +11161,10 @@
       "verification": {
         "verified": true,
         "commit": "d51dcd156279fb85476479e490dcab41fcbe4fa7",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "github-integration",
@@ -11183,17 +11183,17 @@
       "resolvedVersion": "1.1.22",
       "source": "registry",
       "sourceRevision": null,
-      "latestVersion": "1.7.0",
+      "latestVersion": "1.8.0",
       "latestSatisfiesDeclared": false,
       "lockfileInSync": true,
       "status": "minor-behind",
       "verification": {
         "verified": true,
         "commit": "d51dcd156279fb85476479e490dcab41fcbe4fa7",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "github-integration",
@@ -11219,10 +11219,10 @@
       "verification": {
         "verified": true,
         "commit": "d51dcd156279fb85476479e490dcab41fcbe4fa7",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     },
     {
       "project": "github-integration",
@@ -11248,10 +11248,10 @@
       "verification": {
         "verified": true,
         "commit": "d51dcd156279fb85476479e490dcab41fcbe4fa7",
-        "evidenceAt": "2026-11-10T07:27:01.195Z"
+        "evidenceAt": "2026-11-11T07:26:45.077Z"
       },
       "stale": false,
-      "lastScanned": "2026-11-10T07:27:01.195Z"
+      "lastScanned": "2026-11-11T07:26:45.077Z"
     }
   ],
   "discovered": [
@@ -11358,6 +11358,16 @@
     {
       "project": "feltkit",
       "root": "examples/tasks",
+      "name": "@mlc-ai/web-llm",
+      "registry": "npm",
+      "kind": "dependencies",
+      "declaredVersion": "^0.2.84",
+      "resolvedVersion": "0.2.86",
+      "source": "registry"
+    },
+    {
+      "project": "feltkit",
+      "root": "examples/tasks",
       "name": "react",
       "registry": "npm",
       "kind": "dependencies",
@@ -11433,166 +11443,6 @@
       "kind": "devDependencies",
       "declaredVersion": "7.3.7",
       "resolvedVersion": "7.3.7",
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "examples/teams",
-      "name": "react",
-      "registry": "npm",
-      "kind": "dependencies",
-      "declaredVersion": "19.2.0",
-      "resolvedVersion": "19.2.0",
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "examples/teams",
-      "name": "react-dom",
-      "registry": "npm",
-      "kind": "dependencies",
-      "declaredVersion": "19.2.0",
-      "resolvedVersion": "19.2.0",
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "examples/teams",
-      "name": "@types/node",
-      "registry": "npm",
-      "kind": "devDependencies",
-      "declaredVersion": "22.19.1",
-      "resolvedVersion": "22.19.1",
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "examples/teams",
-      "name": "@types/react",
-      "registry": "npm",
-      "kind": "devDependencies",
-      "declaredVersion": "19.2.2",
-      "resolvedVersion": "19.2.2",
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "examples/teams",
-      "name": "@types/react-dom",
-      "registry": "npm",
-      "kind": "devDependencies",
-      "declaredVersion": "19.2.2",
-      "resolvedVersion": "19.2.2",
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "examples/teams",
-      "name": "@vitejs/plugin-react",
-      "registry": "npm",
-      "kind": "devDependencies",
-      "declaredVersion": "5.1.0",
-      "resolvedVersion": "5.1.0",
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "examples/teams",
-      "name": "typescript",
-      "registry": "npm",
-      "kind": "devDependencies",
-      "declaredVersion": "5.9.3",
-      "resolvedVersion": "5.9.3",
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "examples/teams",
-      "name": "vite",
-      "registry": "npm",
-      "kind": "devDependencies",
-      "declaredVersion": "7.3.7",
-      "resolvedVersion": "7.3.7",
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "packages/create/template-foundation",
-      "name": "react",
-      "registry": "npm",
-      "kind": "dependencies",
-      "declaredVersion": "19.2.0",
-      "resolvedVersion": null,
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "packages/create/template-foundation",
-      "name": "react-dom",
-      "registry": "npm",
-      "kind": "dependencies",
-      "declaredVersion": "19.2.0",
-      "resolvedVersion": null,
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "packages/create/template-foundation",
-      "name": "@types/node",
-      "registry": "npm",
-      "kind": "devDependencies",
-      "declaredVersion": "22.19.1",
-      "resolvedVersion": null,
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "packages/create/template-foundation",
-      "name": "@types/react",
-      "registry": "npm",
-      "kind": "devDependencies",
-      "declaredVersion": "19.2.2",
-      "resolvedVersion": null,
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "packages/create/template-foundation",
-      "name": "@types/react-dom",
-      "registry": "npm",
-      "kind": "devDependencies",
-      "declaredVersion": "19.2.2",
-      "resolvedVersion": null,
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "packages/create/template-foundation",
-      "name": "@vitejs/plugin-react",
-      "registry": "npm",
-      "kind": "devDependencies",
-      "declaredVersion": "5.1.0",
-      "resolvedVersion": null,
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "packages/create/template-foundation",
-      "name": "typescript",
-      "registry": "npm",
-      "kind": "devDependencies",
-      "declaredVersion": "5.9.3",
-      "resolvedVersion": null,
-      "source": "registry"
-    },
-    {
-      "project": "feltkit",
-      "root": "packages/create/template-foundation",
-      "name": "vite",
-      "registry": "npm",
-      "kind": "devDependencies",
-      "declaredVersion": "7.3.7",
-      "resolvedVersion": null,
       "source": "registry"
     },
     {
@@ -11611,8 +11461,8 @@
       "name": "create-feltkit",
       "registry": "npm",
       "kind": "dependencies",
-      "declaredVersion": "0.3.18",
-      "resolvedVersion": "0.3.18",
+      "declaredVersion": "0.3.22",
+      "resolvedVersion": "0.3.22",
       "source": "workspace"
     },
     {
@@ -13381,8 +13231,8 @@
       "name": "@appport/appboundry",
       "registry": "npm",
       "kind": "dependencies",
-      "declaredVersion": "1.8.0",
-      "resolvedVersion": "1.8.0",
+      "declaredVersion": "1.11.0",
+      "resolvedVersion": "1.11.0",
       "source": "registry"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T07:27:01.195Z",
+  "generatedAt": "2026-11-11T07:26:45.077Z",
   "items": [
     {
       "key": "flow-db|crates/feltdb-public-api-check/Cargo.lock|crates:tokio",
@@ -97,12 +97,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-09T19:19:37.663Z",
       "openedAt": "2026-11-10T07:27:01.195Z",
       "updatedAt": "2026-11-10T07:27:01.195Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -132,17 +132,12 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.6.0",
-      "targetVersion": "1.7.0",
+      "targetVersion": "1.8.0",
       "declaredVersion": "1.6.0",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-09T19:17:19.765Z",
-      "openedAt": "2026-11-10T07:27:01.195Z",
-      "updatedAt": "2026-11-10T07:27:01.195Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -164,6 +159,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-10T13:51:23.604Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -192,17 +192,36 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-09T19:31:17.936Z",
-      "openedAt": "2026-11-10T07:27:01.195Z",
-      "updatedAt": "2026-11-10T07:27:01.195Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
           {
+            "id": "rkendel1/appboundry:.github/workflows/appboundry-publish.yml#publish/release-metadata-registry-agreement-and-vendored-provenance",
+            "name": "Release metadata, registry agreement, and vendored provenance",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          },
+          {
+            "id": "rkendel1/appboundry:.github/workflows/appboundry-publish.yml#publish/publish",
+            "name": "Publish",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          },
+          {
             "id": "rkendel1/appboundry:.github/workflows/appboundry-release.yml#appboundry-release/release-metadata-version-not-behind-npm-not-changed-under-a-",
             "name": "Release metadata (version not behind npm, not changed under a published version; dependencies resolve on npm)",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          },
+          {
+            "id": "rkendel1/appboundry:.github/workflows/host-build-compatibility.yml#documented-host-build/build-and-verify-the-image-the-documented-way",
+            "name": "Build and verify the image the documented way",
             "result": "unknown",
             "enforcement": "unknown",
             "requirement": null,
@@ -223,17 +242,14 @@
             "enforcement": "unknown",
             "requirement": null,
             "runUrl": null
-          },
-          {
-            "id": "rkendel1/appboundry:scripts/verify-runtime-release.mjs",
-            "name": "verify-runtime-release.mjs",
-            "result": "unknown",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": null
           }
         ]
       },
+      "targetPublishedAt": "2026-11-09T19:31:17.936Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -372,7 +388,7 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.2.2",
-      "targetVersion": "1.7.0",
+      "targetVersion": "1.8.0",
       "declaredVersion": "1.2.2",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
@@ -391,7 +407,7 @@
           }
         ]
       },
-      "targetPublishedAt": "2026-11-09T19:17:19.765Z",
+      "targetPublishedAt": "2026-11-10T13:51:23.604Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -1557,10 +1573,10 @@
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#hostile-node/run-npm-run-build-workspace-feltdb-core",
             "name": "npm run packages/core:build",
-            "result": "passing",
+            "result": "in-progress",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42958842923"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1568,7 +1584,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42958842923"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1731,10 +1747,10 @@
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#hostile-node/run-npm-run-build-workspace-feltdb-core",
             "name": "npm run packages/core:build",
-            "result": "passing",
+            "result": "in-progress",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42958842923"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1742,7 +1758,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42958842923"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1881,10 +1897,10 @@
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#hostile-node/run-npm-run-build-workspace-feltdb-core",
             "name": "npm run packages/core:build",
-            "result": "passing",
+            "result": "in-progress",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42958842923"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1892,7 +1908,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42755416820"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42958842923"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -2034,14 +2050,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.1.22",
-      "targetVersion": "1.7.0",
+      "targetVersion": "1.8.0",
       "declaredVersion": "1.1.22",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-09T19:17:19.765Z",
+      "targetPublishedAt": "2026-11-10T13:51:23.604Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -2246,14 +2262,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.3.2",
-      "targetVersion": "0.3.18",
+      "targetVersion": "0.3.22",
       "declaredVersion": "^0.3.2",
       "difference": "patch",
       "latestSatisfiesDeclared": true,
       "status": "update-required",
       "priority": 4,
       "ci": null,
-      "targetPublishedAt": "2026-11-05T20:00:51.638Z",
+      "targetPublishedAt": "2026-11-10T20:57:32.462Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -2292,12 +2308,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-09T19:18:41.503Z",
       "openedAt": "2026-11-10T07:27:01.195Z",
       "updatedAt": "2026-11-10T07:27:01.195Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2332,11 +2348,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
-      "targetPublishedAt": "2026-11-09T19:16:30.974Z",
-      "openedAt": "2026-11-10T07:27:01.195Z",
-      "updatedAt": "2026-11-10T07:27:01.195Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -2346,10 +2357,15 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/42267213337"
+            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/42948030069"
           }
         ]
       },
+      "targetPublishedAt": "2026-11-09T19:16:30.974Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -2391,11 +2407,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
-      "targetPublishedAt": "2026-11-09T19:17:21.122Z",
-      "openedAt": "2026-11-10T07:27:01.195Z",
-      "updatedAt": "2026-11-10T07:27:01.195Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -2405,7 +2416,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/42267213337"
+            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/42948030069"
           },
           {
             "id": "rkendel1/appboundry:scripts/unpublish-packages.mjs",
@@ -2417,6 +2428,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-09T19:17:21.122Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -2448,12 +2464,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-09T19:16:55.959Z",
       "openedAt": "2026-11-10T07:27:01.195Z",
       "updatedAt": "2026-11-10T07:27:01.195Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2483,12 +2499,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-09T19:18:35.732Z",
       "openedAt": "2026-11-10T07:27:01.195Z",
       "updatedAt": "2026-11-10T07:27:01.195Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2517,12 +2533,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-09T19:17:12.062Z",
       "openedAt": "2026-11-10T07:27:01.195Z",
       "updatedAt": "2026-11-10T07:27:01.195Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2563,11 +2579,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
-      "targetPublishedAt": "2026-11-09T19:16:26.656Z",
-      "openedAt": "2026-11-10T07:27:01.195Z",
-      "updatedAt": "2026-11-10T07:27:01.195Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -2577,10 +2588,15 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/42267213337"
+            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/42948030069"
           }
         ]
       },
+      "targetPublishedAt": "2026-11-09T19:16:26.656Z",
+      "openedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -2616,12 +2632,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-09T19:17:01.826Z",
       "openedAt": "2026-11-10T07:27:01.195Z",
       "updatedAt": "2026-11-10T07:27:01.195Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2650,12 +2666,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-09T19:18:01.266Z",
       "openedAt": "2026-11-10T07:27:01.195Z",
       "updatedAt": "2026-11-10T07:27:01.195Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2690,12 +2706,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-09T19:18:24.733Z",
       "openedAt": "2026-11-10T07:27:01.195Z",
       "updatedAt": "2026-11-10T07:27:01.195Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2728,12 +2744,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-09T19:17:09.049Z",
       "openedAt": "2026-11-10T07:27:01.195Z",
       "updatedAt": "2026-11-10T07:27:01.195Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2762,12 +2778,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-09T19:17:06.629Z",
       "openedAt": "2026-11-10T07:27:01.195Z",
       "updatedAt": "2026-11-10T07:27:01.195Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2801,12 +2817,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-09T19:18:26.177Z",
       "openedAt": "2026-11-10T07:27:01.195Z",
       "updatedAt": "2026-11-10T07:27:01.195Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -3056,7 +3072,7 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.3.14",
-      "targetVersion": "0.3.18",
+      "targetVersion": "0.3.22",
       "declaredVersion": "^0.3.14",
       "difference": "patch",
       "latestSatisfiesDeclared": true,
@@ -3075,7 +3091,7 @@
           }
         ]
       },
-      "targetPublishedAt": "2026-11-05T20:00:51.638Z",
+      "targetPublishedAt": "2026-11-10T20:57:32.462Z",
       "openedAt": "2026-11-05T07:27:04.815Z",
       "updatedAt": "2026-11-05T07:27:04.815Z",
       "closedAt": null,
@@ -3177,9 +3193,9 @@
       "name": "@appport/sdk",
       "registry": "npm",
       "ownership": "owned",
-      "currentVersion": "1.7.0",
+      "currentVersion": "1.8.0",
       "targetVersion": "1.4.1",
-      "declaredVersion": "1.7.0",
+      "declaredVersion": "1.8.0",
       "difference": "patch",
       "latestSatisfiesDeclared": false,
       "status": "updated-unverified",
@@ -3190,80 +3206,24 @@
           {
             "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
             "name": "FeltKit release check (CI mode)",
-            "result": "passing",
+            "result": "skipped",
             "enforcement": "fail",
             "requirement": "exact",
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42965164069"
           },
           {
-            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix/invalid-combinations-are-refused-as-stated",
-            "name": "Invalid combinations are refused as stated",
-            "result": "passing",
+            "id": "rkendel1/feltkit:.github/workflows/publish.yml#publish/publish",
+            "name": "FeltKit publish gate (strict)",
+            "result": "skipped",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
-          },
-          {
-            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix/level-a-shard-matrix-shard-of-4-every-valid-case",
-            "name": "Level A, shard ${{ matrix.shard }} of 4 (every valid case)",
-            "result": "passing",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
-          },
-          {
-            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix/level-b-shard-matrix-shard-of-4-the-real-cli-on-disk-resumes",
-            "name": "Level B, shard ${{ matrix.shard }} of 4 (the real CLI on disk; resumes from the ledger)",
-            "result": "passing",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
-          },
-          {
-            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/prepare-the-consumer-build-npm-pack-install-the-tarballs-int",
-            "name": "Prepare the consumer (build, npm pack, install the tarballs into an isolated project)",
-            "result": "passing",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
-          },
-          {
-            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/invalid-combinations-against-the-installed-package",
-            "name": "Invalid combinations against the installed package",
-            "result": "passing",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
-          },
-          {
-            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/level-a-against-the-installed-package-every-valid-case",
-            "name": "Level A against the installed package (every valid case)",
-            "result": "passing",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
-          },
-          {
-            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/level-b-slice-against-the-installed-package",
-            "name": "Level B slice against the installed package",
-            "result": "passing",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
-          },
-          {
-            "id": "rkendel1/feltkit:.github/workflows/ci.yml#composition-matrix-consumer/the-installed-package-is-the-release-set-as-intended",
-            "name": "The installed package is the release set as intended",
-            "result": "failing",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42965163771"
           }
         ]
       },
       "targetPublishedAt": "2026-11-03T14:41:11.425Z",
       "openedAt": "2026-11-04T15:00:23.704Z",
-      "updatedAt": "2026-11-10T07:27:01.195Z",
+      "updatedAt": "2026-11-11T07:26:45.077Z",
       "closedAt": null,
       "lastVerifiedCommit": "7111d4603630b878b558e23f4314b6203a7b2695",
       "evidence": [
@@ -3303,6 +3263,12 @@
           "status": "updated-unverified",
           "version": "1.7.0",
           "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        },
+        {
+          "at": "2026-11-11T07:26:45.077Z",
+          "status": "updated-unverified",
+          "version": "1.8.0",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42979523182"
         }
       ]
     },
@@ -3330,10 +3296,10 @@
           {
             "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
             "name": "FeltKit release check (CI mode)",
-            "result": "passing",
+            "result": "skipped",
             "enforcement": "fail",
             "requirement": "exact",
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42765162920"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/42965164069"
           }
         ]
       },

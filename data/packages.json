@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T07:27:01.195Z",
+  "generatedAt": "2026-11-11T07:26:45.077Z",
   "packages": [
     {
       "id": "appport-core",
@@ -16,15 +16,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "AppPort capability runtime: registry, dispatcher, events, streams, sessions.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.7.1",
       "latestStable": "1.7.1",
@@ -54,26 +54,26 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "AppPort developer SDK: implement a universal application boundary across runtimes and transports.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
-      "latestVersion": "1.7.0",
-      "latestStable": "1.7.0",
+      "latestVersion": "1.8.0",
+      "latestStable": "1.8.0",
       "latestPrerelease": null,
-      "previousVersion": "1.6.0",
-      "publishedAt": "2026-11-09T19:17:19.765Z",
+      "previousVersion": "1.7.0",
+      "publishedAt": "2026-11-10T13:51:23.604Z",
       "distTags": {
-        "latest": "1.7.0"
+        "latest": "1.8.0"
       },
       "deprecated": null,
-      "versionCount": 35,
+      "versionCount": 36,
       "deprecatedVersions": {},
       "yankedVersions": []
     },
@@ -92,15 +92,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "AppPort wire protocol types, envelopes, error codes and manifest contracts.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.5.0",
       "latestStable": "1.5.0",
@@ -130,15 +130,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "Schema adapters and JSON Schema generation for AppPort capabilities.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.1.6",
       "latestStable": "1.1.6",
@@ -168,15 +168,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "Transport-independent typed AppPort application client.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.1.8",
       "latestStable": "1.1.8",
@@ -206,15 +206,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "Server-side AppPort protocol runtime with HTTP and WebSocket bindings.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.3.1",
       "latestStable": "1.3.1",
@@ -244,15 +244,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "Expose AppPort capabilities as MCP tools.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.3.8",
       "latestStable": "1.3.8",
@@ -282,15 +282,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "Transport conformance suite and test fixtures for AppPort.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.2.4",
       "latestStable": "1.2.4",
@@ -320,15 +320,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "Capability authorization model for AppPort.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.1.1",
       "latestStable": "1.1.1",
@@ -358,15 +358,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "Pure helpers for AppPort's integration contract: declarative mappings, verification evidence and capability footprints.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.2.5",
       "latestStable": "1.2.5",
@@ -396,15 +396,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "Contract builder for creating AppPort application contracts.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.1.6",
       "latestStable": "1.1.6",
@@ -434,15 +434,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "Manifest-driven client and type generation for AppPort.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.0.10",
       "latestStable": "1.0.10",
@@ -472,15 +472,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "Lifecycle-aware AppPort client for React Native, Expo, iOS and Android.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.0.12",
       "latestStable": "1.0.12",
@@ -510,15 +510,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "HTTP AppPort transport.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.1.8",
       "latestStable": "1.1.8",
@@ -548,15 +548,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "WebSocket AppPort transport.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.0.12",
       "latestStable": "1.0.12",
@@ -586,15 +586,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "In-process AppPort transport.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.0.14",
       "latestStable": "1.0.14",
@@ -624,15 +624,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "Tauri IPC AppPort transport.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.0.12",
       "latestStable": "1.0.12",
@@ -662,15 +662,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "Electron IPC AppPort transport.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.0.14",
       "latestStable": "1.0.14",
@@ -700,15 +700,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "Build and verify repository applications for AppBoundry, with explicit canonical product tooling.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.11.0",
       "latestStable": "1.11.0",
@@ -738,15 +738,15 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T05:56:43Z",
+        "pushedAt": "2026-11-10T13:49:11Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.838Z"
       },
       "description": "AppPort command line interface.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appport",
       "latestVersion": "1.4.1",
       "latestStable": "1.4.1",
@@ -776,15 +776,15 @@
         "private": false,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-09T19:25:10Z",
+        "pushedAt": "2026-11-11T05:08:35Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.845Z"
       },
       "description": "API keys, durable webhooks, background jobs, and provider-neutral secrets for AppPort applications",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": null,
       "latestVersion": "0.16.0",
       "latestStable": "0.16.0",
@@ -814,15 +814,15 @@
         "private": false,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-09T19:25:10Z",
+        "pushedAt": "2026-11-11T05:08:35Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.845Z"
       },
       "description": "Contract-driven AppPort application runtime",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": null,
       "latestVersion": "0.15.0",
       "latestStable": "0.15.0",
@@ -852,15 +852,15 @@
         "private": false,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-09T19:25:10Z",
+        "pushedAt": "2026-11-11T05:08:35Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.011Z"
+        "fetchedAt": "2026-11-11T07:26:45.845Z"
       },
       "description": "Create a contract-driven AppPort application",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": null,
       "latestVersion": "0.1.25",
       "latestStable": "0.1.25",
@@ -890,26 +890,26 @@
         "private": false,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T04:24:48Z",
+        "pushedAt": "2026-11-11T05:07:46Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.075Z"
+        "fetchedAt": "2026-11-11T07:26:45.816Z"
       },
       "description": "The resolver: an AppPort host that stores typed, revisioned, steerable references on FeltDB, with AppPort Services API keys and secret custody.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/resolver",
-      "latestVersion": "0.3.1",
-      "latestStable": "0.3.1",
+      "latestVersion": "0.3.2",
+      "latestStable": "0.3.2",
       "latestPrerelease": null,
-      "previousVersion": "0.3.0",
-      "publishedAt": "2026-11-05T19:20:48.489Z",
+      "previousVersion": "0.3.1",
+      "publishedAt": "2026-11-10T13:53:18.690Z",
       "distTags": {
-        "latest": "0.3.1"
+        "latest": "0.3.2"
       },
       "deprecated": null,
-      "versionCount": 5,
+      "versionCount": 6,
       "deprecatedVersions": {},
       "yankedVersions": []
     },
@@ -928,26 +928,26 @@
         "private": false,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T04:24:48Z",
+        "pushedAt": "2026-11-11T05:07:46Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.075Z"
+        "fetchedAt": "2026-11-11T07:26:45.816Z"
       },
       "description": "Resolve references at run time with live updates, caching, last-known-good fallback and traffic steering.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/resolver",
-      "latestVersion": "0.2.2",
-      "latestStable": "0.2.2",
+      "latestVersion": "0.2.3",
+      "latestStable": "0.2.3",
       "latestPrerelease": null,
-      "previousVersion": "0.2.1",
-      "publishedAt": "2026-11-05T19:19:53.813Z",
+      "previousVersion": "0.2.2",
+      "publishedAt": "2026-11-10T13:52:43.155Z",
       "distTags": {
-        "latest": "0.2.2"
+        "latest": "0.2.3"
       },
       "deprecated": null,
-      "versionCount": 5,
+      "versionCount": 6,
       "deprecatedVersions": {},
       "yankedVersions": []
     },
@@ -966,15 +966,15 @@
         "private": false,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T04:24:48Z",
+        "pushedAt": "2026-11-11T05:07:46Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.075Z"
+        "fetchedAt": "2026-11-11T07:26:45.816Z"
       },
       "description": "Reference names, kinds, bindings and traffic steering shared by the resolver and its clients. Pure: no I/O.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/resolver",
       "latestVersion": "0.1.0",
       "latestStable": "0.1.0",
@@ -1007,12 +1007,12 @@
         "pushedAt": "2026-09-29T13:29:04Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.003Z"
+        "fetchedAt": "2026-11-11T07:26:45.791Z"
       },
       "description": "AppPort-native GitHub capability package",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/github-integration",
       "latestVersion": "1.0.2",
       "latestStable": "1.0.2",
@@ -1045,12 +1045,12 @@
         "pushedAt": "2026-10-15T23:41:22Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.659Z"
+        "fetchedAt": "2026-11-11T07:26:46.358Z"
       },
       "description": "Embed fx agents and terminals in JavaScript hosts",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/3fx",
       "latestVersion": "0.1.2",
       "latestStable": "0.1.2",
@@ -1083,12 +1083,12 @@
         "pushedAt": "2026-11-03T18:14:31Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.616Z"
+        "fetchedAt": "2026-11-11T07:26:46.402Z"
       },
       "description": "AppWorks business recipes: the appport.recipe/1 source model, validation, dependency locks and source packages. Executes nothing and grants no authority.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appworks",
       "latestVersion": "0.1.1",
       "latestStable": "0.1.1",
@@ -1121,12 +1121,12 @@
         "pushedAt": "2026-11-03T18:14:31Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.616Z"
+        "fetchedAt": "2026-11-11T07:26:46.402Z"
       },
       "description": "The boundary between AppWorks recipe packages and Distribution Protocol releases. The only AppWorks package that depends on Distribution Protocol. Also: a file release channel, publishing, acquisition with receipts, and installation into an environment.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appworks",
       "latestVersion": "0.2.0",
       "latestStable": "0.2.0",
@@ -1165,12 +1165,12 @@
           "prerelease": false
         },
         "latestTag": "v0.18.0",
-        "fetchedAt": "2026-11-10T07:27:02.626Z"
+        "fetchedAt": "2026-11-11T07:26:46.477Z"
       },
       "description": "FeltDB Core - Application-facing database with Browser, Local, and Server runtimes. Durable state, reactive APIs.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/feltdb",
       "latestVersion": "0.21.0",
       "latestStable": "0.21.0",
@@ -1209,12 +1209,12 @@
           "prerelease": false
         },
         "latestTag": "v0.18.0",
-        "fetchedAt": "2026-11-10T07:27:02.626Z"
+        "fetchedAt": "2026-11-11T07:26:46.477Z"
       },
       "description": "FeltDB React Bindings - React hooks and components for FeltDB",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/feltdb",
       "latestVersion": "0.4.4",
       "latestStable": "0.4.4",
@@ -1253,12 +1253,12 @@
           "prerelease": false
         },
         "latestTag": "v0.18.0",
-        "fetchedAt": "2026-11-10T07:27:02.626Z"
+        "fetchedAt": "2026-11-11T07:26:46.477Z"
       },
       "description": "FeltDB WASM Runtime - Compiled Rust engine for browser and Node.js",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/feltdb",
       "latestVersion": "0.4.5",
       "latestStable": "0.4.5",
@@ -1297,12 +1297,12 @@
           "prerelease": false
         },
         "latestTag": "v0.18.0",
-        "fetchedAt": "2026-11-10T07:27:02.626Z"
+        "fetchedAt": "2026-11-11T07:26:46.477Z"
       },
       "description": "FeltDB command-line interface for application management",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/feltdb",
       "latestVersion": "0.4.5",
       "latestStable": "0.4.5",
@@ -1341,12 +1341,12 @@
           "prerelease": false
         },
         "latestTag": "v0.18.0",
-        "fetchedAt": "2026-11-10T07:27:02.626Z"
+        "fetchedAt": "2026-11-11T07:26:46.477Z"
       },
       "description": "FeltDB Studio - Interactive developer interface with application designer and observability",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/feltdb",
       "latestVersion": "0.4.5",
       "latestStable": "0.4.5",
@@ -1385,12 +1385,12 @@
           "prerelease": false
         },
         "latestTag": "v0.18.0",
-        "fetchedAt": "2026-11-10T07:27:02.626Z"
+        "fetchedAt": "2026-11-11T07:26:46.477Z"
       },
       "description": "Private, in-browser LLM inference for FeltDB applications",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/feltdb",
       "latestVersion": "0.21.0",
       "latestStable": "0.21.0",
@@ -1429,12 +1429,12 @@
           "prerelease": false
         },
         "latestTag": "v0.18.0",
-        "fetchedAt": "2026-11-10T07:27:02.626Z"
+        "fetchedAt": "2026-11-11T07:26:46.477Z"
       },
       "description": "Fail-closed PostgreSQL to FeltDB-native application-state migration engine",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/feltdb",
       "latestVersion": "0.4.4",
       "latestStable": "0.4.4",
@@ -1473,12 +1473,12 @@
           "prerelease": false
         },
         "latestTag": "v0.18.0",
-        "fetchedAt": "2026-11-10T07:27:02.626Z"
+        "fetchedAt": "2026-11-11T07:26:46.477Z"
       },
       "description": "Create a new FeltDB application with one command",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/feltdb",
       "latestVersion": "0.21.0",
       "latestStable": "0.21.0",
@@ -1508,7 +1508,7 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T07:04:19Z",
+        "pushedAt": "2026-11-11T06:56:02Z",
         "latestRelease": {
           "tag": "v0.3.14",
           "name": "v0.3.14 26a6255",
@@ -1517,24 +1517,24 @@
           "prerelease": false
         },
         "latestTag": "v0.3.14",
-        "fetchedAt": "2026-11-10T07:27:02.667Z"
+        "fetchedAt": "2026-11-11T07:26:46.361Z"
       },
       "description": "FeltKit: one application, one FeltDB instance, one developer experience. SDK, runtime, CLI, and dashboard.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/feltkit",
-      "latestVersion": "0.3.18",
-      "latestStable": "0.3.18",
+      "latestVersion": "0.3.22",
+      "latestStable": "0.3.22",
       "latestPrerelease": null,
-      "previousVersion": "0.3.17",
-      "publishedAt": "2026-11-05T20:00:51.638Z",
+      "previousVersion": "0.3.21",
+      "publishedAt": "2026-11-10T20:57:32.462Z",
       "distTags": {
-        "pending": "0.3.18",
-        "latest": "0.3.18"
+        "pending": "0.3.22",
+        "latest": "0.3.22"
       },
       "deprecated": null,
-      "versionCount": 22,
+      "versionCount": 26,
       "deprecatedVersions": {},
       "yankedVersions": []
     },
@@ -1553,7 +1553,7 @@
         "private": true,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T07:04:19Z",
+        "pushedAt": "2026-11-11T06:56:02Z",
         "latestRelease": {
           "tag": "v0.3.14",
           "name": "v0.3.14 26a6255",
@@ -1562,24 +1562,24 @@
           "prerelease": false
         },
         "latestTag": "v0.3.14",
-        "fetchedAt": "2026-11-10T07:27:02.667Z"
+        "fetchedAt": "2026-11-11T07:26:46.361Z"
       },
       "description": "Create a FeltKit application: npm create feltkit@latest my-app (add -- --template managed for Managed FeltDB)",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/feltkit",
-      "latestVersion": "0.3.18",
-      "latestStable": "0.3.18",
+      "latestVersion": "0.3.22",
+      "latestStable": "0.3.22",
       "latestPrerelease": null,
-      "previousVersion": "0.3.17",
-      "publishedAt": "2026-11-05T20:01:16.624Z",
+      "previousVersion": "0.3.21",
+      "publishedAt": "2026-11-10T20:56:25.967Z",
       "distTags": {
-        "pending": "0.3.18",
-        "latest": "0.3.18"
+        "pending": "0.3.22",
+        "latest": "0.3.22"
       },
       "deprecated": null,
-      "versionCount": 23,
+      "versionCount": 27,
       "deprecatedVersions": {
         "0.1.0": "Broken: use create-feltkit@latest"
       },
@@ -1609,12 +1609,12 @@
           "prerelease": false
         },
         "latestTag": "v0.18.0",
-        "fetchedAt": "2026-11-10T07:27:02.626Z"
+        "fetchedAt": "2026-11-11T07:26:46.477Z"
       },
       "description": "Embedded durable state store: an append-only log with atomic multi-record transactions, version-conditional writes, and idempotent retries",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/flow_db",
       "latestVersion": "0.6.1",
       "latestStable": "0.6.1",
@@ -1651,12 +1651,12 @@
           "prerelease": false
         },
         "latestTag": "v0.18.0",
-        "fetchedAt": "2026-11-10T07:27:02.626Z"
+        "fetchedAt": "2026-11-11T07:26:46.477Z"
       },
       "description": "Native async Rust client for a FeltDB server: records, atomic and idempotent transactions, compare-and-set, bounded queries, read-basis fences, events, and the canonical application API",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/flow_db",
       "latestVersion": "0.6.1",
       "latestStable": "0.6.1",
@@ -1693,12 +1693,12 @@
           "prerelease": false
         },
         "latestTag": "v0.18.0",
-        "fetchedAt": "2026-11-10T07:27:02.626Z"
+        "fetchedAt": "2026-11-11T07:26:46.477Z"
       },
       "description": "The FeltDB server: the managed FeltDB authority over HTTP (scoped state, transactions, CAS, history, principals, events), installed as the `feltdb-server` binary",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/flow_db",
       "latestVersion": "0.6.1",
       "latestStable": "0.6.1",
@@ -1735,12 +1735,12 @@
           "prerelease": false
         },
         "latestTag": "v0.3.0",
-        "fetchedAt": "2026-11-10T07:27:03.225Z"
+        "fetchedAt": "2026-11-11T07:26:46.932Z"
       },
       "description": "Native, model-neutral runtime for running local ML models",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/rust-ml-runtime",
       "latestVersion": "0.3.0",
       "latestStable": "0.3.0",
@@ -1777,12 +1777,12 @@
           "prerelease": false
         },
         "latestTag": "v0.3.0",
-        "fetchedAt": "2026-11-10T07:27:03.225Z"
+        "fetchedAt": "2026-11-11T07:26:46.932Z"
       },
       "description": "Backend contracts for rust-ml-runtime",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/rust-ml-runtime",
       "latestVersion": "0.3.0",
       "latestStable": "0.3.0",
@@ -1819,12 +1819,12 @@
           "prerelease": false
         },
         "latestTag": "v0.3.0",
-        "fetchedAt": "2026-11-10T07:27:03.225Z"
+        "fetchedAt": "2026-11-11T07:26:46.932Z"
       },
       "description": "Shared errors, cancellation, and stream types for rust-ml-runtime",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/rust-ml-runtime",
       "latestVersion": "0.3.0",
       "latestStable": "0.3.0",
@@ -1861,12 +1861,12 @@
           "prerelease": false
         },
         "latestTag": "v0.3.0",
-        "fetchedAt": "2026-11-10T07:27:03.225Z"
+        "fetchedAt": "2026-11-11T07:26:46.932Z"
       },
       "description": "Core ML backend for rust-ml-runtime",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/rust-ml-runtime",
       "latestVersion": "0.3.0",
       "latestStable": "0.3.0",
@@ -1903,12 +1903,12 @@
           "prerelease": false
         },
         "latestTag": "v0.3.0",
-        "fetchedAt": "2026-11-10T07:27:03.225Z"
+        "fetchedAt": "2026-11-11T07:26:46.932Z"
       },
       "description": "Portable CPU backend for rust-ml-runtime",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/rust-ml-runtime",
       "latestVersion": "0.3.0",
       "latestStable": "0.3.0",
@@ -1945,12 +1945,12 @@
           "prerelease": false
         },
         "latestTag": "v0.3.0",
-        "fetchedAt": "2026-11-10T07:27:03.225Z"
+        "fetchedAt": "2026-11-11T07:26:46.932Z"
       },
       "description": "HTTP inference provider for rust-ml-runtime",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/rust-ml-runtime",
       "latestVersion": "0.3.0",
       "latestStable": "0.3.0",
@@ -1987,12 +1987,12 @@
           "prerelease": false
         },
         "latestTag": "v0.3.0",
-        "fetchedAt": "2026-11-10T07:27:03.225Z"
+        "fetchedAt": "2026-11-11T07:26:46.932Z"
       },
       "description": "Typed inference requests, results, and provenance for rust-ml-runtime",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/rust-ml-runtime",
       "latestVersion": "0.3.0",
       "latestStable": "0.3.0",
@@ -2029,12 +2029,12 @@
           "prerelease": false
         },
         "latestTag": "v0.3.0",
-        "fetchedAt": "2026-11-10T07:27:03.225Z"
+        "fetchedAt": "2026-11-11T07:26:46.932Z"
       },
       "description": "Model contracts, catalogs, and integrity validation for rust-ml-runtime",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/rust-ml-runtime",
       "latestVersion": "0.3.0",
       "latestStable": "0.3.0",
@@ -2071,12 +2071,12 @@
           "prerelease": false
         },
         "latestTag": "v0.3.0",
-        "fetchedAt": "2026-11-10T07:27:03.225Z"
+        "fetchedAt": "2026-11-11T07:26:46.932Z"
       },
       "description": "ONNX Runtime backend for rust-ml-runtime",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/rust-ml-runtime",
       "latestVersion": "0.3.0",
       "latestStable": "0.3.0",
@@ -2113,12 +2113,12 @@
           "prerelease": false
         },
         "latestTag": "v0.3.0",
-        "fetchedAt": "2026-11-10T07:27:03.225Z"
+        "fetchedAt": "2026-11-11T07:26:46.932Z"
       },
       "description": "Wire protocol types for rust-ml-runtime providers",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/rust-ml-runtime",
       "latestVersion": "0.3.0",
       "latestStable": "0.3.0",
@@ -2155,12 +2155,12 @@
           "prerelease": false
         },
         "latestTag": "v0.3.0",
-        "fetchedAt": "2026-11-10T07:27:03.225Z"
+        "fetchedAt": "2026-11-11T07:26:46.932Z"
       },
       "description": "Provider contracts for rust-ml-runtime",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/rust-ml-runtime",
       "latestVersion": "0.3.0",
       "latestStable": "0.3.0",
@@ -2191,12 +2191,12 @@
         "pushedAt": "2026-11-03T19:27:02Z",
         "latestRelease": null,
         "latestTag": "v1.15.2",
-        "fetchedAt": "2026-11-10T07:27:03.245Z"
+        "fetchedAt": "2026-11-11T07:26:46.951Z"
       },
       "description": "The authority boundary for an application (platform binaries @authboundry/core-* release in lockstep and are not tracked separately)",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/authboundry",
       "latestVersion": "1.16.0",
       "latestStable": "1.16.0",
@@ -2229,12 +2229,12 @@
         "pushedAt": "2026-11-03T19:27:02Z",
         "latestRelease": null,
         "latestTag": "v1.15.2",
-        "fetchedAt": "2026-11-10T07:27:03.245Z"
+        "fetchedAt": "2026-11-11T07:26:46.951Z"
       },
       "description": "Compatibility redirect to @authboundry/core",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": null,
       "latestVersion": "2.16.0",
       "latestStable": "2.16.0",
@@ -2269,12 +2269,12 @@
         "pushedAt": "2026-11-03T19:27:02Z",
         "latestRelease": null,
         "latestTag": "v1.15.2",
-        "fetchedAt": "2026-11-10T07:27:03.245Z"
+        "fetchedAt": "2026-11-11T07:26:46.951Z"
       },
       "description": "Removable existing-application authority bridge for AuthBoundry.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": null,
       "latestVersion": "0.1.3",
       "latestStable": "0.1.3",
@@ -2307,12 +2307,12 @@
         "pushedAt": "2026-11-03T18:14:31Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.616Z"
+        "fetchedAt": "2026-11-11T07:26:46.402Z"
       },
       "description": "AppWorks existing-application assessment: a static, read-only, evidence-backed capability inventory of a repository as an appport.application-assessment/1 artifact. Executes nothing and grants no authority.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appworks",
       "latestVersion": "0.1.0",
       "latestStable": "0.1.0",
@@ -2345,12 +2345,12 @@
         "pushedAt": "2026-11-03T18:14:31Z",
         "latestRelease": null,
         "latestTag": null,
-        "fetchedAt": "2026-11-10T07:27:02.616Z"
+        "fetchedAt": "2026-11-11T07:26:46.402Z"
       },
       "description": "AppWorks capability extraction: binds one assessed candidate of an existing application, a proposed AppPort contract, its adapter and verification evidence into an appport.capability-extraction/1 artifact. Executes nothing and grants no authority.",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/rkendel1/appworks",
       "latestVersion": "0.1.0",
       "latestStable": "0.1.0",
@@ -2380,7 +2380,7 @@
         "private": false,
         "archived": false,
         "defaultBranch": "master",
-        "pushedAt": "2026-11-09T12:34:00Z",
+        "pushedAt": "2026-11-10T19:46:15Z",
         "latestRelease": {
           "tag": "tokio-1.54.1",
           "name": "Tokio v1.54.1",
@@ -2389,12 +2389,12 @@
           "prerelease": false
         },
         "latestTag": "tokio-util-0.7.20",
-        "fetchedAt": "2026-11-10T07:27:03.235Z"
+        "fetchedAt": "2026-11-11T07:26:46.912Z"
       },
       "description": "Async runtime used across the Rust crates",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/tokio-rs/tokio",
       "latestVersion": "1.54.1",
       "latestStable": "1.54.1",
@@ -2429,7 +2429,7 @@
         "private": false,
         "archived": false,
         "defaultBranch": "master",
-        "pushedAt": "2026-10-16T03:31:38Z",
+        "pushedAt": "2026-11-11T02:18:33Z",
         "latestRelease": {
           "tag": "v1.0.229",
           "name": "",
@@ -2438,12 +2438,12 @@
           "prerelease": false
         },
         "latestTag": "v1.0.229",
-        "fetchedAt": "2026-11-10T07:27:03.271Z"
+        "fetchedAt": "2026-11-11T07:26:47.042Z"
       },
       "description": "Serialization framework used across the Rust crates",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/serde-rs/serde",
       "latestVersion": "1.0.229",
       "latestStable": "1.0.229",
@@ -2475,7 +2475,7 @@
         "private": false,
         "archived": false,
         "defaultBranch": "main",
-        "pushedAt": "2026-11-10T01:35:35Z",
+        "pushedAt": "2026-11-11T07:11:09Z",
         "latestRelease": {
           "tag": "v7.0.2",
           "name": "TypeScript 7.0.2",
@@ -2484,16 +2484,16 @@
           "prerelease": false
         },
         "latestTag": "v7.0.2",
-        "fetchedAt": "2026-11-10T07:27:04.013Z"
+        "fetchedAt": "2026-11-11T07:26:47.681Z"
       },
       "description": "Compiler for every JavaScript package; watched for major releases",
       "collection": "ok",
       "error": null,
-      "fetchedAt": "2026-11-10T07:27:01.195Z",
+      "fetchedAt": "2026-11-11T07:26:45.077Z",
       "registryRepositoryUrl": "https://github.com/microsoft/TypeScript",
       "latestVersion": "7.0.2",
       "latestStable": "7.0.2",
-      "latestPrerelease": "7.1.0-dev.20261109.1",
+      "latestPrerelease": "7.1.0-dev.20261110.1",
       "previousVersion": "6.0.3",
       "publishedAt": "2026-07-08T15:55:18.431Z",
       "distTags": {
@@ -2503,10 +2503,10 @@
         "rc": "7.0.1-rc",
         "latest": "7.0.2",
         "beta": "7.1.0-beta",
-        "next": "7.1.0-dev.20261109.1"
+        "next": "7.1.0-dev.20261110.1"
       },
       "deprecated": null,
-      "versionCount": 3880,
+      "versionCount": 3881,
       "deprecatedVersions": {},
       "yankedVersions": []
     }

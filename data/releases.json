@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T07:27:01.195Z",
+  "generatedAt": "2026-11-11T07:26:45.077Z",
   "releases": [
     {
       "package": "appport-core",
@@ -91,8 +91,14 @@
       "package": "appport-sdk",
       "name": "@appport/sdk",
       "registry": "npm",
-      "latestVersion": "1.7.0",
+      "latestVersion": "1.8.0",
       "versions": [
+        {
+          "version": "1.8.0",
+          "publishedAt": "2026-11-10T13:51:23.604Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "1.7.0",
           "publishedAt": "2026-11-09T19:17:19.765Z",
@@ -234,12 +240,6 @@
         {
           "version": "1.1.12",
           "publishedAt": "2026-09-08T17:37:04.299Z",
-          "deprecated": null,
-          "prerelease": false
-        },
-        {
-          "version": "1.1.11",
-          "publishedAt": "2026-09-08T17:27:07.721Z",
           "deprecated": null,
           "prerelease": false
         }
@@ -2349,8 +2349,14 @@
       "package": "appport-resolver",
       "name": "@appport/resolver",
       "registry": "npm",
-      "latestVersion": "0.3.1",
+      "latestVersion": "0.3.2",
       "versions": [
+        {
+          "version": "0.3.2",
+          "publishedAt": "2026-11-10T13:53:18.690Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.3.1",
           "publishedAt": "2026-11-05T19:20:48.489Z",
@@ -2387,8 +2393,14 @@
       "package": "appport-resolver-client",
       "name": "@appport/resolver-client",
       "registry": "npm",
-      "latestVersion": "0.2.2",
+      "latestVersion": "0.2.3",
       "versions": [
+        {
+          "version": "0.2.3",
+          "publishedAt": "2026-11-10T13:52:43.155Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.2.2",
           "publishedAt": "2026-11-05T19:19:53.813Z",
@@ -3261,8 +3273,32 @@
       "package": "feltdb-feltkit",
       "name": "@feltdb/feltkit",
       "registry": "npm",
-      "latestVersion": "0.3.18",
+      "latestVersion": "0.3.22",
       "versions": [
+        {
+          "version": "0.3.22",
+          "publishedAt": "2026-11-10T20:57:32.462Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.3.21",
+          "publishedAt": "2026-11-10T18:43:19.693Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.3.20",
+          "publishedAt": "2026-11-10T15:48:12.963Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.3.19",
+          "publishedAt": "2026-11-10T14:32:24.733Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.3.18",
           "publishedAt": "2026-11-05T20:00:51.638Z",
@@ -3388,12 +3424,6 @@
           "publishedAt": "2026-10-27T21:00:15.139Z",
           "deprecated": null,
           "prerelease": false
-        },
-        {
-          "version": "0.0.0-stage",
-          "publishedAt": "2026-10-27T20:59:18.975Z",
-          "deprecated": null,
-          "prerelease": true
         }
       ]
     },
@@ -3401,8 +3431,32 @@
       "package": "create-feltkit",
       "name": "create-feltkit",
       "registry": "npm",
-      "latestVersion": "0.3.18",
+      "latestVersion": "0.3.22",
       "versions": [
+        {
+          "version": "0.3.22",
+          "publishedAt": "2026-11-10T20:56:25.967Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.3.21",
+          "publishedAt": "2026-11-10T18:43:43.659Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.3.20",
+          "publishedAt": "2026-11-10T15:49:04.939Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.3.19",
+          "publishedAt": "2026-11-10T14:33:15.934Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.3.18",
           "publishedAt": "2026-11-05T20:01:16.624Z",
@@ -3528,18 +3582,6 @@
           "publishedAt": "2026-10-27T21:00:10.622Z",
           "deprecated": null,
           "prerelease": false
-        },
-        {
-          "version": "0.1.0",
-          "publishedAt": "2026-10-27T20:52:09.314Z",
-          "deprecated": "Broken: use create-feltkit@latest",
-          "prerelease": false
-        },
-        {
-          "version": "0.0.0-stage",
-          "publishedAt": "2026-10-27T20:51:13.176Z",
-          "deprecated": null,
-          "prerelease": true
         }
       ]
     },
@@ -4732,6 +4774,12 @@
       "latestVersion": "7.0.2",
       "versions": [
         {
+          "version": "7.1.0-dev.20261110.1",
+          "publishedAt": "2026-11-10T08:38:28.318Z",
+          "deprecated": null,
+          "prerelease": true
+        },
+        {
           "version": "7.1.0-dev.20261109.1",
           "publishedAt": "2026-11-09T08:12:45.481Z",
           "deprecated": null,
@@ -4872,12 +4920,6 @@
         {
           "version": "7.1.0-dev.20261017.1",
           "publishedAt": "2026-10-17T08:04:49.190Z",
-          "deprecated": null,
-          "prerelease": true
-        },
-        {
-          "version": "7.1.0-dev.20261016.1",
-          "publishedAt": "2026-10-16T08:21:23.515Z",
           "deprecated": null,
           "prerelease": true
         }
