@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
   "scan": {
-    "runId": "42979523182",
-    "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/42979523182",
-    "startedAt": "2026-11-11T07:26:45.077Z",
-    "finishedAt": "2026-11-11T07:28:19.038Z",
+    "runId": "43175330083",
+    "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/43175330083",
+    "startedAt": "2026-11-12T07:27:05.863Z",
+    "finishedAt": "2026-11-12T07:28:42.949Z",
     "status": "success",
     "trigger": "schedule",
-    "configCommit": "29a2ef7e9f4389396702d56737d5ee42ab2c639d",
+    "configCommit": "515f8121866da4afafd17b66b4a573767941dcb6",
     "counts": {
       "packages": 62,
       "packagesFailed": 0,
       "projects": 12,
       "projectsFailed": 0,
       "ciRepositories": 14,
-      "ciChecks": 149,
-      "ciChecksFailing": 7,
+      "ciChecks": 150,
+      "ciChecksFailing": 4,
       "installations": 388,
-      "maintenanceOpen": 65
+      "maintenanceOpen": 49
     },
     "errors": []
   },
@@ -27,7 +27,7 @@
       "collection": "ok"
     },
     "appport-sdk": {
-      "latestVersion": "1.8.0",
+      "latestVersion": "1.8.1",
       "collection": "ok"
     },
     "appport-protocol": {
@@ -43,7 +43,7 @@
       "collection": "ok"
     },
     "appport-server": {
-      "latestVersion": "1.3.1",
+      "latestVersion": "1.3.2",
       "collection": "ok"
     },
     "appport-mcp": {
@@ -51,7 +51,7 @@
       "collection": "ok"
     },
     "appport-testing": {
-      "latestVersion": "1.2.4",
+      "latestVersion": "1.2.5",
       "collection": "ok"
     },
     "appport-authorization": {
@@ -83,7 +83,7 @@
       "collection": "ok"
     },
     "appport-transport-inprocess": {
-      "latestVersion": "1.0.14",
+      "latestVersion": "1.0.15",
       "collection": "ok"
     },
     "appport-transport-tauri": {
@@ -91,39 +91,39 @@
       "collection": "ok"
     },
     "appport-transport-electron": {
-      "latestVersion": "1.0.14",
+      "latestVersion": "1.0.15",
       "collection": "ok"
     },
     "appport-appboundry": {
-      "latestVersion": "1.11.0",
+      "latestVersion": "1.11.1",
       "collection": "ok"
     },
     "appport-cli": {
-      "latestVersion": "1.4.1",
+      "latestVersion": "1.4.2",
       "collection": "ok"
     },
     "appport-services": {
-      "latestVersion": "0.16.0",
+      "latestVersion": "0.16.2",
       "collection": "ok"
     },
     "appport-runtime": {
-      "latestVersion": "0.15.0",
+      "latestVersion": "0.15.2",
       "collection": "ok"
     },
     "create-appport": {
-      "latestVersion": "0.1.25",
+      "latestVersion": "0.1.27",
       "collection": "ok"
     },
     "appport-resolver": {
-      "latestVersion": "0.3.2",
+      "latestVersion": "0.3.3",
       "collection": "ok"
     },
     "appport-resolver-client": {
-      "latestVersion": "0.2.3",
+      "latestVersion": "0.2.4",
       "collection": "ok"
     },
     "appport-resolver-core": {
-      "latestVersion": "0.1.0",
+      "latestVersion": "0.1.1",
       "collection": "ok"
     },
     "appport-github": {
@@ -175,11 +175,11 @@
       "collection": "ok"
     },
     "feltdb-feltkit": {
-      "latestVersion": "0.3.22",
+      "latestVersion": "0.3.25",
       "collection": "ok"
     },
     "create-feltkit": {
-      "latestVersion": "0.3.22",
+      "latestVersion": "0.3.25",
       "collection": "ok"
     },
     "feltdb": {
@@ -277,7 +277,7 @@
       "root": "examples/invoices",
       "name": "@feltdb/feltkit",
       "registry": "npm",
-      "resolvedVersion": "0.3.22",
+      "resolvedVersion": "0.3.25",
       "status": "local",
       "managed": true
     },
@@ -286,7 +286,7 @@
       "root": "examples/managed",
       "name": "@feltdb/feltkit",
       "registry": "npm",
-      "resolvedVersion": "0.3.22",
+      "resolvedVersion": "0.3.25",
       "status": "local",
       "managed": true
     },
@@ -304,7 +304,7 @@
       "root": "examples/tasks",
       "name": "@feltdb/feltkit",
       "registry": "npm",
-      "resolvedVersion": "0.3.22",
+      "resolvedVersion": "0.3.25",
       "status": "local",
       "managed": true
     },
@@ -322,7 +322,7 @@
       "root": "packages/create",
       "name": "@feltdb/feltkit",
       "registry": "npm",
-      "resolvedVersion": "0.3.22",
+      "resolvedVersion": "0.3.25",
       "status": "local",
       "managed": true
     },
@@ -358,7 +358,7 @@
       "root": "packages/sdk",
       "name": "@appport/resolver-client",
       "registry": "npm",
-      "resolvedVersion": "0.2.3",
+      "resolvedVersion": "0.2.4",
       "status": "current",
       "managed": true
     },
@@ -367,7 +367,7 @@
       "root": "packages/sdk",
       "name": "@appport/sdk",
       "registry": "npm",
-      "resolvedVersion": "1.8.0",
+      "resolvedVersion": "1.8.1",
       "status": "current",
       "managed": true
     },
@@ -376,7 +376,7 @@
       "root": "packages/sdk",
       "name": "@appport/server",
       "registry": "npm",
-      "resolvedVersion": "1.3.1",
+      "resolvedVersion": "1.3.2",
       "status": "current",
       "managed": true
     },
@@ -385,7 +385,7 @@
       "root": "packages/sdk",
       "name": "@appport/services",
       "registry": "npm",
-      "resolvedVersion": "0.16.0",
+      "resolvedVersion": "0.16.2",
       "status": "current",
       "managed": true
     },
@@ -403,7 +403,7 @@
       "root": "packages/sdk",
       "name": "@appport/testing",
       "registry": "npm",
-      "resolvedVersion": "1.2.4",
+      "resolvedVersion": "1.2.5",
       "status": "current",
       "managed": true
     },
@@ -1006,8 +1006,8 @@
       "root": "apps/cloud-portal",
       "name": "@appport/core",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.7.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1015,8 +1015,8 @@
       "root": "apps/cloud-portal",
       "name": "@appport/schema",
       "registry": "npm",
-      "resolvedVersion": "1.1.5",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.6",
+      "status": "current",
       "managed": true
     },
     {
@@ -1033,8 +1033,8 @@
       "root": "examples/appboundry-explorer",
       "name": "@appport/core",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.7.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1042,8 +1042,8 @@
       "root": "examples/appboundry-explorer",
       "name": "@appport/schema",
       "registry": "npm",
-      "resolvedVersion": "1.1.5",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.6",
+      "status": "current",
       "managed": true
     },
     {
@@ -1051,8 +1051,8 @@
       "root": "examples/appboundry",
       "name": "@appport/sdk",
       "registry": "npm",
-      "resolvedVersion": "1.6.0",
-      "status": "minor-behind",
+      "resolvedVersion": "1.8.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1078,8 +1078,8 @@
       "root": "examples/application-capabilities/commerce",
       "name": "@appport/core",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.7.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1087,8 +1087,8 @@
       "root": "examples/application-capabilities/commerce",
       "name": "@appport/server",
       "registry": "npm",
-      "resolvedVersion": "1.3.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.3.2",
+      "status": "current",
       "managed": true
     },
     {
@@ -1096,8 +1096,8 @@
       "root": "examples/application-capabilities/commerce",
       "name": "@appport/client",
       "registry": "npm",
-      "resolvedVersion": "1.1.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1105,8 +1105,8 @@
       "root": "examples/application-capabilities/commerce",
       "name": "@appport/generators",
       "registry": "npm",
-      "resolvedVersion": "1.0.9",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.10",
+      "status": "current",
       "managed": true
     },
     {
@@ -1114,8 +1114,8 @@
       "root": "examples/application-capabilities/commerce",
       "name": "@appport/schema",
       "registry": "npm",
-      "resolvedVersion": "1.1.5",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.6",
+      "status": "current",
       "managed": true
     },
     {
@@ -1123,8 +1123,8 @@
       "root": "examples/application-capabilities/commerce",
       "name": "@appport/protocol",
       "registry": "npm",
-      "resolvedVersion": "1.4.1",
-      "status": "minor-behind",
+      "resolvedVersion": "1.5.0",
+      "status": "current",
       "managed": true
     },
     {
@@ -1132,8 +1132,8 @@
       "root": "examples/application-capabilities/commerce",
       "name": "@appport/authorization",
       "registry": "npm",
-      "resolvedVersion": "1.1.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1141,8 +1141,8 @@
       "root": "examples/application-capabilities/commerce",
       "name": "@appport/transport-http",
       "registry": "npm",
-      "resolvedVersion": "1.1.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1150,8 +1150,8 @@
       "root": "examples/application-capabilities/commerce",
       "name": "@appport/transport-websocket",
       "registry": "npm",
-      "resolvedVersion": "1.0.11",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.12",
+      "status": "current",
       "managed": true
     },
     {
@@ -1159,8 +1159,8 @@
       "root": "examples/application-capabilities/commerce",
       "name": "@appport/transport-inprocess",
       "registry": "npm",
-      "resolvedVersion": "1.0.13",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.15",
+      "status": "current",
       "managed": true
     },
     {
@@ -1168,8 +1168,8 @@
       "root": "examples/application-capabilities/dynamic-consumer",
       "name": "@appport/protocol",
       "registry": "npm",
-      "resolvedVersion": "1.4.1",
-      "status": "minor-behind",
+      "resolvedVersion": "1.5.0",
+      "status": "current",
       "managed": true
     },
     {
@@ -1177,8 +1177,8 @@
       "root": "examples/application-capabilities/dynamic-consumer",
       "name": "@appport/schema",
       "registry": "npm",
-      "resolvedVersion": "1.1.5",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.6",
+      "status": "current",
       "managed": true
     },
     {
@@ -1186,8 +1186,8 @@
       "root": "examples/application-capabilities/dynamic-consumer",
       "name": "@appport/client",
       "registry": "npm",
-      "resolvedVersion": "1.1.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1195,8 +1195,8 @@
       "root": "examples/application-capabilities/dynamic-consumer",
       "name": "@appport/server",
       "registry": "npm",
-      "resolvedVersion": "1.3.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.3.2",
+      "status": "current",
       "managed": true
     },
     {
@@ -1204,8 +1204,8 @@
       "root": "examples/application-capabilities/dynamic-consumer",
       "name": "@appport/transport-http",
       "registry": "npm",
-      "resolvedVersion": "1.1.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1222,8 +1222,8 @@
       "root": "examples/application-capabilities/invoicing",
       "name": "@appport/core",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.7.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1231,8 +1231,8 @@
       "root": "examples/application-capabilities/invoicing",
       "name": "@appport/server",
       "registry": "npm",
-      "resolvedVersion": "1.3.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.3.2",
+      "status": "current",
       "managed": true
     },
     {
@@ -1240,8 +1240,8 @@
       "root": "examples/application-capabilities/invoicing",
       "name": "@appport/client",
       "registry": "npm",
-      "resolvedVersion": "1.1.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1249,8 +1249,8 @@
       "root": "examples/application-capabilities/invoicing",
       "name": "@appport/generators",
       "registry": "npm",
-      "resolvedVersion": "1.0.9",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.10",
+      "status": "current",
       "managed": true
     },
     {
@@ -1258,8 +1258,8 @@
       "root": "examples/application-capabilities/invoicing",
       "name": "@appport/schema",
       "registry": "npm",
-      "resolvedVersion": "1.1.5",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.6",
+      "status": "current",
       "managed": true
     },
     {
@@ -1267,8 +1267,8 @@
       "root": "examples/application-capabilities/invoicing",
       "name": "@appport/protocol",
       "registry": "npm",
-      "resolvedVersion": "1.4.1",
-      "status": "minor-behind",
+      "resolvedVersion": "1.5.0",
+      "status": "current",
       "managed": true
     },
     {
@@ -1276,8 +1276,8 @@
       "root": "examples/application-capabilities/invoicing",
       "name": "@appport/authorization",
       "registry": "npm",
-      "resolvedVersion": "1.1.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1285,8 +1285,8 @@
       "root": "examples/application-capabilities/invoicing",
       "name": "@appport/transport-http",
       "registry": "npm",
-      "resolvedVersion": "1.1.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1294,8 +1294,8 @@
       "root": "examples/application-capabilities/invoicing",
       "name": "@appport/transport-websocket",
       "registry": "npm",
-      "resolvedVersion": "1.0.11",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.12",
+      "status": "current",
       "managed": true
     },
     {
@@ -1303,8 +1303,8 @@
       "root": "examples/application-capabilities/invoicing",
       "name": "@appport/transport-inprocess",
       "registry": "npm",
-      "resolvedVersion": "1.0.13",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.15",
+      "status": "current",
       "managed": true
     },
     {
@@ -1312,8 +1312,8 @@
       "root": "examples/application-contracts",
       "name": "@appport/core",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.7.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1321,8 +1321,8 @@
       "root": "examples/application-contracts",
       "name": "@appport/schema",
       "registry": "npm",
-      "resolvedVersion": "1.1.5",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.6",
+      "status": "current",
       "managed": true
     },
     {
@@ -1339,8 +1339,8 @@
       "root": "examples/contract-first-taskboard",
       "name": "@appport/core",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.7.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1348,8 +1348,8 @@
       "root": "examples/contract-first-taskboard",
       "name": "@appport/server",
       "registry": "npm",
-      "resolvedVersion": "1.3.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.3.2",
+      "status": "current",
       "managed": true
     },
     {
@@ -1357,8 +1357,8 @@
       "root": "examples/contract-first-taskboard",
       "name": "@appport/client",
       "registry": "npm",
-      "resolvedVersion": "1.1.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1366,8 +1366,8 @@
       "root": "examples/contract-first-taskboard",
       "name": "@appport/generators",
       "registry": "npm",
-      "resolvedVersion": "1.0.9",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.10",
+      "status": "current",
       "managed": true
     },
     {
@@ -1375,8 +1375,8 @@
       "root": "examples/contract-first-taskboard",
       "name": "@appport/schema",
       "registry": "npm",
-      "resolvedVersion": "1.1.5",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.6",
+      "status": "current",
       "managed": true
     },
     {
@@ -1384,8 +1384,8 @@
       "root": "examples/contract-first-taskboard",
       "name": "@appport/protocol",
       "registry": "npm",
-      "resolvedVersion": "1.4.1",
-      "status": "minor-behind",
+      "resolvedVersion": "1.5.0",
+      "status": "current",
       "managed": true
     },
     {
@@ -1393,8 +1393,8 @@
       "root": "examples/contract-first-taskboard",
       "name": "@appport/authorization",
       "registry": "npm",
-      "resolvedVersion": "1.1.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1402,8 +1402,8 @@
       "root": "examples/contract-first-taskboard",
       "name": "@appport/transport-http",
       "registry": "npm",
-      "resolvedVersion": "1.1.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1411,8 +1411,8 @@
       "root": "examples/contract-first-taskboard",
       "name": "@appport/transport-websocket",
       "registry": "npm",
-      "resolvedVersion": "1.0.11",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.12",
+      "status": "current",
       "managed": true
     },
     {
@@ -1420,8 +1420,8 @@
       "root": "examples/contract-first-taskboard",
       "name": "@appport/transport-inprocess",
       "registry": "npm",
-      "resolvedVersion": "1.0.13",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.15",
+      "status": "current",
       "managed": true
     },
     {
@@ -1429,8 +1429,8 @@
       "root": "examples/documents",
       "name": "@appport/sdk",
       "registry": "npm",
-      "resolvedVersion": "1.6.0",
-      "status": "minor-behind",
+      "resolvedVersion": "1.8.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1438,8 +1438,8 @@
       "root": "examples/documents",
       "name": "@appport/authorization",
       "registry": "npm",
-      "resolvedVersion": "1.1.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1447,8 +1447,8 @@
       "root": "examples/documents",
       "name": "@appport/client",
       "registry": "npm",
-      "resolvedVersion": "1.1.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1456,8 +1456,8 @@
       "root": "examples/documents",
       "name": "@appport/core",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.7.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1465,8 +1465,8 @@
       "root": "examples/documents",
       "name": "@appport/protocol",
       "registry": "npm",
-      "resolvedVersion": "1.4.1",
-      "status": "minor-behind",
+      "resolvedVersion": "1.5.0",
+      "status": "current",
       "managed": true
     },
     {
@@ -1474,8 +1474,8 @@
       "root": "examples/documents",
       "name": "@appport/schema",
       "registry": "npm",
-      "resolvedVersion": "1.1.5",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.6",
+      "status": "current",
       "managed": true
     },
     {
@@ -1483,8 +1483,8 @@
       "root": "examples/documents",
       "name": "@appport/server",
       "registry": "npm",
-      "resolvedVersion": "1.3.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.3.2",
+      "status": "current",
       "managed": true
     },
     {
@@ -1492,8 +1492,8 @@
       "root": "examples/documents",
       "name": "@appport/transport-electron",
       "registry": "npm",
-      "resolvedVersion": "1.0.13",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.15",
+      "status": "current",
       "managed": true
     },
     {
@@ -1501,8 +1501,8 @@
       "root": "examples/documents",
       "name": "@appport/transport-http",
       "registry": "npm",
-      "resolvedVersion": "1.1.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1510,8 +1510,8 @@
       "root": "examples/documents",
       "name": "@appport/transport-inprocess",
       "registry": "npm",
-      "resolvedVersion": "1.0.13",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.15",
+      "status": "current",
       "managed": true
     },
     {
@@ -1519,8 +1519,8 @@
       "root": "examples/documents",
       "name": "@appport/transport-tauri",
       "registry": "npm",
-      "resolvedVersion": "1.0.11",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.12",
+      "status": "current",
       "managed": true
     },
     {
@@ -1528,8 +1528,8 @@
       "root": "examples/documents",
       "name": "@appport/transport-websocket",
       "registry": "npm",
-      "resolvedVersion": "1.0.11",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.12",
+      "status": "current",
       "managed": true
     },
     {
@@ -1546,8 +1546,8 @@
       "root": "examples/materialization-reference",
       "name": "@appport/sdk",
       "registry": "npm",
-      "resolvedVersion": "1.6.0",
-      "status": "minor-behind",
+      "resolvedVersion": "1.8.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1564,8 +1564,8 @@
       "root": "examples/todos",
       "name": "@appport/sdk",
       "registry": "npm",
-      "resolvedVersion": "1.6.0",
-      "status": "minor-behind",
+      "resolvedVersion": "1.8.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1582,8 +1582,8 @@
       "root": "examples/world",
       "name": "@appport/authorization",
       "registry": "npm",
-      "resolvedVersion": "1.1.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1591,8 +1591,8 @@
       "root": "examples/world",
       "name": "@appport/core",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.7.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1600,8 +1600,8 @@
       "root": "examples/world",
       "name": "@appport/protocol",
       "registry": "npm",
-      "resolvedVersion": "1.4.1",
-      "status": "minor-behind",
+      "resolvedVersion": "1.5.0",
+      "status": "current",
       "managed": true
     },
     {
@@ -1609,8 +1609,8 @@
       "root": "examples/world",
       "name": "@appport/schema",
       "registry": "npm",
-      "resolvedVersion": "1.1.5",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.6",
+      "status": "current",
       "managed": true
     },
     {
@@ -1618,8 +1618,8 @@
       "root": "examples/world",
       "name": "@appport/server",
       "registry": "npm",
-      "resolvedVersion": "1.3.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.3.2",
+      "status": "current",
       "managed": true
     },
     {
@@ -1627,8 +1627,8 @@
       "root": "examples/world",
       "name": "@appport/client",
       "registry": "npm",
-      "resolvedVersion": "1.1.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1636,8 +1636,8 @@
       "root": "examples/world",
       "name": "@appport/transport-http",
       "registry": "npm",
-      "resolvedVersion": "1.1.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1645,8 +1645,8 @@
       "root": "examples/world",
       "name": "@appport/transport-websocket",
       "registry": "npm",
-      "resolvedVersion": "1.0.11",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.12",
+      "status": "current",
       "managed": true
     },
     {
@@ -1654,8 +1654,8 @@
       "root": "integrations/feltdb",
       "name": "@appport/core",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.7.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1663,8 +1663,8 @@
       "root": "integrations/feltdb",
       "name": "@appport/protocol",
       "registry": "npm",
-      "resolvedVersion": "1.4.1",
-      "status": "minor-behind",
+      "resolvedVersion": "1.5.0",
+      "status": "current",
       "managed": true
     },
     {
@@ -1672,8 +1672,8 @@
       "root": "integrations/feltdb",
       "name": "@appport/schema",
       "registry": "npm",
-      "resolvedVersion": "1.1.5",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.6",
+      "status": "current",
       "managed": true
     },
     {
@@ -1690,8 +1690,8 @@
       "root": "integrations/feltdb",
       "name": "@appport/authorization",
       "registry": "npm",
-      "resolvedVersion": "1.1.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1699,8 +1699,8 @@
       "root": "packages/appboundry-host",
       "name": "@appport/authorization",
       "registry": "npm",
-      "resolvedVersion": "1.1.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1708,8 +1708,8 @@
       "root": "packages/appboundry-host",
       "name": "@appport/core",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.7.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1717,8 +1717,8 @@
       "root": "packages/appboundry-host",
       "name": "@appport/mcp",
       "registry": "npm",
-      "resolvedVersion": "1.3.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.3.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1726,8 +1726,8 @@
       "root": "packages/appboundry-host",
       "name": "@appport/protocol",
       "registry": "npm",
-      "resolvedVersion": "1.4.1",
-      "status": "minor-behind",
+      "resolvedVersion": "1.5.0",
+      "status": "current",
       "managed": true
     },
     {
@@ -1735,8 +1735,8 @@
       "root": "packages/appboundry-host",
       "name": "@appport/schema",
       "registry": "npm",
-      "resolvedVersion": "1.1.5",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.6",
+      "status": "current",
       "managed": true
     },
     {
@@ -1744,8 +1744,8 @@
       "root": "packages/appboundry-host",
       "name": "@appport/server",
       "registry": "npm",
-      "resolvedVersion": "1.3.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.3.2",
+      "status": "current",
       "managed": true
     },
     {
@@ -1753,8 +1753,8 @@
       "root": "packages/appboundry-host",
       "name": "@appport/services",
       "registry": "npm",
-      "resolvedVersion": "0.15.0",
-      "status": "minor-behind",
+      "resolvedVersion": "0.16.2",
+      "status": "current",
       "managed": true
     },
     {
@@ -1771,8 +1771,8 @@
       "root": "packages/appboundry-runtime",
       "name": "@appport/core",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.7.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1780,8 +1780,8 @@
       "root": "packages/appboundry-runtime",
       "name": "@appport/protocol",
       "registry": "npm",
-      "resolvedVersion": "1.4.1",
-      "status": "minor-behind",
+      "resolvedVersion": "1.5.0",
+      "status": "current",
       "managed": true
     },
     {
@@ -1789,8 +1789,8 @@
       "root": "packages/appboundry-runtime",
       "name": "@appport/schema",
       "registry": "npm",
-      "resolvedVersion": "1.1.5",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.6",
+      "status": "current",
       "managed": true
     },
     {
@@ -1798,8 +1798,8 @@
       "root": "packages/appboundry-runtime",
       "name": "@appport/sdk",
       "registry": "npm",
-      "resolvedVersion": "1.6.0",
-      "status": "minor-behind",
+      "resolvedVersion": "1.8.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1807,8 +1807,8 @@
       "root": "packages/appboundry",
       "name": "@appport/core",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.7.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1816,8 +1816,8 @@
       "root": "packages/appboundry",
       "name": "@appport/sdk",
       "registry": "npm",
-      "resolvedVersion": "1.6.0",
-      "status": "minor-behind",
+      "resolvedVersion": "1.8.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1834,8 +1834,8 @@
       "root": "packages/cli",
       "name": "@appport/sdk",
       "registry": "npm",
-      "resolvedVersion": "1.6.0",
-      "status": "minor-behind",
+      "resolvedVersion": "1.8.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1843,8 +1843,8 @@
       "root": "packages/cli",
       "name": "@appport/core",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.7.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1852,8 +1852,8 @@
       "root": "packages/cli",
       "name": "@appport/protocol",
       "registry": "npm",
-      "resolvedVersion": "1.4.1",
-      "status": "minor-behind",
+      "resolvedVersion": "1.5.0",
+      "status": "current",
       "managed": true
     },
     {
@@ -1861,8 +1861,8 @@
       "root": "packages/cli",
       "name": "@appport/server",
       "registry": "npm",
-      "resolvedVersion": "1.3.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.3.2",
+      "status": "current",
       "managed": true
     },
     {
@@ -1870,8 +1870,8 @@
       "root": "packages/cli",
       "name": "@appport/client",
       "registry": "npm",
-      "resolvedVersion": "1.1.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1879,8 +1879,8 @@
       "root": "packages/cli",
       "name": "@appport/mobile",
       "registry": "npm",
-      "resolvedVersion": "1.0.11",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.12",
+      "status": "current",
       "managed": true
     },
     {
@@ -1888,8 +1888,8 @@
       "root": "packages/cli",
       "name": "@appport/schema",
       "registry": "npm",
-      "resolvedVersion": "1.1.5",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.6",
+      "status": "current",
       "managed": true
     },
     {
@@ -1897,8 +1897,8 @@
       "root": "packages/cli",
       "name": "@appport/generators",
       "registry": "npm",
-      "resolvedVersion": "1.0.9",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.10",
+      "status": "current",
       "managed": true
     },
     {
@@ -1906,8 +1906,8 @@
       "root": "packages/cli",
       "name": "@appport/transport-inprocess",
       "registry": "npm",
-      "resolvedVersion": "1.0.13",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.15",
+      "status": "current",
       "managed": true
     },
     {
@@ -1915,8 +1915,8 @@
       "root": "packages/cli",
       "name": "@appport/transport-http",
       "registry": "npm",
-      "resolvedVersion": "1.1.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.1.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1924,8 +1924,8 @@
       "root": "packages/cli",
       "name": "@appport/transport-websocket",
       "registry": "npm",
-      "resolvedVersion": "1.0.11",
-      "status": "patch-behind",
+      "resolvedVersion": "1.0.12",
+      "status": "current",
       "managed": true
     },
     {
@@ -1933,8 +1933,8 @@
       "root": "packages/cli",
       "name": "@appport/mcp",
       "registry": "npm",
-      "resolvedVersion": "1.3.7",
-      "status": "patch-behind",
+      "resolvedVersion": "1.3.8",
+      "status": "current",
       "managed": true
     },
     {
@@ -1942,8 +1942,8 @@
       "root": "studio",
       "name": "@appport/protocol",
       "registry": "npm",
-      "resolvedVersion": "1.4.1",
-      "status": "minor-behind",
+      "resolvedVersion": "1.5.0",
+      "status": "current",
       "managed": true
     },
     {
@@ -1951,8 +1951,8 @@
       "root": "studio",
       "name": "@appport/core",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
-      "status": "patch-behind",
+      "resolvedVersion": "1.7.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -1960,8 +1960,8 @@
       "root": "studio",
       "name": "@appport/sdk",
       "registry": "npm",
-      "resolvedVersion": "1.6.0",
-      "status": "minor-behind",
+      "resolvedVersion": "1.8.1",
+      "status": "current",
       "managed": true
     },
     {
@@ -3949,7 +3949,7 @@
       "root": "packages/sdk",
       "name": "create-feltkit",
       "registry": "npm",
-      "resolvedVersion": "0.3.22",
+      "resolvedVersion": "0.3.25",
       "status": "unknown",
       "managed": false
     },
@@ -4012,7 +4012,7 @@
       "root": "packages/sdk",
       "name": "@stack-ui/core",
       "registry": "npm",
-      "resolvedVersion": "0.7.0",
+      "resolvedVersion": "0.8.1",
       "status": "unknown",
       "managed": false
     },
@@ -4021,7 +4021,7 @@
       "root": "packages/sdk",
       "name": "@stack-ui/react",
       "registry": "npm",
-      "resolvedVersion": "0.7.0",
+      "resolvedVersion": "0.8.1",
       "status": "unknown",
       "managed": false
     },
@@ -4030,7 +4030,7 @@
       "root": "packages/sdk",
       "name": "@stack-ui/tokens",
       "registry": "npm",
-      "resolvedVersion": "0.7.0",
+      "resolvedVersion": "0.8.1",
       "status": "unknown",
       "managed": false
     },
@@ -4201,7 +4201,7 @@
       "root": ".",
       "name": "express",
       "registry": "npm",
-      "resolvedVersion": "4.22.2",
+      "resolvedVersion": "4.22.3",
       "status": "unknown",
       "managed": false
     },
@@ -4210,7 +4210,7 @@
       "root": ".",
       "name": "express-rate-limit",
       "registry": "npm",
-      "resolvedVersion": "8.7.0",
+      "resolvedVersion": "8.7.4",
       "status": "unknown",
       "managed": false
     },
@@ -4219,7 +4219,7 @@
       "root": ".",
       "name": "@appport/sdk",
       "registry": "npm",
-      "resolvedVersion": "1.7.0",
+      "resolvedVersion": "1.8.1",
       "status": "unknown",
       "managed": false
     },
@@ -4246,7 +4246,7 @@
       "root": ".",
       "name": "axe-core",
       "registry": "npm",
-      "resolvedVersion": "4.10.3",
+      "resolvedVersion": "4.14.0",
       "status": "unknown",
       "managed": false
     },
@@ -4255,7 +4255,7 @@
       "root": ".",
       "name": "playwright-core",
       "registry": "npm",
-      "resolvedVersion": "1.56.1",
+      "resolvedVersion": "1.65.0",
       "status": "unknown",
       "managed": false
     },
@@ -10790,24 +10790,6 @@
       "targetVersion": "0.21.0"
     },
     {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/protocol",
-      "status": "update-required",
-      "currentVersion": "1.4.1",
-      "targetVersion": "1.5.0"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/sdk",
-      "status": "update-required",
-      "currentVersion": "1.6.0",
-      "targetVersion": "1.8.0"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/services",
-      "status": "update-required",
-      "currentVersion": "0.15.0",
-      "targetVersion": "0.16.0"
-    },
-    {
       "key": "appworks|pnpm-lock.yaml|npm:@appport/core",
       "status": "update-required",
       "currentVersion": "1.4.0",
@@ -10823,7 +10805,7 @@
       "key": "appworks|pnpm-lock.yaml|npm:@appport/sdk",
       "status": "update-required",
       "currentVersion": "1.2.2",
-      "targetVersion": "1.8.0"
+      "targetVersion": "1.8.1"
     },
     {
       "key": "appworks|pnpm-lock.yaml|npm:@feltdb/core",
@@ -10859,19 +10841,19 @@
       "key": "authboundry|apps/web/package-lock.json|npm:@appport/services",
       "status": "update-required",
       "currentVersion": "0.4.5",
-      "targetVersion": "0.16.0"
+      "targetVersion": "0.16.2"
     },
     {
       "key": "authboundry|examples/nextjs-stack/package-lock.json|npm:@appport/services",
       "status": "update-required",
       "currentVersion": "0.4.5",
-      "targetVersion": "0.16.0"
+      "targetVersion": "0.16.2"
     },
     {
       "key": "authboundry|package-lock.json|npm:@appport/services",
       "status": "update-required",
       "currentVersion": "0.4.5",
-      "targetVersion": "0.16.0"
+      "targetVersion": "0.16.2"
     },
     {
       "key": "authboundry|apps/web/package-lock.json|npm:@feltdb/core",
@@ -10925,7 +10907,7 @@
       "key": "compute|compatibility/published-stack/package-lock.json|npm:@appport/runtime",
       "status": "update-required",
       "currentVersion": "0.4.6",
-      "targetVersion": "0.15.0"
+      "targetVersion": "0.15.2"
     },
     {
       "key": "compute|packages/compute-appport/package-lock.json|npm:@appport/schema",
@@ -10937,13 +10919,13 @@
       "key": "compute|compatibility/published-stack/package-lock.json|npm:@appport/server",
       "status": "update-required",
       "currentVersion": "1.0.2",
-      "targetVersion": "1.3.1"
+      "targetVersion": "1.3.2"
     },
     {
       "key": "compute|compatibility/published-stack/package-lock.json|npm:@appport/services",
       "status": "update-required",
       "currentVersion": "0.4.11",
-      "targetVersion": "0.16.0"
+      "targetVersion": "0.16.2"
     },
     {
       "key": "compute|compatibility/published-stack/package-lock.json|npm:@appport/transport-http",
@@ -11009,19 +10991,19 @@
       "key": "github-integration|package-lock.json|npm:@appport/appboundry",
       "status": "update-required",
       "currentVersion": "1.1.1",
-      "targetVersion": "1.11.0"
+      "targetVersion": "1.11.1"
     },
     {
       "key": "github-integration|package-lock.json|npm:@appport/sdk",
       "status": "update-required",
       "currentVersion": "1.1.22",
-      "targetVersion": "1.8.0"
+      "targetVersion": "1.8.1"
     },
     {
       "key": "github-integration|package-lock.json|npm:@appport/services",
       "status": "update-required",
       "currentVersion": "0.4.6",
-      "targetVersion": "0.16.0"
+      "targetVersion": "0.16.2"
     },
     {
       "key": "github-integration|package-lock.json|npm:@feltdb/core",
@@ -11051,85 +11033,7 @@
       "key": "agent-obstacle|package-lock.json|npm:@feltdb/feltkit",
       "status": "update-required",
       "currentVersion": "0.3.2",
-      "targetVersion": "0.3.22"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/authorization",
-      "status": "update-required",
-      "currentVersion": "1.1.0",
-      "targetVersion": "1.1.1"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/client",
-      "status": "update-required",
-      "currentVersion": "1.1.7",
-      "targetVersion": "1.1.8"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/core",
-      "status": "update-required",
-      "currentVersion": "1.7.0",
-      "targetVersion": "1.7.1"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/generators",
-      "status": "update-required",
-      "currentVersion": "1.0.9",
-      "targetVersion": "1.0.10"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/mcp",
-      "status": "update-required",
-      "currentVersion": "1.3.7",
-      "targetVersion": "1.3.8"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/mobile",
-      "status": "update-required",
-      "currentVersion": "1.0.11",
-      "targetVersion": "1.0.12"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/schema",
-      "status": "update-required",
-      "currentVersion": "1.1.5",
-      "targetVersion": "1.1.6"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/server",
-      "status": "update-required",
-      "currentVersion": "1.3.0",
-      "targetVersion": "1.3.1"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-electron",
-      "status": "update-required",
-      "currentVersion": "1.0.13",
-      "targetVersion": "1.0.14"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-http",
-      "status": "update-required",
-      "currentVersion": "1.1.7",
-      "targetVersion": "1.1.8"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-inprocess",
-      "status": "update-required",
-      "currentVersion": "1.0.13",
-      "targetVersion": "1.0.14"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-tauri",
-      "status": "update-required",
-      "currentVersion": "1.0.11",
-      "targetVersion": "1.0.12"
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-websocket",
-      "status": "update-required",
-      "currentVersion": "1.0.11",
-      "targetVersion": "1.0.12"
+      "targetVersion": "0.3.25"
     },
     {
       "key": "appworks|pnpm-lock.yaml|npm:@appport/client",
@@ -11153,7 +11057,7 @@
       "key": "compute|compatibility/published-stack/package-lock.json|npm:@appport/transport-inprocess",
       "status": "update-required",
       "currentVersion": "1.0.2",
-      "targetVersion": "1.0.14"
+      "targetVersion": "1.0.15"
     },
     {
       "key": "compute|compatibility/published-stack/package-lock.json|npm:@appport/transport-websocket",
@@ -11165,7 +11069,103 @@
       "key": "felt-ops|package-lock.json|npm:@feltdb/feltkit",
       "status": "update-required",
       "currentVersion": "0.3.14",
-      "targetVersion": "0.3.22"
+      "targetVersion": "0.3.25"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/authorization",
+      "status": "updated-unverified",
+      "currentVersion": "1.1.1",
+      "targetVersion": "1.1.1"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/client",
+      "status": "updated-unverified",
+      "currentVersion": "1.1.8",
+      "targetVersion": "1.1.8"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/core",
+      "status": "updated-unverified",
+      "currentVersion": "1.7.1",
+      "targetVersion": "1.7.1"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/generators",
+      "status": "updated-unverified",
+      "currentVersion": "1.0.10",
+      "targetVersion": "1.0.10"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/mcp",
+      "status": "updated-unverified",
+      "currentVersion": "1.3.8",
+      "targetVersion": "1.3.8"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/mobile",
+      "status": "updated-unverified",
+      "currentVersion": "1.0.12",
+      "targetVersion": "1.0.12"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/protocol",
+      "status": "updated-unverified",
+      "currentVersion": "1.5.0",
+      "targetVersion": "1.5.0"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/schema",
+      "status": "updated-unverified",
+      "currentVersion": "1.1.6",
+      "targetVersion": "1.1.6"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/sdk",
+      "status": "updated-unverified",
+      "currentVersion": "1.8.1",
+      "targetVersion": "1.8.0"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/server",
+      "status": "updated-unverified",
+      "currentVersion": "1.3.2",
+      "targetVersion": "1.3.1"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/services",
+      "status": "updated-unverified",
+      "currentVersion": "0.16.2",
+      "targetVersion": "0.16.0"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-electron",
+      "status": "updated-unverified",
+      "currentVersion": "1.0.15",
+      "targetVersion": "1.0.14"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-http",
+      "status": "updated-unverified",
+      "currentVersion": "1.1.8",
+      "targetVersion": "1.1.8"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-inprocess",
+      "status": "updated-unverified",
+      "currentVersion": "1.0.15",
+      "targetVersion": "1.0.14"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-tauri",
+      "status": "updated-unverified",
+      "currentVersion": "1.0.12",
+      "targetVersion": "1.0.12"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-websocket",
+      "status": "updated-unverified",
+      "currentVersion": "1.0.12",
+      "targetVersion": "1.0.12"
     },
     {
       "key": "appport-services|package-lock.json|npm:@appport/protocol",
@@ -11175,20 +11175,20 @@
     },
     {
       "key": "feltkit|package-lock.json|npm:@appport/sdk",
-      "status": "updated-unverified",
-      "currentVersion": "1.8.0",
+      "status": "updated-verified",
+      "currentVersion": "1.8.1",
       "targetVersion": "1.4.1"
     },
     {
       "key": "feltkit|package-lock.json|npm:@appport/server",
-      "status": "updated-unverified",
-      "currentVersion": "1.3.1",
+      "status": "updated-verified",
+      "currentVersion": "1.3.2",
       "targetVersion": "1.1.6"
     },
     {
       "key": "feltkit|package-lock.json|npm:@appport/testing",
-      "status": "updated-unverified",
-      "currentVersion": "1.2.4",
+      "status": "updated-verified",
+      "currentVersion": "1.2.5",
       "targetVersion": "1.2.1"
     }
   ],
@@ -11303,15 +11303,15 @@
     },
     {
       "id": "rkendel1/appport:.github/workflows/ci.yml#build/run-pnpm-install-frozen-lockfile",
-      "result": "passing"
+      "result": "skipped"
     },
     {
       "id": "rkendel1/appport:.github/workflows/ci.yml#build/audit-the-npm-tarballs",
-      "result": "passing"
+      "result": "skipped"
     },
     {
       "id": "rkendel1/appport:.github/workflows/ci.yml#build/install-the-tarballs-into-a-clean-project-and-run-the-consum",
-      "result": "passing"
+      "result": "skipped"
     },
     {
       "id": "rkendel1/appport:.github/workflows/evidence-gated-completion.yml#reproduce/install-the-applications-existing-appport-bridges-published-",
@@ -11387,15 +11387,15 @@
     },
     {
       "id": "rkendel1/authboundry:.github/workflows/architecture-invariants.yml#verify/run-npm-ci-ignore-scripts",
-      "result": "failing"
+      "result": "unknown"
     },
     {
       "id": "rkendel1/authboundry:.github/workflows/portal.yml#portal/run-npm-ci-ignore-scripts",
-      "result": "failing"
+      "result": "unknown"
     },
     {
       "id": "rkendel1/authboundry:.github/workflows/portal.yml#portal/run-npm-ci",
-      "result": "skipped"
+      "result": "unknown"
     },
     {
       "id": "rkendel1/authboundry:.github/workflows/release.yml#commit-and-publish/verify-package-would-include-all-binaries",
@@ -11546,16 +11546,20 @@
       "result": "passing"
     },
     {
+      "id": "rkendel1/feltkit:.github/workflows/ci.yml#isolation/install",
+      "result": "passing"
+    },
+    {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/install",
       "result": "passing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/unit-tests-sdk-incl-browser-tests-conformance-suites-create-",
-      "result": "failing"
+      "result": "passing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
-      "result": "skipped"
+      "result": "passing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e/install",
@@ -11651,11 +11655,11 @@
     },
     {
       "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#hostile-node/run-npm-ci",
-      "result": "in-progress"
+      "result": "passing"
     },
     {
       "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#hostile-node/run-npm-run-build-workspace-feltdb-core",
-      "result": "in-progress"
+      "result": "passing"
     },
     {
       "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-ci",
@@ -11743,11 +11747,11 @@
     },
     {
       "id": "rkendel1/resolver:.github/workflows/publish.yml#publish/run-npm-ci",
-      "result": "unknown"
+      "result": "passing"
     },
     {
       "id": "rkendel1/resolver:.github/workflows/publish.yml#publish/publish",
-      "result": "unknown"
+      "result": "skipped"
     },
     {
       "id": "rkendel1/rust-ml-runtime:.github/workflows/ci.yml#local-engine/run-cargo-clippy-all-targets-locked-d-warnings",
@@ -11794,28 +11798,78 @@
     "newReleases": [
       {
         "package": "appport-sdk",
-        "from": "1.7.0",
-        "to": "1.8.0"
+        "from": "1.8.0",
+        "to": "1.8.1"
+      },
+      {
+        "package": "appport-server",
+        "from": "1.3.1",
+        "to": "1.3.2"
+      },
+      {
+        "package": "appport-testing",
+        "from": "1.2.4",
+        "to": "1.2.5"
+      },
+      {
+        "package": "appport-transport-inprocess",
+        "from": "1.0.14",
+        "to": "1.0.15"
+      },
+      {
+        "package": "appport-transport-electron",
+        "from": "1.0.14",
+        "to": "1.0.15"
+      },
+      {
+        "package": "appport-appboundry",
+        "from": "1.11.0",
+        "to": "1.11.1"
+      },
+      {
+        "package": "appport-cli",
+        "from": "1.4.1",
+        "to": "1.4.2"
+      },
+      {
+        "package": "appport-services",
+        "from": "0.16.0",
+        "to": "0.16.2"
+      },
+      {
+        "package": "appport-runtime",
+        "from": "0.15.0",
+        "to": "0.15.2"
+      },
+      {
+        "package": "create-appport",
+        "from": "0.1.25",
+        "to": "0.1.27"
       },
       {
         "package": "appport-resolver",
-        "from": "0.3.1",
-        "to": "0.3.2"
+        "from": "0.3.2",
+        "to": "0.3.3"
       },
       {
         "package": "appport-resolver-client",
-        "from": "0.2.2",
-        "to": "0.2.3"
+        "from": "0.2.3",
+        "to": "0.2.4"
+      },
+      {
+        "package": "appport-resolver-core",
+        "from": "0.1.0",
+        "to": "0.1.1"
       },
       {
         "package": "feltdb-feltkit",
-        "from": "0.3.18",
-        "to": "0.3.22"
+        "from": "0.3.22",
+        "to": "0.3.25"
       },
       {
         "package": "create-feltkit",
-        "from": "0.3.18",
-        "to": "0.3.22"
+        "from": "0.3.22",
+        "to": "0.3.25"
       }
     ],
     "versionChanges": [
@@ -11823,252 +11877,987 @@
         "project": "feltkit",
         "root": "examples/invoices",
         "name": "@feltdb/feltkit",
-        "from": "0.3.18",
-        "to": "0.3.22"
+        "from": "0.3.22",
+        "to": "0.3.25"
       },
       {
         "project": "feltkit",
         "root": "examples/managed",
         "name": "@feltdb/feltkit",
-        "from": "0.3.18",
-        "to": "0.3.22"
+        "from": "0.3.22",
+        "to": "0.3.25"
       },
       {
         "project": "feltkit",
         "root": "examples/tasks",
         "name": "@feltdb/feltkit",
-        "from": "0.3.18",
-        "to": "0.3.22"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@appport/resolver-client",
-        "from": "0.2.2",
-        "to": "0.2.3"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@appport/sdk",
-        "from": "1.7.0",
-        "to": "1.8.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "create-feltkit",
-        "from": "0.3.18",
-        "to": "0.3.22"
-      },
-      {
-        "project": "appboundry",
-        "root": "deploy/artifact-runner/hetzner",
-        "name": "@appport/appboundry",
-        "from": "1.8.0",
-        "to": "1.11.0"
-      }
-    ],
-    "newDependencies": [
-      {
-        "project": "feltkit",
-        "root": "examples/tasks",
-        "name": "@feltdb/webllm",
-        "version": "0.21.0"
+        "from": "0.3.22",
+        "to": "0.3.25"
       },
       {
         "project": "feltkit",
         "root": "packages/create",
         "name": "@feltdb/feltkit",
-        "version": "0.3.22"
+        "from": "0.3.22",
+        "to": "0.3.25"
       },
       {
         "project": "feltkit",
-        "root": "examples/tasks",
-        "name": "@mlc-ai/web-llm",
-        "version": "0.2.86"
-      }
-    ],
-    "removedDependencies": [
-      {
-        "project": "feltkit",
-        "root": "examples/teams",
-        "name": "@feltdb/feltkit"
+        "root": "packages/sdk",
+        "name": "@appport/resolver-client",
+        "from": "0.2.3",
+        "to": "0.2.4"
       },
       {
         "project": "feltkit",
-        "root": "packages/create/template-foundation",
-        "name": "@feltdb/feltkit"
+        "root": "packages/sdk",
+        "name": "@appport/sdk",
+        "from": "1.8.0",
+        "to": "1.8.1"
       },
       {
         "project": "feltkit",
-        "root": "examples/teams",
-        "name": "react"
+        "root": "packages/sdk",
+        "name": "@appport/server",
+        "from": "1.3.1",
+        "to": "1.3.2"
       },
       {
         "project": "feltkit",
-        "root": "examples/teams",
-        "name": "react-dom"
+        "root": "packages/sdk",
+        "name": "@appport/services",
+        "from": "0.16.0",
+        "to": "0.16.2"
       },
       {
         "project": "feltkit",
-        "root": "examples/teams",
-        "name": "@types/node"
+        "root": "packages/sdk",
+        "name": "@appport/testing",
+        "from": "1.2.4",
+        "to": "1.2.5"
+      },
+      {
+        "project": "appboundry",
+        "root": "apps/cloud-portal",
+        "name": "@appport/core",
+        "from": "1.7.0",
+        "to": "1.7.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "apps/cloud-portal",
+        "name": "@appport/schema",
+        "from": "1.1.5",
+        "to": "1.1.6"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/appboundry-explorer",
+        "name": "@appport/core",
+        "from": "1.7.0",
+        "to": "1.7.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/appboundry-explorer",
+        "name": "@appport/schema",
+        "from": "1.1.5",
+        "to": "1.1.6"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/appboundry",
+        "name": "@appport/sdk",
+        "from": "1.6.0",
+        "to": "1.8.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/commerce",
+        "name": "@appport/core",
+        "from": "1.7.0",
+        "to": "1.7.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/commerce",
+        "name": "@appport/server",
+        "from": "1.3.0",
+        "to": "1.3.2"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/commerce",
+        "name": "@appport/client",
+        "from": "1.1.7",
+        "to": "1.1.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/commerce",
+        "name": "@appport/generators",
+        "from": "1.0.9",
+        "to": "1.0.10"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/commerce",
+        "name": "@appport/schema",
+        "from": "1.1.5",
+        "to": "1.1.6"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/commerce",
+        "name": "@appport/protocol",
+        "from": "1.4.1",
+        "to": "1.5.0"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/commerce",
+        "name": "@appport/authorization",
+        "from": "1.1.0",
+        "to": "1.1.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/commerce",
+        "name": "@appport/transport-http",
+        "from": "1.1.7",
+        "to": "1.1.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/commerce",
+        "name": "@appport/transport-websocket",
+        "from": "1.0.11",
+        "to": "1.0.12"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/commerce",
+        "name": "@appport/transport-inprocess",
+        "from": "1.0.13",
+        "to": "1.0.15"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/dynamic-consumer",
+        "name": "@appport/protocol",
+        "from": "1.4.1",
+        "to": "1.5.0"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/dynamic-consumer",
+        "name": "@appport/schema",
+        "from": "1.1.5",
+        "to": "1.1.6"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/dynamic-consumer",
+        "name": "@appport/client",
+        "from": "1.1.7",
+        "to": "1.1.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/dynamic-consumer",
+        "name": "@appport/server",
+        "from": "1.3.0",
+        "to": "1.3.2"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/dynamic-consumer",
+        "name": "@appport/transport-http",
+        "from": "1.1.7",
+        "to": "1.1.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/invoicing",
+        "name": "@appport/core",
+        "from": "1.7.0",
+        "to": "1.7.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/invoicing",
+        "name": "@appport/server",
+        "from": "1.3.0",
+        "to": "1.3.2"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/invoicing",
+        "name": "@appport/client",
+        "from": "1.1.7",
+        "to": "1.1.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/invoicing",
+        "name": "@appport/generators",
+        "from": "1.0.9",
+        "to": "1.0.10"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/invoicing",
+        "name": "@appport/schema",
+        "from": "1.1.5",
+        "to": "1.1.6"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/invoicing",
+        "name": "@appport/protocol",
+        "from": "1.4.1",
+        "to": "1.5.0"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/invoicing",
+        "name": "@appport/authorization",
+        "from": "1.1.0",
+        "to": "1.1.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/invoicing",
+        "name": "@appport/transport-http",
+        "from": "1.1.7",
+        "to": "1.1.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/invoicing",
+        "name": "@appport/transport-websocket",
+        "from": "1.0.11",
+        "to": "1.0.12"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-capabilities/invoicing",
+        "name": "@appport/transport-inprocess",
+        "from": "1.0.13",
+        "to": "1.0.15"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-contracts",
+        "name": "@appport/core",
+        "from": "1.7.0",
+        "to": "1.7.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/application-contracts",
+        "name": "@appport/schema",
+        "from": "1.1.5",
+        "to": "1.1.6"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/contract-first-taskboard",
+        "name": "@appport/core",
+        "from": "1.7.0",
+        "to": "1.7.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/contract-first-taskboard",
+        "name": "@appport/server",
+        "from": "1.3.0",
+        "to": "1.3.2"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/contract-first-taskboard",
+        "name": "@appport/client",
+        "from": "1.1.7",
+        "to": "1.1.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/contract-first-taskboard",
+        "name": "@appport/generators",
+        "from": "1.0.9",
+        "to": "1.0.10"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/contract-first-taskboard",
+        "name": "@appport/schema",
+        "from": "1.1.5",
+        "to": "1.1.6"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/contract-first-taskboard",
+        "name": "@appport/protocol",
+        "from": "1.4.1",
+        "to": "1.5.0"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/contract-first-taskboard",
+        "name": "@appport/authorization",
+        "from": "1.1.0",
+        "to": "1.1.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/contract-first-taskboard",
+        "name": "@appport/transport-http",
+        "from": "1.1.7",
+        "to": "1.1.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/contract-first-taskboard",
+        "name": "@appport/transport-websocket",
+        "from": "1.0.11",
+        "to": "1.0.12"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/contract-first-taskboard",
+        "name": "@appport/transport-inprocess",
+        "from": "1.0.13",
+        "to": "1.0.15"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/documents",
+        "name": "@appport/sdk",
+        "from": "1.6.0",
+        "to": "1.8.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/documents",
+        "name": "@appport/authorization",
+        "from": "1.1.0",
+        "to": "1.1.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/documents",
+        "name": "@appport/client",
+        "from": "1.1.7",
+        "to": "1.1.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/documents",
+        "name": "@appport/core",
+        "from": "1.7.0",
+        "to": "1.7.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/documents",
+        "name": "@appport/protocol",
+        "from": "1.4.1",
+        "to": "1.5.0"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/documents",
+        "name": "@appport/schema",
+        "from": "1.1.5",
+        "to": "1.1.6"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/documents",
+        "name": "@appport/server",
+        "from": "1.3.0",
+        "to": "1.3.2"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/documents",
+        "name": "@appport/transport-electron",
+        "from": "1.0.13",
+        "to": "1.0.15"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/documents",
+        "name": "@appport/transport-http",
+        "from": "1.1.7",
+        "to": "1.1.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/documents",
+        "name": "@appport/transport-inprocess",
+        "from": "1.0.13",
+        "to": "1.0.15"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/documents",
+        "name": "@appport/transport-tauri",
+        "from": "1.0.11",
+        "to": "1.0.12"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/documents",
+        "name": "@appport/transport-websocket",
+        "from": "1.0.11",
+        "to": "1.0.12"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/materialization-reference",
+        "name": "@appport/sdk",
+        "from": "1.6.0",
+        "to": "1.8.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/todos",
+        "name": "@appport/sdk",
+        "from": "1.6.0",
+        "to": "1.8.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/world",
+        "name": "@appport/authorization",
+        "from": "1.1.0",
+        "to": "1.1.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/world",
+        "name": "@appport/core",
+        "from": "1.7.0",
+        "to": "1.7.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/world",
+        "name": "@appport/protocol",
+        "from": "1.4.1",
+        "to": "1.5.0"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/world",
+        "name": "@appport/schema",
+        "from": "1.1.5",
+        "to": "1.1.6"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/world",
+        "name": "@appport/server",
+        "from": "1.3.0",
+        "to": "1.3.2"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/world",
+        "name": "@appport/client",
+        "from": "1.1.7",
+        "to": "1.1.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/world",
+        "name": "@appport/transport-http",
+        "from": "1.1.7",
+        "to": "1.1.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "examples/world",
+        "name": "@appport/transport-websocket",
+        "from": "1.0.11",
+        "to": "1.0.12"
+      },
+      {
+        "project": "appboundry",
+        "root": "integrations/feltdb",
+        "name": "@appport/core",
+        "from": "1.7.0",
+        "to": "1.7.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "integrations/feltdb",
+        "name": "@appport/protocol",
+        "from": "1.4.1",
+        "to": "1.5.0"
+      },
+      {
+        "project": "appboundry",
+        "root": "integrations/feltdb",
+        "name": "@appport/schema",
+        "from": "1.1.5",
+        "to": "1.1.6"
+      },
+      {
+        "project": "appboundry",
+        "root": "integrations/feltdb",
+        "name": "@appport/authorization",
+        "from": "1.1.0",
+        "to": "1.1.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/appboundry-host",
+        "name": "@appport/authorization",
+        "from": "1.1.0",
+        "to": "1.1.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/appboundry-host",
+        "name": "@appport/core",
+        "from": "1.7.0",
+        "to": "1.7.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/appboundry-host",
+        "name": "@appport/mcp",
+        "from": "1.3.7",
+        "to": "1.3.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/appboundry-host",
+        "name": "@appport/protocol",
+        "from": "1.4.1",
+        "to": "1.5.0"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/appboundry-host",
+        "name": "@appport/schema",
+        "from": "1.1.5",
+        "to": "1.1.6"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/appboundry-host",
+        "name": "@appport/server",
+        "from": "1.3.0",
+        "to": "1.3.2"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/appboundry-host",
+        "name": "@appport/services",
+        "from": "0.15.0",
+        "to": "0.16.2"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/appboundry-runtime",
+        "name": "@appport/core",
+        "from": "1.7.0",
+        "to": "1.7.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/appboundry-runtime",
+        "name": "@appport/protocol",
+        "from": "1.4.1",
+        "to": "1.5.0"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/appboundry-runtime",
+        "name": "@appport/schema",
+        "from": "1.1.5",
+        "to": "1.1.6"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/appboundry-runtime",
+        "name": "@appport/sdk",
+        "from": "1.6.0",
+        "to": "1.8.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/appboundry",
+        "name": "@appport/core",
+        "from": "1.7.0",
+        "to": "1.7.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/appboundry",
+        "name": "@appport/sdk",
+        "from": "1.6.0",
+        "to": "1.8.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/cli",
+        "name": "@appport/sdk",
+        "from": "1.6.0",
+        "to": "1.8.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/cli",
+        "name": "@appport/core",
+        "from": "1.7.0",
+        "to": "1.7.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/cli",
+        "name": "@appport/protocol",
+        "from": "1.4.1",
+        "to": "1.5.0"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/cli",
+        "name": "@appport/server",
+        "from": "1.3.0",
+        "to": "1.3.2"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/cli",
+        "name": "@appport/client",
+        "from": "1.1.7",
+        "to": "1.1.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/cli",
+        "name": "@appport/mobile",
+        "from": "1.0.11",
+        "to": "1.0.12"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/cli",
+        "name": "@appport/schema",
+        "from": "1.1.5",
+        "to": "1.1.6"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/cli",
+        "name": "@appport/generators",
+        "from": "1.0.9",
+        "to": "1.0.10"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/cli",
+        "name": "@appport/transport-inprocess",
+        "from": "1.0.13",
+        "to": "1.0.15"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/cli",
+        "name": "@appport/transport-http",
+        "from": "1.1.7",
+        "to": "1.1.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/cli",
+        "name": "@appport/transport-websocket",
+        "from": "1.0.11",
+        "to": "1.0.12"
+      },
+      {
+        "project": "appboundry",
+        "root": "packages/cli",
+        "name": "@appport/mcp",
+        "from": "1.3.7",
+        "to": "1.3.8"
+      },
+      {
+        "project": "appboundry",
+        "root": "studio",
+        "name": "@appport/protocol",
+        "from": "1.4.1",
+        "to": "1.5.0"
+      },
+      {
+        "project": "appboundry",
+        "root": "studio",
+        "name": "@appport/core",
+        "from": "1.7.0",
+        "to": "1.7.1"
+      },
+      {
+        "project": "appboundry",
+        "root": "studio",
+        "name": "@appport/sdk",
+        "from": "1.6.0",
+        "to": "1.8.1"
       },
       {
         "project": "feltkit",
-        "root": "examples/teams",
-        "name": "@types/react"
+        "root": "packages/sdk",
+        "name": "create-feltkit",
+        "from": "0.3.22",
+        "to": "0.3.25"
       },
       {
         "project": "feltkit",
-        "root": "examples/teams",
-        "name": "@types/react-dom"
+        "root": "packages/sdk",
+        "name": "@stack-ui/core",
+        "from": "0.7.0",
+        "to": "0.8.1"
       },
       {
         "project": "feltkit",
-        "root": "examples/teams",
-        "name": "@vitejs/plugin-react"
+        "root": "packages/sdk",
+        "name": "@stack-ui/react",
+        "from": "0.7.0",
+        "to": "0.8.1"
       },
       {
         "project": "feltkit",
-        "root": "examples/teams",
-        "name": "typescript"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/teams",
-        "name": "vite"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/create/template-foundation",
-        "name": "react"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/create/template-foundation",
-        "name": "react-dom"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/create/template-foundation",
-        "name": "@types/node"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/create/template-foundation",
-        "name": "@types/react"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/create/template-foundation",
-        "name": "@types/react-dom"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/create/template-foundation",
-        "name": "@vitejs/plugin-react"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/create/template-foundation",
-        "name": "typescript"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/create/template-foundation",
-        "name": "vite"
-      }
-    ],
-    "statusChanges": [],
-    "newEvidence": [
-      {
-        "project": "feltkit",
-        "commit": "15106a2886f07b003cbaeeaded137edfce6fe83c",
-        "passed": false
+        "root": "packages/sdk",
+        "name": "@stack-ui/tokens",
+        "from": "0.7.0",
+        "to": "0.8.1"
       },
       {
         "project": "appport-services",
-        "commit": "808b5c1db555a35a1286eb03a0dfa6860f3d83f6",
+        "root": ".",
+        "name": "express",
+        "from": "4.22.2",
+        "to": "4.22.3"
+      },
+      {
+        "project": "appport-services",
+        "root": ".",
+        "name": "express-rate-limit",
+        "from": "8.7.0",
+        "to": "8.7.4"
+      },
+      {
+        "project": "appport-services",
+        "root": ".",
+        "name": "@appport/sdk",
+        "from": "1.7.0",
+        "to": "1.8.1"
+      },
+      {
+        "project": "appport-services",
+        "root": ".",
+        "name": "axe-core",
+        "from": "4.10.3",
+        "to": "4.14.0"
+      },
+      {
+        "project": "appport-services",
+        "root": ".",
+        "name": "playwright-core",
+        "from": "1.56.1",
+        "to": "1.65.0"
+      }
+    ],
+    "newDependencies": [],
+    "removedDependencies": [],
+    "statusChanges": [
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/authorization",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/client",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/core",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/generators",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/mcp",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/mobile",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/protocol",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/schema",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/sdk",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/server",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/services",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-electron",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-http",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-inprocess",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-tauri",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-websocket",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "feltkit|package-lock.json|npm:@appport/sdk",
+        "from": "updated-unverified",
+        "to": "updated-verified"
+      },
+      {
+        "key": "feltkit|package-lock.json|npm:@appport/server",
+        "from": "updated-unverified",
+        "to": "updated-verified"
+      },
+      {
+        "key": "feltkit|package-lock.json|npm:@appport/testing",
+        "from": "updated-unverified",
+        "to": "updated-verified"
+      }
+    ],
+    "newEvidence": [
+      {
+        "project": "feltkit",
+        "commit": "8826fdf5c73105feed96089331a1e13c8af1a3b4",
+        "passed": true
+      },
+      {
+        "project": "appport-services",
+        "commit": "a549377035f938357174289673998ea71a68892b",
         "passed": false
       },
       {
         "project": "appboundry",
-        "commit": "5baeae7e5b95e8916faa26bc911060c7042ec02d",
+        "commit": "6c82f1de7fe876760e8024832139aa6deaf67b4f",
         "passed": false
       },
       {
         "project": "appport",
-        "commit": "8ca13e114881afacebe3d332591fc78703217d24",
-        "passed": true
+        "commit": "e91fd399400ad520db84a38e639547cfda86dc63",
+        "passed": false
       }
     ],
     "ciResultChanges": [
       {
-        "id": "rkendel1/appboundry:.github/workflows/appboundry-publish.yml#publish/build",
-        "from": null,
-        "to": "unknown"
-      },
-      {
-        "id": "rkendel1/appboundry:.github/workflows/appboundry-publish.yml#publish/release-metadata-registry-agreement-and-vendored-provenance",
-        "from": null,
-        "to": "unknown"
-      },
-      {
-        "id": "rkendel1/appboundry:.github/workflows/appboundry-publish.yml#publish/publish",
-        "from": null,
-        "to": "unknown"
-      },
-      {
-        "id": "rkendel1/appboundry:.github/workflows/feltkit-deploy-acceptance.yml#feltkit-deploy-acceptance/build-appboundry",
-        "from": null,
-        "to": "unknown"
-      },
-      {
-        "id": "rkendel1/appboundry:.github/workflows/feltkit-deploy-acceptance.yml#feltkit-deploy-acceptance/build-feltkit",
-        "from": null,
-        "to": "unknown"
-      },
-      {
-        "id": "rkendel1/appboundry:.github/workflows/host-build-compatibility.yml#documented-host-build/build",
-        "from": null,
-        "to": "unknown"
-      },
-      {
-        "id": "rkendel1/appboundry:.github/workflows/host-build-compatibility.yml#documented-host-build/build-and-verify-the-image-the-documented-way",
-        "from": null,
-        "to": "unknown"
-      },
-      {
-        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/unit-tests-sdk-incl-browser-tests-conformance-suites-create-",
-        "from": null,
-        "to": "failing"
-      },
-      {
-        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
+        "id": "rkendel1/appport:.github/workflows/ci.yml#build/run-pnpm-install-frozen-lockfile",
         "from": "passing",
         "to": "skipped"
       },
       {
-        "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#hostile-node/run-npm-ci",
+        "id": "rkendel1/appport:.github/workflows/ci.yml#build/audit-the-npm-tarballs",
         "from": "passing",
-        "to": "in-progress"
+        "to": "skipped"
+      },
+      {
+        "id": "rkendel1/appport:.github/workflows/ci.yml#build/install-the-tarballs-into-a-clean-project-and-run-the-consum",
+        "from": "passing",
+        "to": "skipped"
+      },
+      {
+        "id": "rkendel1/authboundry:.github/workflows/architecture-invariants.yml#verify/run-npm-ci-ignore-scripts",
+        "from": "failing",
+        "to": "unknown"
+      },
+      {
+        "id": "rkendel1/authboundry:.github/workflows/portal.yml#portal/run-npm-ci-ignore-scripts",
+        "from": "failing",
+        "to": "unknown"
+      },
+      {
+        "id": "rkendel1/authboundry:.github/workflows/portal.yml#portal/run-npm-ci",
+        "from": "skipped",
+        "to": "unknown"
+      },
+      {
+        "id": "rkendel1/feltkit:.github/workflows/ci.yml#isolation/install",
+        "from": null,
+        "to": "passing"
+      },
+      {
+        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/unit-tests-sdk-incl-browser-tests-conformance-suites-create-",
+        "from": "failing",
+        "to": "passing"
+      },
+      {
+        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
+        "from": "skipped",
+        "to": "passing"
+      },
+      {
+        "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#hostile-node/run-npm-ci",
+        "from": "in-progress",
+        "to": "passing"
       },
       {
         "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#hostile-node/run-npm-run-build-workspace-feltdb-core",
-        "from": "passing",
-        "to": "in-progress"
+        "from": "in-progress",
+        "to": "passing"
       },
       {
         "id": "rkendel1/resolver:.github/workflows/publish.yml#publish/run-npm-ci",
-        "from": null,
-        "to": "unknown"
+        "from": "unknown",
+        "to": "passing"
       },
       {
         "id": "rkendel1/resolver:.github/workflows/publish.yml#publish/publish",
-        "from": null,
-        "to": "unknown"
+        "from": "unknown",
+        "to": "skipped"
       }
     ]
   }

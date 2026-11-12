@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T07:26:45.077Z",
+  "generatedAt": "2026-11-12T07:27:05.863Z",
   "releases": [
     {
       "package": "appport-core",
@@ -91,8 +91,14 @@
       "package": "appport-sdk",
       "name": "@appport/sdk",
       "registry": "npm",
-      "latestVersion": "1.8.0",
+      "latestVersion": "1.8.1",
       "versions": [
+        {
+          "version": "1.8.1",
+          "publishedAt": "2026-11-11T17:58:25.029Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "1.8.0",
           "publishedAt": "2026-11-10T13:51:23.604Z",
@@ -234,12 +240,6 @@
         {
           "version": "1.1.13",
           "publishedAt": "2026-09-08T17:41:34.147Z",
-          "deprecated": null,
-          "prerelease": false
-        },
-        {
-          "version": "1.1.12",
-          "publishedAt": "2026-09-08T17:37:04.299Z",
           "deprecated": null,
           "prerelease": false
         }
@@ -483,8 +483,14 @@
       "package": "appport-server",
       "name": "@appport/server",
       "registry": "npm",
-      "latestVersion": "1.3.1",
+      "latestVersion": "1.3.2",
       "versions": [
+        {
+          "version": "1.3.2",
+          "publishedAt": "2026-11-11T17:59:46.171Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "1.3.1",
           "publishedAt": "2026-11-09T19:17:01.826Z",
@@ -667,8 +673,14 @@
       "package": "appport-testing",
       "name": "@appport/testing",
       "registry": "npm",
-      "latestVersion": "1.2.4",
+      "latestVersion": "1.2.5",
       "versions": [
+        {
+          "version": "1.2.5",
+          "publishedAt": "2026-11-11T17:58:52.861Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "1.2.4",
           "publishedAt": "2026-11-09T19:18:08.643Z",
@@ -1301,8 +1313,14 @@
       "package": "appport-transport-inprocess",
       "name": "@appport/transport-inprocess",
       "registry": "npm",
-      "latestVersion": "1.0.14",
+      "latestVersion": "1.0.15",
       "versions": [
+        {
+          "version": "1.0.15",
+          "publishedAt": "2026-11-11T17:59:17.511Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "1.0.14",
           "publishedAt": "2026-11-09T19:17:09.049Z",
@@ -1485,8 +1503,14 @@
       "package": "appport-transport-electron",
       "name": "@appport/transport-electron",
       "registry": "npm",
-      "latestVersion": "1.0.14",
+      "latestVersion": "1.0.15",
       "versions": [
+        {
+          "version": "1.0.15",
+          "publishedAt": "2026-11-11T17:58:49.490Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "1.0.14",
           "publishedAt": "2026-11-09T19:18:01.266Z",
@@ -1583,8 +1607,14 @@
       "package": "appport-appboundry",
       "name": "@appport/appboundry",
       "registry": "npm",
-      "latestVersion": "1.11.0",
+      "latestVersion": "1.11.1",
       "versions": [
+        {
+          "version": "1.11.1",
+          "publishedAt": "2026-11-11T18:29:21.816Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "1.11.0",
           "publishedAt": "2026-11-05T19:26:28.773Z",
@@ -1723,8 +1753,14 @@
       "package": "appport-cli",
       "name": "appport",
       "registry": "npm",
-      "latestVersion": "1.4.1",
+      "latestVersion": "1.4.2",
       "versions": [
+        {
+          "version": "1.4.2",
+          "publishedAt": "2026-11-11T18:24:21.336Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "1.4.1",
           "publishedAt": "2026-11-05T19:21:55.086Z",
@@ -1868,12 +1904,6 @@
           "publishedAt": "2026-09-04T20:23:06.170Z",
           "deprecated": null,
           "prerelease": false
-        },
-        {
-          "version": "1.1.1",
-          "publishedAt": "2026-09-04T19:11:20.412Z",
-          "deprecated": null,
-          "prerelease": false
         }
       ]
     },
@@ -1881,8 +1911,20 @@
       "package": "appport-services",
       "name": "@appport/services",
       "registry": "npm",
-      "latestVersion": "0.16.0",
+      "latestVersion": "0.16.2",
       "versions": [
+        {
+          "version": "0.16.2",
+          "publishedAt": "2026-11-11T18:09:42.944Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.16.1",
+          "publishedAt": "2026-11-11T14:16:14.840Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.16.0",
           "publishedAt": "2026-11-09T19:31:17.936Z",
@@ -2020,18 +2062,6 @@
           "publishedAt": "2026-09-21T15:39:35.962Z",
           "deprecated": null,
           "prerelease": false
-        },
-        {
-          "version": "0.4.1",
-          "publishedAt": "2026-09-21T13:37:46.960Z",
-          "deprecated": null,
-          "prerelease": false
-        },
-        {
-          "version": "0.4.0",
-          "publishedAt": "2026-09-18T13:03:31.428Z",
-          "deprecated": null,
-          "prerelease": false
         }
       ]
     },
@@ -2039,8 +2069,20 @@
       "package": "appport-runtime",
       "name": "@appport/runtime",
       "registry": "npm",
-      "latestVersion": "0.15.0",
+      "latestVersion": "0.15.2",
       "versions": [
+        {
+          "version": "0.15.2",
+          "publishedAt": "2026-11-11T18:10:48.701Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.15.1",
+          "publishedAt": "2026-11-11T14:15:55.032Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.15.0",
           "publishedAt": "2026-11-09T19:30:30.768Z",
@@ -2178,18 +2220,6 @@
           "publishedAt": "2026-09-17T18:35:01.487Z",
           "deprecated": null,
           "prerelease": false
-        },
-        {
-          "version": "0.3.0",
-          "publishedAt": "2026-09-11T20:13:03.453Z",
-          "deprecated": null,
-          "prerelease": false
-        },
-        {
-          "version": "0.2.0",
-          "publishedAt": "2026-09-11T19:36:15.028Z",
-          "deprecated": null,
-          "prerelease": false
         }
       ]
     },
@@ -2197,8 +2227,20 @@
       "package": "create-appport",
       "name": "create-appport",
       "registry": "npm",
-      "latestVersion": "0.1.25",
+      "latestVersion": "0.1.27",
       "versions": [
+        {
+          "version": "0.1.27",
+          "publishedAt": "2026-11-11T18:11:18.333Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.1.26",
+          "publishedAt": "2026-11-11T14:15:58.018Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.1.25",
           "publishedAt": "2026-11-09T19:33:23.694Z",
@@ -2336,12 +2378,6 @@
           "publishedAt": "2026-09-17T18:34:29.816Z",
           "deprecated": null,
           "prerelease": false
-        },
-        {
-          "version": "0.1.0",
-          "publishedAt": "2026-09-11T20:13:05.666Z",
-          "deprecated": null,
-          "prerelease": false
         }
       ]
     },
@@ -2349,8 +2385,14 @@
       "package": "appport-resolver",
       "name": "@appport/resolver",
       "registry": "npm",
-      "latestVersion": "0.3.2",
+      "latestVersion": "0.3.3",
       "versions": [
+        {
+          "version": "0.3.3",
+          "publishedAt": "2026-11-11T14:05:07.502Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.3.2",
           "publishedAt": "2026-11-10T13:53:18.690Z",
@@ -2393,8 +2435,14 @@
       "package": "appport-resolver-client",
       "name": "@appport/resolver-client",
       "registry": "npm",
-      "latestVersion": "0.2.3",
+      "latestVersion": "0.2.4",
       "versions": [
+        {
+          "version": "0.2.4",
+          "publishedAt": "2026-11-11T14:05:05.749Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.2.3",
           "publishedAt": "2026-11-10T13:52:43.155Z",
@@ -2437,8 +2485,14 @@
       "package": "appport-resolver-core",
       "name": "@appport/resolver-core",
       "registry": "npm",
-      "latestVersion": "0.1.0",
+      "latestVersion": "0.1.1",
       "versions": [
+        {
+          "version": "0.1.1",
+          "publishedAt": "2026-11-11T14:05:01.787Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.1.0",
           "publishedAt": "2026-11-03T13:30:35.679Z",
@@ -3273,8 +3327,26 @@
       "package": "feltdb-feltkit",
       "name": "@feltdb/feltkit",
       "registry": "npm",
-      "latestVersion": "0.3.22",
+      "latestVersion": "0.3.25",
       "versions": [
+        {
+          "version": "0.3.25",
+          "publishedAt": "2026-11-11T20:59:15.392Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.3.24",
+          "publishedAt": "2026-11-11T18:55:27.584Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.3.23",
+          "publishedAt": "2026-11-11T15:05:27.342Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.3.22",
           "publishedAt": "2026-11-10T20:57:32.462Z",
@@ -3406,24 +3478,6 @@
           "publishedAt": "2026-10-28T17:43:34.126Z",
           "deprecated": null,
           "prerelease": false
-        },
-        {
-          "version": "0.3.0",
-          "publishedAt": "2026-10-28T16:40:10.351Z",
-          "deprecated": null,
-          "prerelease": false
-        },
-        {
-          "version": "0.2.0",
-          "publishedAt": "2026-10-28T15:12:23.758Z",
-          "deprecated": null,
-          "prerelease": false
-        },
-        {
-          "version": "0.1.1",
-          "publishedAt": "2026-10-27T21:00:15.139Z",
-          "deprecated": null,
-          "prerelease": false
         }
       ]
     },
@@ -3431,8 +3485,26 @@
       "package": "create-feltkit",
       "name": "create-feltkit",
       "registry": "npm",
-      "latestVersion": "0.3.22",
+      "latestVersion": "0.3.25",
       "versions": [
+        {
+          "version": "0.3.25",
+          "publishedAt": "2026-11-11T20:54:35.707Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.3.24",
+          "publishedAt": "2026-11-11T18:53:58.144Z",
+          "deprecated": null,
+          "prerelease": false
+        },
+        {
+          "version": "0.3.23",
+          "publishedAt": "2026-11-11T15:02:50.434Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.3.22",
           "publishedAt": "2026-11-10T20:56:25.967Z",
@@ -3562,24 +3634,6 @@
         {
           "version": "0.3.1",
           "publishedAt": "2026-10-28T17:43:29.629Z",
-          "deprecated": null,
-          "prerelease": false
-        },
-        {
-          "version": "0.3.0",
-          "publishedAt": "2026-10-28T16:41:57.177Z",
-          "deprecated": null,
-          "prerelease": false
-        },
-        {
-          "version": "0.2.0",
-          "publishedAt": "2026-10-28T15:12:48.185Z",
-          "deprecated": null,
-          "prerelease": false
-        },
-        {
-          "version": "0.1.1",
-          "publishedAt": "2026-10-27T21:00:10.622Z",
           "deprecated": null,
           "prerelease": false
         }
@@ -4774,6 +4828,12 @@
       "latestVersion": "7.0.2",
       "versions": [
         {
+          "version": "7.1.0-dev.20261111.1",
+          "publishedAt": "2026-11-11T08:45:28.760Z",
+          "deprecated": null,
+          "prerelease": true
+        },
+        {
           "version": "7.1.0-dev.20261110.1",
           "publishedAt": "2026-11-10T08:38:28.318Z",
           "deprecated": null,
@@ -4914,12 +4974,6 @@
         {
           "version": "7.1.0-dev.20261018.1",
           "publishedAt": "2026-10-18T08:14:30.499Z",
-          "deprecated": null,
-          "prerelease": true
-        },
-        {
-          "version": "7.1.0-dev.20261017.1",
-          "publishedAt": "2026-10-17T08:04:49.190Z",
           "deprecated": null,
           "prerelease": true
         }
