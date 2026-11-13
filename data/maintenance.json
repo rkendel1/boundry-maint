@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T07:27:05.863Z",
+  "generatedAt": "2026-11-13T07:26:38.001Z",
   "items": [
     {
       "key": "flow-db|crates/feltdb-public-api-check/Cargo.lock|crates:tokio",
@@ -66,6 +66,104 @@
           "status": "update-required",
           "version": "0.16.0",
           "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/41858685696"
+        }
+      ]
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@appport/services",
+      "project": "appboundry",
+      "root": "pnpm-lock.yaml",
+      "roots": [
+        "packages/appboundry-host"
+      ],
+      "package": "appport-services",
+      "name": "@appport/services",
+      "registry": "npm",
+      "ownership": "owned",
+      "currentVersion": "0.16.3",
+      "targetVersion": "0.17.0",
+      "declaredVersion": "0.16.3",
+      "difference": "minor",
+      "latestSatisfiesDeclared": false,
+      "status": "update-required",
+      "priority": 3,
+      "targetPublishedAt": "2026-11-12T17:01:14.673Z",
+      "openedAt": "2026-11-13T07:26:38.001Z",
+      "updatedAt": "2026-11-13T07:26:38.001Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/appboundry:.github/workflows/appboundry-publish.yml#publish/release-metadata-registry-agreement-and-vendored-provenance",
+            "name": "Release metadata, registry agreement, and vendored provenance",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          },
+          {
+            "id": "rkendel1/appboundry:.github/workflows/appboundry-publish.yml#publish/publish",
+            "name": "Publish",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          },
+          {
+            "id": "rkendel1/appboundry:.github/workflows/appboundry-release.yml#appboundry-release/release-metadata-version-not-behind-npm-not-changed-under-a-",
+            "name": "Release metadata (version not behind npm, not changed under a published version; dependencies resolve on npm)",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          },
+          {
+            "id": "rkendel1/appboundry:.github/workflows/host-build-compatibility.yml#documented-host-build/build-and-verify-the-image-the-documented-way",
+            "name": "Build and verify the image the documented way",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          },
+          {
+            "id": "rkendel1/appboundry:scripts/publish-packages.mjs",
+            "name": "publish-packages.mjs",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          },
+          {
+            "id": "rkendel1/appboundry:scripts/release-check.mjs",
+            "name": "release-check.mjs",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": null
+          }
+        ]
+      },
+      "evidence": [],
+      "history": [
+        {
+          "at": "2026-11-10T07:27:01.195Z",
+          "status": "update-required",
+          "version": "0.15.0",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
+        },
+        {
+          "at": "2026-11-12T07:27:05.863Z",
+          "status": "updated-unverified",
+          "version": "0.16.2",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/43175330083"
+        },
+        {
+          "at": "2026-11-13T07:26:38.001Z",
+          "status": "update-required",
+          "version": "0.16.3",
+          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/43385774060"
         }
       ]
     },
@@ -426,14 +524,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.4.5",
-      "targetVersion": "0.16.2",
+      "targetVersion": "0.17.0",
       "declaredVersion": "0.4.5",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-11T18:09:42.944Z",
+      "targetPublishedAt": "2026-11-12T17:01:14.673Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -460,14 +558,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.4.5",
-      "targetVersion": "0.16.2",
+      "targetVersion": "0.17.0",
       "declaredVersion": "0.4.5",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-11T18:09:42.944Z",
+      "targetPublishedAt": "2026-11-12T17:01:14.673Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -494,14 +592,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.4.5",
-      "targetVersion": "0.16.2",
+      "targetVersion": "0.17.0",
       "declaredVersion": "0.4.5",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-11T18:09:42.944Z",
+      "targetPublishedAt": "2026-11-12T17:01:14.673Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -840,14 +938,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.4.6",
-      "targetVersion": "0.15.2",
+      "targetVersion": "0.16.0",
       "declaredVersion": "0.4.6",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-11T18:10:48.701Z",
+      "targetPublishedAt": "2026-11-12T16:58:45.311Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -942,7 +1040,7 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.4.11",
-      "targetVersion": "0.16.2",
+      "targetVersion": "0.17.0",
       "declaredVersion": "0.4.11",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
@@ -969,7 +1067,7 @@
           }
         ]
       },
-      "targetPublishedAt": "2026-11-11T18:09:42.944Z",
+      "targetPublishedAt": "2026-11-12T17:01:14.673Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -1305,7 +1403,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063288"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816722"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-independently-versioned-packages",
@@ -1313,7 +1411,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/test-release-integrity-source-branch-tags-build-identity-reg",
@@ -1321,7 +1419,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/build-all-publishable-packages",
@@ -1329,7 +1427,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-the-public-api-contract-and-documented-sdk-examples",
@@ -1337,7 +1435,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/package-the-feltdb-crate-and-verify-its-source-provenance",
@@ -1345,7 +1443,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-exact-package-tarballs-in-a-clean-consumer",
@@ -1353,7 +1451,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#package-manager-matrix/certify-the-upgrade-lifecycle",
@@ -1361,23 +1459,23 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#attest/produce-machine-readable-ci-result",
             "name": "Produce machine-readable CI result",
-            "result": "passing",
+            "result": "skipped",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#attest/verify-every-attested-npm-package-records-this-commit-as-its",
             "name": "Verify every attested npm package records this commit as its clean source",
-            "result": "passing",
+            "result": "skipped",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#hostile-node/run-npm-run-build-workspace-feltdb-core",
@@ -1385,7 +1483,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43154405134"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43365124503"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1393,7 +1491,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43154405134"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43365124503"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1479,7 +1577,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063288"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816722"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-independently-versioned-packages",
@@ -1487,7 +1585,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/test-release-integrity-source-branch-tags-build-identity-reg",
@@ -1495,7 +1593,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/build-all-publishable-packages",
@@ -1503,7 +1601,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-the-public-api-contract-and-documented-sdk-examples",
@@ -1511,7 +1609,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/package-the-feltdb-crate-and-verify-its-source-provenance",
@@ -1519,7 +1617,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-exact-package-tarballs-in-a-clean-consumer",
@@ -1527,7 +1625,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#package-manager-matrix/certify-the-upgrade-lifecycle",
@@ -1535,23 +1633,23 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#attest/produce-machine-readable-ci-result",
             "name": "Produce machine-readable CI result",
-            "result": "passing",
+            "result": "skipped",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#attest/verify-every-attested-npm-package-records-this-commit-as-its",
             "name": "Verify every attested npm package records this commit as its clean source",
-            "result": "passing",
+            "result": "skipped",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#hostile-node/run-npm-run-build-workspace-feltdb-core",
@@ -1559,7 +1657,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43154405134"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43365124503"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1567,7 +1665,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43154405134"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43365124503"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1653,7 +1751,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/test-release-integrity-source-branch-tags-build-identity-reg",
@@ -1661,7 +1759,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/build-all-publishable-packages",
@@ -1669,7 +1767,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/package-the-feltdb-crate-and-verify-its-source-provenance",
@@ -1677,7 +1775,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-exact-package-tarballs-in-a-clean-consumer",
@@ -1685,23 +1783,23 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#attest/produce-machine-readable-ci-result",
             "name": "Produce machine-readable CI result",
-            "result": "passing",
+            "result": "skipped",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/ci.yml#attest/verify-every-attested-npm-package-records-this-commit-as-its",
             "name": "Verify every attested npm package records this commit as its clean source",
-            "result": "passing",
+            "result": "skipped",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/42276063506"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43310816604"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#hostile-node/run-npm-run-build-workspace-feltdb-core",
@@ -1709,7 +1807,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43154405134"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43365124503"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1717,7 +1815,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43154405134"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43365124503"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1825,14 +1923,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "1.1.1",
-      "targetVersion": "1.11.1",
+      "targetVersion": "1.12.0",
       "declaredVersion": "1.1.1",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-11T18:29:21.816Z",
+      "targetPublishedAt": "2026-11-12T14:44:17.124Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -1893,14 +1991,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.4.6",
-      "targetVersion": "0.16.2",
+      "targetVersion": "0.17.0",
       "declaredVersion": "0.4.6",
       "difference": "minor",
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
       "ci": null,
-      "targetPublishedAt": "2026-11-11T18:09:42.944Z",
+      "targetPublishedAt": "2026-11-12T17:01:14.673Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -2071,14 +2169,14 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.3.2",
-      "targetVersion": "0.3.25",
+      "targetVersion": "0.3.27",
       "declaredVersion": "^0.3.2",
       "difference": "patch",
       "latestSatisfiesDeclared": true,
       "status": "update-required",
       "priority": 4,
       "ci": null,
-      "targetPublishedAt": "2026-11-11T20:59:15.392Z",
+      "targetPublishedAt": "2026-11-12T19:32:31.042Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
       "closedAt": null,
@@ -2332,7 +2430,7 @@
       "registry": "npm",
       "ownership": "owned",
       "currentVersion": "0.3.14",
-      "targetVersion": "0.3.25",
+      "targetVersion": "0.3.27",
       "declaredVersion": "^0.3.14",
       "difference": "patch",
       "latestSatisfiesDeclared": true,
@@ -2351,7 +2449,7 @@
           }
         ]
       },
-      "targetPublishedAt": "2026-11-11T20:59:15.392Z",
+      "targetPublishedAt": "2026-11-12T19:32:31.042Z",
       "openedAt": "2026-11-05T07:27:04.815Z",
       "updatedAt": "2026-11-05T07:27:04.815Z",
       "closedAt": null,
@@ -2469,7 +2567,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/43077629561"
+            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/43309569142"
           }
         ]
       },
@@ -2534,7 +2632,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/43077629561"
+            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/43309569142"
           },
           {
             "id": "rkendel1/appboundry:scripts/unpublish-packages.mjs",
@@ -2780,7 +2878,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/43077629561"
+            "runUrl": "https://github.com/rkendel1/appboundry/actions/runs/43309569142"
           }
         ]
       },
@@ -2915,98 +3013,6 @@
           "at": "2026-11-12T07:27:05.863Z",
           "status": "updated-unverified",
           "version": "1.3.2",
-          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/43175330083"
-        }
-      ]
-    },
-    {
-      "key": "appboundry|pnpm-lock.yaml|npm:@appport/services",
-      "project": "appboundry",
-      "root": "pnpm-lock.yaml",
-      "roots": [
-        "packages/appboundry-host"
-      ],
-      "package": "appport-services",
-      "name": "@appport/services",
-      "registry": "npm",
-      "ownership": "owned",
-      "currentVersion": "0.16.2",
-      "targetVersion": "0.16.0",
-      "declaredVersion": "0.16.2",
-      "difference": "minor",
-      "latestSatisfiesDeclared": false,
-      "status": "updated-unverified",
-      "priority": 9,
-      "ci": {
-        "blockingFailure": false,
-        "checks": [
-          {
-            "id": "rkendel1/appboundry:.github/workflows/appboundry-publish.yml#publish/release-metadata-registry-agreement-and-vendored-provenance",
-            "name": "Release metadata, registry agreement, and vendored provenance",
-            "result": "unknown",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": null
-          },
-          {
-            "id": "rkendel1/appboundry:.github/workflows/appboundry-publish.yml#publish/publish",
-            "name": "Publish",
-            "result": "unknown",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": null
-          },
-          {
-            "id": "rkendel1/appboundry:.github/workflows/appboundry-release.yml#appboundry-release/release-metadata-version-not-behind-npm-not-changed-under-a-",
-            "name": "Release metadata (version not behind npm, not changed under a published version; dependencies resolve on npm)",
-            "result": "unknown",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": null
-          },
-          {
-            "id": "rkendel1/appboundry:.github/workflows/host-build-compatibility.yml#documented-host-build/build-and-verify-the-image-the-documented-way",
-            "name": "Build and verify the image the documented way",
-            "result": "unknown",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": null
-          },
-          {
-            "id": "rkendel1/appboundry:scripts/publish-packages.mjs",
-            "name": "publish-packages.mjs",
-            "result": "unknown",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": null
-          },
-          {
-            "id": "rkendel1/appboundry:scripts/release-check.mjs",
-            "name": "release-check.mjs",
-            "result": "unknown",
-            "enforcement": "unknown",
-            "requirement": null,
-            "runUrl": null
-          }
-        ]
-      },
-      "targetPublishedAt": "2026-11-09T19:31:17.936Z",
-      "openedAt": "2026-11-10T07:27:01.195Z",
-      "updatedAt": "2026-11-12T07:27:05.863Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
-      "evidence": [],
-      "history": [
-        {
-          "at": "2026-11-10T07:27:01.195Z",
-          "status": "update-required",
-          "version": "0.15.0",
-          "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/42775334534"
-        },
-        {
-          "at": "2026-11-12T07:27:05.863Z",
-          "status": "updated-unverified",
-          "version": "0.16.2",
           "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/43175330083"
         }
       ]
@@ -3305,7 +3311,7 @@
             "result": "passing",
             "enforcement": "fail",
             "requirement": "exact",
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43110721066"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43305730131"
           },
           {
             "id": "rkendel1/feltkit:.github/workflows/publish.yml#publish/publish",
@@ -3313,7 +3319,7 @@
             "result": "skipped",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43110721103"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43305729709"
           }
         ]
       },
@@ -3412,7 +3418,7 @@
             "result": "passing",
             "enforcement": "fail",
             "requirement": "exact",
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43110721066"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43305730131"
           }
         ]
       },

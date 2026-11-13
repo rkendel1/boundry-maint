@@ -130,6 +130,32 @@
         ".|npm:@appport/protocol": "1.5.0",
         ".|npm:@feltdb/core": "0.21.0"
       }
+    },
+    {
+      "project": "appport-services",
+      "repository": "rkendel1/appport-services",
+      "commit": "9f2ca53e46bf20b63638e1d7237fb7ea53df02ed",
+      "collectedAt": "2026-11-13T07:26:38.001Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/43385774060",
+      "passed": false,
+      "checks": {
+        "resolution": "fail",
+        "workflows": "pass"
+      },
+      "runs": [
+        {
+          "workflow": "ci.yml",
+          "runId": 43263482273,
+          "url": "https://github.com/rkendel1/appport-services/actions/runs/43263482273",
+          "status": "completed",
+          "conclusion": "success",
+          "headSha": "9f2ca53e46bf20b63638e1d7237fb7ea53df02ed"
+        }
+      ],
+      "resolved": {
+        ".|npm:@appport/protocol": "1.5.0",
+        ".|npm:@feltdb/core": "0.21.0"
+      }
     }
   ]
 }

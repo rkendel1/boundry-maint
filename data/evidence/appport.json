@@ -97,8 +97,8 @@
       "project": "appport",
       "repository": "rkendel1/appport",
       "commit": "e91fd399400ad520db84a38e639547cfda86dc63",
-      "collectedAt": "2026-11-12T07:27:05.863Z",
-      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/43175330083",
+      "collectedAt": "2026-11-13T07:26:38.001Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/43385774060",
       "passed": false,
       "checks": {
         "resolution": "pass",

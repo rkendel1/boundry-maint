@@ -247,6 +247,42 @@
         "packages/sdk|npm:@appport/testing": "1.2.5",
         "packages/sdk|npm:@feltdb/webllm": "0.21.0"
       }
+    },
+    {
+      "project": "feltkit",
+      "repository": "rkendel1/feltkit",
+      "commit": "91007ab1de4e62583c02e784a952fb552f971f96",
+      "collectedAt": "2026-11-13T07:26:38.001Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/43385774060",
+      "passed": false,
+      "checks": {
+        "resolution": "pass",
+        "workflows": "fail"
+      },
+      "runs": [
+        {
+          "workflow": "ci.yml",
+          "runId": 43305730131,
+          "url": "https://github.com/rkendel1/feltkit/actions/runs/43305730131",
+          "status": "completed",
+          "conclusion": "failure",
+          "headSha": "91007ab1de4e62583c02e784a952fb552f971f96"
+        }
+      ],
+      "resolved": {
+        "examples/managed|npm:@feltdb/core": "0.21.0",
+        "examples/tasks|npm:@feltdb/webllm": "0.21.0",
+        "packages/sdk|npm:@appport/authorization": "1.1.1",
+        "packages/sdk|npm:@appport/integration": "1.2.5",
+        "packages/sdk|npm:@appport/protocol": "1.5.0",
+        "packages/sdk|npm:@appport/resolver-client": "0.3.0",
+        "packages/sdk|npm:@appport/sdk": "1.8.1",
+        "packages/sdk|npm:@appport/server": "1.3.2",
+        "packages/sdk|npm:@appport/services": "0.17.0",
+        "packages/sdk|npm:@feltdb/core": "0.21.0",
+        "packages/sdk|npm:@appport/testing": "1.2.5",
+        "packages/sdk|npm:@feltdb/webllm": "0.21.0"
+      }
     }
   ]
 }

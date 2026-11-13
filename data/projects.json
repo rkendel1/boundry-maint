@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T07:27:05.863Z",
+  "generatedAt": "2026-11-13T07:26:38.001Z",
   "projects": [
     {
       "id": "feltkit",
@@ -25,18 +25,20 @@
         "typescript"
       ],
       "discoveredDependencyCount": 41,
-      "warnings": [],
+      "warnings": [
+        "packages/sdk/test/fixtures/tenant-platform/package.json: package-lock.json does not include this manifest (not a workspace member); resolved versions are unknown"
+      ],
       "verification": {
         "workflows": [
           "ci.yml"
         ],
-        "headVerified": true,
+        "headVerified": false,
         "lastVerifiedCommit": "8826fdf5c73105feed96089331a1e13c8af1a3b4",
         "lastVerifiedAt": "2026-11-12T07:27:05.863Z"
       },
       "branch": "main",
-      "commit": "8826fdf5c73105feed96089331a1e13c8af1a3b4",
-      "commitUrl": "https://github.com/rkendel1/feltkit/commit/8826fdf5c73105feed96089331a1e13c8af1a3b4",
+      "commit": "91007ab1de4e62583c02e784a952fb552f971f96",
+      "commitUrl": "https://github.com/rkendel1/feltkit/commit/91007ab1de4e62583c02e784a952fb552f971f96",
       "roots": [
         {
           "path": "examples/invoices",
@@ -81,6 +83,13 @@
           "name": "@feltdb/feltkit"
         },
         {
+          "path": "packages/sdk/test/fixtures/tenant-platform",
+          "ecosystem": "javascript",
+          "manifest": "packages/sdk/test/fixtures/tenant-platform/package.json",
+          "lockfile": "package-lock.json",
+          "name": "tenant-platform"
+        },
+        {
           "path": "packages/sdk/appboundry/engine",
           "ecosystem": "rust",
           "manifest": "packages/sdk/appboundry/engine/Cargo.toml",
@@ -90,8 +99,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-12T07:27:05.863Z",
-      "lastSuccessfulScan": "2026-11-12T07:27:05.863Z"
+      "lastScanned": "2026-11-13T07:26:38.001Z",
+      "lastSuccessfulScan": "2026-11-13T07:26:38.001Z"
     },
     {
       "id": "appport-services",
@@ -123,8 +132,8 @@
         "lastVerifiedAt": null
       },
       "branch": "main",
-      "commit": "a549377035f938357174289673998ea71a68892b",
-      "commitUrl": "https://github.com/rkendel1/appport-services/commit/a549377035f938357174289673998ea71a68892b",
+      "commit": "9f2ca53e46bf20b63638e1d7237fb7ea53df02ed",
+      "commitUrl": "https://github.com/rkendel1/appport-services/commit/9f2ca53e46bf20b63638e1d7237fb7ea53df02ed",
       "roots": [
         {
           "path": "examples/invoice-app",
@@ -164,8 +173,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-12T07:27:05.863Z",
-      "lastSuccessfulScan": "2026-11-12T07:27:05.863Z"
+      "lastScanned": "2026-11-13T07:26:38.001Z",
+      "lastSuccessfulScan": "2026-11-13T07:26:38.001Z"
     },
     {
       "id": "felt-ops",
@@ -186,7 +195,7 @@
         ],
         "headVerified": true,
         "lastVerifiedCommit": "d4d62b6362f90109dcbc741204c18c988fd1ff97",
-        "lastVerifiedAt": "2026-11-12T07:27:05.863Z"
+        "lastVerifiedAt": "2026-11-13T07:26:38.001Z"
       },
       "branch": "claude/keen-cannon-gxv0v3",
       "commit": "d4d62b6362f90109dcbc741204c18c988fd1ff97",
@@ -202,8 +211,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-12T07:27:05.863Z",
-      "lastSuccessfulScan": "2026-11-12T07:27:05.863Z"
+      "lastScanned": "2026-11-13T07:26:38.001Z",
+      "lastSuccessfulScan": "2026-11-13T07:26:38.001Z"
     },
     {
       "id": "rust-ml-runtime",
@@ -465,8 +474,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-12T07:27:05.863Z",
-      "lastSuccessfulScan": "2026-11-12T07:27:05.863Z"
+      "lastScanned": "2026-11-13T07:26:38.001Z",
+      "lastSuccessfulScan": "2026-11-13T07:26:38.001Z"
     },
     {
       "id": "appboundry",
@@ -497,7 +506,7 @@
         "appport-appboundry",
         "typescript"
       ],
-      "discoveredDependencyCount": 56,
+      "discoveredDependencyCount": 58,
       "warnings": [
         "apps/cloud-platform/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
         "apps/cloud-portal/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
@@ -519,6 +528,7 @@
         "packages/appboundry-agent/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
         "packages/appboundry-companion/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
         "packages/appboundry-host/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
+        "packages/appboundry-route/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
         "packages/appboundry-runtime/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
         "packages/appboundry/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
         "packages/cli/package.json: several lockfiles in the repository root; resolved from pnpm-lock.yaml (packageManager: pnpm)",
@@ -533,8 +543,8 @@
         "lastVerifiedAt": "2026-11-10T07:27:01.195Z"
       },
       "branch": "main",
-      "commit": "6c82f1de7fe876760e8024832139aa6deaf67b4f",
-      "commitUrl": "https://github.com/rkendel1/appboundry/commit/6c82f1de7fe876760e8024832139aa6deaf67b4f",
+      "commit": "04bfdf3c70be59f861651c85683e83389af4f007",
+      "commitUrl": "https://github.com/rkendel1/appboundry/commit/04bfdf3c70be59f861651c85683e83389af4f007",
       "roots": [
         {
           "path": "apps/cloud-platform",
@@ -691,6 +701,13 @@
           "name": "@appport/appboundry-host"
         },
         {
+          "path": "packages/appboundry-route",
+          "ecosystem": "javascript",
+          "manifest": "packages/appboundry-route/package.json",
+          "lockfile": "pnpm-lock.yaml",
+          "name": "@appport/appboundry-route"
+        },
+        {
           "path": "packages/appboundry-runtime",
           "ecosystem": "javascript",
           "manifest": "packages/appboundry-runtime/package.json",
@@ -833,8 +850,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-12T07:27:05.863Z",
-      "lastSuccessfulScan": "2026-11-12T07:27:05.863Z"
+      "lastScanned": "2026-11-13T07:26:38.001Z",
+      "lastSuccessfulScan": "2026-11-13T07:26:38.001Z"
     },
     {
       "id": "flow-db",
@@ -869,8 +886,8 @@
         "lastVerifiedAt": null
       },
       "branch": "main",
-      "commit": "c72c1be545f59945b806ebeaf8253fa998c041fe",
-      "commitUrl": "https://github.com/rkendel1/flow_db/commit/c72c1be545f59945b806ebeaf8253fa998c041fe",
+      "commit": "ee2a948a3bd5d6b814d8b8e25eef9bee026e583b",
+      "commitUrl": "https://github.com/rkendel1/flow_db/commit/ee2a948a3bd5d6b814d8b8e25eef9bee026e583b",
       "roots": [
         {
           "path": "apps/default-project",
@@ -1113,8 +1130,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-12T07:27:05.863Z",
-      "lastSuccessfulScan": "2026-11-12T07:27:05.863Z"
+      "lastScanned": "2026-11-13T07:26:38.001Z",
+      "lastSuccessfulScan": "2026-11-13T07:26:38.001Z"
     },
     {
       "id": "appport",
@@ -1296,8 +1313,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-12T07:27:05.863Z",
-      "lastSuccessfulScan": "2026-11-12T07:27:05.863Z"
+      "lastScanned": "2026-11-13T07:26:38.001Z",
+      "lastSuccessfulScan": "2026-11-13T07:26:38.001Z"
     },
     {
       "id": "authboundry",
@@ -1331,13 +1348,13 @@
           "architecture-invariants.yml",
           "cli-smoke.yml"
         ],
-        "headVerified": null,
-        "lastVerifiedCommit": null,
-        "lastVerifiedAt": null
+        "headVerified": true,
+        "lastVerifiedCommit": "da46b26ab8d6cae515aca3c30b6cf4ac65067012",
+        "lastVerifiedAt": "2026-11-13T07:26:38.001Z"
       },
       "branch": "main",
-      "commit": "b041a6cfcbe32b9fb1e6ed326262f97dbf860b7f",
-      "commitUrl": "https://github.com/rkendel1/authboundry/commit/b041a6cfcbe32b9fb1e6ed326262f97dbf860b7f",
+      "commit": "da46b26ab8d6cae515aca3c30b6cf4ac65067012",
+      "commitUrl": "https://github.com/rkendel1/authboundry/commit/da46b26ab8d6cae515aca3c30b6cf4ac65067012",
       "roots": [
         {
           "path": "apps/web",
@@ -1524,8 +1541,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-12T07:27:05.863Z",
-      "lastSuccessfulScan": "2026-11-12T07:27:05.863Z"
+      "lastScanned": "2026-11-13T07:26:38.001Z",
+      "lastSuccessfulScan": "2026-11-13T07:26:38.001Z"
     },
     {
       "id": "appworks",
@@ -1557,7 +1574,7 @@
         ],
         "headVerified": true,
         "lastVerifiedCommit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "lastVerifiedAt": "2026-11-12T07:27:05.863Z"
+        "lastVerifiedAt": "2026-11-13T07:26:38.001Z"
       },
       "branch": "main",
       "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
@@ -1629,8 +1646,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-12T07:27:05.863Z",
-      "lastSuccessfulScan": "2026-11-12T07:27:05.863Z"
+      "lastScanned": "2026-11-13T07:26:38.001Z",
+      "lastSuccessfulScan": "2026-11-13T07:26:38.001Z"
     },
     {
       "id": "compute",
@@ -1864,8 +1881,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-12T07:27:05.863Z",
-      "lastSuccessfulScan": "2026-11-12T07:27:05.863Z"
+      "lastScanned": "2026-11-13T07:26:38.001Z",
+      "lastSuccessfulScan": "2026-11-13T07:26:38.001Z"
     },
     {
       "id": "agent-obstacle",
@@ -1912,8 +1929,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-12T07:27:05.863Z",
-      "lastSuccessfulScan": "2026-11-12T07:27:05.863Z"
+      "lastScanned": "2026-11-13T07:26:38.001Z",
+      "lastSuccessfulScan": "2026-11-13T07:26:38.001Z"
     },
     {
       "id": "github-integration",
@@ -1938,7 +1955,7 @@
         ],
         "headVerified": true,
         "lastVerifiedCommit": "d51dcd156279fb85476479e490dcab41fcbe4fa7",
-        "lastVerifiedAt": "2026-11-12T07:27:05.863Z"
+        "lastVerifiedAt": "2026-11-13T07:26:38.001Z"
       },
       "branch": "main",
       "commit": "d51dcd156279fb85476479e490dcab41fcbe4fa7",
@@ -1954,8 +1971,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-12T07:27:05.863Z",
-      "lastSuccessfulScan": "2026-11-12T07:27:05.863Z"
+      "lastScanned": "2026-11-13T07:26:38.001Z",
+      "lastSuccessfulScan": "2026-11-13T07:26:38.001Z"
     }
   ]
 }
