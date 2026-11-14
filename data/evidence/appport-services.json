@@ -135,8 +135,8 @@
       "project": "appport-services",
       "repository": "rkendel1/appport-services",
       "commit": "9f2ca53e46bf20b63638e1d7237fb7ea53df02ed",
-      "collectedAt": "2026-11-13T07:26:38.001Z",
-      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/43385774060",
+      "collectedAt": "2026-11-14T07:26:50.459Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/43571122843",
       "passed": false,
       "checks": {
         "resolution": "fail",

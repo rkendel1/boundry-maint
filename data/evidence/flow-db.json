@@ -77,8 +77,8 @@
       "project": "flow-db",
       "repository": "rkendel1/flow_db",
       "commit": "ee2a948a3bd5d6b814d8b8e25eef9bee026e583b",
-      "collectedAt": "2026-11-13T07:26:38.001Z",
-      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/43385774060",
+      "collectedAt": "2026-11-14T07:26:50.459Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/43571122843",
       "passed": false,
       "checks": {
         "resolution": "fail",
