@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "scan": {
-    "runId": "43571122843",
-    "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/43571122843",
-    "startedAt": "2026-11-14T07:26:50.459Z",
-    "finishedAt": "2026-11-14T07:28:28.016Z",
+    "runId": "43689964361",
+    "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/43689964361",
+    "startedAt": "2026-11-15T07:26:50.183Z",
+    "finishedAt": "2026-11-15T07:28:22.399Z",
     "status": "success",
     "trigger": "schedule",
-    "configCommit": "81ed3f4b4d2e4f7507e4f6ee9286e751e6d5f313",
+    "configCommit": "ccb58a1a081ea2168238389e9f8defe323429a84",
     "counts": {
       "packages": 62,
       "packagesFailed": 0,
@@ -15,7 +15,7 @@
       "projectsFailed": 0,
       "ciRepositories": 14,
       "ciChecks": 150,
-      "ciChecksFailing": 4,
+      "ciChecksFailing": 5,
       "installations": 388,
       "maintenanceOpen": 50
     },
@@ -8095,6 +8095,15 @@
     },
     {
       "project": "authboundry",
+      "root": "crates/feltdb-adapter",
+      "name": "sha2",
+      "registry": "crates",
+      "resolvedVersion": "0.10.9",
+      "status": "unknown",
+      "managed": false
+    },
+    {
+      "project": "authboundry",
       "root": "crates/providers",
       "name": "appport-auth-mesh-dsl",
       "registry": "crates",
@@ -11583,19 +11592,19 @@
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#isolation/install",
-      "result": "unknown"
+      "result": "passing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/install",
-      "result": "unknown"
+      "result": "passing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/unit-tests-sdk-incl-browser-tests-conformance-suites-create-",
-      "result": "unknown"
+      "result": "failing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
-      "result": "unknown"
+      "result": "skipped"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e/install",
@@ -11603,7 +11612,7 @@
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e-feltdb/install",
-      "result": "unknown"
+      "result": "passing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/publish.yml#publish/install",
@@ -11831,116 +11840,14 @@
     }
   ],
   "changes": {
-    "newReleases": [
-      {
-        "package": "feltdb-feltkit",
-        "from": "0.3.27",
-        "to": "0.3.29"
-      },
-      {
-        "package": "create-feltkit",
-        "from": "0.3.27",
-        "to": "0.3.29"
-      }
-    ],
-    "versionChanges": [
-      {
-        "project": "feltkit",
-        "root": "examples/invoices",
-        "name": "@feltdb/feltkit",
-        "from": "0.3.27",
-        "to": "0.3.30"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/managed",
-        "name": "@feltdb/feltkit",
-        "from": "0.3.27",
-        "to": "0.3.30"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/tasks",
-        "name": "@feltdb/feltkit",
-        "from": "0.3.27",
-        "to": "0.3.30"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/create",
-        "name": "@feltdb/feltkit",
-        "from": "0.3.27",
-        "to": "0.3.30"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "create-feltkit",
-        "from": "0.3.27",
-        "to": "0.3.30"
-      },
-      {
-        "project": "authboundry",
-        "root": "apps/web",
-        "name": "@stack-ui/core",
-        "from": "0.7.0",
-        "to": "0.9.0"
-      },
-      {
-        "project": "authboundry",
-        "root": "apps/web",
-        "name": "@stack-ui/react",
-        "from": "0.7.0",
-        "to": "0.9.0"
-      },
-      {
-        "project": "authboundry",
-        "root": "apps/web",
-        "name": "@stack-ui/tokens",
-        "from": "0.7.0",
-        "to": "0.9.0"
-      },
-      {
-        "project": "authboundry",
-        "root": ".",
-        "name": "@authboundry/core-darwin-arm64",
-        "from": "1.17.3",
-        "to": "1.17.4"
-      },
-      {
-        "project": "authboundry",
-        "root": ".",
-        "name": "@authboundry/core-darwin-x64",
-        "from": "1.17.3",
-        "to": "1.17.4"
-      },
-      {
-        "project": "authboundry",
-        "root": ".",
-        "name": "@authboundry/core-linux-arm64",
-        "from": "1.17.3",
-        "to": "1.17.4"
-      },
-      {
-        "project": "authboundry",
-        "root": ".",
-        "name": "@authboundry/core-linux-x64",
-        "from": "1.17.3",
-        "to": "1.17.4"
-      }
-    ],
+    "newReleases": [],
+    "versionChanges": [],
     "newDependencies": [
       {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@authboundry/local",
-        "version": null
-      },
-      {
         "project": "authboundry",
-        "root": "packages/local",
-        "name": "@authboundry/core",
-        "version": null
+        "root": "crates/feltdb-adapter",
+        "name": "sha2",
+        "version": "0.10.9"
       }
     ],
     "removedDependencies": [],
@@ -11948,65 +11855,45 @@
     "newEvidence": [
       {
         "project": "feltkit",
-        "commit": "6c823b14391f5e12151a2e57c87bf6355b359689",
+        "commit": "b0cfa6aefd7dafd7546c446113506b33dfcc69ab",
         "passed": false
       },
       {
-        "project": "appboundry",
-        "commit": "9f8402039614f66640d076b94d2e099d10918416",
+        "project": "appport-services",
+        "commit": "1295589f902a0023383027bbc6e24f52398462dd",
         "passed": false
-      },
-      {
-        "project": "appport",
-        "commit": "35a57eacaf5db61b71c883e502ac2c5495ae6ee7",
-        "passed": true
       },
       {
         "project": "authboundry",
-        "commit": "b787fc9de3fd60acf6689904509f8484751296b4",
+        "commit": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
         "passed": true
       }
     ],
     "ciResultChanges": [
       {
-        "id": "rkendel1/appport:.github/workflows/ci.yml#build/run-pnpm-install-frozen-lockfile",
-        "from": "skipped",
-        "to": "passing"
-      },
-      {
-        "id": "rkendel1/appport:.github/workflows/ci.yml#build/audit-the-npm-tarballs",
-        "from": "skipped",
-        "to": "passing"
-      },
-      {
-        "id": "rkendel1/appport:.github/workflows/ci.yml#build/install-the-tarballs-into-a-clean-project-and-run-the-consum",
-        "from": "skipped",
-        "to": "passing"
-      },
-      {
         "id": "rkendel1/feltkit:.github/workflows/ci.yml#isolation/install",
-        "from": "passing",
-        "to": "unknown"
+        "from": "unknown",
+        "to": "passing"
       },
       {
         "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/install",
-        "from": "passing",
-        "to": "unknown"
+        "from": "unknown",
+        "to": "passing"
       },
       {
         "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/unit-tests-sdk-incl-browser-tests-conformance-suites-create-",
-        "from": "passing",
-        "to": "unknown"
+        "from": "unknown",
+        "to": "failing"
       },
       {
         "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
-        "from": "passing",
-        "to": "unknown"
+        "from": "unknown",
+        "to": "skipped"
       },
       {
         "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e-feltdb/install",
-        "from": "passing",
-        "to": "unknown"
+        "from": "unknown",
+        "to": "passing"
       }
     ]
   }

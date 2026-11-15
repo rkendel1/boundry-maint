@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T07:26:50.459Z",
+  "generatedAt": "2026-11-15T07:26:50.183Z",
   "releases": [
     {
       "package": "appport-core",
@@ -4864,6 +4864,12 @@
       "latestVersion": "7.0.2",
       "versions": [
         {
+          "version": "7.1.0-dev.20261114.1",
+          "publishedAt": "2026-11-14T08:10:34.768Z",
+          "deprecated": null,
+          "prerelease": true
+        },
+        {
           "version": "7.1.0-dev.20261113.1",
           "publishedAt": "2026-11-13T08:12:43.553Z",
           "deprecated": null,
@@ -5004,12 +5010,6 @@
         {
           "version": "7.1.0-dev.20261021.1",
           "publishedAt": "2026-10-21T08:23:20.167Z",
-          "deprecated": null,
-          "prerelease": true
-        },
-        {
-          "version": "7.1.0-dev.20261020.3",
-          "publishedAt": "2026-10-20T08:15:07.129Z",
           "deprecated": null,
           "prerelease": true
         }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T07:26:50.459Z",
+  "generatedAt": "2026-11-15T07:26:50.183Z",
   "items": [
     {
       "key": "flow-db|crates/feltdb-public-api-check/Cargo.lock|crates:tokio",
@@ -1483,7 +1483,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43556261738"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1491,7 +1491,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43556261738"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1657,7 +1657,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43556261738"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1665,7 +1665,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43556261738"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1807,7 +1807,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43556261738"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1815,7 +1815,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43556261738"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -3308,10 +3308,10 @@
           {
             "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
             "name": "FeltKit release check (CI mode)",
-            "result": "unknown",
+            "result": "skipped",
             "enforcement": "fail",
             "requirement": "exact",
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43551462181"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43669040758"
           },
           {
             "id": "rkendel1/feltkit:.github/workflows/publish.yml#publish/publish",
@@ -3319,7 +3319,7 @@
             "result": "skipped",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43551462130"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43669040773"
           }
         ]
       },
@@ -3415,10 +3415,10 @@
           {
             "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
             "name": "FeltKit release check (CI mode)",
-            "result": "unknown",
+            "result": "skipped",
             "enforcement": "fail",
             "requirement": "exact",
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43551462181"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43669040758"
           }
         ]
       },

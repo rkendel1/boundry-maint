@@ -156,6 +156,58 @@
         "crates/semantic|crates:serde": "1.0.229",
         "crates/storage|crates:serde": "1.0.229"
       }
+    },
+    {
+      "project": "authboundry",
+      "repository": "rkendel1/authboundry",
+      "commit": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+      "collectedAt": "2026-11-15T07:26:50.183Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/43689964361",
+      "passed": true,
+      "checks": {
+        "resolution": "pass",
+        "workflows": "pass"
+      },
+      "runs": [
+        {
+          "workflow": "architecture-invariants.yml",
+          "runId": 43668308249,
+          "url": "https://github.com/rkendel1/authboundry/actions/runs/43668308249",
+          "status": "completed",
+          "conclusion": "success",
+          "headSha": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94"
+        },
+        {
+          "workflow": "cli-smoke.yml",
+          "runId": 43668308253,
+          "url": "https://github.com/rkendel1/authboundry/actions/runs/43668308253",
+          "status": "completed",
+          "conclusion": "success",
+          "headSha": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94"
+        }
+      ],
+      "resolved": {
+        "apps/web|npm:@appport/core": "1.0.2",
+        "apps/web|npm:@appport/services": "0.4.5",
+        "apps/web|npm:@feltdb/core": "0.11.7",
+        "examples/nextjs-stack|npm:@appport/core": "1.0.2",
+        "examples/nextjs-stack|npm:@appport/schema": "1.0.1",
+        "examples/nextjs-stack|npm:@appport/services": "0.4.5",
+        "examples/nextjs-stack|npm:@feltdb/core": "0.11.7",
+        ".|npm:@appport/core": "1.0.2",
+        ".|npm:@appport/services": "0.4.5",
+        ".|npm:@feltdb/core": "0.11.7",
+        "crates/authz|crates:serde": "1.0.229",
+        "crates/boundary|crates:serde": "1.0.229",
+        "crates/contract|crates:serde": "1.0.229",
+        "crates/dsl|crates:serde": "1.0.229",
+        "crates/feltdb-adapter|crates:serde": "1.0.229",
+        "crates/feltdb-adapter|crates:tokio": "1.53.1",
+        "crates/providers|crates:serde": "1.0.229",
+        "crates/runtime|crates:serde": "1.0.229",
+        "crates/semantic|crates:serde": "1.0.229",
+        "crates/storage|crates:serde": "1.0.229"
+      }
     }
   ]
 }
