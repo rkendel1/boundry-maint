@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T07:26:50.183Z",
+  "generatedAt": "2026-11-16T07:40:19.700Z",
   "repositories": [
     {
       "repository": "rkendel1/3fx",
@@ -10,7 +10,7 @@
       "error": null,
       "workflowCount": 4,
       "scriptsInspected": 27,
-      "lastScanned": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z"
     },
     {
       "repository": "rkendel1/agent-obstacle",
@@ -21,7 +21,7 @@
       "error": null,
       "workflowCount": 0,
       "scriptsInspected": 1,
-      "lastScanned": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z"
     },
     {
       "repository": "rkendel1/appboundry",
@@ -32,7 +32,7 @@
       "error": null,
       "workflowCount": 7,
       "scriptsInspected": 23,
-      "lastScanned": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z"
     },
     {
       "repository": "rkendel1/appport",
@@ -43,7 +43,7 @@
       "error": null,
       "workflowCount": 10,
       "scriptsInspected": 44,
-      "lastScanned": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z"
     },
     {
       "repository": "rkendel1/appport-services",
@@ -54,7 +54,7 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 2,
-      "lastScanned": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z"
     },
     {
       "repository": "rkendel1/appworks",
@@ -65,18 +65,18 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 23,
-      "lastScanned": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z"
     },
     {
       "repository": "rkendel1/authboundry",
-      "commit": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+      "commit": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
       "defaultBranch": "main",
       "private": true,
       "status": "ok",
       "error": null,
       "workflowCount": 5,
-      "scriptsInspected": 14,
-      "lastScanned": "2026-11-15T07:26:50.183Z"
+      "scriptsInspected": 30,
+      "lastScanned": "2026-11-16T07:40:19.700Z"
     },
     {
       "repository": "rkendel1/compute",
@@ -87,7 +87,7 @@
       "error": null,
       "workflowCount": 10,
       "scriptsInspected": 3,
-      "lastScanned": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z"
     },
     {
       "repository": "rkendel1/felt-ops",
@@ -98,7 +98,7 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 4,
-      "lastScanned": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z"
     },
     {
       "repository": "rkendel1/feltkit",
@@ -109,7 +109,7 @@
       "error": null,
       "workflowCount": 2,
       "scriptsInspected": 14,
-      "lastScanned": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z"
     },
     {
       "repository": "rkendel1/flow_db",
@@ -120,7 +120,7 @@
       "error": null,
       "workflowCount": 9,
       "scriptsInspected": 151,
-      "lastScanned": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z"
     },
     {
       "repository": "rkendel1/github-integration",
@@ -131,7 +131,7 @@
       "error": null,
       "workflowCount": 1,
       "scriptsInspected": 2,
-      "lastScanned": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z"
     },
     {
       "repository": "rkendel1/resolver",
@@ -142,7 +142,7 @@
       "error": null,
       "workflowCount": 2,
       "scriptsInspected": 3,
-      "lastScanned": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z"
     },
     {
       "repository": "rkendel1/rust-ml-runtime",
@@ -153,7 +153,7 @@
       "error": null,
       "workflowCount": 3,
       "scriptsInspected": 15,
-      "lastScanned": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z"
     }
   ],
   "workflows": [
@@ -742,24 +742,24 @@
       ],
       "result": "passing",
       "latestRun": {
-        "runId": 43668308249,
-        "url": "https://github.com/rkendel1/authboundry/actions/runs/43668308249",
+        "runId": 43771913852,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913852",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
         "event": "push",
-        "at": "2026-11-15T02:37:03Z"
+        "at": "2026-11-15T23:00:00Z"
       },
       "lastSuccess": {
-        "runId": 43668308249,
-        "url": "https://github.com/rkendel1/authboundry/actions/runs/43668308249",
+        "runId": 43771913852,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913852",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
         "event": "push",
-        "at": "2026-11-15T02:37:03Z"
+        "at": "2026-11-15T23:00:00Z"
       },
       "lastFailure": null,
       "failedJobs": [],
@@ -775,24 +775,24 @@
       ],
       "result": "passing",
       "latestRun": {
-        "runId": 43668308253,
-        "url": "https://github.com/rkendel1/authboundry/actions/runs/43668308253",
+        "runId": 43771913918,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913918",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
         "event": "push",
-        "at": "2026-11-15T02:39:46Z"
+        "at": "2026-11-15T22:58:58Z"
       },
       "lastSuccess": {
-        "runId": 43668308253,
-        "url": "https://github.com/rkendel1/authboundry/actions/runs/43668308253",
+        "runId": 43771913918,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913918",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
         "event": "push",
-        "at": "2026-11-15T02:39:46Z"
+        "at": "2026-11-15T22:58:58Z"
       },
       "lastFailure": null,
       "failedJobs": [],
@@ -857,24 +857,24 @@
       ],
       "result": "passing",
       "latestRun": {
-        "runId": 43668308221,
-        "url": "https://github.com/rkendel1/authboundry/actions/runs/43668308221",
+        "runId": 43771913929,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913929",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
         "event": "push",
-        "at": "2026-11-15T02:36:43Z"
+        "at": "2026-11-15T22:57:42Z"
       },
       "lastSuccess": {
-        "runId": 43668308221,
-        "url": "https://github.com/rkendel1/authboundry/actions/runs/43668308221",
+        "runId": 43771913929,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913929",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
         "event": "push",
-        "at": "2026-11-15T02:36:43Z"
+        "at": "2026-11-15T22:57:42Z"
       },
       "lastFailure": {
         "runId": 43482221096,
@@ -998,24 +998,24 @@
       ],
       "result": "passing",
       "latestRun": {
-        "runId": 42578874414,
-        "url": "https://github.com/rkendel1/compute/actions/runs/42578874414",
+        "runId": 43824577964,
+        "url": "https://github.com/rkendel1/compute/actions/runs/43824577964",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-09T07:22:18Z"
+        "at": "2026-11-16T07:32:46Z"
       },
       "lastSuccess": {
-        "runId": 42578874414,
-        "url": "https://github.com/rkendel1/compute/actions/runs/42578874414",
+        "runId": 43824577964,
+        "url": "https://github.com/rkendel1/compute/actions/runs/43824577964",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-09T07:22:18Z"
+        "at": "2026-11-16T07:32:46Z"
       },
       "lastFailure": {
         "runId": 38454984409,
@@ -1117,24 +1117,24 @@
       ],
       "result": "passing",
       "latestRun": {
-        "runId": 43685319487,
-        "url": "https://github.com/rkendel1/compute/actions/runs/43685319487",
+        "runId": 43818292326,
+        "url": "https://github.com/rkendel1/compute/actions/runs/43818292326",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-15T06:25:12Z"
+        "at": "2026-11-16T06:40:18Z"
       },
       "lastSuccess": {
-        "runId": 43685319487,
-        "url": "https://github.com/rkendel1/compute/actions/runs/43685319487",
+        "runId": 43818292326,
+        "url": "https://github.com/rkendel1/compute/actions/runs/43818292326",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-15T06:25:12Z"
+        "at": "2026-11-16T06:40:18Z"
       },
       "lastFailure": null,
       "failedJobs": [],
@@ -1582,14 +1582,14 @@
       ],
       "result": "failing",
       "latestRun": {
-        "runId": 43676471817,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/43676471817",
+        "runId": 43804343528,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/43804343528",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "ee2a948a3bd5d6b814d8b8e25eef9bee026e583b",
         "event": "schedule",
-        "at": "2026-11-15T04:35:09Z"
+        "at": "2026-11-16T04:45:41Z"
       },
       "lastSuccess": {
         "runId": 41577742530,
@@ -1602,19 +1602,19 @@
         "at": "2026-11-03T04:34:16Z"
       },
       "lastFailure": {
-        "runId": 43676471817,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/43676471817",
+        "runId": 43804343528,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/43804343528",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "ee2a948a3bd5d6b814d8b8e25eef9bee026e583b",
         "event": "schedule",
-        "at": "2026-11-15T04:35:09Z"
+        "at": "2026-11-16T04:45:41Z"
       },
       "failedJobs": [
         {
           "name": "managed-disposable",
-          "url": "https://github.com/rkendel1/flow_db/actions/runs/43676471817/job/132697605549",
+          "url": "https://github.com/rkendel1/flow_db/actions/runs/43804343528/job/133091560026",
           "failedSteps": [
             "Verify disposable managed boundary"
           ]
@@ -4979,7 +4979,7 @@
       "sources": [
         {
           "path": ".github/workflows/architecture-invariants.yml",
-          "url": "https://github.com/rkendel1/authboundry/blob/1b254094ed5f79e319abe1fbe5cccc8a41c12a94/.github/workflows/architecture-invariants.yml#L20"
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/.github/workflows/architecture-invariants.yml#L20"
         }
       ],
       "annotated": false,
@@ -4987,27 +4987,212 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 43668308249,
-        "url": "https://github.com/rkendel1/authboundry/actions/runs/43668308249",
+        "runId": 43771913852,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913852",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
         "event": "push",
-        "at": "2026-11-15T02:37:03Z"
+        "at": "2026-11-15T23:00:00Z"
       },
       "lastSuccess": {
-        "runId": 43668308249,
-        "url": "https://github.com/rkendel1/authboundry/actions/runs/43668308249",
+        "runId": 43771913852,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913852",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
         "event": "push",
-        "at": "2026-11-15T02:37:03Z"
+        "at": "2026-11-15T23:00:00Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/43668308249/job/132672520586",
+      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/43771913852/job/132989475906",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/architecture-invariants.yml#verify/release-versions-are-consistent-across-every-package-manifes",
+      "repository": "rkendel1/authboundry",
+      "name": "Release versions are consistent across every package manifest",
+      "workflow": ".github/workflows/architecture-invariants.yml",
+      "workflowName": "Architecture invariants",
+      "job": "verify",
+      "jobName": "verify",
+      "step": "Release versions are consistent across every package manifest",
+      "types": [
+        "version-pinning",
+        "version-consistency",
+        "dependency-compatibility"
+      ],
+      "packages": [
+        "authboundry",
+        "authboundry-bridge",
+        "authboundry-core"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "@authboundry/core version is not semver: <coreVersion>",
+        "<r.manifest.name> is <r.manifest.version>, core is <coreVersion>",
+        "core optionalDependencies[\"<name>\"] is <optional[name] ?? 'missing'>, expected exactly <version>",
+        "authboundry (shim) is <m.shim.manifest.version>, expected <shimExpected> for core <coreVersion>",
+        "authboundry (shim) depends on @authboundry/core <shimDep ?? 'missing'>, expected exactly <coreVersion>",
+        "<p.manifest.name> does not declare its @authboundry/core range",
+        "<p.manifest.name>@<p.manifest.version> needs @authboundry/core <range>; core is <coreVersion>",
+        "<p.manifest.name> version is not semver: <p.manifest.version>"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pull requests",
+        "pushes"
+      ],
+      "modifiers": [],
+      "dedicated": true,
+      "confidence": "partially-understood",
+      "signals": [
+        "lockfile",
+        "version-compare",
+        "manifest-version",
+        "compatibility"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/architecture-invariants.yml",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/.github/workflows/architecture-invariants.yml#L35"
+        },
+        {
+          "path": "scripts/release-manifest.mjs",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/scripts/release-manifest.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 43771913852,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913852",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
+        "event": "push",
+        "at": "2026-11-15T23:00:00Z"
+      },
+      "lastSuccess": {
+        "runId": 43771913852,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913852",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
+        "event": "push",
+        "at": "2026-11-15T23:00:00Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/43771913852/job/132989475906",
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/architecture-invariants.yml#verify/release-tooling-manifest-checks-resumable-publisher-against-",
+      "repository": "rkendel1/authboundry",
+      "name": "Release tooling (manifest checks; resumable publisher against a stub registry)",
+      "workflow": ".github/workflows/architecture-invariants.yml",
+      "workflowName": "Architecture invariants",
+      "job": "verify",
+      "jobName": "verify",
+      "step": "Release tooling (manifest checks; resumable publisher against a stub registry)",
+      "types": [
+        "version-pinning",
+        "version-consistency",
+        "release-consistency",
+        "dependency-compatibility",
+        "publication-validation"
+      ],
+      "packages": [
+        "authboundry",
+        "authboundry-bridge",
+        "authboundry-core"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        ">=1.17.4 <2.0.0",
+        "<rule>: drift not detected",
+        "package-lock.json",
+        "published.tgz",
+        "<e.name>@<e.version>:<e.action>",
+        "a failed publish must fail the run",
+        "every package published exactly once",
+        "already-published-identical"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "pull requests",
+        "pushes"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "registry-query",
+        "lockfile",
+        "version-compare",
+        "tags",
+        "publication",
+        "manifest-version",
+        "compatibility"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/architecture-invariants.yml",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/.github/workflows/architecture-invariants.yml#L37"
+        },
+        {
+          "path": "test/release-tooling.test.mjs",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/test/release-tooling.test.mjs"
+        },
+        {
+          "path": "scripts/release-manifest.mjs",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/scripts/release-manifest.mjs"
+        },
+        {
+          "path": "scripts/publish-packages.sh",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/scripts/publish-packages.sh"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "passing",
+      "resultNote": null,
+      "lastRun": {
+        "runId": 43771913852,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913852",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
+        "event": "push",
+        "at": "2026-11-15T23:00:00Z"
+      },
+      "lastSuccess": {
+        "runId": 43771913852,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913852",
+        "status": "completed",
+        "conclusion": "success",
+        "branch": "main",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
+        "event": "push",
+        "at": "2026-11-15T23:00:00Z"
+      },
+      "lastFailure": null,
+      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/43771913852/job/132989475906",
       "failure": null,
       "stale": false
     },
@@ -5043,7 +5228,7 @@
       "sources": [
         {
           "path": ".github/workflows/portal.yml",
-          "url": "https://github.com/rkendel1/authboundry/blob/1b254094ed5f79e319abe1fbe5cccc8a41c12a94/.github/workflows/portal.yml#L33"
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/.github/workflows/portal.yml#L33"
         }
       ],
       "annotated": false,
@@ -5051,27 +5236,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 43668308221,
-        "url": "https://github.com/rkendel1/authboundry/actions/runs/43668308221",
+        "runId": 43771913929,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913929",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
         "event": "push",
-        "at": "2026-11-15T02:36:43Z"
+        "at": "2026-11-15T22:57:42Z"
       },
       "lastSuccess": {
-        "runId": 43668308221,
-        "url": "https://github.com/rkendel1/authboundry/actions/runs/43668308221",
+        "runId": 43771913929,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913929",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
         "event": "push",
-        "at": "2026-11-15T02:36:43Z"
+        "at": "2026-11-15T22:57:42Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/43668308221/job/132672520334",
+      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/43771913929/job/132989476115",
       "failure": null,
       "stale": false
     },
@@ -5107,7 +5292,7 @@
       "sources": [
         {
           "path": ".github/workflows/portal.yml",
-          "url": "https://github.com/rkendel1/authboundry/blob/1b254094ed5f79e319abe1fbe5cccc8a41c12a94/.github/workflows/portal.yml#L33"
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/.github/workflows/portal.yml#L33"
         }
       ],
       "annotated": false,
@@ -5115,151 +5300,90 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 43668308221,
-        "url": "https://github.com/rkendel1/authboundry/actions/runs/43668308221",
+        "runId": 43771913929,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913929",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
         "event": "push",
-        "at": "2026-11-15T02:36:43Z"
+        "at": "2026-11-15T22:57:42Z"
       },
       "lastSuccess": {
-        "runId": 43668308221,
-        "url": "https://github.com/rkendel1/authboundry/actions/runs/43668308221",
+        "runId": 43771913929,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43771913929",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
-        "sha": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+        "sha": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
         "event": "push",
-        "at": "2026-11-15T02:36:43Z"
+        "at": "2026-11-15T22:57:42Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/43668308221/job/132672520334",
+      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/43771913929/job/132989476115",
       "failure": null,
       "stale": false
     },
     {
-      "id": "rkendel1/authboundry:.github/workflows/release.yml#commit-and-publish/verify-package-would-include-all-binaries",
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#validate/version-relationships-and-the-dispatched-version-equals-the-",
       "repository": "rkendel1/authboundry",
-      "name": "Verify package would include all binaries",
+      "name": "Version relationships, and the dispatched version equals the manifests",
       "workflow": ".github/workflows/release.yml",
       "workflowName": "Release",
-      "job": "commit-and-publish",
-      "jobName": "Commit binaries and publish",
-      "step": "Verify package would include all binaries",
+      "job": "validate",
+      "jobName": "Validate versions",
+      "step": "Version relationships, and the dispatched version equals the manifests",
       "types": [
-        "publication-validation"
+        "version-pinning",
+        "version-consistency",
+        "dependency-compatibility"
       ],
-      "packages": [],
+      "packages": [
+        "authboundry",
+        "authboundry-bridge",
+        "authboundry-core"
+      ],
       "requirements": [],
       "expectations": [],
-      "condition": "the package must build into a publishable artifact (publish/pack dry run)",
-      "assertions": [],
+      "condition": null,
+      "assertions": [
+        "@authboundry/core version is not semver: <coreVersion>",
+        "<r.manifest.name> is <r.manifest.version>, core is <coreVersion>",
+        "core optionalDependencies[\"<name>\"] is <optional[name] ?? 'missing'>, expected exactly <version>",
+        "authboundry (shim) is <m.shim.manifest.version>, expected <shimExpected> for core <coreVersion>",
+        "authboundry (shim) depends on @authboundry/core <shimDep ?? 'missing'>, expected exactly <coreVersion>",
+        "<p.manifest.name> does not declare its @authboundry/core range",
+        "<p.manifest.name>@<p.manifest.version> needs @authboundry/core <range>; core is <coreVersion>",
+        "<p.manifest.name> version is not semver: <p.manifest.version>"
+      ],
       "blocking": true,
       "blockingNote": null,
       "gates": [
         "manual"
       ],
       "modifiers": [],
-      "dedicated": false,
-      "confidence": "identified",
-      "signals": [
-        "builtin:publish-dry-run"
-      ],
-      "sources": [
-        {
-          "path": ".github/workflows/release.yml",
-          "url": "https://github.com/rkendel1/authboundry/blob/1b254094ed5f79e319abe1fbe5cccc8a41c12a94/.github/workflows/release.yml#L105"
-        }
-      ],
-      "annotated": false,
-      "note": null,
-      "result": "passing",
-      "resultNote": null,
-      "lastRun": {
-        "runId": 43265153516,
-        "url": "https://github.com/rkendel1/authboundry/actions/runs/43265153516",
-        "status": "completed",
-        "conclusion": "failure",
-        "branch": "main",
-        "sha": "8aba57a74a142d1622811b33062f10cfa9a33082",
-        "event": "workflow_dispatch",
-        "at": "2026-11-12T17:18:48Z"
-      },
-      "lastSuccess": {
-        "runId": 43265153516,
-        "url": "https://github.com/rkendel1/authboundry/actions/runs/43265153516",
-        "status": "completed",
-        "conclusion": "failure",
-        "branch": "main",
-        "sha": "8aba57a74a142d1622811b33062f10cfa9a33082",
-        "event": "workflow_dispatch",
-        "at": "2026-11-12T17:18:48Z"
-      },
-      "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/43265153516/job/131353107012",
-      "failure": null,
-      "stale": false
-    },
-    {
-      "id": "rkendel1/authboundry:.github/workflows/release.yml#commit-and-publish/publish-npm-packages",
-      "repository": "rkendel1/authboundry",
-      "name": "Publish npm packages",
-      "workflow": ".github/workflows/release.yml",
-      "workflowName": "Release",
-      "job": "commit-and-publish",
-      "jobName": "Commit binaries and publish",
-      "step": "Publish npm packages",
-      "types": [
-        "publication-validation"
-      ],
-      "packages": [
-        "authboundry",
-        "authboundry-core",
-        "typescript"
-      ],
-      "requirements": [],
-      "expectations": [],
-      "condition": null,
-      "assertions": [],
-      "blocking": true,
-      "blockingNote": null,
-      "gates": [
-        "manual"
-      ],
-      "modifiers": [
-        {
-          "name": "REQUIRE_ALL_RUNTIME_PACKAGES",
-          "value": "1",
-          "relaxes": false
-        }
-      ],
-      "dedicated": false,
+      "dedicated": true,
       "confidence": "partially-understood",
       "signals": [
-        "registry-query",
-        "publication",
-        "manifest-version"
+        "lockfile",
+        "version-compare",
+        "manifest-version",
+        "compatibility"
       ],
       "sources": [
         {
           "path": ".github/workflows/release.yml",
-          "url": "https://github.com/rkendel1/authboundry/blob/1b254094ed5f79e319abe1fbe5cccc8a41c12a94/.github/workflows/release.yml#L120"
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/.github/workflows/release.yml#L38"
         },
         {
-          "path": "scripts/verify-npm-package.sh",
-          "url": "https://github.com/rkendel1/authboundry/blob/1b254094ed5f79e319abe1fbe5cccc8a41c12a94/scripts/verify-npm-package.sh"
-        },
-        {
-          "path": "scripts/publish-packages.sh",
-          "url": "https://github.com/rkendel1/authboundry/blob/1b254094ed5f79e319abe1fbe5cccc8a41c12a94/scripts/publish-packages.sh"
+          "path": "scripts/release-manifest.mjs",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/scripts/release-manifest.mjs"
         }
       ],
       "annotated": false,
       "note": null,
-      "result": "failing",
-      "resultNote": null,
+      "result": "unknown",
+      "resultNote": "job \"Validate versions\" did not appear in the run (renamed, or never scheduled)",
       "lastRun": {
         "runId": 43265153516,
         "url": "https://github.com/rkendel1/authboundry/actions/runs/43265153516",
@@ -5271,7 +5395,91 @@
         "at": "2026-11-12T17:18:48Z"
       },
       "lastSuccess": null,
-      "lastFailure": {
+      "lastFailure": null,
+      "jobUrl": null,
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#validate/release-tooling-tests-manifest-checks-publisher-against-a-st",
+      "repository": "rkendel1/authboundry",
+      "name": "Release tooling tests (manifest checks; publisher against a stub registry)",
+      "workflow": ".github/workflows/release.yml",
+      "workflowName": "Release",
+      "job": "validate",
+      "jobName": "Validate versions",
+      "step": "Release tooling tests (manifest checks; publisher against a stub registry)",
+      "types": [
+        "version-pinning",
+        "version-consistency",
+        "release-consistency",
+        "dependency-compatibility",
+        "publication-validation"
+      ],
+      "packages": [
+        "authboundry",
+        "authboundry-bridge",
+        "authboundry-core"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        ">=1.17.4 <2.0.0",
+        "<rule>: drift not detected",
+        "package-lock.json",
+        "published.tgz",
+        "<e.name>@<e.version>:<e.action>",
+        "a failed publish must fail the run",
+        "every package published exactly once",
+        "already-published-identical"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual"
+      ],
+      "modifiers": [
+        {
+          "name": "RELEASE_VERSION",
+          "value": "${{ inputs.version }}",
+          "relaxes": false
+        }
+      ],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "registry-query",
+        "lockfile",
+        "version-compare",
+        "tags",
+        "publication",
+        "manifest-version",
+        "compatibility"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/release.yml",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/.github/workflows/release.yml#L48"
+        },
+        {
+          "path": "test/release-tooling.test.mjs",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/test/release-tooling.test.mjs"
+        },
+        {
+          "path": "scripts/release-manifest.mjs",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/scripts/release-manifest.mjs"
+        },
+        {
+          "path": "scripts/publish-packages.sh",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/scripts/publish-packages.sh"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "unknown",
+      "resultNote": "job \"Validate versions\" did not appear in the run (renamed, or never scheduled)",
+      "lastRun": {
         "runId": 43265153516,
         "url": "https://github.com/rkendel1/authboundry/actions/runs/43265153516",
         "status": "completed",
@@ -5281,12 +5489,447 @@
         "event": "workflow_dispatch",
         "at": "2026-11-12T17:18:48Z"
       },
-      "jobUrl": "https://github.com/rkendel1/authboundry/actions/runs/43265153516/job/131353107012",
-      "failure": {
-        "attribution": "possible",
-        "packages": [],
-        "excerpt": []
+      "lastSuccess": null,
+      "lastFailure": null,
+      "jobUrl": null,
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#test/run-npm-ci-ignore-scripts-omit-optional",
+      "repository": "rkendel1/authboundry",
+      "name": "npm ci --ignore-scripts --omit=optional",
+      "workflow": ".github/workflows/release.yml",
+      "workflowName": "Release",
+      "job": "test",
+      "jobName": "Tests (workspace, packages, Local, conformance)",
+      "step": "Run npm ci --ignore-scripts --omit=optional",
+      "types": [
+        "version-consistency"
+      ],
+      "packages": [],
+      "requirements": [],
+      "expectations": [],
+      "condition": "package-lock.json must satisfy package.json exactly (npm ci fails on any drift)",
+      "assertions": [],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "identified",
+      "signals": [
+        "builtin:npm-ci"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/release.yml",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/.github/workflows/release.yml#L64"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "unknown",
+      "resultNote": "job \"Tests (workspace, packages, Local, conformance)\" did not appear in the run (renamed, or never scheduled)",
+      "lastRun": {
+        "runId": 43265153516,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43265153516",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "8aba57a74a142d1622811b33062f10cfa9a33082",
+        "event": "workflow_dispatch",
+        "at": "2026-11-12T17:18:48Z"
       },
+      "lastSuccess": null,
+      "lastFailure": null,
+      "jobUrl": null,
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#test/package-tests",
+      "repository": "rkendel1/authboundry",
+      "name": "Package tests",
+      "workflow": ".github/workflows/release.yml",
+      "workflowName": "Release",
+      "job": "test",
+      "jobName": "Tests (workspace, packages, Local, conformance)",
+      "step": "Package tests",
+      "types": [
+        "version-consistency",
+        "dependency-compatibility"
+      ],
+      "packages": [
+        "appport-cli",
+        "appport-core",
+        "appport-services",
+        "authboundry",
+        "feltdb",
+        "feltdb-core"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "<lockPath> does not resolve FeltDB",
+        "Reuse should be blocked"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "lockfile",
+        "manifest-version",
+        "latest",
+        "compatibility",
+        "integration"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/release.yml",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/.github/workflows/release.yml#L69"
+        },
+        {
+          "path": "crates/server/ui/render-fragments.mjs",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/crates/server/ui/render-fragments.mjs"
+        },
+        {
+          "path": "crates/server/ui/vendor/stack-ui/esm/html.js",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/crates/server/ui/vendor/stack-ui/esm/html.js"
+        },
+        {
+          "path": "crates/server/ui/vendor/stack-ui/esm/view.js",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/crates/server/ui/vendor/stack-ui/esm/view.js"
+        },
+        {
+          "path": "crates/server/ui/vendor/stack-ui/esm/states.js",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/crates/server/ui/vendor/stack-ui/esm/states.js"
+        },
+        {
+          "path": "crates/server/ui/vendor/stack-ui/esm/brand.js",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/crates/server/ui/vendor/stack-ui/esm/brand.js"
+        },
+        {
+          "path": "crates/server/ui/vendor/stack-ui/esm/theme.js",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/crates/server/ui/vendor/stack-ui/esm/theme.js"
+        },
+        {
+          "path": "crates/server/ui/generated/theme-init.js",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/crates/server/ui/generated/theme-init.js"
+        },
+        {
+          "path": "crates/server/ui/generated/theme-control.js",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/crates/server/ui/generated/theme-control.js"
+        },
+        {
+          "path": "test/verify-feltdb-version.js",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/test/verify-feltdb-version.js"
+        },
+        {
+          "path": "test/felt-db-integration.test.js",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/test/felt-db-integration.test.js"
+        },
+        {
+          "path": "clients/js/feltdb-persistence.js",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/clients/js/feltdb-persistence.js"
+        },
+        {
+          "path": "clients/js/authboundry.test.js",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/clients/js/authboundry.test.js"
+        },
+        {
+          "path": "clients/js/authboundry.js",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/clients/js/authboundry.js"
+        },
+        {
+          "path": "scripts/check-public-naming.sh",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/scripts/check-public-naming.sh"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "unknown",
+      "resultNote": "job \"Tests (workspace, packages, Local, conformance)\" did not appear in the run (renamed, or never scheduled)",
+      "lastRun": {
+        "runId": 43265153516,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43265153516",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "8aba57a74a142d1622811b33062f10cfa9a33082",
+        "event": "workflow_dispatch",
+        "at": "2026-11-12T17:18:48Z"
+      },
+      "lastSuccess": null,
+      "lastFailure": null,
+      "jobUrl": null,
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#publish/publish-npm-packages-dependency-order-resumes-safely",
+      "repository": "rkendel1/authboundry",
+      "name": "Publish npm packages (dependency order; resumes safely)",
+      "workflow": ".github/workflows/release.yml",
+      "workflowName": "Release",
+      "job": "publish",
+      "jobName": "Publish, verify, tag",
+      "step": "Publish npm packages (dependency order; resumes safely)",
+      "types": [
+        "version-pinning",
+        "version-consistency",
+        "release-consistency",
+        "dependency-compatibility",
+        "publication-validation"
+      ],
+      "packages": [
+        "authboundry",
+        "authboundry-bridge",
+        "authboundry-core"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "@authboundry/core version is not semver: <coreVersion>",
+        "<r.manifest.name> is <r.manifest.version>, core is <coreVersion>",
+        "core optionalDependencies[\"<name>\"] is <optional[name] ?? 'missing'>, expected exactly <version>",
+        "authboundry (shim) is <m.shim.manifest.version>, expected <shimExpected> for core <coreVersion>",
+        "authboundry (shim) depends on @authboundry/core <shimDep ?? 'missing'>, expected exactly <coreVersion>",
+        "<p.manifest.name> does not declare its @authboundry/core range",
+        "<p.manifest.name>@<p.manifest.version> needs @authboundry/core <range>; core is <coreVersion>",
+        "<p.manifest.name> version is not semver: <p.manifest.version>"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual"
+      ],
+      "modifiers": [
+        {
+          "name": "RELEASE_VERSION",
+          "value": "${{ inputs.version }}",
+          "relaxes": false
+        },
+        {
+          "name": "REQUIRE_ALL_RUNTIME_PACKAGES",
+          "value": "1",
+          "relaxes": false
+        },
+        {
+          "name": "SKIP_VERIFY_PACKAGE",
+          "value": "1",
+          "relaxes": false
+        },
+        {
+          "name": "RELEASE_EVIDENCE",
+          "value": "${{ runner.temp }}/release-evidence.jsonl",
+          "relaxes": false
+        }
+      ],
+      "dedicated": true,
+      "confidence": "partially-understood",
+      "signals": [
+        "registry-query",
+        "lockfile",
+        "version-compare",
+        "tags",
+        "publication",
+        "manifest-version",
+        "compatibility"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/release.yml",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/.github/workflows/release.yml#L207"
+        },
+        {
+          "path": "scripts/publish-packages.sh",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/scripts/publish-packages.sh"
+        },
+        {
+          "path": "scripts/release-manifest.mjs",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/scripts/release-manifest.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "unknown",
+      "resultNote": "job \"Publish, verify, tag\" did not appear in the run (renamed, or never scheduled)",
+      "lastRun": {
+        "runId": 43265153516,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43265153516",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "8aba57a74a142d1622811b33062f10cfa9a33082",
+        "event": "workflow_dispatch",
+        "at": "2026-11-12T17:18:48Z"
+      },
+      "lastSuccess": null,
+      "lastFailure": null,
+      "jobUrl": null,
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#publish/verify-every-package-version-is-served-by-the-registry",
+      "repository": "rkendel1/authboundry",
+      "name": "Verify every package version is served by the registry",
+      "workflow": ".github/workflows/release.yml",
+      "workflowName": "Release",
+      "job": "publish",
+      "jobName": "Publish, verify, tag",
+      "step": "Verify every package version is served by the registry",
+      "types": [
+        "version-pinning",
+        "version-consistency",
+        "dependency-compatibility"
+      ],
+      "packages": [
+        "authboundry",
+        "authboundry-bridge",
+        "authboundry-core"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "@authboundry/core version is not semver: <coreVersion>",
+        "<r.manifest.name> is <r.manifest.version>, core is <coreVersion>",
+        "core optionalDependencies[\"<name>\"] is <optional[name] ?? 'missing'>, expected exactly <version>",
+        "authboundry (shim) is <m.shim.manifest.version>, expected <shimExpected> for core <coreVersion>",
+        "authboundry (shim) depends on @authboundry/core <shimDep ?? 'missing'>, expected exactly <coreVersion>",
+        "<p.manifest.name> does not declare its @authboundry/core range",
+        "<p.manifest.name>@<p.manifest.version> needs @authboundry/core <range>; core is <coreVersion>",
+        "<p.manifest.name> version is not semver: <p.manifest.version>"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "lockfile",
+        "version-compare",
+        "manifest-version",
+        "compatibility"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/release.yml",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/.github/workflows/release.yml#L215"
+        },
+        {
+          "path": "scripts/release-manifest.mjs",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/scripts/release-manifest.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "unknown",
+      "resultNote": "job \"Publish, verify, tag\" did not appear in the run (renamed, or never scheduled)",
+      "lastRun": {
+        "runId": 43265153516,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43265153516",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "8aba57a74a142d1622811b33062f10cfa9a33082",
+        "event": "workflow_dispatch",
+        "at": "2026-11-12T17:18:48Z"
+      },
+      "lastSuccess": null,
+      "lastFailure": null,
+      "jobUrl": null,
+      "failure": null,
+      "stale": false
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#publish/create-github-release-with-the-release-evidence",
+      "repository": "rkendel1/authboundry",
+      "name": "Create GitHub Release with the release evidence",
+      "workflow": ".github/workflows/release.yml",
+      "workflowName": "Release",
+      "job": "publish",
+      "jobName": "Publish, verify, tag",
+      "step": "Create GitHub Release with the release evidence",
+      "types": [
+        "version-pinning",
+        "version-consistency",
+        "dependency-compatibility"
+      ],
+      "packages": [
+        "authboundry",
+        "authboundry-bridge",
+        "authboundry-core"
+      ],
+      "requirements": [],
+      "expectations": [],
+      "condition": null,
+      "assertions": [
+        "@authboundry/core version is not semver: <coreVersion>",
+        "<r.manifest.name> is <r.manifest.version>, core is <coreVersion>",
+        "core optionalDependencies[\"<name>\"] is <optional[name] ?? 'missing'>, expected exactly <version>",
+        "authboundry (shim) is <m.shim.manifest.version>, expected <shimExpected> for core <coreVersion>",
+        "authboundry (shim) depends on @authboundry/core <shimDep ?? 'missing'>, expected exactly <coreVersion>",
+        "<p.manifest.name> does not declare its @authboundry/core range",
+        "<p.manifest.name>@<p.manifest.version> needs @authboundry/core <range>; core is <coreVersion>",
+        "<p.manifest.name> version is not semver: <p.manifest.version>"
+      ],
+      "blocking": true,
+      "blockingNote": null,
+      "gates": [
+        "manual"
+      ],
+      "modifiers": [],
+      "dedicated": false,
+      "confidence": "partially-understood",
+      "signals": [
+        "lockfile",
+        "version-compare",
+        "manifest-version",
+        "compatibility"
+      ],
+      "sources": [
+        {
+          "path": ".github/workflows/release.yml",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/.github/workflows/release.yml#L227"
+        },
+        {
+          "path": "scripts/release-manifest.mjs",
+          "url": "https://github.com/rkendel1/authboundry/blob/0c982e4a9b37fed5393a0d7b659e420235b15d39/scripts/release-manifest.mjs"
+        }
+      ],
+      "annotated": false,
+      "note": null,
+      "result": "unknown",
+      "resultNote": "job \"Publish, verify, tag\" did not appear in the run (renamed, or never scheduled)",
+      "lastRun": {
+        "runId": 43265153516,
+        "url": "https://github.com/rkendel1/authboundry/actions/runs/43265153516",
+        "status": "completed",
+        "conclusion": "failure",
+        "branch": "main",
+        "sha": "8aba57a74a142d1622811b33062f10cfa9a33082",
+        "event": "workflow_dispatch",
+        "at": "2026-11-12T17:18:48Z"
+      },
+      "lastSuccess": null,
+      "lastFailure": null,
+      "jobUrl": null,
+      "failure": null,
       "stale": false
     },
     {
@@ -5506,24 +6149,24 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42578874414,
-        "url": "https://github.com/rkendel1/compute/actions/runs/42578874414",
+        "runId": 43824577964,
+        "url": "https://github.com/rkendel1/compute/actions/runs/43824577964",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-09T07:22:18Z"
+        "at": "2026-11-16T07:32:46Z"
       },
       "lastSuccess": {
-        "runId": 42578874414,
-        "url": "https://github.com/rkendel1/compute/actions/runs/42578874414",
+        "runId": 43824577964,
+        "url": "https://github.com/rkendel1/compute/actions/runs/43824577964",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-09T07:22:18Z"
+        "at": "2026-11-16T07:32:46Z"
       },
       "lastFailure": {
         "runId": 38454984409,
@@ -5535,7 +6178,7 @@
         "event": "push",
         "at": "2026-10-13T19:27:56Z"
       },
-      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/42578874414/job/129032654526",
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/43824577964/job/133155216016",
       "failure": null,
       "stale": false
     },
@@ -5616,27 +6259,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 42578874414,
-        "url": "https://github.com/rkendel1/compute/actions/runs/42578874414",
+        "runId": 43824577964,
+        "url": "https://github.com/rkendel1/compute/actions/runs/43824577964",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-09T07:22:18Z"
+        "at": "2026-11-16T07:32:46Z"
       },
       "lastSuccess": {
-        "runId": 42578874414,
-        "url": "https://github.com/rkendel1/compute/actions/runs/42578874414",
+        "runId": 43824577964,
+        "url": "https://github.com/rkendel1/compute/actions/runs/43824577964",
         "status": "completed",
         "conclusion": "success",
         "branch": "main",
         "sha": "b8607ae40561183a2e4a985916bb621b6d31d1c7",
         "event": "schedule",
-        "at": "2026-11-09T07:22:18Z"
+        "at": "2026-11-16T07:32:46Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/42578874414/job/129032654526",
+      "jobUrl": "https://github.com/rkendel1/compute/actions/runs/43824577964/job/133155216016",
       "failure": null,
       "stale": false
     },
@@ -10382,27 +11025,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 43676471817,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/43676471817",
+        "runId": 43804343528,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/43804343528",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "ee2a948a3bd5d6b814d8b8e25eef9bee026e583b",
         "event": "schedule",
-        "at": "2026-11-15T04:35:09Z"
+        "at": "2026-11-16T04:45:41Z"
       },
       "lastSuccess": {
-        "runId": 43676471817,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/43676471817",
+        "runId": 43804343528,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/43804343528",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "ee2a948a3bd5d6b814d8b8e25eef9bee026e583b",
         "event": "schedule",
-        "at": "2026-11-15T04:35:09Z"
+        "at": "2026-11-16T04:45:41Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817/job/132697605366",
+      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/43804343528/job/133091559842",
       "failure": null,
       "stale": false
     },
@@ -10511,27 +11154,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 43676471817,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/43676471817",
+        "runId": 43804343528,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/43804343528",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "ee2a948a3bd5d6b814d8b8e25eef9bee026e583b",
         "event": "schedule",
-        "at": "2026-11-15T04:35:09Z"
+        "at": "2026-11-16T04:45:41Z"
       },
       "lastSuccess": {
-        "runId": 43676471817,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/43676471817",
+        "runId": 43804343528,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/43804343528",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "ee2a948a3bd5d6b814d8b8e25eef9bee026e583b",
         "event": "schedule",
-        "at": "2026-11-15T04:35:09Z"
+        "at": "2026-11-16T04:45:41Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817/job/132697605366",
+      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/43804343528/job/133091559842",
       "failure": null,
       "stale": false
     },
@@ -10575,27 +11218,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 43676471817,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/43676471817",
+        "runId": 43804343528,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/43804343528",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "ee2a948a3bd5d6b814d8b8e25eef9bee026e583b",
         "event": "schedule",
-        "at": "2026-11-15T04:35:09Z"
+        "at": "2026-11-16T04:45:41Z"
       },
       "lastSuccess": {
-        "runId": 43676471817,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/43676471817",
+        "runId": 43804343528,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/43804343528",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "ee2a948a3bd5d6b814d8b8e25eef9bee026e583b",
         "event": "schedule",
-        "at": "2026-11-15T04:35:09Z"
+        "at": "2026-11-16T04:45:41Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817/job/132697605549",
+      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/43804343528/job/133091560026",
       "failure": null,
       "stale": false
     },
@@ -10704,27 +11347,27 @@
       "result": "passing",
       "resultNote": null,
       "lastRun": {
-        "runId": 43676471817,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/43676471817",
+        "runId": 43804343528,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/43804343528",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "ee2a948a3bd5d6b814d8b8e25eef9bee026e583b",
         "event": "schedule",
-        "at": "2026-11-15T04:35:09Z"
+        "at": "2026-11-16T04:45:41Z"
       },
       "lastSuccess": {
-        "runId": 43676471817,
-        "url": "https://github.com/rkendel1/flow_db/actions/runs/43676471817",
+        "runId": 43804343528,
+        "url": "https://github.com/rkendel1/flow_db/actions/runs/43804343528",
         "status": "completed",
         "conclusion": "failure",
         "branch": "main",
         "sha": "ee2a948a3bd5d6b814d8b8e25eef9bee026e583b",
         "event": "schedule",
-        "at": "2026-11-15T04:35:09Z"
+        "at": "2026-11-16T04:45:41Z"
       },
       "lastFailure": null,
-      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817/job/132697605549",
+      "jobUrl": "https://github.com/rkendel1/flow_db/actions/runs/43804343528/job/133091560026",
       "failure": null,
       "stale": false
     },

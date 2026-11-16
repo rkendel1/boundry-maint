@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
   "scan": {
-    "runId": "43689964361",
-    "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/43689964361",
-    "startedAt": "2026-11-15T07:26:50.183Z",
-    "finishedAt": "2026-11-15T07:28:22.399Z",
+    "runId": "43825421182",
+    "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/43825421182",
+    "startedAt": "2026-11-16T07:40:19.700Z",
+    "finishedAt": "2026-11-16T07:42:01.766Z",
     "status": "success",
     "trigger": "schedule",
-    "configCommit": "ccb58a1a081ea2168238389e9f8defe323429a84",
+    "configCommit": "5ac798657f980eda4c5c35b42eb47bb682d31ea5",
     "counts": {
       "packages": 62,
       "packagesFailed": 0,
       "projects": 12,
       "projectsFailed": 0,
       "ciRepositories": 14,
-      "ciChecks": 150,
-      "ciChecksFailing": 5,
+      "ciChecks": 157,
+      "ciChecksFailing": 4,
       "installations": 388,
       "maintenanceOpen": 50
     },
@@ -11435,6 +11435,14 @@
       "result": "passing"
     },
     {
+      "id": "rkendel1/authboundry:.github/workflows/architecture-invariants.yml#verify/release-versions-are-consistent-across-every-package-manifes",
+      "result": "passing"
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/architecture-invariants.yml#verify/release-tooling-manifest-checks-resumable-publisher-against-",
+      "result": "passing"
+    },
+    {
       "id": "rkendel1/authboundry:.github/workflows/portal.yml#portal/run-npm-ci-ignore-scripts",
       "result": "passing"
     },
@@ -11443,12 +11451,32 @@
       "result": "passing"
     },
     {
-      "id": "rkendel1/authboundry:.github/workflows/release.yml#commit-and-publish/verify-package-would-include-all-binaries",
-      "result": "passing"
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#validate/version-relationships-and-the-dispatched-version-equals-the-",
+      "result": "unknown"
     },
     {
-      "id": "rkendel1/authboundry:.github/workflows/release.yml#commit-and-publish/publish-npm-packages",
-      "result": "failing"
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#validate/release-tooling-tests-manifest-checks-publisher-against-a-st",
+      "result": "unknown"
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#test/run-npm-ci-ignore-scripts-omit-optional",
+      "result": "unknown"
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#test/package-tests",
+      "result": "unknown"
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#publish/publish-npm-packages-dependency-order-resumes-safely",
+      "result": "unknown"
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#publish/verify-every-package-version-is-served-by-the-registry",
+      "result": "unknown"
+    },
+    {
+      "id": "rkendel1/authboundry:.github/workflows/release.yml#publish/create-github-release-with-the-release-evidence",
+      "result": "unknown"
     },
     {
       "id": "rkendel1/compute:.github/workflows/chip-fx-integration.yml#harness/contract-boundary-and-pin-tests-native",
@@ -11842,58 +11870,61 @@
   "changes": {
     "newReleases": [],
     "versionChanges": [],
-    "newDependencies": [
-      {
-        "project": "authboundry",
-        "root": "crates/feltdb-adapter",
-        "name": "sha2",
-        "version": "0.10.9"
-      }
-    ],
+    "newDependencies": [],
     "removedDependencies": [],
     "statusChanges": [],
     "newEvidence": [
       {
-        "project": "feltkit",
-        "commit": "b0cfa6aefd7dafd7546c446113506b33dfcc69ab",
-        "passed": false
-      },
-      {
-        "project": "appport-services",
-        "commit": "1295589f902a0023383027bbc6e24f52398462dd",
-        "passed": false
-      },
-      {
         "project": "authboundry",
-        "commit": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+        "commit": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
         "passed": true
       }
     ],
     "ciResultChanges": [
       {
-        "id": "rkendel1/feltkit:.github/workflows/ci.yml#isolation/install",
-        "from": "unknown",
+        "id": "rkendel1/authboundry:.github/workflows/architecture-invariants.yml#verify/release-versions-are-consistent-across-every-package-manifes",
+        "from": null,
         "to": "passing"
       },
       {
-        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/install",
-        "from": "unknown",
+        "id": "rkendel1/authboundry:.github/workflows/architecture-invariants.yml#verify/release-tooling-manifest-checks-resumable-publisher-against-",
+        "from": null,
         "to": "passing"
       },
       {
-        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/unit-tests-sdk-incl-browser-tests-conformance-suites-create-",
-        "from": "unknown",
-        "to": "failing"
+        "id": "rkendel1/authboundry:.github/workflows/release.yml#validate/version-relationships-and-the-dispatched-version-equals-the-",
+        "from": null,
+        "to": "unknown"
       },
       {
-        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
-        "from": "unknown",
-        "to": "skipped"
+        "id": "rkendel1/authboundry:.github/workflows/release.yml#validate/release-tooling-tests-manifest-checks-publisher-against-a-st",
+        "from": null,
+        "to": "unknown"
       },
       {
-        "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e-feltdb/install",
-        "from": "unknown",
-        "to": "passing"
+        "id": "rkendel1/authboundry:.github/workflows/release.yml#test/run-npm-ci-ignore-scripts-omit-optional",
+        "from": null,
+        "to": "unknown"
+      },
+      {
+        "id": "rkendel1/authboundry:.github/workflows/release.yml#test/package-tests",
+        "from": null,
+        "to": "unknown"
+      },
+      {
+        "id": "rkendel1/authboundry:.github/workflows/release.yml#publish/publish-npm-packages-dependency-order-resumes-safely",
+        "from": null,
+        "to": "unknown"
+      },
+      {
+        "id": "rkendel1/authboundry:.github/workflows/release.yml#publish/verify-every-package-version-is-served-by-the-registry",
+        "from": null,
+        "to": "unknown"
+      },
+      {
+        "id": "rkendel1/authboundry:.github/workflows/release.yml#publish/create-github-release-with-the-release-evidence",
+        "from": null,
+        "to": "unknown"
       }
     ]
   }

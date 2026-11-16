@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T07:26:50.183Z",
+  "generatedAt": "2026-11-16T07:40:19.700Z",
   "items": [
     {
       "key": "flow-db|crates/feltdb-public-api-check/Cargo.lock|crates:tokio",
@@ -394,7 +394,19 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "ci": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/authboundry:.github/workflows/release.yml#test/package-tests",
+            "name": "Package tests",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/authboundry/actions/runs/43265153516"
+          }
+        ]
+      },
       "targetPublishedAt": "2026-11-09T19:17:21.122Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
@@ -428,7 +440,19 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "ci": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/authboundry:.github/workflows/release.yml#test/package-tests",
+            "name": "Package tests",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/authboundry/actions/runs/43265153516"
+          }
+        ]
+      },
       "targetPublishedAt": "2026-11-09T19:17:21.122Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
@@ -462,7 +486,19 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "ci": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/authboundry:.github/workflows/release.yml#test/package-tests",
+            "name": "Package tests",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/authboundry/actions/runs/43265153516"
+          }
+        ]
+      },
       "targetPublishedAt": "2026-11-09T19:17:21.122Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
@@ -530,7 +566,19 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "ci": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/authboundry:.github/workflows/release.yml#test/package-tests",
+            "name": "Package tests",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/authboundry/actions/runs/43265153516"
+          }
+        ]
+      },
       "targetPublishedAt": "2026-11-12T17:01:14.673Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
@@ -564,7 +612,19 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "ci": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/authboundry:.github/workflows/release.yml#test/package-tests",
+            "name": "Package tests",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/authboundry/actions/runs/43265153516"
+          }
+        ]
+      },
       "targetPublishedAt": "2026-11-12T17:01:14.673Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
@@ -598,7 +658,19 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "ci": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/authboundry:.github/workflows/release.yml#test/package-tests",
+            "name": "Package tests",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/authboundry/actions/runs/43265153516"
+          }
+        ]
+      },
       "targetPublishedAt": "2026-11-12T17:01:14.673Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
@@ -632,7 +704,19 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "ci": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/authboundry:.github/workflows/release.yml#test/package-tests",
+            "name": "Package tests",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/authboundry/actions/runs/43265153516"
+          }
+        ]
+      },
       "targetPublishedAt": "2026-11-03T20:40:49.737Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
@@ -666,7 +750,19 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "ci": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/authboundry:.github/workflows/release.yml#test/package-tests",
+            "name": "Package tests",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/authboundry/actions/runs/43265153516"
+          }
+        ]
+      },
       "targetPublishedAt": "2026-11-03T20:40:49.737Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
@@ -700,7 +796,19 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "ci": null,
+      "ci": {
+        "blockingFailure": false,
+        "checks": [
+          {
+            "id": "rkendel1/authboundry:.github/workflows/release.yml#test/package-tests",
+            "name": "Package tests",
+            "result": "unknown",
+            "enforcement": "unknown",
+            "requirement": null,
+            "runUrl": "https://github.com/rkendel1/authboundry/actions/runs/43265153516"
+          }
+        ]
+      },
       "targetPublishedAt": "2026-11-03T20:40:49.737Z",
       "openedAt": "2026-11-04T15:32:00.046Z",
       "updatedAt": "2026-11-04T15:32:00.046Z",
@@ -811,7 +919,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/compute/actions/runs/42578874414"
+            "runUrl": "https://github.com/rkendel1/compute/actions/runs/43824577964"
           },
           {
             "id": "rkendel1/compute:.github/workflows/distribution-certification.yml#certify-linux-x86_64/assemble-the-configured-product-from-published-packages",
@@ -865,7 +973,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/compute/actions/runs/42578874414"
+            "runUrl": "https://github.com/rkendel1/compute/actions/runs/43824577964"
           },
           {
             "id": "rkendel1/compute:.github/workflows/distribution-certification.yml#certify-linux-x86_64/assemble-the-configured-product-from-published-packages",
@@ -1055,7 +1163,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/compute/actions/runs/42578874414"
+            "runUrl": "https://github.com/rkendel1/compute/actions/runs/43824577964"
           },
           {
             "id": "rkendel1/compute:.github/workflows/distribution-certification.yml#certify-linux-x86_64/assemble-the-configured-product-from-published-packages",
@@ -1143,7 +1251,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/compute/actions/runs/42578874414"
+            "runUrl": "https://github.com/rkendel1/compute/actions/runs/43824577964"
           },
           {
             "id": "rkendel1/compute:.github/workflows/distribution-certification.yml#certify-linux-x86_64/assemble-the-configured-product-from-published-packages",
@@ -1213,7 +1321,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/compute/actions/runs/42578874414"
+            "runUrl": "https://github.com/rkendel1/compute/actions/runs/43824577964"
           },
           {
             "id": "rkendel1/compute:.github/workflows/distribution-certification.yml#certify-linux-x86_64/assemble-the-configured-product-from-published-packages",
@@ -1483,7 +1591,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43804343528"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1491,7 +1599,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43804343528"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1657,7 +1765,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43804343528"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1665,7 +1773,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43804343528"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",
@@ -1807,7 +1915,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43804343528"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/proof-qualification.yml#managed-disposable/run-npm-run-build-workspace-feltdb-core",
@@ -1815,7 +1923,7 @@
             "result": "passing",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43676471817"
+            "runUrl": "https://github.com/rkendel1/flow_db/actions/runs/43804343528"
           },
           {
             "id": "rkendel1/flow_db:.github/workflows/release.yml#verify/verify-ci-attestation-and-every-immutable-artifact",

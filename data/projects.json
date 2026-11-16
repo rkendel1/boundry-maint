@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T07:26:50.183Z",
+  "generatedAt": "2026-11-16T07:40:19.700Z",
   "projects": [
     {
       "id": "feltkit",
@@ -99,8 +99,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-15T07:26:50.183Z",
-      "lastSuccessfulScan": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z",
+      "lastSuccessfulScan": "2026-11-16T07:40:19.700Z"
     },
     {
       "id": "appport-services",
@@ -173,8 +173,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-15T07:26:50.183Z",
-      "lastSuccessfulScan": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z",
+      "lastSuccessfulScan": "2026-11-16T07:40:19.700Z"
     },
     {
       "id": "felt-ops",
@@ -195,7 +195,7 @@
         ],
         "headVerified": true,
         "lastVerifiedCommit": "d4d62b6362f90109dcbc741204c18c988fd1ff97",
-        "lastVerifiedAt": "2026-11-15T07:26:50.183Z"
+        "lastVerifiedAt": "2026-11-16T07:40:19.700Z"
       },
       "branch": "claude/keen-cannon-gxv0v3",
       "commit": "d4d62b6362f90109dcbc741204c18c988fd1ff97",
@@ -211,8 +211,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-15T07:26:50.183Z",
-      "lastSuccessfulScan": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z",
+      "lastSuccessfulScan": "2026-11-16T07:40:19.700Z"
     },
     {
       "id": "rust-ml-runtime",
@@ -474,8 +474,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-15T07:26:50.183Z",
-      "lastSuccessfulScan": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z",
+      "lastSuccessfulScan": "2026-11-16T07:40:19.700Z"
     },
     {
       "id": "appboundry",
@@ -850,8 +850,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-15T07:26:50.183Z",
-      "lastSuccessfulScan": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z",
+      "lastSuccessfulScan": "2026-11-16T07:40:19.700Z"
     },
     {
       "id": "flow-db",
@@ -1130,8 +1130,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-15T07:26:50.183Z",
-      "lastSuccessfulScan": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z",
+      "lastSuccessfulScan": "2026-11-16T07:40:19.700Z"
     },
     {
       "id": "appport",
@@ -1164,7 +1164,7 @@
         ],
         "headVerified": true,
         "lastVerifiedCommit": "35a57eacaf5db61b71c883e502ac2c5495ae6ee7",
-        "lastVerifiedAt": "2026-11-15T07:26:50.183Z"
+        "lastVerifiedAt": "2026-11-16T07:40:19.700Z"
       },
       "branch": "main",
       "commit": "35a57eacaf5db61b71c883e502ac2c5495ae6ee7",
@@ -1313,8 +1313,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-15T07:26:50.183Z",
-      "lastSuccessfulScan": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z",
+      "lastSuccessfulScan": "2026-11-16T07:40:19.700Z"
     },
     {
       "id": "authboundry",
@@ -1350,12 +1350,12 @@
           "cli-smoke.yml"
         ],
         "headVerified": true,
-        "lastVerifiedCommit": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
-        "lastVerifiedAt": "2026-11-15T07:26:50.183Z"
+        "lastVerifiedCommit": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
+        "lastVerifiedAt": "2026-11-16T07:40:19.700Z"
       },
       "branch": "main",
-      "commit": "1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
-      "commitUrl": "https://github.com/rkendel1/authboundry/commit/1b254094ed5f79e319abe1fbe5cccc8a41c12a94",
+      "commit": "0c982e4a9b37fed5393a0d7b659e420235b15d39",
+      "commitUrl": "https://github.com/rkendel1/authboundry/commit/0c982e4a9b37fed5393a0d7b659e420235b15d39",
       "roots": [
         {
           "path": "apps/web",
@@ -1549,8 +1549,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-15T07:26:50.183Z",
-      "lastSuccessfulScan": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z",
+      "lastSuccessfulScan": "2026-11-16T07:40:19.700Z"
     },
     {
       "id": "appworks",
@@ -1582,7 +1582,7 @@
         ],
         "headVerified": true,
         "lastVerifiedCommit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-        "lastVerifiedAt": "2026-11-15T07:26:50.183Z"
+        "lastVerifiedAt": "2026-11-16T07:40:19.700Z"
       },
       "branch": "main",
       "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
@@ -1654,8 +1654,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-15T07:26:50.183Z",
-      "lastSuccessfulScan": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z",
+      "lastSuccessfulScan": "2026-11-16T07:40:19.700Z"
     },
     {
       "id": "compute",
@@ -1889,8 +1889,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-15T07:26:50.183Z",
-      "lastSuccessfulScan": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z",
+      "lastSuccessfulScan": "2026-11-16T07:40:19.700Z"
     },
     {
       "id": "agent-obstacle",
@@ -1937,8 +1937,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-15T07:26:50.183Z",
-      "lastSuccessfulScan": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z",
+      "lastSuccessfulScan": "2026-11-16T07:40:19.700Z"
     },
     {
       "id": "github-integration",
@@ -1963,7 +1963,7 @@
         ],
         "headVerified": true,
         "lastVerifiedCommit": "d51dcd156279fb85476479e490dcab41fcbe4fa7",
-        "lastVerifiedAt": "2026-11-15T07:26:50.183Z"
+        "lastVerifiedAt": "2026-11-16T07:40:19.700Z"
       },
       "branch": "main",
       "commit": "d51dcd156279fb85476479e490dcab41fcbe4fa7",
@@ -1979,8 +1979,8 @@
       ],
       "scanStatus": "ok",
       "error": null,
-      "lastScanned": "2026-11-15T07:26:50.183Z",
-      "lastSuccessfulScan": "2026-11-15T07:26:50.183Z"
+      "lastScanned": "2026-11-16T07:40:19.700Z",
+      "lastSuccessfulScan": "2026-11-16T07:40:19.700Z"
     }
   ]
 }
