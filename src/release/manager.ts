@@ -391,14 +391,7 @@ export class ReleaseManager {
         const where = `${inst.repository}:${inst.manifest}`;
         const resolved = inst.resolvedVersion ?? null;
         const adoption = resolved && semver.valid(resolved) ? (semver.gte(resolved, pp.proposedVersion) ? "adopted" : "not-adopted") : "unknown";
-        // Verification of THIS version: the consumer's own evidence for a commit whose lockfile resolved exactly it,
-        // for this manifest root. Its CI on a commit using another version says nothing about this one.
-        const key = installKey(inst.root, inst.registry, inst.name);
-        const records = evidence
-          .filter((e) => e.project === inst.project && e.resolved[key] === pp.proposedVersion && e.checks.resolution === "pass" && e.checks.workflows !== "pending")
-          .sort((a, b) => b.collectedAt.localeCompare(a.collectedAt));
-        const rec = records.find((e) => e.passed) ?? records[0] ?? null;
-        const verification = rec ? (rec.passed ? "verified" : "failed") : "unverified";
+        const { verification, record: rec } = consumerVerification(inst, pp.proposedVersion, evidence);
         r.consumers.push({
           at, consumer: inst.project, where, dependency: pp.name, released: pp.proposedVersion, basis,
           installation: { declared: inst.declaredVersion ?? null, resolved, commit: inst.commit ?? null }, adoption, verification,
@@ -849,4 +842,22 @@ export function claimOf(r: ReleaseRecord): ReleaseRecord["claim"] {
   if (first) return { by: "component:release-executor", at: first.at, triggeredBy: "unknown (schema 2)", inferred: true };
   if (ORDER.indexOf(r.state) > ORDER.indexOf("approved")) return { by: "component:release-executor", at: r.history.at(-1)!.at, triggeredBy: null, inferred: true };
   return null;
+}
+
+/**
+ * Verification of one released version by one consumer manifest: the consumer's own CI evidence for a consumer commit
+ * whose lockfile resolved exactly that version, for that manifest root, with completed workflows and a clean
+ * resolution. CI on another version, another root, another project, still running, or with an unparseable lockfile is
+ * not evidence about this version. No evidence ⇒ "unverified", never inferred.
+ */
+export function consumerVerification(inst: Pick<Installation, "project" | "root" | "registry" | "name">, version: string, evidence: EvidenceRecord[]): { verification: "verified" | "failed" | "unverified"; record: EvidenceRecord | null; why: string } {
+  const key = installKey(inst.root, inst.registry, inst.name);
+  const mine = evidence.filter((e) => e.project === inst.project);
+  if (!mine.length) return { verification: "unverified", record: null, why: `no CI evidence for ${inst.project} (no verification workflows configured, or none collected yet)` };
+  const forVersion = mine.filter((e) => e.resolved[key] === version);
+  if (!forVersion.length) return { verification: "unverified", record: null, why: `no consumer commit with evidence resolved ${inst.name} ${version} for ${inst.root}` };
+  const usable = forVersion.filter((e) => e.checks.resolution === "pass" && e.checks.workflows !== "pending").sort((a, b) => b.collectedAt.localeCompare(a.collectedAt));
+  if (!usable.length) return { verification: "unverified", record: null, why: "evidence for this version is incomplete (workflows pending or lockfile resolution failed)" };
+  const rec = usable.find((e) => e.passed) ?? usable[0]!;
+  return { verification: rec.passed ? "verified" : "failed", record: rec, why: rec.passed ? "configured workflows passed on a commit resolving exactly this version" : "configured workflows failed on a commit resolving exactly this version" };
 }

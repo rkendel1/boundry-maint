@@ -1,6 +1,6 @@
 # End-to-end proof: Rust release (disposable crate, isolated registry)
 
-The proof is `tools/release-proof/run-proof-crates.ts`, run on 2026-11-17. Nothing touched crates.io.
+The proof is `tools/release-proof/run-proof-crates.ts`. **Re-run on 2026-11-17 at boundry-maint `deaa2cb` and boundry-ci `1070bd3`, governance contract 1.2.0**, with the pinned toolchain image `boundry-toolchain/rust:1` (`sha256:add5bb0d…`, verified by the worker). Nothing touched crates.io.
 
 ## Setup
 
@@ -21,7 +21,9 @@ The proof is `tools/release-proof/run-proof-crates.ts`, run on 2026-11-17. Nothi
 3. `randy` approved with a valid signature over the exact approval statement (`2-approval-statement.json` and its `.sig`), recorded as `authentication: "signature"`. At the start of execution, the release executor re-verified it.
 4. Lifecycle: `proposed → validated → awaiting-approval → approved → prepared → built → tagged → published → registry-verified → released`. The GitHub release was **skipped** by policy, and the skip is recorded as such.
 5. **Ambiguous publish.** The registry stored 0.1.2 and dropped the connection without answering. The Release Manager asked the registry, found the exact checksum, and recorded `already-done`. The registry received exactly **one** publish request.
-6. A **separate Cargo project** declaring `boundry-proof-core = "0.1"` resolved **0.1.2**, never the yanked 0.1.1, then built and ran, printing `42`. The consumer was then recorded as installed (`0.1` → `0.1.2`), adopted, and verified, with that run as evidence.
+6. A **separate Cargo project** declaring `boundry-proof-core = "0.1"` resolved **0.1.2**, never the yanked 0.1.1, then built and ran, printing `42`. Consumer facts were recorded separately: installed (`0.1` → `0.1.2` at consumer commit `proof-consumer-local`), adopted, and verified. Verification is derived the current way, from an evidence record for that consumer commit whose lockfile resolved exactly 0.1.2. The "CI" in that record is the proof's own `cargo run`, a stand-in: the disposable consumer has no real CI.
+
+The release record is schema 3: the executor's claim is recorded before its first action (`claim done … withdrawal ends here`).
 
 ## Independent verification (`6-independent-verification.json`)
 
