@@ -736,8 +736,8 @@
       "project": "appboundry",
       "repository": "rkendel1/appboundry",
       "commit": "9f8402039614f66640d076b94d2e099d10918416",
-      "collectedAt": "2026-11-16T07:40:19.700Z",
-      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/43825421182",
+      "collectedAt": "2026-11-17T07:27:42.271Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/44038850758",
       "passed": false,
       "checks": {
         "resolution": "pass",
