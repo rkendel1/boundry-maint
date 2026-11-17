@@ -1,15 +1,15 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "id": "appport-resolver@0.4.2",
-  "planDigest": "0c9abf10b85cdf0ca89cdd3ddb40af1b6556956e24a692f57d70bf4ea2e04897",
+  "planDigest": "a88173f34a115e4a2cc6645524b09eda3927299df18f386c28601e861e18e737",
   "plan": {
     "repository": "rkendel1/resolver",
     "branch": "main",
-    "sourceCommit": "99385866652af86aae0e04649313277a1fc599ee",
+    "sourceCommit": "029be530e64ae2b7d8859291a71cf375ee4e1f16",
     "bump": "patch",
     "requestedBy": "maintenance-agent",
     "requestedByType": "agent",
-    "requestedAt": "2026-11-17T01:37:42.027Z",
+    "requestedAt": "2026-11-17T13:17:57.061Z",
     "reason": "End-to-end proof of the Release Manager (resolver release train)",
     "packages": [
       {
@@ -22,7 +22,7 @@
           "highest": "0.4.1",
           "latestTag": "0.4.1",
           "yanked": [],
-          "observedAt": "2026-11-17T01:37:42.027Z"
+          "observedAt": "2026-11-17T13:17:57.061Z"
         },
         "inherited": false,
         "repositoryVersion": "0.4.1",
@@ -42,7 +42,7 @@
           "highest": "0.3.0",
           "latestTag": "0.3.0",
           "yanked": [],
-          "observedAt": "2026-11-17T01:37:42.027Z"
+          "observedAt": "2026-11-17T13:17:57.061Z"
         },
         "inherited": false,
         "repositoryVersion": "0.3.0",
@@ -62,7 +62,7 @@
           "highest": "0.2.0",
           "latestTag": "0.2.0",
           "yanked": [],
-          "observedAt": "2026-11-17T01:37:42.027Z"
+          "observedAt": "2026-11-17T13:17:57.061Z"
         },
         "inherited": false,
         "repositoryVersion": "0.2.0",
@@ -194,7 +194,7 @@
     "unknowns": [
       "Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible."
     ],
-    "impactFingerprint": "96253a24f75b6cf6955497ea568bb875b8c0915ca847178b15560d3675211c99",
+    "impactFingerprint": "5e63563af7438204c34b01c8c66cef466f25dd6a9dc2d3240356d6c397f068a3",
     "releaseCommit": {
       "message": "Release @appport/resolver@0.4.2, @appport/resolver-client@0.3.1, @appport/resolver-core@0.2.1",
       "files": [
@@ -240,18 +240,25 @@
       "by": "randy",
       "principalType": "person",
       "authentication": "asserted",
-      "at": "2026-11-17T01:37:43.637Z",
-      "planDigest": "0c9abf10b85cdf0ca89cdd3ddb40af1b6556956e24a692f57d70bf4ea2e04897",
+      "at": "2026-11-17T13:17:59.231Z",
+      "planDigest": "a88173f34a115e4a2cc6645524b09eda3927299df18f386c28601e861e18e737",
       "signature": null
     }
   ],
   "revocation": null,
+  "claim": {
+    "by": "component:release-executor",
+    "at": "2026-11-17T13:17:59.622Z",
+    "triggeredBy": "randy",
+    "inferred": false
+  },
+  "abandonment": null,
   "facts": {
-    "releaseCommit": "df70ca12d7baf95dbf157b8352c589af702683b7",
+    "releaseCommit": "7aea40e6abbc7ec51ed1c9bbd56f57f16e31b7dd",
     "build": {
       "system": "boundry-ci",
-      "runId": "run_aebf83650374724391632644",
-      "evidenceUrl": "http://127.0.0.1:21090/v1/runs/run_aebf83650374724391632644/evidence",
+      "runId": "run_8832b2901332a75efd130bf5",
+      "evidenceUrl": "http://127.0.0.1:21090/v1/runs/run_8832b2901332a75efd130bf5/evidence",
       "artifacts": [
         {
           "package": "appport-resolver",
@@ -283,15 +290,15 @@
     "tags": [
       {
         "name": "@appport/resolver@0.4.2",
-        "target": "df70ca12d7baf95dbf157b8352c589af702683b7"
+        "target": "7aea40e6abbc7ec51ed1c9bbd56f57f16e31b7dd"
       },
       {
         "name": "@appport/resolver-client@0.3.1",
-        "target": "df70ca12d7baf95dbf157b8352c589af702683b7"
+        "target": "7aea40e6abbc7ec51ed1c9bbd56f57f16e31b7dd"
       },
       {
         "name": "@appport/resolver-core@0.2.1",
-        "target": "df70ca12d7baf95dbf157b8352c589af702683b7"
+        "target": "7aea40e6abbc7ec51ed1c9bbd56f57f16e31b7dd"
       }
     ],
     "published": [
@@ -321,7 +328,7 @@
         "integrity": "sha512-mujrA+1DEDQDaSvpJdYLHyVXfPSo7FokNMDfmBGmfcgvsXG2uSUkQDHcGU7nUmUe8ChzjiAVbsZ7gJ3Gi2UEdQ==",
         "tarballSha256": "312ecf060a121326658aa8faf4f0060807ad364fddb0cc0a83b75205a637d3ad",
         "distTagPointsHere": true,
-        "at": "2026-11-17T01:38:31.648Z"
+        "at": "2026-11-17T13:19:04.373Z"
       },
       {
         "package": "appport-resolver-client",
@@ -329,7 +336,7 @@
         "integrity": "sha512-k4T8jxl4P8ytaHzcrSu5r3xrm+rNdypY7W5Zr+qz2XX1+1+1rHtR2ZE4QMjGZrKRRgJgtzTBticV2kdjPTPxng==",
         "tarballSha256": "eafb495680050af107e8cbfd82169186b6f654cf7cd2ff60b639a69665240664",
         "distTagPointsHere": true,
-        "at": "2026-11-17T01:38:31.905Z"
+        "at": "2026-11-17T13:19:04.680Z"
       },
       {
         "package": "appport-resolver-core",
@@ -337,25 +344,25 @@
         "integrity": "sha512-gXGxWKf2SHcIeiZnTPjWfmQBudTfAecL2AuQwbeOo11KHUl6ok30JJzCBxnppot52pNYGYnPf71bjb6UeVrSGg==",
         "tarballSha256": "b001e5edaaee97103e55647ad18856d24632d23fdd14a6a2d2ce193821ea179b",
         "distTagPointsHere": true,
-        "at": "2026-11-17T01:38:32.168Z"
+        "at": "2026-11-17T13:19:04.969Z"
       }
     ],
     "githubReleases": [
       {
         "package": "appport-resolver",
-        "url": "http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver%400.4.2",
+        "url": "http://127.0.0.1:45423/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver%400.4.2",
         "tag": "@appport/resolver@0.4.2",
         "alreadyPresent": false
       },
       {
         "package": "appport-resolver-client",
-        "url": "http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-client%400.3.1",
+        "url": "http://127.0.0.1:45423/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-client%400.3.1",
         "tag": "@appport/resolver-client@0.3.1",
         "alreadyPresent": false
       },
       {
         "package": "appport-resolver-core",
-        "url": "http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-core%400.2.1",
+        "url": "http://127.0.0.1:45423/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-core%400.2.1",
         "tag": "@appport/resolver-core@0.2.1",
         "alreadyPresent": false
       }
@@ -364,137 +371,143 @@
   "failure": null,
   "history": [
     {
-      "at": "2026-11-17T01:37:42.027Z",
+      "at": "2026-11-17T13:17:57.061Z",
       "state": "proposed",
       "note": "patch release proposed by maintenance-agent (agent)"
     },
     {
-      "at": "2026-11-17T01:37:42.027Z",
+      "at": "2026-11-17T13:17:57.061Z",
       "state": "validated",
       "note": "passed: @appport/resolver: publishable; passed: @appport/resolver: registry; passed: @appport/resolver: manifest and package-lock.json agree; passed: @appport/resolver: version 0.4.2 free; passed: @appport/resolver-client: publishable; passed: @appport/resolver-client: registry; passed: @appport/resolver-client: manifest and package-lock.json agree; passed: @appport/resolver-client: version 0.3.1 free; passed: @appport/resolver-core: publishable; passed: @appport/resolver-core: registry; passed: @appport/resolver-core: manifest and package-lock.json agree; passed: @appport/resolver-core: version 0.2.1 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; passed: external consumers"
     },
     {
-      "at": "2026-11-17T01:37:42.027Z",
+      "at": "2026-11-17T13:17:57.061Z",
       "state": "awaiting-approval",
       "note": "needs 1 approval(s) from prod approvers; eligible: randy"
     },
     {
-      "at": "2026-11-17T01:37:43.638Z",
+      "at": "2026-11-17T13:17:59.231Z",
       "state": "approved",
-      "note": "approved by randy (asserted) for plan 0c9abf10b85c"
+      "note": "approved by randy (asserted) for plan a88173f34a11"
     },
     {
-      "at": "2026-11-17T01:37:44.417Z",
+      "at": "2026-11-17T13:18:00.179Z",
       "state": "prepared",
-      "note": "release commit df70ca12d7ba"
+      "note": "release commit 7aea40e6abbc"
     },
     {
-      "at": "2026-11-17T01:38:18.766Z",
+      "at": "2026-11-17T13:18:50.794Z",
       "state": "built",
-      "note": "built by run_aebf83650374724391632644 from df70ca12d7ba"
+      "note": "built by run_8832b2901332a75efd130bf5 from 7aea40e6abbc"
     },
     {
-      "at": "2026-11-17T01:38:19.137Z",
+      "at": "2026-11-17T13:18:51.210Z",
       "state": "tagged",
       "note": "@appport/resolver@0.4.2, @appport/resolver-client@0.3.1, @appport/resolver-core@0.2.1"
     },
     {
-      "at": "2026-11-17T01:38:31.375Z",
+      "at": "2026-11-17T13:19:04.048Z",
       "state": "published",
       "note": "registry accepted every artifact"
     },
     {
-      "at": "2026-11-17T01:38:32.168Z",
+      "at": "2026-11-17T13:19:04.969Z",
       "state": "registry-verified",
       "note": "registry serves the exact artifact"
     },
     {
-      "at": "2026-11-17T01:38:32.204Z",
+      "at": "2026-11-17T13:19:05.008Z",
       "state": "released",
       "note": "@appport/resolver@0.4.2, @appport/resolver-client@0.3.1, @appport/resolver-core@0.2.1 released and verified"
     }
   ],
   "attempts": [
     {
-      "at": "2026-11-17T01:37:43.964Z",
+      "at": "2026-11-17T13:17:59.622Z",
       "step": "authorize",
       "outcome": "done",
-      "detail": "component:release-executor authorized execution under boundry.governance@1.0.0 (triggered by randy)"
+      "detail": "component:release-executor authorized execution under boundry.governance@1.2.0 (triggered by randy)"
     },
     {
-      "at": "2026-11-17T01:37:44.417Z",
+      "at": "2026-11-17T13:17:59.622Z",
+      "step": "claim",
+      "outcome": "done",
+      "detail": "claimed by component:release-executor; withdrawal ends here (contract §7)"
+    },
+    {
+      "at": "2026-11-17T13:18:00.179Z",
       "step": "release-commit",
       "outcome": "done",
-      "detail": "df70ca12d7ba on main (package-lock.json, packages/client/package.json, packages/core/package.json, packages/server/package.json)"
+      "detail": "7aea40e6abbc on main (package-lock.json, packages/client/package.json, packages/core/package.json, packages/server/package.json)"
     },
     {
-      "at": "2026-11-17T01:38:18.766Z",
+      "at": "2026-11-17T13:18:50.794Z",
       "step": "build",
       "outcome": "done",
-      "detail": "run_aebf83650374724391632644: appport-resolver-0.4.2.tgz sha256:312ecf060a121326, appport-resolver-client-0.3.1.tgz sha256:eafb495680050af1, appport-resolver-core-0.2.1.tgz sha256:b001e5edaaee9710"
+      "detail": "run_8832b2901332a75efd130bf5: appport-resolver-0.4.2.tgz sha256:312ecf060a121326, appport-resolver-client-0.3.1.tgz sha256:eafb495680050af1, appport-resolver-core-0.2.1.tgz sha256:b001e5edaaee9710"
     },
     {
-      "at": "2026-11-17T01:38:18.916Z",
+      "at": "2026-11-17T13:18:50.962Z",
       "step": "tag",
       "outcome": "done",
-      "detail": "@appport/resolver@0.4.2 → df70ca12d7ba (verified)"
+      "detail": "@appport/resolver@0.4.2 → 7aea40e6abbc (verified)"
     },
     {
-      "at": "2026-11-17T01:38:19.033Z",
+      "at": "2026-11-17T13:18:51.082Z",
       "step": "tag",
       "outcome": "done",
-      "detail": "@appport/resolver-client@0.3.1 → df70ca12d7ba (verified)"
+      "detail": "@appport/resolver-client@0.3.1 → 7aea40e6abbc (verified)"
     },
     {
-      "at": "2026-11-17T01:38:19.137Z",
+      "at": "2026-11-17T13:18:51.209Z",
       "step": "tag",
       "outcome": "done",
-      "detail": "@appport/resolver-core@0.2.1 → df70ca12d7ba (verified)"
+      "detail": "@appport/resolver-core@0.2.1 → 7aea40e6abbc (verified)"
     },
     {
-      "at": "2026-11-17T01:38:30.140Z",
+      "at": "2026-11-17T13:19:02.525Z",
       "step": "publish",
       "outcome": "already-done",
       "detail": "publish reported \"registry refused: version already present\", but the registry has the exact artifact"
     },
     {
-      "at": "2026-11-17T01:38:30.762Z",
+      "at": "2026-11-17T13:19:03.271Z",
       "step": "publish",
       "outcome": "done",
       "detail": "@appport/resolver-client@0.3.1 → http://127.0.0.1:4875 (dist-tag latest)"
     },
     {
-      "at": "2026-11-17T01:38:31.375Z",
+      "at": "2026-11-17T13:19:04.048Z",
       "step": "publish",
       "outcome": "done",
       "detail": "@appport/resolver-core@0.2.1 → http://127.0.0.1:4875 (dist-tag latest)"
     },
     {
-      "at": "2026-11-17T01:38:32.168Z",
+      "at": "2026-11-17T13:19:04.969Z",
       "step": "verify-registry",
       "outcome": "done",
       "detail": "0.4.2 integrity+bytes match; dist-tag points here; 0.3.1 integrity+bytes match; dist-tag points here; 0.2.1 integrity+bytes match; dist-tag points here"
     },
     {
-      "at": "2026-11-17T01:38:32.199Z",
+      "at": "2026-11-17T13:19:05.003Z",
       "step": "github-release",
       "outcome": "done",
-      "detail": "http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver%400.4.2"
+      "detail": "http://127.0.0.1:45423/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver%400.4.2"
     },
     {
-      "at": "2026-11-17T01:38:32.202Z",
+      "at": "2026-11-17T13:19:05.005Z",
       "step": "github-release",
       "outcome": "done",
-      "detail": "http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-client%400.3.1"
+      "detail": "http://127.0.0.1:45423/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-client%400.3.1"
     },
     {
-      "at": "2026-11-17T01:38:32.203Z",
+      "at": "2026-11-17T13:19:05.008Z",
       "step": "github-release",
       "outcome": "done",
-      "detail": "http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-core%400.2.1"
+      "detail": "http://127.0.0.1:45423/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-core%400.2.1"
     },
     {
-      "at": "2026-11-17T01:38:32.204Z",
+      "at": "2026-11-17T13:19:05.008Z",
       "step": "downstream",
       "outcome": "done",
       "detail": "1 consumer change(s) proposed (never applied by this release): feltkit requirement-change"

@@ -133,8 +133,8 @@
         "by": "randy",
         "principalType": "person",
         "authentication": "asserted",
-        "at": "2026-11-17T01:37:43.637Z",
-        "planDigest": "0c9abf10b85cdf0ca89cdd3ddb40af1b6556956e24a692f57d70bf4ea2e04897",
+        "at": "2026-11-17T13:17:59.231Z",
+        "planDigest": "a88173f34a115e4a2cc6645524b09eda3927299df18f386c28601e861e18e737",
         "signature": null
       }
     ],
@@ -145,28 +145,28 @@
     ]
   },
   "git": {
-    "branchHead": "df70ca12d7baf95dbf157b8352c589af702683b7",
-    "parentOfHead": "99385866652af86aae0e04649313277a1fc599ee",
-    "approvedSource": "99385866652af86aae0e04649313277a1fc599ee",
+    "branchHead": "7aea40e6abbc7ec51ed1c9bbd56f57f16e31b7dd",
+    "parentOfHead": "029be530e64ae2b7d8859291a71cf375ee4e1f16",
+    "approvedSource": "029be530e64ae2b7d8859291a71cf375ee4e1f16",
     "realResolverCommit": "aaab053651a9144e470c3b62c1c550ab084effe7",
     "approvedSourceIsRepairOfReal": true,
-    "releaseCommit": "df70ca12d7baf95dbf157b8352c589af702683b7",
+    "releaseCommit": "7aea40e6abbc7ec51ed1c9bbd56f57f16e31b7dd",
     "packages": [
       {
         "tag": "@appport/resolver-core@0.2.1",
-        "tagTarget": "df70ca12d7baf95dbf157b8352c589af702683b7",
+        "tagTarget": "7aea40e6abbc7ec51ed1c9bbd56f57f16e31b7dd",
         "tagIsReleaseCommit": true,
         "manifestVersionAtTag": "0.2.1"
       },
       {
         "tag": "@appport/resolver-client@0.3.1",
-        "tagTarget": "df70ca12d7baf95dbf157b8352c589af702683b7",
+        "tagTarget": "7aea40e6abbc7ec51ed1c9bbd56f57f16e31b7dd",
         "tagIsReleaseCommit": true,
         "manifestVersionAtTag": "0.3.1"
       },
       {
         "tag": "@appport/resolver@0.4.2",
-        "tagTarget": "df70ca12d7baf95dbf157b8352c589af702683b7",
+        "tagTarget": "7aea40e6abbc7ec51ed1c9bbd56f57f16e31b7dd",
         "tagIsReleaseCommit": true,
         "manifestVersionAtTag": "0.4.2"
       }
@@ -209,9 +209,9 @@
     }
   ],
   "execution": {
-    "runId": "run_aebf83650374724391632644",
+    "runId": "run_8832b2901332a75efd130bf5",
     "state": "succeeded",
-    "commitBuilt": "df70ca12d7baf95dbf157b8352c589af702683b7",
+    "commitBuilt": "7aea40e6abbc7ec51ed1c9bbd56f57f16e31b7dd",
     "isReleaseCommit": true,
     "recipe": ".boundry/recipes/boundry-release.md",
     "jobs": [
@@ -239,9 +239,9 @@
         ],
         "artifacts": [
           {
-            "digest": "0c08c9e09ef90227a6d8688414670fe0eeb691ebc183a3cc309f5b87be15df57",
+            "digest": "860c504eb8376c0d1f0297b6bec651c255d8191a3699a27ac708b4290f786fa5",
             "name": "test-results.txt",
-            "size": 17951
+            "size": 19640
           }
         ]
       }

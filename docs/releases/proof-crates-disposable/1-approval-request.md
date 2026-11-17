@@ -1,13 +1,13 @@
 # Release request: boundry-proof-core 0.1.1 → **0.1.2**
 
-Requested by maintenance-agent at 2026-11-17T01:38:46.094Z — “End-to-end proof of a Rust release (disposable crate, isolated registry)”. State: **awaiting-approval**.
+Requested by maintenance-agent at 2026-11-17T13:19:08.703Z — “End-to-end proof of a Rust release (disposable crate, isolated registry)”. State: **awaiting-approval**.
 
 ## What will happen, in order
 
-1. A commit “Release boundry-proof-core@0.1.2” is added on top of `62f73f79f1be` on `main`, changing `Cargo.lock`, `crates/core/Cargo.toml`. If `main` has moved, the release stops.
+1. A commit “Release boundry-proof-core@0.1.2” is added on top of `05ac12cd9a5f` on `main`, changing `Cargo.lock`, `crates/core/Cargo.toml`. If `main` has moved, the release stops.
 2. Boundry CI runs the tests on that exact commit and packages it. The package's SHA-256 is recorded.
 3. Only after the build succeeds: tag `boundry-proof-core@0.1.2` on that commit. Existing tags are never moved.
-4. Exactly that tarball is published to http://127.0.0.1:45955 (declared test registry) (dist-tag `latest`). A version already on the registry is never overwritten.
+4. Exactly that tarball is published to http://127.0.0.1:42347 (declared test registry) (dist-tag `latest`). A version already on the registry is never overwritten.
 5. The registry is checked: it must serve 0.1.2 with the same integrity and the same bytes.
 6. No GitHub release (policy).
 
@@ -25,7 +25,7 @@ Requested by maintenance-agent at 2026-11-17T01:38:46.094Z — “End-to-end pro
 | Check | Outcome | Detail |
 |---|---|---|
 | boundry-proof-core: publishable | **passed** | crates/core/Cargo.toml allows publishing |
-| boundry-proof-core: registry | **passed** | http://127.0.0.1:45955 answered: 2 version(s) ever published, 1 yanked (0.1.1) |
+| boundry-proof-core: registry | **passed** | http://127.0.0.1:42347 answered: 2 version(s) ever published, 1 yanked (0.1.1) |
 | boundry-proof-core: manifest and Cargo.lock agree | **passed** | both say 0.1.0 |
 | boundry-proof-core: version 0.1.2 free | **passed** | not on the registry (yanked versions included) and tag boundry-proof-core@0.1.2 does not exist |
 | workspace version inheritance | **not-applicable** | no released package inherits its version |
@@ -59,7 +59,7 @@ Proposed by **maintenance-agent** (agent), who may not approve it. Needs **1** a
 Test registry only: an unsigned approval is accepted and recorded as `asserted` (not an authenticated approval).
 
 ```bash
-node src/index.ts release approve boundry-proof-core@0.1.2 --as <you> --digest 3ff40172c4a083fc554ccde088111d3cc4a01dab327b96c3c0b5e1846ab5d864
+node src/index.ts release approve boundry-proof-core@0.1.2 --as <you> --digest 0c169cda06609a4679ee37ddb5da78bfba83e1767c650253c60211b81631d57d
 ```
 
-Plan digest `3ff40172c4a083fc554ccde088111d3cc4a01dab327b96c3c0b5e1846ab5d864` · record `data/release-manager/boundry-proof-core/0.1.2.json`
+Plan digest `0c169cda06609a4679ee37ddb5da78bfba83e1767c650253c60211b81631d57d` · record `data/release-manager/boundry-proof-core/0.1.2.json`

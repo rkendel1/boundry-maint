@@ -5,7 +5,7 @@
     "repository": "acme/shop",
     "resolverApplication": "shop"
   },
-  "readAt": "2026-11-17T02:11:34.867Z",
+  "readAt": "2026-11-17T13:19:34.976Z",
   "buildTime": {
     "authority": "registries and git (facts); Boundry Maintenance (release governance and evidence)",
     "packages": [
@@ -26,7 +26,7 @@
                 "authentication": "asserted"
               }
             ],
-            "releaseCommit": "ec67299ee6126622f8ad1726c850a377000e602b",
+            "releaseCommit": "2b878b3e26e4d716b767d2e5ef1c9e48a25424d3",
             "tag": "@demo/core@0.2.1",
             "integrity": "sha512-T9uQpyXJI5BXK3u4Nkv1UclzEUH0n1+VWhkI5DAKqYo/qqbfpSNY5DgdYTcbN/srvCqkxtsk0dMo/1zhc4Uxaw=="
           }
@@ -50,8 +50,8 @@
   },
   "runtime": {
     "authority": "Resolver (bindings and history), governed by Resolver Control",
-    "source": "http://127.0.0.1:49869/appport",
-    "readAt": "2026-11-17T02:11:34.868Z",
+    "source": "http://127.0.0.1:47748/appport",
+    "readAt": "2026-11-17T13:19:34.976Z",
     "principal": "boundry-maintenance",
     "application": "shop",
     "references": [
@@ -70,89 +70,89 @@
         "usage": "product search on the storefront",
         "changes": [
           {
-            "id": "mwk23jok986d0f1878ae",
+            "id": "mwkpyli4d862242ba156",
             "number": 1,
             "ref": "ref://prod/search",
             "status": "verified",
             "operation": "retarget",
             "proposedBy": "boundry-maintenance",
             "proposedByType": "agent",
-            "proposedAt": 1794881493092,
+            "proposedAt": 1794921572956,
             "approvals": [
               {
                 "by": "linus",
-                "at": 1794881493828
+                "at": 1794921573778
               },
               {
                 "by": "ada",
-                "at": 1794881493839
+                "at": 1794921573793
               }
             ],
             "requiredApprovals": 2,
             "verification": {
               "passed": true,
-              "at": 1794881494287,
+              "at": 1794921574182,
               "revision": 2
             }
           }
         ],
         "events": [
           {
-            "at": 1794881494290,
+            "at": 1794921574184,
             "type": "change.verified",
             "actor": "component:resolver",
-            "subjectId": "mwk23jok986d0f1878ae"
+            "subjectId": "mwkpyli4d862242ba156"
           },
           {
-            "at": 1794881494203,
+            "at": 1794921574074,
             "type": "change.authorization_issued",
             "actor": "component:resolver",
-            "subjectId": "mwk23jok986d0f1878ae"
+            "subjectId": "mwkpyli4d862242ba156"
           },
           {
-            "at": 1794881494153,
+            "at": 1794921574020,
             "type": "change.execution_started",
             "actor": "component:resolver",
-            "subjectId": "mwk23jok986d0f1878ae"
+            "subjectId": "mwkpyli4d862242ba156"
           },
           {
-            "at": 1794881493840,
+            "at": 1794921573794,
             "type": "change.approved",
             "actor": "ada",
-            "subjectId": "mwk23jok986d0f1878ae"
+            "subjectId": "mwkpyli4d862242ba156"
           },
           {
-            "at": 1794881493840,
+            "at": 1794921573794,
             "type": "change.approval_recorded",
             "actor": "ada",
-            "subjectId": "mwk23jok986d0f1878ae"
+            "subjectId": "mwkpyli4d862242ba156"
           },
           {
-            "at": 1794881493828,
+            "at": 1794921573778,
             "type": "change.approval_recorded",
             "actor": "linus",
-            "subjectId": "mwk23jok986d0f1878ae"
+            "subjectId": "mwkpyli4d862242ba156"
           },
           {
-            "at": 1794881493124,
+            "at": 1794921572988,
             "type": "change.validated",
             "actor": "component:resolver",
-            "subjectId": "mwk23jok986d0f1878ae"
+            "subjectId": "mwkpyli4d862242ba156"
           },
           {
-            "at": 1794881493092,
+            "at": 1794921572956,
             "type": "change.proposed",
             "actor": "boundry-maintenance",
-            "subjectId": "mwk23jok986d0f1878ae"
+            "subjectId": "mwkpyli4d862242ba156"
           },
           {
-            "at": 1794881488183,
+            "at": 1794921567068,
             "type": "consumer.declared",
             "actor": "grace",
             "subjectId": "ref://prod/search"
           },
           {
-            "at": 1794881488174,
+            "at": 1794921567048,
             "type": "dependency.registered",
             "actor": "ada",
             "subjectId": "ref://prod/search"
@@ -163,7 +163,7 @@
   },
   "activity": [
     {
-      "at": "2026-11-17T02:11:28.174Z",
+      "at": "2026-11-17T13:19:27.048Z",
       "domain": "runtime",
       "authority": "Resolver Control",
       "subject": "ref://prod/search",
@@ -171,7 +171,7 @@
       "actor": "ada"
     },
     {
-      "at": "2026-11-17T02:11:28.183Z",
+      "at": "2026-11-17T13:19:27.068Z",
       "domain": "runtime",
       "authority": "Resolver Control",
       "subject": "ref://prod/search",
@@ -179,7 +179,7 @@
       "actor": "grace"
     },
     {
-      "at": "2026-11-17T02:11:30.353Z",
+      "at": "2026-11-17T13:19:29.711Z",
       "domain": "package",
       "authority": "Boundry Maintenance",
       "subject": "release demo-core@0.2.1",
@@ -187,7 +187,7 @@
       "actor": "maintenance-agent"
     },
     {
-      "at": "2026-11-17T02:11:30.353Z",
+      "at": "2026-11-17T13:19:29.711Z",
       "domain": "package",
       "authority": "Boundry Maintenance",
       "subject": "release demo-core@0.2.1",
@@ -195,7 +195,7 @@
       "actor": null
     },
     {
-      "at": "2026-11-17T02:11:30.353Z",
+      "at": "2026-11-17T13:19:29.711Z",
       "domain": "package",
       "authority": "Boundry Maintenance",
       "subject": "release demo-core@0.2.1",
@@ -203,15 +203,7 @@
       "actor": null
     },
     {
-      "at": "2026-11-17T02:11:31.009Z",
-      "domain": "package",
-      "authority": "Boundry Maintenance",
-      "subject": "release demo-core@0.2.1",
-      "event": "approved: approved by randy (asserted) for plan 6210ee5b53c6",
-      "actor": null
-    },
-    {
-      "at": "2026-11-17T02:11:31.009Z",
+      "at": "2026-11-17T13:19:30.530Z",
       "domain": "package",
       "authority": "Boundry Maintenance",
       "subject": "release demo-core@0.2.1",
@@ -219,23 +211,31 @@
       "actor": "randy"
     },
     {
-      "at": "2026-11-17T02:11:31.340Z",
+      "at": "2026-11-17T13:19:30.531Z",
       "domain": "package",
       "authority": "Boundry Maintenance",
       "subject": "release demo-core@0.2.1",
-      "event": "prepared: release commit ec67299ee612",
+      "event": "approved: approved by randy (asserted) for plan 6d67eb08243c",
       "actor": null
     },
     {
-      "at": "2026-11-17T02:11:31.953Z",
+      "at": "2026-11-17T13:19:30.976Z",
       "domain": "package",
       "authority": "Boundry Maintenance",
       "subject": "release demo-core@0.2.1",
-      "event": "built: built by run_1 from ec67299ee612",
+      "event": "prepared: release commit 2b878b3e26e4",
       "actor": null
     },
     {
-      "at": "2026-11-17T02:11:32.066Z",
+      "at": "2026-11-17T13:19:31.850Z",
+      "domain": "package",
+      "authority": "Boundry Maintenance",
+      "subject": "release demo-core@0.2.1",
+      "event": "built: built by run_1 from 2b878b3e26e4",
+      "actor": null
+    },
+    {
+      "at": "2026-11-17T13:19:31.975Z",
       "domain": "package",
       "authority": "Boundry Maintenance",
       "subject": "release demo-core@0.2.1",
@@ -243,7 +243,7 @@
       "actor": null
     },
     {
-      "at": "2026-11-17T02:11:32.746Z",
+      "at": "2026-11-17T13:19:32.647Z",
       "domain": "package",
       "authority": "Boundry Maintenance",
       "subject": "release demo-core@0.2.1",
@@ -251,7 +251,7 @@
       "actor": null
     },
     {
-      "at": "2026-11-17T02:11:33.071Z",
+      "at": "2026-11-17T13:19:32.936Z",
       "domain": "package",
       "authority": "Boundry Maintenance",
       "subject": "release demo-core@0.2.1",
@@ -259,7 +259,7 @@
       "actor": null
     },
     {
-      "at": "2026-11-17T02:11:33.074Z",
+      "at": "2026-11-17T13:19:32.940Z",
       "domain": "package",
       "authority": "Boundry Maintenance",
       "subject": "release demo-core@0.2.1",
@@ -267,66 +267,66 @@
       "actor": null
     },
     {
-      "at": "2026-11-17T02:11:33.092Z",
+      "at": "2026-11-17T13:19:32.956Z",
       "domain": "runtime",
       "authority": "Resolver Control",
-      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "subject": "ref://prod/search change mwkpyli4d862242ba156",
       "event": "change.proposed",
       "actor": "boundry-maintenance"
     },
     {
-      "at": "2026-11-17T02:11:33.124Z",
+      "at": "2026-11-17T13:19:32.988Z",
       "domain": "runtime",
       "authority": "Resolver Control",
-      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "subject": "ref://prod/search change mwkpyli4d862242ba156",
       "event": "change.validated",
       "actor": "component:resolver"
     },
     {
-      "at": "2026-11-17T02:11:33.828Z",
+      "at": "2026-11-17T13:19:33.778Z",
       "domain": "runtime",
       "authority": "Resolver Control",
-      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "subject": "ref://prod/search change mwkpyli4d862242ba156",
       "event": "change.approval_recorded",
       "actor": "linus"
     },
     {
-      "at": "2026-11-17T02:11:33.840Z",
+      "at": "2026-11-17T13:19:33.794Z",
       "domain": "runtime",
       "authority": "Resolver Control",
-      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "subject": "ref://prod/search change mwkpyli4d862242ba156",
       "event": "change.approved",
       "actor": "ada"
     },
     {
-      "at": "2026-11-17T02:11:33.840Z",
+      "at": "2026-11-17T13:19:33.794Z",
       "domain": "runtime",
       "authority": "Resolver Control",
-      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "subject": "ref://prod/search change mwkpyli4d862242ba156",
       "event": "change.approval_recorded",
       "actor": "ada"
     },
     {
-      "at": "2026-11-17T02:11:34.153Z",
+      "at": "2026-11-17T13:19:34.020Z",
       "domain": "runtime",
       "authority": "Resolver Control",
-      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "subject": "ref://prod/search change mwkpyli4d862242ba156",
       "event": "change.execution_started",
       "actor": "component:resolver"
     },
     {
-      "at": "2026-11-17T02:11:34.203Z",
+      "at": "2026-11-17T13:19:34.074Z",
       "domain": "runtime",
       "authority": "Resolver Control",
-      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "subject": "ref://prod/search change mwkpyli4d862242ba156",
       "event": "change.authorization_issued",
       "actor": "component:resolver"
     },
     {
-      "at": "2026-11-17T02:11:34.290Z",
+      "at": "2026-11-17T13:19:34.184Z",
       "domain": "runtime",
       "authority": "Resolver Control",
-      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "subject": "ref://prod/search change mwkpyli4d862242ba156",
       "event": "change.verified",
       "actor": "component:resolver"
     }

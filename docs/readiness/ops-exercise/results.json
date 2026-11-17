@@ -1,0 +1,110 @@
+{
+  "at": "2026-11-17T13:21:36.400Z",
+  "principalsSha256": "d91414009f133fcde5786ecef6d09619814358c3df5a5d2ae6526ce6d4d1c88d",
+  "rows": [
+    {
+      "id": "S1",
+      "scenario": "Agent proposes a release",
+      "expected": "allowed",
+      "observed": "planned exercise-core@0.2.1, proposedBy maintenance-agent (agent)",
+      "pass": true,
+      "evidence": "release-manager/exercise-core@0.2.1"
+    },
+    {
+      "id": "S2",
+      "scenario": "Agent attempts approval",
+      "expected": "refused",
+      "observed": "[person-only]",
+      "pass": true,
+      "evidence": "CLI exit code and message; record has 0 approvals"
+    },
+    {
+      "id": "S3",
+      "scenario": "Proposer withdraws before claim",
+      "expected": "allowed",
+      "observed": "cancelled; approvals kept: randy; claim null",
+      "pass": true,
+      "evidence": "record: state cancelled, revocation by maintenance-agent"
+    },
+    {
+      "id": "S5",
+      "scenario": "Executor crashes during release (SIGKILL after claim and release commit)",
+      "expected": "state remains recoverable",
+      "observed": "persisted state prepared, claim by component:release-executor, release commit 9c6d01acc3bf on main: true",
+      "pass": true,
+      "evidence": "record after SIGKILL; git main"
+    },
+    {
+      "id": "S4",
+      "scenario": "Proposer withdraws after claim",
+      "expected": "refused",
+      "observed": "[claimed]",
+      "pass": true,
+      "evidence": "CLI refusal; record unchanged"
+    },
+    {
+      "id": "S6",
+      "scenario": "Publish response is lost (connection cut after the registry stored it)",
+      "expected": "reconciliation determines the actual outcome",
+      "observed": "released; already-done: publish reported \"registry refused: version already present\", but the registry has the exact artifact; registry integrity = built: true; same release commit as before the crash: true",
+      "pass": true,
+      "evidence": "record attempts; Verdaccio document"
+    },
+    {
+      "id": "S8",
+      "scenario": "Replacement release attempted too early (predecessor stuck, not abandoned)",
+      "expected": "refused",
+      "observed": "release exercise-core@0.2.2 is tagged;",
+      "pass": true,
+      "evidence": "exercise-core@0.2.2 at tagged (failure: registry unavailable during publish: npm error code E503)"
+    },
+    {
+      "id": "S7",
+      "scenario": "Human abandons a stuck release",
+      "expected": "audited; no fictional rollback",
+      "observed": "agent refused: true; abandoned by randy (person) at state tagged; remains real: release commit f2c04fc4ee96 is on main and stays there; tag @demo/core@0.2.2 → f2c04fc4ee96 exists and is never moved or deleted; tag still at release commit: true",
+      "pass": true,
+      "evidence": "record abandonment + reconciliation; git tag"
+    },
+    {
+      "id": "S8b",
+      "scenario": "Replacement after reconciled abandonment",
+      "expected": "allowed; the abandoned version is never reused",
+      "observed": "planned exercise-core@0.2.3 → 0.2.3; abandoned version was 0.2.2",
+      "pass": true,
+      "evidence": "plan decision text: Reserved …"
+    },
+    {
+      "id": "S9a",
+      "scenario": "Consumer observation with invalid installation data",
+      "expected": "refused explicitly; nothing recorded",
+      "observed": "does not match its schema: consumers cannot be observed (run a scan).",
+      "pass": true,
+      "evidence": "CLI exit code; record consumers[] empty"
+    },
+    {
+      "id": "S9",
+      "scenario": "Consumer has not adopted the version",
+      "expected": "not adopted",
+      "observed": "shop: resolved 0.2.0, adoption not-adopted, verification unverified",
+      "pass": true,
+      "evidence": "release record consumers[]"
+    },
+    {
+      "id": "S10",
+      "scenario": "Consumer CI hasn't verified the exact version",
+      "expected": "not verified",
+      "observed": "billing: resolved 0.2.1 (adopted: adopted); its only CI evidence resolved 0.2.0 → verification unverified",
+      "pass": true,
+      "evidence": "release record consumers[]; data/evidence/billing.json"
+    },
+    {
+      "id": "S11",
+      "scenario": "Resolver mutation lacks its required approvals (critical: 2; 1 given)",
+      "expected": "refused",
+      "observed": "agent approval: FORBIDDEN; executor claim: FAILED_PRECONDITION: CHG-1 is ready; nothing to execute.; change status ready; direct admin-key write: error: FORBIDDEN (resolver.authorization-required): ref://prod/search is governed by mutation policy prod (ref://prod/*); Resolver revision 1",
+      "pass": true,
+      "evidence": "Resolver history; Resolver Control change"
+    }
+  ]
+}

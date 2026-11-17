@@ -30,6 +30,7 @@ import {
   Snapshot,
   ReleaseRecord,
   PrincipalCatalog,
+  type EvidenceRecord,
 } from "./contracts.ts";
 import { releaseManager, approvalRequest } from "./release/cli.ts";
 import { listFiles, readJsonIfValid, readJson, stableJson, writeAllAtomic } from "./lib/files.ts";
@@ -191,8 +192,14 @@ async function release() {
     }
     case "show": console.log(approvalRequest(await m.load(need(id, "<release id>")))); return;
     case "consumers": {
-      const file = (await readJsonIfValid(join(values.data!, "installations.json"), InstallationsFile));
-      const r = await m.observeConsumers(need(id, "<release id>"), file?.installations ?? [], `Maintenance scan at ${file?.generatedAt ?? "(no scan data)"}`);
+      // Missing or invalid installation data is an explicit refusal, never "no consumers".
+      const instPath = join(values.data!, "installations.json");
+      const file = await readJsonIfValid(instPath, InstallationsFile);
+      if (!file) throw new Error(`${instPath} is missing or does not match its schema: consumers cannot be observed (run a scan). Nothing was recorded.`);
+      // Consumer verification evidence: Maintenance's own append-only CI evidence per consumer commit.
+      const evidence: EvidenceRecord[] = [];
+      for (const f of await listFiles(join(values.data!, "evidence"))) if (f.endsWith(".json")) evidence.push(...(await readJson(f, EvidenceFile)).records);
+      const r = await m.observeConsumers(need(id, "<release id>"), file.installations, `Maintenance scan at ${file.generatedAt}; CI evidence from data/evidence (${evidence.length} records)`, evidence);
       console.log(approvalRequest(r));
       return;
     }

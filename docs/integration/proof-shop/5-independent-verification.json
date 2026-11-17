@@ -8,8 +8,8 @@
     "registryIntegrity": "sha512-T9uQpyXJI5BXK3u4Nkv1UclzEUH0n1+VWhkI5DAKqYo/qqbfpSNY5DgdYTcbN/srvCqkxtsk0dMo/1zhc4Uxaw==",
     "builtIntegrity": "sha512-T9uQpyXJI5BXK3u4Nkv1UclzEUH0n1+VWhkI5DAKqYo/qqbfpSNY5DgdYTcbN/srvCqkxtsk0dMo/1zhc4Uxaw==",
     "integrityMatches": true,
-    "tagTarget": "ec67299ee6126622f8ad1726c850a377000e602b",
-    "releaseCommit": "ec67299ee6126622f8ad1726c850a377000e602b",
+    "tagTarget": "2b878b3e26e4d716b767d2e5ef1c9e48a25424d3",
+    "releaseCommit": "2b878b3e26e4d716b767d2e5ef1c9e48a25424d3",
     "proposedBy": "maintenance-agent (agent)",
     "approvals": [
       "randy (person, asserted)"
@@ -41,17 +41,17 @@
         "governance": {
           "mode": "authorized",
           "issuer": "resolver-control",
-          "decision": "mwk23jok986d0f1878ae",
+          "decision": "mwkpyli4d862242ba156",
           "approvers": [
             "linus",
             "ada"
           ]
         },
-        "reason": "[resolver-control CHG-1 mwk23jok986d0f1878ae] Integration proof: shop's search moves to provider B (proposed by Boundry Maintenance)"
+        "reason": "[resolver-control CHG-1 mwkpyli4d862242ba156] Integration proof: shop's search moves to provider B (proposed by Boundry Maintenance)"
       }
     ],
     "change": {
-      "id": "mwk23jok986d0f1878ae",
+      "id": "mwkpyli4d862242ba156",
       "number": 1,
       "status": "verified",
       "proposedBy": "boundry-maintenance (agent)",
@@ -65,8 +65,8 @@
     },
     "shopFollowed": [
       {
-        "pid": 28907,
-        "startedAt": "2026-11-17T02:11:21.642Z",
+        "pid": 15568,
+        "startedAt": "2026-11-17T13:19:20.315Z",
         "ref": "ref://prod/search",
         "revision": 2,
         "strategy": "single",
@@ -145,25 +145,25 @@
     {
       "actor": "anyone without the registry token (e.g. Resolver Control)",
       "attempt": "publish @demo/core@0.9.9 (unpublished version, valid tag)",
-      "target": "test registry http://127.0.0.1:48834",
-      "outcome": "refused: npm error code ENEEDAUTH | npm error need auth This command requires you to be logged in to http://127.0.0.1:48834/"
+      "target": "test registry http://127.0.0.1:49085",
+      "outcome": "refused: npm error code ENEEDAUTH | npm error need auth This command requires you to be logged in to http://127.0.0.1:49085/"
     },
     {
       "actor": "anyone without the registry token (raw HTTP)",
       "attempt": "PUT @demo/core@0.9.9 to the registry",
-      "target": "test registry http://127.0.0.1:48834",
+      "target": "test registry http://127.0.0.1:49085",
       "outcome": "refused: 401 registry answered 401: {"
     },
     {
       "actor": "maintenance-agent over Maintenance MCP",
       "attempt": "call releases_approve",
-      "target": "http://127.0.0.1:40611/mcp",
+      "target": "http://127.0.0.1:40983/mcp",
       "outcome": "refused: [{\"type\":\"text\",\"text\":\"FORBIDDEN: Missing permission: maintenance.approve\"}]"
     },
     {
       "actor": "boundry-maintenance over Resolver Control MCP",
       "attempt": "call changes_approve",
-      "target": "http://127.0.0.1:49869/mcp",
+      "target": "http://127.0.0.1:47748/mcp",
       "outcome": "refused: [{\"type\":\"text\",\"text\":\"FORBIDDEN: Missing permission: changes.approve\"}]"
     }
   ]

@@ -1,11 +1,11 @@
 {
   "git": {
-    "approvedSource": "62f73f79f1be4b09ec7bc5451a3126d18133d315",
-    "branchHead": "a041c9d093488c089db90a7e2ab9d220020b0144",
-    "parentOfHead": "62f73f79f1be4b09ec7bc5451a3126d18133d315",
-    "releaseCommit": "a041c9d093488c089db90a7e2ab9d220020b0144",
+    "approvedSource": "05ac12cd9a5fbed984dd5fd3ac50635234c40a6e",
+    "branchHead": "e8a8a6b9fe8288059924ea8214f6252903a0d508",
+    "parentOfHead": "05ac12cd9a5fbed984dd5fd3ac50635234c40a6e",
+    "releaseCommit": "e8a8a6b9fe8288059924ea8214f6252903a0d508",
     "tag": "boundry-proof-core@0.1.2",
-    "tagTarget": "a041c9d093488c089db90a7e2ab9d220020b0144",
+    "tagTarget": "e8a8a6b9fe8288059924ea8214f6252903a0d508",
     "tagIsReleaseCommit": true,
     "cargoTomlVersionAtTag": "0.1.2",
     "cargoLockVersionAtTag": "0.1.2",
@@ -31,9 +31,9 @@
     "publishRequestsReceived": 1
   },
   "execution": {
-    "runId": "run_321624ab2a5e7f3a593ce8ce",
+    "runId": "run_bffd7a948bf43057bf15da0a",
     "state": "succeeded",
-    "commitBuilt": "a041c9d093488c089db90a7e2ab9d220020b0144",
+    "commitBuilt": "e8a8a6b9fe8288059924ea8214f6252903a0d508",
     "isReleaseCommit": true,
     "jobs": [
       {
@@ -52,7 +52,7 @@
         "state": "succeeded",
         "artifacts": [
           {
-            "digest": "2842aa63bfab7c26e184774271eb21620404f193f4ad8064b7f17250c7310f20",
+            "digest": "11000d6dca276d888e842f24d89133eedc6587d020b2d6def371bf895ba3778f",
             "name": "test-results.txt",
             "size": 862
           }
@@ -79,10 +79,11 @@
     "released"
   ],
   "attempts": [
-    "authorize done: component:release-executor authorized execution under boundry.governance@1.0.0 (triggered by randy)",
-    "release-commit done: a041c9d09348 on main (Cargo.lock, crates/core/Cargo.toml)",
-    "build done: run_321624ab2a5e7f3a593ce8ce: boundry-proof-core-0.1.2.crate sha256:a26d047fdf094de5",
-    "tag done: boundry-proof-core@0.1.2 → a041c9d09348 (verified)",
+    "authorize done: component:release-executor authorized execution under boundry.governance@1.2.0 (triggered by randy)",
+    "claim done: claimed by component:release-executor; withdrawal ends here (contract §7)",
+    "release-commit done: e8a8a6b9fe82 on main (Cargo.lock, crates/core/Cargo.toml)",
+    "build done: run_bffd7a948bf43057bf15da0a: boundry-proof-core-0.1.2.crate sha256:a26d047fdf094de5",
+    "tag done: boundry-proof-core@0.1.2 → e8a8a6b9fe82 (verified)",
     "publish already-done: publish reported \"crates registry unreachable: fetch failed\", but the registry has the exact artifact",
     "verify-registry done: 0.1.2 integrity+bytes match; not yanked (no dist-tags on this registry)",
     "github-release skipped: skipped: the release policy does not create GitHub releases"
@@ -111,7 +112,7 @@
     {
       "check": "boundry-proof-core: registry",
       "outcome": "passed",
-      "detail": "http://127.0.0.1:45955 answered: 2 version(s) ever published, 1 yanked (0.1.1)"
+      "detail": "http://127.0.0.1:42347 answered: 2 version(s) ever published, 1 yanked (0.1.1)"
     },
     {
       "check": "boundry-proof-core: manifest and Cargo.lock agree",

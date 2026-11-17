@@ -1,10 +1,10 @@
 # Release request: @appport/resolver 0.4.1 → **0.4.2**, @appport/resolver-client 0.3.0 → **0.3.1**, @appport/resolver-core 0.2.0 → **0.2.1**
 
-Requested by maintenance-agent at 2026-11-17T01:37:42.027Z — “End-to-end proof of the Release Manager (resolver release train)”. State: **released**.
+Requested by maintenance-agent at 2026-11-17T13:17:57.061Z — “End-to-end proof of the Release Manager (resolver release train)”. State: **released**.
 
 ## What will happen, in order
 
-1. A commit “Release @appport/resolver@0.4.2, @appport/resolver-client@0.3.1, @appport/resolver-core@0.2.1” is added on top of `99385866652a` on `main`, changing `package-lock.json`, `packages/client/package.json`, `packages/core/package.json`, `packages/server/package.json`. If `main` has moved, the release stops.
+1. A commit “Release @appport/resolver@0.4.2, @appport/resolver-client@0.3.1, @appport/resolver-core@0.2.1” is added on top of `029be530e64a` on `main`, changing `package-lock.json`, `packages/client/package.json`, `packages/core/package.json`, `packages/server/package.json`. If `main` has moved, the release stops.
 2. Boundry CI runs the tests on that exact commit and packages it. The package's SHA-256 is recorded.
 3. Only after the build succeeds: tag `@appport/resolver@0.4.2`, tag `@appport/resolver-client@0.3.1`, tag `@appport/resolver-core@0.2.1` on that commit. Existing tags are never moved.
 4. Exactly those tarballs are published to http://127.0.0.1:4875 (declared test registry) (dist-tag `latest`). A version already on the registry is never overwritten.
@@ -70,27 +70,28 @@ Dependents are **not** changed or published by this release. After release, the 
 
 Proposed by **maintenance-agent** (agent), who may not approve it. Needs **1** approval(s) from distinct people holding the prod_approver role. Eligible: randy.
 
-Approved so far: randy (asserted, 2026-11-17T01:37:43.637Z)
+Approved so far: randy (asserted, 2026-11-17T13:17:59.231Z)
 
 Test registry only: an unsigned approval is accepted and recorded as `asserted` (not an authenticated approval).
 
 ```bash
-node src/index.ts release approve appport-resolver@0.4.2 --as <you> --digest 0c9abf10b85cdf0ca89cdd3ddb40af1b6556956e24a692f57d70bf4ea2e04897
+node src/index.ts release approve appport-resolver@0.4.2 --as <you> --digest a88173f34a115e4a2cc6645524b09eda3927299df18f386c28601e861e18e737
 ```
 
 ## Evidence so far
 
-- Release commit: `df70ca12d7baf95dbf157b8352c589af702683b7`
-- Built by boundry-ci run `run_aebf83650374724391632644`: `appport-resolver-0.4.2.tgz` sha256 `312ecf060a121326658aa8faf4f0060807ad364fddb0cc0a83b75205a637d3ad`, `appport-resolver-client-0.3.1.tgz` sha256 `eafb495680050af107e8cbfd82169186b6f654cf7cd2ff60b639a69665240664`, `appport-resolver-core-0.2.1.tgz` sha256 `b001e5edaaee97103e55647ad18856d24632d23fdd14a6a2d2ce193821ea179b`
-- Tag `@appport/resolver@0.4.2` → `df70ca12d7ba`
-- Tag `@appport/resolver-client@0.3.1` → `df70ca12d7ba`
-- Tag `@appport/resolver-core@0.2.1` → `df70ca12d7ba`
+- Release commit: `7aea40e6abbc7ec51ed1c9bbd56f57f16e31b7dd`
+- Built by boundry-ci run `run_8832b2901332a75efd130bf5`: `appport-resolver-0.4.2.tgz` sha256 `312ecf060a121326658aa8faf4f0060807ad364fddb0cc0a83b75205a637d3ad`, `appport-resolver-client-0.3.1.tgz` sha256 `eafb495680050af107e8cbfd82169186b6f654cf7cd2ff60b639a69665240664`, `appport-resolver-core-0.2.1.tgz` sha256 `b001e5edaaee97103e55647ad18856d24632d23fdd14a6a2d2ce193821ea179b`
+- Tag `@appport/resolver@0.4.2` → `7aea40e6abbc`
+- Tag `@appport/resolver-client@0.3.1` → `7aea40e6abbc`
+- Tag `@appport/resolver-core@0.2.1` → `7aea40e6abbc`
 - Registry serves 0.4.2: integrity `sha512-mujrA+1DEDQDaSvpJ…`, bytes sha256 `312ecf060a121326…`, dist-tag points here
 - Registry serves 0.3.1: integrity `sha512-k4T8jxl4P8ytaHzcr…`, bytes sha256 `eafb495680050af1…`, dist-tag points here
 - Registry serves 0.2.1: integrity `sha512-gXGxWKf2SHcIeiZnT…`, bytes sha256 `b001e5edaaee9710…`, dist-tag points here
-- GitHub release: http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver%400.4.2
-- GitHub release: http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-client%400.3.1
-- GitHub release: http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-core%400.2.1
+- GitHub release: http://127.0.0.1:45423/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver%400.4.2
+- GitHub release: http://127.0.0.1:45423/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-client%400.3.1
+- GitHub release: http://127.0.0.1:45423/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-core%400.2.1
+- Claimed by component:release-executor at 2026-11-17T13:17:59.622Z (triggered by randy): withdrawal and rejection are closed
 - Proposed for feltkit (rkendel1/feltkit:packages/sdk/package.json): requirement-change @appport/resolver-client `0.3.0` → `0.3.1` (proposed; needs its own plan)
 
-Plan digest `0c9abf10b85cdf0ca89cdd3ddb40af1b6556956e24a692f57d70bf4ea2e04897` · record `data/release-manager/appport-resolver/0.4.2.json`
+Plan digest `a88173f34a115e4a2cc6645524b09eda3927299df18f386c28601e861e18e737` · record `data/release-manager/appport-resolver/0.4.2.json`

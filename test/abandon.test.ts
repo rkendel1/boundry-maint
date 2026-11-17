@@ -150,3 +150,33 @@ test("a schema-2 record (before 1.2.0) is read as it is; its claim is inferred, 
   assert.equal(ab.claim!.inferred, true);
   assert.ok(ab.history.some((h) => /record schema 2 → 3 \(governance contract 1\.2\.0\): claim inferred from history/.test(h.note)));
 });
+
+test("a version withdrawn before any claim can be planned again: a new record, the old one kept", async () => {
+  const w = world();
+  const r = await approvedByAgent(w);
+  await w.m.revoke(r.id, "bot", "withdrawn before claim");
+  const again = await w.m.plan({ packages: ["demo-core"], bump: "patch", requestedBy: "bot" });
+  assert.equal(again.plan.packages[0]!.proposedVersion, "0.2.1", "nothing was real: the version is free");
+  assert.equal(again.id, "demo-core@0.2.1_r2");
+  // The id travels into Boundry CI's request ids; it must satisfy CI's rule (boundry-ci src/control/http.ts).
+  assert.match(`${again.id}/${again.planDigest.slice(0, 12)}/build-1`, /^[A-Za-z0-9][A-Za-z0-9@._\/-]{0,200}$/);
+  assert.equal((await w.m.load(r.id)).state, "cancelled", "the withdrawn record is untouched");
+  await w.m.approve(again.id, "randy", again.planDigest);
+  assert.equal((await w.m.execute(again.id, "randy")).state, "released");
+});
+
+test("a release that failed fatally after its claim reserves its version: the replacement skips it", async () => {
+  const w = world();
+  const r = await approvedByAgent(w);
+  const publish = w.registry.publish.bind(w.registry);
+  w.registry.publish = async () => { throw new Unavailable("down"); };
+  assert.equal((await w.m.execute(r.id, "randy")).state, "tagged", "claimed; commit and tag are real");
+  w.registry.publish = publish;
+  // A fatal failure after the claim (as #tag or #verify would record it), with the commit and tag left behind.
+  const raw = JSON.parse(readFileSync(w.m.path(r.id), "utf8"));
+  raw.state = "failed"; raw.failure = { at: "tagged", reason: "fatal failure after claim", recoverable: false, when: new Date().toISOString() };
+  writeFileSync(w.m.path(r.id), JSON.stringify(raw));
+  const next = await w.m.plan({ packages: ["demo-core"], bump: "patch", requestedBy: "bot" });
+  assert.equal(next.plan.packages[0]!.proposedVersion, "0.2.2");
+  assert.ok(next.plan.decision.some((d) => /Reserved: 0\.2\.1 \(claimed by failed release demo-core@0\.2\.1\)/.test(d)));
+});

@@ -22,11 +22,12 @@ import { promisify } from "node:util";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import semver from "semver";
-import { ReleaseRecord, ReleasePolicy, type Principal, type PackageConfig, type ReleaseBump, type ReleasePlan, type ReleaseState, type Installation, type ValidationResult, type Dependent } from "../contracts.ts";
+import { ReleaseRecord, ReleasePolicy, type EvidenceRecord, type Principal, type PackageConfig, type ReleaseBump, type ReleasePlan, type ReleaseState, type Installation, type ValidationResult, type Dependent } from "../contracts.ts";
 import { writeAllAtomic, stableJson } from "../lib/files.ts";
 import { withLocks, LockHeld } from "../lib/lock.ts";
 import { allocate, tagFor, AllocationError } from "./version.ts";
 import { ecosystemFor, type Ecosystem } from "./ecosystems.ts";
+import { installKey } from "../status/project.ts";
 import { CONTRACT_VERSION, authorize, can, decide, counted, principal, requiredApprovals, GovernanceError, type Subject } from "../governance/rules.ts";
 import { approvalStatement, verifyApproval } from "../governance/signatures.ts";
 import { Unavailable, Refused, type RegistryAdapter, type RegistryState, type GitAuthority, type ReleasesAdapter, type Executor } from "./adapters.ts";
@@ -122,11 +123,15 @@ export class ReleaseManager {
     const reserved: Record<string, { version: string; why: string }[]> = {};
     for (const r of await this.list()) {
       if (!TERMINAL.includes(r.state) && r.plan.packages.some((x) => pkgs.some((p) => p.id === x.package))) throw new ReleaseError("busy", `release ${r.id} is ${r.state}; finish, abandon or cancel it first`);
-      if (r.state !== "abandoned") continue;
+      // Abandoned, or failed fatally after its claim: what it claimed may be real (commit, tag, publication).
+      const claimedEnd = r.state === "abandoned" || (r.state === "failed" && claimOf(r) !== null);
+      if (!claimedEnd) continue;
       for (const pp of r.plan.packages.filter((x) => pkgs.some((p) => p.id === x.package))) {
-        const d = decide("propose", proposer, undefined, undefined, { predecessor: { state: "abandoned", reconciled: !!r.abandonment?.reconciliation } });
-        if (!d.allow) throw new ReleaseError("not-allowed", `${pp.name}: abandoned release ${r.id}: ${d.message} [${d.code}]`);
-        (reserved[pp.package] ??= []).push({ version: pp.proposedVersion, why: `claimed by abandoned release ${r.id}` });
+        if (r.state === "abandoned") {
+          const d = decide("propose", proposer, undefined, undefined, { predecessor: { state: "abandoned", reconciled: !!r.abandonment?.reconciliation } });
+          if (!d.allow) throw new ReleaseError("not-allowed", `${pp.name}: abandoned release ${r.id}: ${d.message} [${d.code}]`);
+        }
+        (reserved[pp.package] ??= []).push({ version: pp.proposedVersion, why: `claimed by ${r.state} release ${r.id}` });
       }
     }
     const eco = ecosystemFor(first.registry);
@@ -225,8 +230,15 @@ export class ReleaseManager {
     const able = plan.approvers.filter((a) => a !== proposer.id && this.d.principals.some((x) => x.id === a && x.type === "person" && can(x, plan.protected ? "approve.protected" : "approve")));
     if (able.length < plan.requiredApprovals) throw new ReleaseError("not-allowed", `this release needs ${plan.requiredApprovals} approval(s) from people other than ${proposer.id}, but only ${able.length} eligible approver(s) exist (${able.join(", ") || "none"}): it could never be approved`);
     const lead = planned[0]!; // planned has one entry per package (≥ 1)
-    const id = `${lead.package}@${lead.proposedVersion}`;
-    if (existsSync(this.path(id))) throw new ReleaseError("busy", `a release record for ${id} already exists`);
+    // One record per plan, append-only. A version whose earlier plans all ended before any claim (withdrawn,
+    // rejected, superseded: nothing real) may be planned again under a new record "<pkg>@<version>_r<n>".
+    // ("_" because the id travels into Boundry CI request ids: [A-Za-z0-9@._/-] only.)
+    let id = `${lead.package}@${lead.proposedVersion}`;
+    for (let n = 2; existsSync(this.path(id)); n++) {
+      const prior = await this.load(id);
+      if (!TERMINAL.includes(prior.state) || claimOf(prior)) throw new ReleaseError("busy", `release ${id} is ${prior.state}${claimOf(prior) ? " and was claimed" : ""}; its version is not free to plan again`);
+      id = `${lead.package}@${lead.proposedVersion}_r${n}`;
+    }
     const rec: ReleaseRecord = {
       schemaVersion: 3, id, planDigest: planDigestOf(plan), plan, state: "awaiting-approval", approvals: [], revocation: null, claim: null, abandonment: null,
       facts: { releaseCommit: null, build: null, tags: [], published: [], registryVerification: [], githubReleases: [] },
@@ -381,7 +393,7 @@ export class ReleaseManager {
    * Installation (declared, resolved), adoption (resolved is the released version or newer) and verification
    * (the consumer's own checks passed on it) are separate facts; verification is never inferred from adoption.
    */
-  async observeConsumers(id: string, installations: Installation[], basis: string, verifications: { consumer: string; where: string; version: string; evidence: string; passed: boolean }[] = []): Promise<ReleaseRecord> {
+  async observeConsumers(id: string, installations: Installation[], basis: string, evidence: EvidenceRecord[] = []): Promise<ReleaseRecord> {
     const r = await this.load(id);
     if (r.state !== "released") throw new ReleaseError("not-allowed", `release ${id} is ${r.state}; consumers are observed after release`);
     const at = this.d.now();
@@ -390,11 +402,12 @@ export class ReleaseManager {
         const where = `${inst.repository}:${inst.manifest}`;
         const resolved = inst.resolvedVersion ?? null;
         const adoption = resolved && semver.valid(resolved) ? (semver.gte(resolved, pp.proposedVersion) ? "adopted" : "not-adopted") : "unknown";
-        const v = verifications.find((x) => x.consumer === inst.project && x.where === where && x.version === pp.proposedVersion);
+        const { verification, record: rec } = consumerVerification(inst, pp.proposedVersion, evidence);
         r.consumers.push({
           at, consumer: inst.project, where, dependency: pp.name, released: pp.proposedVersion, basis,
-          installation: { declared: inst.declaredVersion ?? null, resolved }, adoption,
-          verification: v ? (v.passed ? "verified" : "failed") : "unverified", verificationEvidence: v?.evidence ?? null,
+          installation: { declared: inst.declaredVersion ?? null, resolved, commit: inst.commit ?? null }, adoption, verification,
+          verificationEvidence: rec ? `${rec.passed ? "passed" : "failed"}: ${rec.runs.map((x) => `${x.workflow} run ${x.runId} ${x.conclusion}`).join(", ") || "no runs"} on ${inst.project}@${rec.commit.slice(0, 12)}, which resolved ${pp.name} ${pp.proposedVersion}` : null,
+          verificationRecord: rec ? { commit: rec.commit, collectedAt: rec.collectedAt, resolved: pp.proposedVersion, runs: rec.runs.map((x) => ({ workflow: x.workflow, runId: x.runId, url: x.url, conclusion: x.conclusion })) } : null,
         });
       }
     }
@@ -840,4 +853,22 @@ export function claimOf(r: ReleaseRecord): ReleaseRecord["claim"] {
   if (first) return { by: "component:release-executor", at: first.at, triggeredBy: "unknown (schema 2)", inferred: true };
   if (ORDER.indexOf(r.state) > ORDER.indexOf("approved")) return { by: "component:release-executor", at: r.history.at(-1)!.at, triggeredBy: null, inferred: true };
   return null;
+}
+
+/**
+ * Verification of one released version by one consumer manifest: the consumer's own CI evidence for a consumer commit
+ * whose lockfile resolved exactly that version, for that manifest root, with completed workflows and a clean
+ * resolution. CI on another version, another root, another project, still running, or with an unparseable lockfile is
+ * not evidence about this version. No evidence ⇒ "unverified", never inferred.
+ */
+export function consumerVerification(inst: Pick<Installation, "project" | "root" | "registry" | "name">, version: string, evidence: EvidenceRecord[]): { verification: "verified" | "failed" | "unverified"; record: EvidenceRecord | null; why: string } {
+  const key = installKey(inst.root, inst.registry, inst.name);
+  const mine = evidence.filter((e) => e.project === inst.project);
+  if (!mine.length) return { verification: "unverified", record: null, why: `no CI evidence for ${inst.project} (no verification workflows configured, or none collected yet)` };
+  const forVersion = mine.filter((e) => e.resolved[key] === version);
+  if (!forVersion.length) return { verification: "unverified", record: null, why: `no consumer commit with evidence resolved ${inst.name} ${version} for ${inst.root}` };
+  const usable = forVersion.filter((e) => e.checks.resolution === "pass" && e.checks.workflows !== "pending").sort((a, b) => b.collectedAt.localeCompare(a.collectedAt));
+  if (!usable.length) return { verification: "unverified", record: null, why: "evidence for this version is incomplete (workflows pending or lockfile resolution failed)" };
+  const rec = usable.find((e) => e.passed) ?? usable[0]!;
+  return { verification: rec.passed ? "verified" : "failed", record: rec, why: rec.passed ? "configured workflows passed on a commit resolving exactly this version" : "configured workflows failed on a commit resolving exactly this version" };
 }

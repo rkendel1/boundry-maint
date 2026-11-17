@@ -4,16 +4,16 @@
     "cancelInProgress": false,
     "cancelRequested": false,
     "concurrencyGroup": null,
-    "createdAt": 1794879526685,
+    "createdAt": 1794921549518,
     "definitionPath": ".boundry/recipes/boundry-release.md",
     "downstream": [],
-    "eventId": "ev_0dbd611a1edbdefb47a5bb97b4b53e1dc401a62f",
-    "explanation": "# Release build: boundry-proof-core 0.1.2\n\nBuild, test and package release commit a041c9d093488c089db90a7e2ab9d220020b0144 for Boundry Maintenance release boundry-proof-core@0.1.2.\n\nRecipe `.boundry/recipes/boundry-release.md` · sha256:1d9455231798 · compiled by boundry-recipes/1.0.0 with boundry-capabilities/1.0.1 · definition d023cdcf601d\n\n## Runs when\n- an authorized person starts it\n\n## Project\n- Rust project (workspace) in the repository root (evidence: `Cargo.lock`, `Cargo.toml`)\n\n## Checks (one job)\n1. **The tests pass** — runs `cargo test --locked`\n   Rust (stable, with rustfmt and clippy) · installs dependencies first · internet: yes · keeps `test-results.txt` · capability `check.tests@1.0.0`\n\n## Steps (in order, after every check passes)\n1. **Package the crates** — runs `cargo package --locked --workspace` and collects the .crate files\n   Rust (stable, with rustfmt and clippy) · installs dependencies first · internet: yes · keeps `package.tar` · capability `step.package-crates@1.0.0`\n\n## Authority\n- Permissions: none\n- Secrets: none\n- Approvals: none\n- Publishes or deploys: nothing\n- Proposed changes from forks never receive secrets, release/deploy access or trusted caches.\n\n## Kept\n- `package.tar` from “Package the crates” for 3650 days\n- `test-results.txt` from “The tests pass” for 30 days (also when tests fail)\n- The record: this recipe, its compiled plan, project facts, every attempt's log, inputs and outputs (always)\n\n## Afterward\n- Nothing is reported to GitHub (add “Report the result on the change” to do so)\n",
-    "finishedAt": 1794879530867,
-    "id": "run_321624ab2a5e7f3a593ce8ce",
+    "eventId": "ev_a4de152b4f610cd7286b1ce251b711e5d64db39f",
+    "explanation": "# Release build: boundry-proof-core 0.1.2\n\nBuild, test and package release commit e8a8a6b9fe8288059924ea8214f6252903a0d508 for Boundry Maintenance release boundry-proof-core@0.1.2.\n\nRecipe `.boundry/recipes/boundry-release.md` · sha256:e391af00d040 · compiled by boundry-recipes/1.0.0 with boundry-capabilities/1.0.1 · definition d023cdcf601d\n\n## Runs when\n- an authorized person starts it\n\n## Project\n- Rust project (workspace) in the repository root (evidence: `Cargo.lock`, `Cargo.toml`)\n\n## Checks (one job)\n1. **The tests pass** — runs `cargo test --locked`\n   Rust (stable, with rustfmt and clippy) · installs dependencies first · internet: yes · keeps `test-results.txt` · capability `check.tests@1.0.0`\n\n## Steps (in order, after every check passes)\n1. **Package the crates** — runs `cargo package --locked --workspace` and collects the .crate files\n   Rust (stable, with rustfmt and clippy) · installs dependencies first · internet: yes · keeps `package.tar` · capability `step.package-crates@1.0.0`\n\n## Authority\n- Permissions: none\n- Secrets: none\n- Approvals: none\n- Publishes or deploys: nothing\n- Proposed changes from forks never receive secrets, release/deploy access or trusted caches.\n\n## Kept\n- `package.tar` from “Package the crates” for 3650 days\n- `test-results.txt` from “The tests pass” for 30 days (also when tests fail)\n- The record: this recipe, its compiled plan, project facts, every attempt's log, inputs and outputs (always)\n\n## Afterward\n- Nothing is reported to GitHub (add “Report the result on the change” to do so)\n",
+    "finishedAt": 1794921553090,
+    "id": "run_bffd7a948bf43057bf15da0a",
     "kind": "manual",
     "pipeline": "Release build: boundry-proof-core 0.1.2",
-    "planDigest": "7da6a7600a264c47d2a7c62c5a041ca4f4dafa7751bc895826ba47e0431a4f06",
+    "planDigest": "80acbc430c737950ff3d6f184bdc04fafc299e3c987ad79f34e88483d3b21788",
     "reason": null,
     "recipe": {
       "capabilities": {
@@ -45,13 +45,13 @@
       },
       "factsDigest": "05a4f007b5d4c99ce5c65e6eb04d105e4cc9188addb982acbfac824c59befa2c",
       "path": ".boundry/recipes/boundry-release.md",
-      "sourceDigest": "1d9455231798a2680522fe482690cece7144168d47542ee5cc2a4e609a15eaac",
+      "sourceDigest": "e391af00d0404e354ca1f87883f6e8942005e397f52030cbfdfc234822d49284",
       "title": "Release build: boundry-proof-core 0.1.2"
     },
     "ref": "refs/heads/main",
     "repository": "boundry-proof/crates",
-    "sha": "a041c9d093488c089db90a7e2ab9d220020b0144",
-    "sourceDigest": "1d9455231798a2680522fe482690cece7144168d47542ee5cc2a4e609a15eaac",
+    "sha": "e8a8a6b9fe8288059924ea8214f6252903a0d508",
+    "sourceDigest": "e391af00d0404e354ca1f87883f6e8942005e397f52030cbfdfc234822d49284",
     "state": "succeeded",
     "statusPrefix": null,
     "trusted": true
@@ -59,17 +59,17 @@
   "trigger": {
     "kind": "manual",
     "ref": "refs/heads/main",
-    "sha": "a041c9d093488c089db90a7e2ab9d220020b0144",
+    "sha": "e8a8a6b9fe8288059924ea8214f6252903a0d508",
     "actor": "boundry-maintenance",
     "provider": "execution",
-    "deliveryId": "boundry-proof-core@0.1.2/3ff40172c4a0/build-1",
-    "receivedAt": 1794879526685,
+    "deliveryId": "boundry-proof-core@0.1.2/0c169cda0660/build-1",
+    "receivedAt": 1794921549518,
     "trusted": true
   },
   "definition": {
     "path": ".boundry/recipes/boundry-release.md",
-    "sha256": "1d9455231798a2680522fe482690cece7144168d47542ee5cc2a4e609a15eaac",
-    "source": "# Release build: boundry-proof-core 0.1.2\n\nBuild, test and package release commit a041c9d093488c089db90a7e2ab9d220020b0144 for Boundry Maintenance release boundry-proof-core@0.1.2.\n\n## When this happens\n- I start it.\n\n## Make sure\n- The tests pass.\n\n## Steps\n1. Package the crates.\n\n## Keep\n- The test results.\n- The package for 3650 days.\n- The release evidence.\n"
+    "sha256": "e391af00d0404e354ca1f87883f6e8942005e397f52030cbfdfc234822d49284",
+    "source": "# Release build: boundry-proof-core 0.1.2\n\nBuild, test and package release commit e8a8a6b9fe8288059924ea8214f6252903a0d508 for Boundry Maintenance release boundry-proof-core@0.1.2.\n\n## When this happens\n- I start it.\n\n## Make sure\n- The tests pass.\n\n## Steps\n1. Package the crates.\n\n## Keep\n- The test results.\n- The package for 3650 days.\n- The release evidence.\n"
   },
   "jobs": [
     {
@@ -96,14 +96,14 @@
       },
       "attempts": [
         {
-          "id": "run_321624ab2a5e7f3a593ce8ce-550620ece5799c60-a1",
+          "id": "run_bffd7a948bf43057bf15da0a-550620ece5799c60-a1",
           "n": 1,
           "worker": "proof-worker",
           "state": "succeeded",
           "exitCode": 0,
           "reason": null,
-          "startedAt": 1794879529518,
-          "finishedAt": 1794879530860,
+          "startedAt": 1794921551976,
+          "finishedAt": 1794921553081,
           "inputs": [],
           "artifacts": [
             {
@@ -138,23 +138,23 @@
       },
       "attempts": [
         {
-          "id": "run_321624ab2a5e7f3a593ce8ce-59830ebc3a418411-a1",
+          "id": "run_bffd7a948bf43057bf15da0a-59830ebc3a418411-a1",
           "n": 1,
           "worker": "proof-worker",
           "state": "succeeded",
           "exitCode": 0,
           "reason": null,
-          "startedAt": 1794879528358,
-          "finishedAt": 1794879529490,
+          "startedAt": 1794921550996,
+          "finishedAt": 1794921551942,
           "inputs": [],
           "artifacts": [
             {
-              "digest": "2842aa63bfab7c26e184774271eb21620404f193f4ad8064b7f17250c7310f20",
+              "digest": "11000d6dca276d888e842f24d89133eedc6587d020b2d6def371bf895ba3778f",
               "name": "test-results.txt",
               "size": 862
             }
           ],
-          "logChunks": 2
+          "logChunks": 1
         }
       ]
     }

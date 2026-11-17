@@ -1,13 +1,13 @@
 # Release request: @demo/core 0.2.0 → **0.2.1**
 
-Requested by maintenance-agent at 2026-11-17T02:11:30.353Z — “Integration proof: package side”. State: **released**.
+Requested by maintenance-agent at 2026-11-17T13:19:29.711Z — “Integration proof: package side”. State: **released**.
 
 ## What will happen, in order
 
-1. A commit “Release @demo/core@0.2.1” is added on top of `ef7144814f70` on `main`, changing `package-lock.json`, `packages/core/package.json`. If `main` has moved, the release stops.
+1. A commit “Release @demo/core@0.2.1” is added on top of `41153856234b` on `main`, changing `package-lock.json`, `packages/core/package.json`. If `main` has moved, the release stops.
 2. Boundry CI runs the tests on that exact commit and packages it. The package's SHA-256 is recorded.
 3. Only after the build succeeds: tag `@demo/core@0.2.1` on that commit. Existing tags are never moved.
-4. Exactly that tarball is published to http://127.0.0.1:48834 (declared test registry) (dist-tag `latest`). A version already on the registry is never overwritten.
+4. Exactly that tarball is published to http://127.0.0.1:49085 (declared test registry) (dist-tag `latest`). A version already on the registry is never overwritten.
 5. The registry is checked: it must serve 0.2.1 with the same integrity and the same bytes.
 6. No GitHub release (policy).
 
@@ -24,7 +24,7 @@ Requested by maintenance-agent at 2026-11-17T02:11:30.353Z — “Integration pr
 | Check | Outcome | Detail |
 |---|---|---|
 | @demo/core: publishable | **passed** | packages/core/package.json allows publishing |
-| @demo/core: registry | **passed** | http://127.0.0.1:48834 answered: 1 version(s) ever published |
+| @demo/core: registry | **passed** | http://127.0.0.1:49085 answered: 1 version(s) ever published |
 | @demo/core: manifest and package-lock.json agree | **passed** | both say 0.2.0 |
 | @demo/core: version 0.2.1 free | **passed** | not on the registry (yanked versions included) and tag @demo/core@0.2.1 does not exist |
 | workspace version inheritance | **not-applicable** | no released package inherits its version |
@@ -55,21 +55,22 @@ Dependents are **not** changed or published by this release. After release, the 
 
 Proposed by **maintenance-agent** (agent), who may not approve it. Needs **1** approval(s) from distinct people holding the prod_approver role. Eligible: randy.
 
-Approved so far: randy (asserted, 2026-11-17T02:11:31.009Z)
+Approved so far: randy (asserted, 2026-11-17T13:19:30.530Z)
 
 Test registry only: an unsigned approval is accepted and recorded as `asserted` (not an authenticated approval).
 
 ```bash
-node src/index.ts release approve demo-core@0.2.1 --as <you> --digest 6210ee5b53c6fb4daf579150f74823bf9db2aa859fdbc499e1d96f8d9df82224
+node src/index.ts release approve demo-core@0.2.1 --as <you> --digest 6d67eb08243c58619ebfd71c26a1594748c4de66825b1f824cfa52c98812cccd
 ```
 
 ## Evidence so far
 
-- Release commit: `ec67299ee6126622f8ad1726c850a377000e602b`
+- Release commit: `2b878b3e26e4d716b767d2e5ef1c9e48a25424d3`
 - Built by boundry-ci run `run_1`: `demo-core-0.2.1.tgz` sha256 `dbb4c334dba272010bbfb083621e03ea7007f8af7bec07a7838f43891016e3b6`
-- Tag `@demo/core@0.2.1` → `ec67299ee612`
+- Tag `@demo/core@0.2.1` → `2b878b3e26e4`
 - Registry serves 0.2.1: integrity `sha512-T9uQpyXJI5BXK3u4N…`, bytes sha256 `dbb4c334dba27201…`, dist-tag points here
+- Claimed by component:release-executor at 2026-11-17T13:19:30.693Z (triggered by randy): withdrawal and rejection are closed
 - Skipped github-release: skipped: the release policy does not create GitHub releases
 - Proposed for shop (acme/shop:package.json): requirement-change @demo/core `0.2.0` → `0.2.1` (proposed; needs its own plan)
 
-Plan digest `6210ee5b53c6fb4daf579150f74823bf9db2aa859fdbc499e1d96f8d9df82224` · record `data/release-manager/demo-core/0.2.1.json`
+Plan digest `6d67eb08243c58619ebfd71c26a1594748c4de66825b1f824cfa52c98812cccd` · record `data/release-manager/demo-core/0.2.1.json`

@@ -731,10 +731,14 @@ export const DownstreamProposal = z.object({
 export const ConsumerObservation = z.object({
   at: IsoDate, consumer: z.string(), where: z.string(), dependency: z.string(), released: z.string(),
   basis: z.string().describe("Where the observation came from (e.g. Maintenance scan at <time>)"),
-  installation: z.object({ declared: z.string().nullable(), resolved: z.string().nullable() }),
-  adoption: z.enum(["adopted", "not-adopted", "unknown"]).describe("adopted: the resolved version is the released one (or newer)"),
-  verification: z.enum(["verified", "unverified", "failed"]).describe("verified only with evidence that the consumer's own checks passed on the released version"),
+  installation: z.object({ declared: z.string().nullable(), resolved: z.string().nullable(), commit: z.string().nullable().default(null).describe("The consumer commit the scan read") }),
+  adoption: z.enum(["adopted", "not-adopted", "unknown"]).describe("adopted: the resolved version is the released one (or newer). A fact about the lockfile, not about compatibility"),
+  verification: z.enum(["verified", "unverified", "failed"]).describe("verified only with evidence that the consumer's own checks passed on a consumer commit whose lockfile resolved exactly the released version"),
   verificationEvidence: z.string().nullable(),
+  verificationRecord: z.object({
+    commit: z.string(), collectedAt: IsoDate, resolved: z.string(),
+    runs: z.array(z.object({ workflow: z.string(), runId: z.number(), url: z.string(), conclusion: z.string().nullable() })),
+  }).nullable().default(null).describe("The consumer's CI evidence this verification rests on (data/evidence/<project>.json)"),
 });
 
 export const ReleasePackagePlan = z.object({

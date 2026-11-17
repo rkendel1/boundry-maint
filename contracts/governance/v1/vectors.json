@@ -1,6 +1,6 @@
 {
  "contract": "boundry.governance",
- "version": "1.2.0",
+ "version": "1.2.1",
  "cases": [
   {
    "name": "engineer may propose",
