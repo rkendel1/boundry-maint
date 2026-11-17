@@ -5,12 +5,21 @@ This document builds on `control-plane.md`: the separate-apps decision, the gove
 ## Lifecycle
 
 ```
-proposed → validated → awaiting-approval → approved → prepared → built → tagged → published → registry-verified → released
-              │                  │             │            (failed: recoverable, resumes at the last verified state)
+proposed → validated → awaiting-approval → approved ─claim─▶ prepared → built → tagged → published → registry-verified → released
+              │                  │             │        │      (failed: recoverable, resumes at the last verified state)
+              │                  │             │        └─▶ abandoned: a person, with a reason, after reconciling git and the registry
               │                  │             └─ superseded: facts changed after approval (reassessed before execution)
               │                  └─ superseded: facts changed before approval (reassessed before approval)
               └─ refused at planning: any failed check
 ```
+
+**Claim is the point of no return** (governance contract 1.2.0). The release executor records a claim before its
+first action. From then on the release cannot be withdrawn or rejected, whether or not anything has been pushed yet.
+It can only finish or be **abandoned**. Abandoning is person-only (`admin`, `prod_approver`), needs a reason, and is
+refused while git or the registry cannot be asked what is real. The record then says which commit, tags and versions
+remain; nothing is rolled back. A replacement release needs that reconciliation and never reuses a version an
+abandoned release claimed. Record schema 3 carries the claim and the abandonment. Schema-2 records are read as they
+are; on their next save their claim is inferred from history, and the inference is written into that history.
 
 **Built before tagged.** This deliberately differs from the order in the prompt (`tagged → built`). A tag is pushed only after Boundry CI has built and tested the exact release commit, so a failed build never leaves a tag behind. Tags are never moved or deleted.
 

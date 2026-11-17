@@ -139,5 +139,5 @@ Decided by the executing component, at the start of execution, from the record. 
 
 | Application | Conforms to | Evidence |
 |---|---|---|
-| Boundry Maintenance | 1.1.0 | `test/governance-contract.test.ts` runs `vectors.json` against `src/governance/rules.ts` `decide()`, which the Release Manager uses for every decision |
-| Resolver Control | 1.1.0 (29 conform, 12 not applicable, 0 divergences at resolver-control `0354a26`) | `tests/governance-contract.test.ts` in resolver-control runs the vendored vectors against its own mutations and writes `docs/governance-conformance.json` |
+| Boundry Maintenance | 1.2.0 | `test/governance-contract.test.ts` runs `vectors.json` against `src/governance/rules.ts` `decide()`, which the Release Manager uses for every decision |
+| Resolver Control | 1.2.0 (43 conform, 13 not applicable, 0 divergences at resolver-control `19851c3`) | `tests/governance-contract.test.ts` in resolver-control runs the vendored vectors against its own mutations and writes `docs/governance-conformance.json` |

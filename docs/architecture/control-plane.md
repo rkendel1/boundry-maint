@@ -263,7 +263,7 @@ Each application enforces the contract in its own trust boundary.
 * Every release decision goes through `decide()`.
 * `test/governance-contract.test.ts` runs all 40 vectors.
 
-**Resolver Control: conforms to 1.1.0, measured by running the vectors in its own suite** (`rkendel1/resolver-control@0354a26`; the ratchet fix at `27e843a`; `tests/governance-contract.test.ts`; report `docs/governance-conformance.json`; the run before the fix is kept as `docs/governance-conformance.before-fix.json`).
+**Resolver Control: conforms to 1.2.0 (43 conform, 13 not applicable, 0 divergences), measured by running the vectors in its own suite** (`rkendel1/resolver-control@19851c3`: claim ends withdrawal, person-only abandonment; agent withdrawal at `0354a26`; the ratchet fix at `27e843a`. The table below is the 1.1.0 measurement; `tests/governance-contract.test.ts`; report `docs/governance-conformance.json`; the run before the fix is kept as `docs/governance-conformance.before-fix.json`).
 
 | Outcome | Count | Cases |
 |---|---|---|
@@ -301,11 +301,8 @@ Proof: `docs/integration/proof-shop/`.
 - AppBoundry-hosted component execution (A1) for Resolver Control; not required for this integration and not claimed.
 - `config/principals.json` and the policy/catalog files need protected review (see the review recommendation); no repository settings were changed here.
 - Consumer CI evidence is not yet linked to consumer verification automatically.
-- **Maintenance's withdrawal boundary is looser than the one agreed for agents.** Maintenance lets the proposer
-  withdraw until publication (`irreversible` = published), so after execution has started (release commit pushed,
-  tag pushed) a withdrawal is still accepted. Resolver Control refuses after claim. The contract's own words ("until
-  the first irreversible external mutation") arguably side with Resolver Control, since Maintenance never reverts a
-  pushed release commit. Tightening it needs a decision: a release stuck after execution started (for example
-  failing tests) would then need a separate, person-only "abandon" path. Proposed as contract 1.2.0; not changed.
+- ~~Maintenance's withdrawal boundary was looser than the one agreed for agents~~: closed by contract 1.2.0 (claim ends
+  withdrawal in both applications; person-only abandonment after reconciliation). Maintenance `d1ad995`, Resolver
+  Control `19851c3`.
 - Protected review of `config/principals.json` and policy files: owner Randy; an independent second human reviewer
   is not yet designated, so no review rule or CODEOWNERS entry was added, and production governance stays blocked.
