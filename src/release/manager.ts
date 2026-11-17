@@ -24,6 +24,7 @@ import { tmpdir } from "node:os";
 import semver from "semver";
 import { ReleaseRecord, ReleasePolicy, type Principal, type PackageConfig, type ReleaseBump, type ReleasePlan, type ReleaseState, type Installation } from "../contracts.ts";
 import { writeAllAtomic, stableJson } from "../lib/files.ts";
+import { withLocks, LockHeld } from "../lib/lock.ts";
 import { allocate, tagFor, AllocationError } from "./version.ts";
 import { editPackageJson, editPackageLock, dependentEffect, npmDependency, type Dependent } from "./manifests.ts";
 import { authorize, checkApproval, has, principal, requiredApprovals, GovernanceError } from "../governance/rules.ts";
@@ -83,6 +84,10 @@ export class ReleaseManager {
 
   // ───────── plan ─────────
   async plan(req: PlanRequest): Promise<ReleaseRecord> {
+    // Under the packages' locks: two concurrent requests can never both record a plan (the second is busy).
+    return this.#locked([...new Set(req.packages)], () => this.#plan(req));
+  }
+  async #plan(req: PlanRequest): Promise<ReleaseRecord> {
     const proposer = this.#principal(req.requestedBy);
     this.#gov(() => authorize(proposer, "releases.propose"));
     const pkgs = req.packages.map((id) => {
@@ -485,23 +490,10 @@ export class ReleaseManager {
 
   #pkgRegistry(id: string) { return this.d.registry(this.d.catalog.find((c) => c.id === id)!); }
 
+  /** Exclusive per-package locks (atomic; see src/lib/lock.ts). Held by one plan or one execution at a time. */
   async #locked<T>(ids: string[], f: () => Promise<T>): Promise<T> {
-    const dirs = ids.sort().map((id) => join(this.d.runtimeDir, "locks", id));
-    await mkdir(join(this.d.runtimeDir, "locks"), { recursive: true });
-    const held: string[] = [];
-    try {
-      for (const d of dirs) {
-        try { await mkdir(d); }
-        catch {
-          const pid = Number(await readFile(join(d, "pid"), "utf8").catch(() => "0"));
-          if (pid && alive(pid)) throw new ReleaseError("busy", `another release execution holds ${d.split("/").pop()} (pid ${pid})`);
-          await rm(d, { recursive: true, force: true }); await mkdir(d);
-        }
-        await writeFile(join(d, "pid"), String(process.pid));
-        held.push(d);
-      }
-      return await f();
-    } finally { for (const d of held) await rm(d, { recursive: true, force: true }); }
+    try { return await withLocks(ids.map((id) => join(this.d.runtimeDir, "locks", id)), f); }
+    catch (e) { if (e instanceof LockHeld) throw new ReleaseError("busy", `another release plan or execution holds ${e.lock.split("/").pop()}`); throw e; }
   }
 }
 
@@ -537,7 +529,6 @@ export function buildRecipe(r: ReleaseRecord): { path: string; source: string } 
 }
 
 function splitId(id: string): [string, string] { const i = id.lastIndexOf("@"); return [id.slice(0, i), id.slice(i + 1)]; }
-function alive(pid: number) { try { process.kill(pid, 0); return true; } catch { return false; } }
 export { stableJson };
 
 /** When the plan became approved (the last approval): the fixed date of the release commit and tags. */

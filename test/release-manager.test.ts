@@ -90,16 +90,19 @@ test("plan refusals: not owned, no release policy, unsupported registry, unknown
 test("1. two concurrent release requests for the same package: exactly one plan", async () => {
   const w = world();
   const results = await Promise.allSettled([w.m.plan({ packages: ["demo-core"], bump: "patch", requestedBy: "grace" }), w.m.plan({ packages: ["demo-core"], bump: "patch", requestedBy: "grace" })]);
-  // Both may compute the same id; the record file is created once and the second sees it.
+  // Exactly one plan is recorded; the other request is refused as busy (it must never overwrite the first).
   const ok = results.filter((r) => r.status === "fulfilled");
-  assert.ok(ok.length >= 1);
+  assert.equal(ok.length, 1, JSON.stringify(results.map((r) => r.status === "rejected" ? String(r.reason) : "ok")));
+  const rej = (results.find((r) => r.status === "rejected") as PromiseRejectedResult).reason;
+  assert.equal(rej.code, "busy", String(rej?.stack ?? rej));
+  assert.equal((await w.m.load((ok[0] as PromiseFulfilledResult<ReleaseRecord>).value.id)).planDigest, (ok[0] as PromiseFulfilledResult<ReleaseRecord>).value.planDigest, "the recorded plan is the one returned");
   await assert.rejects(w.m.plan({ packages: ["demo-core"], bump: "minor", requestedBy: "grace" }), (e: any) => e.code === "busy");
   const r = (ok[0] as PromiseFulfilledResult<ReleaseRecord>).value;
   await w.m.approve(r.id, "randy", r.planDigest);
   const runs = await Promise.allSettled([w.m.execute(r.id, "randy"), w.m.execute(r.id, "randy")]);
   const busy = runs.filter((x) => x.status === "rejected" && (x.reason as ReleaseError).code === "busy").length;
   const released = runs.filter((x) => x.status === "fulfilled" && x.value.state === "released").length;
-  assert.equal(busy + released, 2);
+  assert.equal(busy + released, 2, JSON.stringify(runs.map((x) => x.status === "rejected" ? String((x.reason as Error).stack) : x.value.state)));
   assert.equal(released >= 1, true);
   assert.equal(w.registry.publishes, 1, "published exactly once");
 });

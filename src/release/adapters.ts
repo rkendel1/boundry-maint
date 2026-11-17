@@ -3,6 +3,8 @@
  * what that authority says; none of them decides anything. Credentials are read from files/env by the caller
  * and never logged.
  */
+import { AsyncLocalStorage } from "node:async_hooks";
+import { withLocks } from "../lib/lock.ts";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { mkdtemp, writeFile, rm, mkdir } from "node:fs/promises";
@@ -92,11 +94,23 @@ export interface GitAuthority {
   log(range: string, path: string, limit: number): Promise<string[]>;
 }
 
+const inGit = new AsyncLocalStorage<Set<string>>();
+
 export class GitCli implements GitAuthority {
   readonly #url: string; readonly #work: string; readonly #id: GitIdentity; readonly #auth: string[];
   constructor(url: string, workDir: string, identity: GitIdentity, authHeader?: string) {
     this.#url = url; this.#work = workDir; this.#id = identity;
     this.#auth = authHeader ? ["-c", `http.extraHeader=${authHeader}`] : [];
+  }
+  /**
+   * One git operation at a time per work directory, across processes: the mirror's shallow file, index and
+   * checkout are shared state (concurrent fetches fail with "remove the file manually to continue").
+   * Re-entrant within one call chain.
+   */
+  #serial<T>(f: () => Promise<T>): Promise<T> {
+    if (inGit.getStore()?.has(this.#work)) return f();
+    const held = new Set(inGit.getStore() ?? []).add(this.#work);
+    return withLocks([`${this.#work}.lock`], () => inGit.run(held, f), { waitMs: 300_000 });
   }
   async #git(args: string[], env: Record<string, string> = {}): Promise<string> {
     try { return (await pexec("git", ["-C", this.#work, ...this.#auth, ...args], { env: { ...process.env, GIT_TERMINAL_PROMPT: "0", ...env }, maxBuffer: 32 * 1024 * 1024 })).stdout; }
@@ -109,11 +123,14 @@ export class GitCli implements GitAuthority {
   async #ready() { await mkdir(this.#work, { recursive: true }); await pexec("git", ["init", "-q", this.#work]).catch(() => {}); }
   async #fetch(ref: string) { await this.#ready(); await this.#git(["fetch", "-q", "--depth", "200", this.#url, ref]); }
   async head(branch: string) {
+    return this.#serial(async () => {
     await this.#ready();
     const out = await this.#git(["ls-remote", this.#url, `refs/heads/${branch}`]);
     return out.trim().split(/\s+/)[0] || null;
+    });
   }
   async tags() {
+    return this.#serial(async () => {
     await this.#ready();
     const out = await this.#git(["ls-remote", "--tags", this.#url]);
     const m = new Map<string, string>();
@@ -125,41 +142,56 @@ export class GitCli implements GitAuthority {
       else if (!m.has(name)) m.set(name, sha);
     }
     return m;
+    });
   }
   async read(commit: string, path: string) {
+    return this.#serial(async () => {
     await this.#fetch(commit);
     try { return await this.#git(["show", `${commit}:${path}`]); } catch { return null; }
+    });
   }
   async list(commit: string, dir: string) {
+    return this.#serial(async () => {
     await this.#fetch(commit);
     try { return (await this.#git(["ls-tree", "--name-only", `${commit}:${dir === "." ? "" : dir}`])).trim().split("\n").filter(Boolean).sort(); } catch { return null; }
+    });
   }
   #env(at: string) { return { GIT_AUTHOR_NAME: this.#id.name, GIT_AUTHOR_EMAIL: this.#id.email, GIT_COMMITTER_NAME: this.#id.name, GIT_COMMITTER_EMAIL: this.#id.email, GIT_AUTHOR_DATE: at, GIT_COMMITTER_DATE: at }; }
   async makeCommit(parent: string, files: Record<string, string>, message: string, at: string) {
+    return this.#serial(async () => {
     await this.#fetch(parent);
     await this.#git(["checkout", "-q", "-f", "--detach", parent]);
     for (const [p, content] of Object.entries(files)) { await mkdir(dirname(join(this.#work, p)), { recursive: true }); await writeFile(join(this.#work, p), content); }
     await this.#git(["add", "--", ...Object.keys(files)]);
     await this.#git(["-c", "commit.gpgsign=false", "commit", "-q", "--no-verify", "-m", message], this.#env(at));
     return (await this.#git(["rev-parse", "HEAD"])).trim();
+    });
   }
   async pushBranch(branch: string, commit: string, expected: string) {
+    return this.#serial(async () => {
     try { await this.#git(["push", "-q", `--force-with-lease=refs/heads/${branch}:${expected}`, this.#url, `${commit}:refs/heads/${branch}`]); }
     catch (e) { if (/stale info|rejected|non-fast-forward|fetch first/i.test(String((e as any).stderr ?? (e as Error).message))) throw new Refused(`${branch} is no longer at ${expected.slice(0, 12)}`); throw e; }
+    });
   }
   async pushTag(tag: string, commit: string, message: string, at: string) {
+    return this.#serial(async () => {
     if ((await this.tags()).has(tag)) throw new Refused(`tag ${tag} already exists`);
     await this.#fetch(commit);
     await this.#git(["-c", "tag.gpgsign=false", "tag", "-f", "-a", tag, commit, "-m", message], this.#env(at));
     try { await this.#git(["push", "-q", this.#url, `refs/tags/${tag}`]); }
     catch (e) { if (/already exists|rejected/i.test(String((e as any).stderr ?? (e as Error).message))) throw new Refused(`tag ${tag} already exists`); throw e; }
+    });
   }
   async isAncestor(a: string, d: string) {
+    return this.#serial(async () => {
     await this.#fetch(d);
     try { await this.#git(["merge-base", "--is-ancestor", a, d]); return true; } catch { return false; }
+    });
   }
   async log(range: string, path: string, limit: number) {
+    return this.#serial(async () => {
     try { return (await this.#git(["log", `--max-count=${limit}`, "--format=%h %s", range, "--", path])).trim().split("\n").filter(Boolean); } catch { return []; }
+    });
   }
 }
 
