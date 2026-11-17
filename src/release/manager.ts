@@ -123,11 +123,15 @@ export class ReleaseManager {
     const reserved: Record<string, { version: string; why: string }[]> = {};
     for (const r of await this.list()) {
       if (!TERMINAL.includes(r.state) && r.plan.packages.some((x) => pkgs.some((p) => p.id === x.package))) throw new ReleaseError("busy", `release ${r.id} is ${r.state}; finish, abandon or cancel it first`);
-      if (r.state !== "abandoned") continue;
+      // Abandoned, or failed fatally after its claim: what it claimed may be real (commit, tag, publication).
+      const claimedEnd = r.state === "abandoned" || (r.state === "failed" && claimOf(r) !== null);
+      if (!claimedEnd) continue;
       for (const pp of r.plan.packages.filter((x) => pkgs.some((p) => p.id === x.package))) {
-        const d = decide("propose", proposer, undefined, undefined, { predecessor: { state: "abandoned", reconciled: !!r.abandonment?.reconciliation } });
-        if (!d.allow) throw new ReleaseError("not-allowed", `${pp.name}: abandoned release ${r.id}: ${d.message} [${d.code}]`);
-        (reserved[pp.package] ??= []).push({ version: pp.proposedVersion, why: `claimed by abandoned release ${r.id}` });
+        if (r.state === "abandoned") {
+          const d = decide("propose", proposer, undefined, undefined, { predecessor: { state: "abandoned", reconciled: !!r.abandonment?.reconciliation } });
+          if (!d.allow) throw new ReleaseError("not-allowed", `${pp.name}: abandoned release ${r.id}: ${d.message} [${d.code}]`);
+        }
+        (reserved[pp.package] ??= []).push({ version: pp.proposedVersion, why: `claimed by ${r.state} release ${r.id}` });
       }
     }
     const eco = ecosystemFor(first.registry);
@@ -226,8 +230,15 @@ export class ReleaseManager {
     const able = plan.approvers.filter((a) => a !== proposer.id && this.d.principals.some((x) => x.id === a && x.type === "person" && can(x, plan.protected ? "approve.protected" : "approve")));
     if (able.length < plan.requiredApprovals) throw new ReleaseError("not-allowed", `this release needs ${plan.requiredApprovals} approval(s) from people other than ${proposer.id}, but only ${able.length} eligible approver(s) exist (${able.join(", ") || "none"}): it could never be approved`);
     const lead = planned[0]!; // planned has one entry per package (≥ 1)
-    const id = `${lead.package}@${lead.proposedVersion}`;
-    if (existsSync(this.path(id))) throw new ReleaseError("busy", `a release record for ${id} already exists`);
+    // One record per plan, append-only. A version whose earlier plans all ended before any claim (withdrawn,
+    // rejected, superseded: nothing real) may be planned again under a new record "<pkg>@<version>_r<n>".
+    // ("_" because the id travels into Boundry CI request ids: [A-Za-z0-9@._/-] only.)
+    let id = `${lead.package}@${lead.proposedVersion}`;
+    for (let n = 2; existsSync(this.path(id)); n++) {
+      const prior = await this.load(id);
+      if (!TERMINAL.includes(prior.state) || claimOf(prior)) throw new ReleaseError("busy", `release ${id} is ${prior.state}${claimOf(prior) ? " and was claimed" : ""}; its version is not free to plan again`);
+      id = `${lead.package}@${lead.proposedVersion}_r${n}`;
+    }
     const rec: ReleaseRecord = {
       schemaVersion: 3, id, planDigest: planDigestOf(plan), plan, state: "awaiting-approval", approvals: [], revocation: null, claim: null, abandonment: null,
       facts: { releaseCommit: null, build: null, tags: [], published: [], registryVerification: [], githubReleases: [] },

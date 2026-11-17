@@ -1,0 +1,1286 @@
+{
+  "R1-withdrawn": {
+    "schemaVersion": 3,
+    "id": "exercise-core@0.2.1",
+    "planDigest": "88806c7af79bfe92882d1c7e653ecca9ccd845617f0b50fc359488438e901c03",
+    "plan": {
+      "repository": "acme/demo",
+      "branch": "main",
+      "sourceCommit": "7af16336203d173a965bdb67c2494b41c92399f1",
+      "bump": "patch",
+      "requestedBy": "maintenance-agent",
+      "requestedByType": "agent",
+      "requestedAt": "2026-11-17T13:10:38.512Z",
+      "reason": null,
+      "packages": [
+        {
+          "package": "exercise-core",
+          "name": "@demo/core",
+          "registry": "npm",
+          "directory": "packages/core",
+          "registryVersions": {
+            "count": 1,
+            "highest": "0.2.0",
+            "latestTag": "0.2.0",
+            "yanked": [],
+            "observedAt": "2026-11-17T13:10:38.512Z"
+          },
+          "inherited": false,
+          "repositoryVersion": "0.2.0",
+          "proposedVersion": "0.2.1",
+          "tag": "@demo/core@0.2.1",
+          "distTag": "latest",
+          "destination": "http://127.0.0.1:49047",
+          "production": false
+        }
+      ],
+      "decision": [
+        "The registry has 1 version of @demo/core; the highest ever published is 0.2.0.",
+        "The manifest at the source commit declares 0.2.0.",
+        "Patch release from 0.2.0 gives 0.2.1 (0.x: under semver a patch bump of a 0.x version is the compatible channel for consumers using ^0.2).",
+        "Version 0.2.1 is not on the registry and tag @demo/core@0.2.1 does not exist.",
+        "1 dependent manifest(s) found; none is changed or published by this release (see dependents and, after release, the downstream proposals)."
+      ],
+      "dependents": [
+        {
+          "package": "@demo/client",
+          "where": "acme/demo:packages/client/package.json",
+          "dependency": "@demo/core",
+          "declared": "^0.2.0",
+          "resolved": "0.2.0",
+          "accepts": true,
+          "effect": "requirement ^0.2.0 accepts 0.2.1; it builds against the new version in the workspace"
+        }
+      ],
+      "checks": [
+        {
+          "check": "@demo/core: publishable",
+          "outcome": "passed",
+          "detail": "packages/core/package.json allows publishing"
+        },
+        {
+          "check": "@demo/core: registry",
+          "outcome": "passed",
+          "detail": "http://127.0.0.1:49047 answered: 1 version(s) ever published"
+        },
+        {
+          "check": "@demo/core: manifest and package-lock.json agree",
+          "outcome": "passed",
+          "detail": "both say 0.2.0"
+        },
+        {
+          "check": "@demo/core: version 0.2.1 free",
+          "outcome": "passed",
+          "detail": "not on the registry (yanked versions included) and tag @demo/core@0.2.1 does not exist"
+        },
+        {
+          "check": "workspace version inheritance",
+          "outcome": "not-applicable",
+          "detail": "no released package inherits its version"
+        },
+        {
+          "check": "workspace install after the release commit",
+          "outcome": "passed",
+          "detail": "every workspace sibling's requirement accepts the new version(s)"
+        },
+        {
+          "check": "build and tests",
+          "outcome": "deferred",
+          "detail": "run by Boundry CI on the exact release commit after approval (build only); nothing is tagged or published unless they pass"
+        },
+        {
+          "check": "registry acceptance",
+          "outcome": "deferred",
+          "detail": "the registry decides ownership, name and metadata at publish; a refusal stops the release before anything else is published"
+        },
+        {
+          "check": "consumer verification",
+          "outcome": "deferred",
+          "detail": "a consumer's own checks on the new version are recorded after release (release consumers), never assumed"
+        },
+        {
+          "check": "external consumers",
+          "outcome": "unavailable",
+          "detail": "no installations data (run a scan): consumers in other repositories are unknown"
+        }
+      ],
+      "unknowns": [
+        "Consumers in other repositories: no scan data was available.",
+        "Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible."
+      ],
+      "impactFingerprint": "a2b5592ede56fc9a995220bb793eed608052ae99da01796543a535f2ac5adc66",
+      "releaseCommit": {
+        "message": "Release @demo/core@0.2.1",
+        "files": [
+          "package-lock.json",
+          "packages/core/package.json"
+        ],
+        "pins": []
+      },
+      "validation": [],
+      "githubRelease": false,
+      "approvers": [
+        "randy"
+      ],
+      "requiredApprovals": 1,
+      "protected": true
+    },
+    "state": "cancelled",
+    "approvals": [
+      {
+        "by": "randy",
+        "principalType": "person",
+        "authentication": "asserted",
+        "at": "2026-11-17T13:10:40.352Z",
+        "planDigest": "88806c7af79bfe92882d1c7e653ecca9ccd845617f0b50fc359488438e901c03",
+        "signature": null
+      }
+    ],
+    "revocation": {
+      "by": "maintenance-agent",
+      "at": "2026-11-17T13:10:40.781Z",
+      "reason": "no longer wanted"
+    },
+    "claim": null,
+    "abandonment": null,
+    "facts": {
+      "releaseCommit": null,
+      "build": null,
+      "tags": [],
+      "published": [],
+      "registryVerification": [],
+      "githubReleases": []
+    },
+    "failure": null,
+    "history": [
+      {
+        "at": "2026-11-17T13:10:38.512Z",
+        "state": "proposed",
+        "note": "patch release proposed by maintenance-agent (agent)"
+      },
+      {
+        "at": "2026-11-17T13:10:38.512Z",
+        "state": "validated",
+        "note": "passed: @demo/core: publishable; passed: @demo/core: registry; passed: @demo/core: manifest and package-lock.json agree; passed: @demo/core: version 0.2.1 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; unavailable: external consumers"
+      },
+      {
+        "at": "2026-11-17T13:10:38.512Z",
+        "state": "awaiting-approval",
+        "note": "needs 1 approval(s) from prod approvers; eligible: randy"
+      },
+      {
+        "at": "2026-11-17T13:10:40.352Z",
+        "state": "approved",
+        "note": "approved by randy (asserted) for plan 88806c7af79b"
+      },
+      {
+        "at": "2026-11-17T13:10:40.781Z",
+        "state": "cancelled",
+        "note": "revoked by maintenance-agent: no longer wanted"
+      }
+    ],
+    "attempts": [],
+    "downstream": [],
+    "consumers": []
+  },
+  "R2-crash-then-lost-publish": {
+    "schemaVersion": 3,
+    "id": "exercise-core@0.2.1_r2",
+    "planDigest": "b07136763400a7846404768172ee85cb2e4ef0b43e96515b4c03f93fceb87723",
+    "plan": {
+      "repository": "acme/demo",
+      "branch": "main",
+      "sourceCommit": "7af16336203d173a965bdb67c2494b41c92399f1",
+      "bump": "patch",
+      "requestedBy": "maintenance-agent",
+      "requestedByType": "agent",
+      "requestedAt": "2026-11-17T13:10:41.270Z",
+      "reason": null,
+      "packages": [
+        {
+          "package": "exercise-core",
+          "name": "@demo/core",
+          "registry": "npm",
+          "directory": "packages/core",
+          "registryVersions": {
+            "count": 1,
+            "highest": "0.2.0",
+            "latestTag": "0.2.0",
+            "yanked": [],
+            "observedAt": "2026-11-17T13:10:41.270Z"
+          },
+          "inherited": false,
+          "repositoryVersion": "0.2.0",
+          "proposedVersion": "0.2.1",
+          "tag": "@demo/core@0.2.1",
+          "distTag": "latest",
+          "destination": "http://127.0.0.1:49047",
+          "production": false
+        }
+      ],
+      "decision": [
+        "The registry has 1 version of @demo/core; the highest ever published is 0.2.0.",
+        "The manifest at the source commit declares 0.2.0.",
+        "Patch release from 0.2.0 gives 0.2.1 (0.x: under semver a patch bump of a 0.x version is the compatible channel for consumers using ^0.2).",
+        "Version 0.2.1 is not on the registry and tag @demo/core@0.2.1 does not exist.",
+        "1 dependent manifest(s) found; none is changed or published by this release (see dependents and, after release, the downstream proposals)."
+      ],
+      "dependents": [
+        {
+          "package": "@demo/client",
+          "where": "acme/demo:packages/client/package.json",
+          "dependency": "@demo/core",
+          "declared": "^0.2.0",
+          "resolved": "0.2.0",
+          "accepts": true,
+          "effect": "requirement ^0.2.0 accepts 0.2.1; it builds against the new version in the workspace"
+        }
+      ],
+      "checks": [
+        {
+          "check": "@demo/core: publishable",
+          "outcome": "passed",
+          "detail": "packages/core/package.json allows publishing"
+        },
+        {
+          "check": "@demo/core: registry",
+          "outcome": "passed",
+          "detail": "http://127.0.0.1:49047 answered: 1 version(s) ever published"
+        },
+        {
+          "check": "@demo/core: manifest and package-lock.json agree",
+          "outcome": "passed",
+          "detail": "both say 0.2.0"
+        },
+        {
+          "check": "@demo/core: version 0.2.1 free",
+          "outcome": "passed",
+          "detail": "not on the registry (yanked versions included) and tag @demo/core@0.2.1 does not exist"
+        },
+        {
+          "check": "workspace version inheritance",
+          "outcome": "not-applicable",
+          "detail": "no released package inherits its version"
+        },
+        {
+          "check": "workspace install after the release commit",
+          "outcome": "passed",
+          "detail": "every workspace sibling's requirement accepts the new version(s)"
+        },
+        {
+          "check": "build and tests",
+          "outcome": "deferred",
+          "detail": "run by Boundry CI on the exact release commit after approval (build only); nothing is tagged or published unless they pass"
+        },
+        {
+          "check": "registry acceptance",
+          "outcome": "deferred",
+          "detail": "the registry decides ownership, name and metadata at publish; a refusal stops the release before anything else is published"
+        },
+        {
+          "check": "consumer verification",
+          "outcome": "deferred",
+          "detail": "a consumer's own checks on the new version are recorded after release (release consumers), never assumed"
+        },
+        {
+          "check": "external consumers",
+          "outcome": "unavailable",
+          "detail": "no installations data (run a scan): consumers in other repositories are unknown"
+        }
+      ],
+      "unknowns": [
+        "Consumers in other repositories: no scan data was available.",
+        "Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible."
+      ],
+      "impactFingerprint": "a2b5592ede56fc9a995220bb793eed608052ae99da01796543a535f2ac5adc66",
+      "releaseCommit": {
+        "message": "Release @demo/core@0.2.1",
+        "files": [
+          "package-lock.json",
+          "packages/core/package.json"
+        ],
+        "pins": []
+      },
+      "validation": [],
+      "githubRelease": false,
+      "approvers": [
+        "randy"
+      ],
+      "requiredApprovals": 1,
+      "protected": true
+    },
+    "state": "released",
+    "approvals": [
+      {
+        "by": "randy",
+        "principalType": "person",
+        "authentication": "asserted",
+        "at": "2026-11-17T13:10:42.629Z",
+        "planDigest": "b07136763400a7846404768172ee85cb2e4ef0b43e96515b4c03f93fceb87723",
+        "signature": null
+      }
+    ],
+    "revocation": null,
+    "claim": {
+      "by": "component:release-executor",
+      "at": "2026-11-17T13:10:43.366Z",
+      "triggeredBy": "randy",
+      "inferred": false
+    },
+    "abandonment": null,
+    "facts": {
+      "releaseCommit": "fa89ace10a6e74d803a1cb59a914b2d894df1803",
+      "build": {
+        "system": "boundry-ci",
+        "runId": "run_a630bd2bedda5b08b79777c4",
+        "evidenceUrl": "http://127.0.0.1:48029/v1/runs/run_a630bd2bedda5b08b79777c4/evidence",
+        "artifacts": [
+          {
+            "package": "exercise-core",
+            "file": "demo-core-0.2.1.tgz",
+            "sha256": "dbb4c334dba272010bbfb083621e03ea7007f8af7bec07a7838f43891016e3b6",
+            "integrity": "sha512-T9uQpyXJI5BXK3u4Nkv1UclzEUH0n1+VWhkI5DAKqYo/qqbfpSNY5DgdYTcbN/srvCqkxtsk0dMo/1zhc4Uxaw==",
+            "size": 199
+          }
+        ],
+        "container": {
+          "name": "package.tar",
+          "sha256": "5e21811cf2a8330465f19e7c6d7e35e9b3965f4b129d3ab35f6fa3de42b31c71"
+        }
+      },
+      "tags": [
+        {
+          "name": "@demo/core@0.2.1",
+          "target": "fa89ace10a6e74d803a1cb59a914b2d894df1803"
+        }
+      ],
+      "published": [
+        {
+          "package": "exercise-core",
+          "version": "0.2.1",
+          "integrity": "sha512-T9uQpyXJI5BXK3u4Nkv1UclzEUH0n1+VWhkI5DAKqYo/qqbfpSNY5DgdYTcbN/srvCqkxtsk0dMo/1zhc4Uxaw==",
+          "alreadyPresent": true
+        }
+      ],
+      "registryVerification": [
+        {
+          "package": "exercise-core",
+          "version": "0.2.1",
+          "integrity": "sha512-T9uQpyXJI5BXK3u4Nkv1UclzEUH0n1+VWhkI5DAKqYo/qqbfpSNY5DgdYTcbN/srvCqkxtsk0dMo/1zhc4Uxaw==",
+          "tarballSha256": "dbb4c334dba272010bbfb083621e03ea7007f8af7bec07a7838f43891016e3b6",
+          "distTagPointsHere": true,
+          "at": "2026-11-17T13:11:00.455Z"
+        }
+      ],
+      "githubReleases": []
+    },
+    "failure": null,
+    "history": [
+      {
+        "at": "2026-11-17T13:10:41.270Z",
+        "state": "proposed",
+        "note": "patch release proposed by maintenance-agent (agent)"
+      },
+      {
+        "at": "2026-11-17T13:10:41.270Z",
+        "state": "validated",
+        "note": "passed: @demo/core: publishable; passed: @demo/core: registry; passed: @demo/core: manifest and package-lock.json agree; passed: @demo/core: version 0.2.1 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; unavailable: external consumers"
+      },
+      {
+        "at": "2026-11-17T13:10:41.270Z",
+        "state": "awaiting-approval",
+        "note": "needs 1 approval(s) from prod approvers; eligible: randy"
+      },
+      {
+        "at": "2026-11-17T13:10:42.630Z",
+        "state": "approved",
+        "note": "approved by randy (asserted) for plan b07136763400"
+      },
+      {
+        "at": "2026-11-17T13:10:43.655Z",
+        "state": "prepared",
+        "note": "release commit fa89ace10a6e"
+      },
+      {
+        "at": "2026-11-17T13:10:48.883Z",
+        "state": "built",
+        "note": "built by run_a630bd2bedda5b08b79777c4 from fa89ace10a6e"
+      },
+      {
+        "at": "2026-11-17T13:10:49.059Z",
+        "state": "tagged",
+        "note": "@demo/core@0.2.1"
+      },
+      {
+        "at": "2026-11-17T13:11:00.161Z",
+        "state": "published",
+        "note": "registry accepted every artifact"
+      },
+      {
+        "at": "2026-11-17T13:11:00.455Z",
+        "state": "registry-verified",
+        "note": "registry serves the exact artifact"
+      },
+      {
+        "at": "2026-11-17T13:11:00.459Z",
+        "state": "released",
+        "note": "@demo/core@0.2.1 released and verified"
+      }
+    ],
+    "attempts": [
+      {
+        "at": "2026-11-17T13:10:43.366Z",
+        "step": "authorize",
+        "outcome": "done",
+        "detail": "component:release-executor authorized execution under boundry.governance@1.2.0 (triggered by randy)"
+      },
+      {
+        "at": "2026-11-17T13:10:43.366Z",
+        "step": "claim",
+        "outcome": "done",
+        "detail": "claimed by component:release-executor; withdrawal ends here (contract §7)"
+      },
+      {
+        "at": "2026-11-17T13:10:43.655Z",
+        "step": "release-commit",
+        "outcome": "done",
+        "detail": "fa89ace10a6e on main (package-lock.json, packages/core/package.json)"
+      },
+      {
+        "at": "2026-11-17T13:10:44.666Z",
+        "step": "trigger",
+        "outcome": "done",
+        "detail": "execution resumed by randy"
+      },
+      {
+        "at": "2026-11-17T13:10:48.883Z",
+        "step": "build",
+        "outcome": "done",
+        "detail": "run_a630bd2bedda5b08b79777c4: demo-core-0.2.1.tgz sha256:dbb4c334dba27201"
+      },
+      {
+        "at": "2026-11-17T13:10:49.059Z",
+        "step": "tag",
+        "outcome": "done",
+        "detail": "@demo/core@0.2.1 → fa89ace10a6e (verified)"
+      },
+      {
+        "at": "2026-11-17T13:11:00.161Z",
+        "step": "publish",
+        "outcome": "already-done",
+        "detail": "publish reported \"registry refused: version already present\", but the registry has the exact artifact"
+      },
+      {
+        "at": "2026-11-17T13:11:00.455Z",
+        "step": "verify-registry",
+        "outcome": "done",
+        "detail": "0.2.1 integrity+bytes match; dist-tag points here"
+      },
+      {
+        "at": "2026-11-17T13:11:00.459Z",
+        "step": "github-release",
+        "outcome": "skipped",
+        "detail": "skipped: the release policy does not create GitHub releases"
+      }
+    ],
+    "downstream": [],
+    "consumers": []
+  },
+  "R3-abandoned": {
+    "schemaVersion": 3,
+    "id": "exercise-core@0.2.2",
+    "planDigest": "61731c338ec222076a218e7186b050baac27777301d1be1451d3a624f57907aa",
+    "plan": {
+      "repository": "acme/demo",
+      "branch": "main",
+      "sourceCommit": "fa89ace10a6e74d803a1cb59a914b2d894df1803",
+      "bump": "patch",
+      "requestedBy": "maintenance-agent",
+      "requestedByType": "agent",
+      "requestedAt": "2026-11-17T13:11:00.947Z",
+      "reason": null,
+      "packages": [
+        {
+          "package": "exercise-core",
+          "name": "@demo/core",
+          "registry": "npm",
+          "directory": "packages/core",
+          "registryVersions": {
+            "count": 2,
+            "highest": "0.2.1",
+            "latestTag": "0.2.1",
+            "yanked": [],
+            "observedAt": "2026-11-17T13:11:00.947Z"
+          },
+          "inherited": false,
+          "repositoryVersion": "0.2.1",
+          "proposedVersion": "0.2.2",
+          "tag": "@demo/core@0.2.2",
+          "distTag": "latest",
+          "destination": "http://127.0.0.1:49047",
+          "production": false
+        }
+      ],
+      "decision": [
+        "The registry has 2 versions of @demo/core; the highest ever published is 0.2.1.",
+        "The manifest at the source commit declares 0.2.1.",
+        "Patch release from 0.2.1 gives 0.2.2 (0.x: under semver a patch bump of a 0.x version is the compatible channel for consumers using ^0.2).",
+        "Version 0.2.2 is not on the registry and tag @demo/core@0.2.2 does not exist.",
+        "1 dependent manifest(s) found; none is changed or published by this release (see dependents and, after release, the downstream proposals)."
+      ],
+      "dependents": [
+        {
+          "package": "@demo/client",
+          "where": "acme/demo:packages/client/package.json",
+          "dependency": "@demo/core",
+          "declared": "^0.2.0",
+          "resolved": "0.2.1",
+          "accepts": true,
+          "effect": "requirement ^0.2.0 accepts 0.2.2; it builds against the new version in the workspace"
+        }
+      ],
+      "checks": [
+        {
+          "check": "@demo/core: publishable",
+          "outcome": "passed",
+          "detail": "packages/core/package.json allows publishing"
+        },
+        {
+          "check": "@demo/core: registry",
+          "outcome": "passed",
+          "detail": "http://127.0.0.1:49047 answered: 2 version(s) ever published"
+        },
+        {
+          "check": "@demo/core: manifest and package-lock.json agree",
+          "outcome": "passed",
+          "detail": "both say 0.2.1"
+        },
+        {
+          "check": "@demo/core: version 0.2.2 free",
+          "outcome": "passed",
+          "detail": "not on the registry (yanked versions included) and tag @demo/core@0.2.2 does not exist"
+        },
+        {
+          "check": "workspace version inheritance",
+          "outcome": "not-applicable",
+          "detail": "no released package inherits its version"
+        },
+        {
+          "check": "workspace install after the release commit",
+          "outcome": "passed",
+          "detail": "every workspace sibling's requirement accepts the new version(s)"
+        },
+        {
+          "check": "build and tests",
+          "outcome": "deferred",
+          "detail": "run by Boundry CI on the exact release commit after approval (build only); nothing is tagged or published unless they pass"
+        },
+        {
+          "check": "registry acceptance",
+          "outcome": "deferred",
+          "detail": "the registry decides ownership, name and metadata at publish; a refusal stops the release before anything else is published"
+        },
+        {
+          "check": "consumer verification",
+          "outcome": "deferred",
+          "detail": "a consumer's own checks on the new version are recorded after release (release consumers), never assumed"
+        },
+        {
+          "check": "external consumers",
+          "outcome": "unavailable",
+          "detail": "no installations data (run a scan): consumers in other repositories are unknown"
+        }
+      ],
+      "unknowns": [
+        "Consumers in other repositories: no scan data was available.",
+        "Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible."
+      ],
+      "impactFingerprint": "6d311443279295cf329c0a97d8f809afd7329e5c9f4a4cff24562e352a87ad98",
+      "releaseCommit": {
+        "message": "Release @demo/core@0.2.2",
+        "files": [
+          "package-lock.json",
+          "packages/core/package.json"
+        ],
+        "pins": []
+      },
+      "validation": [],
+      "githubRelease": false,
+      "approvers": [
+        "randy"
+      ],
+      "requiredApprovals": 1,
+      "protected": true
+    },
+    "state": "abandoned",
+    "approvals": [
+      {
+        "by": "randy",
+        "principalType": "person",
+        "authentication": "asserted",
+        "at": "2026-11-17T13:11:02.312Z",
+        "planDigest": "61731c338ec222076a218e7186b050baac27777301d1be1451d3a624f57907aa",
+        "signature": null
+      }
+    ],
+    "revocation": null,
+    "claim": {
+      "by": "component:release-executor",
+      "at": "2026-11-17T13:11:02.943Z",
+      "triggeredBy": "randy",
+      "inferred": false
+    },
+    "abandonment": {
+      "by": "randy",
+      "byType": "person",
+      "at": "2026-11-17T13:12:19.983Z",
+      "reason": "registry incident; replacing with the next patch",
+      "atState": "tagged",
+      "reconciliation": {
+        "at": "2026-11-17T13:12:19.982Z",
+        "branch": "main",
+        "branchHead": "3185d3c055e9423c80f5fa5a7dfe364509342cd1",
+        "releaseCommit": "3185d3c055e9423c80f5fa5a7dfe364509342cd1",
+        "releaseCommitOnBranch": true,
+        "tags": [
+          {
+            "name": "@demo/core@0.2.2",
+            "target": "3185d3c055e9423c80f5fa5a7dfe364509342cd1"
+          }
+        ],
+        "registry": [
+          {
+            "package": "exercise-core",
+            "version": "0.2.2",
+            "present": false,
+            "integrity": null,
+            "matchesBuiltArtifact": null,
+            "yanked": false
+          }
+        ]
+      },
+      "remainsReal": [
+        "release commit 3185d3c055e9 is on main and stays there",
+        "tag @demo/core@0.2.2 → 3185d3c055e9 exists and is never moved or deleted"
+      ]
+    },
+    "facts": {
+      "releaseCommit": "3185d3c055e9423c80f5fa5a7dfe364509342cd1",
+      "build": {
+        "system": "boundry-ci",
+        "runId": "run_517f9bf6eea23de764ba2eb7",
+        "evidenceUrl": "http://127.0.0.1:48029/v1/runs/run_517f9bf6eea23de764ba2eb7/evidence",
+        "artifacts": [
+          {
+            "package": "exercise-core",
+            "file": "demo-core-0.2.2.tgz",
+            "sha256": "515cd016bdb888f5eb5ddbba866807a50189749bd1b9942982dfb270d149ddda",
+            "integrity": "sha512-BYkTBJV6H9+qGIuP5Xb7wAakvb/OrVTSgHLUz6GhnO1kOWcBKL9Z6Z+BNZT/ma6U+8R6wxYCc0U6M7vBEDXCBw==",
+            "size": 199
+          }
+        ],
+        "container": {
+          "name": "package.tar",
+          "sha256": "c56a320571b2a55075fae0c6b7808205c786e76a99bfc7c5025ed0664be82889"
+        }
+      },
+      "tags": [
+        {
+          "name": "@demo/core@0.2.2",
+          "target": "3185d3c055e9423c80f5fa5a7dfe364509342cd1"
+        }
+      ],
+      "published": [],
+      "registryVerification": [],
+      "githubReleases": []
+    },
+    "failure": {
+      "at": "tagged",
+      "reason": "registry unavailable during publish: npm error code E503",
+      "recoverable": true,
+      "when": "2026-11-17T13:12:18.244Z"
+    },
+    "history": [
+      {
+        "at": "2026-11-17T13:11:00.947Z",
+        "state": "proposed",
+        "note": "patch release proposed by maintenance-agent (agent)"
+      },
+      {
+        "at": "2026-11-17T13:11:00.947Z",
+        "state": "validated",
+        "note": "passed: @demo/core: publishable; passed: @demo/core: registry; passed: @demo/core: manifest and package-lock.json agree; passed: @demo/core: version 0.2.2 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; unavailable: external consumers"
+      },
+      {
+        "at": "2026-11-17T13:11:00.947Z",
+        "state": "awaiting-approval",
+        "note": "needs 1 approval(s) from prod approvers; eligible: randy"
+      },
+      {
+        "at": "2026-11-17T13:11:02.312Z",
+        "state": "approved",
+        "note": "approved by randy (asserted) for plan 61731c338ec2"
+      },
+      {
+        "at": "2026-11-17T13:11:03.173Z",
+        "state": "prepared",
+        "note": "release commit 3185d3c055e9"
+      },
+      {
+        "at": "2026-11-17T13:11:07.333Z",
+        "state": "built",
+        "note": "built by run_517f9bf6eea23de764ba2eb7 from 3185d3c055e9"
+      },
+      {
+        "at": "2026-11-17T13:11:07.469Z",
+        "state": "tagged",
+        "note": "@demo/core@0.2.2"
+      },
+      {
+        "at": "2026-11-17T13:12:19.983Z",
+        "state": "abandoned",
+        "note": "abandoned by randy: registry incident; replacing with the next patch. Reconciled first; what remains real: release commit 3185d3c055e9 is on main and stays there; tag @demo/core@0.2.2 → 3185d3c055e9 exists and is never moved or deleted"
+      }
+    ],
+    "attempts": [
+      {
+        "at": "2026-11-17T13:11:02.943Z",
+        "step": "authorize",
+        "outcome": "done",
+        "detail": "component:release-executor authorized execution under boundry.governance@1.2.0 (triggered by randy)"
+      },
+      {
+        "at": "2026-11-17T13:11:02.943Z",
+        "step": "claim",
+        "outcome": "done",
+        "detail": "claimed by component:release-executor; withdrawal ends here (contract §7)"
+      },
+      {
+        "at": "2026-11-17T13:11:03.173Z",
+        "step": "release-commit",
+        "outcome": "done",
+        "detail": "3185d3c055e9 on main (package-lock.json, packages/core/package.json)"
+      },
+      {
+        "at": "2026-11-17T13:11:07.333Z",
+        "step": "build",
+        "outcome": "done",
+        "detail": "run_517f9bf6eea23de764ba2eb7: demo-core-0.2.2.tgz sha256:515cd016bdb888f5"
+      },
+      {
+        "at": "2026-11-17T13:11:07.469Z",
+        "step": "tag",
+        "outcome": "done",
+        "detail": "@demo/core@0.2.2 → 3185d3c055e9 (verified)"
+      },
+      {
+        "at": "2026-11-17T13:12:18.244Z",
+        "step": "tagged",
+        "outcome": "failed",
+        "detail": "registry unavailable during publish: npm error code E503"
+      }
+    ],
+    "downstream": [],
+    "consumers": []
+  },
+  "R4-replacement-plan": {
+    "schemaVersion": 3,
+    "id": "exercise-core@0.2.3",
+    "planDigest": "f02b096ba6ad8720d8fba57039d90ed4b21470734342850384d066e31d5a088b",
+    "plan": {
+      "repository": "acme/demo",
+      "branch": "main",
+      "sourceCommit": "3185d3c055e9423c80f5fa5a7dfe364509342cd1",
+      "bump": "patch",
+      "requestedBy": "maintenance-agent",
+      "requestedByType": "agent",
+      "requestedAt": "2026-11-17T13:12:20.639Z",
+      "reason": null,
+      "packages": [
+        {
+          "package": "exercise-core",
+          "name": "@demo/core",
+          "registry": "npm",
+          "directory": "packages/core",
+          "registryVersions": {
+            "count": 2,
+            "highest": "0.2.1",
+            "latestTag": "0.2.1",
+            "yanked": [],
+            "observedAt": "2026-11-17T13:12:20.639Z"
+          },
+          "inherited": false,
+          "repositoryVersion": "0.2.2",
+          "proposedVersion": "0.2.3",
+          "tag": "@demo/core@0.2.3",
+          "distTag": "latest",
+          "destination": "http://127.0.0.1:49047",
+          "production": false
+        }
+      ],
+      "decision": [
+        "The registry has 3 versions of @demo/core; the highest ever published is 0.2.2.",
+        "Reserved: 0.2.2 (claimed by abandoned release exercise-core@0.2.2). A version an abandoned release claimed may be partly real, so it counts toward the highest version and is never reused.",
+        "The manifest at the source commit declares 0.2.2.",
+        "Patch release from 0.2.2 gives 0.2.3 (0.x: under semver a patch bump of a 0.x version is the compatible channel for consumers using ^0.2).",
+        "Version 0.2.3 is not on the registry and tag @demo/core@0.2.3 does not exist.",
+        "1 dependent manifest(s) found; none is changed or published by this release (see dependents and, after release, the downstream proposals)."
+      ],
+      "dependents": [
+        {
+          "package": "@demo/client",
+          "where": "acme/demo:packages/client/package.json",
+          "dependency": "@demo/core",
+          "declared": "^0.2.0",
+          "resolved": "0.2.2",
+          "accepts": true,
+          "effect": "requirement ^0.2.0 accepts 0.2.3; it builds against the new version in the workspace"
+        }
+      ],
+      "checks": [
+        {
+          "check": "@demo/core: publishable",
+          "outcome": "passed",
+          "detail": "packages/core/package.json allows publishing"
+        },
+        {
+          "check": "@demo/core: registry",
+          "outcome": "passed",
+          "detail": "http://127.0.0.1:49047 answered: 2 version(s) ever published"
+        },
+        {
+          "check": "@demo/core: manifest and package-lock.json agree",
+          "outcome": "passed",
+          "detail": "both say 0.2.2"
+        },
+        {
+          "check": "@demo/core: version 0.2.3 free",
+          "outcome": "passed",
+          "detail": "not on the registry (yanked versions included) and tag @demo/core@0.2.3 does not exist"
+        },
+        {
+          "check": "workspace version inheritance",
+          "outcome": "not-applicable",
+          "detail": "no released package inherits its version"
+        },
+        {
+          "check": "workspace install after the release commit",
+          "outcome": "passed",
+          "detail": "every workspace sibling's requirement accepts the new version(s)"
+        },
+        {
+          "check": "build and tests",
+          "outcome": "deferred",
+          "detail": "run by Boundry CI on the exact release commit after approval (build only); nothing is tagged or published unless they pass"
+        },
+        {
+          "check": "registry acceptance",
+          "outcome": "deferred",
+          "detail": "the registry decides ownership, name and metadata at publish; a refusal stops the release before anything else is published"
+        },
+        {
+          "check": "consumer verification",
+          "outcome": "deferred",
+          "detail": "a consumer's own checks on the new version are recorded after release (release consumers), never assumed"
+        },
+        {
+          "check": "external consumers",
+          "outcome": "unavailable",
+          "detail": "no installations data (run a scan): consumers in other repositories are unknown"
+        }
+      ],
+      "unknowns": [
+        "Consumers in other repositories: no scan data was available.",
+        "Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible."
+      ],
+      "impactFingerprint": "8eccbfa378ad81859194afbc11a045c7f472d22c5b57caffec28977090120ae7",
+      "releaseCommit": {
+        "message": "Release @demo/core@0.2.3",
+        "files": [
+          "package-lock.json",
+          "packages/core/package.json"
+        ],
+        "pins": []
+      },
+      "validation": [],
+      "githubRelease": false,
+      "approvers": [
+        "randy"
+      ],
+      "requiredApprovals": 1,
+      "protected": true
+    },
+    "state": "awaiting-approval",
+    "approvals": [],
+    "revocation": null,
+    "claim": null,
+    "abandonment": null,
+    "facts": {
+      "releaseCommit": null,
+      "build": null,
+      "tags": [],
+      "published": [],
+      "registryVerification": [],
+      "githubReleases": []
+    },
+    "failure": null,
+    "history": [
+      {
+        "at": "2026-11-17T13:12:20.639Z",
+        "state": "proposed",
+        "note": "patch release proposed by maintenance-agent (agent)"
+      },
+      {
+        "at": "2026-11-17T13:12:20.639Z",
+        "state": "validated",
+        "note": "passed: @demo/core: publishable; passed: @demo/core: registry; passed: @demo/core: manifest and package-lock.json agree; passed: @demo/core: version 0.2.3 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; unavailable: external consumers"
+      },
+      {
+        "at": "2026-11-17T13:12:20.639Z",
+        "state": "awaiting-approval",
+        "note": "needs 1 approval(s) from prod approvers; eligible: randy"
+      }
+    ],
+    "attempts": [],
+    "downstream": [],
+    "consumers": []
+  },
+  "R2-with-consumers": {
+    "schemaVersion": 3,
+    "id": "exercise-core@0.2.1_r2",
+    "planDigest": "b07136763400a7846404768172ee85cb2e4ef0b43e96515b4c03f93fceb87723",
+    "plan": {
+      "repository": "acme/demo",
+      "branch": "main",
+      "sourceCommit": "7af16336203d173a965bdb67c2494b41c92399f1",
+      "bump": "patch",
+      "requestedBy": "maintenance-agent",
+      "requestedByType": "agent",
+      "requestedAt": "2026-11-17T13:10:41.270Z",
+      "reason": null,
+      "packages": [
+        {
+          "package": "exercise-core",
+          "name": "@demo/core",
+          "registry": "npm",
+          "directory": "packages/core",
+          "registryVersions": {
+            "count": 1,
+            "highest": "0.2.0",
+            "latestTag": "0.2.0",
+            "yanked": [],
+            "observedAt": "2026-11-17T13:10:41.270Z"
+          },
+          "inherited": false,
+          "repositoryVersion": "0.2.0",
+          "proposedVersion": "0.2.1",
+          "tag": "@demo/core@0.2.1",
+          "distTag": "latest",
+          "destination": "http://127.0.0.1:49047",
+          "production": false
+        }
+      ],
+      "decision": [
+        "The registry has 1 version of @demo/core; the highest ever published is 0.2.0.",
+        "The manifest at the source commit declares 0.2.0.",
+        "Patch release from 0.2.0 gives 0.2.1 (0.x: under semver a patch bump of a 0.x version is the compatible channel for consumers using ^0.2).",
+        "Version 0.2.1 is not on the registry and tag @demo/core@0.2.1 does not exist.",
+        "1 dependent manifest(s) found; none is changed or published by this release (see dependents and, after release, the downstream proposals)."
+      ],
+      "dependents": [
+        {
+          "package": "@demo/client",
+          "where": "acme/demo:packages/client/package.json",
+          "dependency": "@demo/core",
+          "declared": "^0.2.0",
+          "resolved": "0.2.0",
+          "accepts": true,
+          "effect": "requirement ^0.2.0 accepts 0.2.1; it builds against the new version in the workspace"
+        }
+      ],
+      "checks": [
+        {
+          "check": "@demo/core: publishable",
+          "outcome": "passed",
+          "detail": "packages/core/package.json allows publishing"
+        },
+        {
+          "check": "@demo/core: registry",
+          "outcome": "passed",
+          "detail": "http://127.0.0.1:49047 answered: 1 version(s) ever published"
+        },
+        {
+          "check": "@demo/core: manifest and package-lock.json agree",
+          "outcome": "passed",
+          "detail": "both say 0.2.0"
+        },
+        {
+          "check": "@demo/core: version 0.2.1 free",
+          "outcome": "passed",
+          "detail": "not on the registry (yanked versions included) and tag @demo/core@0.2.1 does not exist"
+        },
+        {
+          "check": "workspace version inheritance",
+          "outcome": "not-applicable",
+          "detail": "no released package inherits its version"
+        },
+        {
+          "check": "workspace install after the release commit",
+          "outcome": "passed",
+          "detail": "every workspace sibling's requirement accepts the new version(s)"
+        },
+        {
+          "check": "build and tests",
+          "outcome": "deferred",
+          "detail": "run by Boundry CI on the exact release commit after approval (build only); nothing is tagged or published unless they pass"
+        },
+        {
+          "check": "registry acceptance",
+          "outcome": "deferred",
+          "detail": "the registry decides ownership, name and metadata at publish; a refusal stops the release before anything else is published"
+        },
+        {
+          "check": "consumer verification",
+          "outcome": "deferred",
+          "detail": "a consumer's own checks on the new version are recorded after release (release consumers), never assumed"
+        },
+        {
+          "check": "external consumers",
+          "outcome": "unavailable",
+          "detail": "no installations data (run a scan): consumers in other repositories are unknown"
+        }
+      ],
+      "unknowns": [
+        "Consumers in other repositories: no scan data was available.",
+        "Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible."
+      ],
+      "impactFingerprint": "a2b5592ede56fc9a995220bb793eed608052ae99da01796543a535f2ac5adc66",
+      "releaseCommit": {
+        "message": "Release @demo/core@0.2.1",
+        "files": [
+          "package-lock.json",
+          "packages/core/package.json"
+        ],
+        "pins": []
+      },
+      "validation": [],
+      "githubRelease": false,
+      "approvers": [
+        "randy"
+      ],
+      "requiredApprovals": 1,
+      "protected": true
+    },
+    "state": "released",
+    "approvals": [
+      {
+        "by": "randy",
+        "principalType": "person",
+        "authentication": "asserted",
+        "at": "2026-11-17T13:10:42.629Z",
+        "planDigest": "b07136763400a7846404768172ee85cb2e4ef0b43e96515b4c03f93fceb87723",
+        "signature": null
+      }
+    ],
+    "revocation": null,
+    "claim": {
+      "by": "component:release-executor",
+      "at": "2026-11-17T13:10:43.366Z",
+      "triggeredBy": "randy",
+      "inferred": false
+    },
+    "abandonment": null,
+    "facts": {
+      "releaseCommit": "fa89ace10a6e74d803a1cb59a914b2d894df1803",
+      "build": {
+        "system": "boundry-ci",
+        "runId": "run_a630bd2bedda5b08b79777c4",
+        "evidenceUrl": "http://127.0.0.1:48029/v1/runs/run_a630bd2bedda5b08b79777c4/evidence",
+        "artifacts": [
+          {
+            "package": "exercise-core",
+            "file": "demo-core-0.2.1.tgz",
+            "sha256": "dbb4c334dba272010bbfb083621e03ea7007f8af7bec07a7838f43891016e3b6",
+            "integrity": "sha512-T9uQpyXJI5BXK3u4Nkv1UclzEUH0n1+VWhkI5DAKqYo/qqbfpSNY5DgdYTcbN/srvCqkxtsk0dMo/1zhc4Uxaw==",
+            "size": 199
+          }
+        ],
+        "container": {
+          "name": "package.tar",
+          "sha256": "5e21811cf2a8330465f19e7c6d7e35e9b3965f4b129d3ab35f6fa3de42b31c71"
+        }
+      },
+      "tags": [
+        {
+          "name": "@demo/core@0.2.1",
+          "target": "fa89ace10a6e74d803a1cb59a914b2d894df1803"
+        }
+      ],
+      "published": [
+        {
+          "package": "exercise-core",
+          "version": "0.2.1",
+          "integrity": "sha512-T9uQpyXJI5BXK3u4Nkv1UclzEUH0n1+VWhkI5DAKqYo/qqbfpSNY5DgdYTcbN/srvCqkxtsk0dMo/1zhc4Uxaw==",
+          "alreadyPresent": true
+        }
+      ],
+      "registryVerification": [
+        {
+          "package": "exercise-core",
+          "version": "0.2.1",
+          "integrity": "sha512-T9uQpyXJI5BXK3u4Nkv1UclzEUH0n1+VWhkI5DAKqYo/qqbfpSNY5DgdYTcbN/srvCqkxtsk0dMo/1zhc4Uxaw==",
+          "tarballSha256": "dbb4c334dba272010bbfb083621e03ea7007f8af7bec07a7838f43891016e3b6",
+          "distTagPointsHere": true,
+          "at": "2026-11-17T13:11:00.455Z"
+        }
+      ],
+      "githubReleases": []
+    },
+    "failure": null,
+    "history": [
+      {
+        "at": "2026-11-17T13:10:41.270Z",
+        "state": "proposed",
+        "note": "patch release proposed by maintenance-agent (agent)"
+      },
+      {
+        "at": "2026-11-17T13:10:41.270Z",
+        "state": "validated",
+        "note": "passed: @demo/core: publishable; passed: @demo/core: registry; passed: @demo/core: manifest and package-lock.json agree; passed: @demo/core: version 0.2.1 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; unavailable: external consumers"
+      },
+      {
+        "at": "2026-11-17T13:10:41.270Z",
+        "state": "awaiting-approval",
+        "note": "needs 1 approval(s) from prod approvers; eligible: randy"
+      },
+      {
+        "at": "2026-11-17T13:10:42.630Z",
+        "state": "approved",
+        "note": "approved by randy (asserted) for plan b07136763400"
+      },
+      {
+        "at": "2026-11-17T13:10:43.655Z",
+        "state": "prepared",
+        "note": "release commit fa89ace10a6e"
+      },
+      {
+        "at": "2026-11-17T13:10:48.883Z",
+        "state": "built",
+        "note": "built by run_a630bd2bedda5b08b79777c4 from fa89ace10a6e"
+      },
+      {
+        "at": "2026-11-17T13:10:49.059Z",
+        "state": "tagged",
+        "note": "@demo/core@0.2.1"
+      },
+      {
+        "at": "2026-11-17T13:11:00.161Z",
+        "state": "published",
+        "note": "registry accepted every artifact"
+      },
+      {
+        "at": "2026-11-17T13:11:00.455Z",
+        "state": "registry-verified",
+        "note": "registry serves the exact artifact"
+      },
+      {
+        "at": "2026-11-17T13:11:00.459Z",
+        "state": "released",
+        "note": "@demo/core@0.2.1 released and verified"
+      }
+    ],
+    "attempts": [
+      {
+        "at": "2026-11-17T13:10:43.366Z",
+        "step": "authorize",
+        "outcome": "done",
+        "detail": "component:release-executor authorized execution under boundry.governance@1.2.0 (triggered by randy)"
+      },
+      {
+        "at": "2026-11-17T13:10:43.366Z",
+        "step": "claim",
+        "outcome": "done",
+        "detail": "claimed by component:release-executor; withdrawal ends here (contract §7)"
+      },
+      {
+        "at": "2026-11-17T13:10:43.655Z",
+        "step": "release-commit",
+        "outcome": "done",
+        "detail": "fa89ace10a6e on main (package-lock.json, packages/core/package.json)"
+      },
+      {
+        "at": "2026-11-17T13:10:44.666Z",
+        "step": "trigger",
+        "outcome": "done",
+        "detail": "execution resumed by randy"
+      },
+      {
+        "at": "2026-11-17T13:10:48.883Z",
+        "step": "build",
+        "outcome": "done",
+        "detail": "run_a630bd2bedda5b08b79777c4: demo-core-0.2.1.tgz sha256:dbb4c334dba27201"
+      },
+      {
+        "at": "2026-11-17T13:10:49.059Z",
+        "step": "tag",
+        "outcome": "done",
+        "detail": "@demo/core@0.2.1 → fa89ace10a6e (verified)"
+      },
+      {
+        "at": "2026-11-17T13:11:00.161Z",
+        "step": "publish",
+        "outcome": "already-done",
+        "detail": "publish reported \"registry refused: version already present\", but the registry has the exact artifact"
+      },
+      {
+        "at": "2026-11-17T13:11:00.455Z",
+        "step": "verify-registry",
+        "outcome": "done",
+        "detail": "0.2.1 integrity+bytes match; dist-tag points here"
+      },
+      {
+        "at": "2026-11-17T13:11:00.459Z",
+        "step": "github-release",
+        "outcome": "skipped",
+        "detail": "skipped: the release policy does not create GitHub releases"
+      }
+    ],
+    "downstream": [],
+    "consumers": [
+      {
+        "at": "2026-11-17T13:12:22.320Z",
+        "consumer": "shop",
+        "where": "acme/shop:package.json",
+        "dependency": "@demo/core",
+        "released": "0.2.1",
+        "basis": "Maintenance scan at 2026-11-17T13:12:21.790Z; CI evidence from data/evidence (2 records)",
+        "installation": {
+          "declared": "^0.2.0",
+          "resolved": "0.2.0",
+          "commit": "shop-c1"
+        },
+        "adoption": "not-adopted",
+        "verification": "unverified",
+        "verificationEvidence": null,
+        "verificationRecord": null
+      },
+      {
+        "at": "2026-11-17T13:12:22.320Z",
+        "consumer": "billing",
+        "where": "acme/billing:package.json",
+        "dependency": "@demo/core",
+        "released": "0.2.1",
+        "basis": "Maintenance scan at 2026-11-17T13:12:21.790Z; CI evidence from data/evidence (2 records)",
+        "installation": {
+          "declared": "^0.2.0",
+          "resolved": "0.2.1",
+          "commit": "billing-c2"
+        },
+        "adoption": "adopted",
+        "verification": "unverified",
+        "verificationEvidence": null,
+        "verificationRecord": null
+      }
+    ]
+  }
+}
