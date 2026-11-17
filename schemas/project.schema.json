@@ -85,6 +85,12 @@
             "required": [
               "workflows"
             ]
+          },
+          "resolverApplication": {
+            "description": "The name this application uses as a Resolver consumer (Resolver Control's consumer `application`). Only the identity link lives here; references, bindings and history stay in Resolver and Resolver Control",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
           }
         },
         "required": [

@@ -33,6 +33,10 @@ import {
 } from "./contracts.ts";
 import { releaseManager, approvalRequest } from "./release/cli.ts";
 import { listFiles, readJsonIfValid, readJson, stableJson, writeAllAtomic } from "./lib/files.ts";
+import { ResolverControl } from "./integrations/resolver-control.ts";
+import { applicationView, renderApplicationView } from "./integrations/application-view.ts";
+import { createMaintenanceApplication } from "./appport/application.ts";
+import { serveMaintenance, parseTokens } from "./appport/serve.ts";
 import { buildSite } from "./reports/generate.ts";
 import { loadConfig, runScan } from "./scan.ts";
 
@@ -201,7 +205,40 @@ async function release() {
   }
 }
 
-const commands: Record<string, () => Promise<void>> = { scan, report, validate, schemas, "record-event": recordEvent, release };
+/** Resolver Control, read through its AppPort capabilities as Maintenance's own principal there (optional). */
+async function resolverControl(): Promise<ResolverControl | null> {
+  const url = process.env.BOUNDRY_RESOLVER_CONTROL_URL, tokenFile = process.env.BOUNDRY_RESOLVER_CONTROL_TOKEN_FILE;
+  if (!url || !tokenFile) return null;
+  return new ResolverControl(url, (await readFile(tokenFile, "utf8")).trim(), process.env.BOUNDRY_RESOLVER_CONTROL_PRINCIPAL ?? "boundry-maintenance");
+}
+async function maintenanceDeps() {
+  const { packages, projects } = await loadConfig(ROOT);
+  const installations = (await readJsonIfValid(join(values.data!, "installations.json"), InstallationsFile))?.installations ?? [];
+  const principals = (await readJson(join(ROOT, "config/principals.json"), PrincipalCatalog)).principals;
+  const manager = await releaseManager(ROOT, values.data!, packages.packages, installations, principals);
+  return { manager, principals, projects: projects.projects, installations: () => installations, packageNames: Object.fromEntries(packages.packages.map((p) => [p.id, p.name])), resolverControl: await resolverControl() };
+}
+
+/** One application: packages (Maintenance) and Resolver references (Resolver Control), one timeline. */
+async function application() {
+  const id = positionals[1];
+  if (!id) throw new Error("usage: application <project id>");
+  const d = await maintenanceDeps();
+  const project = d.projects.find((p) => p.id === id);
+  if (!project) throw new Error(`unknown project ${id}`);
+  console.log(renderApplicationView(await applicationView(project, { installations: d.installations(), releases: await d.manager.list(), packageNames: d.packageNames, resolverControl: d.resolverControl })));
+}
+
+/** Serve Maintenance's AppPort application (HTTP /appport) and MCP (/mcp). Tokens: BOUNDRY_APPPORT_TOKENS_FILE. */
+async function serve() {
+  const d = await maintenanceDeps();
+  const file = process.env.BOUNDRY_APPPORT_TOKENS_FILE;
+  if (!file) throw new Error("serve needs BOUNDRY_APPPORT_TOKENS_FILE (lines: <sha256 of token> <principal id>)");
+  const { url } = await serveMaintenance(createMaintenanceApplication(d), { tokens: parseTokens(await readFile(file, "utf8")), principals: d.principals, port: Number(process.env.BOUNDRY_APPPORT_PORT ?? 21300), host: process.env.BOUNDRY_APPPORT_HOST ?? "127.0.0.1" });
+  console.log(`Boundry Maintenance: AppPort ${url}/appport, MCP ${url}/mcp`);
+}
+
+const commands: Record<string, () => Promise<void>> = { scan, report, validate, schemas, "record-event": recordEvent, release, application, serve };
 const cmd = commands[positionals[0] ?? ""];
 if (!cmd) {
   console.error(`usage: node src/index.ts <${Object.keys(commands).join("|")}> [--data dir] [--out dir] [--local owner/repo=path]`);

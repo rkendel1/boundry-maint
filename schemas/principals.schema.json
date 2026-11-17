@@ -38,8 +38,18 @@
                 "prod_approver",
                 "admin",
                 "agent",
-                "executor"
+                "executor",
+                "signer"
               ]
+            }
+          },
+          "keys": {
+            "default": [],
+            "description": "SSH public keys whose signatures authenticate this person's approvals (contract: authentication level 'signature')",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^(ssh-ed25519|ecdsa-sha2-nistp256|sk-ssh-ed25519@openssh.com) [A-Za-z0-9+/=]+( .*)?$"
             }
           }
         },

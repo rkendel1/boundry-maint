@@ -263,21 +263,42 @@ Each application enforces the contract in its own trust boundary.
 * Every release decision goes through `decide()`.
 * `test/governance-contract.test.ts` runs all 40 vectors.
 
-**Resolver Control (`d41ef9e`): assessed against the vectors by reading its code; not yet run in its own suite.** The contract was written from Resolver Control's rules, so most of it matches:
+**Resolver Control: conforms to 1.1.0 except one recorded divergence, measured by running the vectors in its own suite** (`rkendel1/resolver-control@27e843a`, `tests/governance-contract.test.ts`; report `docs/governance-conformance.json`; the run before the fix is kept as `docs/governance-conformance.before-fix.json`).
 
-| Contract rule | Resolver Control | Status |
+| Outcome | Count | Cases |
 |---|---|---|
-| Person-only approval, not the proposer, not twice, protected needs `changes.approve.protected`, frozen refuses | `feltkit/changes.ts` `approve` | conforms |
-| Threshold `max(policy, critical ? 2 : 1)`; default policy protected with one approval | `_rules.ts` `requiredApprovals`, `effectivePolicy` | conforms |
-| Re-check at execution; tightened policy returns to approval; frozen waits | `changes.ts` `claim` | conforms |
-| Proposer withdraws; approver rejects; not after execution starts | `cancel`, `reject` | conforms |
-| Approvals count only distinct people with an audit event | `signer/core.ts` (defence in depth at signing) | conforms |
-| Production approvals authenticated | FeltKit sessions (`session`). Under `feltkit dev` the user switcher is asserted identity | conforms when deployed with real sessions; dev is non-production |
-| **Ratchet (§4): lowering criticality or policy never lowers an open subject's threshold** | `approve` (line 261) and `claim` (line 382) use the **current** criticality and policy. `engineer` holds `catalog.write`, so the proposer can lower a dependency from `critical` to `medium` (`dependencies.describe`) and have one approval suffice. It is audited (`dependency.described`) but not prevented | **does not conform: real gap** |
-| `engineer` may change criticality (an `administer`-type fact) | `catalog.write` on `engineer` | diverges from the contract's role table. With the ratchet it no longer weakens open changes; whether engineers should set criticality at all is a product decision for Resolver Control |
+| conforms | 28 | approval rules, thresholds, protected, freeze, re-check at claim, withdraw/reject, revoked, the ratchet (after the fix) |
+| not applicable here, with reason | 12 | trigger (RC's component self-schedules), digest argument (RC binds approvals to the change record), per-change allowlist, production authentication level (FeltKit sessions), and subjects RC's API refuses to create (non-person, proposer or duplicate approvals) |
+| **does not conform (known)** | 1 | an agent cannot withdraw its own proposal: RC's `agent` role lacks `changes.cancel`. Not changed: a role decision for Resolver Control |
 
-**Smallest change that makes Resolver Control conform** (not made here, because Resolver Control is outside this change's authority):
+**The ratchet fix (authorized):** `approve`, `claim` and `changes.get` (what the approval signer enforces) use
+`max(impact.requiredApprovals recorded at proposal, current rule)`; protection recorded at proposal still requires
+`changes.approve.protected`. `tests/governance-ratchet.test.ts` reproduces the bypass as its users would (the
+proposing engineer lowers criticality) and fails without the fix. Resolver Control's suite: 75 pass + 1 todo (the
+known divergence), artifact test 1/1, multi-process e2e 2/2.
 
-* In `approve` and `claim`, use `Math.max(change.impact.requiredApprovals, requiredApprovals(policy, criticality))`. The threshold at proposal is already recorded on the change: `impact.requiredApprovals`, event `change.proposed`.
-* Treat `protected` the same way.
-* Add a conformance test that runs `vectors.json` through its mutations.
+**Contract changes found by the second implementation (1.0.0 → 1.1.0):** agents may withdraw their own proposals
+(role table and §3.6 disagreed); when several rules refuse, any of their codes conforms.
+
+---
+
+## 9. Prompt 3: Resolver Control integration (implemented)
+
+| Need | How | Reused | New (in Maintenance) |
+|---|---|---|---|
+| Runtime dependencies of an application | read Resolver Control's `dependencies.list` / `dependencies.inspect` / `changes.inspect` over **AppPort**, as Maintenance's own principal there (`boundry-maintenance`, role `agent`) | Resolver Control's capabilities, AppPort client and HTTP transport | `src/integrations/resolver-control.ts` (read-only projection with read time) |
+| Link application ↔ Resolver consumer | `config/projects.json` → `resolverApplication` (a name, nothing else) | Resolver Control's declared and observed consumers | one optional field |
+| Unified change experience | `applications.inspect` / `node src/index.ts application <id>`: packages, runtime references, both sides' proposals, approvals, evidence and one timeline, computed on demand | Maintenance records; Resolver Control's audit events and changes | `src/integrations/application-view.ts` |
+| Proposing a runtime change | Resolver Control's own `changes.propose` | Resolver Control's entire governance: impact, validation, approvals, signer, conditional write, verification, adoption | none |
+| Maintenance over AppPort and MCP | AppPort application with the release capabilities; permissions = contract effects; MCP through `@appport/mcp` | `@appport/core`, `server`, `authorization`, `mcp` | `src/appport/application.ts`, `serve.ts` |
+
+**Not created:** no database, no hosted backend, no copy of references or bindings, no Resolver key in Maintenance, no registry credential in Resolver Control.
+
+Proof: `docs/integration/proof-shop/`.
+
+**Remaining platform gaps and production prerequisites**
+- Real per-person authentication for Maintenance's AppPort/MCP (bearer tokens identify clients); production approvals still require SSH signatures.
+- AppBoundry-hosted component execution (A1) for Resolver Control; not required for this integration and not claimed.
+- `config/principals.json` and the policy/catalog files need protected review (see the review recommendation); no repository settings were changed here.
+- Consumer CI evidence is not yet linked to consumer verification automatically.
+- Resolver Control decision: agent withdrawal (the one known divergence).

@@ -158,6 +158,12 @@ export const ProjectConfig = z.object({
         .describe("GitHub Actions workflow file names (e.g. ci.yml) that must succeed on a commit for it to count as verified"),
     })
     .optional(),
+  resolverApplication: z
+    .string()
+    .min(1)
+    .max(120)
+    .optional()
+    .describe("The name this application uses as a Resolver consumer (Resolver Control's consumer `application`). Only the identity link lives here; references, bindings and history stay in Resolver and Resolver Control"),
 });
 export type ProjectConfig = z.infer<typeof ProjectConfig>;
 
