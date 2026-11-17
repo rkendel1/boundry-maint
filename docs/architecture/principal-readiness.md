@@ -51,3 +51,15 @@ For example:
 * registering each approver's SSH public key;
 * the production publish credentials;
 * protecting changes to `config/principals.json`, for example with branch protection plus CODEOWNERS requiring review. The key registry is only as trustworthy as who can change it.
+
+## Protected review of the governance root of trust
+
+| Role | Who | What it means |
+|---|---|---|
+| Accountable owner of principals, roles, criticality, approval policies, registry destinations | Randy | Proposes and owns changes to `config/principals.json`, `config/packages.json` release policies and the governance contract |
+| Independent protected reviewer | **not designated** | A second named human maintainer who must review those changes. Agents may propose and attach evidence; they never satisfy this review |
+
+Until a second human is designated: principal and policy changes stay restricted, production governance stays
+blocked, and no self-approval or administrator bypass stands in for the review. Once designated: branch protection
+plus CODEOWNERS on `config/principals.json`, `config/packages.json`, `config/policies.json` and
+`contracts/governance/`, requiring that reviewer. This is separate from the two-person approval of critical changes.

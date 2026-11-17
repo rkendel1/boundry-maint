@@ -263,13 +263,13 @@ Each application enforces the contract in its own trust boundary.
 * Every release decision goes through `decide()`.
 * `test/governance-contract.test.ts` runs all 40 vectors.
 
-**Resolver Control: conforms to 1.1.0 except one recorded divergence, measured by running the vectors in its own suite** (`rkendel1/resolver-control@27e843a`, `tests/governance-contract.test.ts`; report `docs/governance-conformance.json`; the run before the fix is kept as `docs/governance-conformance.before-fix.json`).
+**Resolver Control: conforms to 1.1.0, measured by running the vectors in its own suite** (`rkendel1/resolver-control@0354a26`; the ratchet fix at `27e843a`; `tests/governance-contract.test.ts`; report `docs/governance-conformance.json`; the run before the fix is kept as `docs/governance-conformance.before-fix.json`).
 
 | Outcome | Count | Cases |
 |---|---|---|
-| conforms | 28 | approval rules, thresholds, protected, freeze, re-check at claim, withdraw/reject, revoked, the ratchet (after the fix) |
+| conforms | 29 | approval rules, thresholds, protected, freeze, re-check at claim, withdraw/reject, revoked, the ratchet (after the fix) |
 | not applicable here, with reason | 12 | trigger (RC's component self-schedules), digest argument (RC binds approvals to the change record), per-change allowlist, production authentication level (FeltKit sessions), and subjects RC's API refuses to create (non-person, proposer or duplicate approvals) |
-| **does not conform (known)** | 1 | an agent cannot withdraw its own proposal: RC's `agent` role lacks `changes.cancel`. Not changed: a role decision for Resolver Control |
+| does not conform | 0 | the former divergence (agents could not withdraw their own proposals) was closed at `0354a26` by granting the `agent` role `changes.cancel`, which the handler limits to the proposer and to changes not yet claimed; `tests/governance-withdraw.test.ts` |
 
 **The ratchet fix (authorized):** `approve`, `claim` and `changes.get` (what the approval signer enforces) use
 `max(impact.requiredApprovals recorded at proposal, current rule)`; protection recorded at proposal still requires
@@ -301,4 +301,11 @@ Proof: `docs/integration/proof-shop/`.
 - AppBoundry-hosted component execution (A1) for Resolver Control; not required for this integration and not claimed.
 - `config/principals.json` and the policy/catalog files need protected review (see the review recommendation); no repository settings were changed here.
 - Consumer CI evidence is not yet linked to consumer verification automatically.
-- Resolver Control decision: agent withdrawal (the one known divergence).
+- **Maintenance's withdrawal boundary is looser than the one agreed for agents.** Maintenance lets the proposer
+  withdraw until publication (`irreversible` = published), so after execution has started (release commit pushed,
+  tag pushed) a withdrawal is still accepted. Resolver Control refuses after claim. The contract's own words ("until
+  the first irreversible external mutation") arguably side with Resolver Control, since Maintenance never reverts a
+  pushed release commit. Tightening it needs a decision: a release stuck after execution started (for example
+  failing tests) would then need a separate, person-only "abandon" path. Proposed as contract 1.2.0; not changed.
+- Protected review of `config/principals.json` and policy files: owner Randy; an independent second human reviewer
+  is not yet designated, so no review rule or CODEOWNERS entry was added, and production governance stays blocked.
