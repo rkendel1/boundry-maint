@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "scan": {
-    "runId": "44085452830",
-    "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/44085452830",
-    "startedAt": "2026-11-17T12:41:52.878Z",
-    "finishedAt": "2026-11-17T12:43:44.104Z",
+    "runId": "44093693442",
+    "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/44093693442",
+    "startedAt": "2026-11-17T13:32:50.811Z",
+    "finishedAt": "2026-11-17T13:34:21.610Z",
     "status": "success",
     "trigger": "push",
-    "configCommit": "623b23d31fb29bb59a53974c9b0c0bd4f2ee4bed",
+    "configCommit": "6983d1b728fd90a985c945390041d50b81946fad",
     "counts": {
       "packages": 62,
       "packagesFailed": 0,
@@ -15,7 +15,7 @@
       "projectsFailed": 0,
       "ciRepositories": 14,
       "ciChecks": 157,
-      "ciChecksFailing": 3,
+      "ciChecksFailing": 4,
       "installations": 388,
       "maintenanceOpen": 49
     },
@@ -11651,23 +11651,23 @@
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/install",
-      "result": "in-progress"
+      "result": "passing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/unit-tests-sdk-incl-browser-tests-conformance-suites-create-",
-      "result": "in-progress"
+      "result": "failing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
-      "result": "in-progress"
+      "result": "skipped"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e/install",
-      "result": "in-progress"
+      "result": "passing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e-feltdb/install",
-      "result": "in-progress"
+      "result": "passing"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/publish.yml#publish/install",
@@ -11896,72 +11896,47 @@
   ],
   "changes": {
     "newReleases": [],
-    "versionChanges": [
-      {
-        "project": "feltkit",
-        "root": "examples/invoices",
-        "name": "@feltdb/feltkit",
-        "from": "0.3.31",
-        "to": "0.3.32"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/managed",
-        "name": "@feltdb/feltkit",
-        "from": "0.3.31",
-        "to": "0.3.32"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/tasks",
-        "name": "@feltdb/feltkit",
-        "from": "0.3.31",
-        "to": "0.3.32"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/create",
-        "name": "@feltdb/feltkit",
-        "from": "0.3.31",
-        "to": "0.3.32"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "create-feltkit",
-        "from": "0.3.31",
-        "to": "0.3.32"
-      }
-    ],
+    "versionChanges": [],
     "newDependencies": [],
     "removedDependencies": [],
     "statusChanges": [],
-    "newEvidence": [],
+    "newEvidence": [
+      {
+        "project": "feltkit",
+        "commit": "6201a5b0469e196416b182a7dbd80b635a342869",
+        "passed": false
+      },
+      {
+        "project": "appport-services",
+        "commit": "5f396677675e05acd27067ef22cda4e7ccb9e7d0",
+        "passed": false
+      }
+    ],
     "ciResultChanges": [
       {
         "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/install",
-        "from": "passing",
-        "to": "in-progress"
+        "from": "in-progress",
+        "to": "passing"
       },
       {
         "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/unit-tests-sdk-incl-browser-tests-conformance-suites-create-",
-        "from": "failing",
-        "to": "in-progress"
+        "from": "in-progress",
+        "to": "failing"
       },
       {
         "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
-        "from": "skipped",
-        "to": "in-progress"
+        "from": "in-progress",
+        "to": "skipped"
       },
       {
         "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e/install",
-        "from": "passing",
-        "to": "in-progress"
+        "from": "in-progress",
+        "to": "passing"
       },
       {
         "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e-feltdb/install",
-        "from": "passing",
-        "to": "in-progress"
+        "from": "in-progress",
+        "to": "passing"
       }
     ]
   }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T12:41:52.878Z",
+  "generatedAt": "2026-11-17T13:32:50.811Z",
   "items": [
     {
       "key": "flow-db|crates/feltdb-public-api-check/Cargo.lock|crates:tokio",
@@ -3660,7 +3660,7 @@
           {
             "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
             "name": "FeltKit release check (CI mode)",
-            "result": "in-progress",
+            "result": "skipped",
             "enforcement": "fail",
             "requirement": "exact",
             "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/44085171199"
@@ -3773,7 +3773,7 @@
           {
             "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
             "name": "FeltKit release check (CI mode)",
-            "result": "in-progress",
+            "result": "skipped",
             "enforcement": "fail",
             "requirement": "exact",
             "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/44085171199"
