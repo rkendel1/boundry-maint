@@ -1,7 +1,7 @@
 {
-  "$comment": "Boundry governance contract. Normative text: SPEC.md in this directory. Language-independent; each application maps its own operations onto these effects and enforces the rules in its own trust boundary. Conformance: vectors.json. 1.1.0: agents may withdraw their own proposals (the role table now matches \u00a73.6); when several rules refuse, any of their codes conforms (vectors list them in expect.codes).",
+  "$comment": "Boundry governance contract. Normative text: SPEC.md in this directory. Language-independent; each application maps its own operations onto these effects and enforces the rules in its own trust boundary. Conformance: vectors.json. 1.1.0: agents may withdraw their own proposals (the role table now matches \u00a73.6); when several rules refuse, any of their codes conforms (vectors list them in expect.codes). 1.2.0: withdrawal and rejection end at claim; abandonment (person-only, reconcile first); retry requires reconciliation.",
   "id": "boundry.governance",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "principalTypes": {
     "person": "A human, identified by the application's authentication. The only type that approves, rejects or administers.",
     "agent": "Software acting for someone (e.g. over MCP). Inspects and proposes. Never approves, administers or executes.",
@@ -17,7 +17,8 @@
     "administer": "Change catalog, policy or settings.",
     "trigger": "Ask the executing component to carry out an approved proposal. Grants no authority over what runs.",
     "execute": "Perform the approved external mutation, conditionally, and record evidence.",
-    "sign": "Read a proposal and its audit trail to issue an authorization derived from it."
+    "sign": "Read a proposal and its audit trail to issue an authorization derived from it.",
+    "abandon": "Stop pursuing a claimed execution after reconciling with every authority (\u00a77a). Person-only; never withdrawal, never rollback."
   },
   "roles": {
     "viewer": {
@@ -58,7 +59,8 @@
         "read",
         "approve",
         "approve.protected",
-        "withdraw"
+        "withdraw",
+        "abandon"
       ]
     },
     "admin": {
@@ -68,7 +70,8 @@
       "effects": [
         "read",
         "administer",
-        "trigger"
+        "trigger",
+        "abandon"
       ]
     },
     "agent": {
@@ -104,7 +107,8 @@
     "approve",
     "approve.protected",
     "withdraw.reject",
-    "administer"
+    "administer",
+    "abandon"
   ],
   "neverForEffects": {
     "agent": [
@@ -113,13 +117,15 @@
       "administer",
       "trigger",
       "execute",
-      "sign"
+      "sign",
+      "abandon"
     ],
     "component": [
       "propose",
       "approve",
       "approve.protected",
-      "administer"
+      "administer",
+      "abandon"
     ]
   },
   "criticality": [
@@ -167,6 +173,9 @@
     "insufficient-approvals",
     "revoked",
     "unauthenticated-for-production",
-    "irreversible"
+    "irreversible",
+    "claimed",
+    "reason-required",
+    "unreconciled"
   ]
 }

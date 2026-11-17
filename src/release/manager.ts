@@ -32,7 +32,7 @@ import { approvalStatement, verifyApproval } from "../governance/signatures.ts";
 import { Unavailable, Refused, type RegistryAdapter, type RegistryState, type GitAuthority, type ReleasesAdapter, type Executor } from "./adapters.ts";
 
 const pexec = promisify(execFile);
-const TERMINAL: ReleaseState[] = ["released", "failed", "cancelled", "superseded"];
+const TERMINAL: ReleaseState[] = ["released", "failed", "cancelled", "superseded", "abandoned"];
 const ORDER: ReleaseState[] = ["proposed", "validated", "awaiting-approval", "approved", "prepared", "built", "tagged", "published", "registry-verified", "released"];
 
 export class ReleaseError extends Error {
@@ -77,7 +77,16 @@ export class ReleaseManager {
 
   path(id: string) { const [pkg, version] = splitId(id); return join(this.d.dataDir, "release-manager", pkg, `${version}.json`); }
   async load(id: string): Promise<ReleaseRecord> { return ReleaseRecord.parse(JSON.parse(await readFile(this.path(id), "utf8"))); }
-  async #save(r: ReleaseRecord) { await writeAllAtomic({ [this.path(r.id)]: ReleaseRecord.parse(r) }); }
+  async #save(r: ReleaseRecord) {
+    if (r.schemaVersion === 2) {
+      // Not silent: the upgrade and any inferred claim are written into the record's own history.
+      const claim = claimOf(r);
+      r.schemaVersion = 3;
+      if (!r.claim && claim) r.claim = claim;
+      r.history.push({ at: this.d.now(), state: r.state, note: `record schema 2 → 3 (governance contract 1.2.0)${claim ? `: claim inferred from history (${claim.triggeredBy ? `first execution attempt at ${claim.at}` : `state ${r.state}`})` : ": not claimed"}` });
+    }
+    await writeAllAtomic({ [this.path(r.id)]: ReleaseRecord.parse(r) });
+  }
   async list(): Promise<ReleaseRecord[]> {
     const base = join(this.d.dataDir, "release-manager");
     const out: ReleaseRecord[] = [];
@@ -108,8 +117,17 @@ export class ReleaseManager {
     if (pkgs.some((p) => p.registry !== first.registry)) throw new ReleaseError("invalid", "packages released together must go to one registry kind (npm or crates)");
     const branch = first.release.branch;
     if (pkgs.some((p) => p.release.branch !== branch)) throw new ReleaseError("invalid", "packages released together must share a release branch");
+    // Abandoned predecessors (contract §7a): a replacement needs their reconciliation, and never reuses a version
+    // they claimed (its commit, tag or publication may be real).
+    const reserved: Record<string, { version: string; why: string }[]> = {};
     for (const r of await this.list()) {
-      if (!TERMINAL.includes(r.state) && r.plan.packages.some((x) => pkgs.some((p) => p.id === x.package))) throw new ReleaseError("busy", `release ${r.id} is ${r.state}; finish or cancel it first`);
+      if (!TERMINAL.includes(r.state) && r.plan.packages.some((x) => pkgs.some((p) => p.id === x.package))) throw new ReleaseError("busy", `release ${r.id} is ${r.state}; finish, abandon or cancel it first`);
+      if (r.state !== "abandoned") continue;
+      for (const pp of r.plan.packages.filter((x) => pkgs.some((p) => p.id === x.package))) {
+        const d = decide("propose", proposer, undefined, undefined, { predecessor: { state: "abandoned", reconciled: !!r.abandonment?.reconciliation } });
+        if (!d.allow) throw new ReleaseError("not-allowed", `${pp.name}: abandoned release ${r.id}: ${d.message} [${d.code}]`);
+        (reserved[pp.package] ??= []).push({ version: pp.proposedVersion, why: `claimed by abandoned release ${r.id}` });
+      }
     }
     const eco = ecosystemFor(first.registry);
     const git = this.d.git(repo);
@@ -144,7 +162,7 @@ export class ReleaseManager {
         else check(`${p.name}: manifest and ${eco.lockfile} agree`, locked === m.version ? "passed" : "failed", locked === m.version ? `both say ${m.version}` : `${manifestPath} declares ${m.version} but ${eco.lockfile} records ${locked}: the lockfile is stale or the manifest was edited without it; fix the repository first`);
       } else check(`${p.name}: manifest and lockfile agree`, "not-applicable", `no ${eco.lockfile} at the source commit`);
       let alloc;
-      try { alloc = allocate(p.name, { published: st?.versions ?? [], repositoryVersion: m.version, tags, yanked: st?.yanked ?? [] }, req.bump, p.release); }
+      try { alloc = allocate(p.name, { published: st?.versions ?? [], repositoryVersion: m.version, tags, yanked: st?.yanked ?? [], reserved: reserved[p.id] ?? [] }, req.bump, p.release); }
       catch (e) { if (e instanceof AllocationError) throw new ReleaseError(e.kind === "collision" ? "collision" : e.kind === "decision" ? "decision" : "not-allowed", e.message); throw e; }
       decision.push(...alloc.explanation);
       check(`${p.name}: version ${alloc.version} free`, "passed", `not on the registry (yanked versions included) and tag ${alloc.tag} does not exist`);
@@ -210,7 +228,7 @@ export class ReleaseManager {
     const id = `${lead.package}@${lead.proposedVersion}`;
     if (existsSync(this.path(id))) throw new ReleaseError("busy", `a release record for ${id} already exists`);
     const rec: ReleaseRecord = {
-      schemaVersion: 2, id, planDigest: planDigestOf(plan), plan, state: "awaiting-approval", approvals: [], revocation: null,
+      schemaVersion: 3, id, planDigest: planDigestOf(plan), plan, state: "awaiting-approval", approvals: [], revocation: null, claim: null, abandonment: null,
       facts: { releaseCommit: null, build: null, tags: [], published: [], registryVerification: [], githubReleases: [] },
       failure: null,
       history: [
@@ -384,6 +402,54 @@ export class ReleaseManager {
     return r;
   }
 
+  /**
+   * A person stops pursuing a claimed release that cannot or should not finish (contract §7a). Every authority is
+   * asked what is real first (branch, tags, registry); if one cannot answer, nothing changes. Nothing is rolled back:
+   * the record says which commit, tags and versions remain. Not withdrawal (the claim happened), not rollback.
+   */
+  async abandon(id: string, byId: string, reason: string): Promise<ReleaseRecord> {
+    const who = this.#principal(byId);
+    let r = await this.load(id);
+    const pre = decide("abandon", who, this.#subject(r), undefined, { reason, reconciled: true });
+    if (!pre.allow) throw new ReleaseError("not-allowed", `${id}: ${pre.message} [${pre.code}]`);
+    return this.#locked(r.plan.packages.map((p) => p.package), async () => {
+      r = await this.load(id);
+      let rec: NonNullable<ReleaseRecord["abandonment"]>["reconciliation"] | null = null, why = "";
+      try { rec = await this.#reconcileAll(r); } catch (e) { why = (e as Error).message; }
+      const d = decide("abandon", who, this.#subject(r), undefined, { reason, reconciled: rec !== null });
+      if (!d.allow) throw new ReleaseError("not-allowed", `${id}: ${d.message}${why ? ` (${why})` : ""} [${d.code}]`);
+      const real: string[] = [];
+      if (rec!.releaseCommitOnBranch) real.push(`release commit ${rec!.releaseCommit?.slice(0, 12)} is on ${rec!.branch} and stays there`);
+      for (const t of rec!.tags) if (t.target) real.push(`tag ${t.name} → ${t.target.slice(0, 12)} exists and is never moved or deleted`);
+      for (const g of rec!.registry) if (g.present) real.push(`${g.package}@${g.version} IS published on the registry${g.matchesBuiltArtifact === true ? " with exactly the built artifact" : g.matchesBuiltArtifact === false ? " with a DIFFERENT artifact than this release built" : " (this release recorded no build to compare)"}${g.yanked ? ", yanked" : ""}; a version is never unpublished or reused`);
+      if (!real.length) real.push("nothing: no release commit on the branch, no tags, no published versions");
+      r.abandonment = { by: who.id, byType: who.type, at: this.d.now(), reason: reason.trim(), atState: r.state, reconciliation: rec!, remainsReal: real };
+      this.#to(r, "abandoned", `abandoned by ${who.id}: ${reason.trim()}. Reconciled first; what remains real: ${real.join("; ")}`);
+      await this.#save(r);
+      return r;
+    });
+  }
+
+  /** Ask git and every registry what is real now for this release. Throws if any authority cannot answer. */
+  async #reconcileAll(r: ReleaseRecord): Promise<NonNullable<ReleaseRecord["abandonment"]>["reconciliation"]> {
+    const git = this.d.git(r.plan.repository);
+    const head = await git.head(r.plan.branch);
+    let commit = r.facts.releaseCommit;
+    if (!commit && r.approvals.length) {
+      const files = await this.#rederive(r); // the deterministic release commit, as #prepare would make it
+      commit = Object.keys(files).length ? await git.makeCommit(r.plan.sourceCommit, files, r.plan.releaseCommit.message, approvedAt(r)) : r.plan.sourceCommit;
+    }
+    const onBranch = !!(commit && head && commit !== r.plan.sourceCommit && (head === commit || (await git.isAncestor(commit, head))));
+    const tags = await git.tags();
+    const registry = [];
+    for (const pp of r.plan.packages) {
+      const v = await this.#pkgRegistry(pp.package).version(pp.name, pp.proposedVersion);
+      const built = r.facts.build?.artifacts.find((a) => a.package === pp.package);
+      registry.push({ package: pp.package, version: pp.proposedVersion, present: !!v, integrity: v?.integrity ?? null, matchesBuiltArtifact: v && built ? v.integrity === built.integrity : null, yanked: !!v?.yanked });
+    }
+    return { at: this.d.now(), branch: r.plan.branch, branchHead: head, releaseCommit: onBranch ? commit : r.facts.releaseCommit, releaseCommitOnBranch: onBranch, tags: r.plan.packages.map((p) => ({ name: p.tag, target: tags.get(p.tag) ?? null })), registry };
+  }
+
   #principal(id: string): Principal { try { return principal(this.d.principals, id); } catch (e) { throw this.#asRelease(e); } }
   #gov(f: () => void) { try { f(); } catch (e) { throw this.#asRelease(e); } }
   #asRelease(e: unknown) { return e instanceof GovernanceError ? new ReleaseError("not-allowed", `${e.message} [${e.code}]`) : e; }
@@ -404,6 +470,7 @@ export class ReleaseManager {
       production: r.plan.packages.some((p) => p.production),
       approvals, revoked: !!r.revocation,
       irreversible: ORDER.indexOf(r.state) >= ORDER.indexOf("published"),
+      claimed: claimOf(r) !== null,
       eligible: r.plan.approvers,
       requiredAtProposal: r.plan.requiredApprovals,
     };
@@ -434,7 +501,7 @@ export class ReleaseManager {
       r = await this.load(id); // re-read under the lock
       if (TERMINAL.includes(r.state)) return r;
       if (r.failure && !r.failure.recoverable) return r;
-      if (r.state === "approved") {
+      if (r.state === "approved" && !claimOf(r)) {
         let changed: string[];
         try { changed = await this.#reassess(r); }
         catch (e) {
@@ -465,6 +532,10 @@ export class ReleaseManager {
           return r;
         }
         r.attempts.push({ at: this.d.now(), step: "authorize", outcome: "done", detail: `${executor.id} authorized execution under ${CONTRACT_REF} (triggered by ${who.id})` });
+        // The claim: from here on the release can no longer be withdrawn or rejected, only finished or abandoned.
+        r.claim = { by: executor.id, at: this.d.now(), triggeredBy: who.id, inferred: false };
+        r.attempts.push({ at: this.d.now(), step: "claim", outcome: "done", detail: `claimed by ${executor.id}; withdrawal ends here (contract §7)` });
+        await this.#save(r);
       } else r.attempts.push({ at: this.d.now(), step: "trigger", outcome: "done", detail: `execution resumed by ${who.id}` });
       if (r.failure) { r.attempts.push({ at: this.d.now(), step: "resume", outcome: "done", detail: `resuming at ${r.state} after: ${r.failure.reason}` }); r.failure = null; }
       const steps: Partial<Record<ReleaseState, () => Promise<void>>> = {
@@ -756,4 +827,17 @@ export function downstreamProposals(r: ReleaseRecord): ReleaseRecord["downstream
       out.push({ consumer: d.package, where: d.where, dependency: d.dependency, toVersion: pp.proposedVersion, kind: "lockfile-update", from: d.resolved, to: pp.proposedVersion, state: "proposed", note });
   }
   return out;
+}
+
+/**
+ * The claim on a release. Schema-3 records carry it. For a schema-2 record (before contract 1.2.0) it is inferred:
+ * claimed if execution was ever authorized or triggered, or the release moved past "approved".
+ */
+export function claimOf(r: ReleaseRecord): ReleaseRecord["claim"] {
+  if (r.claim) return r.claim;
+  if (r.schemaVersion !== 2) return null;
+  const first = r.attempts.find((a) => (a.step === "authorize" && a.outcome === "done") || a.step === "trigger" || a.step === "release-commit");
+  if (first) return { by: "component:release-executor", at: first.at, triggeredBy: "unknown (schema 2)", inferred: true };
+  if (ORDER.indexOf(r.state) > ORDER.indexOf("approved")) return { by: "component:release-executor", at: r.history.at(-1)!.at, triggeredBy: null, inferred: true };
+  return null;
 }

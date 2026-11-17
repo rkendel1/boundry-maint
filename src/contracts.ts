@@ -696,6 +696,7 @@ export const ReleaseState = z.enum([
   "registry-verified", // registry serves the version with the artifact's integrity
   "released", // GitHub release (if required) exists for the tag; records updated
   "failed", "cancelled", "superseded",
+  "abandoned", // a person stopped pursuing a claimed execution after reconciliation (contract §7a); nothing rolled back
 ]);
 export type ReleaseState = z.infer<typeof ReleaseState>;
 
@@ -782,7 +783,7 @@ export const ReleasePlan = z.object({
 export type ReleasePlan = z.infer<typeof ReleasePlan>;
 
 export const ReleaseRecord = z.object({
-  schemaVersion: z.literal(2),
+  schemaVersion: z.union([z.literal(2), z.literal(3)]).describe("3 adds claim and abandonment. Schema-2 records are read as they are; on their next save the claim is inferred from their history and the inference is noted in history"),
   id: z.string().describe("<package-id>@<version> of the first package"),
   planDigest: z.string().regex(/^[0-9a-f]{64}$/),
   plan: ReleasePlan,
@@ -791,6 +792,20 @@ export const ReleaseRecord = z.object({
     .array(z.object({ by: z.string(), principalType: PrincipalType, authentication: Authentication, at: IsoDate, planDigest: z.string(), signature: z.string().nullable().default(null).describe("SSH signature over the approval statement (src/governance/signatures.ts)") }))
     .describe("Distinct people, none of them the requester; approved once plan.requiredApprovals is reached"),
   revocation: z.object({ by: z.string(), at: IsoDate, reason: z.string() }).nullable(),
+  claim: z.object({
+    by: z.string().describe("the executing component"), at: IsoDate, triggeredBy: z.string().nullable(),
+    inferred: z.boolean().default(false).describe("true only for a schema-2 record whose claim was inferred from its history"),
+  }).nullable().default(null).describe("Execution was claimed: withdrawal and rejection end here (contract §7)"),
+  abandonment: z.object({
+    by: z.string(), byType: PrincipalType, at: IsoDate, reason: z.string().min(1), atState: z.string(),
+    reconciliation: z.object({
+      at: IsoDate, branch: z.string(), branchHead: z.string().nullable(), releaseCommit: z.string().nullable(),
+      releaseCommitOnBranch: z.boolean(),
+      tags: z.array(z.object({ name: z.string(), target: z.string().nullable() })),
+      registry: z.array(z.object({ package: Id, version: z.string(), present: z.boolean(), integrity: z.string().nullable(), matchesBuiltArtifact: z.boolean().nullable(), yanked: z.boolean() })),
+    }).describe("What every authority said when the release was abandoned; required before a replacement"),
+    remainsReal: z.array(z.string()).describe("What stays as it is: nothing is rolled back"),
+  }).nullable().default(null),
   facts: z.object({
     releaseCommit: z.string().nullable(),
     build: z

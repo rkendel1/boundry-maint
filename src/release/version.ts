@@ -19,6 +19,8 @@ export interface VersionFacts {
   tags: string[];
   /** Versions the registry marks yanked (crates.io). Still published: never reused. */
   yanked?: string[];
+  /** Versions claimed by abandoned releases: possibly real (commit, tag, publication), never reused. */
+  reserved?: { version: string; why: string }[];
 }
 export interface Allocation { version: string; tag: string; explanation: string[] }
 export class AllocationError extends Error {
@@ -30,7 +32,8 @@ export const tagFor = (format: string, name: string, version: string) => format.
 
 export function allocate(name: string, facts: VersionFacts, bump: ReleaseBump, policy: ReleasePolicy): Allocation {
   if (!policy.allowedBumps.includes(bump)) throw new AllocationError("policy", `${name}: release policy does not allow a ${bump} release (allowed: ${policy.allowedBumps.join(", ")})`);
-  const valid = facts.published.filter((v) => semver.valid(v));
+  const reserved = (facts.reserved ?? []).filter((x) => semver.valid(x.version));
+  const valid = [...new Set([...facts.published, ...reserved.map((x) => x.version)])].filter((v) => semver.valid(v));
   const invalid = facts.published.filter((v) => !semver.valid(v));
   const highest = valid.length ? valid.sort(semver.rcompare)[0] : null;
   const highestStable = valid.filter((v) => !semver.prerelease(v)).sort(semver.rcompare)[0] ?? null;
@@ -39,6 +42,7 @@ export function allocate(name: string, facts: VersionFacts, bump: ReleaseBump, p
   if (facts.repositoryVersion && !repo) throw new AllocationError("invalid", `${name}: the manifest version "${facts.repositoryVersion}" is not valid semver`);
   if (invalid.length) why.push(`Ignored ${invalid.length} registry entr${invalid.length === 1 ? "y" : "ies"} that are not semver (${invalid.slice(0, 3).join(", ")}).`);
   why.push(highest ? `The registry has ${valid.length} version${valid.length === 1 ? "" : "s"} of ${name}; the highest ever published is ${highest}${highestStable && highestStable !== highest ? ` (highest stable ${highestStable})` : ""}.` : `${name} has never been published.`);
+  if (reserved.length) why.push(`Reserved: ${reserved.map((x) => `${x.version} (${x.why})`).join(", ")}. A version an abandoned release claimed may be partly real, so it counts toward the highest version and is never reused.`);
   if (facts.yanked?.length) why.push(`Yanked: ${facts.yanked.join(", ")}. A yanked version stays published and is never reused, so it counts toward the highest version.`);
   if (repo) why.push(`The manifest at the source commit declares ${repo}.`);
 

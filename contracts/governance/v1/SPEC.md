@@ -1,4 +1,4 @@
-# Boundry governance contract, version 1.1.0
+# Boundry governance contract, version 1.2.0
 
 This contract is normative for every Boundry application that governs change: Boundry Maintenance (releases) and Resolver Control (runtime references). The same semantics apply to both. Each application **enforces** them in its own trust boundary, with its own credentials. The contract is not a service, not a library dependency and not a shared credential.
 
@@ -19,6 +19,7 @@ This contract is normative for every Boundry application that governs change: Bo
 
 | Version | Change | Found by |
 |---|---|---|
+| 1.2.0 | **Withdrawal ends at claim** (§7): the proposer may withdraw, and an approver reject, only before execution is claimed, whether or not an external mutation has happened yet (1.1.0 said "until the first irreversible external mutation"). **New: abandonment** (§7a): a person-only decision to stop pursuing a claimed execution, recorded with who, when and why, after reconciling with every authority; never withdrawal, never rollback. **Retry after abandonment requires that reconciliation** (`unreconciled`), and versions an abandoned execution may have made real are never reused. *Migration:* an implementation that let a proposer withdraw after claim (Boundry Maintenance before this version) must refuse it now; its records need an explicit claim (Maintenance: record schema 3; schema-2 records are read as they are and, on their next save, get the claim inferred from their history with a recorded note). No vector's decision changed; the new rules come with new vectors | conformance review of both applications |
 | 1.1.0 | The `agent` role gains `withdraw`: an agent may withdraw its own proposal, never anyone else's. Before, the role table and §3.6 disagreed. **When several rules refuse, any of their codes conforms** (§2 orders authorization before the handler's rules, so an agent asking to approve may be refused as `forbidden-effect` or `person-only`); vectors list the acceptable codes in `expect.codes` | running the vectors against Resolver Control (a second implementation) |
 | 1.0.0 | First version | — |
 
@@ -90,10 +91,30 @@ The same ratchet applies to `protected`. `requiredAtProposal` in the vectors is 
 * If any bound fact changes, the subject must be re-proposed with a new digest. Approvals never carry over.
 * Only a subject in `awaiting-approval` can be approved (`wrong-state`).
 
-**Revocation.**
+**Revocation (withdrawal and rejection).**
 
-* Withdrawal or rejection is possible until the first irreversible external mutation (`irreversible` after it).
+* Withdrawal (by the proposer) or rejection (by an approver) is possible **only before execution is claimed**. Claiming is the point of no return for revocation, whether or not an external mutation has happened yet (`claimed` after it).
+* | State | Proposer may withdraw? |
+  |---|---|
+  | proposed, awaiting approval | yes |
+  | approved, not claimed | yes |
+  | claimed, execution underway | no |
+  | external mutation completed | no |
+  | failed or interrupted after claim | no: abandonment (§7a) |
+* Revocation is an append-only terminal transition: it never erases approvals or evidence.
 * A revoked subject never executes (`revoked`).
+
+## 7a. Abandonment
+
+Abandonment is an explicit human decision to stop pursuing a claimed execution whose effects may already be partially real. It is **not withdrawal** (the claim happened) and **not rollback** (nothing is undone).
+
+1. Only a person holding `abandon` (roles `admin`, `prod_approver`) may abandon (`person-only`, `forbidden-effect`). Never an agent, never a component.
+2. Only a claimed subject that has not reached a terminal state can be abandoned (`wrong-state`): before claim, withdraw or reject instead.
+3. A reason is required (`reason-required`).
+4. **Reconcile first.** Before the abandonment is recorded, the implementation asks every authority what is real now (branch head, tags, registry versions and their integrity, …) and records the answers with the abandonment. If an authority cannot answer, abandonment is refused and nothing changes: an ambiguous outcome (for example a publish whose answer was lost) must never be recorded as a clean failure.
+5. The original proposal, approvals, claim, partial execution state and evidence are preserved. The record says who abandoned it, when, why, and what the reconciliation found. Pushed commits, tags and published artifacts stay as they are, and the record says so.
+6. **Retry or replacement** requires that reconciliation (`unreconciled` otherwise), and never reuses a version, tag or other identifier the abandoned execution may have made real.
+7. Applicability: abandonment is required where a claimed execution can stop in a non-terminal state that only a person can resolve. Where every post-claim state is settled automatically by reconciliation against the authority, abandonment does not apply, and the implementation says so in its conformance report.
 
 ## 8. Execution authorization
 

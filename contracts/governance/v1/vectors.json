@@ -1,6 +1,6 @@
 {
  "contract": "boundry.governance",
- "version": "1.1.0",
+ "version": "1.2.0",
  "cases": [
   {
    "name": "engineer may propose",
@@ -607,7 +607,7 @@
    }
   },
   {
-   "name": "nothing is withdrawn after the irreversible step",
+   "name": "nothing is withdrawn after an external mutation (claimed)",
    "operation": "withdraw",
    "principal": {
     "id": "ada",
@@ -618,7 +618,11 @@
    },
    "expect": {
     "allow": false,
-    "code": "irreversible"
+    "code": "irreversible",
+    "codes": [
+     "claimed",
+     "irreversible"
+    ]
    },
    "subject": {
     "state": "executing",
@@ -633,7 +637,8 @@
     "production": false,
     "approvals": [],
     "revoked": false,
-    "irreversible": true
+    "irreversible": true,
+    "claimed": true
    }
   },
   {
@@ -1280,6 +1285,544 @@
    "expect": {
     "allow": false,
     "code": "forbidden-effect"
+   }
+  },
+  {
+   "name": "an agent withdraws its own approved, unclaimed proposal",
+   "operation": "withdraw",
+   "principal": {
+    "id": "bot",
+    "type": "agent",
+    "roles": [
+     "agent"
+    ]
+   },
+   "expect": {
+    "allow": true
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "bot",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "withdrawal is refused once execution is claimed, before any external mutation",
+   "operation": "withdraw",
+   "principal": {
+    "id": "bot",
+    "type": "agent",
+    "roles": [
+     "agent"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "claimed"
+   },
+   "subject": {
+    "state": "executing",
+    "proposedBy": "bot",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false,
+    "claimed": true
+   }
+  },
+  {
+   "name": "rejection is refused once execution is claimed",
+   "operation": "withdraw",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "claimed"
+   },
+   "subject": {
+    "state": "executing",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "bob",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false,
+    "claimed": true
+   }
+  },
+  {
+   "name": "withdrawal is refused after a failure that followed the claim",
+   "operation": "withdraw",
+   "principal": {
+    "id": "bot",
+    "type": "agent",
+    "roles": [
+     "agent"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "claimed"
+   },
+   "subject": {
+    "state": "executing",
+    "proposedBy": "bot",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false,
+    "claimed": true,
+    "failed": true
+   }
+  },
+  {
+   "name": "a prod approver abandons a claimed, stuck execution after reconciling",
+   "operation": "abandon",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": true
+   },
+   "subject": {
+    "state": "executing",
+    "proposedBy": "bot",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false,
+    "claimed": true
+   },
+   "reason": "tests keep failing",
+   "reconciled": true
+  },
+  {
+   "name": "an admin abandons a claimed, stuck execution after reconciling",
+   "operation": "abandon",
+   "principal": {
+    "id": "adm",
+    "type": "person",
+    "roles": [
+     "admin"
+    ]
+   },
+   "expect": {
+    "allow": true
+   },
+   "subject": {
+    "state": "executing",
+    "proposedBy": "bot",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false,
+    "claimed": true
+   },
+   "reason": "superseded by a hotfix",
+   "reconciled": true
+  },
+  {
+   "name": "an agent never abandons, even its own proposal",
+   "operation": "abandon",
+   "principal": {
+    "id": "bot",
+    "type": "agent",
+    "roles": [
+     "agent"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "codes": [
+     "person-only",
+     "forbidden-effect"
+    ]
+   },
+   "subject": {
+    "state": "executing",
+    "proposedBy": "bot",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false,
+    "claimed": true
+   },
+   "reason": "x",
+   "reconciled": true
+  },
+  {
+   "name": "a component never abandons",
+   "operation": "abandon",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "codes": [
+     "person-only",
+     "forbidden-effect"
+    ]
+   },
+   "subject": {
+    "state": "executing",
+    "proposedBy": "bot",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false,
+    "claimed": true
+   },
+   "reason": "x",
+   "reconciled": true
+  },
+  {
+   "name": "an engineer cannot abandon",
+   "operation": "abandon",
+   "principal": {
+    "id": "eng",
+    "type": "person",
+    "roles": [
+     "engineer"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "forbidden-effect"
+   },
+   "subject": {
+    "state": "executing",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false,
+    "claimed": true
+   },
+   "reason": "x",
+   "reconciled": true
+  },
+  {
+   "name": "nothing unclaimed is abandoned: withdraw or reject instead",
+   "operation": "abandon",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "wrong-state"
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "bot",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "bob",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   },
+   "reason": "x",
+   "reconciled": true
+  },
+  {
+   "name": "a terminal subject is not abandoned",
+   "operation": "abandon",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "wrong-state"
+   },
+   "subject": {
+    "state": "done",
+    "proposedBy": "bot",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "bob",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false,
+    "claimed": true
+   },
+   "reason": "x",
+   "reconciled": true
+  },
+  {
+   "name": "abandonment needs a reason",
+   "operation": "abandon",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "reason-required"
+   },
+   "subject": {
+    "state": "executing",
+    "proposedBy": "bot",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "bob",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false,
+    "claimed": true
+   },
+   "reason": "",
+   "reconciled": true
+  },
+  {
+   "name": "abandonment is refused while an authority cannot be reconciled",
+   "operation": "abandon",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "unreconciled"
+   },
+   "subject": {
+    "state": "executing",
+    "proposedBy": "bot",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "bob",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false,
+    "claimed": true
+   },
+   "reason": "stuck",
+   "reconciled": false
+  },
+  {
+   "name": "a replacement is refused while an abandoned predecessor is unreconciled",
+   "operation": "propose",
+   "principal": {
+    "id": "eng",
+    "type": "person",
+    "roles": [
+     "engineer"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "unreconciled"
+   },
+   "predecessor": {
+    "state": "abandoned",
+    "reconciled": false
+   }
+  },
+  {
+   "name": "a replacement is allowed once the abandoned predecessor was reconciled",
+   "operation": "propose",
+   "principal": {
+    "id": "eng",
+    "type": "person",
+    "roles": [
+     "engineer"
+    ]
+   },
+   "expect": {
+    "allow": true
+   },
+   "predecessor": {
+    "state": "abandoned",
+    "reconciled": true
    }
   }
  ]

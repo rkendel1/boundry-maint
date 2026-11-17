@@ -100,6 +100,11 @@ export function createMaintenanceApplication(d: MaintenanceDeps): AppPortApplica
       async handler({ id }, ctx) { return governed(async () => summary(await m.execute(id, need(ctx)))); },
     }),
     defineCapability({
+      name: "releases.abandon", version: 1, description: CAPABILITIES["releases.abandon"].description, authorization: auth("releases.abandon"),
+      input: s.object({ id: s.string(), reason: s.string() }), output: s.object({ release: Summary, remainsReal: s.array(s.string()) }),
+      async handler({ id, reason }, ctx) { return governed(async () => { const r = await m.abandon(id, need(ctx), reason); return { release: summary(r), remainsReal: r.abandonment!.remainsReal }; }); },
+    }),
+    defineCapability({
       name: "applications.inspect", version: 1,
       description: "One application: the packages it is built from (Maintenance) and the Resolver references it resolves (read from Resolver Control), with each side's proposals, approvals and evidence, and one activity timeline. A projection computed on demand; nothing is stored.",
       authorization: [permission("read")],

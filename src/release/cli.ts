@@ -60,13 +60,15 @@ export function approvalRequest(r: ReleaseRecord): string {
   const prod = p.packages.some((x) => x.production);
   L.push(prod ? "**Production destination:** the approval must be signed with a key registered to you in `config/principals.json`. An unsigned approval is refused." : "Test registry only: an unsigned approval is accepted and recorded as `asserted` (not an authenticated approval).", "");
   L.push("```bash", ...(prod ? [`node src/index.ts release statement ${r.id} --as <you> > statement.json`, "ssh-keygen -Y sign -n boundry-release-approval -f ~/.ssh/id_ed25519 statement.json"] : []), `node src/index.ts release approve ${r.id} --as <you> --digest ${r.planDigest}${prod ? " --signature statement.json.sig" : ""}`, "```", "");
-  if (r.facts.releaseCommit || r.attempts.length) {
+  if (r.facts.releaseCommit || r.attempts.length || r.abandonment) {
     L.push("## Evidence so far", "");
     if (r.facts.releaseCommit) L.push(`- Release commit: \`${r.facts.releaseCommit}\``);
     if (r.facts.build) L.push(`- Built by ${r.facts.build.system} run \`${r.facts.build.runId}\`: ${r.facts.build.artifacts.map((a) => `\`${a.file}\` sha256 \`${a.sha256}\``).join(", ")}`);
     for (const t of r.facts.tags) L.push(`- Tag \`${t.name}\` → \`${t.target.slice(0, 12)}\``);
     for (const v of r.facts.registryVerification) L.push(`- Registry serves ${v.version}: integrity \`${v.integrity.slice(0, 24)}…\`, bytes sha256 \`${v.tarballSha256.slice(0, 16)}…\`, ${v.distTagPointsHere === null ? "not yanked" : `dist-tag ${v.distTagPointsHere ? "points here" : "does not point here"}`}`);
     for (const g of r.facts.githubReleases) L.push(`- GitHub release: ${g.url}${g.alreadyPresent ? " (already existed)" : ""}`);
+    if (r.claim) L.push(`- Claimed by ${r.claim.by} at ${r.claim.at}${r.claim.triggeredBy ? ` (triggered by ${r.claim.triggeredBy})` : ""}${r.claim.inferred ? " — inferred from a schema-2 record" : ""}: withdrawal and rejection are closed`);
+    if (r.abandonment) L.push(`- **Abandoned** by ${r.abandonment.by} (${r.abandonment.byType}) at ${r.abandonment.at}, at state ${r.abandonment.atState}: “${r.abandonment.reason}”. Nothing was rolled back. Reconciled at ${r.abandonment.reconciliation.at}; what remains real: ${r.abandonment.remainsReal.join("; ")}`);
     for (const a of r.attempts.filter((x) => x.outcome === "skipped")) L.push(`- Skipped ${a.step}: ${a.detail}`);
     for (const d of r.downstream) L.push(`- Proposed for ${d.consumer} (${d.where}): ${d.kind} ${d.dependency} \`${d.from}\` → \`${d.to}\` (${d.state}; needs its own plan)`);
     for (const c of r.consumers) L.push(`- Consumer ${c.consumer} (${c.where}) at ${c.at}: installed ${c.installation.declared ?? "?"} → resolved ${c.installation.resolved ?? "?"}; adoption **${c.adoption}**; verification **${c.verification}** (${c.basis})`);

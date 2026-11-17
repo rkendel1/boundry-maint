@@ -14,7 +14,7 @@ test("vectors are for the contract version Maintenance enforces", () => {
 
 for (const c of vectors.cases) {
   test(`contract ${CONTRACT.version}: ${c.name}`, () => {
-    const d = decide(c.operation as Operation, c.principal ? Principal.parse({ name: c.principal.id, ...c.principal }) : null, c.subject, c.digest);
+    const d = decide(c.operation as Operation, c.principal ? Principal.parse({ name: c.principal.id, ...c.principal }) : null, c.subject, c.digest, { reason: c.reason, reconciled: c.reconciled, predecessor: c.predecessor });
     assert.equal(d.allow, c.expect.allow, JSON.stringify(d));
     if (!c.expect.allow) assert.ok((c.expect.codes ?? [c.expect.code]).includes((d as { code: string }).code), JSON.stringify(d));
     if (c.expect.result) assert.equal(d.result, c.expect.result, JSON.stringify(d));

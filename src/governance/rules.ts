@@ -20,7 +20,7 @@ export const CONTRACT = JSON.parse(readFileSync(CONTRACT_URL, "utf8")) as {
 };
 export const CONTRACT_VERSION = `${CONTRACT.id}@${CONTRACT.version}`;
 
-export type Effect = "read" | "observe" | "propose" | "approve" | "approve.protected" | "withdraw" | "administer" | "trigger" | "execute" | "sign";
+export type Effect = "read" | "observe" | "propose" | "approve" | "approve.protected" | "withdraw" | "administer" | "trigger" | "execute" | "sign" | "abandon";
 
 /** Maintenance's operations and the effect each declares (contract §2). Any binding authorizes through this. */
 export const CAPABILITIES = {
@@ -32,10 +32,11 @@ export const CAPABILITIES = {
   "releases.withdraw": { effect: "withdraw", description: "Withdraw (proposer) or reject (an approver) a release before its first irreversible step." },
   "releases.trigger": { effect: "trigger", description: "Ask the release executor to carry out an approved plan. Grants no authority over what runs." },
   "releases.execute": { effect: "execute", description: "The release executor (a component) performs the approved plan." },
+  "releases.abandon": { effect: "abandon", description: "Stop pursuing a claimed release that is stuck, after reconciling with git and the registry. Person-only. Not withdrawal, not rollback: pushed commits, tags and published versions stay." },
 } as const satisfies Record<string, { effect: Effect; description: string }>;
 export type CapabilityName = keyof typeof CAPABILITIES;
 
-export type Code = "unknown-principal" | "forbidden-effect" | "person-only" | "proposer-cannot-approve" | "already-approved" | "protected-scope" | "frozen" | "not-eligible" | "wrong-state" | "digest-mismatch" | "insufficient-approvals" | "revoked" | "unauthenticated-for-production" | "irreversible";
+export type Code = "unknown-principal" | "forbidden-effect" | "person-only" | "proposer-cannot-approve" | "already-approved" | "protected-scope" | "frozen" | "not-eligible" | "wrong-state" | "digest-mismatch" | "insufficient-approvals" | "revoked" | "unauthenticated-for-production" | "irreversible" | "claimed" | "reason-required" | "unreconciled";
 
 export class GovernanceError extends Error {
   readonly code: Code; readonly result?: string;
@@ -80,8 +81,13 @@ export interface Subject {
   eligible?: string[];
   /** The threshold recorded when the subject was proposed (contract §4 ratchet). */
   requiredAtProposal?: number;
+  /** Execution was claimed (contract §7: revocation ends here, whatever has happened since). */
+  claimed?: boolean;
 }
-export type Operation = "propose" | "approve" | "withdraw" | "trigger" | "execute";
+/** What abandonment and replacement depend on besides the subject (contract §7a). */
+export interface DecisionInput { reason?: string; reconciled?: boolean; predecessor?: { state: string; reconciled: boolean } }
+const TERMINAL_STATES = ["done", "released", "verified", "failed", "cancelled", "superseded", "abandoned", "rejected"];
+export type Operation = "propose" | "approve" | "withdraw" | "trigger" | "execute" | "abandon";
 export type Decision = { allow: true; result?: "approved" | "awaiting-approval" } | { allow: false; code: Code; message: string; result?: "wait" | "awaiting-approval" };
 
 const no = (code: Code, message: string, result?: "wait" | "awaiting-approval"): Decision => (result ? { allow: false, code, message, result } : { allow: false, code, message });
@@ -93,12 +99,14 @@ export function counted(s: Subject): { valid: Approval[]; required: number } {
   return { valid, required: Math.max(s.requiredAtProposal ?? 1, requiredApprovals(s.policy.approvalsRequired, s.criticality)) };
 }
 
-export function decide(op: Operation, p: Principal | null, s?: Subject, digest?: string): Decision {
+export function decide(op: Operation, p: Principal | null, s?: Subject, digest?: string, x: DecisionInput = {}): Decision {
   if (!p) return no("unknown-principal", "unknown principal");
   const who = `${p.id} (${p.type}; roles ${p.roles.join(", ")})`;
   switch (op) {
     case "propose":
-      return can(p, "propose") ? { allow: true } : no("forbidden-effect", `${who} may not propose: needs the "propose" effect`);
+      if (!can(p, "propose")) return no("forbidden-effect", `${who} may not propose: needs the "propose" effect`);
+      if (x.predecessor?.state === "abandoned" && !x.predecessor.reconciled) return no("unreconciled", "an abandoned predecessor was never reconciled with its authorities; reconcile it before a replacement is proposed");
+      return { allow: true };
     case "approve": {
       if (!s) throw new Error("approve needs a subject");
       if (p.type !== "person") return no("person-only", `only a person may approve; ${p.id} is ${p.type === "agent" ? "an agent" : "a component"}`);
@@ -115,10 +123,21 @@ export function decide(op: Operation, p: Principal | null, s?: Subject, digest?:
     }
     case "withdraw": {
       if (!s) throw new Error("withdraw needs a subject");
+      if (s.claimed) return no("claimed", "execution has been claimed; it can no longer be withdrawn or rejected. A person may abandon it (releases.abandon) after reconciliation");
       if (s.irreversible) return no("irreversible", "its first irreversible step has happened; it can no longer be withdrawn");
       if (p.id === s.proposedBy) return { allow: true };
       if (p.type === "person" && can(p, "approve")) return { allow: true };
       return no("forbidden-effect", `${p.id} may not withdraw it: only its proposer or an approver`);
+    }
+    case "abandon": {
+      if (!s) throw new Error("abandon needs a subject");
+      if (p.type !== "person") return no("person-only", `only a person may abandon; ${p.id} is ${p.type === "agent" ? "an agent" : "a component"}`);
+      if (!can(p, "abandon")) return no("forbidden-effect", `${who} may not abandon: needs the "abandon" effect (admin or prod_approver)`);
+      if (!s.claimed) return no("wrong-state", "execution was never claimed: withdraw or reject it instead");
+      if (TERMINAL_STATES.includes(s.state)) return no("wrong-state", `it is already ${s.state}`);
+      if (!x.reason?.trim()) return no("reason-required", "say why it is abandoned");
+      if (!x.reconciled) return no("unreconciled", "an authority could not be asked what is real; abandonment is refused until it can (an ambiguous outcome is never recorded as a clean failure)");
+      return { allow: true };
     }
     case "trigger":
       return can(p, "trigger") ? { allow: true } : no("forbidden-effect", `${who} may not trigger execution: needs the "trigger" effect`);

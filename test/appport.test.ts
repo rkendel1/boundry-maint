@@ -58,6 +58,7 @@ test("AppPort: permissions are the contract's effects; an agent proposes, only a
     await assert.rejects(randy.call("releases.approve", { id, planDigest: "0".repeat(64) }), (e: any) => e?.code === "FORBIDDEN" && /digest-mismatch/.test(e.message), "the handler's contract rules apply after AppPort's");
     const approved: any = await randy.call("releases.approve", { id, planDigest: digest });
     assert.deepEqual([approved.state, approved.approvals[0].authentication], ["approved", "asserted"], "a bearer token is not a person's authentication");
+    await assert.rejects(bot.call("releases.abandon", { id, reason: "agent tries" }), code("FORBIDDEN"), "abandonment is never available to agents");
     const done: any = await randy.call("releases.trigger", { id });
     assert.equal(done.state, "released");
     assert.equal(registry.publishes, 1);

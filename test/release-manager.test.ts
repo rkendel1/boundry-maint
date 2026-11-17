@@ -181,7 +181,7 @@ test("8. GitHub release creation fails after publication: release stays registry
   const a = await w.m.execute(r.id, "randy");
   assert.equal(a.state, "registry-verified");
   assert.equal(a.failure!.recoverable, true);
-  await assert.rejects(w.m.revoke(r.id, "randy", "too late"), /irreversible/);
+  await assert.rejects(w.m.revoke(r.id, "randy", "too late"), /\[claimed\]/, "refused: execution was claimed (contract 1.2.0 §7)");
   const b = await w.m.execute(r.id, "randy");
   assert.equal(b.state, "released");
   assert.equal(w.releases.creates, 1);
