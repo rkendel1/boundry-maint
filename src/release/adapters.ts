@@ -149,10 +149,13 @@ export class CratesRegistry implements RegistryAdapter {
     const body = Buffer.concat([u32(meta.length), meta, u32(bytes.length), bytes]);
     const r = await this.#fetch(`${this.url}/api/v1/crates/new`, { method: "PUT", headers: { authorization: this.#token, "content-type": "application/octet-stream" }, body });
     const text = await r.text();
-    if (r.ok) return;
     if (r.status >= 500 || r.status === 429) throw new Unavailable(`crates registry answered ${r.status} during publish`);
-    if (/already (exists|uploaded)|is already uploaded/i.test(text)) throw new Refused("registry refused: version already present");
-    throw new Error(`crates registry refused publish: ${r.status} ${text.slice(0, 300)}`);
+    let errors: string[] = [];
+    try { errors = (JSON.parse(text).errors ?? []).map((e: any) => String(e.detail ?? e)); } catch { /* not JSON */ }
+    if (r.ok && !errors.length) return; // (older registries answer 200 with an "errors" array: that is a refusal)
+    const detail = errors.join("; ") || text.slice(0, 300);
+    if (/already (exists|uploaded)|is already uploaded/i.test(detail)) throw new Refused("registry refused: version already present");
+    throw new Error(`crates registry refused publish: ${r.status} ${detail}`);
   }
   async download(url: string): Promise<Buffer> {
     const r = await this.#fetch(url);
@@ -368,8 +371,9 @@ export class BoundryCiExecutor implements Executor {
   }
   async artifact(runId: string, job: string, name: string) {
     const ev: any = await (await this.#req("GET", `/v1/runs/${runId}/evidence`)).json();
-    const j = ev.jobs.find((x: any) => x.key === job);
-    const a = j?.attempts.filter((x: any) => x.state === "succeeded").at(-1)?.artifacts.find((x: any) => x.name === name);
+    // The named job, or else whichever job produced the named artifact (e.g. "Package the crates.").
+    const art = (j: any) => j?.attempts.filter((x: any) => x.state === "succeeded").at(-1)?.artifacts.find((x: any) => x.name === name);
+    const a = art(ev.jobs.find((x: any) => x.key === job)) ?? ev.jobs.map(art).find(Boolean);
     if (!a) throw new Error(`run ${runId} has no artifact ${name} from ${job}`);
     const r = await this.#req("GET", `/v1/artifacts/sha256/${a.digest}?run=${encodeURIComponent(runId)}`); // a scoped token reads only its own runs' artifacts
     if (!r.ok) throw new Error(`artifact download failed: ${r.status}`);
