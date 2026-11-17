@@ -5,22 +5,34 @@ import { parse as parseToml } from "smol-toml";
 const indentOf = (s: string) => /^\{\n([ \t]+)"/.exec(s)?.[1] ?? "  ";
 const withNl = (s: string) => (s.endsWith("\n") ? s : s + "\n");
 
-/** package.json: set "version", preserving key order and indentation. */
-export function bumpPackageJson(text: string, version: string): string {
-  const doc = JSON.parse(text);
-  doc.version = version;
-  return withNl(JSON.stringify(doc, null, indentOf(text)));
-}
+const DEP_KINDS = ["dependencies", "peerDependencies", "optionalDependencies", "devDependencies"];
 
-/** package-lock.json (v2/v3): set the workspace entry's version for `directory` (and the root if directory is "."). */
-export function bumpPackageLock(text: string, directory: string, version: string): string {
+/** package.json: set "version" and/or rewrite exact dependency pins, preserving key order and indentation. */
+export function editPackageJson(text: string, version: string | null, pins: Record<string, string> = {}): string {
   const doc = JSON.parse(text);
-  const key = directory === "." ? "" : directory;
-  if (!doc.packages?.[key]) throw new Error(`package-lock.json has no entry for "${key || "(root)"}"`);
-  doc.packages[key].version = version;
-  if (key === "") doc.version = version;
+  if (version) doc.version = version;
+  for (const [name, to] of Object.entries(pins)) for (const k of DEP_KINDS) if (doc[k]?.[name] !== undefined) doc[k][name] = to;
   return withNl(JSON.stringify(doc, null, indentOf(text)));
 }
+export const bumpPackageJson = (text: string, version: string) => editPackageJson(text, version);
+
+/** package-lock.json (v2/v3): workspace entry versions and the rewritten pins inside workspace entries. */
+export function editPackageLock(text: string, versions: Record<string, string>, pins: Record<string, Record<string, string>> = {}): string {
+  const doc = JSON.parse(text);
+  for (const [directory, version] of Object.entries(versions)) {
+    const key = directory === "." ? "" : directory;
+    if (!doc.packages?.[key]) continue; // not a member of this lockfile
+    doc.packages[key].version = version;
+    if (key === "") doc.version = version;
+  }
+  for (const [directory, deps] of Object.entries(pins)) {
+    const entry = doc.packages?.[directory === "." ? "" : directory];
+    if (!entry) continue;
+    for (const [name, to] of Object.entries(deps)) for (const k of DEP_KINDS) if (entry[k]?.[name] !== undefined) entry[k][name] = to;
+  }
+  return withNl(JSON.stringify(doc, null, indentOf(text)));
+}
+export const bumpPackageLock = (text: string, directory: string, version: string) => editPackageLock(text, { [directory]: version });
 
 /** Cargo.toml: set version in [package] only; Cargo.lock: the local (source-less) entry for the crate. */
 export function bumpCargoToml(text: string, version: string): string {

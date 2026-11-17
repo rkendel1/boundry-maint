@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "id": "appport-resolver-core@0.2.1",
+  "planDigest": "5fcde4ab404b6e23f6c9f58a3bbb5376dbae1147371cff114cd2dd21a0c0c2df",
+  "plan": {
+    "repository": "rkendel1/resolver",
+    "branch": "main",
+    "sourceCommit": "aaab053651a9144e470c3b62c1c550ab084effe7",
+    "bump": "patch",
+    "requestedBy": "randy",
+    "requestedAt": "2026-11-17T00:15:09.402Z",
+    "reason": "End-to-end proof of the Release Manager",
+    "packages": [
+      {
+        "package": "appport-resolver-core",
+        "name": "@appport/resolver-core",
+        "registry": "npm",
+        "directory": "packages/core",
+        "registryVersions": {
+          "count": 4,
+          "highest": "0.2.0",
+          "latestTag": "0.2.0",
+          "observedAt": "2026-11-17T00:15:09.402Z"
+        },
+        "repositoryVersion": "0.2.0",
+        "proposedVersion": "0.2.1",
+        "tag": "@appport/resolver-core@0.2.1",
+        "distTag": "latest",
+        "destination": "http://127.0.0.1:4874"
+      }
+    ],
+    "decision": [
+      "The registry has 4 versions of @appport/resolver-core; the highest ever published is 0.2.0.",
+      "The manifest at the source commit declares 0.2.0.",
+      "Patch release from 0.2.0 gives 0.2.1 (0.x: under semver a patch bump of a 0.x version is the compatible channel for consumers using ^0.2).",
+      "Version 0.2.1 is not on the registry and tag @appport/resolver-core@0.2.1 does not exist.",
+      "2 dependent manifest(s) found; none is changed or published by this release (see dependents)."
+    ],
+    "dependents": [
+      {
+        "package": "@appport/resolver-client",
+        "where": "rkendel1/resolver:packages/client/package.json",
+        "declared": "0.2.0",
+        "effect": "pins 0.2.0 exactly: keeps using 0.2.0 until it is released with an updated pin"
+      },
+      {
+        "package": "@appport/resolver",
+        "where": "rkendel1/resolver:packages/server/package.json",
+        "declared": "0.2.0",
+        "effect": "pins 0.2.0 exactly: keeps using 0.2.0 until it is released with an updated pin"
+      }
+    ],
+    "releaseCommit": {
+      "message": "Release @appport/resolver-core@0.2.1",
+      "files": [
+        "package-lock.json",
+        "packages/core/package.json"
+      ]
+    },
+    "validation": [
+      "test"
+    ],
+    "githubRelease": true,
+    "approvers": [
+      "randy"
+    ]
+  },
+  "state": "prepared",
+  "approval": {
+    "approver": "randy",
+    "at": "2026-11-17T00:15:09.839Z",
+    "planDigest": "5fcde4ab404b6e23f6c9f58a3bbb5376dbae1147371cff114cd2dd21a0c0c2df",
+    "revoked": null
+  },
+  "facts": {
+    "releaseCommit": "ca3b0bf15daeaedceee69ff9a8dc057397fda5b0",
+    "build": null,
+    "tags": [],
+    "published": [],
+    "registryVerification": [],
+    "githubRelease": null
+  },
+  "failure": {
+    "at": "prepared",
+    "reason": "release build run_e0fe52cf5f301ac719c23f60 failed; nothing was tagged or published",
+    "recoverable": true,
+    "when": "2026-11-17T00:15:14.236Z"
+  },
+  "history": [
+    {
+      "at": "2026-11-17T00:15:09.402Z",
+      "state": "proposed",
+      "note": "patch release requested by randy"
+    },
+    {
+      "at": "2026-11-17T00:15:09.402Z",
+      "state": "validated",
+      "note": "source aaab053651a9 on main; versions free on the registry; tags free"
+    },
+    {
+      "at": "2026-11-17T00:15:09.402Z",
+      "state": "awaiting-approval",
+      "note": "approvers: randy"
+    },
+    {
+      "at": "2026-11-17T00:15:09.839Z",
+      "state": "approved",
+      "note": "approved by randy for plan 5fcde4ab404b"
+    },
+    {
+      "at": "2026-11-17T00:15:10.118Z",
+      "state": "prepared",
+      "note": "release commit ca3b0bf15dae"
+    }
+  ],
+  "attempts": [
+    {
+      "at": "2026-11-17T00:15:10.118Z",
+      "step": "release-commit",
+      "outcome": "done",
+      "detail": "ca3b0bf15dae on main (package-lock.json, packages/core/package.json)"
+    },
+    {
+      "at": "2026-11-17T00:15:14.235Z",
+      "step": "build",
+      "outcome": "failed",
+      "detail": "run_e0fe52cf5f301ac719c23f60: tests=failed (exit code 1), step-package=skipped (dependency did not succeed)"
+    },
+    {
+      "at": "2026-11-17T00:15:14.236Z",
+      "step": "prepared",
+      "outcome": "failed",
+      "detail": "release build run_e0fe52cf5f301ac719c23f60 failed; nothing was tagged or published"
+    }
+  ]
+}

@@ -11,6 +11,7 @@ import { ReleaseManager, ReleaseError } from "../src/release/manager.ts";
 import { GitCli } from "../src/release/adapters.ts";
 import { PackageConfig, ReleaseRecord } from "../src/contracts.ts";
 import { makeRepo, FakeRegistry, FakeReleases, PackingExecutor } from "./release-fakes.ts";
+import { editPackageLock } from "../src/release/manifests.ts";
 
 const policy = { approvers: ["randy"] };
 const CATALOG = [
@@ -20,8 +21,8 @@ const CATALOG = [
   PackageConfig.parse({ id: "tokio", name: "tokio", registry: "crates", ownership: "managed", repository: "tokio-rs/tokio" }),
 ];
 
-function world(opts: { seed?: string[] } = {}) {
-  const repo = makeRepo();
+function world(opts: { seed?: string[]; clientPin?: string } = {}) {
+  const repo = makeRepo({ clientPin: opts.clientPin });
   const registry = new FakeRegistry();
   registry.seed("@demo/core", opts.seed ?? ["0.1.0", "0.2.0"]);
   const releases = new FakeReleases();
@@ -54,7 +55,7 @@ test("happy path: plan → approve → prepared → built → tagged → publish
   assert.equal(r.plan.packages[0]!.tag, "@demo/core@0.2.1");
   assert.deepEqual(r.plan.releaseCommit.files, ["package-lock.json", "packages/core/package.json"]);
   const dep = r.plan.dependents.find((d) => d.package === "@demo/client")!;
-  assert.match(dep.effect, /pins 0\.2\.0 exactly/);
+  assert.match(dep.effect, /range \^0\.2\.0 accepts 0\.2\.1/);
   await assert.rejects(w.m.approve(r.id, "mallory", r.planDigest), (e: any) => e instanceof ReleaseError && /may not approve/.test(e.message));
   await assert.rejects(w.m.approve(r.id, "randy", "0".repeat(64)), /different plan/);
   await w.m.approve(r.id, "randy", r.planDigest);
@@ -66,7 +67,7 @@ test("happy path: plan → approve → prepared → built → tagged → publish
   assert.equal(execFileSync("git", ["-C", w.repo.bare, "rev-parse", `${head}^`], { encoding: "utf8" }).trim(), source, "release commit sits directly on the approved source");
   assert.equal(JSON.parse(readBlob(w.repo.bare, head, "packages/core/package.json")).version, "0.2.1");
   assert.equal(JSON.parse(readBlob(w.repo.bare, head, "package-lock.json")).packages["packages/core"].version, "0.2.1");
-  assert.equal(JSON.parse(readBlob(w.repo.bare, head, "packages/client/package.json")).dependencies["@demo/core"], "0.2.0", "dependents are never changed");
+  assert.equal(JSON.parse(readBlob(w.repo.bare, head, "packages/client/package.json")).dependencies["@demo/core"], "^0.2.0", "dependents are never changed");
   assert.equal(tagsOf(w.repo.bare)["@demo/core@0.2.1"], head, "tag points at the exact release commit");
   const art = done.facts.build!.artifacts[0]!;
   assert.equal(w.registry.pkgs.get("@demo/core")!.versions.get("0.2.1")!.integrity, art.sha512Integrity);
@@ -261,14 +262,37 @@ test("14. repository changes after approval: superseded, nothing pushed over the
   assert.equal(w.repo.head(), moved);
 });
 
+test("workspace sibling with an exact pin: a lone release is refused (it would break npm ci); nothing is added silently", async () => {
+  const w = world({ clientPin: "0.2.0" });
+  await assert.rejects(w.m.plan({ packages: ["demo-core"], bump: "patch", requestedBy: "randy" }), (e: any) => e.code === "decision" && /break the workspace install/.test(e.message) && /--package demo-client/.test(e.message));
+  // The failure this prevents, reproduced: without the planner check the release build's npm ci fails.
+  const lone = makeRepo({ clientPin: "0.2.0" });
+  // Exactly what a lone release commit would contain: the manifest and the lockfile bumped.
+  const files = {
+    "packages/core/package.json": JSON.stringify({ name: "@demo/core", version: "0.2.1", main: "index.js" }, null, 2) + "\n",
+    "package-lock.json": editPackageLock(readBlob(lone.bare, "main", "package-lock.json"), { "packages/core": "0.2.1" }),
+  };
+  const bumped = lone.push(files, "bump core only");
+  const ex = new PackingExecutor(lone.url);
+  const { runId } = await ex.submit({ requestId: "x", repository: "acme/demo", commit: bumped, branch: "main", recipe: { path: ".boundry/recipes/x.md", source: "" } });
+  assert.equal((await ex.status(runId)).state, "failed");
+  // Online (the real resolver run) npm reports "Missing: …@0.2.0 from lock file"; offline it reports ENOTCACHED
+  // one step earlier. Same cause: the workspace no longer provides the exactly-pinned 0.2.0.
+  assert.match(ex.lastError, /Missing: @demo\/core@0\.2\.0 from lock file|ENOTCACHED/);
+});
+
 test("a coordinated multi-package release shares one release commit, one tag per package", async () => {
-  const w = world();
+  const w = world({ clientPin: "0.2.0" });
   w.registry.seed("@demo/client", ["0.3.0"]);
   const r = await w.m.plan({ packages: ["demo-core", "demo-client"], bump: "patch", requestedBy: "randy" });
   assert.deepEqual(r.plan.packages.map((p) => `${p.name}@${p.proposedVersion}`), ["@demo/client@0.3.1", "@demo/core@0.2.1"]);
   await w.m.approve(r.id, "randy", r.planDigest);
   const out = await w.m.execute(r.id);
   assert.equal(out.state, "released");
+  assert.deepEqual(r.plan.releaseCommit.pins, [{ in: "packages/client", dependency: "@demo/core", from: "0.2.0", to: "0.2.1" }]);
+  const c = out.facts.releaseCommit!;
+  assert.equal(JSON.parse(readBlob(w.repo.bare, c, "packages/client/package.json")).dependencies["@demo/core"], "0.2.1", "pin rewritten in the manifest");
+  assert.equal(JSON.parse(readBlob(w.repo.bare, c, "package-lock.json")).packages["packages/client"].dependencies["@demo/core"], "0.2.1", "and in the lockfile");
   const tags = tagsOf(w.repo.bare);
   assert.equal(tags["@demo/core@0.2.1"], out.facts.releaseCommit);
   assert.equal(tags["@demo/client@0.3.1"], out.facts.releaseCommit);

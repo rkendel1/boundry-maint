@@ -25,7 +25,7 @@ import semver from "semver";
 import { ReleaseRecord, ReleasePolicy, type PackageConfig, type ReleaseBump, type ReleasePlan, type ReleaseState, type Installation } from "../contracts.ts";
 import { writeAllAtomic, stableJson } from "../lib/files.ts";
 import { allocate, tagFor, AllocationError } from "./version.ts";
-import { bumpPackageJson, bumpPackageLock, dependentEffect, npmDependency, type Dependent } from "./manifests.ts";
+import { editPackageJson, editPackageLock, dependentEffect, npmDependency, type Dependent } from "./manifests.ts";
 import { Unavailable, Refused, type RegistryAdapter, type GitAuthority, type ReleasesAdapter, type Executor } from "./adapters.ts";
 
 const pexec = promisify(execFile);
@@ -106,7 +106,6 @@ export class ReleaseManager {
     const now = this.d.now();
     const decision: string[] = [];
     const planned: ReleasePlan["packages"] = [];
-    const files: Record<string, string> = {};
     for (const p of pkgs) {
       const dir = p.directory ?? ".";
       const manifestPath = dir === "." ? "package.json" : `${dir}/package.json`;
@@ -128,17 +127,12 @@ export class ReleaseManager {
         repositoryVersion: manifest.version ?? null, proposedVersion: alloc.version, tag: alloc.tag,
         distTag: semver.prerelease(alloc.version) ? "next" : p.release.distTag, destination: reg.url,
       });
-      if (manifest.version !== alloc.version) files[manifestPath] = bumpPackageJson(manifestText, alloc.version);
     }
-    // Root lockfile: workspace entries for the released packages.
-    const lock = await git.read(source, "package-lock.json");
-    if (lock) {
-      let next = lock;
-      for (const pp of planned) { try { next = bumpPackageLock(next, pp.directory, pp.proposedVersion); } catch { /* not a workspace member of this lockfile */ } }
-      if (next !== lock) files["package-lock.json"] = next;
-    }
-    // Dependents: workspace siblings and consuming projects. Reported; never changed or published here.
+    // Workspace siblings: npm resolves them through the workspace link, so an exact pin on the old version
+    // breaks the install (`npm ci`: "Missing ... from lock file") the moment the released package is bumped.
     const dependents: Dependent[] = [];
+    const pins: ReleasePlan["releaseCommit"]["pins"] = [];
+    const mustJoin: string[] = [];
     const rootManifest = await git.read(source, "package.json");
     const ws: string[] = rootManifest ? [].concat(JSON.parse(rootManifest).workspaces?.packages ?? JSON.parse(rootManifest).workspaces ?? []) : [];
     for (const pattern of ws) {
@@ -146,28 +140,43 @@ export class ReleaseManager {
       const parent = m?.[1];
       const dirs = parent !== undefined ? ((await git.list(source, parent)) ?? []).map((d) => `${parent}/${d}`) : [pattern];
       for (const d of dirs) {
-        if (planned.some((p) => p.directory === d)) continue;
         const text = await git.read(source, `${d}/package.json`);
         if (!text) continue;
         const holder = JSON.parse(text).name ?? d;
+        const inPlan = planned.some((p) => p.directory === d);
         for (const pp of planned) {
+          if (pp.directory === d) continue;
           const declared = npmDependency(text, pp.name);
-          if (declared) dependents.push(dependentEffect(holder, `${repo}:${d}/package.json`, declared, pp.registryVersions.highest ?? pp.repositoryVersion ?? "0.0.0", pp.proposedVersion));
+          if (!declared) continue;
+          const exact = semver.valid(declared) !== null;
+          const accepts = exact ? semver.eq(declared, pp.proposedVersion) : !!semver.validRange(declared) && semver.satisfies(pp.proposedVersion, declared);
+          if (inPlan && exact && !accepts) { pins.push({ in: d, dependency: pp.name, from: declared, to: pp.proposedVersion }); continue; }
+          if (!accepts) {
+            const id = this.d.catalog.find((c) => c.name === holder)?.id ?? holder;
+            mustJoin.push(`${holder} (${d}/package.json declares ${pp.name} "${declared}") → add --package ${id}`);
+            continue;
+          }
+          dependents.push(dependentEffect(holder, `${repo}:${d}/package.json`, declared, pp.registryVersions.highest ?? pp.repositoryVersion ?? "0.0.0", pp.proposedVersion));
         }
       }
     }
+    // Consuming projects in other repositories (Maintenance's installations): reported, never changed.
     for (const inst of this.d.installations) {
       const pp = planned.find((p) => p.package === inst.package);
       if (!pp || inst.repository === repo || !inst.declaredVersion) continue;
       dependents.push(dependentEffect(inst.project, `${inst.repository}:${inst.manifest}`, inst.declaredVersion, inst.resolvedVersion ?? "0.0.0", pp.proposedVersion));
     }
+    if (mustJoin.length) {
+      throw new ReleaseError("decision", `this release would break the workspace install: npm resolves these siblings through the workspace, and their pins do not accept the new version(s). Release them together (Boundry never adds packages to a release on its own):\n  - ${[...new Set(mustJoin)].join("\n  - ")}`);
+    }
+    const files = await releaseFiles(git, source, planned, pins);
     if (dependents.length) decision.push(`${dependents.length} dependent manifest(s) found; none is changed or published by this release (see dependents).`);
 
     const policy = first.release;
     const plan: ReleasePlan = {
       repository: repo, branch, sourceCommit: source, bump: req.bump, requestedBy: req.requestedBy, requestedAt: now, reason: req.reason ?? null,
       packages: planned, decision, dependents: dependents.sort((a, b) => (a.package + a.where).localeCompare(b.package + b.where)),
-      releaseCommit: { message: `Release ${planned.map((p) => `${p.name}@${p.proposedVersion}`).join(", ")}`, files: Object.keys(files).sort() },
+      releaseCommit: { message: `Release ${planned.map((p) => `${p.name}@${p.proposedVersion}`).join(", ")}`, files: Object.keys(files).sort(), pins: pins.sort((a, b) => (a.in + a.dependency).localeCompare(b.in + b.dependency)) },
       validation: [...policy.validation], githubRelease: pkgs.every((p) => p.release.githubRelease),
       approvers: [...new Set(pkgs.flatMap((p) => p.release.approvers))].filter((a) => pkgs.every((p) => p.release.approvers.includes(a))).sort(),
     };
@@ -289,19 +298,7 @@ export class ReleaseManager {
   }
 
   async #rederive(r: ReleaseRecord): Promise<Record<string, string>> {
-    const git = this.d.git(r.plan.repository);
-    const out: Record<string, string> = {};
-    for (const pp of r.plan.packages) {
-      const path = pp.directory === "." ? "package.json" : `${pp.directory}/package.json`;
-      const t = await git.read(r.plan.sourceCommit, path);
-      if (t && r.plan.releaseCommit.files.includes(path)) out[path] = bumpPackageJson(t, pp.proposedVersion);
-    }
-    if (r.plan.releaseCommit.files.includes("package-lock.json")) {
-      let l = (await git.read(r.plan.sourceCommit, "package-lock.json"))!;
-      for (const pp of r.plan.packages) { try { l = bumpPackageLock(l, pp.directory, pp.proposedVersion); } catch { /* not in lock */ } }
-      out["package-lock.json"] = l;
-    }
-    return out;
+    return releaseFiles(this.d.git(r.plan.repository), r.plan.sourceCommit, r.plan.packages, r.plan.releaseCommit.pins);
   }
 
   /** prepared → built: Boundry CI builds/tests/packs the exact release commit; the artifact is verified here. */
@@ -468,6 +465,28 @@ export class ReleaseManager {
       return await f();
     } finally { for (const d of held) await rm(d, { recursive: true, force: true }); }
   }
+}
+
+/** The release commit's files, derived only from the source commit and the plan (plan time and recovery agree). */
+export async function releaseFiles(git: GitAuthority, source: string, planned: ReleasePlan["packages"], pins: ReleasePlan["releaseCommit"]["pins"]): Promise<Record<string, string>> {
+  const files: Record<string, string> = {};
+  const dirs = [...new Set([...planned.map((p) => p.directory), ...pins.map((p) => p.in)])].sort();
+  for (const d of dirs) {
+    const path = d === "." ? "package.json" : `${d}/package.json`;
+    const text = await git.read(source, path);
+    if (!text) throw new Error(`${path} not found at ${source.slice(0, 12)}`);
+    const version = planned.find((p) => p.directory === d)?.proposedVersion ?? null;
+    const next = editPackageJson(text, version, Object.fromEntries(pins.filter((p) => p.in === d).map((p) => [p.dependency, p.to])));
+    if (next !== text) files[path] = next;
+  }
+  const lock = await git.read(source, "package-lock.json");
+  if (lock) {
+    const pinMap: Record<string, Record<string, string>> = {};
+    for (const p of pins) (pinMap[p.in] ??= {})[p.dependency] = p.to;
+    const next = editPackageLock(lock, Object.fromEntries(planned.map((p) => [p.directory, p.proposedVersion])), pinMap);
+    if (next !== lock) files["package-lock.json"] = next;
+  }
+  return files;
 }
 
 /** The Boundry Recipe Maintenance hands to the execution substrate for a release build. */

@@ -661,7 +661,12 @@ export const ReleasePlan = z.object({
   packages: z.array(ReleasePackagePlan).min(1),
   decision: z.array(z.string()).describe("Why these versions, in words"),
   dependents: z.array(z.object({ package: z.string(), where: z.string(), declared: z.string(), effect: z.string() })).describe("Coordinated follow-ups. Never published automatically."),
-  releaseCommit: z.object({ message: z.string(), files: z.array(z.string()) }),
+  releaseCommit: z.object({
+    message: z.string(),
+    files: z.array(z.string()),
+    pins: z.array(z.object({ in: z.string(), dependency: z.string(), from: z.string(), to: z.string() })).default([])
+      .describe("Exact pins between packages released together, rewritten in manifests and lockfile"),
+  }),
   validation: z.array(z.string()),
   githubRelease: z.boolean(),
   approvers: z.array(z.string()),
