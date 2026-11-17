@@ -1,4 +1,4 @@
-# Boundry governance contract, version 1.0.0
+# Boundry governance contract, version 1.1.0
 
 This contract is normative for every Boundry application that governs change: Boundry Maintenance (releases) and Resolver Control (runtime references). The same semantics apply to both. Each application **enforces** them in its own trust boundary, with its own credentials. The contract is not a service, not a library dependency and not a shared credential.
 
@@ -15,18 +15,26 @@ This contract is normative for every Boundry application that governs change: Bo
 * Adding vectors or effects that existing applications do not use is **minor**.
 * An application states the version it conforms to, and its test suite runs that version's vectors.
 
+## Changes
+
+| Version | Change | Found by |
+|---|---|---|
+| 1.1.0 | The `agent` role gains `withdraw`: an agent may withdraw its own proposal, never anyone else's. Before, the role table and §3.6 disagreed. **When several rules refuse, any of their codes conforms** (§2 orders authorization before the handler's rules, so an agent asking to approve may be refused as `forbidden-effect` or `person-only`); vectors list the acceptable codes in `expect.codes` | running the vectors against Resolver Control (a second implementation) |
+| 1.0.0 | First version | — |
+
 ## 1. Principals
 
 | Type | May | Never |
 |---|---|---|
 | `person` | read, propose, approve, reject, withdraw, administer, trigger (by role) | execute |
-| `agent` | read, propose | approve, administer, trigger, execute, sign |
+| `agent` | read, propose, withdraw its own proposal | approve, administer, trigger, execute, sign |
 | `component` | execute (`executor`) or sign (`signer`), and read | propose, approve, administer |
 
 Two rules about the principal catalog:
 
 * A role may only be held by the principal types listed for it in `contract.json`. An application must refuse a catalog that violates this.
 * An unknown principal is refused (`unknown-principal`) for every operation.
+* When more than one rule refuses an operation, reporting any one of them conforms. A vector lists every acceptable code in `expect.codes`.
 
 Each application maps its platform's principal kinds onto these types. In FeltKit, `user` → person, `agent` → agent, and `service` (component principal) → component.
 
@@ -110,5 +118,5 @@ Decided by the executing component, at the start of execution, from the record. 
 
 | Application | Conforms to | Evidence |
 |---|---|---|
-| Boundry Maintenance | 1.0.0 | `test/governance-contract.test.ts` runs `vectors.json` against `src/governance/rules.ts` `decide()`, which the Release Manager uses for every decision |
-| Resolver Control | see `docs/architecture/control-plane.md` §8 | measured against its code; not yet run in its own suite |
+| Boundry Maintenance | 1.1.0 | `test/governance-contract.test.ts` runs `vectors.json` against `src/governance/rules.ts` `decide()`, which the Release Manager uses for every decision |
+| Resolver Control | 1.1.0, except where its own conformance report says otherwise | `tests/governance-contract.test.ts` in resolver-control runs the vendored vectors against its own mutations and writes `docs/governance-conformance.json` |

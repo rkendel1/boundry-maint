@@ -26,6 +26,16 @@ test("one holder at a time across processes", async () => {
   assert.equal(max, 1);
 });
 
+test("release is atomic: many contenders with very short critical sections never overlap", async () => {
+  const p = join(mkdtempSync(join(tmpdir(), "lock-")), "r.lock");
+  let inside = 0, max = 0, done = 0;
+  await Promise.all(Array.from({ length: 40 }, async () => {
+    for (let round = 0; round < 5; round++) await withLocks([p], async () => { inside++; max = Math.max(max, inside); await Promise.resolve(); inside--; done++; }, { waitMs: 60_000 });
+  }));
+  assert.equal(done, 200);
+  assert.equal(max, 1);
+});
+
 test("a lock left by a dead process is stale and replaced", async () => {
   const p = join(mkdtempSync(join(tmpdir(), "lock-")), "s.lock");
   mkdirSync(p); writeFileSync(join(p, "pid"), "999999"); // no such process

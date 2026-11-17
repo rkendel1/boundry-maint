@@ -16,7 +16,7 @@ for (const c of vectors.cases) {
   test(`contract ${CONTRACT.version}: ${c.name}`, () => {
     const d = decide(c.operation as Operation, c.principal ? Principal.parse({ name: c.principal.id, ...c.principal }) : null, c.subject, c.digest);
     assert.equal(d.allow, c.expect.allow, JSON.stringify(d));
-    if (!c.expect.allow) assert.equal((d as { code: string }).code, c.expect.code, JSON.stringify(d));
+    if (!c.expect.allow) assert.ok((c.expect.codes ?? [c.expect.code]).includes((d as { code: string }).code), JSON.stringify(d));
     if (c.expect.result) assert.equal(d.result, c.expect.result, JSON.stringify(d));
   });
 }
@@ -31,5 +31,5 @@ test("the principal catalog refuses roles the contract does not allow for that p
       const ok = Principal.safeParse({ id: "x", name: "x", type, roles: [role] }).success;
       assert.equal(ok, def.principalTypes.includes(type), `${type} as ${role}`);
     }
-  assert.deepEqual([...effectsOf({ type: "agent", roles: ["agent"] })].sort(), ["propose", "read"]);
+  assert.deepEqual([...effectsOf({ type: "agent", roles: ["agent"] })].sort(), ["propose", "read", "withdraw"]);
 });

@@ -1,7 +1,7 @@
 {
-  "$comment": "Boundry governance contract. Normative text: SPEC.md in this directory. Language-independent; each application maps its own operations onto these effects and enforces the rules in its own trust boundary. Conformance: vectors.json.",
+  "$comment": "Boundry governance contract. Normative text: SPEC.md in this directory. Language-independent; each application maps its own operations onto these effects and enforces the rules in its own trust boundary. Conformance: vectors.json. 1.1.0: agents may withdraw their own proposals (the role table now matches \u00a73.6); when several rules refuse, any of their codes conforms (vectors list them in expect.codes).",
   "id": "boundry.governance",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "principalTypes": {
     "person": "A human, identified by the application's authentication. The only type that approves, rejects or administers.",
     "agent": "Software acting for someone (e.g. over MCP). Inspects and proposes. Never approves, administers or executes.",
@@ -20,28 +20,153 @@
     "sign": "Read a proposal and its audit trail to issue an authorization derived from it."
   },
   "roles": {
-    "viewer":        { "principalTypes": ["person", "agent", "component"], "effects": ["read"] },
-    "engineer":      { "principalTypes": ["person"], "effects": ["read", "propose", "withdraw"] },
-    "approver":      { "principalTypes": ["person"], "effects": ["read", "approve", "withdraw"] },
-    "prod_approver": { "principalTypes": ["person"], "effects": ["read", "approve", "approve.protected", "withdraw"] },
-    "admin":         { "principalTypes": ["person"], "effects": ["read", "administer", "trigger"] },
-    "agent":         { "principalTypes": ["agent"], "effects": ["read", "propose"] },
-    "executor":      { "principalTypes": ["component"], "effects": ["read", "execute"] },
-    "signer":        { "principalTypes": ["component"], "effects": ["read", "sign"] }
+    "viewer": {
+      "principalTypes": [
+        "person",
+        "agent",
+        "component"
+      ],
+      "effects": [
+        "read"
+      ]
+    },
+    "engineer": {
+      "principalTypes": [
+        "person"
+      ],
+      "effects": [
+        "read",
+        "propose",
+        "withdraw"
+      ]
+    },
+    "approver": {
+      "principalTypes": [
+        "person"
+      ],
+      "effects": [
+        "read",
+        "approve",
+        "withdraw"
+      ]
+    },
+    "prod_approver": {
+      "principalTypes": [
+        "person"
+      ],
+      "effects": [
+        "read",
+        "approve",
+        "approve.protected",
+        "withdraw"
+      ]
+    },
+    "admin": {
+      "principalTypes": [
+        "person"
+      ],
+      "effects": [
+        "read",
+        "administer",
+        "trigger"
+      ]
+    },
+    "agent": {
+      "principalTypes": [
+        "agent"
+      ],
+      "effects": [
+        "read",
+        "propose",
+        "withdraw"
+      ]
+    },
+    "executor": {
+      "principalTypes": [
+        "component"
+      ],
+      "effects": [
+        "read",
+        "execute"
+      ]
+    },
+    "signer": {
+      "principalTypes": [
+        "component"
+      ],
+      "effects": [
+        "read",
+        "sign"
+      ]
+    }
   },
-  "personOnlyEffects": ["approve", "approve.protected", "withdraw.reject", "administer"],
-  "neverForEffects": { "agent": ["approve", "approve.protected", "administer", "trigger", "execute", "sign"], "component": ["propose", "approve", "approve.protected", "administer"] },
-  "criticality": ["low", "medium", "high", "critical"],
-  "requiredApprovals": { "rule": "max(policy.approvalsRequired, criticality == 'critical' ? 2 : 1)", "policyRange": [1, 5] },
-  "defaultPolicy": { "protected": true, "approvalsRequired": 1, "frozen": false, "$comment": "A scope with no recorded policy is treated as protected with one approval: unknown is never treated as safe." },
+  "personOnlyEffects": [
+    "approve",
+    "approve.protected",
+    "withdraw.reject",
+    "administer"
+  ],
+  "neverForEffects": {
+    "agent": [
+      "approve",
+      "approve.protected",
+      "administer",
+      "trigger",
+      "execute",
+      "sign"
+    ],
+    "component": [
+      "propose",
+      "approve",
+      "approve.protected",
+      "administer"
+    ]
+  },
+  "criticality": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "requiredApprovals": {
+    "rule": "max(policy.approvalsRequired, criticality == 'critical' ? 2 : 1)",
+    "policyRange": [
+      1,
+      5
+    ]
+  },
+  "defaultPolicy": {
+    "protected": true,
+    "approvalsRequired": 1,
+    "frozen": false,
+    "$comment": "A scope with no recorded policy is treated as protected with one approval: unknown is never treated as safe."
+  },
   "authentication": {
-    "levels": ["asserted", "session", "signature"],
-    "productionRequires": ["session", "signature"],
+    "levels": [
+      "asserted",
+      "session",
+      "signature"
+    ],
+    "productionRequires": [
+      "session",
+      "signature"
+    ],
     "$comment": "asserted = a name the caller typed. It never satisfies a production approval."
   },
   "refusalCodes": [
-    "unknown-principal", "forbidden-effect", "person-only", "proposer-cannot-approve", "already-approved",
-    "protected-scope", "frozen", "not-eligible", "wrong-state", "digest-mismatch", "insufficient-approvals",
-    "revoked", "unauthenticated-for-production", "irreversible"
+    "unknown-principal",
+    "forbidden-effect",
+    "person-only",
+    "proposer-cannot-approve",
+    "already-approved",
+    "protected-scope",
+    "frozen",
+    "not-eligible",
+    "wrong-state",
+    "digest-mismatch",
+    "insufficient-approvals",
+    "revoked",
+    "unauthenticated-for-production",
+    "irreversible"
   ]
 }

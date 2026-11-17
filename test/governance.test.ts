@@ -177,7 +177,7 @@ test("production: a correctly signed approval executes; the executor component a
   await m.approve(r.id, "ada", r.planDigest, await signWithKeyFile(ada.key, await m.statement(r.id, "ada")));
   const done = await m.execute(r.id, "randy");
   assert.equal(done.state, "released", JSON.stringify(done.failure));
-  assert.match(done.attempts.find((a) => a.step === "authorize")!.detail, /component:release-executor authorized execution under boundry\.governance@1\.0\.0 \(triggered by randy\)/);
+  assert.match(done.attempts.find((a) => a.step === "authorize")!.detail, /component:release-executor authorized execution under boundry\.governance@\d+\.\d+\.\d+ \(triggered by randy\)/);
   // Without its executor principal declared, nothing executes.
   const w2 = world(pkg({}));
   const m2 = new ReleaseManager({ ...w2.d, principals: PRINCIPALS.filter((p) => p.type !== "component") });

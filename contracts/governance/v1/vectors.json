@@ -1,6 +1,6 @@
 {
  "contract": "boundry.governance",
- "version": "1.0.0",
+ "version": "1.1.0",
  "cases": [
   {
    "name": "engineer may propose",
@@ -111,7 +111,11 @@
    },
    "expect": {
     "allow": false,
-    "code": "person-only"
+    "code": "person-only",
+    "codes": [
+     "person-only",
+     "forbidden-effect"
+    ]
    },
    "subject": {
     "state": "awaiting-approval",
@@ -141,7 +145,11 @@
    },
    "expect": {
     "allow": false,
-    "code": "person-only"
+    "code": "person-only",
+    "codes": [
+     "person-only",
+     "forbidden-effect"
+    ]
    },
    "subject": {
     "state": "awaiting-approval",
@@ -514,7 +522,7 @@
    "digest": "d1"
   },
   {
-   "name": "proposer withdraws",
+   "name": "proposer withdraws (an agent, its own proposal)",
    "operation": "withdraw",
    "principal": {
     "id": "bot",
@@ -1243,6 +1251,35 @@
    "expect": {
     "allow": true,
     "result": "awaiting-approval"
+   }
+  },
+  {
+   "name": "an agent may not withdraw someone else's proposal",
+   "operation": "withdraw",
+   "principal": {
+    "id": "bot",
+    "type": "agent",
+    "roles": [
+     "agent"
+    ]
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false
+   },
+   "expect": {
+    "allow": false,
+    "code": "forbidden-effect"
    }
   }
  ]

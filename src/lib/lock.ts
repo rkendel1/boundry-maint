@@ -8,6 +8,7 @@
  */
 import { mkdir, readFile, rename, rm, writeFile, mkdtemp } from "node:fs/promises";
 import { dirname, join } from "node:path";
+import { randomUUID } from "node:crypto";
 
 const alive = (pid: number) => { try { process.kill(pid, 0); return true; } catch (e) { return (e as NodeJS.ErrnoException).code === "EPERM"; } };
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -28,11 +29,18 @@ async function tryAcquire(path: string): Promise<boolean> {
       if (pid === process.pid || alive(pid)) break; // held (by another caller in this process, or a live process)
       // Stale: its holder died. Two processes clearing the same stale lock at once could remove each other's
       // fresh lock; this needs a crash plus a simultaneous retry, and is accepted (documented, not hidden).
-      await rm(path, { recursive: true, force: true });
+      await discard(path);
     }
   }
   await rm(tmp, { recursive: true, force: true });
   return false;
+}
+
+/** Move a lock directory out of the way in one rename, then remove it at leisure. */
+async function discard(path: string): Promise<void> {
+  const tomb = `${path}.gone-${process.pid}-${randomUUID()}`;
+  try { await rename(path, tomb); } catch { return; } // already gone
+  await rm(tomb, { recursive: true, force: true });
 }
 
 export class LockHeld extends Error { readonly lock: string; constructor(lock: string) { super(`lock held: ${lock}`); this.lock = lock; } }
@@ -51,6 +59,9 @@ export async function withLocks<T>(paths: string[], f: () => Promise<T>, opts: {
     }
     return await f();
   } finally {
-    for (const p of held.reverse()) { local.delete(p); await rm(p, { recursive: true, force: true }); }
+    // Release atomically: rename the lock away, then delete it. Deleting in place would empty the directory
+    // first (pid file, then the directory), and another caller's rename onto the momentarily empty directory
+    // would succeed, only to have its fresh lock deleted by this rm.
+    for (const p of held.reverse()) { await discard(p); local.delete(p); }
   }
 }
