@@ -167,7 +167,7 @@ try {
     const pub = doc.versions[pp.proposedVersion];
     if (!pub) { regOut.push({ package: p.name, version: pp.proposedVersion, present: false }); continue; }
     const tarball = Buffer.from(await (await fetch(pub.dist.tarball)).arrayBuffer());
-    regOut.push({ package: p.name, version: pp.proposedVersion, latest: doc["dist-tags"].latest, integrity: pub.dist.integrity, integrityMatchesBuiltArtifact: pub.dist.integrity === art?.sha512Integrity, tarballSha256: sha256(tarball), bytesMatchBuiltArtifact: sha256(tarball) === art?.sha256, earlierVersionsUntouched: Object.entries(seeded[p.name]!).every(([x, s]) => doc.versions[x]?.dist?.integrity === s.npmjsIntegrity) });
+    regOut.push({ package: p.name, version: pp.proposedVersion, latest: doc["dist-tags"].latest, integrity: pub.dist.integrity, integrityMatchesBuiltArtifact: pub.dist.integrity === art?.integrity, tarballSha256: sha256(tarball), bytesMatchBuiltArtifact: sha256(tarball) === art?.sha256, earlierVersionsUntouched: Object.entries(seeded[p.name]!).every(([x, s]) => doc.versions[x]?.dist?.integrity === s.npmjsIntegrity) });
   }
   v.registry = regOut;
   const ev: any = await (await fetch(`http://127.0.0.1:21090/v1/runs/${done.facts.build?.runId}/evidence`, { headers: { authorization: `Bearer ${operator}` } })).json();

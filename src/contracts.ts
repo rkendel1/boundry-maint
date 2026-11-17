@@ -693,12 +693,50 @@ export const ReleaseState = z.enum([
 ]);
 export type ReleaseState = z.infer<typeof ReleaseState>;
 
+/** passed / failed / deferred (runs later, says when) / unavailable (could not be determined now) / not-applicable. */
+export const ValidationOutcome = z.enum(["passed", "failed", "deferred", "unavailable", "not-applicable"]);
+export const ValidationResult = z.object({ check: z.string(), outcome: ValidationOutcome, detail: z.string() });
+export type ValidationResult = z.infer<typeof ValidationResult>;
+
+/** A manifest that depends on a released package. Declared requirement and resolved version are separate facts. */
+export const Dependent = z.object({
+  package: z.string().describe("The dependent (package or project name)"),
+  where: z.string().describe("repository:manifest path"),
+  dependency: z.string().describe("The released package it depends on"),
+  declared: z.string().describe("The requirement its manifest declares"),
+  resolved: z.string().nullable().describe("The version its lockfile resolved (null: no lockfile entry observed)"),
+  accepts: z.boolean().describe("Whether the declared requirement accepts the new version"),
+  effect: z.string(),
+});
+export type Dependent = z.infer<typeof Dependent>;
+
+/** A change a consumer needs, proposed for its own plan and approval. Never applied by the release. */
+export const DownstreamProposal = z.object({
+  consumer: z.string(), where: z.string(), dependency: z.string(), toVersion: z.string(),
+  kind: z.enum(["requirement-change", "lockfile-update"]),
+  from: z.string().describe("The declared requirement (requirement-change) or the resolved version (lockfile-update)"),
+  to: z.string(),
+  state: z.literal("proposed"),
+  note: z.string(),
+});
+
+/** One observation of one consumer, append-only. Installation, adoption and verification are distinct facts. */
+export const ConsumerObservation = z.object({
+  at: IsoDate, consumer: z.string(), where: z.string(), dependency: z.string(), released: z.string(),
+  basis: z.string().describe("Where the observation came from (e.g. Maintenance scan at <time>)"),
+  installation: z.object({ declared: z.string().nullable(), resolved: z.string().nullable() }),
+  adoption: z.enum(["adopted", "not-adopted", "unknown"]).describe("adopted: the resolved version is the released one (or newer)"),
+  verification: z.enum(["verified", "unverified", "failed"]).describe("verified only with evidence that the consumer's own checks passed on the released version"),
+  verificationEvidence: z.string().nullable(),
+});
+
 export const ReleasePackagePlan = z.object({
   package: Id,
   name: z.string(),
   registry: Registry,
   directory: z.string(),
-  registryVersions: z.object({ count: z.number().int(), highest: z.string().nullable(), latestTag: z.string().nullable(), observedAt: IsoDate }),
+  registryVersions: z.object({ count: z.number().int(), highest: z.string().nullable(), latestTag: z.string().nullable(), yanked: z.array(z.string()).default([]), observedAt: IsoDate }),
+  inherited: z.boolean().default(false).describe("Cargo: the version comes from [workspace.package] and is edited there"),
   repositoryVersion: z.string().nullable(),
   proposedVersion: z.string(),
   tag: z.string(),
@@ -719,7 +757,10 @@ export const ReleasePlan = z.object({
   reason: z.string().nullable(),
   packages: z.array(ReleasePackagePlan).min(1),
   decision: z.array(z.string()).describe("Why these versions, in words"),
-  dependents: z.array(z.object({ package: z.string(), where: z.string(), declared: z.string(), effect: z.string() })).describe("Coordinated follow-ups. Never published automatically."),
+  dependents: z.array(Dependent).describe("Who depends on the released packages. Never changed or published by this release."),
+  checks: z.array(ValidationResult).describe("Every validation, with its outcome. Failed checks refuse the plan; deferred ones say when they run"),
+  unknowns: z.array(z.string()).describe("What the plan could not establish, stated rather than assumed"),
+  impactFingerprint: z.string().describe("sha256 of the facts the impact assessment used; reassessed before approval and before execution"),
   releaseCommit: z.object({
     message: z.string(),
     files: z.array(z.string()),
@@ -749,17 +790,19 @@ export const ReleaseRecord = z.object({
     build: z
       .object({
         system: z.string(), runId: z.string(), evidenceUrl: z.string().nullable(),
-        artifacts: z.array(z.object({ package: Id, file: z.string(), sha256: z.string(), sha512Integrity: z.string(), size: z.number().int() })),
+        artifacts: z.array(z.object({ package: Id, file: z.string(), sha256: z.string(), integrity: z.string().describe("The registry's identity for these bytes: npm sha512 SRI, crates sha256 cksum"), size: z.number().int() })),
         container: z.object({ name: z.string(), sha256: z.string() }).nullable(),
       })
       .nullable(),
     tags: z.array(z.object({ name: z.string(), target: z.string() })),
     published: z.array(z.object({ package: Id, version: z.string(), integrity: z.string(), alreadyPresent: z.boolean() })),
-    registryVerification: z.array(z.object({ package: Id, version: z.string(), integrity: z.string(), tarballSha256: z.string(), distTagPointsHere: z.boolean(), at: IsoDate })),
+    registryVerification: z.array(z.object({ package: Id, version: z.string(), integrity: z.string(), tarballSha256: z.string(), distTagPointsHere: z.boolean().nullable().describe("null: the registry has no dist-tags (crates)"), at: IsoDate })),
     githubReleases: z.array(z.object({ package: Id, url: z.string(), tag: z.string(), alreadyPresent: z.boolean() })).describe("One per released package tag"),
   }),
   failure: z.object({ at: ReleaseState, reason: z.string(), recoverable: z.boolean(), when: IsoDate }).nullable(),
   history: z.array(z.object({ at: IsoDate, state: ReleaseState, note: z.string() })),
-  attempts: z.array(z.object({ at: IsoDate, step: z.string(), outcome: z.enum(["done", "already-done", "failed", "refused"]), detail: z.string() })),
+  attempts: z.array(z.object({ at: IsoDate, step: z.string(), outcome: z.enum(["done", "already-done", "failed", "refused", "skipped"]), detail: z.string() })),
+  downstream: z.array(DownstreamProposal).default([]).describe("Consumer changes this release makes necessary, proposed after release"),
+  consumers: z.array(ConsumerObservation).default([]).describe("Append-only consumer observations after release"),
 });
 export type ReleaseRecord = z.infer<typeof ReleaseRecord>;

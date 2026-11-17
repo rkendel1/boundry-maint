@@ -7,7 +7,9 @@ import { AsyncLocalStorage } from "node:async_hooks";
 import { withLocks } from "../lib/lock.ts";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
-import { mkdtemp, writeFile, rm, mkdir } from "node:fs/promises";
+import { mkdtemp, writeFile, rm, mkdir, readFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { parse as parseToml } from "smol-toml";
 import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
 
@@ -16,19 +18,29 @@ const pexec = promisify(execFile);
 export class Unavailable extends Error {}
 export class Refused extends Error {}
 
-// ───────── npm registry ─────────
-export interface RegistryVersion { version: string; integrity: string | null; shasum: string | null; tarball: string | null }
-export interface RegistryState { versions: string[]; distTags: Record<string, string> }
+// ───────── registries (one adapter per registry; each reports only what its registry says) ─────────
+/**
+ * integrity: the registry's own content identity. npm: the SRI sha512 of the tarball. crates.io: the sha256
+ * hex checksum ("cksum") of the .crate.
+ */
+export interface RegistryVersion { version: string; integrity: string | null; shasum: string | null; tarball: string | null; yanked: boolean }
+/** versions: every version ever published, yanked included (a yanked version is never reused). */
+export interface RegistryState { versions: string[]; yanked: string[]; distTags: Record<string, string> }
 export interface RegistryAdapter {
   readonly url: string;
+  readonly kind: "npm" | "crates";
   state(name: string): Promise<RegistryState | null>; // null = package does not exist
   version(name: string, version: string): Promise<RegistryVersion | null>;
-  publish(tarballPath: string, distTag: string): Promise<void>;
+  publish(artifactPath: string, opts: { distTag: string }): Promise<void>;
   download(url: string): Promise<Buffer>;
+  /** The integrity this registry would record for these exact bytes. */
+  integrityOf(bytes: Buffer): string;
 }
 
 export class NpmRegistry implements RegistryAdapter {
   readonly url: string;
+  readonly kind = "npm" as const;
+  integrityOf(bytes: Buffer) { return `sha512-${createHash("sha512").update(bytes).digest("base64")}`; }
   readonly #token: string | null;
   constructor(url: string, token: string | null) { this.url = url.replace(/\/$/, ""); this.#token = token; }
   #doc = (name: string) => `${this.url}/${name.startsWith("@") ? "@" + encodeURIComponent(name.slice(1)) : encodeURIComponent(name)}`;
@@ -45,15 +57,17 @@ export class NpmRegistry implements RegistryAdapter {
     const res = await this.#get(this.#doc(name));
     if (!res) return null;
     const d: any = await res.json();
-    return { versions: Object.keys(d.versions ?? {}), distTags: d["dist-tags"] ?? {} };
+    // npm has no yank: an unpublished version disappears from "versions" but stays in "time" and can never be reused.
+    const ever = new Set([...Object.keys(d.versions ?? {}), ...Object.keys(d.time ?? {}).filter((k) => k !== "created" && k !== "modified")]);
+    return { versions: [...ever], yanked: [], distTags: d["dist-tags"] ?? {} };
   }
   async version(name: string, version: string): Promise<RegistryVersion | null> {
     const res = await this.#get(this.#doc(name));
     if (!res) return null;
     const v = (await res.json() as any).versions?.[version];
-    return v ? { version, integrity: v.dist?.integrity ?? null, shasum: v.dist?.shasum ?? null, tarball: v.dist?.tarball ?? null } : null;
+    return v ? { version, integrity: v.dist?.integrity ?? null, shasum: v.dist?.shasum ?? null, tarball: v.dist?.tarball ?? null, yanked: false } : null;
   }
-  async publish(tarballPath: string, distTag: string): Promise<void> {
+  async publish(tarballPath: string, { distTag }: { distTag: string }): Promise<void> {
     if (!this.#token) throw new Refused("no publish credential configured for this registry");
     const dir = await mkdtemp(join(tmpdir(), "boundry-npmrc-"));
     const rc = join(dir, "npmrc");
@@ -75,6 +89,107 @@ export class NpmRegistry implements RegistryAdapter {
     if (!res) throw new Error(`tarball not found: ${url}`);
     return Buffer.from(await res.arrayBuffer());
   }
+}
+
+/**
+ * crates.io (or any Cargo registry with a sparse index and the crates.io publish API). Reads the sparse index,
+ * which is what Cargo itself resolves from; publishes the exact .crate bytes through PUT /api/v1/crates/new with
+ * metadata derived from the normalized Cargo.toml inside that .crate.
+ */
+export class CratesRegistry implements RegistryAdapter {
+  readonly url: string; readonly kind = "crates" as const;
+  readonly #index: string; readonly #token: string | null;
+  #config: { dl: string; api?: string } | null = null;
+  /** api: e.g. https://crates.io; index: e.g. https://index.crates.io (sparse, without the "sparse+" prefix). */
+  constructor(api: string, index: string, token: string | null) { this.url = api.replace(/\/$/, ""); this.#index = index.replace(/\/$/, ""); this.#token = token; }
+  integrityOf(bytes: Buffer) { return createHash("sha256").update(bytes).digest("hex"); }
+  async #fetch(url: string, init: RequestInit = {}): Promise<Response> {
+    try { return await fetch(url, { ...init, headers: { "user-agent": "boundry-maintenance (release manager)", ...(init.headers ?? {}) }, signal: AbortSignal.timeout(30_000) }); }
+    catch (e) { throw new Unavailable(`crates registry unreachable: ${(e as Error).message}`); }
+  }
+  static indexPath(name: string): string {
+    const n = name.toLowerCase();
+    if (n.length <= 2) return `${n.length}/${n}`;
+    if (n.length === 3) return `3/${n[0]}/${n}`;
+    return `${n.slice(0, 2)}/${n.slice(2, 4)}/${n}`;
+  }
+  async #entries(name: string): Promise<any[] | null> {
+    const r = await this.#fetch(`${this.#index}/${CratesRegistry.indexPath(name)}`, { headers: { "cache-control": "no-cache" } });
+    if (r.status === 404 || r.status === 410) return null;
+    if (r.status >= 500 || r.status === 429) throw new Unavailable(`crates index answered ${r.status}`);
+    if (!r.ok) throw new Error(`crates index answered ${r.status}`);
+    return (await r.text()).split("\n").filter(Boolean).map((l) => JSON.parse(l));
+  }
+  async #dl(name: string, version: string): Promise<string> {
+    if (!this.#config) {
+      const r = await this.#fetch(`${this.#index}/config.json`);
+      if (!r.ok) throw new Unavailable(`crates index config answered ${r.status}`);
+      this.#config = await r.json() as { dl: string; api?: string };
+    }
+    const dl = this.#config.dl;
+    const lower = name.toLowerCase();
+    if (/\{(crate|version|prefix|lowerprefix|sha256-checksum)\}/.test(dl))
+      return dl.replace("{crate}", name).replace("{version}", version).replace("{prefix}", CratesRegistry.indexPath(name).replace(/\/[^/]+$/, "")).replace("{lowerprefix}", CratesRegistry.indexPath(lower).replace(/\/[^/]+$/, ""));
+    return `${dl.replace(/\/$/, "")}/${name}/${version}/download`;
+  }
+  async state(name: string): Promise<RegistryState | null> {
+    const e = await this.#entries(name);
+    if (!e) return null;
+    return { versions: e.map((x) => x.vers), yanked: e.filter((x) => x.yanked).map((x) => x.vers), distTags: {} };
+  }
+  async version(name: string, version: string): Promise<RegistryVersion | null> {
+    const e = (await this.#entries(name))?.find((x) => x.vers === version);
+    return e ? { version, integrity: e.cksum, shasum: null, tarball: await this.#dl(name, version), yanked: !!e.yanked } : null;
+  }
+  async publish(cratePath: string): Promise<void> {
+    if (!this.#token) throw new Refused("no publish credential configured for this registry");
+    const bytes = await readFile(cratePath);
+    const meta = Buffer.from(JSON.stringify(await crateMetadata(cratePath, this.url)));
+    const u32 = (n: number) => { const b = Buffer.alloc(4); b.writeUInt32LE(n); return b; };
+    const body = Buffer.concat([u32(meta.length), meta, u32(bytes.length), bytes]);
+    const r = await this.#fetch(`${this.url}/api/v1/crates/new`, { method: "PUT", headers: { authorization: this.#token, "content-type": "application/octet-stream" }, body });
+    const text = await r.text();
+    if (r.ok) return;
+    if (r.status >= 500 || r.status === 429) throw new Unavailable(`crates registry answered ${r.status} during publish`);
+    if (/already (exists|uploaded)|is already uploaded/i.test(text)) throw new Refused("registry refused: version already present");
+    throw new Error(`crates registry refused publish: ${r.status} ${text.slice(0, 300)}`);
+  }
+  async download(url: string): Promise<Buffer> {
+    const r = await this.#fetch(url);
+    if (!r.ok) throw r.status >= 500 ? new Unavailable(`download answered ${r.status}`) : new Error(`crate not found: ${url}`);
+    return Buffer.from(await r.arrayBuffer());
+  }
+}
+
+const CRATES_IO_INDEX = "https://github.com/rust-lang/crates.io-index";
+/** The publish API's metadata, from the normalized Cargo.toml that `cargo package` wrote into the .crate. */
+export async function crateMetadata(cratePath: string, registryApi: string): Promise<Record<string, unknown>> {
+  const list = (await pexec("tar", ["-tzf", cratePath])).stdout.split("\n").filter(Boolean);
+  const manifestPath = list.find((p) => /^[^/]+\/Cargo\.toml$/.test(p));
+  if (!manifestPath) throw new Error(`${cratePath} has no Cargo.toml`);
+  const t: any = parseToml((await pexec("tar", ["-xzOf", cratePath, manifestPath])).stdout);
+  const pkg = t.package ?? {};
+  const toCratesIo = /^https:\/\/crates\.io\/?$/.test(registryApi);
+  const deps: unknown[] = [];
+  const add = (table: any, kind: string, target: string | null) => {
+    for (const [key, v] of Object.entries<any>(table ?? {})) {
+      const d = typeof v === "string" ? { version: v } : v;
+      const req = String(d.version ?? "*");
+      deps.push({
+        name: d.package ?? key, version_req: /^\d/.test(req) ? `^${req}` : req, features: d.features ?? [], optional: !!d.optional,
+        default_features: d["default-features"] ?? d.default_features ?? true, target, kind,
+        registry: d["registry-index"] ?? (toCratesIo ? null : CRATES_IO_INDEX), ...(d.package ? { explicit_name_in_toml: key } : {}),
+      });
+    }
+  };
+  add(t.dependencies, "normal", null); add(t["dev-dependencies"], "dev", null); add(t["build-dependencies"], "build", null);
+  for (const [target, x] of Object.entries<any>(t.target ?? {})) { add(x.dependencies, "normal", target); add(x["dev-dependencies"], "dev", target); add(x["build-dependencies"], "build", target); }
+  return {
+    name: pkg.name, vers: pkg.version, deps, features: t.features ?? {}, authors: pkg.authors ?? [], description: pkg.description ?? null,
+    documentation: pkg.documentation ?? null, homepage: pkg.homepage ?? null, readme: null, readme_file: pkg.readme ?? null,
+    keywords: pkg.keywords ?? [], categories: pkg.categories ?? [], license: pkg.license ?? null, license_file: pkg["license-file"] ?? null,
+    repository: pkg.repository ?? null, badges: {}, links: pkg.links ?? null, rust_version: pkg["rust-version"] ?? null,
+  };
 }
 
 // ───────── Git (authority for commits and tags) ─────────

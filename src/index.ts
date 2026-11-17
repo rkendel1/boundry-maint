@@ -186,12 +186,18 @@ async function release() {
       return;
     }
     case "show": console.log(approvalRequest(await m.load(need(id, "<release id>")))); return;
+    case "consumers": {
+      const file = (await readJsonIfValid(join(values.data!, "installations.json"), InstallationsFile));
+      const r = await m.observeConsumers(need(id, "<release id>"), file?.installations ?? [], `Maintenance scan at ${file?.generatedAt ?? "(no scan data)"}`);
+      console.log(approvalRequest(r));
+      return;
+    }
     case "statement": process.stdout.write(await m.statement(need(id, "<release id>"), need(values.as, "--as <your principal id>"))); return;
     case "approve": { const r = await m.approve(need(id, "<release id>"), need(values.as, "--as <name>"), need(values.digest, "--digest <plan digest>"), values.signature ? await readFile(values.signature, "utf8") : undefined); console.log(`${r.id}: ${r.state} (${r.approvals.length} of ${r.plan.requiredApprovals} approvals: ${r.approvals.map((a) => a.by).join(", ")})`); return; }
     case "revoke": { const r = await m.revoke(need(id, "<release id>"), need(values.as, "--as <name>"), values.reason ?? "revoked"); console.log(`${r.id}: ${r.state}`); return; }
     case "execute": { const r = await m.execute(need(id, "<release id>"), need(values.as, "--as <principal id>")); console.log(approvalRequest(r)); if (r.state !== "released") process.exitCode = 1; return; }
     case "list": for (const r of await m.list()) console.log(`${r.id.padEnd(40)} ${r.state.padEnd(18)} ${r.failure ? `(${r.failure.recoverable ? "blocked" : "stopped"}: ${r.failure.reason})` : ""}`); return;
-    default: throw new Error("usage: release plan --package <id> --bump <kind> --as <name> [--reason …] | show|list <id> | execute <id> --as <name> | statement <id> --as <name> | approve <id> --as <name> --digest <d> [--signature <file.sig>] | revoke <id> --as <name> [--reason …]");
+    default: throw new Error("usage: release plan --package <id> --bump <kind> --as <name> [--reason …] | show|list <id> | execute <id> --as <name> | statement <id> --as <name> | consumers <id> | approve <id> --as <name> --digest <d> [--signature <file.sig>] | revoke <id> --as <name> [--reason …]");
   }
 }
 

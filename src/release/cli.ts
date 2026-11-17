@@ -7,7 +7,7 @@ import { readFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { ReleaseManager } from "./manager.ts";
-import { NpmRegistry, GitCli, GitHubReleases, BoundryCiExecutor } from "./adapters.ts";
+import { NpmRegistry, CratesRegistry, GitCli, GitHubReleases, BoundryCiExecutor } from "./adapters.ts";
 import type { ReleaseRecord, PackageConfig, Installation, Principal } from "../contracts.ts";
 
 const secret = async (envName: string): Promise<string | null> => {
@@ -20,12 +20,16 @@ export async function releaseManager(root: string, dataDir: string, catalog: Pac
   const npmUrl = env.BOUNDRY_NPM_REGISTRY ?? "https://registry.npmjs.org";
   const npmToken = await secret("BOUNDRY_NPM_TOKEN_FILE");
   const gitToken = await secret("BOUNDRY_GIT_TOKEN_FILE");
+  const cratesToken = await secret("BOUNDRY_CRATES_TOKEN_FILE");
   const runtimeDir = env.BOUNDRY_RELEASE_RUNTIME ?? join(root, ".release-runtime");
   return new ReleaseManager({
     dataDir, runtimeDir, catalog, installations, principals,
     // Registries explicitly declared as test registries (comma-separated URLs). Everything else is production.
     testRegistries: (env.BOUNDRY_TEST_REGISTRIES ?? "").split(",").map((x) => x.trim()).filter(Boolean),
-    registry: () => new NpmRegistry(npmUrl, npmToken),
+    // One adapter per registry, each with its own credential.
+    registry: (p) => (p.registry === "crates"
+      ? new CratesRegistry(env.BOUNDRY_CRATES_API ?? "https://crates.io", env.BOUNDRY_CRATES_INDEX ?? "https://index.crates.io", cratesToken)
+      : new NpmRegistry(npmUrl, npmToken)),
     git: (repo) => new GitCli((env.BOUNDRY_GIT_URL_TEMPLATE ?? "https://github.com/{repo}.git").replace("{repo}", repo), join(runtimeDir, "git", repo.replace("/", "__")),
       { name: env.BOUNDRY_RELEASE_GIT_NAME ?? "Boundry Release", email: env.BOUNDRY_RELEASE_GIT_EMAIL ?? "release@boundry.invalid" },
       gitToken ? `Authorization: Basic ${Buffer.from(`x-access-token:${gitToken}`).toString("base64")}` : undefined),
@@ -47,7 +51,9 @@ export function approvalRequest(r: ReleaseRecord): string {
   L.push(`5. The registry is checked: it must serve ${p.packages.map((x) => x.proposedVersion).join(", ")} with the same integrity and the same bytes.`);
   L.push(p.githubRelease ? `6. A GitHub release is created for ${p.packages.map((x) => `\`${x.tag}\``).join(", ")}, citing the commit, artifact digests and registry integrity.` : "6. No GitHub release (policy).", "");
   L.push("## Why these versions", "", ...p.decision.map((d) => `- ${d}`), "");
-  L.push("## Who else is affected", "", ...(p.dependents.length ? p.dependents.map((d) => `- **${d.package}** (${d.where}, declares \`${d.declared}\`): ${d.effect}`) : ["- No dependents found."]), "", "Dependents are **not** changed or published by this release. Each needs its own release request.", "");
+  L.push("## Checks", "", "| Check | Outcome | Detail |", "|---|---|---|", ...p.checks.map((c) => `| ${c.check} | **${c.outcome}** | ${c.detail.replace(/\|/g, "\\|")} |`), "");
+  if (p.unknowns.length) L.push("## Not known", "", ...p.unknowns.map((u) => `- ${u}`), "");
+  L.push("## Who else is affected", "", ...(p.dependents.length ? p.dependents.map((d) => `- **${d.package}** (${d.where}): declares \`${d.declared}\` for ${d.dependency}, lockfile resolves ${d.resolved ? `\`${d.resolved}\`` : "(not observed)"}. ${d.effect}`) : ["- No dependents found."]), "", "Dependents are **not** changed or published by this release. After release, the changes they need are listed as proposals for their own plans.", "");
   L.push("## What approving does not allow", "", "- Any other version, commit, artifact, tag or registry than the ones above.", "- Publishing dependents, re-tagging, or overwriting a published version.", "- Continuing if the registry or the branch changes before publication: that requires a new plan.", "");
   L.push("## Approve", "", `Proposed by **${p.requestedBy}** (${p.requestedByType}), who may not approve it. Needs **${p.requiredApprovals}** approval(s) from distinct people${p.protected ? " holding the prod_approver role" : ""}. Eligible: ${p.approvers.filter((a) => a !== p.requestedBy).join(", ") || "nobody"}.`, "");
   if (r.approvals.length) L.push(`Approved so far: ${r.approvals.map((a) => `${a.by} (${a.authentication}, ${a.at})`).join(", ")}`, "");
@@ -59,8 +65,11 @@ export function approvalRequest(r: ReleaseRecord): string {
     if (r.facts.releaseCommit) L.push(`- Release commit: \`${r.facts.releaseCommit}\``);
     if (r.facts.build) L.push(`- Built by ${r.facts.build.system} run \`${r.facts.build.runId}\`: ${r.facts.build.artifacts.map((a) => `\`${a.file}\` sha256 \`${a.sha256}\``).join(", ")}`);
     for (const t of r.facts.tags) L.push(`- Tag \`${t.name}\` → \`${t.target.slice(0, 12)}\``);
-    for (const v of r.facts.registryVerification) L.push(`- Registry serves ${v.version}: integrity \`${v.integrity.slice(0, 24)}…\`, bytes sha256 \`${v.tarballSha256.slice(0, 16)}…\`, dist-tag ${v.distTagPointsHere ? "points here" : "does not point here"}`);
+    for (const v of r.facts.registryVerification) L.push(`- Registry serves ${v.version}: integrity \`${v.integrity.slice(0, 24)}…\`, bytes sha256 \`${v.tarballSha256.slice(0, 16)}…\`, ${v.distTagPointsHere === null ? "not yanked" : `dist-tag ${v.distTagPointsHere ? "points here" : "does not point here"}`}`);
     for (const g of r.facts.githubReleases) L.push(`- GitHub release: ${g.url}${g.alreadyPresent ? " (already existed)" : ""}`);
+    for (const a of r.attempts.filter((x) => x.outcome === "skipped")) L.push(`- Skipped ${a.step}: ${a.detail}`);
+    for (const d of r.downstream) L.push(`- Proposed for ${d.consumer} (${d.where}): ${d.kind} ${d.dependency} \`${d.from}\` → \`${d.to}\` (${d.state}; needs its own plan)`);
+    for (const c of r.consumers) L.push(`- Consumer ${c.consumer} (${c.where}) at ${c.at}: installed ${c.installation.declared ?? "?"} → resolved ${c.installation.resolved ?? "?"}; adoption **${c.adoption}**; verification **${c.verification}** (${c.basis})`);
     if (r.failure) L.push(`- **Stopped at ${r.failure.at}:** ${r.failure.reason} (${r.failure.recoverable ? "recoverable: run execute again" : "final"})`);
     L.push("");
   }

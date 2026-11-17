@@ -56,7 +56,7 @@ test("happy path: plan → approve → prepared → built → tagged → publish
   assert.equal(r.plan.packages[0]!.tag, "@demo/core@0.2.1");
   assert.deepEqual(r.plan.releaseCommit.files, ["package-lock.json", "packages/core/package.json"]);
   const dep = r.plan.dependents.find((d) => d.package === "@demo/client")!;
-  assert.match(dep.effect, /range \^0\.2\.0 accepts 0\.2\.1/);
+  assert.match(dep.effect, /requirement \^0\.2\.0 accepts 0\.2\.1/);
   await assert.rejects(w.m.approve(r.id, "mallory", r.planDigest), (e: any) => e instanceof ReleaseError && /unknown principal|not-eligible/.test(e.message));
   await assert.rejects(w.m.approve(r.id, "randy", "0".repeat(64)), /different plan/);
   await w.m.approve(r.id, "randy", r.planDigest);
@@ -71,7 +71,7 @@ test("happy path: plan → approve → prepared → built → tagged → publish
   assert.equal(JSON.parse(readBlob(w.repo.bare, head, "packages/client/package.json")).dependencies["@demo/core"], "^0.2.0", "dependents are never changed");
   assert.equal(tagsOf(w.repo.bare)["@demo/core@0.2.1"], head, "tag points at the exact release commit");
   const art = done.facts.build!.artifacts[0]!;
-  assert.equal(w.registry.pkgs.get("@demo/core")!.versions.get("0.2.1")!.integrity, art.sha512Integrity);
+  assert.equal(w.registry.pkgs.get("@demo/core")!.versions.get("0.2.1")!.integrity, art.integrity);
   assert.equal(w.registry.pkgs.has("@demo/client") && w.registry.pkgs.get("@demo/client")!.versions.size > 0, false, "dependent not published");
   assert.ok(done.facts.registryVerification[0]!.distTagPointsHere);
   assert.match(w.releases.lastBody, new RegExp(art.sha256));
@@ -122,9 +122,11 @@ test("3. tag collision: an existing tag at another commit is never moved", async
   const r = await planned(w);
   execFileSync("git", ["-C", w.repo.bare, "tag", "@demo/core@0.2.1", w.repo.head()]); // someone else's tag on the source commit
   const out = await w.m.execute(r.id, "randy");
-  assert.equal(out.state, "failed");
-  assert.match(out.failure!.reason, /already points at .* tags are never moved/);
-  assert.equal(w.registry.publishes, 0, "never published without its tag");
+  // Reassessed before execution: the tag appearing is a change of facts, so nothing starts at all.
+  assert.equal(out.state, "superseded");
+  assert.match(out.history.at(-1)!.note, /tag @demo\/core@0\.2\.1 now exists/);
+  assert.equal(execFileSync("git", ["-C", w.repo.bare, "rev-parse", "@demo/core@0.2.1^{commit}"], { encoding: "utf8" }).trim(), w.repo.head(), "the other tag is untouched");
+  assert.equal(w.registry.publishes, 0, "never published");
 });
 
 test("4. failed build: nothing tagged or published; retry after a fix completes with a new build attempt", async () => {
@@ -262,13 +264,13 @@ test("14. repository changes after approval: superseded, nothing pushed over the
   const moved = w.repo.push({ "README.md": "changed\n" }, "unrelated change");
   const out = await w.m.execute(r.id, "randy");
   assert.equal(out.state, "superseded");
-  assert.match(out.failure!.reason, /repository changed after approval|moved while releasing/);
+  assert.match(out.history.at(-1)!.note, /main moved from/);
   assert.equal(w.repo.head(), moved);
 });
 
 test("workspace sibling with an exact pin: a lone release is refused (it would break npm ci); nothing is added silently", async () => {
   const w = world({ clientPin: "0.2.0" });
-  await assert.rejects(w.m.plan({ packages: ["demo-core"], bump: "patch", requestedBy: "grace" }), (e: any) => e.code === "decision" && /break the workspace install/.test(e.message) && /--package demo-client/.test(e.message));
+  await assert.rejects(w.m.plan({ packages: ["demo-core"], bump: "patch", requestedBy: "grace" }), (e: any) => e.code === "decision" && /does not accept 0\.2\.1/.test(e.message) && /--package demo-client/.test(e.message));
   // The failure this prevents, reproduced: without the planner check the release build's npm ci fails.
   const lone = makeRepo({ clientPin: "0.2.0" });
   // Exactly what a lone release commit would contain: the manifest and the lockfile bumped.

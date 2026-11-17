@@ -22,14 +22,14 @@ import { promisify } from "node:util";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import semver from "semver";
-import { ReleaseRecord, ReleasePolicy, type Principal, type PackageConfig, type ReleaseBump, type ReleasePlan, type ReleaseState, type Installation } from "../contracts.ts";
+import { ReleaseRecord, ReleasePolicy, type Principal, type PackageConfig, type ReleaseBump, type ReleasePlan, type ReleaseState, type Installation, type ValidationResult, type Dependent } from "../contracts.ts";
 import { writeAllAtomic, stableJson } from "../lib/files.ts";
 import { withLocks, LockHeld } from "../lib/lock.ts";
 import { allocate, tagFor, AllocationError } from "./version.ts";
-import { editPackageJson, editPackageLock, dependentEffect, npmDependency, type Dependent } from "./manifests.ts";
+import { ecosystemFor, type Ecosystem } from "./ecosystems.ts";
 import { CONTRACT_VERSION, authorize, can, decide, counted, principal, requiredApprovals, GovernanceError, type Subject } from "../governance/rules.ts";
 import { approvalStatement, verifyApproval } from "../governance/signatures.ts";
-import { Unavailable, Refused, type RegistryAdapter, type GitAuthority, type ReleasesAdapter, type Executor } from "./adapters.ts";
+import { Unavailable, Refused, type RegistryAdapter, type RegistryState, type GitAuthority, type ReleasesAdapter, type Executor } from "./adapters.ts";
 
 const pexec = promisify(execFile);
 const TERMINAL: ReleaseState[] = ["released", "failed", "cancelled", "superseded"];
@@ -68,8 +68,6 @@ const canonical = (v: unknown): string => JSON.stringify(sort(v));
 const sort = (v: unknown): unknown => Array.isArray(v) ? v.map(sort) : v && typeof v === "object" ? Object.fromEntries(Object.keys(v as object).sort().map((k) => [k, sort((v as any)[k])])) : v;
 export const planDigestOf = (p: ReleasePlan) => createHash("sha256").update(canonical(p)).digest("hex");
 const sha256 = (b: Buffer) => createHash("sha256").update(b).digest("hex");
-const integrity = (b: Buffer) => `sha512-${createHash("sha512").update(b).digest("base64")}`;
-const tgzName = (name: string, version: string) => `${name.replace(/^@/, "").replace("/", "-")}-${version}.tgz`;
 
 export class ReleaseManager {
   readonly d: Required<Omit<ManagerDeps, "installations">> & { installations: Installation[] };
@@ -100,7 +98,6 @@ export class ReleaseManager {
       if (!p) throw new ReleaseError("invalid", `unknown package ${id}`);
       if (p.ownership !== "owned") throw new ReleaseError("not-allowed", `${p.name} is ${p.ownership}, not owned: Boundry only releases owned packages`);
       if (!p.release) throw new ReleaseError("not-allowed", `${p.name} has no release policy in config/packages.json; releases are disabled for it`);
-      if (p.registry !== "npm") throw new ReleaseError("unsupported", `${p.name}: publishing to ${p.registry} is not available yet (npm only)`);
       if (!p.repository) throw new ReleaseError("invalid", `${p.name} has no repository`);
       return p as PackageConfig & { release: ReleasePolicy; repository: string };
     }).sort((a, b) => a.id.localeCompare(b.id));
@@ -108,90 +105,100 @@ export class ReleaseManager {
     if (!first) throw new ReleaseError("invalid", "a release needs at least one package");
     const repo = first.repository;
     if (pkgs.some((p) => p.repository !== repo)) throw new ReleaseError("invalid", "packages released together must share one repository (one release commit)");
+    if (pkgs.some((p) => p.registry !== first.registry)) throw new ReleaseError("invalid", "packages released together must go to one registry kind (npm or crates)");
     const branch = first.release.branch;
     if (pkgs.some((p) => p.release.branch !== branch)) throw new ReleaseError("invalid", "packages released together must share a release branch");
     for (const r of await this.list()) {
       if (!TERMINAL.includes(r.state) && r.plan.packages.some((x) => pkgs.some((p) => p.id === x.package))) throw new ReleaseError("busy", `release ${r.id} is ${r.state}; finish or cancel it first`);
     }
-
+    const eco = ecosystemFor(first.registry);
     const git = this.d.git(repo);
     const source = await git.head(branch);
     if (!source) throw new ReleaseError("invalid", `${repo} has no branch ${branch}`);
     const tags = [...(await git.tags()).keys()];
     const now = this.d.now();
+    const rootText = await git.read(source, eco.manifestPath("."));
+    const lockText = await git.read(source, eco.lockfile);
+    const checks: ValidationResult[] = [];
+    const unknowns: string[] = [];
+    const check = (c: string, outcome: ValidationResult["outcome"], detail: string) => checks.push({ check: c, outcome, detail });
     const decision: string[] = [];
     const planned: ReleasePlan["packages"] = [];
+
     for (const p of pkgs) {
       const dir = p.directory ?? ".";
-      const manifestPath = dir === "." ? "package.json" : `${dir}/package.json`;
+      const manifestPath = eco.manifestPath(dir);
       const manifestText = await git.read(source, manifestPath);
       if (!manifestText) throw new ReleaseError("invalid", `${p.name}: ${manifestPath} not found at ${source.slice(0, 12)}`);
-      const manifest = JSON.parse(manifestText);
-      if (manifest.name !== p.name) throw new ReleaseError("invalid", `${manifestPath} is "${manifest.name}", but the catalog says ${p.name}`);
-      if (manifest.private) throw new ReleaseError("not-allowed", `${p.name} is marked private in ${manifestPath}`);
+      const m = eco.readManifest(manifestText, rootText);
+      if (m.name !== p.name) throw new ReleaseError("invalid", `${manifestPath} is "${m.name}", but the catalog says ${p.name}`);
+      check(`${p.name}: publishable`, m.unpublishable ? "failed" : "passed", m.unpublishable ? `${manifestPath} marks it unpublishable (${eco.id === "npm" ? '"private": true' : "publish = false"})` : `${manifestPath} allows publishing`);
       const reg = this.d.registry(p);
-      const st = await reg.state(p.name).catch((e) => { throw new ReleaseError("invalid", `cannot plan: ${(e as Error).message}`); });
+      let st: RegistryState | null;
+      try { st = await reg.state(p.name); }
+      catch (e) { check(`${p.name}: registry`, "unavailable", (e as Error).message); throw new ReleaseError("invalid", `cannot plan without the registry: ${(e as Error).message}`); }
+      check(`${p.name}: registry`, "passed", `${reg.url} answered: ${st ? `${st.versions.length} version(s) ever published${st.yanked.length ? `, ${st.yanked.length} yanked (${st.yanked.join(", ")})` : ""}` : "never published"}`);
+      if (lockText) {
+        const locked = eco.lockedVersion(lockText, dir, p.name);
+        if (locked === null) check(`${p.name}: manifest and ${eco.lockfile} agree`, "unavailable", `${eco.lockfile} has no single local entry for ${p.name}`);
+        else check(`${p.name}: manifest and ${eco.lockfile} agree`, locked === m.version ? "passed" : "failed", locked === m.version ? `both say ${m.version}` : `${manifestPath} declares ${m.version} but ${eco.lockfile} records ${locked}: the lockfile is stale or the manifest was edited without it; fix the repository first`);
+      } else check(`${p.name}: manifest and lockfile agree`, "not-applicable", `no ${eco.lockfile} at the source commit`);
       let alloc;
-      try { alloc = allocate(p.name, { published: st?.versions ?? [], repositoryVersion: manifest.version ?? null, tags }, req.bump, p.release); }
+      try { alloc = allocate(p.name, { published: st?.versions ?? [], repositoryVersion: m.version, tags, yanked: st?.yanked ?? [] }, req.bump, p.release); }
       catch (e) { if (e instanceof AllocationError) throw new ReleaseError(e.kind === "collision" ? "collision" : e.kind === "decision" ? "decision" : "not-allowed", e.message); throw e; }
       decision.push(...alloc.explanation);
+      check(`${p.name}: version ${alloc.version} free`, "passed", `not on the registry (yanked versions included) and tag ${alloc.tag} does not exist`);
       const highest = (st?.versions ?? []).filter((v) => semver.valid(v)).sort(semver.rcompare)[0] ?? null;
       planned.push({
         package: p.id, name: p.name, registry: p.registry, directory: dir,
-        registryVersions: { count: st?.versions.length ?? 0, highest, latestTag: st?.distTags.latest ?? null, observedAt: now },
-        repositoryVersion: manifest.version ?? null, proposedVersion: alloc.version, tag: alloc.tag,
+        registryVersions: { count: st?.versions.length ?? 0, highest, latestTag: st?.distTags.latest ?? null, yanked: [...(st?.yanked ?? [])].sort(), observedAt: now },
+        inherited: m.inherited,
+        repositoryVersion: m.version, proposedVersion: alloc.version, tag: alloc.tag,
         distTag: semver.prerelease(alloc.version) ? "next" : p.release.distTag, destination: reg.url, production: !this.d.testRegistries.map(norm).includes(norm(reg.url)),
       });
     }
-    // Workspace siblings: npm resolves them through the workspace link, so an exact pin on the old version
-    // breaks the install (`npm ci`: "Missing ... from lock file") the moment the released package is bumped.
-    const dependents: Dependent[] = [];
-    const pins: ReleasePlan["releaseCommit"]["pins"] = [];
+
+    // Cargo: a version inherited from [workspace.package] is one version for every crate that inherits it.
     const mustJoin: string[] = [];
-    const rootManifest = await git.read(source, "package.json");
-    const ws: string[] = rootManifest ? [].concat(JSON.parse(rootManifest).workspaces?.packages ?? JSON.parse(rootManifest).workspaces ?? []) : [];
-    for (const pattern of ws) {
-      const m = /^(.*)\/\*$/.exec(pattern);
-      const parent = m?.[1];
-      const dirs = parent !== undefined ? ((await git.list(source, parent)) ?? []).map((d) => `${parent}/${d}`) : [pattern];
-      for (const d of dirs) {
-        const text = await git.read(source, `${d}/package.json`);
-        if (!text) continue;
-        const holder = JSON.parse(text).name ?? d;
-        const inPlan = planned.some((p) => p.directory === d);
-        for (const pp of planned) {
-          if (pp.directory === d) continue;
-          const declared = npmDependency(text, pp.name);
-          if (!declared) continue;
-          const exact = semver.valid(declared) !== null;
-          const accepts = exact ? semver.eq(declared, pp.proposedVersion) : !!semver.validRange(declared) && semver.satisfies(pp.proposedVersion, declared);
-          if (inPlan && exact && !accepts) { pins.push({ in: d, dependency: pp.name, from: declared, to: pp.proposedVersion }); continue; }
-          if (!accepts) {
-            const id = this.d.catalog.find((c) => c.name === holder)?.id ?? holder;
-            mustJoin.push(`${holder} (${d}/package.json declares ${pp.name} "${declared}") → add --package ${id}`);
-            continue;
-          }
-          dependents.push(dependentEffect(holder, `${repo}:${d}/package.json`, declared, pp.registryVersions.highest ?? pp.repositoryVersion ?? "0.0.0", pp.proposedVersion));
+    const members = await workspaceMembers(git, source, eco, rootText);
+    if (planned.some((p) => p.inherited)) {
+      const versions = [...new Set(planned.filter((p) => p.inherited).map((p) => p.proposedVersion))];
+      if (versions.length > 1) throw new ReleaseError("decision", `these crates inherit one workspace version, but their registries put them at different next versions (${planned.filter((p) => p.inherited).map((p) => `${p.name} → ${p.proposedVersion}`).join(", ")}). Choose one version deliberately (bump "repository" after setting [workspace.package] version), Boundry will not pick one`);
+      for (const d of members) {
+        const text = await git.read(source, eco.manifestPath(d));
+        const mm = text ? eco.readManifest(text, rootText) : null;
+        if (mm?.inherited && !mm.unpublishable && !planned.some((p) => p.directory === d)) {
+          const id = this.d.catalog.find((c) => c.name === mm.name && c.registry === first.registry)?.id ?? mm.name;
+          mustJoin.push(`${mm.name} (${d}) also inherits [workspace.package] version ${planned.find((p) => p.inherited)!.repositoryVersion}; bumping it changes this crate's version too → add --package ${id}, or give it its own version`);
         }
       }
+      check("workspace version inheritance", mustJoin.length ? "failed" : "passed", mustJoin.length ? `${mustJoin.length} other publishable crate(s) inherit the same version` : "every publishable crate that inherits the workspace version is in this release");
+    } else check("workspace version inheritance", "not-applicable", "no released package inherits its version");
+
+    const impact = await this.#impact(git, source, eco, rootText, lockText, members, planned, repo);
+    mustJoin.push(...impact.mustJoin);
+    check("workspace install after the release commit", impact.mustJoin.length ? "failed" : "passed", impact.mustJoin.length ? `${impact.mustJoin.length} sibling requirement(s) would not accept the new version` : `${impact.pins.length ? `${impact.pins.length} in-plan requirement(s) rewritten; ` : ""}every workspace sibling's requirement accepts the new version(s)`);
+    check("build and tests", "deferred", `run by Boundry CI on the exact release commit after approval (${first.release.validation.join(", ") || "build only"}); nothing is tagged or published unless they pass`);
+    check("registry acceptance", "deferred", "the registry decides ownership, name and metadata at publish; a refusal stops the release before anything else is published");
+    check("consumer verification", "deferred", "a consumer's own checks on the new version are recorded after release (release consumers), never assumed");
+    if (!this.d.installations.length) { check("external consumers", "unavailable", "no installations data (run a scan): consumers in other repositories are unknown"); unknowns.push("Consumers in other repositories: no scan data was available."); }
+    else check("external consumers", "passed", `${impact.dependents.filter((d) => !d.where.startsWith(`${repo}:`)).length} external dependent manifest(s) from the latest scan`);
+    unknowns.push("Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible.");
+
+    const failed = checks.filter((c) => c.outcome === "failed");
+    if (mustJoin.length || failed.length) {
+      const detail = [...new Set(mustJoin)].map((x) => `  - ${x}`).join("\n");
+      throw new ReleaseError("decision", `the release cannot be planned as requested:\n${failed.map((c) => `  ✗ ${c.check}: ${c.detail}`).join("\n")}${detail ? `\nRelease these together (Boundry never adds packages to a release on its own):\n${detail}` : ""}`);
     }
-    // Consuming projects in other repositories (Maintenance's installations): reported, never changed.
-    for (const inst of this.d.installations) {
-      const pp = planned.find((p) => p.package === inst.package);
-      if (!pp || inst.repository === repo || !inst.declaredVersion) continue;
-      dependents.push(dependentEffect(inst.project, `${inst.repository}:${inst.manifest}`, inst.declaredVersion, inst.resolvedVersion ?? "0.0.0", pp.proposedVersion));
-    }
-    if (mustJoin.length) {
-      throw new ReleaseError("decision", `this release would break the workspace install: npm resolves these siblings through the workspace, and their pins do not accept the new version(s). Release them together (Boundry never adds packages to a release on its own):\n  - ${[...new Set(mustJoin)].join("\n  - ")}`);
-    }
-    const files = await releaseFiles(git, source, planned, pins);
-    if (dependents.length) decision.push(`${dependents.length} dependent manifest(s) found; none is changed or published by this release (see dependents).`);
+    const files = await eco.editFiles((path) => git.read(source, path), planned, impact.pins);
+    if (impact.dependents.length) decision.push(`${impact.dependents.length} dependent manifest(s) found; none is changed or published by this release (see dependents and, after release, the downstream proposals).`);
 
     const policy = first.release;
     const plan: ReleasePlan = {
       repository: repo, branch, sourceCommit: source, bump: req.bump, requestedBy: req.requestedBy, requestedByType: proposer.type, requestedAt: now, reason: req.reason ?? null,
-      packages: planned, decision, dependents: dependents.sort((a, b) => (a.package + a.where).localeCompare(b.package + b.where)),
-      releaseCommit: { message: `Release ${planned.map((p) => `${p.name}@${p.proposedVersion}`).join(", ")}`, files: Object.keys(files).sort(), pins: pins.sort((a, b) => (a.in + a.dependency).localeCompare(b.in + b.dependency)) },
+      packages: planned, decision, dependents: impact.dependents,
+      checks, unknowns, impactFingerprint: (await this.#facts(repo, branch, planned)).fingerprint,
+      releaseCommit: { message: `Release ${planned.map((p) => `${p.name}@${p.proposedVersion}`).join(", ")}`, files: Object.keys(files).sort(), pins: impact.pins },
       validation: [...policy.validation], githubRelease: pkgs.every((p) => p.release.githubRelease),
       approvers: [...new Set(pkgs.flatMap((p) => p.release.approvers))].filter((a) => pkgs.every((p) => p.release.approvers.includes(a))).sort(),
       requiredApprovals: requiredFor(pkgs), protected: pkgs.some((p) => p.release.protected),
@@ -208,15 +215,101 @@ export class ReleaseManager {
       failure: null,
       history: [
         { at: now, state: "proposed", note: `${req.bump} release proposed by ${req.requestedBy} (${proposer.type})` },
-        { at: now, state: "validated", note: `source ${source.slice(0, 12)} on ${branch}; versions free on the registry; tags free` },
+        { at: now, state: "validated", note: checks.map((c) => `${c.outcome}: ${c.check}`).join("; ") },
         { at: now, state: "awaiting-approval", note: `needs ${plan.requiredApprovals} approval(s)${plan.protected ? " from prod approvers" : ""}; eligible: ${able.join(", ")}` },
       ],
-      attempts: [],
+      attempts: [], downstream: [], consumers: [],
     };
     await mkdir(join(this.d.runtimeDir, "files", id), { recursive: true });
     await writeFile(join(this.d.runtimeDir, "files", id, "files.json"), JSON.stringify(files)); // edited file contents (derivable; not committed)
     await this.#save(rec);
     return rec;
+  }
+
+  /**
+   * Who depends on the released packages, and how: workspace siblings at the source commit (whose requirements
+   * must accept the new version, or be rewritten when they are released together) and external consumers from
+   * Maintenance's scan. Declared requirement and resolved version are separate facts.
+   */
+  async #impact(git: GitAuthority, source: string, eco: Ecosystem, rootText: string | null, lockText: string | null, members: string[], planned: ReleasePlan["packages"], repo: string) {
+    const dependents: Dependent[] = [];
+    const pins: ReleasePlan["releaseCommit"]["pins"] = [];
+    const mustJoin: string[] = [];
+    for (const d of members) {
+      const text = await git.read(source, eco.manifestPath(d));
+      if (!text) continue;
+      const holder = eco.readManifest(text, rootText).name ?? d;
+      const inPlan = planned.some((p) => p.directory === d);
+      for (const pp of planned) {
+        if (pp.directory === d) continue;
+        const declared = eco.requirement(text, rootText, pp.name);
+        if (declared === null) continue;
+        const range = eco.range(declared);
+        const accepts = declared === "*" || (range !== null && semver.satisfies(pp.proposedVersion, range));
+        const loc = eco.id === "crates" && new RegExp(`^${pp.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(\\.workspace\\s*=\\s*true|\\s*=\\s*\\{[^}]*workspace\\s*=\\s*true)`, "m").test(text) ? "." : d;
+        if (inPlan && !accepts) { if (!pins.some((x) => x.in === loc && x.dependency === pp.name)) pins.push({ in: loc, dependency: pp.name, from: declared, to: eco.followRequirement(declared, pp.proposedVersion) }); continue; }
+        if (!accepts) {
+          const id = this.d.catalog.find((c) => c.name === holder)?.id ?? holder;
+          mustJoin.push(`${holder} (${d}) declares ${pp.name} "${declared}", which does not accept ${pp.proposedVersion} → add --package ${id}`);
+          continue;
+        }
+        dependents.push({ package: holder, where: `${repo}:${eco.manifestPath(d)}`, dependency: pp.name, declared, resolved: eco.resolved(lockText, pp.name, pp.repositoryVersion), accepts, effect: effectOf(declared, accepts, eco.isExact(declared), pp.proposedVersion, true) });
+      }
+    }
+    for (const inst of this.d.installations) {
+      const pp = planned.find((p) => p.package === inst.package);
+      if (!pp || inst.repository === repo || !inst.declaredVersion) continue;
+      const e = ecosystemFor(pp.registry);
+      const range = e.range(inst.declaredVersion);
+      const accepts = range !== null && semver.satisfies(pp.proposedVersion, range);
+      dependents.push({ package: inst.project, where: `${inst.repository}:${inst.manifest}`, dependency: pp.name, declared: inst.declaredVersion, resolved: inst.resolvedVersion ?? null, accepts, effect: effectOf(inst.declaredVersion, accepts, e.isExact(inst.declaredVersion), pp.proposedVersion, false) });
+    }
+    return { dependents: dependents.sort((a, b) => (a.package + a.where + a.dependency).localeCompare(b.package + b.where + b.dependency)), pins: pins.sort((a, b) => (a.in + a.dependency).localeCompare(b.in + b.dependency)), mustJoin };
+  }
+
+  /**
+   * The facts an approval depends on that can change after planning: the branch head, every registry's versions
+   * (yanked included), whether the tags exist, and the external consumers. Fingerprinted at plan time; recomputed
+   * before approval and before execution starts.
+   */
+  async #facts(repo: string, branch: string, planned: ReleasePlan["packages"]) {
+    const git = this.d.git(repo);
+    const tags = await git.tags();
+    const registries = [];
+    for (const pp of planned) {
+      const st = await this.#pkgRegistry(pp.package).state(pp.name);
+      registries.push({ package: pp.name, versions: [...(st?.versions ?? [])].sort(), yanked: [...(st?.yanked ?? [])].sort() });
+    }
+    const consumers = this.d.installations.filter((i) => planned.some((p) => p.package === i.package) && i.repository !== repo)
+      .map((i) => `${i.repository}:${i.manifest} ${i.package} ${i.declaredVersion ?? "-"} ${i.resolvedVersion ?? "-"}`).sort();
+    const facts = { head: await git.head(branch), tags: planned.map((p) => `${p.tag}=${tags.get(p.tag) ?? "absent"}`), registries, consumers };
+    return { facts, fingerprint: createHash("sha256").update(canonical(facts)).digest("hex") };
+  }
+
+  /** True when the branch head or a planned tag is this release's own deterministic release commit. */
+  async #ownProgress(r: ReleaseRecord): Promise<boolean> {
+    const git = this.d.git(r.plan.repository);
+    const files = await this.#rederive(r);
+    const ours = Object.keys(files).length ? await git.makeCommit(r.plan.sourceCommit, files, r.plan.releaseCommit.message, approvedAt(r)) : r.plan.sourceCommit;
+    if (ours === r.plan.sourceCommit) return false;
+    const tags = await git.tags();
+    return (await git.head(r.plan.branch)) === ours || r.plan.packages.some((p) => tags.get(p.tag) === ours);
+  }
+
+  /** What changed since the plan, in words (empty: nothing relevant changed). */
+  async #reassess(r: ReleaseRecord): Promise<string[]> {
+    const now = await this.#facts(r.plan.repository, r.plan.branch, r.plan.packages);
+    if (now.fingerprint === r.plan.impactFingerprint) return [];
+    const out: string[] = [];
+    if (now.facts.head !== r.plan.sourceCommit) out.push(`${r.plan.branch} moved from ${r.plan.sourceCommit.slice(0, 12)} to ${now.facts.head?.slice(0, 12) ?? "(gone)"}`);
+    for (const reg of now.facts.registries) {
+      const pp = r.plan.packages.find((p) => p.name === reg.package)!;
+      if (reg.versions.length !== pp.registryVersions.count) out.push(`${reg.package}: the registry now has ${reg.versions.length} version(s), the plan saw ${pp.registryVersions.count}`);
+      if (canonical(reg.yanked) !== canonical(pp.registryVersions.yanked)) out.push(`${reg.package}: yanked versions changed (${pp.registryVersions.yanked.join(", ") || "none"} → ${reg.yanked.join(", ") || "none"})`);
+    }
+    for (const t of now.facts.tags) if (!t.endsWith("=absent")) out.push(`tag ${t.split("=")[0]} now exists`);
+    if (!out.length) out.push("the consumers of the released packages changed since the impact assessment");
+    return out;
   }
 
   // ───────── approval ─────────
@@ -233,6 +326,13 @@ export class ReleaseManager {
     if (planDigestOf(r.plan) !== r.planDigest) throw new ReleaseError("not-allowed", "the recorded plan does not match its digest");
     const d = decide("approve", who, this.#subject(r), planDigest);
     if (!d.allow) throw new ReleaseError("not-allowed", `${id}: ${d.message} [${d.code}]`);
+    // Reassess immediately before approval: an approval binds the facts the approver was shown.
+    const changed = await this.#reassess(r);
+    if (changed.length) {
+      this.#to(r, "superseded", `facts changed before approval: ${changed.join("; ")}. Approvals never carry over; plan again`);
+      await this.#save(r);
+      throw new ReleaseError("not-allowed", `${id} is superseded, not approved: ${changed.join("; ")} [digest-mismatch]`);
+    }
     const signed = signature ? await verifyApproval(who, approvalStatement(r, who.id), signature) : false;
     if (signature && !signed) throw new ReleaseError("not-allowed", `${id}: the signature does not verify against ${who.id}'s registered keys for this exact approval statement [unauthenticated-for-production]`);
     if (r.plan.packages.some((p) => p.production) && !signed)
@@ -254,6 +354,32 @@ export class ReleaseManager {
     if (!d.allow) throw new ReleaseError("not-allowed", `${id}: ${d.message} [${d.code}]`);
     r.revocation = { by: who.id, at: this.d.now(), reason };
     this.#to(r, "cancelled", `revoked by ${who.id}: ${reason}${r.facts.tags.length ? ` (tag ${r.facts.tags.map((t) => t.name).join(", ")} remains; tags are never moved or deleted)` : ""}`);
+    await this.#save(r);
+    return r;
+  }
+
+  /**
+   * Record what Maintenance's scan observes about each consumer of a released version, append-only.
+   * Installation (declared, resolved), adoption (resolved is the released version or newer) and verification
+   * (the consumer's own checks passed on it) are separate facts; verification is never inferred from adoption.
+   */
+  async observeConsumers(id: string, installations: Installation[], basis: string, verifications: { consumer: string; where: string; version: string; evidence: string; passed: boolean }[] = []): Promise<ReleaseRecord> {
+    const r = await this.load(id);
+    if (r.state !== "released") throw new ReleaseError("not-allowed", `release ${id} is ${r.state}; consumers are observed after release`);
+    const at = this.d.now();
+    for (const pp of r.plan.packages) {
+      for (const inst of installations.filter((i) => i.package === pp.package && i.repository !== r.plan.repository)) {
+        const where = `${inst.repository}:${inst.manifest}`;
+        const resolved = inst.resolvedVersion ?? null;
+        const adoption = resolved && semver.valid(resolved) ? (semver.gte(resolved, pp.proposedVersion) ? "adopted" : "not-adopted") : "unknown";
+        const v = verifications.find((x) => x.consumer === inst.project && x.where === where && x.version === pp.proposedVersion);
+        r.consumers.push({
+          at, consumer: inst.project, where, dependency: pp.name, released: pp.proposedVersion, basis,
+          installation: { declared: inst.declaredVersion ?? null, resolved }, adoption,
+          verification: v ? (v.passed ? "verified" : "failed") : "unverified", verificationEvidence: v?.evidence ?? null,
+        });
+      }
+    }
     await this.#save(r);
     return r;
   }
@@ -309,6 +435,27 @@ export class ReleaseManager {
       if (TERMINAL.includes(r.state)) return r;
       if (r.failure && !r.failure.recoverable) return r;
       if (r.state === "approved") {
+        let changed: string[];
+        try { changed = await this.#reassess(r); }
+        catch (e) {
+          if (!(e instanceof Unavailable)) throw e;
+          r.attempts.push({ at: this.d.now(), step: "reassess", outcome: "failed", detail: `${(e as Error).message}; nothing was changed` });
+          r.failure = { at: r.state, reason: `cannot reassess: ${(e as Error).message}`, recoverable: true, when: this.d.now() };
+          await this.#save(r);
+          return r;
+        }
+        // A crash after this release started (record not saved) changes the branch, tags and registry by its
+        // OWN deterministic release commit: that is not a change of facts; #prepare reconciles it.
+        if (changed.length && (await this.#ownProgress(r))) {
+          r.attempts.push({ at: this.d.now(), step: "reassess", outcome: "already-done", detail: `changes are this release's own progress (its deterministic release commit): ${changed.join("; ")}` });
+          changed = [];
+        }
+        if (changed.length) {
+          r.attempts.push({ at: this.d.now(), step: "reassess", outcome: "refused", detail: changed.join("; ") });
+          this.#to(r, "superseded", `facts changed after approval, before execution: ${changed.join("; ")}. Nothing was changed; plan again`);
+          await this.#save(r);
+          return r;
+        }
         const d = decide("execute", executor, this.#subject(r, await this.#verifiedApprovals(r)));
         if (!d.allow) {
           r.attempts.push({ at: this.d.now(), step: "authorize", outcome: "refused", detail: `${executor.id}: ${d.message} [${d.code}] (triggered by ${who.id})` });
@@ -389,7 +536,8 @@ export class ReleaseManager {
   }
 
   async #rederive(r: ReleaseRecord): Promise<Record<string, string>> {
-    return releaseFiles(this.d.git(r.plan.repository), r.plan.sourceCommit, r.plan.packages, r.plan.releaseCommit.pins);
+    const git = this.d.git(r.plan.repository);
+    return ecosystemFor(r.plan.packages[0]!.registry).editFiles((path) => git.read(r.plan.sourceCommit, path), r.plan.packages, r.plan.releaseCommit.pins);
   }
 
   /** prepared → built: Boundry CI builds/tests/packs the exact release commit; the artifact is verified here. */
@@ -404,7 +552,10 @@ export class ReleaseManager {
     if (st.state === "running") throw new Blocked(`build ${runId} still running after ${this.d.buildTimeoutMs / 1000}s; execute again to keep waiting`, true);
     if (st.state !== "succeeded") {
       r.attempts.push({ at: this.d.now(), step: "build", outcome: "failed", detail: `${runId}: ${st.jobs.filter((j) => j.state !== "succeeded").map((j) => `${j.key}=${j.state}${j.reason ? ` (${j.reason})` : ""}`).join(", ")}` });
-      throw new Blocked(`release build ${runId} ${st.state}; nothing was tagged or published`, true);
+      // Tests failing and the build/packaging failing are different facts: name which one.
+      const failedJobs = st.jobs.filter((j) => j.state === "failed");
+      const what = failedJobs.some((j) => /test/i.test(j.key)) ? "the tests failed" : failedJobs.length ? `the build failed (${failedJobs.map((j) => j.key).join(", ")})` : `the build ${st.state}`;
+      throw new Blocked(`release build ${runId}: ${what} on the release commit; nothing was tagged or published`, true);
     }
     const pkg = await this.d.executor.artifact(runId, "step-package", "package.tar");
     if (sha256(pkg.bytes) !== pkg.sha256) throw new Blocked("package.tar does not match its digest", false);
@@ -414,14 +565,16 @@ export class ReleaseManager {
       await pexec("tar", ["-xf", join(work, "package.tar"), "-C", work]);
       const artifacts: NonNullable<ReleaseRecord["facts"]["build"]>["artifacts"] = [];
       for (const pp of p.packages) {
-        const file = tgzName(pp.name, pp.proposedVersion);
+        const eco = ecosystemFor(pp.registry);
+        const file = eco.artifactFile(pp.name, pp.proposedVersion);
         const bytes = await readFile(join(work, file)).catch(() => { throw new Blocked(`the build did not produce ${file}`, false); });
-        const inner = JSON.parse((await pexec("tar", ["-xzOf", join(work, file), "package/package.json"])).stdout);
+        const inner = await eco.readArtifactManifest(async (path) => (await pexec("tar", ["-xzOf", join(work, file), path])).stdout, pp.name, pp.proposedVersion)
+          .catch(() => { throw new Blocked(`${file} has no readable manifest`, false); });
         if (inner.name !== pp.name || inner.version !== pp.proposedVersion) throw new Blocked(`${file} contains ${inner.name}@${inner.version}, not ${pp.name}@${pp.proposedVersion}`, false);
         const digest = sha256(bytes);
         await mkdir(join(this.d.runtimeDir, "artifacts"), { recursive: true });
-        await writeFile(join(this.d.runtimeDir, "artifacts", `${digest}.tgz`), bytes);
-        artifacts.push({ package: pp.package, file, sha256: digest, sha512Integrity: integrity(bytes), size: bytes.length });
+        await writeFile(join(this.d.runtimeDir, "artifacts", `${digest}-${file}`), bytes);
+        artifacts.push({ package: pp.package, file, sha256: digest, integrity: this.#pkgRegistry(pp.package).integrityOf(bytes), size: bytes.length });
       }
       r.facts.build = { system: "boundry-ci", runId, evidenceUrl: st.evidenceUrl, artifacts, container: { name: "package.tar", sha256: pkg.sha256 } };
       this.#did(r, "build", duplicate ? "already-done" : "done", `${runId}: ${artifacts.map((a) => `${a.file} sha256:${a.sha256.slice(0, 16)}`).join(", ")}`);
@@ -458,29 +611,29 @@ export class ReleaseManager {
       const reg = this.#pkgRegistry(pp.package);
       const existing = await reg.version(pp.name, pp.proposedVersion);
       if (existing) {
-        if (existing.integrity !== art.sha512Integrity) throw new Blocked(`${pp.name}@${pp.proposedVersion} is on the registry with a DIFFERENT artifact (${existing.integrity?.slice(0, 20)}…); a published version is never overwritten`, false);
-        r.facts.published.push({ package: pp.package, version: pp.proposedVersion, integrity: art.sha512Integrity, alreadyPresent: true });
+        if (existing.integrity !== art.integrity) throw new Blocked(`${pp.name}@${pp.proposedVersion} is on the registry with a DIFFERENT artifact (${existing.integrity?.slice(0, 20)}…); a published version is never overwritten`, false);
+        r.facts.published.push({ package: pp.package, version: pp.proposedVersion, integrity: art.integrity, alreadyPresent: true });
         this.#did(r, "publish", "already-done", `${pp.name}@${pp.proposedVersion} already on the registry with the built integrity`);
         continue;
       }
       const st = await reg.state(pp.name);
       const highest = (st?.versions ?? []).filter((v) => semver.valid(v)).sort(semver.rcompare)[0] ?? null;
       if (highest !== pp.registryVersions.highest) throw new Blocked(`${pp.name}: a newer version (${highest}) appeared on the registry after approval; publishing ${pp.proposedVersion} now would not be the release that was approved`, false, "superseded");
-      const file = join(this.d.runtimeDir, "artifacts", `${art.sha256}.tgz`);
+      const file = join(this.d.runtimeDir, "artifacts", `${art.sha256}-${art.file}`);
       const bytes = await readFile(file).catch(async () => {
         const again = await this.d.executor.artifact(r.facts.build!.runId, "step-package", "package.tar"); // durable copy in Boundry CI
         void again; throw new Blocked("built tarball missing from the runtime directory; re-run to fetch it again", true);
       });
       if (sha256(bytes) !== art.sha256) throw new Blocked("the tarball about to be published does not match the built digest", false);
-      try { await reg.publish(file, pp.distTag); }
+      try { await reg.publish(file, { distTag: pp.distTag }); }
       catch (e) {
         // The response may have been lost after the registry accepted it: ask the registry, never assume.
         const after = await reg.version(pp.name, pp.proposedVersion).catch(() => null);
-        if (after?.integrity === art.sha512Integrity) { r.facts.published.push({ package: pp.package, version: pp.proposedVersion, integrity: art.sha512Integrity, alreadyPresent: true }); this.#did(r, "publish", "already-done", `publish reported "${(e as Error).message}", but the registry has the exact artifact`); continue; }
+        if (after?.integrity === art.integrity) { r.facts.published.push({ package: pp.package, version: pp.proposedVersion, integrity: art.integrity, alreadyPresent: true }); this.#did(r, "publish", "already-done", `publish reported "${(e as Error).message}", but the registry has the exact artifact`); continue; }
         if (e instanceof Refused && after) throw new Blocked(`registry refused: ${pp.name}@${pp.proposedVersion} exists with a different artifact`, false);
         throw e instanceof Unavailable ? e : new Blocked(`publish failed: ${(e as Error).message}`, !(e instanceof Refused));
       }
-      r.facts.published.push({ package: pp.package, version: pp.proposedVersion, integrity: art.sha512Integrity, alreadyPresent: false });
+      r.facts.published.push({ package: pp.package, version: pp.proposedVersion, integrity: art.integrity, alreadyPresent: false });
       this.#did(r, "publish", "done", `${pp.name}@${pp.proposedVersion} → ${reg.url} (dist-tag ${pp.distTag})`);
     }
     this.#to(r, "published", "registry accepted every artifact");
@@ -494,13 +647,14 @@ export class ReleaseManager {
       const reg = this.#pkgRegistry(pp.package);
       const v = await reg.version(pp.name, pp.proposedVersion);
       if (!v) throw new Blocked(`${pp.name}@${pp.proposedVersion} is not (yet) visible on the registry`, true);
-      if (v.integrity !== art.sha512Integrity) throw new Blocked(`${pp.name}@${pp.proposedVersion}: registry integrity ${v.integrity?.slice(0, 20)}… differs from the built artifact`, false);
+      if (v.yanked) throw new Blocked(`${pp.name}@${pp.proposedVersion} is yanked on the registry: a yanked version is not a resolution target, so this release is not verified`, false);
+      if (v.integrity !== art.integrity) throw new Blocked(`${pp.name}@${pp.proposedVersion}: registry integrity ${v.integrity?.slice(0, 20)}… differs from the built artifact`, false);
       const bytes = await reg.download(v.tarball!);
       if (sha256(bytes) !== art.sha256) throw new Blocked(`${pp.name}@${pp.proposedVersion}: the tarball the registry serves differs from the built artifact`, false);
       const st = await reg.state(pp.name);
-      r.facts.registryVerification.push({ package: pp.package, version: pp.proposedVersion, integrity: v.integrity!, tarballSha256: sha256(bytes), distTagPointsHere: st?.distTags[pp.distTag] === pp.proposedVersion, at: this.d.now() });
+      r.facts.registryVerification.push({ package: pp.package, version: pp.proposedVersion, integrity: v.integrity!, tarballSha256: sha256(bytes), distTagPointsHere: reg.kind === "npm" ? st?.distTags[pp.distTag] === pp.proposedVersion : null, at: this.d.now() });
     }
-    this.#did(r, "verify-registry", "done", r.facts.registryVerification.map((v) => `${v.version} integrity+bytes match; ${v.distTagPointsHere ? "dist-tag points here" : "dist-tag does NOT point here"}`).join("; "));
+    this.#did(r, "verify-registry", "done", r.facts.registryVerification.map((v) => `${v.version} integrity+bytes match; ${v.distTagPointsHere === null ? "not yanked (no dist-tags on this registry)" : v.distTagPointsHere ? "dist-tag points here" : "dist-tag does NOT point here"}`).join("; "));
     this.#to(r, "registry-verified", "registry serves the exact artifact");
   }
 
@@ -521,7 +675,9 @@ export class ReleaseManager {
         r.facts.githubReleases.push({ package: pp.package, url: created.url, tag: pp.tag, alreadyPresent: false });
         this.#did(r, "github-release", "done", created.url);
       }
-    } else this.#did(r, "github-release", "already-done", "skipped: the release policy does not create GitHub releases");
+    } else r.attempts.push({ at: this.d.now(), step: "github-release", outcome: "skipped", detail: "skipped: the release policy does not create GitHub releases" });
+    r.downstream = downstreamProposals(r);
+    if (r.downstream.length) this.#did(r, "downstream", "done", `${r.downstream.length} consumer change(s) proposed (never applied by this release): ${r.downstream.map((d) => `${d.consumer} ${d.kind}`).join(", ")}`);
     this.#to(r, "released", `${r.plan.packages.map((p) => `${p.name}@${p.proposedVersion}`).join(", ")} released and verified`);
   }
 
@@ -530,7 +686,7 @@ export class ReleaseManager {
     const L = ["Released by Boundry Maintenance.", ""];
     for (const pp of r.plan.packages) {
       const art = r.facts.build!.artifacts.find((a) => a.package === pp.package)!;
-      L.push(`### ${pp.name} ${pp.proposedVersion}`, "", `- Commit: ${r.facts.releaseCommit} (from ${r.plan.sourceCommit.slice(0, 12)})`, `- Artifact: \`${art.file}\` sha256 \`${art.sha256}\``, `- Registry integrity: \`${art.sha512Integrity}\``, `- Built and tested by Boundry CI run \`${r.facts.build!.runId}\``, "");
+      L.push(`### ${pp.name} ${pp.proposedVersion}`, "", `- Commit: ${r.facts.releaseCommit} (from ${r.plan.sourceCommit.slice(0, 12)})`, `- Artifact: \`${art.file}\` sha256 \`${art.sha256}\``, `- Registry integrity: \`${art.integrity}\``, `- Built and tested by Boundry CI run \`${r.facts.build!.runId}\``, "");
       const changes = await git.log(`${r.plan.sourceCommit}`, pp.directory, 15);
       if (changes.length) L.push("Recent changes in this package:", ...changes.map((c) => `- ${c}`), "");
     }
@@ -547,34 +703,12 @@ export class ReleaseManager {
   }
 }
 
-/** The release commit's files, derived only from the source commit and the plan (plan time and recovery agree). */
-export async function releaseFiles(git: GitAuthority, source: string, planned: ReleasePlan["packages"], pins: ReleasePlan["releaseCommit"]["pins"]): Promise<Record<string, string>> {
-  const files: Record<string, string> = {};
-  const dirs = [...new Set([...planned.map((p) => p.directory), ...pins.map((p) => p.in)])].sort();
-  for (const d of dirs) {
-    const path = d === "." ? "package.json" : `${d}/package.json`;
-    const text = await git.read(source, path);
-    if (!text) throw new Error(`${path} not found at ${source.slice(0, 12)}`);
-    const version = planned.find((p) => p.directory === d)?.proposedVersion ?? null;
-    const next = editPackageJson(text, version, Object.fromEntries(pins.filter((p) => p.in === d).map((p) => [p.dependency, p.to])));
-    if (next !== text) files[path] = next;
-  }
-  const lock = await git.read(source, "package-lock.json");
-  if (lock) {
-    const pinMap: Record<string, Record<string, string>> = {};
-    for (const p of pins) (pinMap[p.in] ??= {})[p.dependency] = p.to;
-    const next = editPackageLock(lock, Object.fromEntries(planned.map((p) => [p.directory, p.proposedVersion])), pinMap);
-    if (next !== lock) files["package-lock.json"] = next;
-  }
-  return files;
-}
-
 /** The Boundry Recipe Maintenance hands to the execution substrate for a release build. */
 export function buildRecipe(r: ReleaseRecord): { path: string; source: string } {
   const names = r.plan.packages.map((p) => `${p.name} ${p.proposedVersion}`).join(", ");
   const L = [`# Release build: ${names}`, "", `Build${r.plan.validation.includes("test") ? ", test" : ""} and package release commit ${r.facts.releaseCommit} for Boundry Maintenance release ${r.id}.`, "", "## When this happens", "- I start it.", ""];
   if (r.plan.validation.includes("test")) L.push("## Make sure", "- The tests pass.", "");
-  L.push("## Steps", "1. Package the result.", "", "## Keep", ...(r.plan.validation.includes("test") ? ["- The test results."] : []), "- The package for 3650 days.", "- The release evidence.");
+  L.push("## Steps", `1. ${ecosystemFor(r.plan.packages[0]!.registry).packageStep}`, "", "## Keep", ...(r.plan.validation.includes("test") ? ["- The test results."] : []), "- The package for 3650 days.", "- The release evidence.");
   return { path: ".boundry/recipes/boundry-release.md", source: L.join("\n") + "\n" };
 }
 
@@ -586,3 +720,40 @@ function approvedAt(r: ReleaseRecord): string { const a = r.approvals.at(-1); if
 const CONTRACT_REF = CONTRACT_VERSION;
 const norm = (u: string) => u.replace(/\/+$/, "").toLowerCase();
 const requiredFor = (pkgs: (PackageConfig & { release: ReleasePolicy })[]) => Math.max(1, ...pkgs.map((p) => requiredApprovals(p.release.approvalsRequired, p.criticality)));
+
+/** Workspace member directories at the source commit ("dir/*" patterns expanded through git). */
+async function workspaceMembers(git: GitAuthority, source: string, eco: Ecosystem, rootText: string | null): Promise<string[]> {
+  const out: string[] = [];
+  for (const pattern of eco.workspacePatterns(rootText)) {
+    const m = /^(.*)\/\*$/.exec(pattern);
+    const parent = m?.[1];
+    if (parent !== undefined) for (const d of (await git.list(source, parent)) ?? []) out.push(`${parent}/${d}`);
+    else out.push(pattern.replace(/\/$/, ""));
+  }
+  return [...new Set(out)].sort();
+}
+
+function effectOf(declared: string, accepts: boolean, exact: boolean, version: string, sibling: boolean): string {
+  if (exact) return accepts ? `pins ${declared} exactly, which is the new version` : `pins ${declared} exactly: keeps using it until a requirement change (its own plan)`;
+  if (!accepts) return `requirement ${declared} does NOT accept ${version}: needs a requirement change (its own plan)`;
+  return sibling ? `requirement ${declared} accepts ${version}; it builds against the new version in the workspace` : `requirement ${declared} accepts ${version} on its next lockfile update`;
+}
+
+/**
+ * The consumer changes a release makes necessary, as proposals for their own plans. Exact pins and requirements
+ * that do not accept the version need a requirement change; accepting requirements whose lockfile resolves an
+ * older version need a lockfile update. Workspace siblings released together are not consumers.
+ */
+export function downstreamProposals(r: ReleaseRecord): ReleaseRecord["downstream"] {
+  const out: ReleaseRecord["downstream"] = [];
+  for (const d of r.plan.dependents) {
+    const pp = r.plan.packages.find((p) => p.name === d.dependency);
+    if (!pp) continue;
+    const eco = ecosystemFor(pp.registry);
+    const note = "Proposed only: it needs its own plan and approval in the consumer's repository. This release never changes consumers.";
+    if (!d.accepts) out.push({ consumer: d.package, where: d.where, dependency: d.dependency, toVersion: pp.proposedVersion, kind: "requirement-change", from: d.declared, to: eco.isExact(d.declared) ? eco.followRequirement(d.declared, pp.proposedVersion) : eco.id === "npm" ? `^${pp.proposedVersion}` : pp.proposedVersion, state: "proposed", note });
+    else if (d.resolved && semver.valid(d.resolved) && semver.lt(d.resolved, pp.proposedVersion) && !d.where.startsWith(`${r.plan.repository}:`))
+      out.push({ consumer: d.package, where: d.where, dependency: d.dependency, toVersion: pp.proposedVersion, kind: "lockfile-update", from: d.resolved, to: pp.proposedVersion, state: "proposed", note });
+  }
+  return out;
+}

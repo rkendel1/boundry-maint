@@ -17,6 +17,8 @@ export interface VersionFacts {
   repositoryVersion: string | null;
   /** Tags that already exist in the repository. */
   tags: string[];
+  /** Versions the registry marks yanked (crates.io). Still published: never reused. */
+  yanked?: string[];
 }
 export interface Allocation { version: string; tag: string; explanation: string[] }
 export class AllocationError extends Error {
@@ -37,6 +39,7 @@ export function allocate(name: string, facts: VersionFacts, bump: ReleaseBump, p
   if (facts.repositoryVersion && !repo) throw new AllocationError("invalid", `${name}: the manifest version "${facts.repositoryVersion}" is not valid semver`);
   if (invalid.length) why.push(`Ignored ${invalid.length} registry entr${invalid.length === 1 ? "y" : "ies"} that are not semver (${invalid.slice(0, 3).join(", ")}).`);
   why.push(highest ? `The registry has ${valid.length} version${valid.length === 1 ? "" : "s"} of ${name}; the highest ever published is ${highest}${highestStable && highestStable !== highest ? ` (highest stable ${highestStable})` : ""}.` : `${name} has never been published.`);
+  if (facts.yanked?.length) why.push(`Yanked: ${facts.yanked.join(", ")}. A yanked version stays published and is never reused, so it counts toward the highest version.`);
   if (repo) why.push(`The manifest at the source commit declares ${repo}.`);
 
   let version: string;
