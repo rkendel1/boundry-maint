@@ -7,6 +7,7 @@
  *   validate      validate config/ and any existing data/ artifacts
  *   schemas       regenerate schemas/*.json from src/contracts.ts
  *   record-event  append a repository_dispatch maintenance signal to data/events.json
+ *   release       plan | show | approve | revoke | execute | list   (Release Manager; never runs during a scan)
  */
 import { appendFile, readFile, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
@@ -27,8 +28,15 @@ import {
   ProjectsFile,
   ReleasesFile,
   Snapshot,
+  ReleaseRecord,
+  PrincipalCatalog,
 } from "./contracts.ts";
+import { releaseManager, approvalRequest } from "./release/cli.ts";
 import { listFiles, readJsonIfValid, readJson, stableJson, writeAllAtomic } from "./lib/files.ts";
+import { ResolverControl } from "./integrations/resolver-control.ts";
+import { applicationView, renderApplicationView } from "./integrations/application-view.ts";
+import { createMaintenanceApplication } from "./appport/application.ts";
+import { serveMaintenance, parseTokens } from "./appport/serve.ts";
 import { buildSite } from "./reports/generate.ts";
 import { loadConfig, runScan } from "./scan.ts";
 
@@ -41,6 +49,12 @@ const { positionals, values } = parseArgs({
     out: { type: "string", default: join(ROOT, "_site") },
     local: { type: "string", multiple: true, default: [] },
     file: { type: "string" },
+    package: { type: "string", multiple: true, default: [] },
+    bump: { type: "string" },
+    as: { type: "string" },
+    digest: { type: "string" },
+    signature: { type: "string" },
+    reason: { type: "string" },
   },
 });
 
@@ -109,6 +123,11 @@ async function validate() {
     }
   }
   for (const f of await listFiles(d("evidence"))) await readJson(f, EvidenceFile);
+  await readJson(join(ROOT, "config/principals.json"), PrincipalCatalog);
+  console.log("config/principals.json: ok");
+  let releases = 0;
+  for (const dir of await listFiles(d("release-manager"))) for (const f of await listFiles(dir)) { await readJson(f, ReleaseRecord); releases++; }
+  console.log(`release records: ${releases} ok`);
   for (const f of (await listFiles(d("history"))).filter((f) => f.endsWith(".json"))) await readJson(f, Snapshot);
   console.log("evidence + history: ok");
 }
@@ -119,6 +138,7 @@ async function schemas() {
     ["project.schema.json", ProjectCatalog, "input"],
     ["policies.schema.json", Policies, "input"],
     ["ci.schema.json", CiConfig, "input"],
+    ["principals.schema.json", PrincipalCatalog, "input"],
     ["snapshot.schema.json", Snapshot, "output"],
   ];
   for (const [file, schema, io] of out) {
@@ -155,7 +175,71 @@ async function recordEvent() {
   console.log(`recorded maintenance-started for ${record.project} / ${record.package}`);
 }
 
-const commands: Record<string, () => Promise<void>> = { scan, report, validate, schemas, "record-event": recordEvent };
+/** Release Manager. Explicit commands only: a scan never plans, approves or executes a release. */
+async function release() {
+  const [, sub, id] = positionals;
+  const { packages } = await loadConfig(ROOT);
+  const installations = (await readJsonIfValid(join(values.data!, "installations.json"), InstallationsFile))?.installations ?? [];
+  const principals = (await readJson(join(ROOT, "config/principals.json"), PrincipalCatalog)).principals;
+  const m = await releaseManager(ROOT, values.data!, packages.packages, installations, principals);
+  const need = (v: string | undefined, what: string) => { if (!v) throw new Error(`release ${sub} needs ${what}`); return v; };
+  switch (sub) {
+    case "plan": {
+      const r = await m.plan({ packages: values.package!.length ? values.package! : [need(id, "--package <id>")], bump: need(values.bump, "--bump <patch|minor|major|prerelease|repository>") as never, requestedBy: need(values.as, "--as <your name>"), reason: values.reason });
+      console.log(approvalRequest(r));
+      return;
+    }
+    case "show": console.log(approvalRequest(await m.load(need(id, "<release id>")))); return;
+    case "consumers": {
+      const file = (await readJsonIfValid(join(values.data!, "installations.json"), InstallationsFile));
+      const r = await m.observeConsumers(need(id, "<release id>"), file?.installations ?? [], `Maintenance scan at ${file?.generatedAt ?? "(no scan data)"}`);
+      console.log(approvalRequest(r));
+      return;
+    }
+    case "abandon": { const r = await m.abandon(need(id, "<release id>"), need(values.as, "--as <name>"), need(values.reason, "--reason <why>")); console.log(approvalRequest(r)); return; }
+    case "statement": process.stdout.write(await m.statement(need(id, "<release id>"), need(values.as, "--as <your principal id>"))); return;
+    case "approve": { const r = await m.approve(need(id, "<release id>"), need(values.as, "--as <name>"), need(values.digest, "--digest <plan digest>"), values.signature ? await readFile(values.signature, "utf8") : undefined); console.log(`${r.id}: ${r.state} (${r.approvals.length} of ${r.plan.requiredApprovals} approvals: ${r.approvals.map((a) => a.by).join(", ")})`); return; }
+    case "revoke": { const r = await m.revoke(need(id, "<release id>"), need(values.as, "--as <name>"), values.reason ?? "revoked"); console.log(`${r.id}: ${r.state}`); return; }
+    case "execute": { const r = await m.execute(need(id, "<release id>"), need(values.as, "--as <principal id>")); console.log(approvalRequest(r)); if (r.state !== "released") process.exitCode = 1; return; }
+    case "list": for (const r of await m.list()) console.log(`${r.id.padEnd(40)} ${r.state.padEnd(18)} ${r.failure ? `(${r.failure.recoverable ? "blocked" : "stopped"}: ${r.failure.reason})` : ""}`); return;
+    default: throw new Error("usage: release plan --package <id> --bump <kind> --as <name> [--reason …] | show|list <id> | execute <id> --as <name> | statement <id> --as <name> | consumers <id> | abandon <id> --as <person> --reason <why> | approve <id> --as <name> --digest <d> [--signature <file.sig>] | revoke <id> --as <name> [--reason …]");
+  }
+}
+
+/** Resolver Control, read through its AppPort capabilities as Maintenance's own principal there (optional). */
+async function resolverControl(): Promise<ResolverControl | null> {
+  const url = process.env.BOUNDRY_RESOLVER_CONTROL_URL, tokenFile = process.env.BOUNDRY_RESOLVER_CONTROL_TOKEN_FILE;
+  if (!url || !tokenFile) return null;
+  return new ResolverControl(url, (await readFile(tokenFile, "utf8")).trim(), process.env.BOUNDRY_RESOLVER_CONTROL_PRINCIPAL ?? "boundry-maintenance");
+}
+async function maintenanceDeps() {
+  const { packages, projects } = await loadConfig(ROOT);
+  const installations = (await readJsonIfValid(join(values.data!, "installations.json"), InstallationsFile))?.installations ?? [];
+  const principals = (await readJson(join(ROOT, "config/principals.json"), PrincipalCatalog)).principals;
+  const manager = await releaseManager(ROOT, values.data!, packages.packages, installations, principals);
+  return { manager, principals, projects: projects.projects, installations: () => installations, packageNames: Object.fromEntries(packages.packages.map((p) => [p.id, p.name])), resolverControl: await resolverControl() };
+}
+
+/** One application: packages (Maintenance) and Resolver references (Resolver Control), one timeline. */
+async function application() {
+  const id = positionals[1];
+  if (!id) throw new Error("usage: application <project id>");
+  const d = await maintenanceDeps();
+  const project = d.projects.find((p) => p.id === id);
+  if (!project) throw new Error(`unknown project ${id}`);
+  console.log(renderApplicationView(await applicationView(project, { installations: d.installations(), releases: await d.manager.list(), packageNames: d.packageNames, resolverControl: d.resolverControl })));
+}
+
+/** Serve Maintenance's AppPort application (HTTP /appport) and MCP (/mcp). Tokens: BOUNDRY_APPPORT_TOKENS_FILE. */
+async function serve() {
+  const d = await maintenanceDeps();
+  const file = process.env.BOUNDRY_APPPORT_TOKENS_FILE;
+  if (!file) throw new Error("serve needs BOUNDRY_APPPORT_TOKENS_FILE (lines: <sha256 of token> <principal id>)");
+  const { url } = await serveMaintenance(createMaintenanceApplication(d), { tokens: parseTokens(await readFile(file, "utf8")), principals: d.principals, port: Number(process.env.BOUNDRY_APPPORT_PORT ?? 21300), host: process.env.BOUNDRY_APPPORT_HOST ?? "127.0.0.1" });
+  console.log(`Boundry Maintenance: AppPort ${url}/appport, MCP ${url}/mcp`);
+}
+
+const commands: Record<string, () => Promise<void>> = { scan, report, validate, schemas, "record-event": recordEvent, release, application, serve };
 const cmd = commands[positionals[0] ?? ""];
 if (!cmd) {
   console.error(`usage: node src/index.ts <${Object.keys(commands).join("|")}> [--data dir] [--out dir] [--local owner/repo=path]`);

@@ -1,0 +1,337 @@
+{
+  "application": {
+    "id": "shop",
+    "name": "Shop",
+    "repository": "acme/shop",
+    "resolverApplication": "shop"
+  },
+  "readAt": "2026-11-17T02:11:34.867Z",
+  "buildTime": {
+    "authority": "registries and git (facts); Boundry Maintenance (release governance and evidence)",
+    "packages": [
+      {
+        "package": "@demo/core",
+        "manifest": "acme/shop:package.json",
+        "declared": "0.2.0",
+        "resolved": "0.2.0",
+        "releases": [
+          {
+            "id": "demo-core@0.2.1",
+            "version": "0.2.1",
+            "state": "released",
+            "proposedBy": "maintenance-agent (agent)",
+            "approvals": [
+              {
+                "by": "randy",
+                "authentication": "asserted"
+              }
+            ],
+            "releaseCommit": "ec67299ee6126622f8ad1726c850a377000e602b",
+            "tag": "@demo/core@0.2.1",
+            "integrity": "sha512-T9uQpyXJI5BXK3u4Nkv1UclzEUH0n1+VWhkI5DAKqYo/qqbfpSNY5DgdYTcbN/srvCqkxtsk0dMo/1zhc4Uxaw=="
+          }
+        ],
+        "downstream": [
+          {
+            "consumer": "shop",
+            "where": "acme/shop:package.json",
+            "dependency": "@demo/core",
+            "toVersion": "0.2.1",
+            "kind": "requirement-change",
+            "from": "0.2.0",
+            "to": "0.2.1",
+            "state": "proposed",
+            "note": "Proposed only: it needs its own plan and approval in the consumer's repository. This release never changes consumers."
+          }
+        ],
+        "observations": []
+      }
+    ]
+  },
+  "runtime": {
+    "authority": "Resolver (bindings and history), governed by Resolver Control",
+    "source": "http://127.0.0.1:49869/appport",
+    "readAt": "2026-11-17T02:11:34.868Z",
+    "principal": "boundry-maintenance",
+    "application": "shop",
+    "references": [
+      {
+        "ref": "ref://prod/search",
+        "kind": "endpoint",
+        "revision": 2,
+        "summary": "https://search-b.example.com/",
+        "owner": "platform-team",
+        "criticality": "critical",
+        "changeClass": "runtime",
+        "basis": [
+          "declared",
+          "observed"
+        ],
+        "usage": "product search on the storefront",
+        "changes": [
+          {
+            "id": "mwk23jok986d0f1878ae",
+            "number": 1,
+            "ref": "ref://prod/search",
+            "status": "verified",
+            "operation": "retarget",
+            "proposedBy": "boundry-maintenance",
+            "proposedByType": "agent",
+            "proposedAt": 1794881493092,
+            "approvals": [
+              {
+                "by": "linus",
+                "at": 1794881493828
+              },
+              {
+                "by": "ada",
+                "at": 1794881493839
+              }
+            ],
+            "requiredApprovals": 2,
+            "verification": {
+              "passed": true,
+              "at": 1794881494287,
+              "revision": 2
+            }
+          }
+        ],
+        "events": [
+          {
+            "at": 1794881494290,
+            "type": "change.verified",
+            "actor": "component:resolver",
+            "subjectId": "mwk23jok986d0f1878ae"
+          },
+          {
+            "at": 1794881494203,
+            "type": "change.authorization_issued",
+            "actor": "component:resolver",
+            "subjectId": "mwk23jok986d0f1878ae"
+          },
+          {
+            "at": 1794881494153,
+            "type": "change.execution_started",
+            "actor": "component:resolver",
+            "subjectId": "mwk23jok986d0f1878ae"
+          },
+          {
+            "at": 1794881493840,
+            "type": "change.approved",
+            "actor": "ada",
+            "subjectId": "mwk23jok986d0f1878ae"
+          },
+          {
+            "at": 1794881493840,
+            "type": "change.approval_recorded",
+            "actor": "ada",
+            "subjectId": "mwk23jok986d0f1878ae"
+          },
+          {
+            "at": 1794881493828,
+            "type": "change.approval_recorded",
+            "actor": "linus",
+            "subjectId": "mwk23jok986d0f1878ae"
+          },
+          {
+            "at": 1794881493124,
+            "type": "change.validated",
+            "actor": "component:resolver",
+            "subjectId": "mwk23jok986d0f1878ae"
+          },
+          {
+            "at": 1794881493092,
+            "type": "change.proposed",
+            "actor": "boundry-maintenance",
+            "subjectId": "mwk23jok986d0f1878ae"
+          },
+          {
+            "at": 1794881488183,
+            "type": "consumer.declared",
+            "actor": "grace",
+            "subjectId": "ref://prod/search"
+          },
+          {
+            "at": 1794881488174,
+            "type": "dependency.registered",
+            "actor": "ada",
+            "subjectId": "ref://prod/search"
+          }
+        ]
+      }
+    ]
+  },
+  "activity": [
+    {
+      "at": "2026-11-17T02:11:28.174Z",
+      "domain": "runtime",
+      "authority": "Resolver Control",
+      "subject": "ref://prod/search",
+      "event": "dependency.registered",
+      "actor": "ada"
+    },
+    {
+      "at": "2026-11-17T02:11:28.183Z",
+      "domain": "runtime",
+      "authority": "Resolver Control",
+      "subject": "ref://prod/search",
+      "event": "consumer.declared",
+      "actor": "grace"
+    },
+    {
+      "at": "2026-11-17T02:11:30.353Z",
+      "domain": "package",
+      "authority": "Boundry Maintenance",
+      "subject": "release demo-core@0.2.1",
+      "event": "proposed: patch release proposed by maintenance-agent (agent)",
+      "actor": "maintenance-agent"
+    },
+    {
+      "at": "2026-11-17T02:11:30.353Z",
+      "domain": "package",
+      "authority": "Boundry Maintenance",
+      "subject": "release demo-core@0.2.1",
+      "event": "validated: passed: @demo/core: publishable; passed: @demo/core: registry; passed: @demo/core: manifest and package-lock.json agree; passed: @demo/core: version 0.2.1 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; passed: external consumers",
+      "actor": null
+    },
+    {
+      "at": "2026-11-17T02:11:30.353Z",
+      "domain": "package",
+      "authority": "Boundry Maintenance",
+      "subject": "release demo-core@0.2.1",
+      "event": "awaiting-approval: needs 1 approval(s) from prod approvers; eligible: randy",
+      "actor": null
+    },
+    {
+      "at": "2026-11-17T02:11:31.009Z",
+      "domain": "package",
+      "authority": "Boundry Maintenance",
+      "subject": "release demo-core@0.2.1",
+      "event": "approved: approved by randy (asserted) for plan 6210ee5b53c6",
+      "actor": null
+    },
+    {
+      "at": "2026-11-17T02:11:31.009Z",
+      "domain": "package",
+      "authority": "Boundry Maintenance",
+      "subject": "release demo-core@0.2.1",
+      "event": "approved (asserted)",
+      "actor": "randy"
+    },
+    {
+      "at": "2026-11-17T02:11:31.340Z",
+      "domain": "package",
+      "authority": "Boundry Maintenance",
+      "subject": "release demo-core@0.2.1",
+      "event": "prepared: release commit ec67299ee612",
+      "actor": null
+    },
+    {
+      "at": "2026-11-17T02:11:31.953Z",
+      "domain": "package",
+      "authority": "Boundry Maintenance",
+      "subject": "release demo-core@0.2.1",
+      "event": "built: built by run_1 from ec67299ee612",
+      "actor": null
+    },
+    {
+      "at": "2026-11-17T02:11:32.066Z",
+      "domain": "package",
+      "authority": "Boundry Maintenance",
+      "subject": "release demo-core@0.2.1",
+      "event": "tagged: @demo/core@0.2.1",
+      "actor": null
+    },
+    {
+      "at": "2026-11-17T02:11:32.746Z",
+      "domain": "package",
+      "authority": "Boundry Maintenance",
+      "subject": "release demo-core@0.2.1",
+      "event": "published: registry accepted every artifact",
+      "actor": null
+    },
+    {
+      "at": "2026-11-17T02:11:33.071Z",
+      "domain": "package",
+      "authority": "Boundry Maintenance",
+      "subject": "release demo-core@0.2.1",
+      "event": "registry-verified: registry serves the exact artifact",
+      "actor": null
+    },
+    {
+      "at": "2026-11-17T02:11:33.074Z",
+      "domain": "package",
+      "authority": "Boundry Maintenance",
+      "subject": "release demo-core@0.2.1",
+      "event": "released: @demo/core@0.2.1 released and verified",
+      "actor": null
+    },
+    {
+      "at": "2026-11-17T02:11:33.092Z",
+      "domain": "runtime",
+      "authority": "Resolver Control",
+      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "event": "change.proposed",
+      "actor": "boundry-maintenance"
+    },
+    {
+      "at": "2026-11-17T02:11:33.124Z",
+      "domain": "runtime",
+      "authority": "Resolver Control",
+      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "event": "change.validated",
+      "actor": "component:resolver"
+    },
+    {
+      "at": "2026-11-17T02:11:33.828Z",
+      "domain": "runtime",
+      "authority": "Resolver Control",
+      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "event": "change.approval_recorded",
+      "actor": "linus"
+    },
+    {
+      "at": "2026-11-17T02:11:33.840Z",
+      "domain": "runtime",
+      "authority": "Resolver Control",
+      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "event": "change.approved",
+      "actor": "ada"
+    },
+    {
+      "at": "2026-11-17T02:11:33.840Z",
+      "domain": "runtime",
+      "authority": "Resolver Control",
+      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "event": "change.approval_recorded",
+      "actor": "ada"
+    },
+    {
+      "at": "2026-11-17T02:11:34.153Z",
+      "domain": "runtime",
+      "authority": "Resolver Control",
+      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "event": "change.execution_started",
+      "actor": "component:resolver"
+    },
+    {
+      "at": "2026-11-17T02:11:34.203Z",
+      "domain": "runtime",
+      "authority": "Resolver Control",
+      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "event": "change.authorization_issued",
+      "actor": "component:resolver"
+    },
+    {
+      "at": "2026-11-17T02:11:34.290Z",
+      "domain": "runtime",
+      "authority": "Resolver Control",
+      "subject": "ref://prod/search change mwk23jok986d0f1878ae",
+      "event": "change.verified",
+      "actor": "component:resolver"
+    }
+  ],
+  "unknowns": [
+    "Runtime: consumers that neither declared themselves nor resolved through a registered Resolver client are not visible."
+  ]
+}

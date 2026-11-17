@@ -1,0 +1,191 @@
+{
+  "number": 1,
+  "ref": "ref://prod/search",
+  "environment": "prod",
+  "kind": "endpoint",
+  "operation": "retarget",
+  "binding": {
+    "value": {
+      "url": "https://search-b.example.com"
+    }
+  },
+  "basedOnRevision": 1,
+  "basedOnTargets": [
+    {
+      "value": {
+        "url": "https://search-a.example.com/"
+      }
+    }
+  ],
+  "basedOnStrategy": "single",
+  "reason": "Integration proof: shop's search moves to provider B (proposed by Boundry Maintenance)",
+  "status": "verified",
+  "impact": {
+    "computedAt": 1794881493090,
+    "environment": "prod",
+    "protected": true,
+    "frozen": false,
+    "criticality": "critical",
+    "changeClass": "runtime",
+    "requiredApprovals": 2,
+    "propagation": "Running consumers using Resolver's client pick up the change on their next resolution: at once over the live stream, at the latest after 30 s (the reference's TTL). Calls already in flight finish on the old target.",
+    "declaredConsumers": [
+      {
+        "application": "shop",
+        "usage": "product search on the storefront",
+        "source": "declared_by_operator"
+      }
+    ],
+    "observedConsumers": [
+      {
+        "principal": "81852173-37e4-4861-97be-4d5c21998c78",
+        "application": "shop",
+        "environment": "prod",
+        "instance": "pid-28907",
+        "registration": "live",
+        "declared": true,
+        "resolvedRevision": 1,
+        "resolvedAt": "2026-11-17T02:11:21.958Z",
+        "usedRevision": 1,
+        "usedOutcome": "succeeded",
+        "usedAt": "2026-11-17T02:11:21.652Z"
+      }
+    ],
+    "observedRelationships": [],
+    "differences": [
+      "Resolves to https://search-a.example.com/ → https://search-b.example.com.",
+      "Traffic goes to a system not used before: https://search-b.example.com."
+    ],
+    "fallback": "single target: no fallback if it is unavailable",
+    "warnings": [
+      "No policy is recorded for prod; it is treated as protected.",
+      "Resolver observed 1 consumer(s) resolving this reference: shop."
+    ],
+    "unknowns": [
+      "Observed consumers are those Resolver recorded resolving since it began recording; an application that has not resolved since then is not listed. Usage is reported by consumers, not observed.",
+      "Downtime and provider behaviour cannot be observed from Resolver; verification proves what the reference resolves to, not that the new target works."
+    ]
+  },
+  "approvals": [
+    {
+      "by": "linus",
+      "at": 1794881493828,
+      "note": "integration proof"
+    },
+    {
+      "by": "ada",
+      "at": 1794881493839,
+      "note": "integration proof"
+    }
+  ],
+  "proposedBy": "boundry-maintenance",
+  "proposedByType": "agent",
+  "proposedAt": 1794881493092,
+  "updatedAt": 1794881494289,
+  "validation": {
+    "at": 1794881493124,
+    "by": "component:resolver",
+    "passed": true,
+    "checks": [
+      {
+        "id": "revision",
+        "label": "Reference unchanged since the proposal",
+        "outcome": "pass",
+        "detail": "Resolver is at revision 1, as proposed."
+      },
+      {
+        "id": "binding",
+        "label": "Binding is valid for the kind",
+        "outcome": "pass",
+        "detail": "A single binding with 1 target(s), valid for endpoint by Resolver's rules."
+      },
+      {
+        "id": "environment",
+        "label": "Stays inside its environment",
+        "outcome": "pass",
+        "detail": "Every reference it names is under ref://prod/."
+      },
+      {
+        "id": "reachability",
+        "label": "Target reachable",
+        "outcome": "deferred",
+        "detail": "Not probed: this application does not send requests to arbitrary targets. Resolution is verified after execution; behaviour is the consumer's to observe."
+      },
+      {
+        "id": "write-grant",
+        "label": "Executor key may write here",
+        "outcome": "deferred",
+        "detail": "Resolver's grants decide at execution; a refusal leaves the reference unchanged."
+      }
+    ]
+  },
+  "execution": {
+    "attempt": 1,
+    "claimedBy": "component:resolver",
+    "claimedAt": 1794881494152,
+    "authorization": {
+      "jti": "mwk23jok986d0f1878ae.1",
+      "expiresAt": "2026-11-17T02:16:34.198Z",
+      "issuedAt": 1794881494202
+    },
+    "finishedAt": 1794881494289,
+    "resolverRevision": 2
+  },
+  "verification": {
+    "at": 1794881494287,
+    "passed": true,
+    "revision": 2,
+    "currentRevision": 2,
+    "actor": "api_key:0d47d403-57ca-41a5-9be4-d0add060f5b7",
+    "correlated": true,
+    "bindingMatches": true,
+    "selected": {
+      "url": "https://search-b.example.com/"
+    },
+    "checks": [
+      {
+        "id": "authorization",
+        "label": "Authorized for this change",
+        "outcome": "pass",
+        "detail": "Resolver verified and consumed authorization mwk23jok986d0f1878ae.1 (issuer resolver-control, key proof-1)."
+      },
+      {
+        "id": "history",
+        "label": "Recorded in Resolver's history",
+        "outcome": "pass",
+        "detail": "Revision 2: update by api_key:0d47d403-57ca-41a5-9be4-d0add060f5b7 at 2026-11-17T02:11:34.214Z."
+      },
+      {
+        "id": "correlation",
+        "label": "Resolver's record names this change",
+        "outcome": "pass",
+        "detail": "The revision's reason carries [resolver-control CHG-1 mwk23jok986d0f1878ae]."
+      },
+      {
+        "id": "binding",
+        "label": "Recorded binding is the approved one",
+        "outcome": "pass",
+        "detail": "Identical, target for target."
+      },
+      {
+        "id": "resolves",
+        "label": "Consumers resolve the new binding",
+        "outcome": "pass",
+        "detail": "ref://prod/search resolves at revision 2."
+      }
+    ],
+    "governance": {
+      "mode": "authorized",
+      "issuer": "resolver-control",
+      "kid": "proof-1",
+      "jti": "mwk23jok986d0f1878ae.1",
+      "decision": "mwk23jok986d0f1878ae",
+      "approvers": [
+        "linus",
+        "ada"
+      ]
+    }
+  },
+  "id": "mwk23jok986d0f1878ae",
+  "__version": 7
+}

@@ -1,0 +1,170 @@
+{
+  "package": {
+    "authority": "test npm registry + git (facts); Boundry Maintenance (governance)",
+    "registryVersions": [
+      "0.2.0",
+      "0.2.1"
+    ],
+    "registryIntegrity": "sha512-T9uQpyXJI5BXK3u4Nkv1UclzEUH0n1+VWhkI5DAKqYo/qqbfpSNY5DgdYTcbN/srvCqkxtsk0dMo/1zhc4Uxaw==",
+    "builtIntegrity": "sha512-T9uQpyXJI5BXK3u4Nkv1UclzEUH0n1+VWhkI5DAKqYo/qqbfpSNY5DgdYTcbN/srvCqkxtsk0dMo/1zhc4Uxaw==",
+    "integrityMatches": true,
+    "tagTarget": "ec67299ee6126622f8ad1726c850a377000e602b",
+    "releaseCommit": "ec67299ee6126622f8ad1726c850a377000e602b",
+    "proposedBy": "maintenance-agent (agent)",
+    "approvals": [
+      "randy (person, asserted)"
+    ],
+    "downstreamForShop": [
+      {
+        "consumer": "shop",
+        "where": "acme/shop:package.json",
+        "dependency": "@demo/core",
+        "toVersion": "0.2.1",
+        "kind": "requirement-change",
+        "from": "0.2.0",
+        "to": "0.2.1",
+        "state": "proposed",
+        "note": "Proposed only: it needs its own plan and approval in the consumer's repository. This release never changes consumers."
+      }
+    ]
+  },
+  "runtime": {
+    "authority": "Resolver (bindings, history, enforcement); Resolver Control (governance)",
+    "resolverHistory": [
+      {
+        "revision": 1,
+        "governance": null,
+        "reason": "initial"
+      },
+      {
+        "revision": 2,
+        "governance": {
+          "mode": "authorized",
+          "issuer": "resolver-control",
+          "decision": "mwk23jok986d0f1878ae",
+          "approvers": [
+            "linus",
+            "ada"
+          ]
+        },
+        "reason": "[resolver-control CHG-1 mwk23jok986d0f1878ae] Integration proof: shop's search moves to provider B (proposed by Boundry Maintenance)"
+      }
+    ],
+    "change": {
+      "id": "mwk23jok986d0f1878ae",
+      "number": 1,
+      "status": "verified",
+      "proposedBy": "boundry-maintenance (agent)",
+      "approvals": [
+        "linus",
+        "ada"
+      ],
+      "required": 2,
+      "verification": true,
+      "authorization": "authorized"
+    },
+    "shopFollowed": [
+      {
+        "pid": 28907,
+        "startedAt": "2026-11-17T02:11:21.642Z",
+        "ref": "ref://prod/search",
+        "revision": 2,
+        "strategy": "single",
+        "uses": {
+          "url": "https://search-b.example.com/"
+        }
+      }
+    ]
+  },
+  "noDuplicateTruth": {
+    "maintenanceStoresRuntimeBindings": false,
+    "evidence": "Maintenance's records (release-manager/*.json) contain no ref:// binding or revision; the runtime section of the application view is read from Resolver Control at request time and labelled with its read time.",
+    "maintenanceRecordsMentionRef": false
+  },
+  "authority": [
+    {
+      "actor": "maintenance-agent (Maintenance AppPort)",
+      "attempt": "approve its own release",
+      "target": "Boundry Maintenance",
+      "outcome": "refused: FORBIDDEN Missing permission: maintenance.approve"
+    },
+    {
+      "actor": "maintenance-agent (Maintenance AppPort)",
+      "attempt": "trigger execution",
+      "target": "Boundry Maintenance",
+      "outcome": "refused: FORBIDDEN Missing permission: maintenance.trigger"
+    },
+    {
+      "actor": "boundry-maintenance (its Resolver Control session)",
+      "attempt": "approve the runtime change",
+      "target": "Resolver Control changes.approve (AppPort)",
+      "outcome": "refused: FORBIDDEN Missing permission: changes.approve"
+    },
+    {
+      "actor": "boundry-maintenance (its Resolver Control session)",
+      "attempt": "claim the change for execution",
+      "target": "Resolver Control changes:claim",
+      "outcome": "refused: FORBIDDEN Missing permission: changes.execute"
+    },
+    {
+      "actor": "boundry-maintenance (its Resolver Control session)",
+      "attempt": "repoint Resolver Control at another Resolver",
+      "target": "Resolver Control settings:set",
+      "outcome": "refused: FORBIDDEN Missing permission: settings.write"
+    },
+    {
+      "actor": "boundry-maintenance (its Resolver Control session)",
+      "attempt": "lower the dependency's criticality",
+      "target": "Resolver Control dependencies.describe",
+      "outcome": "refused: FORBIDDEN Missing permission: catalog.write"
+    },
+    {
+      "actor": "boundry-maintenance (no Resolver key)",
+      "attempt": "write ref://prod/search directly",
+      "target": "Resolver resolver.put (AppPort)",
+      "outcome": "refused: UNAUTHORIZED Authentication is required"
+    },
+    {
+      "actor": "Resolver's admin key (operator)",
+      "attempt": "write ref://prod/search without an authorization",
+      "target": "Resolver CLI set",
+      "outcome": "refused: error: FORBIDDEN (resolver.authorization-required): ref://prod/search is governed by mutation policy prod (ref://prod/*): put needs a change authorization from resolver-control"
+    },
+    {
+      "actor": "Resolver Control (its component)",
+      "attempt": "hold a package-registry credential",
+      "target": "its declared component credentials",
+      "outcome": "declares only \"resolver-api-key\", \"approval-signer-token\" (feltkit/app.ts); no registry credential exists in its boundary"
+    },
+    {
+      "actor": "Resolver Control (no Maintenance token)",
+      "attempt": "propose or approve a release",
+      "target": "Boundry Maintenance releases.approve (AppPort)",
+      "outcome": "refused: UNAUTHORIZED Authentication is required"
+    },
+    {
+      "actor": "anyone without the registry token (e.g. Resolver Control)",
+      "attempt": "publish @demo/core@0.9.9 (unpublished version, valid tag)",
+      "target": "test registry http://127.0.0.1:48834",
+      "outcome": "refused: npm error code ENEEDAUTH | npm error need auth This command requires you to be logged in to http://127.0.0.1:48834/"
+    },
+    {
+      "actor": "anyone without the registry token (raw HTTP)",
+      "attempt": "PUT @demo/core@0.9.9 to the registry",
+      "target": "test registry http://127.0.0.1:48834",
+      "outcome": "refused: 401 registry answered 401: {"
+    },
+    {
+      "actor": "maintenance-agent over Maintenance MCP",
+      "attempt": "call releases_approve",
+      "target": "http://127.0.0.1:40611/mcp",
+      "outcome": "refused: [{\"type\":\"text\",\"text\":\"FORBIDDEN: Missing permission: maintenance.approve\"}]"
+    },
+    {
+      "actor": "boundry-maintenance over Resolver Control MCP",
+      "attempt": "call changes_approve",
+      "target": "http://127.0.0.1:49869/mcp",
+      "outcome": "refused: [{\"type\":\"text\",\"text\":\"FORBIDDEN: Missing permission: changes.approve\"}]"
+    }
+  ]
+}

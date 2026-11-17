@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 /**
  * Data contracts for Boundry Maintenance.
  *
@@ -25,6 +26,84 @@ const IsoDate = z.string().datetime({ offset: true });
 // Configuration (config/*.json) — curated, authoritative inventory
 // ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+// Governance (shared vocabulary with Resolver Control; see docs/architecture/control-plane.md)
+// ---------------------------------------------------------------------------
+
+/** How much breaks if this goes wrong. `critical` always needs two distinct approvers (Resolver Control's rule). */
+export const Criticality = z.enum(["low", "medium", "high", "critical"]);
+export type Criticality = z.infer<typeof Criticality>;
+
+/** A person decides; an agent proposes and inspects; a component executes what people approved. */
+export const PrincipalType = z.enum(["person", "agent", "component"]);
+export type PrincipalType = z.infer<typeof PrincipalType>;
+
+/**
+ * Roles and which principal types may hold them come from the shared governance contract
+ * (contracts/governance/v1/contract.json), the same names Resolver Control uses. Not redefined here.
+ */
+const GOVERNANCE = JSON.parse(readFileSync(new URL("../contracts/governance/v1/contract.json", import.meta.url), "utf8")) as { roles: Record<string, { principalTypes: string[] }> };
+const ROLE_NAMES = Object.keys(GOVERNANCE.roles) as [string, ...string[]];
+export const Role = z.enum(ROLE_NAMES);
+export type Role = z.infer<typeof Role>;
+
+const PrincipalId = z.string().regex(/^[a-z0-9][a-z0-9._:-]*$/, "lowercase id: a-z 0-9 . _ : -");
+export const Principal = z
+  .object({
+    id: PrincipalId,
+    name: z.string().min(1),
+    type: PrincipalType,
+    roles: z.array(Role).min(1),
+    keys: z.array(z.string().regex(/^(ssh-ed25519|ecdsa-sha2-nistp256|sk-ssh-ed25519@openssh.com) [A-Za-z0-9+/=]+( .*)?$/)).default([])
+      .describe("SSH public keys whose signatures authenticate this person's approvals (contract: authentication level 'signature')"),
+  })
+  .superRefine((p, ctx) => {
+    for (const r of p.roles) {
+      const allowed = GOVERNANCE.roles[r]!.principalTypes;
+      if (!allowed.includes(p.type)) ctx.addIssue({ code: "custom", path: ["roles"], message: `a ${p.type} cannot hold ${r} (contract: ${allowed.join("/")} only)` });
+    }
+    if (p.keys.length && p.type !== "person") ctx.addIssue({ code: "custom", path: ["keys"], message: "only a person's approvals are signed" });
+  });
+export type Principal = z.infer<typeof Principal>;
+
+export const PrincipalCatalog = z
+  .object({ $schema: z.string().optional(), principals: z.array(Principal) })
+  .superRefine((c, ctx) => {
+    const seen = new Set<string>();
+    c.principals.forEach((p, i) => { if (seen.has(p.id)) ctx.addIssue({ code: "custom", path: ["principals", i, "id"], message: `duplicate principal ${p.id}` }); seen.add(p.id); });
+  });
+export type PrincipalCatalog = z.infer<typeof PrincipalCatalog>;
+
+/** How the principal behind an action was established. The CLI cannot authenticate: it records "asserted". */
+export const Authentication = z.enum(["asserted", "session", "signature"]);
+
+// ---------------------------------------------------------------------------
+// Release policy (per package, curated). Absent = the package cannot be released by Boundry.
+// ---------------------------------------------------------------------------
+
+export const ReleaseBump = z.enum(["patch", "minor", "major", "prepatch", "preminor", "premajor", "prerelease", "repository"]);
+export type ReleaseBump = z.infer<typeof ReleaseBump>;
+
+export const ReleasePolicy = z.object({
+  allowedBumps: z
+    .array(ReleaseBump)
+    .min(1)
+    .default(["patch", "minor", "prerelease", "repository"])
+    .describe("Bumps a release request may ask for. 'repository' = release the version already declared in the manifest, if unpublished. 'major' must be listed explicitly."),
+  prereleaseId: z.string().regex(/^[0-9A-Za-z-]+$/).default("rc"),
+  tagFormat: z.string().default("{name}@{version}").describe("Git tag per released package; {name} and {version} are substituted"),
+  branch: z.string().default("main").describe("Branch that receives the release commit (fast-forward only)"),
+  approvers: z.array(z.string().min(1)).min(1).describe("People who may approve a release plan for this package (in addition to holding the approver role)"),
+  approvalsRequired: z.number().int().min(1).max(5).default(1).describe("Distinct people who must approve; a critical package always needs at least 2"),
+  protected: z.boolean().default(true).describe("Approving needs the prod_approver role. Publishing to a public registry is production, so the default is protected"),
+  frozen: z.boolean().default(false).describe("While frozen, releases of this package are neither approved nor executed; approved releases wait"),
+  freezeReason: z.string().optional(),
+  validation: z.array(z.enum(["test"])).default(["test"]).describe("Checks the release build must pass in Boundry CI before tagging"),
+  githubRelease: z.boolean().default(true),
+  distTag: z.string().default("latest").describe("npm dist-tag for stable releases (prereleases always use 'next')"),
+});
+export type ReleasePolicy = z.infer<typeof ReleasePolicy>;
+
 export const PackageConfig = z.object({
   id: Id,
   name: z.string().min(1).describe("Name as published in the registry"),
@@ -35,6 +114,8 @@ export const PackageConfig = z.object({
   active: z.boolean().default(true),
   trackPrereleases: z.boolean().default(false),
   description: z.string().optional(),
+  criticality: Criticality.default("medium"),
+  release: ReleasePolicy.optional().describe("Present only for owned packages Boundry is allowed to release"),
 });
 export type PackageConfig = z.infer<typeof PackageConfig>;
 
@@ -77,6 +158,12 @@ export const ProjectConfig = z.object({
         .describe("GitHub Actions workflow file names (e.g. ci.yml) that must succeed on a commit for it to count as verified"),
     })
     .optional(),
+  resolverApplication: z
+    .string()
+    .min(1)
+    .max(120)
+    .optional()
+    .describe("The name this application uses as a Resolver consumer (Resolver Control's consumer `application`). Only the identity link lives here; references, bindings and history stay in Resolver and Resolver Control"),
 });
 export type ProjectConfig = z.infer<typeof ProjectConfig>;
 
@@ -589,3 +676,154 @@ export const Snapshot = z.object({
   changes: SnapshotChanges,
 });
 export type Snapshot = z.infer<typeof Snapshot>;
+
+
+// ---------------------------------------------------------------------------
+// Release Manager (data/release-manager/<package-id>/<version>.json)
+//
+// One file per proposed release. The plan is immutable once approved (its digest is what the approval
+// authorizes). State moves forward only through the lifecycle below; history and attempts are append-only.
+// External facts (commit, tag, artifact, registry integrity, GitHub release) are recorded only after they
+// have been verified against the system that owns them.
+// ---------------------------------------------------------------------------
+
+export const ReleaseState = z.enum([
+  "proposed", "validated", "awaiting-approval", "approved",
+  "prepared", // release commit exists on the release branch
+  "built", // Boundry CI produced the exact artifact from the release commit
+  "tagged", // tag points at the release commit (only after a successful build)
+  "published", // registry accepted the artifact
+  "registry-verified", // registry serves the version with the artifact's integrity
+  "released", // GitHub release (if required) exists for the tag; records updated
+  "failed", "cancelled", "superseded",
+  "abandoned", // a person stopped pursuing a claimed execution after reconciliation (contract §7a); nothing rolled back
+]);
+export type ReleaseState = z.infer<typeof ReleaseState>;
+
+/** passed / failed / deferred (runs later, says when) / unavailable (could not be determined now) / not-applicable. */
+export const ValidationOutcome = z.enum(["passed", "failed", "deferred", "unavailable", "not-applicable"]);
+export const ValidationResult = z.object({ check: z.string(), outcome: ValidationOutcome, detail: z.string() });
+export type ValidationResult = z.infer<typeof ValidationResult>;
+
+/** A manifest that depends on a released package. Declared requirement and resolved version are separate facts. */
+export const Dependent = z.object({
+  package: z.string().describe("The dependent (package or project name)"),
+  where: z.string().describe("repository:manifest path"),
+  dependency: z.string().describe("The released package it depends on"),
+  declared: z.string().describe("The requirement its manifest declares"),
+  resolved: z.string().nullable().describe("The version its lockfile resolved (null: no lockfile entry observed)"),
+  accepts: z.boolean().describe("Whether the declared requirement accepts the new version"),
+  effect: z.string(),
+});
+export type Dependent = z.infer<typeof Dependent>;
+
+/** A change a consumer needs, proposed for its own plan and approval. Never applied by the release. */
+export const DownstreamProposal = z.object({
+  consumer: z.string(), where: z.string(), dependency: z.string(), toVersion: z.string(),
+  kind: z.enum(["requirement-change", "lockfile-update"]),
+  from: z.string().describe("The declared requirement (requirement-change) or the resolved version (lockfile-update)"),
+  to: z.string(),
+  state: z.literal("proposed"),
+  note: z.string(),
+});
+
+/** One observation of one consumer, append-only. Installation, adoption and verification are distinct facts. */
+export const ConsumerObservation = z.object({
+  at: IsoDate, consumer: z.string(), where: z.string(), dependency: z.string(), released: z.string(),
+  basis: z.string().describe("Where the observation came from (e.g. Maintenance scan at <time>)"),
+  installation: z.object({ declared: z.string().nullable(), resolved: z.string().nullable() }),
+  adoption: z.enum(["adopted", "not-adopted", "unknown"]).describe("adopted: the resolved version is the released one (or newer)"),
+  verification: z.enum(["verified", "unverified", "failed"]).describe("verified only with evidence that the consumer's own checks passed on the released version"),
+  verificationEvidence: z.string().nullable(),
+});
+
+export const ReleasePackagePlan = z.object({
+  package: Id,
+  name: z.string(),
+  registry: Registry,
+  directory: z.string(),
+  registryVersions: z.object({ count: z.number().int(), highest: z.string().nullable(), latestTag: z.string().nullable(), yanked: z.array(z.string()).default([]), observedAt: IsoDate }),
+  inherited: z.boolean().default(false).describe("Cargo: the version comes from [workspace.package] and is edited there"),
+  repositoryVersion: z.string().nullable(),
+  proposedVersion: z.string(),
+  tag: z.string(),
+  distTag: z.string(),
+  destination: z.string().describe("Registry base URL the artifact is published to"),
+  production: z.boolean().describe("false only for registries explicitly declared as test registries; production needs authenticated approvals"),
+});
+export type ReleasePackagePlan = z.infer<typeof ReleasePackagePlan>;
+
+export const ReleasePlan = z.object({
+  repository: RepoSlug,
+  branch: z.string(),
+  sourceCommit: z.string().regex(/^[0-9a-f]{40}$/),
+  bump: ReleaseBump,
+  requestedBy: z.string(),
+  requestedByType: PrincipalType,
+  requestedAt: IsoDate,
+  reason: z.string().nullable(),
+  packages: z.array(ReleasePackagePlan).min(1),
+  decision: z.array(z.string()).describe("Why these versions, in words"),
+  dependents: z.array(Dependent).describe("Who depends on the released packages. Never changed or published by this release."),
+  checks: z.array(ValidationResult).describe("Every validation, with its outcome. Failed checks refuse the plan; deferred ones say when they run"),
+  unknowns: z.array(z.string()).describe("What the plan could not establish, stated rather than assumed"),
+  impactFingerprint: z.string().describe("sha256 of the facts the impact assessment used; reassessed before approval and before execution"),
+  releaseCommit: z.object({
+    message: z.string(),
+    files: z.array(z.string()),
+    pins: z.array(z.object({ in: z.string(), dependency: z.string(), from: z.string(), to: z.string() })).default([])
+      .describe("Exact pins between packages released together, rewritten in manifests and lockfile"),
+  }),
+  validation: z.array(z.string()),
+  githubRelease: z.boolean(),
+  approvers: z.array(z.string()),
+  requiredApprovals: z.number().int().min(1).describe("max over the packages of policy approvalsRequired, and 2 if any is critical"),
+  protected: z.boolean().describe("true if any package's policy is protected: approvers need prod_approver"),
+});
+export type ReleasePlan = z.infer<typeof ReleasePlan>;
+
+export const ReleaseRecord = z.object({
+  schemaVersion: z.union([z.literal(2), z.literal(3)]).describe("3 adds claim and abandonment. Schema-2 records are read as they are; on their next save the claim is inferred from their history and the inference is noted in history"),
+  id: z.string().describe("<package-id>@<version> of the first package"),
+  planDigest: z.string().regex(/^[0-9a-f]{64}$/),
+  plan: ReleasePlan,
+  state: ReleaseState,
+  approvals: z
+    .array(z.object({ by: z.string(), principalType: PrincipalType, authentication: Authentication, at: IsoDate, planDigest: z.string(), signature: z.string().nullable().default(null).describe("SSH signature over the approval statement (src/governance/signatures.ts)") }))
+    .describe("Distinct people, none of them the requester; approved once plan.requiredApprovals is reached"),
+  revocation: z.object({ by: z.string(), at: IsoDate, reason: z.string() }).nullable(),
+  claim: z.object({
+    by: z.string().describe("the executing component"), at: IsoDate, triggeredBy: z.string().nullable(),
+    inferred: z.boolean().default(false).describe("true only for a schema-2 record whose claim was inferred from its history"),
+  }).nullable().default(null).describe("Execution was claimed: withdrawal and rejection end here (contract §7)"),
+  abandonment: z.object({
+    by: z.string(), byType: PrincipalType, at: IsoDate, reason: z.string().min(1), atState: z.string(),
+    reconciliation: z.object({
+      at: IsoDate, branch: z.string(), branchHead: z.string().nullable(), releaseCommit: z.string().nullable(),
+      releaseCommitOnBranch: z.boolean(),
+      tags: z.array(z.object({ name: z.string(), target: z.string().nullable() })),
+      registry: z.array(z.object({ package: Id, version: z.string(), present: z.boolean(), integrity: z.string().nullable(), matchesBuiltArtifact: z.boolean().nullable(), yanked: z.boolean() })),
+    }).describe("What every authority said when the release was abandoned; required before a replacement"),
+    remainsReal: z.array(z.string()).describe("What stays as it is: nothing is rolled back"),
+  }).nullable().default(null),
+  facts: z.object({
+    releaseCommit: z.string().nullable(),
+    build: z
+      .object({
+        system: z.string(), runId: z.string(), evidenceUrl: z.string().nullable(),
+        artifacts: z.array(z.object({ package: Id, file: z.string(), sha256: z.string(), integrity: z.string().describe("The registry's identity for these bytes: npm sha512 SRI, crates sha256 cksum"), size: z.number().int() })),
+        container: z.object({ name: z.string(), sha256: z.string() }).nullable(),
+      })
+      .nullable(),
+    tags: z.array(z.object({ name: z.string(), target: z.string() })),
+    published: z.array(z.object({ package: Id, version: z.string(), integrity: z.string(), alreadyPresent: z.boolean() })),
+    registryVerification: z.array(z.object({ package: Id, version: z.string(), integrity: z.string(), tarballSha256: z.string(), distTagPointsHere: z.boolean().nullable().describe("null: the registry has no dist-tags (crates)"), at: IsoDate })),
+    githubReleases: z.array(z.object({ package: Id, url: z.string(), tag: z.string(), alreadyPresent: z.boolean() })).describe("One per released package tag"),
+  }),
+  failure: z.object({ at: ReleaseState, reason: z.string(), recoverable: z.boolean(), when: IsoDate }).nullable(),
+  history: z.array(z.object({ at: IsoDate, state: ReleaseState, note: z.string() })),
+  attempts: z.array(z.object({ at: IsoDate, step: z.string(), outcome: z.enum(["done", "already-done", "failed", "refused", "skipped"]), detail: z.string() })),
+  downstream: z.array(DownstreamProposal).default([]).describe("Consumer changes this release makes necessary, proposed after release"),
+  consumers: z.array(ConsumerObservation).default([]).describe("Append-only consumer observations after release"),
+});
+export type ReleaseRecord = z.infer<typeof ReleaseRecord>;

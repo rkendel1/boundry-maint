@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "principals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._:-]*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "person",
+              "agent",
+              "component"
+            ]
+          },
+          "roles": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "viewer",
+                "engineer",
+                "approver",
+                "prod_approver",
+                "admin",
+                "agent",
+                "executor",
+                "signer"
+              ]
+            }
+          },
+          "keys": {
+            "default": [],
+            "description": "SSH public keys whose signatures authenticate this person's approvals (contract: authentication level 'signature')",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^(ssh-ed25519|ecdsa-sha2-nistp256|sk-ssh-ed25519@openssh.com) [A-Za-z0-9+/=]+( .*)?$"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "type",
+          "roles"
+        ]
+      }
+    }
+  },
+  "required": [
+    "principals"
+  ]
+}

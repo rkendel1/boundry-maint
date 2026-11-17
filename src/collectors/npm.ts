@@ -27,8 +27,11 @@ interface NpmDoc {
   versions?: Record<string, { deprecated?: string | boolean; repository?: string | { url?: string } }>;
 }
 
+/** Registry base URL. Default: the public npm registry. Overridable for private registries and stand-ins. */
+const NPM_REGISTRY = (process.env.MAINTENANCE_NPM_REGISTRY ?? "https://registry.npmjs.org").replace(/\/$/, "");
+
 export function npmDocUrl(name: string): string {
-  return `https://registry.npmjs.org/${name.startsWith("@") ? "@" + encodeURIComponent(name.slice(1)) : encodeURIComponent(name)}`;
+  return `${NPM_REGISTRY}/${name.startsWith("@") ? "@" + encodeURIComponent(name.slice(1)) : encodeURIComponent(name)}`;
 }
 
 function repoUrl(r: NpmDoc["repository"]): string | null {

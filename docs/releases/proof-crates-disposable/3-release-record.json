@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 2,
+  "id": "boundry-proof-core@0.1.2",
+  "planDigest": "3ff40172c4a083fc554ccde088111d3cc4a01dab327b96c3c0b5e1846ab5d864",
+  "plan": {
+    "repository": "boundry-proof/crates",
+    "branch": "main",
+    "sourceCommit": "62f73f79f1be4b09ec7bc5451a3126d18133d315",
+    "bump": "patch",
+    "requestedBy": "maintenance-agent",
+    "requestedByType": "agent",
+    "requestedAt": "2026-11-17T01:38:46.094Z",
+    "reason": "End-to-end proof of a Rust release (disposable crate, isolated registry)",
+    "packages": [
+      {
+        "package": "boundry-proof-core",
+        "name": "boundry-proof-core",
+        "registry": "crates",
+        "directory": "crates/core",
+        "registryVersions": {
+          "count": 2,
+          "highest": "0.1.1",
+          "latestTag": null,
+          "yanked": [
+            "0.1.1"
+          ],
+          "observedAt": "2026-11-17T01:38:46.094Z"
+        },
+        "inherited": false,
+        "repositoryVersion": "0.1.0",
+        "proposedVersion": "0.1.2",
+        "tag": "boundry-proof-core@0.1.2",
+        "distTag": "latest",
+        "destination": "http://127.0.0.1:45955",
+        "production": false
+      }
+    ],
+    "decision": [
+      "The registry has 2 versions of boundry-proof-core; the highest ever published is 0.1.1.",
+      "Yanked: 0.1.1. A yanked version stays published and is never reused, so it counts toward the highest version.",
+      "The manifest at the source commit declares 0.1.0.",
+      "Patch release from 0.1.1 gives 0.1.2 (0.x: under semver a patch bump of a 0.x version is the compatible channel for consumers using ^0.1).",
+      "Version 0.1.2 is not on the registry and tag boundry-proof-core@0.1.2 does not exist.",
+      "1 dependent manifest(s) found; none is changed or published by this release (see dependents and, after release, the downstream proposals)."
+    ],
+    "dependents": [
+      {
+        "package": "boundry-proof-app",
+        "where": "boundry-proof/crates:crates/app/Cargo.toml",
+        "dependency": "boundry-proof-core",
+        "declared": "0.1",
+        "resolved": "0.1.0",
+        "accepts": true,
+        "effect": "requirement 0.1 accepts 0.1.2; it builds against the new version in the workspace"
+      }
+    ],
+    "checks": [
+      {
+        "check": "boundry-proof-core: publishable",
+        "outcome": "passed",
+        "detail": "crates/core/Cargo.toml allows publishing"
+      },
+      {
+        "check": "boundry-proof-core: registry",
+        "outcome": "passed",
+        "detail": "http://127.0.0.1:45955 answered: 2 version(s) ever published, 1 yanked (0.1.1)"
+      },
+      {
+        "check": "boundry-proof-core: manifest and Cargo.lock agree",
+        "outcome": "passed",
+        "detail": "both say 0.1.0"
+      },
+      {
+        "check": "boundry-proof-core: version 0.1.2 free",
+        "outcome": "passed",
+        "detail": "not on the registry (yanked versions included) and tag boundry-proof-core@0.1.2 does not exist"
+      },
+      {
+        "check": "workspace version inheritance",
+        "outcome": "not-applicable",
+        "detail": "no released package inherits its version"
+      },
+      {
+        "check": "workspace install after the release commit",
+        "outcome": "passed",
+        "detail": "every workspace sibling's requirement accepts the new version(s)"
+      },
+      {
+        "check": "build and tests",
+        "outcome": "deferred",
+        "detail": "run by Boundry CI on the exact release commit after approval (test); nothing is tagged or published unless they pass"
+      },
+      {
+        "check": "registry acceptance",
+        "outcome": "deferred",
+        "detail": "the registry decides ownership, name and metadata at publish; a refusal stops the release before anything else is published"
+      },
+      {
+        "check": "consumer verification",
+        "outcome": "deferred",
+        "detail": "a consumer's own checks on the new version are recorded after release (release consumers), never assumed"
+      },
+      {
+        "check": "external consumers",
+        "outcome": "unavailable",
+        "detail": "no installations data (run a scan): consumers in other repositories are unknown"
+      }
+    ],
+    "unknowns": [
+      "Consumers in other repositories: no scan data was available.",
+      "Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible."
+    ],
+    "impactFingerprint": "3034ec9be1114d548a92717bd19b881755fdd74ac985479868276e3b905981a6",
+    "releaseCommit": {
+      "message": "Release boundry-proof-core@0.1.2",
+      "files": [
+        "Cargo.lock",
+        "crates/core/Cargo.toml"
+      ],
+      "pins": []
+    },
+    "validation": [
+      "test"
+    ],
+    "githubRelease": false,
+    "approvers": [
+      "randy"
+    ],
+    "requiredApprovals": 1,
+    "protected": true
+  },
+  "state": "released",
+  "approvals": [
+    {
+      "by": "randy",
+      "principalType": "person",
+      "authentication": "signature",
+      "at": "2026-11-17T01:38:46.501Z",
+      "planDigest": "3ff40172c4a083fc554ccde088111d3cc4a01dab327b96c3c0b5e1846ab5d864",
+      "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAg7JpBpE7sM1w+a5QxxkzBLelpYm\nuvlRzfbtwfzRWngBcAAAAYYm91bmRyeS1yZWxlYXNlLWFwcHJvdmFsAAAAAAAAAAZzaGE1\nMTIAAABTAAAAC3NzaC1lZDI1NTE5AAAAQPWB/lBWfikEJ51s4Wq2N1QPvRO+mSyetI2vkU\nMxggT14BC6kPIqWsYuYyvSwVLGp4Y5/+6JcpktEavaGfMaAgQ=\n-----END SSH SIGNATURE-----\n"
+    }
+  ],
+  "revocation": null,
+  "facts": {
+    "releaseCommit": "a041c9d093488c089db90a7e2ab9d220020b0144",
+    "build": {
+      "system": "boundry-ci",
+      "runId": "run_321624ab2a5e7f3a593ce8ce",
+      "evidenceUrl": "http://127.0.0.1:21091/v1/runs/run_321624ab2a5e7f3a593ce8ce/evidence",
+      "artifacts": [
+        {
+          "package": "boundry-proof-core",
+          "file": "boundry-proof-core-0.1.2.crate",
+          "sha256": "a26d047fdf094de50aaf1e9a8f7e4989bfe34c55bec62c5f273171bec6b97df3",
+          "integrity": "a26d047fdf094de50aaf1e9a8f7e4989bfe34c55bec62c5f273171bec6b97df3",
+          "size": 870
+        }
+      ],
+      "container": {
+        "name": "package.tar",
+        "sha256": "21577e1bdb6d2927caa15e2114cf630242e4817bdf11dccf10fc806c08c1870f"
+      }
+    },
+    "tags": [
+      {
+        "name": "boundry-proof-core@0.1.2",
+        "target": "a041c9d093488c089db90a7e2ab9d220020b0144"
+      }
+    ],
+    "published": [
+      {
+        "package": "boundry-proof-core",
+        "version": "0.1.2",
+        "integrity": "a26d047fdf094de50aaf1e9a8f7e4989bfe34c55bec62c5f273171bec6b97df3",
+        "alreadyPresent": true
+      }
+    ],
+    "registryVerification": [
+      {
+        "package": "boundry-proof-core",
+        "version": "0.1.2",
+        "integrity": "a26d047fdf094de50aaf1e9a8f7e4989bfe34c55bec62c5f273171bec6b97df3",
+        "tarballSha256": "a26d047fdf094de50aaf1e9a8f7e4989bfe34c55bec62c5f273171bec6b97df3",
+        "distTagPointsHere": null,
+        "at": "2026-11-17T01:38:52.971Z"
+      }
+    ],
+    "githubReleases": []
+  },
+  "failure": null,
+  "history": [
+    {
+      "at": "2026-11-17T01:38:46.094Z",
+      "state": "proposed",
+      "note": "patch release proposed by maintenance-agent (agent)"
+    },
+    {
+      "at": "2026-11-17T01:38:46.094Z",
+      "state": "validated",
+      "note": "passed: boundry-proof-core: publishable; passed: boundry-proof-core: registry; passed: boundry-proof-core: manifest and Cargo.lock agree; passed: boundry-proof-core: version 0.1.2 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; unavailable: external consumers"
+    },
+    {
+      "at": "2026-11-17T01:38:46.094Z",
+      "state": "awaiting-approval",
+      "note": "needs 1 approval(s) from prod approvers; eligible: randy"
+    },
+    {
+      "at": "2026-11-17T01:38:46.501Z",
+      "state": "approved",
+      "note": "approved by randy (signature) for plan 3ff40172c4a0"
+    },
+    {
+      "at": "2026-11-17T01:38:46.676Z",
+      "state": "prepared",
+      "note": "release commit a041c9d09348"
+    },
+    {
+      "at": "2026-11-17T01:38:52.837Z",
+      "state": "built",
+      "note": "built by run_321624ab2a5e7f3a593ce8ce from a041c9d09348"
+    },
+    {
+      "at": "2026-11-17T01:38:52.945Z",
+      "state": "tagged",
+      "note": "boundry-proof-core@0.1.2"
+    },
+    {
+      "at": "2026-11-17T01:38:52.966Z",
+      "state": "published",
+      "note": "registry accepted every artifact"
+    },
+    {
+      "at": "2026-11-17T01:38:52.971Z",
+      "state": "registry-verified",
+      "note": "registry serves the exact artifact"
+    },
+    {
+      "at": "2026-11-17T01:38:52.975Z",
+      "state": "released",
+      "note": "boundry-proof-core@0.1.2 released and verified"
+    }
+  ],
+  "attempts": [
+    {
+      "at": "2026-11-17T01:38:46.551Z",
+      "step": "authorize",
+      "outcome": "done",
+      "detail": "component:release-executor authorized execution under boundry.governance@1.0.0 (triggered by randy)"
+    },
+    {
+      "at": "2026-11-17T01:38:46.676Z",
+      "step": "release-commit",
+      "outcome": "done",
+      "detail": "a041c9d09348 on main (Cargo.lock, crates/core/Cargo.toml)"
+    },
+    {
+      "at": "2026-11-17T01:38:52.837Z",
+      "step": "build",
+      "outcome": "done",
+      "detail": "run_321624ab2a5e7f3a593ce8ce: boundry-proof-core-0.1.2.crate sha256:a26d047fdf094de5"
+    },
+    {
+      "at": "2026-11-17T01:38:52.945Z",
+      "step": "tag",
+      "outcome": "done",
+      "detail": "boundry-proof-core@0.1.2 → a041c9d09348 (verified)"
+    },
+    {
+      "at": "2026-11-17T01:38:52.966Z",
+      "step": "publish",
+      "outcome": "already-done",
+      "detail": "publish reported \"crates registry unreachable: fetch failed\", but the registry has the exact artifact"
+    },
+    {
+      "at": "2026-11-17T01:38:52.971Z",
+      "step": "verify-registry",
+      "outcome": "done",
+      "detail": "0.1.2 integrity+bytes match; not yanked (no dist-tags on this registry)"
+    },
+    {
+      "at": "2026-11-17T01:38:52.975Z",
+      "step": "github-release",
+      "outcome": "skipped",
+      "detail": "skipped: the release policy does not create GitHub releases"
+    }
+  ],
+  "downstream": [],
+  "consumers": [
+    {
+      "at": "2026-11-17T01:38:53.268Z",
+      "consumer": "proof-consumer",
+      "where": "boundry-proof/consumer:Cargo.toml",
+      "dependency": "boundry-proof-core",
+      "released": "0.1.2",
+      "basis": "proof: cargo generate-lockfile in a separate consumer project",
+      "installation": {
+        "declared": "0.1",
+        "resolved": "0.1.2"
+      },
+      "adoption": "adopted",
+      "verification": "verified",
+      "verificationEvidence": "cargo run of proof-consumer against 0.1.2 printed 42"
+    }
+  ]
+}

@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 2,
+  "id": "appport-resolver@0.4.2",
+  "planDigest": "0c9abf10b85cdf0ca89cdd3ddb40af1b6556956e24a692f57d70bf4ea2e04897",
+  "plan": {
+    "repository": "rkendel1/resolver",
+    "branch": "main",
+    "sourceCommit": "99385866652af86aae0e04649313277a1fc599ee",
+    "bump": "patch",
+    "requestedBy": "maintenance-agent",
+    "requestedByType": "agent",
+    "requestedAt": "2026-11-17T01:37:42.027Z",
+    "reason": "End-to-end proof of the Release Manager (resolver release train)",
+    "packages": [
+      {
+        "package": "appport-resolver",
+        "name": "@appport/resolver",
+        "registry": "npm",
+        "directory": "packages/server",
+        "registryVersions": {
+          "count": 9,
+          "highest": "0.4.1",
+          "latestTag": "0.4.1",
+          "yanked": [],
+          "observedAt": "2026-11-17T01:37:42.027Z"
+        },
+        "inherited": false,
+        "repositoryVersion": "0.4.1",
+        "proposedVersion": "0.4.2",
+        "tag": "@appport/resolver@0.4.2",
+        "distTag": "latest",
+        "destination": "http://127.0.0.1:4875",
+        "production": false
+      },
+      {
+        "package": "appport-resolver-client",
+        "name": "@appport/resolver-client",
+        "registry": "npm",
+        "directory": "packages/client",
+        "registryVersions": {
+          "count": 8,
+          "highest": "0.3.0",
+          "latestTag": "0.3.0",
+          "yanked": [],
+          "observedAt": "2026-11-17T01:37:42.027Z"
+        },
+        "inherited": false,
+        "repositoryVersion": "0.3.0",
+        "proposedVersion": "0.3.1",
+        "tag": "@appport/resolver-client@0.3.1",
+        "distTag": "latest",
+        "destination": "http://127.0.0.1:4875",
+        "production": false
+      },
+      {
+        "package": "appport-resolver-core",
+        "name": "@appport/resolver-core",
+        "registry": "npm",
+        "directory": "packages/core",
+        "registryVersions": {
+          "count": 4,
+          "highest": "0.2.0",
+          "latestTag": "0.2.0",
+          "yanked": [],
+          "observedAt": "2026-11-17T01:37:42.027Z"
+        },
+        "inherited": false,
+        "repositoryVersion": "0.2.0",
+        "proposedVersion": "0.2.1",
+        "tag": "@appport/resolver-core@0.2.1",
+        "distTag": "latest",
+        "destination": "http://127.0.0.1:4875",
+        "production": false
+      }
+    ],
+    "decision": [
+      "The registry has 9 versions of @appport/resolver; the highest ever published is 0.4.1.",
+      "The manifest at the source commit declares 0.4.1.",
+      "Patch release from 0.4.1 gives 0.4.2 (0.x: under semver a patch bump of a 0.x version is the compatible channel for consumers using ^0.4).",
+      "Version 0.4.2 is not on the registry and tag @appport/resolver@0.4.2 does not exist.",
+      "The registry has 8 versions of @appport/resolver-client; the highest ever published is 0.3.0.",
+      "The manifest at the source commit declares 0.3.0.",
+      "Patch release from 0.3.0 gives 0.3.1 (0.x: under semver a patch bump of a 0.x version is the compatible channel for consumers using ^0.3).",
+      "Version 0.3.1 is not on the registry and tag @appport/resolver-client@0.3.1 does not exist.",
+      "The registry has 4 versions of @appport/resolver-core; the highest ever published is 0.2.0.",
+      "The manifest at the source commit declares 0.2.0.",
+      "Patch release from 0.2.0 gives 0.2.1 (0.x: under semver a patch bump of a 0.x version is the compatible channel for consumers using ^0.2).",
+      "Version 0.2.1 is not on the registry and tag @appport/resolver-core@0.2.1 does not exist.",
+      "1 dependent manifest(s) found; none is changed or published by this release (see dependents and, after release, the downstream proposals)."
+    ],
+    "dependents": [
+      {
+        "package": "feltkit",
+        "where": "rkendel1/feltkit:packages/sdk/package.json",
+        "dependency": "@appport/resolver-client",
+        "declared": "0.3.0",
+        "resolved": "0.3.0",
+        "accepts": false,
+        "effect": "pins 0.3.0 exactly: keeps using it until a requirement change (its own plan)"
+      }
+    ],
+    "checks": [
+      {
+        "check": "@appport/resolver: publishable",
+        "outcome": "passed",
+        "detail": "packages/server/package.json allows publishing"
+      },
+      {
+        "check": "@appport/resolver: registry",
+        "outcome": "passed",
+        "detail": "http://127.0.0.1:4875 answered: 9 version(s) ever published"
+      },
+      {
+        "check": "@appport/resolver: manifest and package-lock.json agree",
+        "outcome": "passed",
+        "detail": "both say 0.4.1"
+      },
+      {
+        "check": "@appport/resolver: version 0.4.2 free",
+        "outcome": "passed",
+        "detail": "not on the registry (yanked versions included) and tag @appport/resolver@0.4.2 does not exist"
+      },
+      {
+        "check": "@appport/resolver-client: publishable",
+        "outcome": "passed",
+        "detail": "packages/client/package.json allows publishing"
+      },
+      {
+        "check": "@appport/resolver-client: registry",
+        "outcome": "passed",
+        "detail": "http://127.0.0.1:4875 answered: 8 version(s) ever published"
+      },
+      {
+        "check": "@appport/resolver-client: manifest and package-lock.json agree",
+        "outcome": "passed",
+        "detail": "both say 0.3.0"
+      },
+      {
+        "check": "@appport/resolver-client: version 0.3.1 free",
+        "outcome": "passed",
+        "detail": "not on the registry (yanked versions included) and tag @appport/resolver-client@0.3.1 does not exist"
+      },
+      {
+        "check": "@appport/resolver-core: publishable",
+        "outcome": "passed",
+        "detail": "packages/core/package.json allows publishing"
+      },
+      {
+        "check": "@appport/resolver-core: registry",
+        "outcome": "passed",
+        "detail": "http://127.0.0.1:4875 answered: 4 version(s) ever published"
+      },
+      {
+        "check": "@appport/resolver-core: manifest and package-lock.json agree",
+        "outcome": "passed",
+        "detail": "both say 0.2.0"
+      },
+      {
+        "check": "@appport/resolver-core: version 0.2.1 free",
+        "outcome": "passed",
+        "detail": "not on the registry (yanked versions included) and tag @appport/resolver-core@0.2.1 does not exist"
+      },
+      {
+        "check": "workspace version inheritance",
+        "outcome": "not-applicable",
+        "detail": "no released package inherits its version"
+      },
+      {
+        "check": "workspace install after the release commit",
+        "outcome": "passed",
+        "detail": "3 in-plan requirement(s) rewritten; every workspace sibling's requirement accepts the new version(s)"
+      },
+      {
+        "check": "build and tests",
+        "outcome": "deferred",
+        "detail": "run by Boundry CI on the exact release commit after approval (test); nothing is tagged or published unless they pass"
+      },
+      {
+        "check": "registry acceptance",
+        "outcome": "deferred",
+        "detail": "the registry decides ownership, name and metadata at publish; a refusal stops the release before anything else is published"
+      },
+      {
+        "check": "consumer verification",
+        "outcome": "deferred",
+        "detail": "a consumer's own checks on the new version are recorded after release (release consumers), never assumed"
+      },
+      {
+        "check": "external consumers",
+        "outcome": "passed",
+        "detail": "1 external dependent manifest(s) from the latest scan"
+      }
+    ],
+    "unknowns": [
+      "Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible."
+    ],
+    "impactFingerprint": "96253a24f75b6cf6955497ea568bb875b8c0915ca847178b15560d3675211c99",
+    "releaseCommit": {
+      "message": "Release @appport/resolver@0.4.2, @appport/resolver-client@0.3.1, @appport/resolver-core@0.2.1",
+      "files": [
+        "package-lock.json",
+        "packages/client/package.json",
+        "packages/core/package.json",
+        "packages/server/package.json"
+      ],
+      "pins": [
+        {
+          "in": "packages/client",
+          "dependency": "@appport/resolver-core",
+          "from": "0.2.0",
+          "to": "0.2.1"
+        },
+        {
+          "in": "packages/server",
+          "dependency": "@appport/resolver-client",
+          "from": "0.3.0",
+          "to": "0.3.1"
+        },
+        {
+          "in": "packages/server",
+          "dependency": "@appport/resolver-core",
+          "from": "0.2.0",
+          "to": "0.2.1"
+        }
+      ]
+    },
+    "validation": [
+      "test"
+    ],
+    "githubRelease": true,
+    "approvers": [
+      "randy"
+    ],
+    "requiredApprovals": 1,
+    "protected": true
+  },
+  "state": "released",
+  "approvals": [
+    {
+      "by": "randy",
+      "principalType": "person",
+      "authentication": "asserted",
+      "at": "2026-11-17T01:37:43.637Z",
+      "planDigest": "0c9abf10b85cdf0ca89cdd3ddb40af1b6556956e24a692f57d70bf4ea2e04897",
+      "signature": null
+    }
+  ],
+  "revocation": null,
+  "facts": {
+    "releaseCommit": "df70ca12d7baf95dbf157b8352c589af702683b7",
+    "build": {
+      "system": "boundry-ci",
+      "runId": "run_aebf83650374724391632644",
+      "evidenceUrl": "http://127.0.0.1:21090/v1/runs/run_aebf83650374724391632644/evidence",
+      "artifacts": [
+        {
+          "package": "appport-resolver",
+          "file": "appport-resolver-0.4.2.tgz",
+          "sha256": "312ecf060a121326658aa8faf4f0060807ad364fddb0cc0a83b75205a637d3ad",
+          "integrity": "sha512-mujrA+1DEDQDaSvpJdYLHyVXfPSo7FokNMDfmBGmfcgvsXG2uSUkQDHcGU7nUmUe8ChzjiAVbsZ7gJ3Gi2UEdQ==",
+          "size": 220061
+        },
+        {
+          "package": "appport-resolver-client",
+          "file": "appport-resolver-client-0.3.1.tgz",
+          "sha256": "eafb495680050af107e8cbfd82169186b6f654cf7cd2ff60b639a69665240664",
+          "integrity": "sha512-k4T8jxl4P8ytaHzcrSu5r3xrm+rNdypY7W5Zr+qz2XX1+1+1rHtR2ZE4QMjGZrKRRgJgtzTBticV2kdjPTPxng==",
+          "size": 16680
+        },
+        {
+          "package": "appport-resolver-core",
+          "file": "appport-resolver-core-0.2.1.tgz",
+          "sha256": "b001e5edaaee97103e55647ad18856d24632d23fdd14a6a2d2ce193821ea179b",
+          "integrity": "sha512-gXGxWKf2SHcIeiZnTPjWfmQBudTfAecL2AuQwbeOo11KHUl6ok30JJzCBxnppot52pNYGYnPf71bjb6UeVrSGg==",
+          "size": 18944
+        }
+      ],
+      "container": {
+        "name": "package.tar",
+        "sha256": "1088d0a968c24310857fc65c474c94e65480be3028e81c60da395ce1b5fca8df"
+      }
+    },
+    "tags": [
+      {
+        "name": "@appport/resolver@0.4.2",
+        "target": "df70ca12d7baf95dbf157b8352c589af702683b7"
+      },
+      {
+        "name": "@appport/resolver-client@0.3.1",
+        "target": "df70ca12d7baf95dbf157b8352c589af702683b7"
+      },
+      {
+        "name": "@appport/resolver-core@0.2.1",
+        "target": "df70ca12d7baf95dbf157b8352c589af702683b7"
+      }
+    ],
+    "published": [
+      {
+        "package": "appport-resolver",
+        "version": "0.4.2",
+        "integrity": "sha512-mujrA+1DEDQDaSvpJdYLHyVXfPSo7FokNMDfmBGmfcgvsXG2uSUkQDHcGU7nUmUe8ChzjiAVbsZ7gJ3Gi2UEdQ==",
+        "alreadyPresent": true
+      },
+      {
+        "package": "appport-resolver-client",
+        "version": "0.3.1",
+        "integrity": "sha512-k4T8jxl4P8ytaHzcrSu5r3xrm+rNdypY7W5Zr+qz2XX1+1+1rHtR2ZE4QMjGZrKRRgJgtzTBticV2kdjPTPxng==",
+        "alreadyPresent": false
+      },
+      {
+        "package": "appport-resolver-core",
+        "version": "0.2.1",
+        "integrity": "sha512-gXGxWKf2SHcIeiZnTPjWfmQBudTfAecL2AuQwbeOo11KHUl6ok30JJzCBxnppot52pNYGYnPf71bjb6UeVrSGg==",
+        "alreadyPresent": false
+      }
+    ],
+    "registryVerification": [
+      {
+        "package": "appport-resolver",
+        "version": "0.4.2",
+        "integrity": "sha512-mujrA+1DEDQDaSvpJdYLHyVXfPSo7FokNMDfmBGmfcgvsXG2uSUkQDHcGU7nUmUe8ChzjiAVbsZ7gJ3Gi2UEdQ==",
+        "tarballSha256": "312ecf060a121326658aa8faf4f0060807ad364fddb0cc0a83b75205a637d3ad",
+        "distTagPointsHere": true,
+        "at": "2026-11-17T01:38:31.648Z"
+      },
+      {
+        "package": "appport-resolver-client",
+        "version": "0.3.1",
+        "integrity": "sha512-k4T8jxl4P8ytaHzcrSu5r3xrm+rNdypY7W5Zr+qz2XX1+1+1rHtR2ZE4QMjGZrKRRgJgtzTBticV2kdjPTPxng==",
+        "tarballSha256": "eafb495680050af107e8cbfd82169186b6f654cf7cd2ff60b639a69665240664",
+        "distTagPointsHere": true,
+        "at": "2026-11-17T01:38:31.905Z"
+      },
+      {
+        "package": "appport-resolver-core",
+        "version": "0.2.1",
+        "integrity": "sha512-gXGxWKf2SHcIeiZnTPjWfmQBudTfAecL2AuQwbeOo11KHUl6ok30JJzCBxnppot52pNYGYnPf71bjb6UeVrSGg==",
+        "tarballSha256": "b001e5edaaee97103e55647ad18856d24632d23fdd14a6a2d2ce193821ea179b",
+        "distTagPointsHere": true,
+        "at": "2026-11-17T01:38:32.168Z"
+      }
+    ],
+    "githubReleases": [
+      {
+        "package": "appport-resolver",
+        "url": "http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver%400.4.2",
+        "tag": "@appport/resolver@0.4.2",
+        "alreadyPresent": false
+      },
+      {
+        "package": "appport-resolver-client",
+        "url": "http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-client%400.3.1",
+        "tag": "@appport/resolver-client@0.3.1",
+        "alreadyPresent": false
+      },
+      {
+        "package": "appport-resolver-core",
+        "url": "http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-core%400.2.1",
+        "tag": "@appport/resolver-core@0.2.1",
+        "alreadyPresent": false
+      }
+    ]
+  },
+  "failure": null,
+  "history": [
+    {
+      "at": "2026-11-17T01:37:42.027Z",
+      "state": "proposed",
+      "note": "patch release proposed by maintenance-agent (agent)"
+    },
+    {
+      "at": "2026-11-17T01:37:42.027Z",
+      "state": "validated",
+      "note": "passed: @appport/resolver: publishable; passed: @appport/resolver: registry; passed: @appport/resolver: manifest and package-lock.json agree; passed: @appport/resolver: version 0.4.2 free; passed: @appport/resolver-client: publishable; passed: @appport/resolver-client: registry; passed: @appport/resolver-client: manifest and package-lock.json agree; passed: @appport/resolver-client: version 0.3.1 free; passed: @appport/resolver-core: publishable; passed: @appport/resolver-core: registry; passed: @appport/resolver-core: manifest and package-lock.json agree; passed: @appport/resolver-core: version 0.2.1 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; passed: external consumers"
+    },
+    {
+      "at": "2026-11-17T01:37:42.027Z",
+      "state": "awaiting-approval",
+      "note": "needs 1 approval(s) from prod approvers; eligible: randy"
+    },
+    {
+      "at": "2026-11-17T01:37:43.638Z",
+      "state": "approved",
+      "note": "approved by randy (asserted) for plan 0c9abf10b85c"
+    },
+    {
+      "at": "2026-11-17T01:37:44.417Z",
+      "state": "prepared",
+      "note": "release commit df70ca12d7ba"
+    },
+    {
+      "at": "2026-11-17T01:38:18.766Z",
+      "state": "built",
+      "note": "built by run_aebf83650374724391632644 from df70ca12d7ba"
+    },
+    {
+      "at": "2026-11-17T01:38:19.137Z",
+      "state": "tagged",
+      "note": "@appport/resolver@0.4.2, @appport/resolver-client@0.3.1, @appport/resolver-core@0.2.1"
+    },
+    {
+      "at": "2026-11-17T01:38:31.375Z",
+      "state": "published",
+      "note": "registry accepted every artifact"
+    },
+    {
+      "at": "2026-11-17T01:38:32.168Z",
+      "state": "registry-verified",
+      "note": "registry serves the exact artifact"
+    },
+    {
+      "at": "2026-11-17T01:38:32.204Z",
+      "state": "released",
+      "note": "@appport/resolver@0.4.2, @appport/resolver-client@0.3.1, @appport/resolver-core@0.2.1 released and verified"
+    }
+  ],
+  "attempts": [
+    {
+      "at": "2026-11-17T01:37:43.964Z",
+      "step": "authorize",
+      "outcome": "done",
+      "detail": "component:release-executor authorized execution under boundry.governance@1.0.0 (triggered by randy)"
+    },
+    {
+      "at": "2026-11-17T01:37:44.417Z",
+      "step": "release-commit",
+      "outcome": "done",
+      "detail": "df70ca12d7ba on main (package-lock.json, packages/client/package.json, packages/core/package.json, packages/server/package.json)"
+    },
+    {
+      "at": "2026-11-17T01:38:18.766Z",
+      "step": "build",
+      "outcome": "done",
+      "detail": "run_aebf83650374724391632644: appport-resolver-0.4.2.tgz sha256:312ecf060a121326, appport-resolver-client-0.3.1.tgz sha256:eafb495680050af1, appport-resolver-core-0.2.1.tgz sha256:b001e5edaaee9710"
+    },
+    {
+      "at": "2026-11-17T01:38:18.916Z",
+      "step": "tag",
+      "outcome": "done",
+      "detail": "@appport/resolver@0.4.2 → df70ca12d7ba (verified)"
+    },
+    {
+      "at": "2026-11-17T01:38:19.033Z",
+      "step": "tag",
+      "outcome": "done",
+      "detail": "@appport/resolver-client@0.3.1 → df70ca12d7ba (verified)"
+    },
+    {
+      "at": "2026-11-17T01:38:19.137Z",
+      "step": "tag",
+      "outcome": "done",
+      "detail": "@appport/resolver-core@0.2.1 → df70ca12d7ba (verified)"
+    },
+    {
+      "at": "2026-11-17T01:38:30.140Z",
+      "step": "publish",
+      "outcome": "already-done",
+      "detail": "publish reported \"registry refused: version already present\", but the registry has the exact artifact"
+    },
+    {
+      "at": "2026-11-17T01:38:30.762Z",
+      "step": "publish",
+      "outcome": "done",
+      "detail": "@appport/resolver-client@0.3.1 → http://127.0.0.1:4875 (dist-tag latest)"
+    },
+    {
+      "at": "2026-11-17T01:38:31.375Z",
+      "step": "publish",
+      "outcome": "done",
+      "detail": "@appport/resolver-core@0.2.1 → http://127.0.0.1:4875 (dist-tag latest)"
+    },
+    {
+      "at": "2026-11-17T01:38:32.168Z",
+      "step": "verify-registry",
+      "outcome": "done",
+      "detail": "0.4.2 integrity+bytes match; dist-tag points here; 0.3.1 integrity+bytes match; dist-tag points here; 0.2.1 integrity+bytes match; dist-tag points here"
+    },
+    {
+      "at": "2026-11-17T01:38:32.199Z",
+      "step": "github-release",
+      "outcome": "done",
+      "detail": "http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver%400.4.2"
+    },
+    {
+      "at": "2026-11-17T01:38:32.202Z",
+      "step": "github-release",
+      "outcome": "done",
+      "detail": "http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-client%400.3.1"
+    },
+    {
+      "at": "2026-11-17T01:38:32.203Z",
+      "step": "github-release",
+      "outcome": "done",
+      "detail": "http://127.0.0.1:43859/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-core%400.2.1"
+    },
+    {
+      "at": "2026-11-17T01:38:32.204Z",
+      "step": "downstream",
+      "outcome": "done",
+      "detail": "1 consumer change(s) proposed (never applied by this release): feltkit requirement-change"
+    }
+  ],
+  "downstream": [
+    {
+      "consumer": "feltkit",
+      "where": "rkendel1/feltkit:packages/sdk/package.json",
+      "dependency": "@appport/resolver-client",
+      "toVersion": "0.3.1",
+      "kind": "requirement-change",
+      "from": "0.3.0",
+      "to": "0.3.1",
+      "state": "proposed",
+      "note": "Proposed only: it needs its own plan and approval in the consumer's repository. This release never changes consumers."
+    }
+  ],
+  "consumers": []
+}
