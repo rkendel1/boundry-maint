@@ -1,15 +1,15 @@
 {
   "schemaVersion": 3,
   "id": "boundry-proof-core@0.1.2",
-  "planDigest": "17039aba042cf9c079faa7f07c0171ecf755c0933ebf5c24fc6b5dd5feeecdf1",
+  "planDigest": "0c169cda06609a4679ee37ddb5da78bfba83e1767c650253c60211b81631d57d",
   "plan": {
     "repository": "boundry-proof/crates",
     "branch": "main",
-    "sourceCommit": "af91218d46b53f4e0f46ed8d1b48213d6f90458d",
+    "sourceCommit": "05ac12cd9a5fbed984dd5fd3ac50635234c40a6e",
     "bump": "patch",
     "requestedBy": "maintenance-agent",
     "requestedByType": "agent",
-    "requestedAt": "2026-11-17T12:55:26.912Z",
+    "requestedAt": "2026-11-17T13:19:08.703Z",
     "reason": "End-to-end proof of a Rust release (disposable crate, isolated registry)",
     "packages": [
       {
@@ -24,14 +24,14 @@
           "yanked": [
             "0.1.1"
           ],
-          "observedAt": "2026-11-17T12:55:26.912Z"
+          "observedAt": "2026-11-17T13:19:08.703Z"
         },
         "inherited": false,
         "repositoryVersion": "0.1.0",
         "proposedVersion": "0.1.2",
         "tag": "boundry-proof-core@0.1.2",
         "distTag": "latest",
-        "destination": "http://127.0.0.1:46803",
+        "destination": "http://127.0.0.1:42347",
         "production": false
       }
     ],
@@ -63,7 +63,7 @@
       {
         "check": "boundry-proof-core: registry",
         "outcome": "passed",
-        "detail": "http://127.0.0.1:46803 answered: 2 version(s) ever published, 1 yanked (0.1.1)"
+        "detail": "http://127.0.0.1:42347 answered: 2 version(s) ever published, 1 yanked (0.1.1)"
       },
       {
         "check": "boundry-proof-core: manifest and Cargo.lock agree",
@@ -110,7 +110,7 @@
       "Consumers in other repositories: no scan data was available.",
       "Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible."
     ],
-    "impactFingerprint": "b138e77a6082882d59bfa9d68d05fadba29d4cf32b1757e6e9cfa9ad04158cdd",
+    "impactFingerprint": "e541bb00a81e6d9b7aba64d23b1af2dda27260d3683f2891d48cf0611e976acb",
     "releaseCommit": {
       "message": "Release boundry-proof-core@0.1.2",
       "files": [
@@ -135,25 +135,25 @@
       "by": "randy",
       "principalType": "person",
       "authentication": "signature",
-      "at": "2026-11-17T12:55:27.384Z",
-      "planDigest": "17039aba042cf9c079faa7f07c0171ecf755c0933ebf5c24fc6b5dd5feeecdf1",
-      "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgiK4jiFDil9opNqWs1SmRPpPDKb\nrD/WKlgmN2RG/BGksAAAAYYm91bmRyeS1yZWxlYXNlLWFwcHJvdmFsAAAAAAAAAAZzaGE1\nMTIAAABTAAAAC3NzaC1lZDI1NTE5AAAAQPj8Z4jJ05RRMAnI90QUHPa+m65EuNjswENJmu\npt19uCMifCD/vHj4ZxvuyknxafX+IcFJBMaLD6j9frSfkKSwY=\n-----END SSH SIGNATURE-----\n"
+      "at": "2026-11-17T13:19:09.271Z",
+      "planDigest": "0c169cda06609a4679ee37ddb5da78bfba83e1767c650253c60211b81631d57d",
+      "signature": "-----BEGIN SSH SIGNATURE-----\nU1NIU0lHAAAAAQAAADMAAAALc3NoLWVkMjU1MTkAAAAgJsA/9gpCpgVXessiuRJYjFQY90\njBppfKVZd6il9g91wAAAAYYm91bmRyeS1yZWxlYXNlLWFwcHJvdmFsAAAAAAAAAAZzaGE1\nMTIAAABTAAAAC3NzaC1lZDI1NTE5AAAAQIkVLHFRg1ixZuU7Us/WwAl+1eWnSVaBfkaU9m\nxFTIsVXbxL7LtEgMbngQMWHiwXKrTScUKg+C2iyfNsaxmHlAs=\n-----END SSH SIGNATURE-----\n"
     }
   ],
   "revocation": null,
   "claim": {
     "by": "component:release-executor",
-    "at": "2026-11-17T12:55:27.438Z",
+    "at": "2026-11-17T13:19:09.336Z",
     "triggeredBy": "randy",
     "inferred": false
   },
   "abandonment": null,
   "facts": {
-    "releaseCommit": "e01898148a6fedab290813debc95c18046ca26f5",
+    "releaseCommit": "e8a8a6b9fe8288059924ea8214f6252903a0d508",
     "build": {
       "system": "boundry-ci",
-      "runId": "run_e429ead80bd1599f4deb0254",
-      "evidenceUrl": "http://127.0.0.1:21091/v1/runs/run_e429ead80bd1599f4deb0254/evidence",
+      "runId": "run_bffd7a948bf43057bf15da0a",
+      "evidenceUrl": "http://127.0.0.1:21091/v1/runs/run_bffd7a948bf43057bf15da0a/evidence",
       "artifacts": [
         {
           "package": "boundry-proof-core",
@@ -171,7 +171,7 @@
     "tags": [
       {
         "name": "boundry-proof-core@0.1.2",
-        "target": "e01898148a6fedab290813debc95c18046ca26f5"
+        "target": "e8a8a6b9fe8288059924ea8214f6252903a0d508"
       }
     ],
     "published": [
@@ -189,7 +189,7 @@
         "integrity": "a26d047fdf094de50aaf1e9a8f7e4989bfe34c55bec62c5f273171bec6b97df3",
         "tarballSha256": "a26d047fdf094de50aaf1e9a8f7e4989bfe34c55bec62c5f273171bec6b97df3",
         "distTagPointsHere": null,
-        "at": "2026-11-17T12:56:00.098Z"
+        "at": "2026-11-17T13:19:13.892Z"
       }
     ],
     "githubReleases": []
@@ -197,101 +197,101 @@
   "failure": null,
   "history": [
     {
-      "at": "2026-11-17T12:55:26.912Z",
+      "at": "2026-11-17T13:19:08.703Z",
       "state": "proposed",
       "note": "patch release proposed by maintenance-agent (agent)"
     },
     {
-      "at": "2026-11-17T12:55:26.912Z",
+      "at": "2026-11-17T13:19:08.703Z",
       "state": "validated",
       "note": "passed: boundry-proof-core: publishable; passed: boundry-proof-core: registry; passed: boundry-proof-core: manifest and Cargo.lock agree; passed: boundry-proof-core: version 0.1.2 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; unavailable: external consumers"
     },
     {
-      "at": "2026-11-17T12:55:26.912Z",
+      "at": "2026-11-17T13:19:08.703Z",
       "state": "awaiting-approval",
       "note": "needs 1 approval(s) from prod approvers; eligible: randy"
     },
     {
-      "at": "2026-11-17T12:55:27.384Z",
+      "at": "2026-11-17T13:19:09.271Z",
       "state": "approved",
-      "note": "approved by randy (signature) for plan 17039aba042c"
+      "note": "approved by randy (signature) for plan 0c169cda0660"
     },
     {
-      "at": "2026-11-17T12:55:27.581Z",
+      "at": "2026-11-17T13:19:09.508Z",
       "state": "prepared",
-      "note": "release commit e01898148a6f"
+      "note": "release commit e8a8a6b9fe82"
     },
     {
-      "at": "2026-11-17T12:55:59.942Z",
+      "at": "2026-11-17T13:19:13.714Z",
       "state": "built",
-      "note": "built by run_e429ead80bd1599f4deb0254 from e01898148a6f"
+      "note": "built by run_bffd7a948bf43057bf15da0a from e8a8a6b9fe82"
     },
     {
-      "at": "2026-11-17T12:56:00.062Z",
+      "at": "2026-11-17T13:19:13.853Z",
       "state": "tagged",
       "note": "boundry-proof-core@0.1.2"
     },
     {
-      "at": "2026-11-17T12:56:00.089Z",
+      "at": "2026-11-17T13:19:13.885Z",
       "state": "published",
       "note": "registry accepted every artifact"
     },
     {
-      "at": "2026-11-17T12:56:00.098Z",
+      "at": "2026-11-17T13:19:13.892Z",
       "state": "registry-verified",
       "note": "registry serves the exact artifact"
     },
     {
-      "at": "2026-11-17T12:56:00.102Z",
+      "at": "2026-11-17T13:19:13.895Z",
       "state": "released",
       "note": "boundry-proof-core@0.1.2 released and verified"
     }
   ],
   "attempts": [
     {
-      "at": "2026-11-17T12:55:27.438Z",
+      "at": "2026-11-17T13:19:09.336Z",
       "step": "authorize",
       "outcome": "done",
       "detail": "component:release-executor authorized execution under boundry.governance@1.2.0 (triggered by randy)"
     },
     {
-      "at": "2026-11-17T12:55:27.438Z",
+      "at": "2026-11-17T13:19:09.336Z",
       "step": "claim",
       "outcome": "done",
       "detail": "claimed by component:release-executor; withdrawal ends here (contract §7)"
     },
     {
-      "at": "2026-11-17T12:55:27.581Z",
+      "at": "2026-11-17T13:19:09.508Z",
       "step": "release-commit",
       "outcome": "done",
-      "detail": "e01898148a6f on main (Cargo.lock, crates/core/Cargo.toml)"
+      "detail": "e8a8a6b9fe82 on main (Cargo.lock, crates/core/Cargo.toml)"
     },
     {
-      "at": "2026-11-17T12:55:59.942Z",
+      "at": "2026-11-17T13:19:13.714Z",
       "step": "build",
       "outcome": "done",
-      "detail": "run_e429ead80bd1599f4deb0254: boundry-proof-core-0.1.2.crate sha256:a26d047fdf094de5"
+      "detail": "run_bffd7a948bf43057bf15da0a: boundry-proof-core-0.1.2.crate sha256:a26d047fdf094de5"
     },
     {
-      "at": "2026-11-17T12:56:00.062Z",
+      "at": "2026-11-17T13:19:13.853Z",
       "step": "tag",
       "outcome": "done",
-      "detail": "boundry-proof-core@0.1.2 → e01898148a6f (verified)"
+      "detail": "boundry-proof-core@0.1.2 → e8a8a6b9fe82 (verified)"
     },
     {
-      "at": "2026-11-17T12:56:00.089Z",
+      "at": "2026-11-17T13:19:13.885Z",
       "step": "publish",
       "outcome": "already-done",
       "detail": "publish reported \"crates registry unreachable: fetch failed\", but the registry has the exact artifact"
     },
     {
-      "at": "2026-11-17T12:56:00.098Z",
+      "at": "2026-11-17T13:19:13.892Z",
       "step": "verify-registry",
       "outcome": "done",
       "detail": "0.1.2 integrity+bytes match; not yanked (no dist-tags on this registry)"
     },
     {
-      "at": "2026-11-17T12:56:00.102Z",
+      "at": "2026-11-17T13:19:13.895Z",
       "step": "github-release",
       "outcome": "skipped",
       "detail": "skipped: the release policy does not create GitHub releases"
@@ -300,7 +300,7 @@
   "downstream": [],
   "consumers": [
     {
-      "at": "2026-11-17T12:56:00.966Z",
+      "at": "2026-11-17T13:19:14.236Z",
       "consumer": "proof-consumer",
       "where": "boundry-proof/consumer:Cargo.toml",
       "dependency": "boundry-proof-core",
@@ -316,7 +316,7 @@
       "verificationEvidence": "passed: cargo run (proof stand-in for the consumer's CI) run 1 success on proof-consumer@proof-consum, which resolved boundry-proof-core 0.1.2",
       "verificationRecord": {
         "commit": "proof-consumer-local",
-        "collectedAt": "2026-11-17T12:56:00.964Z",
+        "collectedAt": "2026-11-17T13:19:14.234Z",
         "resolved": "0.1.2",
         "runs": [
           {

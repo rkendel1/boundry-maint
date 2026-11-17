@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-17T13:12:37.409Z",
+  "at": "2026-11-17T13:21:36.400Z",
   "principalsSha256": "d91414009f133fcde5786ecef6d09619814358c3df5a5d2ae6526ce6d4d1c88d",
   "rows": [
     {
@@ -30,7 +30,7 @@
       "id": "S5",
       "scenario": "Executor crashes during release (SIGKILL after claim and release commit)",
       "expected": "state remains recoverable",
-      "observed": "persisted state prepared, claim by component:release-executor, release commit fa89ace10a6e on main: true",
+      "observed": "persisted state prepared, claim by component:release-executor, release commit 9c6d01acc3bf on main: true",
       "pass": true,
       "evidence": "record after SIGKILL; git main"
     },
@@ -62,7 +62,7 @@
       "id": "S7",
       "scenario": "Human abandons a stuck release",
       "expected": "audited; no fictional rollback",
-      "observed": "agent refused: true; abandoned by randy (person) at state tagged; remains real: release commit 3185d3c055e9 is on main and stays there; tag @demo/core@0.2.2 → 3185d3c055e9 exists and is never moved or deleted; tag still at release commit: true",
+      "observed": "agent refused: true; abandoned by randy (person) at state tagged; remains real: release commit f2c04fc4ee96 is on main and stays there; tag @demo/core@0.2.2 → f2c04fc4ee96 exists and is never moved or deleted; tag still at release commit: true",
       "pass": true,
       "evidence": "record abandonment + reconciliation; git tag"
     },

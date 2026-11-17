@@ -2,15 +2,15 @@
   "R1-withdrawn": {
     "schemaVersion": 3,
     "id": "exercise-core@0.2.1",
-    "planDigest": "88806c7af79bfe92882d1c7e653ecca9ccd845617f0b50fc359488438e901c03",
+    "planDigest": "9cd610473ad67b945831c5670a3389224edcd2525c5b5eaba59e924897c9a4b7",
     "plan": {
       "repository": "acme/demo",
       "branch": "main",
-      "sourceCommit": "7af16336203d173a965bdb67c2494b41c92399f1",
+      "sourceCommit": "6bdcd947f284290e7255ba391dff2f54d371cd46",
       "bump": "patch",
       "requestedBy": "maintenance-agent",
       "requestedByType": "agent",
-      "requestedAt": "2026-11-17T13:10:38.512Z",
+      "requestedAt": "2026-11-17T13:19:41.454Z",
       "reason": null,
       "packages": [
         {
@@ -23,14 +23,14 @@
             "highest": "0.2.0",
             "latestTag": "0.2.0",
             "yanked": [],
-            "observedAt": "2026-11-17T13:10:38.512Z"
+            "observedAt": "2026-11-17T13:19:41.454Z"
           },
           "inherited": false,
           "repositoryVersion": "0.2.0",
           "proposedVersion": "0.2.1",
           "tag": "@demo/core@0.2.1",
           "distTag": "latest",
-          "destination": "http://127.0.0.1:49047",
+          "destination": "http://127.0.0.1:43011",
           "production": false
         }
       ],
@@ -61,7 +61,7 @@
         {
           "check": "@demo/core: registry",
           "outcome": "passed",
-          "detail": "http://127.0.0.1:49047 answered: 1 version(s) ever published"
+          "detail": "http://127.0.0.1:43011 answered: 1 version(s) ever published"
         },
         {
           "check": "@demo/core: manifest and package-lock.json agree",
@@ -108,7 +108,7 @@
         "Consumers in other repositories: no scan data was available.",
         "Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible."
       ],
-      "impactFingerprint": "a2b5592ede56fc9a995220bb793eed608052ae99da01796543a535f2ac5adc66",
+      "impactFingerprint": "19db737af155658b63fa4d7b286100ce0ba351fe059e45cf26d116bc4e1c1dd1",
       "releaseCommit": {
         "message": "Release @demo/core@0.2.1",
         "files": [
@@ -131,14 +131,14 @@
         "by": "randy",
         "principalType": "person",
         "authentication": "asserted",
-        "at": "2026-11-17T13:10:40.352Z",
-        "planDigest": "88806c7af79bfe92882d1c7e653ecca9ccd845617f0b50fc359488438e901c03",
+        "at": "2026-11-17T13:19:43.139Z",
+        "planDigest": "9cd610473ad67b945831c5670a3389224edcd2525c5b5eaba59e924897c9a4b7",
         "signature": null
       }
     ],
     "revocation": {
       "by": "maintenance-agent",
-      "at": "2026-11-17T13:10:40.781Z",
+      "at": "2026-11-17T13:19:43.603Z",
       "reason": "no longer wanted"
     },
     "claim": null,
@@ -154,27 +154,27 @@
     "failure": null,
     "history": [
       {
-        "at": "2026-11-17T13:10:38.512Z",
+        "at": "2026-11-17T13:19:41.454Z",
         "state": "proposed",
         "note": "patch release proposed by maintenance-agent (agent)"
       },
       {
-        "at": "2026-11-17T13:10:38.512Z",
+        "at": "2026-11-17T13:19:41.454Z",
         "state": "validated",
         "note": "passed: @demo/core: publishable; passed: @demo/core: registry; passed: @demo/core: manifest and package-lock.json agree; passed: @demo/core: version 0.2.1 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; unavailable: external consumers"
       },
       {
-        "at": "2026-11-17T13:10:38.512Z",
+        "at": "2026-11-17T13:19:41.454Z",
         "state": "awaiting-approval",
         "note": "needs 1 approval(s) from prod approvers; eligible: randy"
       },
       {
-        "at": "2026-11-17T13:10:40.352Z",
+        "at": "2026-11-17T13:19:43.140Z",
         "state": "approved",
-        "note": "approved by randy (asserted) for plan 88806c7af79b"
+        "note": "approved by randy (asserted) for plan 9cd610473ad6"
       },
       {
-        "at": "2026-11-17T13:10:40.781Z",
+        "at": "2026-11-17T13:19:43.603Z",
         "state": "cancelled",
         "note": "revoked by maintenance-agent: no longer wanted"
       }
@@ -186,15 +186,15 @@
   "R2-crash-then-lost-publish": {
     "schemaVersion": 3,
     "id": "exercise-core@0.2.1_r2",
-    "planDigest": "b07136763400a7846404768172ee85cb2e4ef0b43e96515b4c03f93fceb87723",
+    "planDigest": "a5eda1e227cea3b15291aa7a59e1029f1146cb3b87602d9ed58bd7369941e299",
     "plan": {
       "repository": "acme/demo",
       "branch": "main",
-      "sourceCommit": "7af16336203d173a965bdb67c2494b41c92399f1",
+      "sourceCommit": "6bdcd947f284290e7255ba391dff2f54d371cd46",
       "bump": "patch",
       "requestedBy": "maintenance-agent",
       "requestedByType": "agent",
-      "requestedAt": "2026-11-17T13:10:41.270Z",
+      "requestedAt": "2026-11-17T13:19:44.084Z",
       "reason": null,
       "packages": [
         {
@@ -207,14 +207,14 @@
             "highest": "0.2.0",
             "latestTag": "0.2.0",
             "yanked": [],
-            "observedAt": "2026-11-17T13:10:41.270Z"
+            "observedAt": "2026-11-17T13:19:44.084Z"
           },
           "inherited": false,
           "repositoryVersion": "0.2.0",
           "proposedVersion": "0.2.1",
           "tag": "@demo/core@0.2.1",
           "distTag": "latest",
-          "destination": "http://127.0.0.1:49047",
+          "destination": "http://127.0.0.1:43011",
           "production": false
         }
       ],
@@ -245,7 +245,7 @@
         {
           "check": "@demo/core: registry",
           "outcome": "passed",
-          "detail": "http://127.0.0.1:49047 answered: 1 version(s) ever published"
+          "detail": "http://127.0.0.1:43011 answered: 1 version(s) ever published"
         },
         {
           "check": "@demo/core: manifest and package-lock.json agree",
@@ -292,7 +292,7 @@
         "Consumers in other repositories: no scan data was available.",
         "Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible."
       ],
-      "impactFingerprint": "a2b5592ede56fc9a995220bb793eed608052ae99da01796543a535f2ac5adc66",
+      "impactFingerprint": "19db737af155658b63fa4d7b286100ce0ba351fe059e45cf26d116bc4e1c1dd1",
       "releaseCommit": {
         "message": "Release @demo/core@0.2.1",
         "files": [
@@ -315,25 +315,25 @@
         "by": "randy",
         "principalType": "person",
         "authentication": "asserted",
-        "at": "2026-11-17T13:10:42.629Z",
-        "planDigest": "b07136763400a7846404768172ee85cb2e4ef0b43e96515b4c03f93fceb87723",
+        "at": "2026-11-17T13:19:45.243Z",
+        "planDigest": "a5eda1e227cea3b15291aa7a59e1029f1146cb3b87602d9ed58bd7369941e299",
         "signature": null
       }
     ],
     "revocation": null,
     "claim": {
       "by": "component:release-executor",
-      "at": "2026-11-17T13:10:43.366Z",
+      "at": "2026-11-17T13:19:45.823Z",
       "triggeredBy": "randy",
       "inferred": false
     },
     "abandonment": null,
     "facts": {
-      "releaseCommit": "fa89ace10a6e74d803a1cb59a914b2d894df1803",
+      "releaseCommit": "9c6d01acc3bf8600a7bb930d9ff7fa12573f91be",
       "build": {
         "system": "boundry-ci",
-        "runId": "run_a630bd2bedda5b08b79777c4",
-        "evidenceUrl": "http://127.0.0.1:48029/v1/runs/run_a630bd2bedda5b08b79777c4/evidence",
+        "runId": "run_8626d420b843a75021e34959",
+        "evidenceUrl": "http://127.0.0.1:46246/v1/runs/run_8626d420b843a75021e34959/evidence",
         "artifacts": [
           {
             "package": "exercise-core",
@@ -351,7 +351,7 @@
       "tags": [
         {
           "name": "@demo/core@0.2.1",
-          "target": "fa89ace10a6e74d803a1cb59a914b2d894df1803"
+          "target": "9c6d01acc3bf8600a7bb930d9ff7fa12573f91be"
         }
       ],
       "published": [
@@ -369,7 +369,7 @@
           "integrity": "sha512-T9uQpyXJI5BXK3u4Nkv1UclzEUH0n1+VWhkI5DAKqYo/qqbfpSNY5DgdYTcbN/srvCqkxtsk0dMo/1zhc4Uxaw==",
           "tarballSha256": "dbb4c334dba272010bbfb083621e03ea7007f8af7bec07a7838f43891016e3b6",
           "distTagPointsHere": true,
-          "at": "2026-11-17T13:11:00.455Z"
+          "at": "2026-11-17T13:20:00.497Z"
         }
       ],
       "githubReleases": []
@@ -377,107 +377,107 @@
     "failure": null,
     "history": [
       {
-        "at": "2026-11-17T13:10:41.270Z",
+        "at": "2026-11-17T13:19:44.084Z",
         "state": "proposed",
         "note": "patch release proposed by maintenance-agent (agent)"
       },
       {
-        "at": "2026-11-17T13:10:41.270Z",
+        "at": "2026-11-17T13:19:44.084Z",
         "state": "validated",
         "note": "passed: @demo/core: publishable; passed: @demo/core: registry; passed: @demo/core: manifest and package-lock.json agree; passed: @demo/core: version 0.2.1 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; unavailable: external consumers"
       },
       {
-        "at": "2026-11-17T13:10:41.270Z",
+        "at": "2026-11-17T13:19:44.084Z",
         "state": "awaiting-approval",
         "note": "needs 1 approval(s) from prod approvers; eligible: randy"
       },
       {
-        "at": "2026-11-17T13:10:42.630Z",
+        "at": "2026-11-17T13:19:45.243Z",
         "state": "approved",
-        "note": "approved by randy (asserted) for plan b07136763400"
+        "note": "approved by randy (asserted) for plan a5eda1e227ce"
       },
       {
-        "at": "2026-11-17T13:10:43.655Z",
+        "at": "2026-11-17T13:19:46.086Z",
         "state": "prepared",
-        "note": "release commit fa89ace10a6e"
+        "note": "release commit 9c6d01acc3bf"
       },
       {
-        "at": "2026-11-17T13:10:48.883Z",
+        "at": "2026-11-17T13:19:49.154Z",
         "state": "built",
-        "note": "built by run_a630bd2bedda5b08b79777c4 from fa89ace10a6e"
+        "note": "built by run_8626d420b843a75021e34959 from 9c6d01acc3bf"
       },
       {
-        "at": "2026-11-17T13:10:49.059Z",
+        "at": "2026-11-17T13:19:49.280Z",
         "state": "tagged",
         "note": "@demo/core@0.2.1"
       },
       {
-        "at": "2026-11-17T13:11:00.161Z",
+        "at": "2026-11-17T13:20:00.174Z",
         "state": "published",
         "note": "registry accepted every artifact"
       },
       {
-        "at": "2026-11-17T13:11:00.455Z",
+        "at": "2026-11-17T13:20:00.498Z",
         "state": "registry-verified",
         "note": "registry serves the exact artifact"
       },
       {
-        "at": "2026-11-17T13:11:00.459Z",
+        "at": "2026-11-17T13:20:00.502Z",
         "state": "released",
         "note": "@demo/core@0.2.1 released and verified"
       }
     ],
     "attempts": [
       {
-        "at": "2026-11-17T13:10:43.366Z",
+        "at": "2026-11-17T13:19:45.823Z",
         "step": "authorize",
         "outcome": "done",
         "detail": "component:release-executor authorized execution under boundry.governance@1.2.0 (triggered by randy)"
       },
       {
-        "at": "2026-11-17T13:10:43.366Z",
+        "at": "2026-11-17T13:19:45.823Z",
         "step": "claim",
         "outcome": "done",
         "detail": "claimed by component:release-executor; withdrawal ends here (contract §7)"
       },
       {
-        "at": "2026-11-17T13:10:43.655Z",
+        "at": "2026-11-17T13:19:46.086Z",
         "step": "release-commit",
         "outcome": "done",
-        "detail": "fa89ace10a6e on main (package-lock.json, packages/core/package.json)"
+        "detail": "9c6d01acc3bf on main (package-lock.json, packages/core/package.json)"
       },
       {
-        "at": "2026-11-17T13:10:44.666Z",
+        "at": "2026-11-17T13:19:47.043Z",
         "step": "trigger",
         "outcome": "done",
         "detail": "execution resumed by randy"
       },
       {
-        "at": "2026-11-17T13:10:48.883Z",
+        "at": "2026-11-17T13:19:49.154Z",
         "step": "build",
-        "outcome": "done",
-        "detail": "run_a630bd2bedda5b08b79777c4: demo-core-0.2.1.tgz sha256:dbb4c334dba27201"
+        "outcome": "already-done",
+        "detail": "run_8626d420b843a75021e34959: demo-core-0.2.1.tgz sha256:dbb4c334dba27201"
       },
       {
-        "at": "2026-11-17T13:10:49.059Z",
+        "at": "2026-11-17T13:19:49.280Z",
         "step": "tag",
         "outcome": "done",
-        "detail": "@demo/core@0.2.1 → fa89ace10a6e (verified)"
+        "detail": "@demo/core@0.2.1 → 9c6d01acc3bf (verified)"
       },
       {
-        "at": "2026-11-17T13:11:00.161Z",
+        "at": "2026-11-17T13:20:00.174Z",
         "step": "publish",
         "outcome": "already-done",
         "detail": "publish reported \"registry refused: version already present\", but the registry has the exact artifact"
       },
       {
-        "at": "2026-11-17T13:11:00.455Z",
+        "at": "2026-11-17T13:20:00.498Z",
         "step": "verify-registry",
         "outcome": "done",
         "detail": "0.2.1 integrity+bytes match; dist-tag points here"
       },
       {
-        "at": "2026-11-17T13:11:00.459Z",
+        "at": "2026-11-17T13:20:00.502Z",
         "step": "github-release",
         "outcome": "skipped",
         "detail": "skipped: the release policy does not create GitHub releases"
@@ -489,15 +489,15 @@
   "R3-abandoned": {
     "schemaVersion": 3,
     "id": "exercise-core@0.2.2",
-    "planDigest": "61731c338ec222076a218e7186b050baac27777301d1be1451d3a624f57907aa",
+    "planDigest": "63f6a6b4f144cf7d883635978f599d3c00b0c77c43db36d1d602b2de3e87a5e9",
     "plan": {
       "repository": "acme/demo",
       "branch": "main",
-      "sourceCommit": "fa89ace10a6e74d803a1cb59a914b2d894df1803",
+      "sourceCommit": "9c6d01acc3bf8600a7bb930d9ff7fa12573f91be",
       "bump": "patch",
       "requestedBy": "maintenance-agent",
       "requestedByType": "agent",
-      "requestedAt": "2026-11-17T13:11:00.947Z",
+      "requestedAt": "2026-11-17T13:20:01.044Z",
       "reason": null,
       "packages": [
         {
@@ -510,14 +510,14 @@
             "highest": "0.2.1",
             "latestTag": "0.2.1",
             "yanked": [],
-            "observedAt": "2026-11-17T13:11:00.947Z"
+            "observedAt": "2026-11-17T13:20:01.044Z"
           },
           "inherited": false,
           "repositoryVersion": "0.2.1",
           "proposedVersion": "0.2.2",
           "tag": "@demo/core@0.2.2",
           "distTag": "latest",
-          "destination": "http://127.0.0.1:49047",
+          "destination": "http://127.0.0.1:43011",
           "production": false
         }
       ],
@@ -548,7 +548,7 @@
         {
           "check": "@demo/core: registry",
           "outcome": "passed",
-          "detail": "http://127.0.0.1:49047 answered: 2 version(s) ever published"
+          "detail": "http://127.0.0.1:43011 answered: 2 version(s) ever published"
         },
         {
           "check": "@demo/core: manifest and package-lock.json agree",
@@ -595,7 +595,7 @@
         "Consumers in other repositories: no scan data was available.",
         "Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible."
       ],
-      "impactFingerprint": "6d311443279295cf329c0a97d8f809afd7329e5c9f4a4cff24562e352a87ad98",
+      "impactFingerprint": "6c77decfb17ebb721fb146eeb0a5374cfdd45d423e4aca7e9fa50168247542b1",
       "releaseCommit": {
         "message": "Release @demo/core@0.2.2",
         "files": [
@@ -618,34 +618,34 @@
         "by": "randy",
         "principalType": "person",
         "authentication": "asserted",
-        "at": "2026-11-17T13:11:02.312Z",
-        "planDigest": "61731c338ec222076a218e7186b050baac27777301d1be1451d3a624f57907aa",
+        "at": "2026-11-17T13:20:02.372Z",
+        "planDigest": "63f6a6b4f144cf7d883635978f599d3c00b0c77c43db36d1d602b2de3e87a5e9",
         "signature": null
       }
     ],
     "revocation": null,
     "claim": {
       "by": "component:release-executor",
-      "at": "2026-11-17T13:11:02.943Z",
+      "at": "2026-11-17T13:20:03.027Z",
       "triggeredBy": "randy",
       "inferred": false
     },
     "abandonment": {
       "by": "randy",
       "byType": "person",
-      "at": "2026-11-17T13:12:19.983Z",
+      "at": "2026-11-17T13:21:19.975Z",
       "reason": "registry incident; replacing with the next patch",
       "atState": "tagged",
       "reconciliation": {
-        "at": "2026-11-17T13:12:19.982Z",
+        "at": "2026-11-17T13:21:19.975Z",
         "branch": "main",
-        "branchHead": "3185d3c055e9423c80f5fa5a7dfe364509342cd1",
-        "releaseCommit": "3185d3c055e9423c80f5fa5a7dfe364509342cd1",
+        "branchHead": "f2c04fc4ee96b964ac70078158b01a1069cabe8d",
+        "releaseCommit": "f2c04fc4ee96b964ac70078158b01a1069cabe8d",
         "releaseCommitOnBranch": true,
         "tags": [
           {
             "name": "@demo/core@0.2.2",
-            "target": "3185d3c055e9423c80f5fa5a7dfe364509342cd1"
+            "target": "f2c04fc4ee96b964ac70078158b01a1069cabe8d"
           }
         ],
         "registry": [
@@ -660,16 +660,16 @@
         ]
       },
       "remainsReal": [
-        "release commit 3185d3c055e9 is on main and stays there",
-        "tag @demo/core@0.2.2 → 3185d3c055e9 exists and is never moved or deleted"
+        "release commit f2c04fc4ee96 is on main and stays there",
+        "tag @demo/core@0.2.2 → f2c04fc4ee96 exists and is never moved or deleted"
       ]
     },
     "facts": {
-      "releaseCommit": "3185d3c055e9423c80f5fa5a7dfe364509342cd1",
+      "releaseCommit": "f2c04fc4ee96b964ac70078158b01a1069cabe8d",
       "build": {
         "system": "boundry-ci",
-        "runId": "run_517f9bf6eea23de764ba2eb7",
-        "evidenceUrl": "http://127.0.0.1:48029/v1/runs/run_517f9bf6eea23de764ba2eb7/evidence",
+        "runId": "run_e36a7f83628b0c4dbe7003a9",
+        "evidenceUrl": "http://127.0.0.1:46246/v1/runs/run_e36a7f83628b0c4dbe7003a9/evidence",
         "artifacts": [
           {
             "package": "exercise-core",
@@ -687,7 +687,7 @@
       "tags": [
         {
           "name": "@demo/core@0.2.2",
-          "target": "3185d3c055e9423c80f5fa5a7dfe364509342cd1"
+          "target": "f2c04fc4ee96b964ac70078158b01a1069cabe8d"
         }
       ],
       "published": [],
@@ -698,83 +698,83 @@
       "at": "tagged",
       "reason": "registry unavailable during publish: npm error code E503",
       "recoverable": true,
-      "when": "2026-11-17T13:12:18.244Z"
+      "when": "2026-11-17T13:21:18.336Z"
     },
     "history": [
       {
-        "at": "2026-11-17T13:11:00.947Z",
+        "at": "2026-11-17T13:20:01.044Z",
         "state": "proposed",
         "note": "patch release proposed by maintenance-agent (agent)"
       },
       {
-        "at": "2026-11-17T13:11:00.947Z",
+        "at": "2026-11-17T13:20:01.044Z",
         "state": "validated",
         "note": "passed: @demo/core: publishable; passed: @demo/core: registry; passed: @demo/core: manifest and package-lock.json agree; passed: @demo/core: version 0.2.2 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; unavailable: external consumers"
       },
       {
-        "at": "2026-11-17T13:11:00.947Z",
+        "at": "2026-11-17T13:20:01.044Z",
         "state": "awaiting-approval",
         "note": "needs 1 approval(s) from prod approvers; eligible: randy"
       },
       {
-        "at": "2026-11-17T13:11:02.312Z",
+        "at": "2026-11-17T13:20:02.372Z",
         "state": "approved",
-        "note": "approved by randy (asserted) for plan 61731c338ec2"
+        "note": "approved by randy (asserted) for plan 63f6a6b4f144"
       },
       {
-        "at": "2026-11-17T13:11:03.173Z",
+        "at": "2026-11-17T13:20:03.282Z",
         "state": "prepared",
-        "note": "release commit 3185d3c055e9"
+        "note": "release commit f2c04fc4ee96"
       },
       {
-        "at": "2026-11-17T13:11:07.333Z",
+        "at": "2026-11-17T13:20:07.439Z",
         "state": "built",
-        "note": "built by run_517f9bf6eea23de764ba2eb7 from 3185d3c055e9"
+        "note": "built by run_e36a7f83628b0c4dbe7003a9 from f2c04fc4ee96"
       },
       {
-        "at": "2026-11-17T13:11:07.469Z",
+        "at": "2026-11-17T13:20:07.570Z",
         "state": "tagged",
         "note": "@demo/core@0.2.2"
       },
       {
-        "at": "2026-11-17T13:12:19.983Z",
+        "at": "2026-11-17T13:21:19.975Z",
         "state": "abandoned",
-        "note": "abandoned by randy: registry incident; replacing with the next patch. Reconciled first; what remains real: release commit 3185d3c055e9 is on main and stays there; tag @demo/core@0.2.2 → 3185d3c055e9 exists and is never moved or deleted"
+        "note": "abandoned by randy: registry incident; replacing with the next patch. Reconciled first; what remains real: release commit f2c04fc4ee96 is on main and stays there; tag @demo/core@0.2.2 → f2c04fc4ee96 exists and is never moved or deleted"
       }
     ],
     "attempts": [
       {
-        "at": "2026-11-17T13:11:02.943Z",
+        "at": "2026-11-17T13:20:03.027Z",
         "step": "authorize",
         "outcome": "done",
         "detail": "component:release-executor authorized execution under boundry.governance@1.2.0 (triggered by randy)"
       },
       {
-        "at": "2026-11-17T13:11:02.943Z",
+        "at": "2026-11-17T13:20:03.027Z",
         "step": "claim",
         "outcome": "done",
         "detail": "claimed by component:release-executor; withdrawal ends here (contract §7)"
       },
       {
-        "at": "2026-11-17T13:11:03.173Z",
+        "at": "2026-11-17T13:20:03.281Z",
         "step": "release-commit",
         "outcome": "done",
-        "detail": "3185d3c055e9 on main (package-lock.json, packages/core/package.json)"
+        "detail": "f2c04fc4ee96 on main (package-lock.json, packages/core/package.json)"
       },
       {
-        "at": "2026-11-17T13:11:07.333Z",
+        "at": "2026-11-17T13:20:07.439Z",
         "step": "build",
         "outcome": "done",
-        "detail": "run_517f9bf6eea23de764ba2eb7: demo-core-0.2.2.tgz sha256:515cd016bdb888f5"
+        "detail": "run_e36a7f83628b0c4dbe7003a9: demo-core-0.2.2.tgz sha256:515cd016bdb888f5"
       },
       {
-        "at": "2026-11-17T13:11:07.469Z",
+        "at": "2026-11-17T13:20:07.569Z",
         "step": "tag",
         "outcome": "done",
-        "detail": "@demo/core@0.2.2 → 3185d3c055e9 (verified)"
+        "detail": "@demo/core@0.2.2 → f2c04fc4ee96 (verified)"
       },
       {
-        "at": "2026-11-17T13:12:18.244Z",
+        "at": "2026-11-17T13:21:18.336Z",
         "step": "tagged",
         "outcome": "failed",
         "detail": "registry unavailable during publish: npm error code E503"
@@ -786,15 +786,15 @@
   "R4-replacement-plan": {
     "schemaVersion": 3,
     "id": "exercise-core@0.2.3",
-    "planDigest": "f02b096ba6ad8720d8fba57039d90ed4b21470734342850384d066e31d5a088b",
+    "planDigest": "d9a0525cd617ff2ef6d4cc696ec60f85b92ab5bd78d224df8d7827ec8cf9c6d3",
     "plan": {
       "repository": "acme/demo",
       "branch": "main",
-      "sourceCommit": "3185d3c055e9423c80f5fa5a7dfe364509342cd1",
+      "sourceCommit": "f2c04fc4ee96b964ac70078158b01a1069cabe8d",
       "bump": "patch",
       "requestedBy": "maintenance-agent",
       "requestedByType": "agent",
-      "requestedAt": "2026-11-17T13:12:20.639Z",
+      "requestedAt": "2026-11-17T13:21:20.535Z",
       "reason": null,
       "packages": [
         {
@@ -807,14 +807,14 @@
             "highest": "0.2.1",
             "latestTag": "0.2.1",
             "yanked": [],
-            "observedAt": "2026-11-17T13:12:20.639Z"
+            "observedAt": "2026-11-17T13:21:20.535Z"
           },
           "inherited": false,
           "repositoryVersion": "0.2.2",
           "proposedVersion": "0.2.3",
           "tag": "@demo/core@0.2.3",
           "distTag": "latest",
-          "destination": "http://127.0.0.1:49047",
+          "destination": "http://127.0.0.1:43011",
           "production": false
         }
       ],
@@ -846,7 +846,7 @@
         {
           "check": "@demo/core: registry",
           "outcome": "passed",
-          "detail": "http://127.0.0.1:49047 answered: 2 version(s) ever published"
+          "detail": "http://127.0.0.1:43011 answered: 2 version(s) ever published"
         },
         {
           "check": "@demo/core: manifest and package-lock.json agree",
@@ -893,7 +893,7 @@
         "Consumers in other repositories: no scan data was available.",
         "Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible."
       ],
-      "impactFingerprint": "8eccbfa378ad81859194afbc11a045c7f472d22c5b57caffec28977090120ae7",
+      "impactFingerprint": "f1bdbf197624f227e1ebe91865eb83bc1948431d647fee44c25f2c7d48cb008d",
       "releaseCommit": {
         "message": "Release @demo/core@0.2.3",
         "files": [
@@ -926,17 +926,17 @@
     "failure": null,
     "history": [
       {
-        "at": "2026-11-17T13:12:20.639Z",
+        "at": "2026-11-17T13:21:20.535Z",
         "state": "proposed",
         "note": "patch release proposed by maintenance-agent (agent)"
       },
       {
-        "at": "2026-11-17T13:12:20.639Z",
+        "at": "2026-11-17T13:21:20.535Z",
         "state": "validated",
         "note": "passed: @demo/core: publishable; passed: @demo/core: registry; passed: @demo/core: manifest and package-lock.json agree; passed: @demo/core: version 0.2.3 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; unavailable: external consumers"
       },
       {
-        "at": "2026-11-17T13:12:20.639Z",
+        "at": "2026-11-17T13:21:20.535Z",
         "state": "awaiting-approval",
         "note": "needs 1 approval(s) from prod approvers; eligible: randy"
       }
@@ -948,15 +948,15 @@
   "R2-with-consumers": {
     "schemaVersion": 3,
     "id": "exercise-core@0.2.1_r2",
-    "planDigest": "b07136763400a7846404768172ee85cb2e4ef0b43e96515b4c03f93fceb87723",
+    "planDigest": "a5eda1e227cea3b15291aa7a59e1029f1146cb3b87602d9ed58bd7369941e299",
     "plan": {
       "repository": "acme/demo",
       "branch": "main",
-      "sourceCommit": "7af16336203d173a965bdb67c2494b41c92399f1",
+      "sourceCommit": "6bdcd947f284290e7255ba391dff2f54d371cd46",
       "bump": "patch",
       "requestedBy": "maintenance-agent",
       "requestedByType": "agent",
-      "requestedAt": "2026-11-17T13:10:41.270Z",
+      "requestedAt": "2026-11-17T13:19:44.084Z",
       "reason": null,
       "packages": [
         {
@@ -969,14 +969,14 @@
             "highest": "0.2.0",
             "latestTag": "0.2.0",
             "yanked": [],
-            "observedAt": "2026-11-17T13:10:41.270Z"
+            "observedAt": "2026-11-17T13:19:44.084Z"
           },
           "inherited": false,
           "repositoryVersion": "0.2.0",
           "proposedVersion": "0.2.1",
           "tag": "@demo/core@0.2.1",
           "distTag": "latest",
-          "destination": "http://127.0.0.1:49047",
+          "destination": "http://127.0.0.1:43011",
           "production": false
         }
       ],
@@ -1007,7 +1007,7 @@
         {
           "check": "@demo/core: registry",
           "outcome": "passed",
-          "detail": "http://127.0.0.1:49047 answered: 1 version(s) ever published"
+          "detail": "http://127.0.0.1:43011 answered: 1 version(s) ever published"
         },
         {
           "check": "@demo/core: manifest and package-lock.json agree",
@@ -1054,7 +1054,7 @@
         "Consumers in other repositories: no scan data was available.",
         "Undeclared consumers (anything that installs these packages without appearing in Maintenance's scan) are not visible."
       ],
-      "impactFingerprint": "a2b5592ede56fc9a995220bb793eed608052ae99da01796543a535f2ac5adc66",
+      "impactFingerprint": "19db737af155658b63fa4d7b286100ce0ba351fe059e45cf26d116bc4e1c1dd1",
       "releaseCommit": {
         "message": "Release @demo/core@0.2.1",
         "files": [
@@ -1077,25 +1077,25 @@
         "by": "randy",
         "principalType": "person",
         "authentication": "asserted",
-        "at": "2026-11-17T13:10:42.629Z",
-        "planDigest": "b07136763400a7846404768172ee85cb2e4ef0b43e96515b4c03f93fceb87723",
+        "at": "2026-11-17T13:19:45.243Z",
+        "planDigest": "a5eda1e227cea3b15291aa7a59e1029f1146cb3b87602d9ed58bd7369941e299",
         "signature": null
       }
     ],
     "revocation": null,
     "claim": {
       "by": "component:release-executor",
-      "at": "2026-11-17T13:10:43.366Z",
+      "at": "2026-11-17T13:19:45.823Z",
       "triggeredBy": "randy",
       "inferred": false
     },
     "abandonment": null,
     "facts": {
-      "releaseCommit": "fa89ace10a6e74d803a1cb59a914b2d894df1803",
+      "releaseCommit": "9c6d01acc3bf8600a7bb930d9ff7fa12573f91be",
       "build": {
         "system": "boundry-ci",
-        "runId": "run_a630bd2bedda5b08b79777c4",
-        "evidenceUrl": "http://127.0.0.1:48029/v1/runs/run_a630bd2bedda5b08b79777c4/evidence",
+        "runId": "run_8626d420b843a75021e34959",
+        "evidenceUrl": "http://127.0.0.1:46246/v1/runs/run_8626d420b843a75021e34959/evidence",
         "artifacts": [
           {
             "package": "exercise-core",
@@ -1113,7 +1113,7 @@
       "tags": [
         {
           "name": "@demo/core@0.2.1",
-          "target": "fa89ace10a6e74d803a1cb59a914b2d894df1803"
+          "target": "9c6d01acc3bf8600a7bb930d9ff7fa12573f91be"
         }
       ],
       "published": [
@@ -1131,7 +1131,7 @@
           "integrity": "sha512-T9uQpyXJI5BXK3u4Nkv1UclzEUH0n1+VWhkI5DAKqYo/qqbfpSNY5DgdYTcbN/srvCqkxtsk0dMo/1zhc4Uxaw==",
           "tarballSha256": "dbb4c334dba272010bbfb083621e03ea7007f8af7bec07a7838f43891016e3b6",
           "distTagPointsHere": true,
-          "at": "2026-11-17T13:11:00.455Z"
+          "at": "2026-11-17T13:20:00.497Z"
         }
       ],
       "githubReleases": []
@@ -1139,107 +1139,107 @@
     "failure": null,
     "history": [
       {
-        "at": "2026-11-17T13:10:41.270Z",
+        "at": "2026-11-17T13:19:44.084Z",
         "state": "proposed",
         "note": "patch release proposed by maintenance-agent (agent)"
       },
       {
-        "at": "2026-11-17T13:10:41.270Z",
+        "at": "2026-11-17T13:19:44.084Z",
         "state": "validated",
         "note": "passed: @demo/core: publishable; passed: @demo/core: registry; passed: @demo/core: manifest and package-lock.json agree; passed: @demo/core: version 0.2.1 free; not-applicable: workspace version inheritance; passed: workspace install after the release commit; deferred: build and tests; deferred: registry acceptance; deferred: consumer verification; unavailable: external consumers"
       },
       {
-        "at": "2026-11-17T13:10:41.270Z",
+        "at": "2026-11-17T13:19:44.084Z",
         "state": "awaiting-approval",
         "note": "needs 1 approval(s) from prod approvers; eligible: randy"
       },
       {
-        "at": "2026-11-17T13:10:42.630Z",
+        "at": "2026-11-17T13:19:45.243Z",
         "state": "approved",
-        "note": "approved by randy (asserted) for plan b07136763400"
+        "note": "approved by randy (asserted) for plan a5eda1e227ce"
       },
       {
-        "at": "2026-11-17T13:10:43.655Z",
+        "at": "2026-11-17T13:19:46.086Z",
         "state": "prepared",
-        "note": "release commit fa89ace10a6e"
+        "note": "release commit 9c6d01acc3bf"
       },
       {
-        "at": "2026-11-17T13:10:48.883Z",
+        "at": "2026-11-17T13:19:49.154Z",
         "state": "built",
-        "note": "built by run_a630bd2bedda5b08b79777c4 from fa89ace10a6e"
+        "note": "built by run_8626d420b843a75021e34959 from 9c6d01acc3bf"
       },
       {
-        "at": "2026-11-17T13:10:49.059Z",
+        "at": "2026-11-17T13:19:49.280Z",
         "state": "tagged",
         "note": "@demo/core@0.2.1"
       },
       {
-        "at": "2026-11-17T13:11:00.161Z",
+        "at": "2026-11-17T13:20:00.174Z",
         "state": "published",
         "note": "registry accepted every artifact"
       },
       {
-        "at": "2026-11-17T13:11:00.455Z",
+        "at": "2026-11-17T13:20:00.498Z",
         "state": "registry-verified",
         "note": "registry serves the exact artifact"
       },
       {
-        "at": "2026-11-17T13:11:00.459Z",
+        "at": "2026-11-17T13:20:00.502Z",
         "state": "released",
         "note": "@demo/core@0.2.1 released and verified"
       }
     ],
     "attempts": [
       {
-        "at": "2026-11-17T13:10:43.366Z",
+        "at": "2026-11-17T13:19:45.823Z",
         "step": "authorize",
         "outcome": "done",
         "detail": "component:release-executor authorized execution under boundry.governance@1.2.0 (triggered by randy)"
       },
       {
-        "at": "2026-11-17T13:10:43.366Z",
+        "at": "2026-11-17T13:19:45.823Z",
         "step": "claim",
         "outcome": "done",
         "detail": "claimed by component:release-executor; withdrawal ends here (contract §7)"
       },
       {
-        "at": "2026-11-17T13:10:43.655Z",
+        "at": "2026-11-17T13:19:46.086Z",
         "step": "release-commit",
         "outcome": "done",
-        "detail": "fa89ace10a6e on main (package-lock.json, packages/core/package.json)"
+        "detail": "9c6d01acc3bf on main (package-lock.json, packages/core/package.json)"
       },
       {
-        "at": "2026-11-17T13:10:44.666Z",
+        "at": "2026-11-17T13:19:47.043Z",
         "step": "trigger",
         "outcome": "done",
         "detail": "execution resumed by randy"
       },
       {
-        "at": "2026-11-17T13:10:48.883Z",
+        "at": "2026-11-17T13:19:49.154Z",
         "step": "build",
-        "outcome": "done",
-        "detail": "run_a630bd2bedda5b08b79777c4: demo-core-0.2.1.tgz sha256:dbb4c334dba27201"
+        "outcome": "already-done",
+        "detail": "run_8626d420b843a75021e34959: demo-core-0.2.1.tgz sha256:dbb4c334dba27201"
       },
       {
-        "at": "2026-11-17T13:10:49.059Z",
+        "at": "2026-11-17T13:19:49.280Z",
         "step": "tag",
         "outcome": "done",
-        "detail": "@demo/core@0.2.1 → fa89ace10a6e (verified)"
+        "detail": "@demo/core@0.2.1 → 9c6d01acc3bf (verified)"
       },
       {
-        "at": "2026-11-17T13:11:00.161Z",
+        "at": "2026-11-17T13:20:00.174Z",
         "step": "publish",
         "outcome": "already-done",
         "detail": "publish reported \"registry refused: version already present\", but the registry has the exact artifact"
       },
       {
-        "at": "2026-11-17T13:11:00.455Z",
+        "at": "2026-11-17T13:20:00.498Z",
         "step": "verify-registry",
         "outcome": "done",
         "detail": "0.2.1 integrity+bytes match; dist-tag points here"
       },
       {
-        "at": "2026-11-17T13:11:00.459Z",
+        "at": "2026-11-17T13:20:00.502Z",
         "step": "github-release",
         "outcome": "skipped",
         "detail": "skipped: the release policy does not create GitHub releases"
@@ -1248,12 +1248,12 @@
     "downstream": [],
     "consumers": [
       {
-        "at": "2026-11-17T13:12:22.320Z",
+        "at": "2026-11-17T13:21:22.190Z",
         "consumer": "shop",
         "where": "acme/shop:package.json",
         "dependency": "@demo/core",
         "released": "0.2.1",
-        "basis": "Maintenance scan at 2026-11-17T13:12:21.790Z; CI evidence from data/evidence (2 records)",
+        "basis": "Maintenance scan at 2026-11-17T13:21:21.690Z; CI evidence from data/evidence (2 records)",
         "installation": {
           "declared": "^0.2.0",
           "resolved": "0.2.0",
@@ -1265,12 +1265,12 @@
         "verificationRecord": null
       },
       {
-        "at": "2026-11-17T13:12:22.320Z",
+        "at": "2026-11-17T13:21:22.190Z",
         "consumer": "billing",
         "where": "acme/billing:package.json",
         "dependency": "@demo/core",
         "released": "0.2.1",
-        "basis": "Maintenance scan at 2026-11-17T13:12:21.790Z; CI evidence from data/evidence (2 records)",
+        "basis": "Maintenance scan at 2026-11-17T13:21:21.690Z; CI evidence from data/evidence (2 records)",
         "installation": {
           "declared": "^0.2.0",
           "resolved": "0.2.1",

@@ -21,7 +21,7 @@
   "reason": "Integration proof: shop's search moves to provider B (proposed by Boundry Maintenance)",
   "status": "verified",
   "impact": {
-    "computedAt": 1794881493090,
+    "computedAt": 1794921572955,
     "environment": "prod",
     "protected": true,
     "frozen": false,
@@ -38,17 +38,17 @@
     ],
     "observedConsumers": [
       {
-        "principal": "81852173-37e4-4861-97be-4d5c21998c78",
+        "principal": "e50c8e17-ffbb-423d-b65a-f0334b76711f",
         "application": "shop",
         "environment": "prod",
-        "instance": "pid-28907",
+        "instance": "pid-15568",
         "registration": "live",
         "declared": true,
         "resolvedRevision": 1,
-        "resolvedAt": "2026-11-17T02:11:21.958Z",
+        "resolvedAt": "2026-11-17T13:19:20.641Z",
         "usedRevision": 1,
         "usedOutcome": "succeeded",
-        "usedAt": "2026-11-17T02:11:21.652Z"
+        "usedAt": "2026-11-17T13:19:20.334Z"
       }
     ],
     "observedRelationships": [],
@@ -69,21 +69,21 @@
   "approvals": [
     {
       "by": "linus",
-      "at": 1794881493828,
+      "at": 1794921573778,
       "note": "integration proof"
     },
     {
       "by": "ada",
-      "at": 1794881493839,
+      "at": 1794921573793,
       "note": "integration proof"
     }
   ],
   "proposedBy": "boundry-maintenance",
   "proposedByType": "agent",
-  "proposedAt": 1794881493092,
-  "updatedAt": 1794881494289,
+  "proposedAt": 1794921572956,
+  "updatedAt": 1794921574184,
   "validation": {
-    "at": 1794881493124,
+    "at": 1794921572987,
     "by": "component:resolver",
     "passed": true,
     "checks": [
@@ -122,21 +122,21 @@
   "execution": {
     "attempt": 1,
     "claimedBy": "component:resolver",
-    "claimedAt": 1794881494152,
+    "claimedAt": 1794921574019,
     "authorization": {
-      "jti": "mwk23jok986d0f1878ae.1",
-      "expiresAt": "2026-11-17T02:16:34.198Z",
-      "issuedAt": 1794881494202
+      "jti": "mwkpyli4d862242ba156.1",
+      "expiresAt": "2026-11-17T13:24:34.068Z",
+      "issuedAt": 1794921574074
     },
-    "finishedAt": 1794881494289,
+    "finishedAt": 1794921574184,
     "resolverRevision": 2
   },
   "verification": {
-    "at": 1794881494287,
+    "at": 1794921574182,
     "passed": true,
     "revision": 2,
     "currentRevision": 2,
-    "actor": "api_key:0d47d403-57ca-41a5-9be4-d0add060f5b7",
+    "actor": "api_key:9cc0a694-a835-4ee6-8f1e-897d0bb3fea9",
     "correlated": true,
     "bindingMatches": true,
     "selected": {
@@ -147,19 +147,19 @@
         "id": "authorization",
         "label": "Authorized for this change",
         "outcome": "pass",
-        "detail": "Resolver verified and consumed authorization mwk23jok986d0f1878ae.1 (issuer resolver-control, key proof-1)."
+        "detail": "Resolver verified and consumed authorization mwkpyli4d862242ba156.1 (issuer resolver-control, key proof-1)."
       },
       {
         "id": "history",
         "label": "Recorded in Resolver's history",
         "outcome": "pass",
-        "detail": "Revision 2: update by api_key:0d47d403-57ca-41a5-9be4-d0add060f5b7 at 2026-11-17T02:11:34.214Z."
+        "detail": "Revision 2: update by api_key:9cc0a694-a835-4ee6-8f1e-897d0bb3fea9 at 2026-11-17T13:19:34.087Z."
       },
       {
         "id": "correlation",
         "label": "Resolver's record names this change",
         "outcome": "pass",
-        "detail": "The revision's reason carries [resolver-control CHG-1 mwk23jok986d0f1878ae]."
+        "detail": "The revision's reason carries [resolver-control CHG-1 mwkpyli4d862242ba156]."
       },
       {
         "id": "binding",
@@ -178,14 +178,14 @@
       "mode": "authorized",
       "issuer": "resolver-control",
       "kid": "proof-1",
-      "jti": "mwk23jok986d0f1878ae.1",
-      "decision": "mwk23jok986d0f1878ae",
+      "jti": "mwkpyli4d862242ba156.1",
+      "decision": "mwkpyli4d862242ba156",
       "approvers": [
         "linus",
         "ada"
       ]
     }
   },
-  "id": "mwk23jok986d0f1878ae",
+  "id": "mwkpyli4d862242ba156",
   "__version": 7
 }

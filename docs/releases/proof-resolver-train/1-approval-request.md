@@ -1,10 +1,10 @@
 # Release request: @appport/resolver 0.4.1 → **0.4.2**, @appport/resolver-client 0.3.0 → **0.3.1**, @appport/resolver-core 0.2.0 → **0.2.1**
 
-Requested by maintenance-agent at 2026-11-17T01:37:42.027Z — “End-to-end proof of the Release Manager (resolver release train)”. State: **awaiting-approval**.
+Requested by maintenance-agent at 2026-11-17T13:17:57.061Z — “End-to-end proof of the Release Manager (resolver release train)”. State: **awaiting-approval**.
 
 ## What will happen, in order
 
-1. A commit “Release @appport/resolver@0.4.2, @appport/resolver-client@0.3.1, @appport/resolver-core@0.2.1” is added on top of `99385866652a` on `main`, changing `package-lock.json`, `packages/client/package.json`, `packages/core/package.json`, `packages/server/package.json`. If `main` has moved, the release stops.
+1. A commit “Release @appport/resolver@0.4.2, @appport/resolver-client@0.3.1, @appport/resolver-core@0.2.1” is added on top of `029be530e64a` on `main`, changing `package-lock.json`, `packages/client/package.json`, `packages/core/package.json`, `packages/server/package.json`. If `main` has moved, the release stops.
 2. Boundry CI runs the tests on that exact commit and packages it. The package's SHA-256 is recorded.
 3. Only after the build succeeds: tag `@appport/resolver@0.4.2`, tag `@appport/resolver-client@0.3.1`, tag `@appport/resolver-core@0.2.1` on that commit. Existing tags are never moved.
 4. Exactly those tarballs are published to http://127.0.0.1:4875 (declared test registry) (dist-tag `latest`). A version already on the registry is never overwritten.
@@ -73,7 +73,7 @@ Proposed by **maintenance-agent** (agent), who may not approve it. Needs **1** a
 Test registry only: an unsigned approval is accepted and recorded as `asserted` (not an authenticated approval).
 
 ```bash
-node src/index.ts release approve appport-resolver@0.4.2 --as <you> --digest 0c9abf10b85cdf0ca89cdd3ddb40af1b6556956e24a692f57d70bf4ea2e04897
+node src/index.ts release approve appport-resolver@0.4.2 --as <you> --digest a88173f34a115e4a2cc6645524b09eda3927299df18f386c28601e861e18e737
 ```
 
-Plan digest `0c9abf10b85cdf0ca89cdd3ddb40af1b6556956e24a692f57d70bf4ea2e04897` · record `data/release-manager/appport-resolver/0.4.2.json`
+Plan digest `a88173f34a115e4a2cc6645524b09eda3927299df18f386c28601e861e18e737` · record `data/release-manager/appport-resolver/0.4.2.json`

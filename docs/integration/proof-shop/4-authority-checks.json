@@ -62,25 +62,25 @@
   {
     "actor": "anyone without the registry token (e.g. Resolver Control)",
     "attempt": "publish @demo/core@0.9.9 (unpublished version, valid tag)",
-    "target": "test registry http://127.0.0.1:48834",
-    "outcome": "refused: npm error code ENEEDAUTH | npm error need auth This command requires you to be logged in to http://127.0.0.1:48834/"
+    "target": "test registry http://127.0.0.1:49085",
+    "outcome": "refused: npm error code ENEEDAUTH | npm error need auth This command requires you to be logged in to http://127.0.0.1:49085/"
   },
   {
     "actor": "anyone without the registry token (raw HTTP)",
     "attempt": "PUT @demo/core@0.9.9 to the registry",
-    "target": "test registry http://127.0.0.1:48834",
+    "target": "test registry http://127.0.0.1:49085",
     "outcome": "refused: 401 registry answered 401: {"
   },
   {
     "actor": "maintenance-agent over Maintenance MCP",
     "attempt": "call releases_approve",
-    "target": "http://127.0.0.1:40611/mcp",
+    "target": "http://127.0.0.1:40983/mcp",
     "outcome": "refused: [{\"type\":\"text\",\"text\":\"FORBIDDEN: Missing permission: maintenance.approve\"}]"
   },
   {
     "actor": "boundry-maintenance over Resolver Control MCP",
     "attempt": "call changes_approve",
-    "target": "http://127.0.0.1:49869/mcp",
+    "target": "http://127.0.0.1:47748/mcp",
     "outcome": "refused: [{\"type\":\"text\",\"text\":\"FORBIDDEN: Missing permission: changes.approve\"}]"
   }
 ]
