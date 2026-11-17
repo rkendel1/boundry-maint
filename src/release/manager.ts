@@ -22,10 +22,11 @@ import { promisify } from "node:util";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import semver from "semver";
-import { ReleaseRecord, ReleasePolicy, type PackageConfig, type ReleaseBump, type ReleasePlan, type ReleaseState, type Installation } from "../contracts.ts";
+import { ReleaseRecord, ReleasePolicy, type Principal, type PackageConfig, type ReleaseBump, type ReleasePlan, type ReleaseState, type Installation } from "../contracts.ts";
 import { writeAllAtomic, stableJson } from "../lib/files.ts";
 import { allocate, tagFor, AllocationError } from "./version.ts";
 import { editPackageJson, editPackageLock, dependentEffect, npmDependency, type Dependent } from "./manifests.ts";
+import { authorize, checkApproval, has, principal, requiredApprovals, GovernanceError } from "../governance/rules.ts";
 import { Unavailable, Refused, type RegistryAdapter, type GitAuthority, type ReleasesAdapter, type Executor } from "./adapters.ts";
 
 const pexec = promisify(execFile);
@@ -43,6 +44,8 @@ export interface ManagerDeps {
   dataDir: string;
   runtimeDir: string;
   catalog: PackageConfig[];
+  /** config/principals.json: who may propose, approve and trigger (docs/architecture/control-plane.md). */
+  principals: Principal[];
   registry(pkg: PackageConfig): RegistryAdapter;
   git(repository: string): GitAuthority;
   releases: ReleasesAdapter;
@@ -80,6 +83,8 @@ export class ReleaseManager {
 
   // ───────── plan ─────────
   async plan(req: PlanRequest): Promise<ReleaseRecord> {
+    const proposer = this.#principal(req.requestedBy);
+    this.#gov(() => authorize(proposer, "releases.propose"));
     const pkgs = req.packages.map((id) => {
       const p = this.d.catalog.find((c) => c.id === id);
       if (!p) throw new ReleaseError("invalid", `unknown package ${id}`);
@@ -174,24 +179,27 @@ export class ReleaseManager {
 
     const policy = first.release;
     const plan: ReleasePlan = {
-      repository: repo, branch, sourceCommit: source, bump: req.bump, requestedBy: req.requestedBy, requestedAt: now, reason: req.reason ?? null,
+      repository: repo, branch, sourceCommit: source, bump: req.bump, requestedBy: req.requestedBy, requestedByType: proposer.type, requestedAt: now, reason: req.reason ?? null,
       packages: planned, decision, dependents: dependents.sort((a, b) => (a.package + a.where).localeCompare(b.package + b.where)),
       releaseCommit: { message: `Release ${planned.map((p) => `${p.name}@${p.proposedVersion}`).join(", ")}`, files: Object.keys(files).sort(), pins: pins.sort((a, b) => (a.in + a.dependency).localeCompare(b.in + b.dependency)) },
       validation: [...policy.validation], githubRelease: pkgs.every((p) => p.release.githubRelease),
       approvers: [...new Set(pkgs.flatMap((p) => p.release.approvers))].filter((a) => pkgs.every((p) => p.release.approvers.includes(a))).sort(),
+      requiredApprovals: requiredFor(pkgs), protected: pkgs.some((p) => p.release.protected),
     };
     if (!plan.approvers.length) throw new ReleaseError("not-allowed", "no person may approve every package in this release");
+    const able = plan.approvers.filter((a) => a !== proposer.id && this.d.principals.some((x) => x.id === a && x.type === "person" && has(x, plan.protected ? "releases.approve.protected" : "releases.approve")));
+    if (able.length < plan.requiredApprovals) throw new ReleaseError("not-allowed", `this release needs ${plan.requiredApprovals} approval(s) from people other than ${proposer.id}, but only ${able.length} eligible approver(s) exist (${able.join(", ") || "none"}): it could never be approved`);
     const lead = planned[0]!; // planned has one entry per package (≥ 1)
     const id = `${lead.package}@${lead.proposedVersion}`;
     if (existsSync(this.path(id))) throw new ReleaseError("busy", `a release record for ${id} already exists`);
     const rec: ReleaseRecord = {
-      schemaVersion: 1, id, planDigest: planDigestOf(plan), plan, state: "awaiting-approval", approval: null,
+      schemaVersion: 2, id, planDigest: planDigestOf(plan), plan, state: "awaiting-approval", approvals: [], revocation: null,
       facts: { releaseCommit: null, build: null, tags: [], published: [], registryVerification: [], githubReleases: [] },
       failure: null,
       history: [
-        { at: now, state: "proposed", note: `${req.bump} release requested by ${req.requestedBy}` },
+        { at: now, state: "proposed", note: `${req.bump} release proposed by ${req.requestedBy} (${proposer.type})` },
         { at: now, state: "validated", note: `source ${source.slice(0, 12)} on ${branch}; versions free on the registry; tags free` },
-        { at: now, state: "awaiting-approval", note: `approvers: ${plan.approvers.join(", ")}` },
+        { at: now, state: "awaiting-approval", note: `needs ${plan.requiredApprovals} approval(s)${plan.protected ? " from prod approvers" : ""}; eligible: ${able.join(", ")}` },
       ],
       attempts: [],
     };
@@ -202,34 +210,61 @@ export class ReleaseManager {
   }
 
   // ───────── approval ─────────
-  async approve(id: string, approver: string, planDigest: string): Promise<ReleaseRecord> {
+  async approve(id: string, approverId: string, planDigest: string): Promise<ReleaseRecord> {
+    const who = this.#principal(approverId);
     const r = await this.load(id);
     if (r.state !== "awaiting-approval") throw new ReleaseError("not-allowed", `release ${id} is ${r.state}, not awaiting approval`);
-    if (!r.plan.approvers.includes(approver)) throw new ReleaseError("not-allowed", `${approver} may not approve ${id} (approvers: ${r.plan.approvers.join(", ")})`);
+    this.#gov(() => checkApproval(who, { id, proposedBy: r.plan.requestedBy, approvals: r.approvals, protected: r.plan.protected, frozen: this.#frozen(r), eligible: r.plan.approvers }));
     if (planDigest !== r.planDigest || planDigestOf(r.plan) !== r.planDigest) throw new ReleaseError("not-allowed", "the approval names a different plan than the one recorded");
     const at = this.d.now();
-    r.approval = { approver, at, planDigest, revoked: null };
-    this.#to(r, "approved", `approved by ${approver} for plan ${planDigest.slice(0, 12)}`);
+    r.approvals.push({ by: who.id, principalType: who.type, authentication: "asserted", at, planDigest });
+    const required = Math.max(r.plan.requiredApprovals, this.#requiredNow(r));
+    if (r.approvals.length >= required) this.#to(r, "approved", `approved by ${r.approvals.map((a) => a.by).join(", ")} for plan ${planDigest.slice(0, 12)}`);
+    else r.history.push({ at, state: r.state, note: `approval ${r.approvals.length} of ${required} by ${who.id}` });
     await this.#save(r);
     return r;
   }
 
-  async revoke(id: string, by: string, reason: string): Promise<ReleaseRecord> {
+  /** The proposer withdraws, or an approver rejects. Never after publication. */
+  async revoke(id: string, byId: string, reason: string): Promise<ReleaseRecord> {
+    const who = this.#principal(byId);
     const r = await this.load(id);
     if (ORDER.indexOf(r.state) >= ORDER.indexOf("published") || TERMINAL.includes(r.state)) throw new ReleaseError("not-allowed", `release ${id} is ${r.state}; a publication cannot be revoked`);
-    if (r.approval) r.approval.revoked = { by, at: this.d.now(), reason };
-    this.#to(r, "cancelled", `revoked by ${by}: ${reason}${r.facts.tags.length ? ` (tag ${r.facts.tags.map((t) => t.name).join(", ")} remains; tags are never moved or deleted)` : ""}`);
+    if (who.id !== r.plan.requestedBy && !(who.type === "person" && has(who, "releases.approve"))) throw new ReleaseError("not-allowed", `${who.id} may not withdraw ${id}: only its proposer or an approver`);
+    r.revocation = { by: who.id, at: this.d.now(), reason };
+    this.#to(r, "cancelled", `revoked by ${who.id}: ${reason}${r.facts.tags.length ? ` (tag ${r.facts.tags.map((t) => t.name).join(", ")} remains; tags are never moved or deleted)` : ""}`);
     await this.#save(r);
     return r;
   }
 
+  #principal(id: string): Principal { try { return principal(this.d.principals, id); } catch (e) { throw this.#asRelease(e); } }
+  #gov(f: () => void) { try { f(); } catch (e) { throw this.#asRelease(e); } }
+  #asRelease(e: unknown) { return e instanceof GovernanceError ? new ReleaseError("not-allowed", e.message) : e; }
+  #pkgs(r: ReleaseRecord) { return r.plan.packages.map((pp) => this.d.catalog.find((c) => c.id === pp.package)).filter((p): p is PackageConfig => !!p); }
+  /** Approvals the current policy requires: a tightened policy applies to releases not yet executing. */
+  #requiredNow(r: ReleaseRecord) { return requiredFor(this.#pkgs(r).filter((p): p is PackageConfig & { release: ReleasePolicy } => !!p.release)); }
+  #frozen(r: ReleaseRecord): string | null { const f = this.#pkgs(r).find((p) => p.release?.frozen); return f ? `${f.name} is frozen${f.release?.freezeReason ? `: ${f.release.freezeReason}` : ""}` : null; }
+
   // ───────── execution ─────────
-  async execute(id: string): Promise<ReleaseRecord> {
+  async execute(id: string, triggeredBy: string): Promise<ReleaseRecord> {
+    const who = this.#principal(triggeredBy);
+    this.#gov(() => authorize(who, "releases.execute"));
     let r = await this.load(id);
     return this.#locked(r.plan.packages.map((p) => p.package), async () => {
       r = await this.load(id); // re-read under the lock
       if (TERMINAL.includes(r.state)) return r;
       if (r.failure && !r.failure.recoverable) return r;
+      if (r.state === "approved") {
+        const frozen = this.#frozen(r);
+        if (frozen) { r.attempts.push({ at: this.d.now(), step: "approved", outcome: "refused", detail: `${frozen}; the approved release waits` }); await this.#save(r); return r; }
+        const required = this.#requiredNow(r);
+        if (r.approvals.length < required) {
+          this.#to(r, "awaiting-approval", `the policy now requires ${required} approvals; ${r.approvals.length} recorded`);
+          await this.#save(r);
+          return r;
+        }
+      }
+      r.attempts.push({ at: this.d.now(), step: "trigger", outcome: "done", detail: `execution requested by ${who.id}` });
       if (r.failure) { r.attempts.push({ at: this.d.now(), step: "resume", outcome: "done", detail: `resuming at ${r.state} after: ${r.failure.reason}` }); r.failure = null; }
       const steps: Partial<Record<ReleaseState, () => Promise<void>>> = {
         approved: () => this.#prepare(r), prepared: () => this.#build(r), built: () => this.#tag(r),
@@ -255,9 +290,10 @@ export class ReleaseManager {
 
   #checkAuthority(r: ReleaseRecord) {
     if (ORDER.indexOf(r.state) >= ORDER.indexOf("published")) return; // after publication only verification remains
-    if (!r.approval) throw new Blocked("not approved", false, "cancelled");
-    if (r.approval.revoked) throw new Blocked(`approval revoked by ${r.approval.revoked.by}`, false, "cancelled");
-    if (r.approval.planDigest !== r.planDigest || planDigestOf(r.plan) !== r.planDigest) throw new Blocked("the plan no longer matches what was approved", false);
+    if (r.revocation) throw new Blocked(`revoked by ${r.revocation.by}`, false, "cancelled");
+    const valid = r.approvals.filter((a) => a.planDigest === r.planDigest && a.principalType === "person" && a.by !== r.plan.requestedBy);
+    if (new Set(valid.map((a) => a.by)).size < r.plan.requiredApprovals) throw new Blocked("not approved by enough distinct people", false, "cancelled");
+    if (planDigestOf(r.plan) !== r.planDigest) throw new Blocked("the plan no longer matches what was approved", false);
   }
 
   #to(r: ReleaseRecord, state: ReleaseState, note: string) { r.state = state; r.history.push({ at: this.d.now(), state, note }); }
@@ -268,7 +304,7 @@ export class ReleaseManager {
     const p = r.plan;
     const git = this.d.git(p.repository);
     const files = JSON.parse(await readFile(join(this.d.runtimeDir, "files", r.id, "files.json"), "utf8").catch(async () => JSON.stringify(await this.#rederive(r))));
-    const at = r.approval!.at;
+    const at = approvedAt(r);
     // Deterministic (fixed dates from the approval): recomputing it after a crash yields the identical sha.
     const commit = Object.keys(files).length ? await git.makeCommit(p.sourceCommit, files, p.releaseCommit.message, at) : p.sourceCommit;
     const tags = await git.tags();
@@ -348,7 +384,7 @@ export class ReleaseManager {
       if (existing && existing !== commit) throw new Blocked(`tag ${pp.tag} already points at ${existing.slice(0, 12)}, not the release commit ${commit.slice(0, 12)}; tags are never moved`, false);
       if (existing) this.#did(r, "tag", "already-done", `${pp.tag} → ${commit.slice(0, 12)}`);
       else {
-        try { await git.pushTag(pp.tag, commit, `${pp.name} ${pp.proposedVersion}\n\nartifact sha256:${r.facts.build!.artifacts.find((a) => a.package === pp.package)!.sha256}`, r.approval!.at); }
+        try { await git.pushTag(pp.tag, commit, `${pp.name} ${pp.proposedVersion}\n\nartifact sha256:${r.facts.build!.artifacts.find((a) => a.package === pp.package)!.sha256}`, approvedAt(r)); }
         catch (e) { if (e instanceof Refused) { const t = (await git.tags()).get(pp.tag); if (t !== commit) throw new Blocked(`tag ${pp.tag} appeared pointing at ${t?.slice(0, 12)}`, false); } else throw e; }
         const target = (await git.tags()).get(pp.tag);
         if (target !== commit) throw new Blocked(`tag ${pp.tag} resolves to ${target?.slice(0, 12)}, expected ${commit.slice(0, 12)}`, false);
@@ -503,3 +539,7 @@ export function buildRecipe(r: ReleaseRecord): { path: string; source: string } 
 function splitId(id: string): [string, string] { const i = id.lastIndexOf("@"); return [id.slice(0, i), id.slice(i + 1)]; }
 function alive(pid: number) { try { process.kill(pid, 0); return true; } catch { return false; } }
 export { stableJson };
+
+/** When the plan became approved (the last approval): the fixed date of the release commit and tags. */
+function approvedAt(r: ReleaseRecord): string { const a = r.approvals.at(-1); if (!a) throw new Blocked("not approved", false, "cancelled"); return a.at; }
+const requiredFor = (pkgs: (PackageConfig & { release: ReleasePolicy })[]) => Math.max(1, ...pkgs.map((p) => requiredApprovals(p.release.approvalsRequired, p.criticality)));

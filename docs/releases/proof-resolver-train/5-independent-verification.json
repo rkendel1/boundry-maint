@@ -1,25 +1,44 @@
 {
+  "governance": {
+    "proposedBy": "maintenance-agent (agent)",
+    "requiredApprovals": 1,
+    "protected": true,
+    "approvals": [
+      {
+        "by": "randy",
+        "principalType": "person",
+        "authentication": "asserted",
+        "at": "2026-11-17T00:40:17.775Z",
+        "planDigest": "38e9e5c1fc26de698578fd52f79cee6ce6c253ab5357ad350e378013dbe82ca2"
+      }
+    ],
+    "refusals": [
+      "approval by mallory (not a principal): refused: unknown principal \"mallory\": principals are declared in config/principals.json",
+      "approval by maintenance-agent (its own proposal; an agent): refused: only a person may approve; maintenance-agent is an agent",
+      "execution triggered by maintenance-agent: refused: maintenance-agent (agent; roles agent) may not releases.execute: needs releases.trigger"
+    ]
+  },
   "git": {
-    "branchHead": "e2773e0be48b271f50efcce0d0cf4b3eb640024f",
+    "branchHead": "f3e19fbbfe1112233b02fb683d1ca403b14da849",
     "parentOfHead": "aaab053651a9144e470c3b62c1c550ab084effe7",
     "approvedSource": "aaab053651a9144e470c3b62c1c550ab084effe7",
-    "releaseCommit": "e2773e0be48b271f50efcce0d0cf4b3eb640024f",
+    "releaseCommit": "f3e19fbbfe1112233b02fb683d1ca403b14da849",
     "packages": [
       {
         "tag": "@appport/resolver-core@0.2.1",
-        "tagTarget": "e2773e0be48b271f50efcce0d0cf4b3eb640024f",
+        "tagTarget": "f3e19fbbfe1112233b02fb683d1ca403b14da849",
         "tagIsReleaseCommit": true,
         "manifestVersionAtTag": "0.2.1"
       },
       {
         "tag": "@appport/resolver-client@0.3.1",
-        "tagTarget": "e2773e0be48b271f50efcce0d0cf4b3eb640024f",
+        "tagTarget": "f3e19fbbfe1112233b02fb683d1ca403b14da849",
         "tagIsReleaseCommit": true,
         "manifestVersionAtTag": "0.3.1"
       },
       {
         "tag": "@appport/resolver@0.4.2",
-        "tagTarget": "e2773e0be48b271f50efcce0d0cf4b3eb640024f",
+        "tagTarget": "f3e19fbbfe1112233b02fb683d1ca403b14da849",
         "tagIsReleaseCommit": true,
         "manifestVersionAtTag": "0.4.2"
       }
@@ -62,9 +81,9 @@
     }
   ],
   "execution": {
-    "runId": "run_ee4c86be74f89bf47be61b95",
+    "runId": "run_e53a50bab6a93365208fbe82",
     "state": "succeeded",
-    "commitBuilt": "e2773e0be48b271f50efcce0d0cf4b3eb640024f",
+    "commitBuilt": "f3e19fbbfe1112233b02fb683d1ca403b14da849",
     "isReleaseCommit": true,
     "recipe": ".boundry/recipes/boundry-release.md",
     "jobs": [
@@ -92,9 +111,9 @@
         ],
         "artifacts": [
           {
-            "digest": "94648d58bd35927d539fb689f52e35e290ccbffe800da94dec3592a26c974afd",
+            "digest": "ed9d8f7cdfc16d27ef679366627c22f8c4921ae1d3e38c45045c60b8b407f871",
             "name": "test-results.txt",
-            "size": 19033
+            "size": 18313
           }
         ]
       }

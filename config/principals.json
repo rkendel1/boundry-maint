@@ -1,0 +1,8 @@
+{
+  "$schema": "../schemas/principals.schema.json",
+  "principals": [
+    { "id": "randy", "name": "Randy", "type": "person", "roles": ["admin", "engineer", "prod_approver"] },
+    { "id": "maintenance-agent", "name": "Maintenance agent (proposes, never approves or executes)", "type": "agent", "roles": ["agent"] },
+    { "id": "component:release-executor", "name": "Release executor", "type": "component", "roles": ["executor"] }
+  ]
+}

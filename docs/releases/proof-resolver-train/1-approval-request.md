@@ -1,6 +1,6 @@
 # Release request: @appport/resolver 0.4.1 → **0.4.2**, @appport/resolver-client 0.3.0 → **0.3.1**, @appport/resolver-core 0.2.0 → **0.2.1**
 
-Requested by randy at 2026-11-17T00:29:27.480Z — “End-to-end proof of the Release Manager (resolver release train)”. State: **awaiting-approval**.
+Requested by maintenance-agent at 2026-11-17T00:40:16.890Z — “End-to-end proof of the Release Manager (resolver release train)”. State: **awaiting-approval**.
 
 ## What will happen, in order
 
@@ -41,10 +41,10 @@ Dependents are **not** changed or published by this release. Each needs its own 
 
 ## Approve
 
-Approvers: randy
+Proposed by **maintenance-agent** (agent), who may not approve it. Needs **1** approval(s) from distinct people holding the prod_approver role. Eligible: randy.
 
 ```bash
-node src/index.ts release approve appport-resolver@0.4.2 --as <your name> --digest c03510089358c73aa710fa8c0d42ace7662ccefa4993a204bfa9ded780cc872a
+node src/index.ts release approve appport-resolver@0.4.2 --as <your principal id> --digest 38e9e5c1fc26de698578fd52f79cee6ce6c253ab5357ad350e378013dbe82ca2
 ```
 
-Plan digest `c03510089358c73aa710fa8c0d42ace7662ccefa4993a204bfa9ded780cc872a` · record `data/release-manager/appport-resolver/0.4.2.json`
+Plan digest `38e9e5c1fc26de698578fd52f79cee6ce6c253ab5357ad350e378013dbe82ca2` · record `data/release-manager/appport-resolver/0.4.2.json`

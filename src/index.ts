@@ -29,6 +29,7 @@ import {
   ReleasesFile,
   Snapshot,
   ReleaseRecord,
+  PrincipalCatalog,
 } from "./contracts.ts";
 import { releaseManager, approvalRequest } from "./release/cli.ts";
 import { listFiles, readJsonIfValid, readJson, stableJson, writeAllAtomic } from "./lib/files.ts";
@@ -117,6 +118,8 @@ async function validate() {
     }
   }
   for (const f of await listFiles(d("evidence"))) await readJson(f, EvidenceFile);
+  await readJson(join(ROOT, "config/principals.json"), PrincipalCatalog);
+  console.log("config/principals.json: ok");
   let releases = 0;
   for (const dir of await listFiles(d("release-manager"))) for (const f of await listFiles(dir)) { await readJson(f, ReleaseRecord); releases++; }
   console.log(`release records: ${releases} ok`);
@@ -130,6 +133,7 @@ async function schemas() {
     ["project.schema.json", ProjectCatalog, "input"],
     ["policies.schema.json", Policies, "input"],
     ["ci.schema.json", CiConfig, "input"],
+    ["principals.schema.json", PrincipalCatalog, "input"],
     ["snapshot.schema.json", Snapshot, "output"],
   ];
   for (const [file, schema, io] of out) {
@@ -171,7 +175,8 @@ async function release() {
   const [, sub, id] = positionals;
   const { packages } = await loadConfig(ROOT);
   const installations = (await readJsonIfValid(join(values.data!, "installations.json"), InstallationsFile))?.installations ?? [];
-  const m = await releaseManager(ROOT, values.data!, packages.packages, installations);
+  const principals = (await readJson(join(ROOT, "config/principals.json"), PrincipalCatalog)).principals;
+  const m = await releaseManager(ROOT, values.data!, packages.packages, installations, principals);
   const need = (v: string | undefined, what: string) => { if (!v) throw new Error(`release ${sub} needs ${what}`); return v; };
   switch (sub) {
     case "plan": {
@@ -180,11 +185,11 @@ async function release() {
       return;
     }
     case "show": console.log(approvalRequest(await m.load(need(id, "<release id>")))); return;
-    case "approve": { const r = await m.approve(need(id, "<release id>"), need(values.as, "--as <name>"), need(values.digest, "--digest <plan digest>")); console.log(`${r.id}: ${r.state} by ${r.approval!.approver}`); return; }
+    case "approve": { const r = await m.approve(need(id, "<release id>"), need(values.as, "--as <name>"), need(values.digest, "--digest <plan digest>")); console.log(`${r.id}: ${r.state} (${r.approvals.length} of ${r.plan.requiredApprovals} approvals: ${r.approvals.map((a) => a.by).join(", ")})`); return; }
     case "revoke": { const r = await m.revoke(need(id, "<release id>"), need(values.as, "--as <name>"), values.reason ?? "revoked"); console.log(`${r.id}: ${r.state}`); return; }
-    case "execute": { const r = await m.execute(need(id, "<release id>")); console.log(approvalRequest(r)); if (r.state !== "released") process.exitCode = 1; return; }
+    case "execute": { const r = await m.execute(need(id, "<release id>"), need(values.as, "--as <principal id>")); console.log(approvalRequest(r)); if (r.state !== "released") process.exitCode = 1; return; }
     case "list": for (const r of await m.list()) console.log(`${r.id.padEnd(40)} ${r.state.padEnd(18)} ${r.failure ? `(${r.failure.recoverable ? "blocked" : "stopped"}: ${r.failure.reason})` : ""}`); return;
-    default: throw new Error("usage: release plan --package <id> --bump <kind> --as <name> [--reason …] | show|execute|list <id> | approve <id> --as <name> --digest <d> | revoke <id> --as <name> [--reason …]");
+    default: throw new Error("usage: release plan --package <id> --bump <kind> --as <name> [--reason …] | show|list <id> | execute <id> --as <name> | approve <id> --as <name> --digest <d> | revoke <id> --as <name> [--reason …]");
   }
 }
 

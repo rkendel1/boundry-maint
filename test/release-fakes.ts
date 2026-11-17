@@ -1,3 +1,4 @@
+import { Principal } from "../src/contracts.ts";
 /** Test stand-ins with failure injection. Git is REAL (temporary bare repositories); the executor really packs. */
 import { execFileSync } from "node:child_process";
 import { mkdtempSync, writeFileSync, mkdirSync, readFileSync, rmSync } from "node:fs";
@@ -128,3 +129,13 @@ export class PackingExecutor implements Executor {
   }
   async artifact(runId: string) { const r = this.runs.get(runId)!; return { sha256: r.sha256!, bytes: r.bytes! }; }
 }
+
+/** Who is who: people approve, an agent proposes, the executor executes. */
+export const PRINCIPALS = [
+  { id: "randy", name: "Randy", type: "person", roles: ["admin", "engineer", "prod_approver"] },
+  { id: "ada", name: "Ada", type: "person", roles: ["prod_approver"] },
+  { id: "barbara", name: "Barbara", type: "person", roles: ["approver"] },
+  { id: "grace", name: "Grace", type: "person", roles: ["engineer"] },
+  { id: "mallory", name: "Mallory", type: "person", roles: ["prod_approver"] },
+  { id: "bot", name: "Ops agent", type: "agent", roles: ["agent"] },
+].map((p) => Principal.parse(p));

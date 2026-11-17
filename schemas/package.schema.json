@@ -61,6 +61,16 @@
           "description": {
             "type": "string"
           },
+          "criticality": {
+            "default": "medium",
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "critical"
+            ]
+          },
           "release": {
             "description": "Present only for owned packages Boundry is allowed to release",
             "type": "object",
@@ -111,7 +121,27 @@
                   "type": "string",
                   "minLength": 1
                 },
-                "description": "People who may approve a release plan for this package"
+                "description": "People who may approve a release plan for this package (in addition to holding the approver role)"
+              },
+              "approvalsRequired": {
+                "default": 1,
+                "description": "Distinct people who must approve; a critical package always needs at least 2",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5
+              },
+              "protected": {
+                "default": true,
+                "description": "Approving needs the prod_approver role. Publishing to a public registry is production, so the default is protected",
+                "type": "boolean"
+              },
+              "frozen": {
+                "default": false,
+                "description": "While frozen, releases of this package are neither approved nor executed; approved releases wait",
+                "type": "boolean"
+              },
+              "freezeReason": {
+                "type": "string"
               },
               "validation": {
                 "default": [

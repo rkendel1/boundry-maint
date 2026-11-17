@@ -8,21 +8,21 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { ReleaseManager } from "./manager.ts";
 import { NpmRegistry, GitCli, GitHubReleases, BoundryCiExecutor } from "./adapters.ts";
-import type { ReleaseRecord, PackageConfig, Installation } from "../contracts.ts";
+import type { ReleaseRecord, PackageConfig, Installation, Principal } from "../contracts.ts";
 
 const secret = async (envName: string): Promise<string | null> => {
   const p = process.env[envName];
   return p && existsSync(p) ? (await readFile(p, "utf8")).trim() : null;
 };
 
-export async function releaseManager(root: string, dataDir: string, catalog: PackageConfig[], installations: Installation[]): Promise<ReleaseManager> {
+export async function releaseManager(root: string, dataDir: string, catalog: PackageConfig[], installations: Installation[], principals: Principal[]): Promise<ReleaseManager> {
   const env = process.env;
   const npmUrl = env.BOUNDRY_NPM_REGISTRY ?? "https://registry.npmjs.org";
   const npmToken = await secret("BOUNDRY_NPM_TOKEN_FILE");
   const gitToken = await secret("BOUNDRY_GIT_TOKEN_FILE");
   const runtimeDir = env.BOUNDRY_RELEASE_RUNTIME ?? join(root, ".release-runtime");
   return new ReleaseManager({
-    dataDir, runtimeDir, catalog, installations,
+    dataDir, runtimeDir, catalog, installations, principals,
     registry: () => new NpmRegistry(npmUrl, npmToken),
     git: (repo) => new GitCli((env.BOUNDRY_GIT_URL_TEMPLATE ?? "https://github.com/{repo}.git").replace("{repo}", repo), join(runtimeDir, "git", repo.replace("/", "__")),
       { name: env.BOUNDRY_RELEASE_GIT_NAME ?? "Boundry Release", email: env.BOUNDRY_RELEASE_GIT_EMAIL ?? "release@boundry.invalid" },
@@ -47,7 +47,9 @@ export function approvalRequest(r: ReleaseRecord): string {
   L.push("## Why these versions", "", ...p.decision.map((d) => `- ${d}`), "");
   L.push("## Who else is affected", "", ...(p.dependents.length ? p.dependents.map((d) => `- **${d.package}** (${d.where}, declares \`${d.declared}\`): ${d.effect}`) : ["- No dependents found."]), "", "Dependents are **not** changed or published by this release. Each needs its own release request.", "");
   L.push("## What approving does not allow", "", "- Any other version, commit, artifact, tag or registry than the ones above.", "- Publishing dependents, re-tagging, or overwriting a published version.", "- Continuing if the registry or the branch changes before publication: that requires a new plan.", "");
-  L.push("## Approve", "", `Approvers: ${p.approvers.join(", ")}`, "", "```bash", `node src/index.ts release approve ${r.id} --as <your name> --digest ${r.planDigest}`, "```", "");
+  L.push("## Approve", "", `Proposed by **${p.requestedBy}** (${p.requestedByType}), who may not approve it. Needs **${p.requiredApprovals}** approval(s) from distinct people${p.protected ? " holding the prod_approver role" : ""}. Eligible: ${p.approvers.filter((a) => a !== p.requestedBy).join(", ") || "nobody"}.`, "");
+  if (r.approvals.length) L.push(`Approved so far: ${r.approvals.map((a) => `${a.by} (${a.authentication}, ${a.at})`).join(", ")}`, "");
+  L.push("```bash", `node src/index.ts release approve ${r.id} --as <your principal id> --digest ${r.planDigest}`, "```", "");
   if (r.facts.releaseCommit || r.attempts.length) {
     L.push("## Evidence so far", "");
     if (r.facts.releaseCommit) L.push(`- Release commit: \`${r.facts.releaseCommit}\``);

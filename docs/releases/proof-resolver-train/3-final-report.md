@@ -1,6 +1,6 @@
 # Release request: @appport/resolver 0.4.1 → **0.4.2**, @appport/resolver-client 0.3.0 → **0.3.1**, @appport/resolver-core 0.2.0 → **0.2.1**
 
-Requested by randy at 2026-11-17T00:29:27.480Z — “End-to-end proof of the Release Manager (resolver release train)”. State: **released**.
+Requested by maintenance-agent at 2026-11-17T00:40:16.890Z — “End-to-end proof of the Release Manager (resolver release train)”. State: **released**.
 
 ## What will happen, in order
 
@@ -41,24 +41,26 @@ Dependents are **not** changed or published by this release. Each needs its own 
 
 ## Approve
 
-Approvers: randy
+Proposed by **maintenance-agent** (agent), who may not approve it. Needs **1** approval(s) from distinct people holding the prod_approver role. Eligible: randy.
+
+Approved so far: randy (asserted, 2026-11-17T00:40:17.775Z)
 
 ```bash
-node src/index.ts release approve appport-resolver@0.4.2 --as <your name> --digest c03510089358c73aa710fa8c0d42ace7662ccefa4993a204bfa9ded780cc872a
+node src/index.ts release approve appport-resolver@0.4.2 --as <your principal id> --digest 38e9e5c1fc26de698578fd52f79cee6ce6c253ab5357ad350e378013dbe82ca2
 ```
 
 ## Evidence so far
 
-- Release commit: `e2773e0be48b271f50efcce0d0cf4b3eb640024f`
-- Built by boundry-ci run `run_ee4c86be74f89bf47be61b95`: `appport-resolver-0.4.2.tgz` sha256 `312ecf060a121326658aa8faf4f0060807ad364fddb0cc0a83b75205a637d3ad`, `appport-resolver-client-0.3.1.tgz` sha256 `eafb495680050af107e8cbfd82169186b6f654cf7cd2ff60b639a69665240664`, `appport-resolver-core-0.2.1.tgz` sha256 `b001e5edaaee97103e55647ad18856d24632d23fdd14a6a2d2ce193821ea179b`
-- Tag `@appport/resolver@0.4.2` → `e2773e0be48b`
-- Tag `@appport/resolver-client@0.3.1` → `e2773e0be48b`
-- Tag `@appport/resolver-core@0.2.1` → `e2773e0be48b`
+- Release commit: `f3e19fbbfe1112233b02fb683d1ca403b14da849`
+- Built by boundry-ci run `run_e53a50bab6a93365208fbe82`: `appport-resolver-0.4.2.tgz` sha256 `312ecf060a121326658aa8faf4f0060807ad364fddb0cc0a83b75205a637d3ad`, `appport-resolver-client-0.3.1.tgz` sha256 `eafb495680050af107e8cbfd82169186b6f654cf7cd2ff60b639a69665240664`, `appport-resolver-core-0.2.1.tgz` sha256 `b001e5edaaee97103e55647ad18856d24632d23fdd14a6a2d2ce193821ea179b`
+- Tag `@appport/resolver@0.4.2` → `f3e19fbbfe11`
+- Tag `@appport/resolver-client@0.3.1` → `f3e19fbbfe11`
+- Tag `@appport/resolver-core@0.2.1` → `f3e19fbbfe11`
 - Registry serves 0.4.2: integrity `sha512-mujrA+1DEDQDaSvpJ…`, bytes sha256 `312ecf060a121326…`, dist-tag points here
 - Registry serves 0.3.1: integrity `sha512-k4T8jxl4P8ytaHzcr…`, bytes sha256 `eafb495680050af1…`, dist-tag points here
 - Registry serves 0.2.1: integrity `sha512-gXGxWKf2SHcIeiZnT…`, bytes sha256 `b001e5edaaee9710…`, dist-tag points here
-- GitHub release: http://127.0.0.1:39787/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver%400.4.2
-- GitHub release: http://127.0.0.1:39787/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-client%400.3.1
-- GitHub release: http://127.0.0.1:39787/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-core%400.2.1
+- GitHub release: http://127.0.0.1:34787/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver%400.4.2
+- GitHub release: http://127.0.0.1:34787/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-client%400.3.1
+- GitHub release: http://127.0.0.1:34787/stand-in/rkendel1/resolver/releases/tag/%40appport%2Fresolver-core%400.2.1
 
-Plan digest `c03510089358c73aa710fa8c0d42ace7662ccefa4993a204bfa9ded780cc872a` · record `data/release-manager/appport-resolver/0.4.2.json`
+Plan digest `38e9e5c1fc26de698578fd52f79cee6ce6c253ab5357ad350e378013dbe82ca2` · record `data/release-manager/appport-resolver/0.4.2.json`

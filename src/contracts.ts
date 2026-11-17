@@ -26,6 +26,49 @@ const IsoDate = z.string().datetime({ offset: true });
 // ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
+// Governance (shared vocabulary with Resolver Control; see docs/architecture/control-plane.md)
+// ---------------------------------------------------------------------------
+
+/** How much breaks if this goes wrong. `critical` always needs two distinct approvers (Resolver Control's rule). */
+export const Criticality = z.enum(["low", "medium", "high", "critical"]);
+export type Criticality = z.infer<typeof Criticality>;
+
+/** A person decides; an agent proposes and inspects; a component executes what people approved. */
+export const PrincipalType = z.enum(["person", "agent", "component"]);
+export type PrincipalType = z.infer<typeof PrincipalType>;
+
+/** Role names follow Resolver Control's (feltkit/app.ts) so one person holds the same role in both. */
+export const Role = z.enum(["viewer", "engineer", "approver", "prod_approver", "admin", "agent", "executor"]);
+export type Role = z.infer<typeof Role>;
+
+const PrincipalId = z.string().regex(/^[a-z0-9][a-z0-9._:-]*$/, "lowercase id: a-z 0-9 . _ : -");
+export const Principal = z
+  .object({
+    id: PrincipalId,
+    name: z.string().min(1),
+    type: PrincipalType,
+    roles: z.array(Role).min(1),
+  })
+  .superRefine((p, ctx) => {
+    const personOnly: Role[] = ["approver", "prod_approver", "admin"];
+    if (p.type !== "person" && p.roles.some((r) => personOnly.includes(r))) ctx.addIssue({ code: "custom", path: ["roles"], message: `${p.type} ${p.id} cannot hold ${personOnly.join("/")}: only people approve or administer` });
+    if (p.type !== "component" && p.roles.includes("executor")) ctx.addIssue({ code: "custom", path: ["roles"], message: "only a component executes" });
+    if (p.type === "component" && p.roles.some((r) => r !== "executor" && r !== "viewer")) ctx.addIssue({ code: "custom", path: ["roles"], message: "a component holds executor (and viewer) only" });
+  });
+export type Principal = z.infer<typeof Principal>;
+
+export const PrincipalCatalog = z
+  .object({ $schema: z.string().optional(), principals: z.array(Principal) })
+  .superRefine((c, ctx) => {
+    const seen = new Set<string>();
+    c.principals.forEach((p, i) => { if (seen.has(p.id)) ctx.addIssue({ code: "custom", path: ["principals", i, "id"], message: `duplicate principal ${p.id}` }); seen.add(p.id); });
+  });
+export type PrincipalCatalog = z.infer<typeof PrincipalCatalog>;
+
+/** How the principal behind an action was established. The CLI cannot authenticate: it records "asserted". */
+export const Authentication = z.enum(["asserted", "session"]);
+
+// ---------------------------------------------------------------------------
 // Release policy (per package, curated). Absent = the package cannot be released by Boundry.
 // ---------------------------------------------------------------------------
 
@@ -41,7 +84,11 @@ export const ReleasePolicy = z.object({
   prereleaseId: z.string().regex(/^[0-9A-Za-z-]+$/).default("rc"),
   tagFormat: z.string().default("{name}@{version}").describe("Git tag per released package; {name} and {version} are substituted"),
   branch: z.string().default("main").describe("Branch that receives the release commit (fast-forward only)"),
-  approvers: z.array(z.string().min(1)).min(1).describe("People who may approve a release plan for this package"),
+  approvers: z.array(z.string().min(1)).min(1).describe("People who may approve a release plan for this package (in addition to holding the approver role)"),
+  approvalsRequired: z.number().int().min(1).max(5).default(1).describe("Distinct people who must approve; a critical package always needs at least 2"),
+  protected: z.boolean().default(true).describe("Approving needs the prod_approver role. Publishing to a public registry is production, so the default is protected"),
+  frozen: z.boolean().default(false).describe("While frozen, releases of this package are neither approved nor executed; approved releases wait"),
+  freezeReason: z.string().optional(),
   validation: z.array(z.enum(["test"])).default(["test"]).describe("Checks the release build must pass in Boundry CI before tagging"),
   githubRelease: z.boolean().default(true),
   distTag: z.string().default("latest").describe("npm dist-tag for stable releases (prereleases always use 'next')"),
@@ -58,6 +105,7 @@ export const PackageConfig = z.object({
   active: z.boolean().default(true),
   trackPrereleases: z.boolean().default(false),
   description: z.string().optional(),
+  criticality: Criticality.default("medium"),
   release: ReleasePolicy.optional().describe("Present only for owned packages Boundry is allowed to release"),
 });
 export type PackageConfig = z.infer<typeof PackageConfig>;
@@ -656,6 +704,7 @@ export const ReleasePlan = z.object({
   sourceCommit: z.string().regex(/^[0-9a-f]{40}$/),
   bump: ReleaseBump,
   requestedBy: z.string(),
+  requestedByType: PrincipalType,
   requestedAt: IsoDate,
   reason: z.string().nullable(),
   packages: z.array(ReleasePackagePlan).min(1),
@@ -670,18 +719,21 @@ export const ReleasePlan = z.object({
   validation: z.array(z.string()),
   githubRelease: z.boolean(),
   approvers: z.array(z.string()),
+  requiredApprovals: z.number().int().min(1).describe("max over the packages of policy approvalsRequired, and 2 if any is critical"),
+  protected: z.boolean().describe("true if any package's policy is protected: approvers need prod_approver"),
 });
 export type ReleasePlan = z.infer<typeof ReleasePlan>;
 
 export const ReleaseRecord = z.object({
-  schemaVersion: z.literal(1),
+  schemaVersion: z.literal(2),
   id: z.string().describe("<package-id>@<version> of the first package"),
   planDigest: z.string().regex(/^[0-9a-f]{64}$/),
   plan: ReleasePlan,
   state: ReleaseState,
-  approval: z
-    .object({ approver: z.string(), at: IsoDate, planDigest: z.string(), revoked: z.object({ by: z.string(), at: IsoDate, reason: z.string() }).nullable() })
-    .nullable(),
+  approvals: z
+    .array(z.object({ by: z.string(), principalType: PrincipalType, authentication: Authentication, at: IsoDate, planDigest: z.string() }))
+    .describe("Distinct people, none of them the requester; approved once plan.requiredApprovals is reached"),
+  revocation: z.object({ by: z.string(), at: IsoDate, reason: z.string() }).nullable(),
   facts: z.object({
     releaseCommit: z.string().nullable(),
     build: z

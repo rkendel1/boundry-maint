@@ -14,7 +14,7 @@ import { createServer } from "node:http";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { createHash, randomBytes } from "node:crypto";
-import { PackageCatalog, InstallationsFile } from "../../src/contracts.ts";
+import { PackageCatalog, InstallationsFile, ReleasePolicy, PrincipalCatalog } from "../../src/contracts.ts";
 import { ReleaseManager } from "../../src/release/manager.ts";
 import { NpmRegistry, GitCli, GitHubReleases, BoundryCiExecutor } from "../../src/release/adapters.ts";
 import { approvalRequest } from "../../src/release/cli.ts";
@@ -110,38 +110,43 @@ try {
     if (m && req.method === "POST") { const b = JSON.parse(raw); ghReleases.push({ tag: b.tag_name, name: b.name, body: b.body, at: new Date().toISOString() }); res.writeHead(201, { "content-type": "application/json" }); return res.end(JSON.stringify({ html_url: `http://${req.headers.host}/stand-in/${m[1]}/releases/tag/${encodeURIComponent(b.tag_name)}` })); }
     res.writeHead(404); res.end();
   });
-  await new Promise<void>((r) => gh.listen(0, "127.0.0.1", r));
+  await new Promise<void>((r) => gh!.listen(0, "127.0.0.1", r));
   const ghUrl = `http://127.0.0.1:${(gh.address() as any).port}`;
 
   // ── 5. Boundry Maintenance: plan → approval request → approve → execute ──
   const dataDir = join(base, "maintenance-data");
   cpSync(join(root, "data"), dataDir, { recursive: true });
   const catalog = PackageCatalog.parse(JSON.parse(readFileSync(join(root, "config/packages.json"), "utf8"))).packages
-    .map((p) => (PKGS.some((x) => x.id === p.id) ? { ...p, release: { approvers: ["randy"], allowedBumps: ["patch", "minor", "prerelease", "repository"], prereleaseId: "rc", tagFormat: "{name}@{version}", branch: "main", validation: ["test"], githubRelease: true, distTag: "latest" } as const } : p));
+    .map((p) => (PKGS.some((x) => x.id === p.id) ? { ...p, release: ReleasePolicy.parse({ approvers: ["randy"] }) } : p));
   const installations = InstallationsFile.parse(JSON.parse(readFileSync(join(dataDir, "installations.json"), "utf8"))).installations;
   const m = new ReleaseManager({
-    dataDir, runtimeDir: join(base, "release-runtime"), catalog: catalog as any, installations, pollMs: 2000, buildTimeoutMs: 20 * 60_000,
+    dataDir, runtimeDir: join(base, "release-runtime"), catalog, installations, principals: PrincipalCatalog.parse(JSON.parse(readFileSync(join(root, "config/principals.json"), "utf8"))).principals, pollMs: 2000, buildTimeoutMs: 20 * 60_000,
     registry: () => new NpmRegistry("http://127.0.0.1:4874", readFileSync(npmTokenFile, "utf8")),
     git: (repo) => new GitCli(`file://${join(base, "git")}/${repo}.git`, join(base, "release-runtime", "git"), { name: "Boundry Release", email: "release@boundry.invalid" }),
     releases: new GitHubReleases(ghUrl, "stand-in"),
     executor: new BoundryCiExecutor("http://127.0.0.1:21090", operator),
   });
-  try { await m.plan({ packages: [PKGS[0]!.id], bump: "patch", requestedBy: "randy" }); }
+  try { await m.plan({ packages: [PKGS[0]!.id], bump: "patch", requestedBy: "maintenance-agent" }); }
   catch (e) { writeFileSync(join(outDir.replace(/\/$/, "") + "-lone-core-refused.md"), `# Lone release of @appport/resolver-core refused\n\n${(e as Error).message}\n`); log(`lone core release refused: ${(e as Error).message.split("\n")[0]}`); }
-  const planned = await m.plan({ packages: PKGS.map((p) => p.id), bump: "patch", requestedBy: "randy", reason: "End-to-end proof of the Release Manager (resolver release train)" });
+  const planned = await m.plan({ packages: PKGS.map((p) => p.id), bump: "patch", requestedBy: "maintenance-agent", reason: "End-to-end proof of the Release Manager (resolver release train)" });
   mkdirSync(outDir, { recursive: true });
   writeFileSync(join(outDir, "1-approval-request.md"), approvalRequest(planned) + "\n");
   log(`planned ${planned.id}; plan digest ${planned.planDigest.slice(0, 16)}…`);
-  try { await m.approve(planned.id, "mallory", planned.planDigest); } catch (e) { log(`approval by mallory refused: ${(e as Error).message}`); }
+  const refusals: string[] = [];
+  for (const [what, f] of [["approval by mallory (not a principal)", () => m.approve(planned.id, "mallory", planned.planDigest)], ["approval by maintenance-agent (its own proposal; an agent)", () => m.approve(planned.id, "maintenance-agent", planned.planDigest)], ["execution triggered by maintenance-agent", () => m.execute(planned.id, "maintenance-agent")]] as const) {
+    try { await f(); refusals.push(`${what}: NOT REFUSED`); } catch (e) { refusals.push(`${what}: refused: ${(e as Error).message}`); }
+  }
+  for (const x of refusals) log(x);
   await m.approve(planned.id, "randy", planned.planDigest);
   const t0 = Date.now();
-  const done = await m.execute(planned.id);
+  const done = await m.execute(planned.id, "randy");
   log(`execute → ${done.state} in ${Math.round((Date.now() - t0) / 1000)}s${done.failure ? ` (${done.failure.reason})` : ""}`);
   writeFileSync(join(outDir, "2-release-record.json"), JSON.stringify(done, null, 2) + "\n");
   writeFileSync(join(outDir, "3-final-report.md"), approvalRequest(done) + "\n");
 
   // ── 6. Independent verification (asks each authority directly, not the record) ──
   const v: Record<string, unknown> = {};
+  v.governance = { proposedBy: `${done.plan.requestedBy} (${done.plan.requestedByType})`, requiredApprovals: done.plan.requiredApprovals, protected: done.plan.protected, approvals: done.approvals, refusals };
   const head = sh("git", ["-C", bare, "rev-parse", "refs/heads/main"]).trim();
   v.git = {
     branchHead: head, parentOfHead: sh("git", ["-C", bare, "rev-parse", `${head}^`]).trim(), approvedSource: sourceCommit, releaseCommit: done.facts.releaseCommit,
