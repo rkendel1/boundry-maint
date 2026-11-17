@@ -23,6 +23,8 @@ export async function releaseManager(root: string, dataDir: string, catalog: Pac
   const runtimeDir = env.BOUNDRY_RELEASE_RUNTIME ?? join(root, ".release-runtime");
   return new ReleaseManager({
     dataDir, runtimeDir, catalog, installations, principals,
+    // Registries explicitly declared as test registries (comma-separated URLs). Everything else is production.
+    testRegistries: (env.BOUNDRY_TEST_REGISTRIES ?? "").split(",").map((x) => x.trim()).filter(Boolean),
     registry: () => new NpmRegistry(npmUrl, npmToken),
     git: (repo) => new GitCli((env.BOUNDRY_GIT_URL_TEMPLATE ?? "https://github.com/{repo}.git").replace("{repo}", repo), join(runtimeDir, "git", repo.replace("/", "__")),
       { name: env.BOUNDRY_RELEASE_GIT_NAME ?? "Boundry Release", email: env.BOUNDRY_RELEASE_GIT_EMAIL ?? "release@boundry.invalid" },
@@ -41,7 +43,7 @@ export function approvalRequest(r: ReleaseRecord): string {
   L.push(`1. A commit “${p.releaseCommit.message}” is added on top of \`${p.sourceCommit.slice(0, 12)}\` on \`${p.branch}\`${p.releaseCommit.files.length ? `, changing ${p.releaseCommit.files.map((f) => `\`${f}\``).join(", ")}` : " (no file changes)"}. If \`${p.branch}\` has moved, the release stops.`);
   L.push(`2. Boundry CI ${p.validation.includes("test") ? "runs the tests on" : "builds"} that exact commit and packages it. The package's SHA-256 is recorded.`);
   L.push(`3. Only after the build succeeds: ${p.packages.map((x) => `tag \`${x.tag}\``).join(", ")} on that commit. Existing tags are never moved.`);
-  L.push(`4. Exactly ${p.packages.length === 1 ? "that tarball is" : "those tarballs are"} published to ${[...new Set(p.packages.map((x) => x.destination))].join(", ")} (dist-tag ${[...new Set(p.packages.map((x) => `\`${x.distTag}\``))].join(", ")}). A version already on the registry is never overwritten.`);
+  L.push(`4. Exactly ${p.packages.length === 1 ? "that tarball is" : "those tarballs are"} published to ${[...new Set(p.packages.map((x) => `${x.destination} (${x.production ? "PRODUCTION" : "declared test registry"})`))].join(", ")} (dist-tag ${[...new Set(p.packages.map((x) => `\`${x.distTag}\``))].join(", ")}). A version already on the registry is never overwritten.`);
   L.push(`5. The registry is checked: it must serve ${p.packages.map((x) => x.proposedVersion).join(", ")} with the same integrity and the same bytes.`);
   L.push(p.githubRelease ? `6. A GitHub release is created for ${p.packages.map((x) => `\`${x.tag}\``).join(", ")}, citing the commit, artifact digests and registry integrity.` : "6. No GitHub release (policy).", "");
   L.push("## Why these versions", "", ...p.decision.map((d) => `- ${d}`), "");
@@ -49,7 +51,9 @@ export function approvalRequest(r: ReleaseRecord): string {
   L.push("## What approving does not allow", "", "- Any other version, commit, artifact, tag or registry than the ones above.", "- Publishing dependents, re-tagging, or overwriting a published version.", "- Continuing if the registry or the branch changes before publication: that requires a new plan.", "");
   L.push("## Approve", "", `Proposed by **${p.requestedBy}** (${p.requestedByType}), who may not approve it. Needs **${p.requiredApprovals}** approval(s) from distinct people${p.protected ? " holding the prod_approver role" : ""}. Eligible: ${p.approvers.filter((a) => a !== p.requestedBy).join(", ") || "nobody"}.`, "");
   if (r.approvals.length) L.push(`Approved so far: ${r.approvals.map((a) => `${a.by} (${a.authentication}, ${a.at})`).join(", ")}`, "");
-  L.push("```bash", `node src/index.ts release approve ${r.id} --as <your principal id> --digest ${r.planDigest}`, "```", "");
+  const prod = p.packages.some((x) => x.production);
+  L.push(prod ? "**Production destination:** the approval must be signed with a key registered to you in `config/principals.json`. An unsigned approval is refused." : "Test registry only: an unsigned approval is accepted and recorded as `asserted` (not an authenticated approval).", "");
+  L.push("```bash", ...(prod ? [`node src/index.ts release statement ${r.id} --as <you> > statement.json`, "ssh-keygen -Y sign -n boundry-release-approval -f ~/.ssh/id_ed25519 statement.json"] : []), `node src/index.ts release approve ${r.id} --as <you> --digest ${r.planDigest}${prod ? " --signature statement.json.sig" : ""}`, "```", "");
   if (r.facts.releaseCommit || r.attempts.length) {
     L.push("## Evidence so far", "");
     if (r.facts.releaseCommit) L.push(`- Release commit: \`${r.facts.releaseCommit}\``);

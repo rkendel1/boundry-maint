@@ -1,0 +1,1249 @@
+{
+ "contract": "boundry.governance",
+ "version": "1.0.0",
+ "cases": [
+  {
+   "name": "engineer may propose",
+   "operation": "propose",
+   "principal": {
+    "id": "eng",
+    "type": "person",
+    "roles": [
+     "engineer"
+    ]
+   },
+   "expect": {
+    "allow": true
+   }
+  },
+  {
+   "name": "agent may propose",
+   "operation": "propose",
+   "principal": {
+    "id": "bot",
+    "type": "agent",
+    "roles": [
+     "agent"
+    ]
+   },
+   "expect": {
+    "allow": true
+   }
+  },
+  {
+   "name": "component may not propose",
+   "operation": "propose",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "forbidden-effect"
+   }
+  },
+  {
+   "name": "approver without propose may not propose",
+   "operation": "propose",
+   "principal": {
+    "id": "bob",
+    "type": "person",
+    "roles": [
+     "approver"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "forbidden-effect"
+   }
+  },
+  {
+   "name": "unknown principal is refused",
+   "operation": "propose",
+   "principal": null,
+   "expect": {
+    "allow": false,
+    "code": "unknown-principal"
+   }
+  },
+  {
+   "name": "prod approver approves a protected proposal",
+   "operation": "approve",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": true,
+    "result": "approved"
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false
+   },
+   "digest": "d1"
+  },
+  {
+   "name": "agent never approves",
+   "operation": "approve",
+   "principal": {
+    "id": "bot",
+    "type": "agent",
+    "roles": [
+     "agent"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "person-only"
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false
+   },
+   "digest": "d1"
+  },
+  {
+   "name": "component never approves",
+   "operation": "approve",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "person-only"
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false
+   },
+   "digest": "d1"
+  },
+  {
+   "name": "proposer may not approve",
+   "operation": "approve",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "proposer-cannot-approve"
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "ada",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false
+   },
+   "digest": "d1"
+  },
+  {
+   "name": "no double approval",
+   "operation": "approve",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "already-approved"
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 2,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   },
+   "digest": "d1"
+  },
+  {
+   "name": "approver role is not enough in a protected scope",
+   "operation": "approve",
+   "principal": {
+    "id": "bob",
+    "type": "person",
+    "roles": [
+     "approver"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "protected-scope"
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false
+   },
+   "digest": "d1"
+  },
+  {
+   "name": "approver role suffices when unprotected",
+   "operation": "approve",
+   "principal": {
+    "id": "bob",
+    "type": "person",
+    "roles": [
+     "approver"
+    ]
+   },
+   "expect": {
+    "allow": true,
+    "result": "approved"
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": false,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false
+   },
+   "digest": "d1"
+  },
+  {
+   "name": "frozen scope refuses approval",
+   "operation": "approve",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "frozen"
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": true
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false
+   },
+   "digest": "d1"
+  },
+  {
+   "name": "approval names another digest",
+   "operation": "approve",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "digest-mismatch"
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false
+   },
+   "digest": "d2"
+  },
+  {
+   "name": "only a proposal awaiting approval can be approved",
+   "operation": "approve",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "wrong-state"
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false
+   },
+   "digest": "d1"
+  },
+  {
+   "name": "critical needs two: first approval leaves it awaiting",
+   "operation": "approve",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": true,
+    "result": "awaiting-approval"
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "critical",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false
+   },
+   "digest": "d1"
+  },
+  {
+   "name": "critical needs two: second distinct approval approves",
+   "operation": "approve",
+   "principal": {
+    "id": "cal",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": true,
+    "result": "approved"
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "critical",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   },
+   "digest": "d1"
+  },
+  {
+   "name": "policy count above two is honoured for critical",
+   "operation": "approve",
+   "principal": {
+    "id": "cal",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": true,
+    "result": "awaiting-approval"
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "critical",
+    "policy": {
+     "approvalsRequired": 3,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   },
+   "digest": "d1"
+  },
+  {
+   "name": "not in the eligible list",
+   "operation": "approve",
+   "principal": {
+    "id": "cal",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "not-eligible"
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false,
+    "eligible": [
+     "ada"
+    ]
+   },
+   "digest": "d1"
+  },
+  {
+   "name": "proposer withdraws",
+   "operation": "withdraw",
+   "principal": {
+    "id": "bot",
+    "type": "agent",
+    "roles": [
+     "agent"
+    ]
+   },
+   "expect": {
+    "allow": true
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "bot",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false
+   }
+  },
+  {
+   "name": "approver rejects",
+   "operation": "withdraw",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": true
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false
+   }
+  },
+  {
+   "name": "engineer who did not propose may not withdraw",
+   "operation": "withdraw",
+   "principal": {
+    "id": "eng",
+    "type": "person",
+    "roles": [
+     "engineer"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "forbidden-effect"
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "bot",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false
+   }
+  },
+  {
+   "name": "nothing is withdrawn after the irreversible step",
+   "operation": "withdraw",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "irreversible"
+   },
+   "subject": {
+    "state": "executing",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false,
+    "irreversible": true
+   }
+  },
+  {
+   "name": "admin triggers",
+   "operation": "trigger",
+   "principal": {
+    "id": "adm",
+    "type": "person",
+    "roles": [
+     "admin"
+    ]
+   },
+   "expect": {
+    "allow": true
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "agent never triggers",
+   "operation": "trigger",
+   "principal": {
+    "id": "bot",
+    "type": "agent",
+    "roles": [
+     "agent"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "forbidden-effect"
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "engineer cannot trigger",
+   "operation": "trigger",
+   "principal": {
+    "id": "eng",
+    "type": "person",
+    "roles": [
+     "engineer"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "forbidden-effect"
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "approved and valid: execute",
+   "operation": "execute",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "expect": {
+    "allow": true
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "only a component executes",
+   "operation": "execute",
+   "principal": {
+    "id": "adm",
+    "type": "person",
+    "roles": [
+     "admin"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "forbidden-effect"
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "frozen after approval: waits",
+   "operation": "execute",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "frozen",
+    "result": "wait"
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": true
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "policy tightened after approval: back to awaiting approval",
+   "operation": "execute",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "insufficient-approvals",
+    "result": "awaiting-approval"
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 2,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "approvals for another digest do not count",
+   "operation": "execute",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "insufficient-approvals",
+    "result": "awaiting-approval"
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d0"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "an approval by the proposer never counts",
+   "operation": "execute",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "insufficient-approvals",
+    "result": "awaiting-approval"
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "ada",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "an approval recorded for a non-person never counts",
+   "operation": "execute",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "insufficient-approvals",
+    "result": "awaiting-approval"
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "bot",
+      "principalType": "agent",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "duplicate approvals by one person count once",
+   "operation": "execute",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "insufficient-approvals",
+    "result": "awaiting-approval"
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "critical",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     },
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "revoked: never executes",
+   "operation": "execute",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "revoked"
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": true
+   }
+  },
+  {
+   "name": "production with asserted approvals: refused",
+   "operation": "execute",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "expect": {
+    "allow": false,
+    "code": "unauthenticated-for-production"
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": true,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "asserted",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "production with signed approvals: execute",
+   "operation": "execute",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "expect": {
+    "allow": true
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": true,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "signature",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "non-production with asserted approvals: execute",
+   "operation": "execute",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "expect": {
+    "allow": true
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "asserted",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false
+   }
+  },
+  {
+   "name": "criticality lowered after proposal does not lower the threshold (ratchet)",
+   "operation": "execute",
+   "principal": {
+    "id": "exe",
+    "type": "component",
+    "roles": [
+     "executor"
+    ]
+   },
+   "subject": {
+    "state": "approved",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [
+     {
+      "by": "ada",
+      "principalType": "person",
+      "authentication": "session",
+      "digest": "d1"
+     }
+    ],
+    "revoked": false,
+    "requiredAtProposal": 2
+   },
+   "expect": {
+    "allow": false,
+    "code": "insufficient-approvals",
+    "result": "awaiting-approval"
+   }
+  },
+  {
+   "name": "ratchet at approval: one approval of a subject proposed as critical leaves it awaiting",
+   "operation": "approve",
+   "principal": {
+    "id": "ada",
+    "type": "person",
+    "roles": [
+     "prod_approver"
+    ]
+   },
+   "subject": {
+    "state": "awaiting-approval",
+    "proposedBy": "eng",
+    "digest": "d1",
+    "criticality": "medium",
+    "policy": {
+     "approvalsRequired": 1,
+     "protected": true,
+     "frozen": false
+    },
+    "production": false,
+    "approvals": [],
+    "revoked": false,
+    "requiredAtProposal": 2
+   },
+   "digest": "d1",
+   "expect": {
+    "allow": true,
+    "result": "awaiting-approval"
+   }
+  }
+ ]
+}

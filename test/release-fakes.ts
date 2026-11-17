@@ -138,4 +138,5 @@ export const PRINCIPALS = [
   { id: "grace", name: "Grace", type: "person", roles: ["engineer"] },
   { id: "mallory", name: "Mallory", type: "person", roles: ["prod_approver"] },
   { id: "bot", name: "Ops agent", type: "agent", roles: ["agent"] },
+  { id: "component:release-executor", name: "Release executor", type: "component", roles: ["executor"] },
 ].map((p) => Principal.parse(p));

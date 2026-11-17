@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 /**
  * Data contracts for Boundry Maintenance.
  *
@@ -37,8 +38,13 @@ export type Criticality = z.infer<typeof Criticality>;
 export const PrincipalType = z.enum(["person", "agent", "component"]);
 export type PrincipalType = z.infer<typeof PrincipalType>;
 
-/** Role names follow Resolver Control's (feltkit/app.ts) so one person holds the same role in both. */
-export const Role = z.enum(["viewer", "engineer", "approver", "prod_approver", "admin", "agent", "executor"]);
+/**
+ * Roles and which principal types may hold them come from the shared governance contract
+ * (contracts/governance/v1/contract.json), the same names Resolver Control uses. Not redefined here.
+ */
+const GOVERNANCE = JSON.parse(readFileSync(new URL("../contracts/governance/v1/contract.json", import.meta.url), "utf8")) as { roles: Record<string, { principalTypes: string[] }> };
+const ROLE_NAMES = Object.keys(GOVERNANCE.roles) as [string, ...string[]];
+export const Role = z.enum(ROLE_NAMES);
 export type Role = z.infer<typeof Role>;
 
 const PrincipalId = z.string().regex(/^[a-z0-9][a-z0-9._:-]*$/, "lowercase id: a-z 0-9 . _ : -");
@@ -48,12 +54,15 @@ export const Principal = z
     name: z.string().min(1),
     type: PrincipalType,
     roles: z.array(Role).min(1),
+    keys: z.array(z.string().regex(/^(ssh-ed25519|ecdsa-sha2-nistp256|sk-ssh-ed25519@openssh.com) [A-Za-z0-9+/=]+( .*)?$/)).default([])
+      .describe("SSH public keys whose signatures authenticate this person's approvals (contract: authentication level 'signature')"),
   })
   .superRefine((p, ctx) => {
-    const personOnly: Role[] = ["approver", "prod_approver", "admin"];
-    if (p.type !== "person" && p.roles.some((r) => personOnly.includes(r))) ctx.addIssue({ code: "custom", path: ["roles"], message: `${p.type} ${p.id} cannot hold ${personOnly.join("/")}: only people approve or administer` });
-    if (p.type !== "component" && p.roles.includes("executor")) ctx.addIssue({ code: "custom", path: ["roles"], message: "only a component executes" });
-    if (p.type === "component" && p.roles.some((r) => r !== "executor" && r !== "viewer")) ctx.addIssue({ code: "custom", path: ["roles"], message: "a component holds executor (and viewer) only" });
+    for (const r of p.roles) {
+      const allowed = GOVERNANCE.roles[r]!.principalTypes;
+      if (!allowed.includes(p.type)) ctx.addIssue({ code: "custom", path: ["roles"], message: `a ${p.type} cannot hold ${r} (contract: ${allowed.join("/")} only)` });
+    }
+    if (p.keys.length && p.type !== "person") ctx.addIssue({ code: "custom", path: ["keys"], message: "only a person's approvals are signed" });
   });
 export type Principal = z.infer<typeof Principal>;
 
@@ -66,7 +75,7 @@ export const PrincipalCatalog = z
 export type PrincipalCatalog = z.infer<typeof PrincipalCatalog>;
 
 /** How the principal behind an action was established. The CLI cannot authenticate: it records "asserted". */
-export const Authentication = z.enum(["asserted", "session"]);
+export const Authentication = z.enum(["asserted", "session", "signature"]);
 
 // ---------------------------------------------------------------------------
 // Release policy (per package, curated). Absent = the package cannot be released by Boundry.
@@ -695,6 +704,7 @@ export const ReleasePackagePlan = z.object({
   tag: z.string(),
   distTag: z.string(),
   destination: z.string().describe("Registry base URL the artifact is published to"),
+  production: z.boolean().describe("false only for registries explicitly declared as test registries; production needs authenticated approvals"),
 });
 export type ReleasePackagePlan = z.infer<typeof ReleasePackagePlan>;
 
@@ -731,7 +741,7 @@ export const ReleaseRecord = z.object({
   plan: ReleasePlan,
   state: ReleaseState,
   approvals: z
-    .array(z.object({ by: z.string(), principalType: PrincipalType, authentication: Authentication, at: IsoDate, planDigest: z.string() }))
+    .array(z.object({ by: z.string(), principalType: PrincipalType, authentication: Authentication, at: IsoDate, planDigest: z.string(), signature: z.string().nullable().default(null).describe("SSH signature over the approval statement (src/governance/signatures.ts)") }))
     .describe("Distinct people, none of them the requester; approved once plan.requiredApprovals is reached"),
   revocation: z.object({ by: z.string(), at: IsoDate, reason: z.string() }).nullable(),
   facts: z.object({

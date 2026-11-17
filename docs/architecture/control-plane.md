@@ -19,6 +19,7 @@ The end state the user asked for: one control plane that governs both **what app
 5. [Platform gap register](#5-platform-gap-register)
 6. [Contract and schema changes](#6-contract-and-schema-changes-implemented-now)
 7. [Incremental plan with acceptance criteria](#7-incremental-plan-with-acceptance-criteria)
+8. [Shared governance contract and conformance](#8-shared-governance-contract-and-conformance) (added after review)
 
 ---
 
@@ -184,7 +185,7 @@ Evidence is code or a test unless stated. **Severity:** H means it blocks a clai
 
 | # | Gap | Evidence | Effect | Smallest closing change | Sev |
 |---|---|---|---|---|---|
-| G1 | **Maintenance identity is asserted.** `--as <id>` is trusted; nothing authenticates the person at the CLI | `src/index.ts` `release` | Separation of duties holds only if people do not impersonate each other on the operator's machine. Approvals are recorded `authentication: "asserted"` so the evidence says so | Step 3: run as a FeltKit app; identity from sessions; `authentication: "session"` | H |
+| G1 | **Maintenance identity is asserted** (partly closed after review: production approvals must be SSH-signed by a key registered to the approver and are re-verified by the executor; non-production approvals may still be asserted, and the key registry is a file whose integrity rests on repository write access). `--as <id>` is trusted; nothing authenticates the person at the CLI | `src/index.ts` `release` | Separation of duties holds only if people do not impersonate each other on the operator's machine. Approvals are recorded `authentication: "asserted"` so the evidence says so | Step 3: run as a FeltKit app; identity from sessions; `authentication: "session"` | H |
 | G2 | **Before this step: the proposer could approve their own release, and one approval sufficed for anything.** The end-to-end proof showed `randy` proposing and approving | `docs/releases/proof-resolver-train` (first run) | — | **Closed by §6** (tests in `test/governance.test.ts`) | closed |
 | G3 | **No AppPort capabilities or MCP for Maintenance.** Agents can only use the CLI | `src/index.ts` | "All operations are AppPort capabilities" is **not true yet** for Maintenance. The capability table exists (§6), but no AppPort binding does | Step 3 | H |
 | G4 | **Release records live in the working tree.** They are durable only once committed and pushed. Concurrency control is a local lock file | `src/release/manager.ts` `#locked`, `data/release-manager` | Two operators on two machines are not fenced | Step 3: FeltDB transactions (as Resolver Control's claim) | M |
@@ -196,7 +197,7 @@ Evidence is code or a test unless stated. **Severity:** H means it blocks a clai
 | G10 | **No cross-domain link** between applications and the references they resolve | `config/projects.json` has no reference field | Impact cannot yet say "this app also depends on `ref://prod/…`" | Step 4 | M |
 | G11 | **Maintenance has no separate append-only audit log with request ids.** History lives inside each record | `ReleaseRecord.history` | Each record is append-only, but there is no global trail | Step 3: FeltKit `auditTrail` (as Resolver Control's `_audit.ts`) | L |
 | G12 | **Boundry CI is not deployed.** The Hetzner prerequisites are not satisfied | boundry-ci `docs/` (Slice 2) | Releases can only build where an operator runs Boundry CI | Hetzner readiness steps (user decisions pending) | M |
-| G13 | **One flaky test, not identified.** One failure in 4 runs of `npm test` in this repository, which did not recur in 3 targeted reruns | test output, 2026-11-17 | — | Find it with repeated runs | L |
+| G13 | **Intermittent test failure.** It was a real concurrency bug in `plan()` and in the execution lock, not a test artifact | `7a828f8` | — | **Closed:** atomic locks, plans serialized, a test that asserts the invariant | closed |
 
 ---
 
@@ -243,3 +244,40 @@ This is the smallest safe foundation, and it is the only code in this step. Scan
 | **3. Maintenance as a FeltKit application** | Collections: `packages`, `releases`, `approvals`, `events`. Capabilities = the §6 table. Components `registry-npm`, `registry-crates`, `git`, `github-releases`, `ci-submit`, one credential each. Release execution runs in a component under the `executor` role. Identity from sessions. The CLI becomes an AppPort client. The scan and `data/` projection unchanged | Over MCP, an agent proposes and is refused approve and execute. Approvals record `authentication: "session"`. Two executors cannot double-execute (FeltDB conflict). No credential is visible to the guest (artifact test, as Resolver Control's) |
 | **4. Resolver Control integration** (Prompt 3) | §3.2: read-only projection, application → reference links, proposals through `changes.propose` as an agent principal | Maintenance shows one application's build-time and run-time dependencies. A proposed reference change is approved by two people in Resolver Control and verified by a fresh resolution. Maintenance never holds the Resolver key (asserted by test). The agent is refused approval. AppBoundry-hosted execution is **not** claimed while A1 is open |
 | **5. Deployment** | Only after the Hetzner prerequisites (Slice 2) and the user's approval | Independent health verification; no claim without it |
+
+---
+
+## 8. Shared governance contract and conformance
+
+Added after review. The applications share a **versioned contract**, not copied code:
+
+* `contracts/governance/v1/contract.json`: definitions.
+* `contracts/governance/v1/SPEC.md`: normative semantics. It covers principal types and roles, operation authorization, separation of duties, criticality thresholds and their ratchet, protected scopes, freeze, approval validity and revocation, execution authorization, and authentication levels.
+* `contracts/governance/v1/vectors.json`: 40 conformance cases.
+
+Each application enforces the contract in its own trust boundary.
+
+**Boundry Maintenance: conforms to 1.0.0.**
+
+* The role table and the principal-type constraints are read from `contract.json` at run time.
+* Every release decision goes through `decide()`.
+* `test/governance-contract.test.ts` runs all 40 vectors.
+
+**Resolver Control (`d41ef9e`): assessed against the vectors by reading its code; not yet run in its own suite.** The contract was written from Resolver Control's rules, so most of it matches:
+
+| Contract rule | Resolver Control | Status |
+|---|---|---|
+| Person-only approval, not the proposer, not twice, protected needs `changes.approve.protected`, frozen refuses | `feltkit/changes.ts` `approve` | conforms |
+| Threshold `max(policy, critical ? 2 : 1)`; default policy protected with one approval | `_rules.ts` `requiredApprovals`, `effectivePolicy` | conforms |
+| Re-check at execution; tightened policy returns to approval; frozen waits | `changes.ts` `claim` | conforms |
+| Proposer withdraws; approver rejects; not after execution starts | `cancel`, `reject` | conforms |
+| Approvals count only distinct people with an audit event | `signer/core.ts` (defence in depth at signing) | conforms |
+| Production approvals authenticated | FeltKit sessions (`session`). Under `feltkit dev` the user switcher is asserted identity | conforms when deployed with real sessions; dev is non-production |
+| **Ratchet (§4): lowering criticality or policy never lowers an open subject's threshold** | `approve` (line 261) and `claim` (line 382) use the **current** criticality and policy. `engineer` holds `catalog.write`, so the proposer can lower a dependency from `critical` to `medium` (`dependencies.describe`) and have one approval suffice. It is audited (`dependency.described`) but not prevented | **does not conform: real gap** |
+| `engineer` may change criticality (an `administer`-type fact) | `catalog.write` on `engineer` | diverges from the contract's role table. With the ratchet it no longer weakens open changes; whether engineers should set criticality at all is a product decision for Resolver Control |
+
+**Smallest change that makes Resolver Control conform** (not made here, because Resolver Control is outside this change's authority):
+
+* In `approve` and `claim`, use `Math.max(change.impact.requiredApprovals, requiredApprovals(policy, criticality))`. The threshold at proposal is already recorded on the change: `impact.requiredApprovals`, event `change.proposed`.
+* Treat `protected` the same way.
+* Add a conformance test that runs `vectors.json` through its mutations.

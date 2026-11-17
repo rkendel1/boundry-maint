@@ -32,7 +32,7 @@ function world(opts: { seed?: string[]; clientPin?: string; catalog?: PackageCon
   const runtimeDir = mkdtempSync(join(tmpdir(), "rm-run-"));
   let t = Date.UTC(2026, 10, 17, 9, 0, 0);
   const mk = () => new ReleaseManager({
-    dataDir, runtimeDir, catalog: opts.catalog ?? CATALOG, principals: PRINCIPALS, registry: () => registry, releases, executor, pollMs: 1,
+    dataDir, runtimeDir, catalog: opts.catalog ?? CATALOG, principals: PRINCIPALS, testRegistries: ["mem://registry"], registry: () => registry, releases, executor, pollMs: 1,
     git: () => new GitCli(repo.url, join(runtimeDir, "git"), { name: "Boundry Release", email: "release@boundry.invalid" }),
     now: () => new Date((t += 1000)).toISOString(),
   });
@@ -57,7 +57,7 @@ test("happy path: plan → approve → prepared → built → tagged → publish
   assert.deepEqual(r.plan.releaseCommit.files, ["package-lock.json", "packages/core/package.json"]);
   const dep = r.plan.dependents.find((d) => d.package === "@demo/client")!;
   assert.match(dep.effect, /range \^0\.2\.0 accepts 0\.2\.1/);
-  await assert.rejects(w.m.approve(r.id, "mallory", r.planDigest), (e: any) => e instanceof ReleaseError && /not an approver/.test(e.message));
+  await assert.rejects(w.m.approve(r.id, "mallory", r.planDigest), (e: any) => e instanceof ReleaseError && /unknown principal|not-eligible/.test(e.message));
   await assert.rejects(w.m.approve(r.id, "randy", "0".repeat(64)), /different plan/);
   await w.m.approve(r.id, "randy", r.planDigest);
   const done = await w.m.execute(r.id, "randy");
@@ -179,7 +179,7 @@ test("8. GitHub release creation fails after publication: release stays registry
   const a = await w.m.execute(r.id, "randy");
   assert.equal(a.state, "registry-verified");
   assert.equal(a.failure!.recoverable, true);
-  await assert.rejects(w.m.revoke(r.id, "randy", "too late"), /cannot be revoked/);
+  await assert.rejects(w.m.revoke(r.id, "randy", "too late"), /irreversible/);
   const b = await w.m.execute(r.id, "randy");
   assert.equal(b.state, "released");
   assert.equal(w.releases.creates, 1);
