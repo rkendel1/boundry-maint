@@ -1,7 +1,7 @@
 {
   "$comment": "Boundry governance contract. Normative text: SPEC.md in this directory. Language-independent; each application maps its own operations onto these effects and enforces the rules in its own trust boundary. Conformance: vectors.json. 1.1.0: agents may withdraw their own proposals (the role table now matches \u00a73.6); when several rules refuse, any of their codes conforms (vectors list them in expect.codes). 1.2.0: withdrawal and rejection end at claim; abandonment (person-only, reconcile first); retry requires reconciliation.",
   "id": "boundry.governance",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "principalTypes": {
     "person": "A human, identified by the application's authentication. The only type that approves, rejects or administers.",
     "agent": "Software acting for someone (e.g. over MCP). Inspects and proposes. Never approves, administers or executes.",

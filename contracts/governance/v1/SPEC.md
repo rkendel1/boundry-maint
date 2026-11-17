@@ -1,4 +1,4 @@
-# Boundry governance contract, version 1.2.0
+# Boundry governance contract, version 1.2.1
 
 This contract is normative for every Boundry application that governs change: Boundry Maintenance (releases) and Resolver Control (runtime references). The same semantics apply to both. Each application **enforces** them in its own trust boundary, with its own credentials. The contract is not a service, not a library dependency and not a shared credential.
 
@@ -19,6 +19,7 @@ This contract is normative for every Boundry application that governs change: Bo
 
 | Version | Change | Found by |
 |---|---|---|
+| 1.2.1 | Editorial: implementation status moved out of this text into `CONFORMANCE.md`. No rule, definition or vector changed. *Why:* the status table had been edited after Resolver Control vendored 1.2.0, so this file's bytes no longer matched the pinned digest without any version change; status reporting must never change the contract's bytes | readiness review (digest comparison) |
 | 1.2.0 | **Withdrawal ends at claim** (§7): the proposer may withdraw, and an approver reject, only before execution is claimed, whether or not an external mutation has happened yet (1.1.0 said "until the first irreversible external mutation"). **New: abandonment** (§7a): a person-only decision to stop pursuing a claimed execution, recorded with who, when and why, after reconciling with every authority; never withdrawal, never rollback. **Retry after abandonment requires that reconciliation** (`unreconciled`), and versions an abandoned execution may have made real are never reused. *Migration:* an implementation that let a proposer withdraw after claim (Boundry Maintenance before this version) must refuse it now; its records need an explicit claim (Maintenance: record schema 3; schema-2 records are read as they are and, on their next save, get the claim inferred from their history with a recorded note). No vector's decision changed; the new rules come with new vectors | conformance review of both applications |
 | 1.1.0 | The `agent` role gains `withdraw`: an agent may withdraw its own proposal, never anyone else's. Before, the role table and §3.6 disagreed. **When several rules refuse, any of their codes conforms** (§2 orders authorization before the handler's rules, so an agent asking to approve may be refused as `forbidden-effect` or `person-only`); vectors list the acceptable codes in `expect.codes` | running the vectors against Resolver Control (a second implementation) |
 | 1.0.0 | First version | — |
@@ -135,9 +136,4 @@ Decided by the executing component, at the start of execution, from the record. 
 | `session` | The application's platform authenticated the principal (FeltKit/AppPort session) | yes |
 | `signature` | The approval is a signature over the approval statement, by a key registered to that principal, verified by the executing component | yes |
 
-## Conformance status (recorded by each application)
-
-| Application | Conforms to | Evidence |
-|---|---|---|
-| Boundry Maintenance | 1.2.0 | `test/governance-contract.test.ts` runs `vectors.json` against `src/governance/rules.ts` `decide()`, which the Release Manager uses for every decision |
-| Resolver Control | 1.2.0 (43 conform, 13 not applicable, 0 divergences at resolver-control `19851c3`) | `tests/governance-contract.test.ts` in resolver-control runs the vendored vectors against its own mutations and writes `docs/governance-conformance.json` |
+Conformance of each implementation is recorded outside this normative text, in `CONFORMANCE.md`, so that reporting status never changes the contract's bytes.
