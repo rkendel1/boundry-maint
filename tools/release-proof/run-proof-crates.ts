@@ -146,8 +146,13 @@ try {
   const resolved = /name = "boundry-proof-core"\nversion = "([^"]+)"/.exec(readFileSync(join(consumer, "Cargo.lock"), "utf8"))?.[1] ?? null;
   const output = (await run("cargo", ["run", "-q"], { cwd: consumer, env: cenv })).stdout.trim();
   log(`consumer: Cargo resolved boundry-proof-core ${resolved}; the program printed ${output}`);
-  const observed = done.state === "released" ? await m.observeConsumers(planned.id, [{ project: "proof-consumer", package: "boundry-proof-core", repository: "boundry-proof/consumer", manifest: "Cargo.toml", declaredVersion: "0.1", resolvedVersion: resolved, ecosystem: "rust", kind: "dependency" } as any], "proof: cargo generate-lockfile in a separate consumer project",
-    [{ consumer: "proof-consumer", where: "boundry-proof/consumer:Cargo.toml", version: done.plan.packages[0]!.proposedVersion, evidence: `cargo run of proof-consumer against ${resolved} printed ${output}`, passed: output === "42" && resolved === done.plan.packages[0]!.proposedVersion }]) : done;
+  // The consumer's own check (cargo run printing 42) as an evidence record for its commit, in the shape Maintenance's
+  // scan writes for a project's configured workflows. A proof-local stand-in for the consumer's CI.
+  const consumerCommit = "proof-consumer-local";
+  const observed = done.state === "released" ? await m.observeConsumers(planned.id,
+    [{ project: "proof-consumer", package: "boundry-proof-core", repository: "boundry-proof/consumer", manifest: "Cargo.toml", root: ".", registry: "crates", name: "boundry-proof-core", commit: consumerCommit, declaredVersion: "0.1", resolvedVersion: resolved, ecosystem: "rust", kind: "dependencies" } as any],
+    "proof: cargo generate-lockfile in a separate consumer project",
+    [{ project: "proof-consumer", repository: "boundry-proof/consumer", commit: consumerCommit, collectedAt: new Date().toISOString(), scanRun: null, passed: output === "42", checks: { resolution: "pass", workflows: output === "42" ? "pass" : "fail" }, runs: [{ workflow: "cargo run (proof stand-in for the consumer's CI)", runId: 1, url: "local:proof", status: "completed", conclusion: output === "42" ? "success" : "failure", headSha: consumerCommit }], resolved: { ".|crates:boundry-proof-core": resolved ?? "" } }]) : done;
   writeFileSync(join(outDir, "3-release-record.json"), JSON.stringify(observed, null, 2) + "\n");
   writeFileSync(join(outDir, "4-final-report.md"), approvalRequest(observed) + "\n");
 

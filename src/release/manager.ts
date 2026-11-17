@@ -22,11 +22,12 @@ import { promisify } from "node:util";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import semver from "semver";
-import { ReleaseRecord, ReleasePolicy, type Principal, type PackageConfig, type ReleaseBump, type ReleasePlan, type ReleaseState, type Installation, type ValidationResult, type Dependent } from "../contracts.ts";
+import { ReleaseRecord, ReleasePolicy, type EvidenceRecord, type Principal, type PackageConfig, type ReleaseBump, type ReleasePlan, type ReleaseState, type Installation, type ValidationResult, type Dependent } from "../contracts.ts";
 import { writeAllAtomic, stableJson } from "../lib/files.ts";
 import { withLocks, LockHeld } from "../lib/lock.ts";
 import { allocate, tagFor, AllocationError } from "./version.ts";
 import { ecosystemFor, type Ecosystem } from "./ecosystems.ts";
+import { installKey } from "../status/project.ts";
 import { CONTRACT_VERSION, authorize, can, decide, counted, principal, requiredApprovals, GovernanceError, type Subject } from "../governance/rules.ts";
 import { approvalStatement, verifyApproval } from "../governance/signatures.ts";
 import { Unavailable, Refused, type RegistryAdapter, type RegistryState, type GitAuthority, type ReleasesAdapter, type Executor } from "./adapters.ts";
@@ -381,7 +382,7 @@ export class ReleaseManager {
    * Installation (declared, resolved), adoption (resolved is the released version or newer) and verification
    * (the consumer's own checks passed on it) are separate facts; verification is never inferred from adoption.
    */
-  async observeConsumers(id: string, installations: Installation[], basis: string, verifications: { consumer: string; where: string; version: string; evidence: string; passed: boolean }[] = []): Promise<ReleaseRecord> {
+  async observeConsumers(id: string, installations: Installation[], basis: string, evidence: EvidenceRecord[] = []): Promise<ReleaseRecord> {
     const r = await this.load(id);
     if (r.state !== "released") throw new ReleaseError("not-allowed", `release ${id} is ${r.state}; consumers are observed after release`);
     const at = this.d.now();
@@ -390,11 +391,19 @@ export class ReleaseManager {
         const where = `${inst.repository}:${inst.manifest}`;
         const resolved = inst.resolvedVersion ?? null;
         const adoption = resolved && semver.valid(resolved) ? (semver.gte(resolved, pp.proposedVersion) ? "adopted" : "not-adopted") : "unknown";
-        const v = verifications.find((x) => x.consumer === inst.project && x.where === where && x.version === pp.proposedVersion);
+        // Verification of THIS version: the consumer's own evidence for a commit whose lockfile resolved exactly it,
+        // for this manifest root. Its CI on a commit using another version says nothing about this one.
+        const key = installKey(inst.root, inst.registry, inst.name);
+        const records = evidence
+          .filter((e) => e.project === inst.project && e.resolved[key] === pp.proposedVersion && e.checks.resolution === "pass" && e.checks.workflows !== "pending")
+          .sort((a, b) => b.collectedAt.localeCompare(a.collectedAt));
+        const rec = records.find((e) => e.passed) ?? records[0] ?? null;
+        const verification = rec ? (rec.passed ? "verified" : "failed") : "unverified";
         r.consumers.push({
           at, consumer: inst.project, where, dependency: pp.name, released: pp.proposedVersion, basis,
-          installation: { declared: inst.declaredVersion ?? null, resolved }, adoption,
-          verification: v ? (v.passed ? "verified" : "failed") : "unverified", verificationEvidence: v?.evidence ?? null,
+          installation: { declared: inst.declaredVersion ?? null, resolved, commit: inst.commit ?? null }, adoption, verification,
+          verificationEvidence: rec ? `${rec.passed ? "passed" : "failed"}: ${rec.runs.map((x) => `${x.workflow} run ${x.runId} ${x.conclusion}`).join(", ") || "no runs"} on ${inst.project}@${rec.commit.slice(0, 12)}, which resolved ${pp.name} ${pp.proposedVersion}` : null,
+          verificationRecord: rec ? { commit: rec.commit, collectedAt: rec.collectedAt, resolved: pp.proposedVersion, runs: rec.runs.map((x) => ({ workflow: x.workflow, runId: x.runId, url: x.url, conclusion: x.conclusion })) } : null,
         });
       }
     }

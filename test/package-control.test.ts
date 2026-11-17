@@ -8,14 +8,20 @@ import { join } from "node:path";
 import { execFileSync } from "node:child_process";
 import { ReleaseManager, ReleaseError } from "../src/release/manager.ts";
 import { GitCli } from "../src/release/adapters.ts";
-import { PackageConfig, ReleaseRecord, type Installation } from "../src/contracts.ts";
+import { PackageConfig, ReleaseRecord, type Installation, type EvidenceRecord } from "../src/contracts.ts";
 import { makeRepo, makeCargoRepo, FakeRegistry, FakeCratesRegistry, FakeReleases, PackingExecutor, CargoPackingExecutor, PRINCIPALS } from "./release-fakes.ts";
 
 const policy = { approvers: ["randy", "ada"] };
 let clock = Date.UTC(2026, 10, 17, 9, 0, 0);
 const now = () => new Date((clock += 1000)).toISOString();
 const blob = (bare: string, ref: string, path: string) => execFileSync("git", ["-C", bare, "show", `${ref}:${path}`], { encoding: "utf8" });
-const inst = (o: Partial<Installation> & { project: string; package: string; repository: string; manifest: string; declaredVersion: string; resolvedVersion: string | null }): Installation => ({ ecosystem: "javascript", kind: "dependency", ...o } as unknown as Installation);
+const inst = (o: Partial<Installation> & { project: string; package: string; repository: string; manifest: string; declaredVersion: string; resolvedVersion: string | null }): Installation => ({ ecosystem: "javascript", kind: "dependencies", root: ".", registry: "npm", name: "@demo/core", commit: `${o.project}-head`, ...o } as unknown as Installation);
+/** A consumer's CI evidence record, as Maintenance's scan writes it (data/evidence/<project>.json). */
+const ev = (project: string, commit: string, resolved: string, outcome: "pass" | "fail" | "pending", at: string, root = "."): EvidenceRecord => ({
+  project, repository: `acme/${project}`, commit, collectedAt: at, scanRun: "scan-1", passed: outcome === "pass",
+  checks: { resolution: "pass", workflows: outcome }, runs: outcome === "pending" ? [] : [{ workflow: "ci.yml", runId: 77, url: `https://ci.example/${project}/77`, status: "completed", conclusion: outcome === "pass" ? "success" : "failure", headSha: commit }],
+  resolved: { [`${root}|npm:@demo/core`]: resolved },
+});
 
 function npmWorld(o: { installations?: Installation[]; clientPin?: string } = {}) {
   const repo = makeRepo({ clientPin: o.clientPin });
@@ -124,17 +130,30 @@ test("consumers: declared and resolved are separate; after release, explicit dow
   assert.deepEqual([by.billing!.kind, by.billing!.from, by.billing!.to], ["requirement-change", "0.2.0", "0.2.1"]);
   assert.deepEqual([by.legacy!.kind, by.legacy!.to], ["requirement-change", "^0.2.1"]);
   assert.ok(done.downstream.every((d) => d.state === "proposed" && /own plan and approval/.test(d.note)));
-  // Observations: installed is not adopted, adopted is not verified.
+  // Observations: released ≠ adopted ≠ verified. Verification comes only from the consumer's own CI evidence for
+  // a consumer commit whose lockfile resolved exactly the released version, for that manifest root.
   const later = [
-    { ...installations[0]!, resolvedVersion: "0.2.1" }, // shop refreshed its lockfile
-    installations[1]!, // billing still pins 0.2.0
+    { ...installations[0]!, resolvedVersion: "0.2.1", commit: "shop-c2" }, // shop refreshed its lockfile
+    { ...installations[1]!, commit: "billing-c1" }, // billing still pins 0.2.0
+    { ...installations[2]!, resolvedVersion: "0.2.1", commit: "legacy-c5" }, // legacy moved, CI failed on it
   ];
-  const obs = await w.m.observeConsumers(r.id, later, "scan at T1", [{ consumer: "shop", where: "acme/shop:package.json", version: "0.2.1", evidence: "shop CI run 77 passed on 0.2.1", passed: true }]);
+  const evidence = [
+    ev("shop", "shop-c1", "0.2.0", "pass", "2026-11-17T10:00:00.000Z"), // CI on the OLD version: says nothing about 0.2.1
+    ev("shop", "shop-c2", "0.2.1", "pass", "2026-11-17T11:00:00.000Z"),
+    ev("billing", "billing-c1", "0.2.0", "pass", "2026-11-17T11:00:00.000Z"),
+    ev("legacy", "legacy-c5", "0.2.1", "fail", "2026-11-17T11:00:00.000Z"),
+    ev("shop", "shop-c3", "0.2.1", "pending", "2026-11-17T12:00:00.000Z"), // still running: not evidence
+    ev("billing", "billing-x", "0.2.1", "pass", "2026-11-17T12:00:00.000Z", "packages/other"), // another manifest root
+  ];
+  const obs = await w.m.observeConsumers(r.id, later, "scan at T1", evidence);
   const o = Object.fromEntries(obs.consumers.map((c) => [c.consumer, c]));
-  assert.deepEqual([o.shop!.adoption, o.shop!.verification, o.shop!.verificationEvidence], ["adopted", "verified", "shop CI run 77 passed on 0.2.1"]);
-  assert.deepEqual([o.billing!.adoption, o.billing!.verification], ["not-adopted", "unverified"]);
-  const again = await w.m.observeConsumers(r.id, [{ ...installations[1]!, resolvedVersion: "0.2.1" }], "scan at T2");
-  assert.equal(again.consumers.length, 3, "append-only");
+  assert.deepEqual([o.shop!.adoption, o.shop!.verification, o.shop!.verificationRecord!.commit, o.shop!.installation.commit], ["adopted", "verified", "shop-c2", "shop-c2"]);
+  assert.match(o.shop!.verificationEvidence!, /passed: ci\.yml run 77 success on shop@shop-c2, which resolved @demo\/core 0\.2\.1/);
+  assert.deepEqual([o.billing!.adoption, o.billing!.verification, o.billing!.verificationRecord], ["not-adopted", "unverified", null], "another root's CI is not this manifest's evidence");
+  assert.deepEqual([o.legacy!.adoption, o.legacy!.verification], ["adopted", "failed"], "adopted, and its CI failed on the released version");
+  assert.equal(obs.facts.registryVerification.length, 1, "release verification is a separate fact, untouched by consumers");
+  const again = await w.m.observeConsumers(r.id, [{ ...installations[1]!, resolvedVersion: "0.2.1", commit: "billing-c2" }], "scan at T2", evidence);
+  assert.equal(again.consumers.length, 4, "append-only");
   assert.deepEqual([again.consumers.at(-1)!.adoption, again.consumers.at(-1)!.verification], ["adopted", "unverified"], "adoption alone is never verification");
   ReleaseRecord.parse(JSON.parse(readFileSync(w.m.path(r.id), "utf8")));
 });
