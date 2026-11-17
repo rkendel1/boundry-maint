@@ -256,7 +256,7 @@ export class BoundryCiExecutor implements Executor {
     const j = ev.jobs.find((x: any) => x.key === job);
     const a = j?.attempts.filter((x: any) => x.state === "succeeded").at(-1)?.artifacts.find((x: any) => x.name === name);
     if (!a) throw new Error(`run ${runId} has no artifact ${name} from ${job}`);
-    const r = await this.#req("GET", `/v1/artifacts/sha256/${a.digest}`);
+    const r = await this.#req("GET", `/v1/artifacts/sha256/${a.digest}?run=${encodeURIComponent(runId)}`); // a scoped token reads only its own runs' artifacts
     if (!r.ok) throw new Error(`artifact download failed: ${r.status}`);
     return { sha256: a.digest, bytes: Buffer.from(await r.arrayBuffer()) };
   }

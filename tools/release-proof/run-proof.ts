@@ -83,12 +83,13 @@ try {
   const fdbOut = sh(join(ciDir, "tools/feltdb-dev.sh"), [fdb, "7790"], { env: { ...process.env, FELTDB_SERVER_BIN: process.env.FELTDB_SERVER_BIN ?? "/home/user/flow_db/target/release/feltdb-server" } });
   void fdbOut;
   chmodSync(join(fdb, "token"), 0o600);
-  const operator = randomBytes(24).toString("hex");
+  const operator = randomBytes(24).toString("hex"); // admin: used only by this script's independent verification
+  const submitter = randomBytes(24).toString("hex"); // the Release Manager's token: build-only, its own runs
   const ciEnv = {
     ...process.env, NODE_NO_WARNINGS: "1",
     BCI_FELTDB_URL: "http://127.0.0.1:7790", BCI_FELTDB_TOKEN_FILE: join(fdb, "token"),
     BCI_WEBHOOK_SECRET_FILE: secretFile("webhook", randomBytes(16).toString("hex")),
-    BCI_OPERATOR_TOKENS_FILE: secretFile("operators", `${createHash("sha256").update(operator).digest("hex")} boundry-maintenance\n`),
+    BCI_OPERATOR_TOKENS_FILE: secretFile("operators", `${createHash("sha256").update(operator).digest("hex")} proof-verifier\n${createHash("sha256").update(submitter).digest("hex")} boundry-maintenance executions:submit,runs:read,artifacts:read\n`),
     BCI_SECRETS_DIR: join(base, "repo-secrets"), BCI_DATA_DIR: join(base, "ci-data"), BCI_LISTEN: "127.0.0.1:21090", BCI_CAS_MIN_FREE_BYTES: "0",
     BCI_SCM: "git", BCI_GIT_URL_TEMPLATE: `file://${join(base, "git")}/{repo}.git`, BCI_LEASE_MS: "60000",
   };
@@ -121,10 +122,11 @@ try {
   const installations = InstallationsFile.parse(JSON.parse(readFileSync(join(dataDir, "installations.json"), "utf8"))).installations;
   const m = new ReleaseManager({
     dataDir, runtimeDir: join(base, "release-runtime"), catalog, installations, principals: PrincipalCatalog.parse(JSON.parse(readFileSync(join(root, "config/principals.json"), "utf8"))).principals, pollMs: 2000, buildTimeoutMs: 20 * 60_000,
+    testRegistries: ["http://127.0.0.1:4874"], // declared test registry (asserted approvals are acceptable only here)
     registry: () => new NpmRegistry("http://127.0.0.1:4874", readFileSync(npmTokenFile, "utf8")),
     git: (repo) => new GitCli(`file://${join(base, "git")}/${repo}.git`, join(base, "release-runtime", "git"), { name: "Boundry Release", email: "release@boundry.invalid" }),
     releases: new GitHubReleases(ghUrl, "stand-in"),
-    executor: new BoundryCiExecutor("http://127.0.0.1:21090", operator),
+    executor: new BoundryCiExecutor("http://127.0.0.1:21090", submitter),
   });
   try { await m.plan({ packages: [PKGS[0]!.id], bump: "patch", requestedBy: "maintenance-agent" }); }
   catch (e) { writeFileSync(join(outDir.replace(/\/$/, "") + "-lone-core-refused.md"), `# Lone release of @appport/resolver-core refused\n\n${(e as Error).message}\n`); log(`lone core release refused: ${(e as Error).message.split("\n")[0]}`); }
