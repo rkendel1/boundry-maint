@@ -5,8 +5,8 @@
       "project": "appworks",
       "repository": "rkendel1/appworks",
       "commit": "4cc8ea31e74dddb72761127537f9d17daf4a58bf",
-      "collectedAt": "2026-11-17T07:27:42.271Z",
-      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/44038850758",
+      "collectedAt": "2026-11-17T12:41:52.878Z",
+      "scanRun": "https://github.com/rkendel1/boundry-maint/actions/runs/44085452830",
       "passed": true,
       "checks": {
         "resolution": "pass",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T07:27:42.271Z",
+  "generatedAt": "2026-11-17T12:41:52.878Z",
   "items": [
     {
       "key": "flow-db|crates/feltdb-public-api-check/Cargo.lock|crates:tokio",
@@ -93,12 +93,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
+      "ci": null,
       "targetPublishedAt": "2026-11-16T18:46:31.479Z",
       "openedAt": "2026-11-17T07:27:42.271Z",
       "updatedAt": "2026-11-17T07:27:42.271Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -152,11 +152,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-16T18:47:26.238Z",
-      "openedAt": "2026-11-17T07:27:42.271Z",
-      "updatedAt": "2026-11-17T07:27:42.271Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -178,6 +173,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-16T18:47:26.238Z",
+      "openedAt": "2026-11-17T07:27:42.271Z",
+      "updatedAt": "2026-11-17T07:27:42.271Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -225,11 +225,6 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 3,
-      "targetPublishedAt": "2026-11-16T18:46:51.512Z",
-      "openedAt": "2026-11-17T07:27:42.271Z",
-      "updatedAt": "2026-11-17T07:27:42.271Z",
-      "closedAt": null,
-      "lastVerifiedCommit": null,
       "ci": {
         "blockingFailure": false,
         "checks": [
@@ -251,6 +246,11 @@
           }
         ]
       },
+      "targetPublishedAt": "2026-11-16T18:46:51.512Z",
+      "openedAt": "2026-11-17T07:27:42.271Z",
+      "updatedAt": "2026-11-17T07:27:42.271Z",
+      "closedAt": null,
+      "lastVerifiedCommit": null,
       "evidence": [],
       "history": [
         {
@@ -2196,12 +2196,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-16T18:47:37.470Z",
       "openedAt": "2026-11-17T07:27:42.271Z",
       "updatedAt": "2026-11-17T07:27:42.271Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2249,12 +2249,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-16T18:48:30.416Z",
       "openedAt": "2026-11-17T07:27:42.271Z",
       "updatedAt": "2026-11-17T07:27:42.271Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2295,12 +2295,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-16T18:46:42.539Z",
       "openedAt": "2026-11-17T07:27:42.271Z",
       "updatedAt": "2026-11-17T07:27:42.271Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -2345,12 +2345,12 @@
       "latestSatisfiesDeclared": false,
       "status": "update-required",
       "priority": 4,
+      "ci": null,
       "targetPublishedAt": "2026-11-16T18:48:32.140Z",
       "openedAt": "2026-11-17T07:27:42.271Z",
       "updatedAt": "2026-11-17T07:27:42.271Z",
       "closedAt": null,
       "lastVerifiedCommit": null,
-      "ci": null,
       "evidence": [],
       "history": [
         {
@@ -3660,10 +3660,10 @@
           {
             "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
             "name": "FeltKit release check (CI mode)",
-            "result": "skipped",
+            "result": "in-progress",
             "enforcement": "fail",
             "requirement": "exact",
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43965752152"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/44085171199"
           },
           {
             "id": "rkendel1/feltkit:.github/workflows/publish.yml#publish/publish",
@@ -3671,7 +3671,7 @@
             "result": "skipped",
             "enforcement": "unknown",
             "requirement": null,
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43965752126"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/44085170983"
           }
         ]
       },
@@ -3773,10 +3773,10 @@
           {
             "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
             "name": "FeltKit release check (CI mode)",
-            "result": "skipped",
+            "result": "in-progress",
             "enforcement": "fail",
             "requirement": "exact",
-            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/43965752152"
+            "runUrl": "https://github.com/rkendel1/feltkit/actions/runs/44085171199"
           }
         ]
       },

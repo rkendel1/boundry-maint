@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "scan": {
-    "runId": "44038850758",
-    "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/44038850758",
-    "startedAt": "2026-11-17T07:27:42.271Z",
-    "finishedAt": "2026-11-17T07:29:21.015Z",
+    "runId": "44085452830",
+    "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/44085452830",
+    "startedAt": "2026-11-17T12:41:52.878Z",
+    "finishedAt": "2026-11-17T12:43:44.104Z",
     "status": "success",
-    "trigger": "schedule",
-    "configCommit": "5bc45cb285e4fe28b17826469f1731fabb729128",
+    "trigger": "push",
+    "configCommit": "623b23d31fb29bb59a53974c9b0c0bd4f2ee4bed",
     "counts": {
       "packages": 62,
       "packagesFailed": 0,
@@ -15,7 +15,7 @@
       "projectsFailed": 0,
       "ciRepositories": 14,
       "ciChecks": 157,
-      "ciChecksFailing": 4,
+      "ciChecksFailing": 3,
       "installations": 388,
       "maintenanceOpen": 49
     },
@@ -277,7 +277,7 @@
       "root": "examples/invoices",
       "name": "@feltdb/feltkit",
       "registry": "npm",
-      "resolvedVersion": "0.3.31",
+      "resolvedVersion": "0.3.32",
       "status": "local",
       "managed": true
     },
@@ -286,7 +286,7 @@
       "root": "examples/managed",
       "name": "@feltdb/feltkit",
       "registry": "npm",
-      "resolvedVersion": "0.3.31",
+      "resolvedVersion": "0.3.32",
       "status": "local",
       "managed": true
     },
@@ -304,7 +304,7 @@
       "root": "examples/tasks",
       "name": "@feltdb/feltkit",
       "registry": "npm",
-      "resolvedVersion": "0.3.31",
+      "resolvedVersion": "0.3.32",
       "status": "local",
       "managed": true
     },
@@ -322,7 +322,7 @@
       "root": "packages/create",
       "name": "@feltdb/feltkit",
       "registry": "npm",
-      "resolvedVersion": "0.3.31",
+      "resolvedVersion": "0.3.32",
       "status": "local",
       "managed": true
     },
@@ -3949,7 +3949,7 @@
       "root": "packages/sdk",
       "name": "create-feltkit",
       "registry": "npm",
-      "resolvedVersion": "0.3.31",
+      "resolvedVersion": "0.3.32",
       "status": "unknown",
       "managed": false
     },
@@ -11651,23 +11651,23 @@
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/install",
-      "result": "passing"
+      "result": "in-progress"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/unit-tests-sdk-incl-browser-tests-conformance-suites-create-",
-      "result": "failing"
+      "result": "in-progress"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
-      "result": "skipped"
+      "result": "in-progress"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e/install",
-      "result": "passing"
+      "result": "in-progress"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e-feltdb/install",
-      "result": "passing"
+      "result": "in-progress"
     },
     {
       "id": "rkendel1/feltkit:.github/workflows/publish.yml#publish/install",
@@ -11895,735 +11895,73 @@
     }
   ],
   "changes": {
-    "newReleases": [
-      {
-        "package": "appport-core",
-        "from": "1.7.1",
-        "to": "1.8.0"
-      },
-      {
-        "package": "appport-sdk",
-        "from": "1.8.1",
-        "to": "1.9.0"
-      },
-      {
-        "package": "appport-server",
-        "from": "1.3.2",
-        "to": "1.3.3"
-      },
-      {
-        "package": "appport-mcp",
-        "from": "1.3.8",
-        "to": "1.3.9"
-      },
-      {
-        "package": "appport-testing",
-        "from": "1.2.5",
-        "to": "1.2.6"
-      },
-      {
-        "package": "appport-authorization",
-        "from": "1.1.1",
-        "to": "1.2.0"
-      },
-      {
-        "package": "appport-transport-inprocess",
-        "from": "1.0.15",
-        "to": "1.0.16"
-      },
-      {
-        "package": "appport-transport-electron",
-        "from": "1.0.15",
-        "to": "1.0.16"
-      },
-      {
-        "package": "appport-services",
-        "from": "0.17.0",
-        "to": "0.19.0"
-      },
-      {
-        "package": "appport-runtime",
-        "from": "0.16.0",
-        "to": "0.18.0"
-      },
-      {
-        "package": "create-appport",
-        "from": "0.1.29",
-        "to": "0.1.31"
-      },
-      {
-        "package": "appport-resolver",
-        "from": "0.4.0",
-        "to": "0.4.1"
-      },
-      {
-        "package": "feltdb-feltkit",
-        "from": "0.3.29",
-        "to": "0.3.31"
-      },
-      {
-        "package": "create-feltkit",
-        "from": "0.3.29",
-        "to": "0.3.31"
-      },
-      {
-        "package": "authboundry-core",
-        "from": "1.17.3",
-        "to": "1.19.0"
-      },
-      {
-        "package": "authboundry",
-        "from": "2.17.3",
-        "to": "2.19.0"
-      },
-      {
-        "package": "authboundry-bridge",
-        "from": "0.1.3",
-        "to": "0.1.4"
-      }
-    ],
+    "newReleases": [],
     "versionChanges": [
       {
         "project": "feltkit",
         "root": "examples/invoices",
         "name": "@feltdb/feltkit",
-        "from": "0.3.30",
-        "to": "0.3.31"
+        "from": "0.3.31",
+        "to": "0.3.32"
       },
       {
         "project": "feltkit",
         "root": "examples/managed",
         "name": "@feltdb/feltkit",
-        "from": "0.3.30",
-        "to": "0.3.31"
+        "from": "0.3.31",
+        "to": "0.3.32"
       },
       {
         "project": "feltkit",
         "root": "examples/tasks",
         "name": "@feltdb/feltkit",
-        "from": "0.3.30",
-        "to": "0.3.31"
+        "from": "0.3.31",
+        "to": "0.3.32"
       },
       {
         "project": "feltkit",
         "root": "packages/create",
         "name": "@feltdb/feltkit",
-        "from": "0.3.30",
-        "to": "0.3.31"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@appport/authorization",
-        "from": "1.1.1",
-        "to": "1.2.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@appport/sdk",
-        "from": "1.8.1",
-        "to": "1.9.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@appport/server",
-        "from": "1.3.2",
-        "to": "1.3.3"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@appport/services",
-        "from": "0.17.0",
-        "to": "0.19.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@appport/testing",
-        "from": "1.2.5",
-        "to": "1.2.6"
-      },
-      {
-        "project": "authboundry",
-        "root": "apps/web",
-        "name": "@appport/core",
-        "from": "1.0.2",
-        "to": "1.8.0"
-      },
-      {
-        "project": "authboundry",
-        "root": "apps/web",
-        "name": "@appport/services",
-        "from": "0.4.5",
-        "to": "0.18.0"
-      },
-      {
-        "project": "authboundry",
-        "root": "apps/web",
-        "name": "@feltdb/core",
-        "from": "0.11.7",
-        "to": "0.21.0"
-      },
-      {
-        "project": "authboundry",
-        "root": "examples/nextjs-stack",
-        "name": "@appport/core",
-        "from": "1.0.2",
-        "to": "1.8.0"
-      },
-      {
-        "project": "authboundry",
-        "root": "examples/nextjs-stack",
-        "name": "@appport/schema",
-        "from": "1.0.1",
-        "to": "1.1.6"
-      },
-      {
-        "project": "authboundry",
-        "root": "examples/nextjs-stack",
-        "name": "@appport/services",
-        "from": "0.4.5",
-        "to": "0.18.0"
-      },
-      {
-        "project": "authboundry",
-        "root": "examples/nextjs-stack",
-        "name": "@feltdb/core",
-        "from": "0.11.7",
-        "to": "0.21.0"
-      },
-      {
-        "project": "authboundry",
-        "root": ".",
-        "name": "@appport/services",
-        "from": "0.4.5",
-        "to": "0.18.0"
-      },
-      {
-        "project": "authboundry",
-        "root": ".",
-        "name": "@feltdb/core",
-        "from": "0.11.7",
-        "to": "0.21.0"
-      },
-      {
-        "project": "authboundry",
-        "root": ".",
-        "name": "@appport/core",
-        "from": "1.0.2",
-        "to": "1.8.0"
-      },
-      {
-        "project": "authboundry",
-        "root": "crates/feltdb-adapter",
-        "name": "tokio",
-        "from": "1.53.1",
-        "to": "1.54.1"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/invoices",
-        "name": "react",
-        "from": "19.2.0",
-        "to": "19.3.1"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/invoices",
-        "name": "react-dom",
-        "from": "19.2.0",
-        "to": "19.3.1"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/invoices",
-        "name": "@types/react",
-        "from": "19.2.2",
-        "to": "19.3.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/invoices",
-        "name": "@types/react-dom",
-        "from": "19.2.2",
-        "to": "19.3.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/invoices",
-        "name": "typescript",
-        "from": "5.9.3",
-        "to": "7.0.2"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/managed",
-        "name": "typescript",
-        "from": "5.9.3",
-        "to": "7.0.2"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/tasks",
-        "name": "@mlc-ai/web-llm",
-        "from": "0.2.86",
-        "to": "0.2.88"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/tasks",
-        "name": "react",
-        "from": "19.2.0",
-        "to": "19.3.1"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/tasks",
-        "name": "react-dom",
-        "from": "19.2.0",
-        "to": "19.3.1"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/tasks",
-        "name": "@types/react",
-        "from": "19.2.2",
-        "to": "19.3.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/tasks",
-        "name": "@types/react-dom",
-        "from": "19.2.2",
-        "to": "19.3.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "examples/tasks",
-        "name": "typescript",
-        "from": "5.9.3",
-        "to": "7.0.2"
+        "from": "0.3.31",
+        "to": "0.3.32"
       },
       {
         "project": "feltkit",
         "root": "packages/sdk",
         "name": "create-feltkit",
-        "from": "0.3.30",
-        "to": "0.3.31"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "esbuild",
-        "from": "0.25.12",
-        "to": "0.28.2"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "tsx",
-        "from": "4.20.6",
-        "to": "4.23.15"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@authboundry/local",
-        "from": null,
-        "to": "0.1.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@stack-ui/core",
-        "from": "0.8.1",
-        "to": "0.9.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@stack-ui/react",
-        "from": "0.8.1",
-        "to": "0.9.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@stack-ui/tokens",
-        "from": "0.8.1",
-        "to": "0.9.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@types/react",
-        "from": "19.2.2",
-        "to": "19.3.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@types/react-dom",
-        "from": "19.2.2",
-        "to": "19.3.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "react",
-        "from": "19.2.0",
-        "to": "19.3.1"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "react-dom",
-        "from": "19.2.0",
-        "to": "19.3.1"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "typescript",
-        "from": "5.9.3",
-        "to": "7.0.2"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "vitest",
-        "from": "3.2.7",
-        "to": "5.1.0"
-      },
-      {
-        "project": "appport-services",
-        "root": ".",
-        "name": "@appport/sdk",
-        "from": "1.8.1",
-        "to": "1.9.0"
-      },
-      {
-        "project": "authboundry",
-        "root": "apps/web",
-        "name": "@authboundry/core",
-        "from": "1.15.3",
-        "to": "1.18.0"
-      },
-      {
-        "project": "authboundry",
-        "root": "apps/web",
-        "name": "next",
-        "from": "15.5.25",
-        "to": "15.5.29"
-      },
-      {
-        "project": "authboundry",
-        "root": "apps/web",
-        "name": "react",
-        "from": "19.3.0",
-        "to": "19.3.1"
-      },
-      {
-        "project": "authboundry",
-        "root": "apps/web",
-        "name": "react-dom",
-        "from": "19.3.0",
-        "to": "19.3.1"
-      },
-      {
-        "project": "authboundry",
-        "root": "apps/web",
-        "name": "eslint-config-next",
-        "from": "15.5.25",
-        "to": "15.5.29"
-      },
-      {
-        "project": "authboundry",
-        "root": "examples/nextjs-stack",
-        "name": "@authboundry/core",
-        "from": "1.15.3",
-        "to": "1.18.0"
-      },
-      {
-        "project": "authboundry",
-        "root": ".",
-        "name": "@authboundry/core-darwin-arm64",
-        "from": "1.17.4",
-        "to": "1.19.0"
-      },
-      {
-        "project": "authboundry",
-        "root": ".",
-        "name": "@authboundry/core-darwin-x64",
-        "from": "1.17.4",
-        "to": "1.19.0"
-      },
-      {
-        "project": "authboundry",
-        "root": ".",
-        "name": "@authboundry/core-linux-arm64",
-        "from": "1.17.4",
-        "to": "1.19.0"
-      },
-      {
-        "project": "authboundry",
-        "root": ".",
-        "name": "@authboundry/core-linux-x64",
-        "from": "1.17.4",
-        "to": "1.19.0"
-      },
-      {
-        "project": "authboundry",
-        "root": "crates/boundary",
-        "name": "serde_json",
-        "from": "1.0.151",
-        "to": "1.0.154"
-      },
-      {
-        "project": "authboundry",
-        "root": "crates/cli",
-        "name": "serde_json",
-        "from": "1.0.151",
-        "to": "1.0.154"
-      },
-      {
-        "project": "authboundry",
-        "root": "crates/discovery",
-        "name": "serde_json",
-        "from": "1.0.151",
-        "to": "1.0.154"
-      },
-      {
-        "project": "authboundry",
-        "root": "crates/feltdb-adapter",
-        "name": "serde_json",
-        "from": "1.0.151",
-        "to": "1.0.154"
-      },
-      {
-        "project": "authboundry",
-        "root": "crates/providers",
-        "name": "serde_json",
-        "from": "1.0.151",
-        "to": "1.0.154"
-      },
-      {
-        "project": "authboundry",
-        "root": "crates/runtime",
-        "name": "serde_json",
-        "from": "1.0.151",
-        "to": "1.0.154"
-      },
-      {
-        "project": "authboundry",
-        "root": "crates/semantic",
-        "name": "serde_json",
-        "from": "1.0.151",
-        "to": "1.0.154"
-      },
-      {
-        "project": "authboundry",
-        "root": "crates/server",
-        "name": "serde_json",
-        "from": "1.0.151",
-        "to": "1.0.154"
-      },
-      {
-        "project": "authboundry",
-        "root": "crates/storage",
-        "name": "serde_json",
-        "from": "1.0.151",
-        "to": "1.0.154"
+        "from": "0.3.31",
+        "to": "0.3.32"
       }
     ],
-    "newDependencies": [
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "jpeg-js",
-        "version": "0.4.4"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "pngjs",
-        "version": "7.0.0"
-      },
-      {
-        "project": "feltkit",
-        "root": "packages/sdk",
-        "name": "@types/pngjs",
-        "version": "6.0.5"
-      }
-    ],
+    "newDependencies": [],
     "removedDependencies": [],
-    "statusChanges": [
-      {
-        "key": "appboundry|pnpm-lock.yaml|npm:@appport/authorization",
-        "from": "updated-unverified",
-        "to": "update-required"
-      },
-      {
-        "key": "appboundry|pnpm-lock.yaml|npm:@appport/core",
-        "from": "updated-unverified",
-        "to": "update-required"
-      },
-      {
-        "key": "appboundry|pnpm-lock.yaml|npm:@appport/sdk",
-        "from": "updated-unverified",
-        "to": "update-required"
-      },
-      {
-        "key": "appboundry|pnpm-lock.yaml|npm:@appport/mcp",
-        "from": "updated-unverified",
-        "to": "update-required"
-      },
-      {
-        "key": "appboundry|pnpm-lock.yaml|npm:@appport/server",
-        "from": "updated-unverified",
-        "to": "update-required"
-      },
-      {
-        "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-electron",
-        "from": "updated-unverified",
-        "to": "update-required"
-      },
-      {
-        "key": "appboundry|pnpm-lock.yaml|npm:@appport/transport-inprocess",
-        "from": "updated-unverified",
-        "to": "update-required"
-      },
-      {
-        "key": "authboundry|apps/web/package-lock.json|npm:@appport/core",
-        "from": "update-required",
-        "to": "updated-verified"
-      },
-      {
-        "key": "authboundry|examples/nextjs-stack/package-lock.json|npm:@appport/core",
-        "from": "update-required",
-        "to": "updated-verified"
-      },
-      {
-        "key": "authboundry|package-lock.json|npm:@appport/core",
-        "from": "update-required",
-        "to": "updated-verified"
-      },
-      {
-        "key": "authboundry|examples/nextjs-stack/package-lock.json|npm:@appport/schema",
-        "from": "update-required",
-        "to": "updated-verified"
-      },
-      {
-        "key": "authboundry|apps/web/package-lock.json|npm:@feltdb/core",
-        "from": "update-required",
-        "to": "updated-verified"
-      },
-      {
-        "key": "authboundry|examples/nextjs-stack/package-lock.json|npm:@feltdb/core",
-        "from": "update-required",
-        "to": "updated-verified"
-      },
-      {
-        "key": "authboundry|package-lock.json|npm:@feltdb/core",
-        "from": "update-required",
-        "to": "updated-verified"
-      },
-      {
-        "key": "authboundry|Cargo.lock|crates:tokio",
-        "from": "update-required",
-        "to": "updated-verified"
-      },
-      {
-        "key": "feltkit|package-lock.json|npm:@appport/sdk",
-        "from": "updated-verified",
-        "to": "updated-unverified"
-      },
-      {
-        "key": "feltkit|package-lock.json|npm:@appport/server",
-        "from": "updated-verified",
-        "to": "updated-unverified"
-      },
-      {
-        "key": "feltkit|package-lock.json|npm:@appport/testing",
-        "from": "updated-verified",
-        "to": "updated-unverified"
-      }
-    ],
-    "newEvidence": [
-      {
-        "project": "feltkit",
-        "commit": "c9fae9de5918d4d47c063608e766e23ebe09d778",
-        "passed": false
-      },
-      {
-        "project": "appport-services",
-        "commit": "30f376a1847727c6819ee92b260d0f6094367640",
-        "passed": false
-      },
-      {
-        "project": "flow-db",
-        "commit": "a55a5a6b6555633e54c33bcfbffa1419db8fa5a0",
-        "passed": false
-      },
-      {
-        "project": "appport",
-        "commit": "a6c2c61a4f0990536796de376c7398152e32ba4f",
-        "passed": true
-      },
-      {
-        "project": "authboundry",
-        "commit": "50e6ad4f8324a78b9b641e88880c18883128a20a",
-        "passed": true
-      }
-    ],
+    "statusChanges": [],
+    "newEvidence": [],
     "ciResultChanges": [
       {
-        "id": "rkendel1/authboundry:.github/workflows/release.yml#validate/version-relationships-and-the-dispatched-version-equals-the-",
-        "from": "unknown",
-        "to": "passing"
+        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/install",
+        "from": "passing",
+        "to": "in-progress"
       },
       {
-        "id": "rkendel1/authboundry:.github/workflows/release.yml#validate/release-tooling-tests-manifest-checks-publisher-against-a-st",
-        "from": "unknown",
-        "to": "passing"
+        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/unit-tests-sdk-incl-browser-tests-conformance-suites-create-",
+        "from": "failing",
+        "to": "in-progress"
       },
       {
-        "id": "rkendel1/authboundry:.github/workflows/release.yml#test/run-npm-ci-ignore-scripts-omit-optional",
-        "from": "unknown",
-        "to": "passing"
-      },
-      {
-        "id": "rkendel1/authboundry:.github/workflows/release.yml#test/package-tests",
-        "from": "unknown",
-        "to": "passing"
-      },
-      {
-        "id": "rkendel1/authboundry:.github/workflows/release.yml#publish/publish-npm-packages-dependency-order-resumes-safely",
-        "from": "unknown",
-        "to": "passing"
-      },
-      {
-        "id": "rkendel1/authboundry:.github/workflows/release.yml#publish/verify-every-package-version-is-served-by-the-registry",
-        "from": "unknown",
-        "to": "passing"
-      },
-      {
-        "id": "rkendel1/authboundry:.github/workflows/release.yml#publish/create-github-release-with-the-release-evidence",
-        "from": "unknown",
-        "to": "passing"
-      },
-      {
-        "id": "rkendel1/flow_db:.github/workflows/ci.yml#attest/produce-machine-readable-ci-result",
+        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
         "from": "skipped",
-        "to": "passing"
+        "to": "in-progress"
       },
       {
-        "id": "rkendel1/flow_db:.github/workflows/ci.yml#attest/verify-every-attested-npm-package-records-this-commit-as-its",
-        "from": "skipped",
-        "to": "passing"
+        "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e/install",
+        "from": "passing",
+        "to": "in-progress"
+      },
+      {
+        "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e-feltdb/install",
+        "from": "passing",
+        "to": "in-progress"
       }
     ]
   }
