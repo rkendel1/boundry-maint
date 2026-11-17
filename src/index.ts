@@ -7,6 +7,7 @@
  *   validate      validate config/ and any existing data/ artifacts
  *   schemas       regenerate schemas/*.json from src/contracts.ts
  *   record-event  append a repository_dispatch maintenance signal to data/events.json
+ *   release       plan | show | approve | revoke | execute | list   (Release Manager; never runs during a scan)
  */
 import { appendFile, readFile, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
@@ -27,7 +28,9 @@ import {
   ProjectsFile,
   ReleasesFile,
   Snapshot,
+  ReleaseRecord,
 } from "./contracts.ts";
+import { releaseManager, approvalRequest } from "./release/cli.ts";
 import { listFiles, readJsonIfValid, readJson, stableJson, writeAllAtomic } from "./lib/files.ts";
 import { buildSite } from "./reports/generate.ts";
 import { loadConfig, runScan } from "./scan.ts";
@@ -41,6 +44,11 @@ const { positionals, values } = parseArgs({
     out: { type: "string", default: join(ROOT, "_site") },
     local: { type: "string", multiple: true, default: [] },
     file: { type: "string" },
+    package: { type: "string", multiple: true, default: [] },
+    bump: { type: "string" },
+    as: { type: "string" },
+    digest: { type: "string" },
+    reason: { type: "string" },
   },
 });
 
@@ -109,6 +117,9 @@ async function validate() {
     }
   }
   for (const f of await listFiles(d("evidence"))) await readJson(f, EvidenceFile);
+  let releases = 0;
+  for (const dir of await listFiles(d("release-manager"))) for (const f of await listFiles(dir)) { await readJson(f, ReleaseRecord); releases++; }
+  console.log(`release records: ${releases} ok`);
   for (const f of (await listFiles(d("history"))).filter((f) => f.endsWith(".json"))) await readJson(f, Snapshot);
   console.log("evidence + history: ok");
 }
@@ -155,7 +166,29 @@ async function recordEvent() {
   console.log(`recorded maintenance-started for ${record.project} / ${record.package}`);
 }
 
-const commands: Record<string, () => Promise<void>> = { scan, report, validate, schemas, "record-event": recordEvent };
+/** Release Manager. Explicit commands only: a scan never plans, approves or executes a release. */
+async function release() {
+  const [, sub, id] = positionals;
+  const { packages } = await loadConfig(ROOT);
+  const installations = (await readJsonIfValid(join(values.data!, "installations.json"), InstallationsFile))?.installations ?? [];
+  const m = await releaseManager(ROOT, values.data!, packages.packages, installations);
+  const need = (v: string | undefined, what: string) => { if (!v) throw new Error(`release ${sub} needs ${what}`); return v; };
+  switch (sub) {
+    case "plan": {
+      const r = await m.plan({ packages: values.package!.length ? values.package! : [need(id, "--package <id>")], bump: need(values.bump, "--bump <patch|minor|major|prerelease|repository>") as never, requestedBy: need(values.as, "--as <your name>"), reason: values.reason });
+      console.log(approvalRequest(r));
+      return;
+    }
+    case "show": console.log(approvalRequest(await m.load(need(id, "<release id>")))); return;
+    case "approve": { const r = await m.approve(need(id, "<release id>"), need(values.as, "--as <name>"), need(values.digest, "--digest <plan digest>")); console.log(`${r.id}: ${r.state} by ${r.approval!.approver}`); return; }
+    case "revoke": { const r = await m.revoke(need(id, "<release id>"), need(values.as, "--as <name>"), values.reason ?? "revoked"); console.log(`${r.id}: ${r.state}`); return; }
+    case "execute": { const r = await m.execute(need(id, "<release id>")); console.log(approvalRequest(r)); if (r.state !== "released") process.exitCode = 1; return; }
+    case "list": for (const r of await m.list()) console.log(`${r.id.padEnd(40)} ${r.state.padEnd(18)} ${r.failure ? `(${r.failure.recoverable ? "blocked" : "stopped"}: ${r.failure.reason})` : ""}`); return;
+    default: throw new Error("usage: release plan --package <id> --bump <kind> --as <name> [--reason …] | show|execute|list <id> | approve <id> --as <name> --digest <d> | revoke <id> --as <name> [--reason …]");
+  }
+}
+
+const commands: Record<string, () => Promise<void>> = { scan, report, validate, schemas, "record-event": recordEvent, release };
 const cmd = commands[positionals[0] ?? ""];
 if (!cmd) {
   console.error(`usage: node src/index.ts <${Object.keys(commands).join("|")}> [--data dir] [--out dir] [--local owner/repo=path]`);

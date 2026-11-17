@@ -25,6 +25,29 @@ const IsoDate = z.string().datetime({ offset: true });
 // Configuration (config/*.json) — curated, authoritative inventory
 // ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+// Release policy (per package, curated). Absent = the package cannot be released by Boundry.
+// ---------------------------------------------------------------------------
+
+export const ReleaseBump = z.enum(["patch", "minor", "major", "prepatch", "preminor", "premajor", "prerelease", "repository"]);
+export type ReleaseBump = z.infer<typeof ReleaseBump>;
+
+export const ReleasePolicy = z.object({
+  allowedBumps: z
+    .array(ReleaseBump)
+    .min(1)
+    .default(["patch", "minor", "prerelease", "repository"])
+    .describe("Bumps a release request may ask for. 'repository' = release the version already declared in the manifest, if unpublished. 'major' must be listed explicitly."),
+  prereleaseId: z.string().regex(/^[0-9A-Za-z-]+$/).default("rc"),
+  tagFormat: z.string().default("{name}@{version}").describe("Git tag per released package; {name} and {version} are substituted"),
+  branch: z.string().default("main").describe("Branch that receives the release commit (fast-forward only)"),
+  approvers: z.array(z.string().min(1)).min(1).describe("People who may approve a release plan for this package"),
+  validation: z.array(z.enum(["test"])).default(["test"]).describe("Checks the release build must pass in Boundry CI before tagging"),
+  githubRelease: z.boolean().default(true),
+  distTag: z.string().default("latest").describe("npm dist-tag for stable releases (prereleases always use 'next')"),
+});
+export type ReleasePolicy = z.infer<typeof ReleasePolicy>;
+
 export const PackageConfig = z.object({
   id: Id,
   name: z.string().min(1).describe("Name as published in the registry"),
@@ -35,6 +58,7 @@ export const PackageConfig = z.object({
   active: z.boolean().default(true),
   trackPrereleases: z.boolean().default(false),
   description: z.string().optional(),
+  release: ReleasePolicy.optional().describe("Present only for owned packages Boundry is allowed to release"),
 });
 export type PackageConfig = z.infer<typeof PackageConfig>;
 
@@ -589,3 +613,86 @@ export const Snapshot = z.object({
   changes: SnapshotChanges,
 });
 export type Snapshot = z.infer<typeof Snapshot>;
+
+
+// ---------------------------------------------------------------------------
+// Release Manager (data/release-manager/<package-id>/<version>.json)
+//
+// One file per proposed release. The plan is immutable once approved (its digest is what the approval
+// authorizes). State moves forward only through the lifecycle below; history and attempts are append-only.
+// External facts (commit, tag, artifact, registry integrity, GitHub release) are recorded only after they
+// have been verified against the system that owns them.
+// ---------------------------------------------------------------------------
+
+export const ReleaseState = z.enum([
+  "proposed", "validated", "awaiting-approval", "approved",
+  "prepared", // release commit exists on the release branch
+  "built", // Boundry CI produced the exact artifact from the release commit
+  "tagged", // tag points at the release commit (only after a successful build)
+  "published", // registry accepted the artifact
+  "registry-verified", // registry serves the version with the artifact's integrity
+  "released", // GitHub release (if required) exists for the tag; records updated
+  "failed", "cancelled", "superseded",
+]);
+export type ReleaseState = z.infer<typeof ReleaseState>;
+
+export const ReleasePackagePlan = z.object({
+  package: Id,
+  name: z.string(),
+  registry: Registry,
+  directory: z.string(),
+  registryVersions: z.object({ count: z.number().int(), highest: z.string().nullable(), latestTag: z.string().nullable(), observedAt: IsoDate }),
+  repositoryVersion: z.string().nullable(),
+  proposedVersion: z.string(),
+  tag: z.string(),
+  distTag: z.string(),
+  destination: z.string().describe("Registry base URL the artifact is published to"),
+});
+export type ReleasePackagePlan = z.infer<typeof ReleasePackagePlan>;
+
+export const ReleasePlan = z.object({
+  repository: RepoSlug,
+  branch: z.string(),
+  sourceCommit: z.string().regex(/^[0-9a-f]{40}$/),
+  bump: ReleaseBump,
+  requestedBy: z.string(),
+  requestedAt: IsoDate,
+  reason: z.string().nullable(),
+  packages: z.array(ReleasePackagePlan).min(1),
+  decision: z.array(z.string()).describe("Why these versions, in words"),
+  dependents: z.array(z.object({ package: z.string(), where: z.string(), declared: z.string(), effect: z.string() })).describe("Coordinated follow-ups. Never published automatically."),
+  releaseCommit: z.object({ message: z.string(), files: z.array(z.string()) }),
+  validation: z.array(z.string()),
+  githubRelease: z.boolean(),
+  approvers: z.array(z.string()),
+});
+export type ReleasePlan = z.infer<typeof ReleasePlan>;
+
+export const ReleaseRecord = z.object({
+  schemaVersion: z.literal(1),
+  id: z.string().describe("<package-id>@<version> of the first package"),
+  planDigest: z.string().regex(/^[0-9a-f]{64}$/),
+  plan: ReleasePlan,
+  state: ReleaseState,
+  approval: z
+    .object({ approver: z.string(), at: IsoDate, planDigest: z.string(), revoked: z.object({ by: z.string(), at: IsoDate, reason: z.string() }).nullable() })
+    .nullable(),
+  facts: z.object({
+    releaseCommit: z.string().nullable(),
+    build: z
+      .object({
+        system: z.string(), runId: z.string(), evidenceUrl: z.string().nullable(),
+        artifacts: z.array(z.object({ package: Id, file: z.string(), sha256: z.string(), sha512Integrity: z.string(), size: z.number().int() })),
+        container: z.object({ name: z.string(), sha256: z.string() }).nullable(),
+      })
+      .nullable(),
+    tags: z.array(z.object({ name: z.string(), target: z.string() })),
+    published: z.array(z.object({ package: Id, version: z.string(), integrity: z.string(), alreadyPresent: z.boolean() })),
+    registryVerification: z.array(z.object({ package: Id, version: z.string(), integrity: z.string(), tarballSha256: z.string(), distTagPointsHere: z.boolean(), at: IsoDate })),
+    githubRelease: z.object({ url: z.string(), tag: z.string(), alreadyPresent: z.boolean() }).nullable(),
+  }),
+  failure: z.object({ at: ReleaseState, reason: z.string(), recoverable: z.boolean(), when: IsoDate }).nullable(),
+  history: z.array(z.object({ at: IsoDate, state: ReleaseState, note: z.string() })),
+  attempts: z.array(z.object({ at: IsoDate, step: z.string(), outcome: z.enum(["done", "already-done", "failed", "refused"]), detail: z.string() })),
+});
+export type ReleaseRecord = z.infer<typeof ReleaseRecord>;

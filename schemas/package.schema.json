@@ -60,6 +60,85 @@
           },
           "description": {
             "type": "string"
+          },
+          "release": {
+            "description": "Present only for owned packages Boundry is allowed to release",
+            "type": "object",
+            "properties": {
+              "allowedBumps": {
+                "default": [
+                  "patch",
+                  "minor",
+                  "prerelease",
+                  "repository"
+                ],
+                "description": "Bumps a release request may ask for. 'repository' = release the version already declared in the manifest, if unpublished. 'major' must be listed explicitly.",
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "patch",
+                    "minor",
+                    "major",
+                    "prepatch",
+                    "preminor",
+                    "premajor",
+                    "prerelease",
+                    "repository"
+                  ]
+                }
+              },
+              "prereleaseId": {
+                "default": "rc",
+                "type": "string",
+                "pattern": "^[0-9A-Za-z-]+$"
+              },
+              "tagFormat": {
+                "default": "{name}@{version}",
+                "description": "Git tag per released package; {name} and {version} are substituted",
+                "type": "string"
+              },
+              "branch": {
+                "default": "main",
+                "description": "Branch that receives the release commit (fast-forward only)",
+                "type": "string"
+              },
+              "approvers": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "description": "People who may approve a release plan for this package"
+              },
+              "validation": {
+                "default": [
+                  "test"
+                ],
+                "description": "Checks the release build must pass in Boundry CI before tagging",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "test"
+                  ]
+                }
+              },
+              "githubRelease": {
+                "default": true,
+                "type": "boolean"
+              },
+              "distTag": {
+                "default": "latest",
+                "description": "npm dist-tag for stable releases (prereleases always use 'next')",
+                "type": "string"
+              }
+            },
+            "required": [
+              "approvers"
+            ]
           }
         },
         "required": [
