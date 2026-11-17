@@ -80,7 +80,7 @@ export class NpmRegistry implements RegistryAdapter {
     } catch (e) {
       const msg = String((e as { stderr?: string }).stderr ?? (e as Error).message);
       if (/E409|EPUBLISHCONFLICT|cannot publish over|already present/i.test(msg)) throw new Refused("registry refused: version already present");
-      if (/E5\d\d|ECONNREFUSED|ETIMEDOUT|ENOTFOUND|socket hang up/i.test(msg)) throw new Unavailable(`registry unavailable during publish: ${msg.split("\n").find((l) => /error/i.test(l)) ?? ""}`);
+      if (/E5\d\d|ECONNREFUSED|ECONNRESET|ETIMEDOUT|ENOTFOUND|socket hang up/i.test(msg)) throw new Unavailable(`registry unavailable during publish: ${msg.split("\n").find((l) => /error/i.test(l)) ?? ""}`);
       throw new Error(`publish failed: ${msg.split("\n").filter((l) => /error/i.test(l)).slice(0, 2).join(" ")}`);
     } finally { await rm(dir, { recursive: true, force: true }); }
   }

@@ -4,16 +4,16 @@
     "cancelInProgress": false,
     "cancelRequested": false,
     "concurrencyGroup": null,
-    "createdAt": 1794876018229,
+    "createdAt": 1794879464425,
     "definitionPath": ".boundry/recipes/boundry-release.md",
     "downstream": [],
-    "eventId": "ev_393fc891deab1ba3b21f526732c3a3f616e8fdcb",
-    "explanation": "# Release build: @appport/resolver 0.4.2, @appport/resolver-client 0.3.1, @appport/resolver-core 0.2.1\n\nBuild, test and package release commit f3e19fbbfe1112233b02fb683d1ca403b14da849 for Boundry Maintenance release appport-resolver@0.4.2.\n\nRecipe `.boundry/recipes/boundry-release.md` · sha256:521c7f052cbd · compiled by boundry-recipes/1.0.0 with boundry-capabilities/1.0.1 · definition bd87b71702d9\n\n## Runs when\n- an authorized person starts it\n\n## Project\n- Node.js project using npm (`package-lock.json`) in the repository root (evidence: `package-lock.json`, `package.json`)\n\n## Checks (one job)\n1. **The tests pass** — runs `npm test`\n   Node.js 22 · installs dependencies first · internet: yes · keeps `test-results.txt` · capability `check.tests@1.0.0`\n\n## Steps (in order, after every check passes)\n1. **Package the result** — runs `npm run build`, then `npm pack --workspaces`\n   Node.js 22 · installs dependencies first · internet: yes · keeps `package.tar` · capability `step.package@1.0.0`\n\n## Authority\n- Permissions: none\n- Secrets: none\n- Approvals: none\n- Publishes or deploys: nothing\n- Proposed changes from forks never receive secrets, release/deploy access or trusted caches.\n\n## Kept\n- `package.tar` from “Package the result” for 3650 days\n- `test-results.txt` from “The tests pass” for 30 days (also when tests fail)\n- The record: this recipe, its compiled plan, project facts, every attempt's log, inputs and outputs (always)\n\n## Afterward\n- Nothing is reported to GitHub (add “Report the result on the change” to do so)\n",
-    "finishedAt": 1794876053084,
-    "id": "run_e53a50bab6a93365208fbe82",
+    "eventId": "ev_3c7665c7a47748fd20a99c3e013962624f4e6e7a",
+    "explanation": "# Release build: @appport/resolver 0.4.2, @appport/resolver-client 0.3.1, @appport/resolver-core 0.2.1\n\nBuild, test and package release commit df70ca12d7baf95dbf157b8352c589af702683b7 for Boundry Maintenance release appport-resolver@0.4.2.\n\nRecipe `.boundry/recipes/boundry-release.md` · sha256:683adf3b3a33 · compiled by boundry-recipes/1.0.0 with boundry-capabilities/1.0.1 · definition bd87b71702d9\n\n## Runs when\n- an authorized person starts it\n\n## Project\n- Node.js project using npm (`package-lock.json`) in the repository root (evidence: `package-lock.json`, `package.json`)\n\n## Checks (one job)\n1. **The tests pass** — runs `npm test`\n   Node.js 22 · installs dependencies first · internet: yes · keeps `test-results.txt` · capability `check.tests@1.0.0`\n\n## Steps (in order, after every check passes)\n1. **Package the result** — runs `npm run build`, then `npm pack --workspaces`\n   Node.js 22 · installs dependencies first · internet: yes · keeps `package.tar` · capability `step.package@1.0.0`\n\n## Authority\n- Permissions: none\n- Secrets: none\n- Approvals: none\n- Publishes or deploys: nothing\n- Proposed changes from forks never receive secrets, release/deploy access or trusted caches.\n\n## Kept\n- `package.tar` from “Package the result” for 3650 days\n- `test-results.txt` from “The tests pass” for 30 days (also when tests fail)\n- The record: this recipe, its compiled plan, project facts, every attempt's log, inputs and outputs (always)\n\n## Afterward\n- Nothing is reported to GitHub (add “Report the result on the change” to do so)\n",
+    "finishedAt": 1794879497411,
+    "id": "run_aebf83650374724391632644",
     "kind": "manual",
     "pipeline": "Release build: @appport/resolver 0.4.2, @appport/resolver-client 0.3.1, @appport/resolver-core 0.2.1",
-    "planDigest": "08084f7797baa29e8bca1c654d6ca2a6ba61f52fce95328aa0a766afa11eb777",
+    "planDigest": "897137ddf15285c1ada40bef69077d4a3783bb58cc1bcb811090d475849f8478",
     "reason": null,
     "recipe": {
       "capabilities": {
@@ -53,13 +53,13 @@
       },
       "factsDigest": "497ae868e72392c18a86be6136faa466db71713dc7d74cb01f1806141673e9b9",
       "path": ".boundry/recipes/boundry-release.md",
-      "sourceDigest": "521c7f052cbdd48e4a6c62e9495f73c76bc8f4d053f6bace04786950496a8aa9",
+      "sourceDigest": "683adf3b3a33a71e1085c3b4f1d079f3d77606ed6bd74a6c25bafa94cc61833b",
       "title": "Release build: @appport/resolver 0.4.2, @appport/resolver-client 0.3.1, @appport/resolver-core 0.2.1"
     },
     "ref": "refs/heads/main",
     "repository": "rkendel1/resolver",
-    "sha": "f3e19fbbfe1112233b02fb683d1ca403b14da849",
-    "sourceDigest": "521c7f052cbdd48e4a6c62e9495f73c76bc8f4d053f6bace04786950496a8aa9",
+    "sha": "df70ca12d7baf95dbf157b8352c589af702683b7",
+    "sourceDigest": "683adf3b3a33a71e1085c3b4f1d079f3d77606ed6bd74a6c25bafa94cc61833b",
     "state": "succeeded",
     "statusPrefix": null,
     "trusted": true
@@ -67,17 +67,17 @@
   "trigger": {
     "kind": "manual",
     "ref": "refs/heads/main",
-    "sha": "f3e19fbbfe1112233b02fb683d1ca403b14da849",
+    "sha": "df70ca12d7baf95dbf157b8352c589af702683b7",
     "actor": "boundry-maintenance",
     "provider": "execution",
-    "deliveryId": "appport-resolver@0.4.2/38e9e5c1fc26/build-1",
-    "receivedAt": 1794876018229,
+    "deliveryId": "appport-resolver@0.4.2/0c9abf10b85c/build-1",
+    "receivedAt": 1794879464425,
     "trusted": true
   },
   "definition": {
     "path": ".boundry/recipes/boundry-release.md",
-    "sha256": "521c7f052cbdd48e4a6c62e9495f73c76bc8f4d053f6bace04786950496a8aa9",
-    "source": "# Release build: @appport/resolver 0.4.2, @appport/resolver-client 0.3.1, @appport/resolver-core 0.2.1\n\nBuild, test and package release commit f3e19fbbfe1112233b02fb683d1ca403b14da849 for Boundry Maintenance release appport-resolver@0.4.2.\n\n## When this happens\n- I start it.\n\n## Make sure\n- The tests pass.\n\n## Steps\n1. Package the result.\n\n## Keep\n- The test results.\n- The package for 3650 days.\n- The release evidence.\n"
+    "sha256": "683adf3b3a33a71e1085c3b4f1d079f3d77606ed6bd74a6c25bafa94cc61833b",
+    "source": "# Release build: @appport/resolver 0.4.2, @appport/resolver-client 0.3.1, @appport/resolver-core 0.2.1\n\nBuild, test and package release commit df70ca12d7baf95dbf157b8352c589af702683b7 for Boundry Maintenance release appport-resolver@0.4.2.\n\n## When this happens\n- I start it.\n\n## Make sure\n- The tests pass.\n\n## Steps\n1. Package the result.\n\n## Keep\n- The test results.\n- The package for 3650 days.\n- The release evidence.\n"
   },
   "jobs": [
     {
@@ -104,14 +104,14 @@
       },
       "attempts": [
         {
-          "id": "run_e53a50bab6a93365208fbe82-6884166bc2c82d47-a1",
+          "id": "run_aebf83650374724391632644-6884166bc2c82d47-a1",
           "n": 1,
           "worker": "proof-worker",
           "state": "succeeded",
           "exitCode": 0,
           "reason": null,
-          "startedAt": 1794876043752,
-          "finishedAt": 1794876053075,
+          "startedAt": 1794879488890,
+          "finishedAt": 1794879497404,
           "inputs": [],
           "artifacts": [
             {
@@ -146,20 +146,20 @@
       },
       "attempts": [
         {
-          "id": "run_e53a50bab6a93365208fbe82-59830ebc3a418411-a1",
+          "id": "run_aebf83650374724391632644-59830ebc3a418411-a1",
           "n": 1,
           "worker": "proof-worker",
           "state": "succeeded",
           "exitCode": 0,
           "reason": null,
-          "startedAt": 1794876018723,
-          "finishedAt": 1794876043724,
+          "startedAt": 1794879464541,
+          "finishedAt": 1794879488866,
           "inputs": [],
           "artifacts": [
             {
-              "digest": "ed9d8f7cdfc16d27ef679366627c22f8c4921ae1d3e38c45045c60b8b407f871",
+              "digest": "0c08c9e09ef90227a6d8688414670fe0eeb691ebc183a3cc309f5b87be15df57",
               "name": "test-results.txt",
-              "size": 18313
+              "size": 17951
             }
           ],
           "logChunks": 3

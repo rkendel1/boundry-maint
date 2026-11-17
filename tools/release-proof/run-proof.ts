@@ -10,7 +10,7 @@
 // Usage: node tools/release-proof/run-proof.ts <resolver checkout> <boundry-ci checkout> <verdaccio bin> <out dir>
 import { spawn, execFileSync, type ChildProcess } from "node:child_process";
 import { mkdtempSync, writeFileSync, readFileSync, mkdirSync, cpSync, chmodSync } from "node:fs";
-import { createServer } from "node:http";
+import { createServer, request as httpRequest, type Server } from "node:http";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { createHash, randomBytes } from "node:crypto";
@@ -34,6 +34,7 @@ const base = mkdtempSync(join(tmpdir(), "release-proof-"));
 const procs: ChildProcess[] = [];
 // GitHub stand-in: its URLs say "stand-in" so no evidence can be mistaken for a real github.com release.
 let gh: ReturnType<typeof createServer> | undefined;
+const servers: Server[] = [];
 const sh = (cmd: string, args: string[], opts: { cwd?: string; env?: NodeJS.ProcessEnv } = {}) => execFileSync(cmd, args, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"], ...opts });
 const log = (s: string) => console.log(`[proof] ${s}`);
 const wait = async (url: string, ms = 30_000) => { const end = Date.now() + ms; while (Date.now() < end) { try { if ((await fetch(url)).ok) return; } catch { /* starting */ } await new Promise((r) => setTimeout(r, 250)); } throw new Error(`timeout waiting for ${url}`); };
@@ -77,6 +78,20 @@ try {
     for (const v of versions) seeded[pkg.name]![v]!.standInIntegrity = standIn.versions[v]?.dist?.integrity;
     log(`npm authority: ${pkg.name} seeded with ${versions.join(", ")} — integrity identical to npmjs.org: ${versions.every((v) => seeded[pkg.name]![v]!.npmjsIntegrity === seeded[pkg.name]![v]!.standInIntegrity)}; latest=${standIn["dist-tags"].latest}`);
   }
+
+  // ── 2b. An unreliable network path to the registry: the first publish reaches Verdaccio and is stored, but the
+  //        connection is cut before npm hears the answer (an ambiguous publish). Everything else passes through.
+  let cut = 0;
+  const flaky = createServer((req, res) => {
+    const up = httpRequest({ host: "127.0.0.1", port: 4874, method: req.method, path: req.url, headers: req.headers }, (ur) => {
+      if (req.method === "PUT" && cut === 0) { cut++; ur.resume(); ur.on("end", () => { log(`network: publish ${req.url} stored by the registry (${ur.statusCode}); connection cut before the answer`); req.socket.destroy(); }); return; }
+      res.writeHead(ur.statusCode ?? 502, ur.headers); ur.pipe(res);
+    });
+    up.on("error", () => { res.writeHead(502); res.end(); });
+    req.pipe(up);
+  });
+  await new Promise<void>((r) => flaky.listen(4875, "127.0.0.1", r));
+  servers.push(flaky);
 
   // ── 3. Execution substrate: Boundry CI ──
   const fdb = join(base, "feltdb");
@@ -122,12 +137,26 @@ try {
   const installations = InstallationsFile.parse(JSON.parse(readFileSync(join(dataDir, "installations.json"), "utf8"))).installations;
   const m = new ReleaseManager({
     dataDir, runtimeDir: join(base, "release-runtime"), catalog, installations, principals: PrincipalCatalog.parse(JSON.parse(readFileSync(join(root, "config/principals.json"), "utf8"))).principals, pollMs: 2000, buildTimeoutMs: 20 * 60_000,
-    testRegistries: ["http://127.0.0.1:4874"], // declared test registry (asserted approvals are acceptable only here)
-    registry: () => new NpmRegistry("http://127.0.0.1:4874", readFileSync(npmTokenFile, "utf8")),
+    testRegistries: ["http://127.0.0.1:4875"], // declared test registry (asserted approvals are acceptable only here)
+    registry: () => new NpmRegistry("http://127.0.0.1:4875", readFileSync(npmTokenFile, "utf8")), // through the unreliable path
     git: (repo) => new GitCli(`file://${join(base, "git")}/${repo}.git`, join(base, "release-runtime", "git"), { name: "Boundry Release", email: "release@boundry.invalid" }),
     releases: new GitHubReleases(ghUrl, "stand-in"),
     executor: new BoundryCiExecutor("http://127.0.0.1:21090", submitter),
   });
+  // The real source commit has a stale lockfile (packages/server/package.json says 0.4.1, package-lock.json 0.4.0):
+  // the planner must refuse it. The proof records the refusal, then repairs the lockfile exactly as a maintainer
+  // would (npm install --package-lock-only) in a separate, labelled commit, and plans from that commit.
+  try { await m.plan({ packages: PKGS.map((p) => p.id), bump: "patch", requestedBy: "maintenance-agent" }); log("STALE LOCKFILE NOT REFUSED"); }
+  catch (e) {
+    writeFileSync(join(outDir.replace(/\/$/, "") + "-stale-lockfile-refused.md"), `# Release train refused: stale lockfile in rkendel1/resolver@${sourceCommit.slice(0, 12)}\n\nThe planner read the real commit and refused:\n\n\`\`\`\n${(e as Error).message}\n\`\`\`\n\nConfirmed independently: at that commit \`packages/server/package.json\` declares 0.4.1 and \`package-lock.json\` records 0.4.0 (the commit "Release @appport/resolver 0.4.1" bumped the manifest without the lockfile). The proof then repairs it with \`npm install --package-lock-only\` in a separate commit and plans from there.\n`);
+    log(`stale lockfile refused: ${(e as Error).message.split("\n")[1]?.trim()}`);
+  }
+  const fix = mkdtempSync(join(tmpdir(), "lockfix-"));
+  sh("git", ["clone", "-q", bare, fix]);
+  sh("npm", ["install", "--package-lock-only", "--ignore-scripts", "--no-audit", "--no-fund"], { cwd: fix });
+  sh("git", ["-C", fix, "-c", "user.name=Maintainer (proof)", "-c", "user.email=maintainer@boundry.invalid", "commit", "-q", "-am", "Repair package-lock.json (packages/server 0.4.0 → 0.4.1)"]);
+  sh("git", ["-C", fix, "push", "-q", "origin", "HEAD:main"]);
+  log(`repair commit ${sh("git", ["-C", bare, "rev-parse", "main"]).trim().slice(0, 12)}: ${sh("git", ["-C", fix, "show", "--stat", "--format=", "HEAD"]).trim()}`);
   try { await m.plan({ packages: [PKGS[0]!.id], bump: "patch", requestedBy: "maintenance-agent" }); }
   catch (e) { writeFileSync(join(outDir.replace(/\/$/, "") + "-lone-core-refused.md"), `# Lone release of @appport/resolver-core refused\n\n${(e as Error).message}\n`); log(`lone core release refused: ${(e as Error).message.split("\n")[0]}`); }
   const planned = await m.plan({ packages: PKGS.map((p) => p.id), bump: "patch", requestedBy: "maintenance-agent", reason: "End-to-end proof of the Release Manager (resolver release train)" });
@@ -148,10 +177,15 @@ try {
 
   // ── 6. Independent verification (asks each authority directly, not the record) ──
   const v: Record<string, unknown> = {};
+  v.lifecycle = done.history.map((h) => h.state);
+  v.publishAttempts = done.attempts.filter((a) => a.step === "publish").map((a) => `${a.outcome}: ${a.detail}`);
+  v.checks = done.plan.checks;
+  v.unknowns = done.plan.unknowns;
+  v.downstream = done.downstream;
   v.governance = { proposedBy: `${done.plan.requestedBy} (${done.plan.requestedByType})`, requiredApprovals: done.plan.requiredApprovals, protected: done.plan.protected, approvals: done.approvals, refusals };
   const head = sh("git", ["-C", bare, "rev-parse", "refs/heads/main"]).trim();
   v.git = {
-    branchHead: head, parentOfHead: sh("git", ["-C", bare, "rev-parse", `${head}^`]).trim(), approvedSource: sourceCommit, releaseCommit: done.facts.releaseCommit,
+    branchHead: head, parentOfHead: sh("git", ["-C", bare, "rev-parse", `${head}^`]).trim(), approvedSource: done.plan.sourceCommit, realResolverCommit: sourceCommit, approvedSourceIsRepairOfReal: sh("git", ["-C", bare, "rev-parse", `${done.plan.sourceCommit}^`]).trim() === sourceCommit, releaseCommit: done.facts.releaseCommit,
     packages: PKGS.map((p) => {
       const pp = done.plan.packages.find((x) => x.package === p.id)!;
       const tagTarget = sh("git", ["-C", bare, "rev-parse", `refs/tags/${pp.tag}^{commit}`]).trim();
@@ -187,6 +221,7 @@ try {
   console.log(JSON.stringify(v, null, 2));
 } finally {
   gh?.close(); gh?.closeAllConnections();
+  for (const x of servers) { x.close(); x.closeAllConnections(); }
   for (const p of procs) p.kill("SIGTERM");
   try { execFileSync("bash", ["-c", `kill $(cat ${join(base, "feltdb", "pid")}) 2>/dev/null || true`]); } catch { /* gone */ }
 }
