@@ -186,7 +186,7 @@ export class ReleaseManager {
     if (existsSync(this.path(id))) throw new ReleaseError("busy", `a release record for ${id} already exists`);
     const rec: ReleaseRecord = {
       schemaVersion: 1, id, planDigest: planDigestOf(plan), plan, state: "awaiting-approval", approval: null,
-      facts: { releaseCommit: null, build: null, tags: [], published: [], registryVerification: [], githubRelease: null },
+      facts: { releaseCommit: null, build: null, tags: [], published: [], registryVerification: [], githubReleases: [] },
       failure: null,
       history: [
         { at: now, state: "proposed", note: `${req.bump} release requested by ${req.requestedBy}` },
@@ -416,16 +416,18 @@ export class ReleaseManager {
   /** registry-verified → released: GitHub release for the tag (if required). */
   async #githubRelease(r: ReleaseRecord) {
     if (r.plan.githubRelease) {
-      const pp = r.plan.packages[0]!; // ReleasePlan.packages is min(1)
-      const existing = await this.d.releases.find(r.plan.repository, pp.tag);
-      if (existing) {
-        if (existing.tag !== pp.tag) throw new Blocked(`GitHub release found for ${existing.tag}, expected ${pp.tag}`, false);
-        r.facts.githubRelease = { url: existing.url, tag: pp.tag, alreadyPresent: true };
-        this.#did(r, "github-release", "already-done", existing.url);
-      } else {
-        const body = await this.#notes(r);
-        const created = await this.d.releases.create(r.plan.repository, { tag: pp.tag, name: r.plan.packages.map((x) => `${x.name} ${x.proposedVersion}`).join(", "), body, prerelease: !!semver.prerelease(pp.proposedVersion) });
-        r.facts.githubRelease = { url: created.url, tag: pp.tag, alreadyPresent: false };
+      const body = await this.#notes(r);
+      for (const pp of r.plan.packages) {
+        if (r.facts.githubReleases.some((g) => g.package === pp.package)) continue;
+        const existing = await this.d.releases.find(r.plan.repository, pp.tag);
+        if (existing) {
+          if (existing.tag !== pp.tag) throw new Blocked(`GitHub release found for ${existing.tag}, expected ${pp.tag}`, false);
+          r.facts.githubReleases.push({ package: pp.package, url: existing.url, tag: pp.tag, alreadyPresent: true });
+          this.#did(r, "github-release", "already-done", existing.url);
+          continue;
+        }
+        const created = await this.d.releases.create(r.plan.repository, { tag: pp.tag, name: `${pp.name} ${pp.proposedVersion}`, body, prerelease: !!semver.prerelease(pp.proposedVersion) });
+        r.facts.githubReleases.push({ package: pp.package, url: created.url, tag: pp.tag, alreadyPresent: false });
         this.#did(r, "github-release", "done", created.url);
       }
     } else this.#did(r, "github-release", "already-done", "skipped: the release policy does not create GitHub releases");

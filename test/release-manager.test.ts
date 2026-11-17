@@ -189,7 +189,7 @@ test("9. retry after partial completion (process restart mid-release): reconcile
   await w.m.execute(r.id); // reaches registry-verified
   // Simulate a crash that lost the record's later facts: roll the record back to "approved" with no facts.
   const rec = JSON.parse(readFileSync(w.m.path(r.id), "utf8"));
-  rec.state = "approved"; rec.failure = null; rec.facts = { releaseCommit: null, build: null, tags: [], published: [], registryVerification: [], githubRelease: null };
+  rec.state = "approved"; rec.failure = null; rec.facts = { releaseCommit: null, build: null, tags: [], published: [], registryVerification: [], githubReleases: [] };
   (await import("node:fs")).writeFileSync(w.m.path(r.id), JSON.stringify(rec));
   const head = w.repo.head();
   const fresh = w.mk(); // new process
@@ -297,4 +297,5 @@ test("a coordinated multi-package release shares one release commit, one tag per
   assert.equal(tags["@demo/core@0.2.1"], out.facts.releaseCommit);
   assert.equal(tags["@demo/client@0.3.1"], out.facts.releaseCommit);
   assert.equal(w.registry.publishes, 2);
+  assert.deepEqual(out.facts.githubReleases.map((g) => g.tag).sort(), ["@demo/client@0.3.1", "@demo/core@0.2.1"], "one GitHub release per package tag");
 });

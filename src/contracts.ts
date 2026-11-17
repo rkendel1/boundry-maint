@@ -694,7 +694,7 @@ export const ReleaseRecord = z.object({
     tags: z.array(z.object({ name: z.string(), target: z.string() })),
     published: z.array(z.object({ package: Id, version: z.string(), integrity: z.string(), alreadyPresent: z.boolean() })),
     registryVerification: z.array(z.object({ package: Id, version: z.string(), integrity: z.string(), tarballSha256: z.string(), distTagPointsHere: z.boolean(), at: IsoDate })),
-    githubRelease: z.object({ url: z.string(), tag: z.string(), alreadyPresent: z.boolean() }).nullable(),
+    githubReleases: z.array(z.object({ package: Id, url: z.string(), tag: z.string(), alreadyPresent: z.boolean() })).describe("One per released package tag"),
   }),
   failure: z.object({ at: ReleaseState, reason: z.string(), recoverable: z.boolean(), when: IsoDate }).nullable(),
   history: z.array(z.object({ at: IsoDate, state: ReleaseState, note: z.string() })),

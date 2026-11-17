@@ -23,9 +23,17 @@ import { classify } from "../../src/version/compare.ts";
 
 const [resolverDir, ciDir, verdaccioBin, outDir] = process.argv.slice(2) as [string, string, string, string];
 const root = new URL("../..", import.meta.url).pathname;
-const PKG = { id: "appport-resolver-core", name: "@appport/resolver-core", repo: "rkendel1/resolver" };
+// The resolver release train: the planner refuses core alone (workspace siblings pin it exactly).
+const REPO = "rkendel1/resolver";
+const PKGS = [
+  { id: "appport-resolver-core", name: "@appport/resolver-core", dir: "packages/core" },
+  { id: "appport-resolver-client", name: "@appport/resolver-client", dir: "packages/client" },
+  { id: "appport-resolver", name: "@appport/resolver", dir: "packages/server" },
+];
 const base = mkdtempSync(join(tmpdir(), "release-proof-"));
 const procs: ChildProcess[] = [];
+// GitHub stand-in: its URLs say "stand-in" so no evidence can be mistaken for a real github.com release.
+let gh: ReturnType<typeof createServer> | undefined;
 const sh = (cmd: string, args: string[], opts: { cwd?: string; env?: NodeJS.ProcessEnv } = {}) => execFileSync(cmd, args, { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"], ...opts });
 const log = (s: string) => console.log(`[proof] ${s}`);
 const wait = async (url: string, ms = 30_000) => { const end = Date.now() + ms; while (Date.now() < end) { try { if ((await fetch(url)).ok) return; } catch { /* starting */ } await new Promise((r) => setTimeout(r, 250)); } throw new Error(`timeout waiting for ${url}`); };
@@ -35,7 +43,7 @@ const sha256 = (b: Buffer) => createHash("sha256").update(b).digest("hex");
 try {
   // ── 1. Git authority: bare repository with the real source ──
   const sourceCommit = sh("git", ["-C", resolverDir, "rev-parse", "HEAD"]).trim();
-  const bare = join(base, "git", `${PKG.repo}.git`);
+  const bare = join(base, "git", `${REPO}.git`);
   mkdirSync(bare, { recursive: true });
   sh("git", ["init", "-q", "--bare", "-b", "main", bare]);
   for (const [k, v] of [["uploadpack.allowAnySHA1InWant", "true"], ["receive.shallowUpdate", "true"]]) sh("git", ["-C", bare, "config", k!, v!]);
@@ -50,23 +58,25 @@ try {
   await wait("http://127.0.0.1:4874/-/ping");
   const user = await (await fetch("http://127.0.0.1:4874/-/user/org.couchdb.user:releaser", { method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify({ name: "releaser", password: randomBytes(12).toString("hex") }) })).json() as { token: string };
   const npmTokenFile = secretFile("npm-token", user.token);
-  const real: any = await (await fetch(`https://registry.npmjs.org/${PKG.name.replace("/", "%2f")}`)).json();
-  const versions = Object.keys(real.versions).sort((a, b) => Date.parse(real.time[a]) - Date.parse(real.time[b]));
   const seedRc = join(vd, "npmrc");
   writeFileSync(seedRc, `//127.0.0.1:4874/:_authToken=${user.token}\n`, { mode: 0o600 });
-  const seeded: Record<string, { npmjsIntegrity: string; standInIntegrity?: string }> = {};
-  for (const v of versions) {
-    const bytes = Buffer.from(await (await fetch(real.versions[v].dist.tarball)).arrayBuffer());
-    const f = join(vd, `seed-${v}.tgz`);
-    writeFileSync(f, bytes);
-    const tag = v === real["dist-tags"].latest ? "latest" : `seed-${v.replace(/\./g, "-")}`;
-    sh("npm", ["publish", f, "--registry", "http://127.0.0.1:4874/", "--tag", tag, "--ignore-scripts"], { env: { ...process.env, npm_config_userconfig: seedRc } });
-    seeded[v] = { npmjsIntegrity: real.versions[v].dist.integrity };
+  const seeded: Record<string, Record<string, { npmjsIntegrity: string; standInIntegrity?: string }>> = {};
+  for (const pkg of PKGS) {
+    const real: any = await (await fetch(`https://registry.npmjs.org/${pkg.name.replace("/", "%2f")}`)).json();
+    const versions = Object.keys(real.versions).sort((a, b) => Date.parse(real.time[a]) - Date.parse(real.time[b]));
+    seeded[pkg.name] = {};
+    for (const v of versions) {
+      const bytes = Buffer.from(await (await fetch(real.versions[v].dist.tarball)).arrayBuffer());
+      const f = join(vd, `seed-${pkg.id}-${v}.tgz`);
+      writeFileSync(f, bytes);
+      const tag = v === real["dist-tags"].latest ? "latest" : `seed-${v.replace(/\./g, "-")}`;
+      sh("npm", ["publish", f, "--registry", "http://127.0.0.1:4874/", "--tag", tag, "--ignore-scripts"], { env: { ...process.env, npm_config_userconfig: seedRc } });
+      seeded[pkg.name]![v] = { npmjsIntegrity: real.versions[v].dist.integrity };
+    }
+    const standIn: any = await (await fetch(`http://127.0.0.1:4874/${pkg.name.replace("/", "%2f")}`)).json();
+    for (const v of versions) seeded[pkg.name]![v]!.standInIntegrity = standIn.versions[v]?.dist?.integrity;
+    log(`npm authority: ${pkg.name} seeded with ${versions.join(", ")} — integrity identical to npmjs.org: ${versions.every((v) => seeded[pkg.name]![v]!.npmjsIntegrity === seeded[pkg.name]![v]!.standInIntegrity)}; latest=${standIn["dist-tags"].latest}`);
   }
-  // Put `latest` back on the real latest (publishing older versions last would otherwise move it).
-  const standIn: any = await (await fetch(`http://127.0.0.1:4874/${PKG.name.replace("/", "%2f")}`)).json();
-  for (const v of versions) seeded[v]!.standInIntegrity = standIn.versions[v]?.dist?.integrity;
-  log(`npm authority: Verdaccio seeded with ${versions.join(", ")} (real tarballs; integrity identical to npmjs.org: ${versions.every((v) => seeded[v]!.npmjsIntegrity === seeded[v]!.standInIntegrity)}) latest=${standIn["dist-tags"].latest}`);
 
   // ── 3. Execution substrate: Boundry CI ──
   const fdb = join(base, "feltdb");
@@ -93,11 +103,11 @@ try {
 
   // ── 4. GitHub Releases stand-in ──
   const ghReleases: { tag: string; name: string; body: string; at: string }[] = [];
-  const gh = createServer(async (req, res) => {
+  gh = createServer(async (req, res) => {
     let raw = ""; for await (const c of req) raw += c;
     const m = /^\/repos\/([^/]+\/[^/]+)\/releases(?:\/tags\/(.+))?$/.exec(req.url ?? "");
-    if (m && req.method === "GET" && m[2]) { const r = ghReleases.find((x) => x.tag === decodeURIComponent(m[2]!)); res.writeHead(r ? 200 : 404, { "content-type": "application/json" }); return res.end(JSON.stringify(r ? { tag_name: r.tag, html_url: `https://github.com/${m[1]}/releases/tag/${encodeURIComponent(r.tag)}` } : { message: "Not Found" })); }
-    if (m && req.method === "POST") { const b = JSON.parse(raw); ghReleases.push({ tag: b.tag_name, name: b.name, body: b.body, at: new Date().toISOString() }); res.writeHead(201, { "content-type": "application/json" }); return res.end(JSON.stringify({ html_url: `https://github.com/${m[1]}/releases/tag/${encodeURIComponent(b.tag_name)}` })); }
+    if (m && req.method === "GET" && m[2]) { const r = ghReleases.find((x) => x.tag === decodeURIComponent(m[2]!)); res.writeHead(r ? 200 : 404, { "content-type": "application/json" }); return res.end(JSON.stringify(r ? { tag_name: r.tag, html_url: `http://${req.headers.host}/stand-in/${m[1]}/releases/tag/${encodeURIComponent(r.tag)}` } : { message: "Not Found" })); }
+    if (m && req.method === "POST") { const b = JSON.parse(raw); ghReleases.push({ tag: b.tag_name, name: b.name, body: b.body, at: new Date().toISOString() }); res.writeHead(201, { "content-type": "application/json" }); return res.end(JSON.stringify({ html_url: `http://${req.headers.host}/stand-in/${m[1]}/releases/tag/${encodeURIComponent(b.tag_name)}` })); }
     res.writeHead(404); res.end();
   });
   await new Promise<void>((r) => gh.listen(0, "127.0.0.1", r));
@@ -107,7 +117,7 @@ try {
   const dataDir = join(base, "maintenance-data");
   cpSync(join(root, "data"), dataDir, { recursive: true });
   const catalog = PackageCatalog.parse(JSON.parse(readFileSync(join(root, "config/packages.json"), "utf8"))).packages
-    .map((p) => (p.id === PKG.id ? { ...p, release: { approvers: ["randy"], allowedBumps: ["patch", "minor", "prerelease", "repository"], prereleaseId: "rc", tagFormat: "{name}@{version}", branch: "main", validation: ["test"], githubRelease: true, distTag: "latest" } as const } : p));
+    .map((p) => (PKGS.some((x) => x.id === p.id) ? { ...p, release: { approvers: ["randy"], allowedBumps: ["patch", "minor", "prerelease", "repository"], prereleaseId: "rc", tagFormat: "{name}@{version}", branch: "main", validation: ["test"], githubRelease: true, distTag: "latest" } as const } : p));
   const installations = InstallationsFile.parse(JSON.parse(readFileSync(join(dataDir, "installations.json"), "utf8"))).installations;
   const m = new ReleaseManager({
     dataDir, runtimeDir: join(base, "release-runtime"), catalog: catalog as any, installations, pollMs: 2000, buildTimeoutMs: 20 * 60_000,
@@ -116,7 +126,9 @@ try {
     releases: new GitHubReleases(ghUrl, "stand-in"),
     executor: new BoundryCiExecutor("http://127.0.0.1:21090", operator),
   });
-  const planned = await m.plan({ packages: [PKG.id], bump: "patch", requestedBy: "randy", reason: "End-to-end proof of the Release Manager" });
+  try { await m.plan({ packages: [PKGS[0]!.id], bump: "patch", requestedBy: "randy" }); }
+  catch (e) { writeFileSync(join(outDir.replace(/\/$/, "") + "-lone-core-refused.md"), `# Lone release of @appport/resolver-core refused\n\n${(e as Error).message}\n`); log(`lone core release refused: ${(e as Error).message.split("\n")[0]}`); }
+  const planned = await m.plan({ packages: PKGS.map((p) => p.id), bump: "patch", requestedBy: "randy", reason: "End-to-end proof of the Release Manager (resolver release train)" });
   mkdirSync(outDir, { recursive: true });
   writeFileSync(join(outDir, "1-approval-request.md"), approvalRequest(planned) + "\n");
   log(`planned ${planned.id}; plan digest ${planned.planDigest.slice(0, 16)}…`);
@@ -131,27 +143,43 @@ try {
   // ── 6. Independent verification (asks each authority directly, not the record) ──
   const v: Record<string, unknown> = {};
   const head = sh("git", ["-C", bare, "rev-parse", "refs/heads/main"]).trim();
-  const tagTarget = sh("git", ["-C", bare, "rev-parse", `refs/tags/${PKG.name}@0.2.1^{commit}`]).trim();
-  v.git = { branchHead: head, parentOfHead: sh("git", ["-C", bare, "rev-parse", `${head}^`]).trim(), approvedSource: sourceCommit, tag: `${PKG.name}@0.2.1`, tagTarget, tagIsReleaseCommit: tagTarget === done.facts.releaseCommit, manifestVersionAtTag: JSON.parse(sh("git", ["-C", bare, "show", `${tagTarget}:packages/core/package.json`])).version, dependentPinUnchanged: JSON.parse(sh("git", ["-C", bare, "show", `${tagTarget}:packages/client/package.json`])).dependencies["@appport/resolver-core"] };
-  const doc: any = await (await fetch(`http://127.0.0.1:4874/${PKG.name.replace("/", "%2f")}`)).json();
-  const pub = doc.versions["0.2.1"];
-  const tarball = Buffer.from(await (await fetch(pub.dist.tarball)).arrayBuffer());
-  const art = done.facts.build?.artifacts[0];
-  v.registry = { latest: doc["dist-tags"].latest, integrity: pub.dist.integrity, integrityMatchesBuiltArtifact: pub.dist.integrity === art?.sha512Integrity, tarballSha256: sha256(tarball), bytesMatchBuiltArtifact: sha256(tarball) === art?.sha256, earlierVersionsUntouched: versions.every((x) => doc.versions[x]?.dist?.integrity === seeded[x]!.npmjsIntegrity) };
+  v.git = {
+    branchHead: head, parentOfHead: sh("git", ["-C", bare, "rev-parse", `${head}^`]).trim(), approvedSource: sourceCommit, releaseCommit: done.facts.releaseCommit,
+    packages: PKGS.map((p) => {
+      const pp = done.plan.packages.find((x) => x.package === p.id)!;
+      const tagTarget = sh("git", ["-C", bare, "rev-parse", `refs/tags/${pp.tag}^{commit}`]).trim();
+      return { tag: pp.tag, tagTarget, tagIsReleaseCommit: tagTarget === done.facts.releaseCommit, manifestVersionAtTag: JSON.parse(sh("git", ["-C", bare, "show", `${tagTarget}:${p.dir}/package.json`])).version };
+    }),
+    pinsAtReleaseCommit: Object.fromEntries(["packages/client", "packages/server"].map((d) => [d, JSON.parse(sh("git", ["-C", bare, "show", `${head}:${d}/package.json`])).dependencies?.["@appport/resolver-core"]])),
+  };
+  const regOut: unknown[] = [];
+  for (const p of PKGS) {
+    const pp = done.plan.packages.find((x) => x.package === p.id)!;
+    const art = done.facts.build?.artifacts.find((a) => a.package === p.id);
+    const doc: any = await (await fetch(`http://127.0.0.1:4874/${p.name.replace("/", "%2f")}`)).json();
+    const pub = doc.versions[pp.proposedVersion];
+    if (!pub) { regOut.push({ package: p.name, version: pp.proposedVersion, present: false }); continue; }
+    const tarball = Buffer.from(await (await fetch(pub.dist.tarball)).arrayBuffer());
+    regOut.push({ package: p.name, version: pp.proposedVersion, latest: doc["dist-tags"].latest, integrity: pub.dist.integrity, integrityMatchesBuiltArtifact: pub.dist.integrity === art?.sha512Integrity, tarballSha256: sha256(tarball), bytesMatchBuiltArtifact: sha256(tarball) === art?.sha256, earlierVersionsUntouched: Object.entries(seeded[p.name]!).every(([x, s]) => doc.versions[x]?.dist?.integrity === s.npmjsIntegrity) });
+  }
+  v.registry = regOut;
   const ev: any = await (await fetch(`http://127.0.0.1:21090/v1/runs/${done.facts.build?.runId}/evidence`, { headers: { authorization: `Bearer ${operator}` } })).json();
   v.execution = { runId: ev.run.id, state: ev.run.state, commitBuilt: ev.run.sha, isReleaseCommit: ev.run.sha === done.facts.releaseCommit, recipe: ev.definition.path, jobs: ev.jobs.map((j: any) => ({ key: j.key, state: j.state, capabilities: j.capabilities, artifacts: j.attempts.at(-1)?.artifacts })) };
   writeFileSync(join(outDir, "4-execution-evidence.json"), JSON.stringify(ev, null, 2) + "\n");
-  v.githubRelease = ghReleases.map((r) => ({ tag: r.tag, name: r.name, citesArtifact: !!art && r.body.includes(art.sha256), citesCommit: r.body.includes(done.facts.releaseCommit ?? "--") }));
+  v.githubReleases = ghReleases.map((r) => ({ tag: r.tag, name: r.name, citesEveryArtifact: (done.facts.build?.artifacts ?? []).every((a) => r.body.includes(a.sha256)), citesCommit: r.body.includes(done.facts.releaseCommit ?? "--") }));
   // Consumers: Maintenance's own observation code sees the new release (pointed at the stand-in registry).
   // (run with MAINTENANCE_NPM_REGISTRY=http://127.0.0.1:4874 so the unmodified collector reads the stand-in)
-  const observed = await fetchNpmPackage(PKG.name, 20_000).catch(() => null);
+  const observed = await fetchNpmPackage("@appport/resolver-client", 20_000).catch(() => null);
+  const feltkit = installations.find((i) => i.package === "appport-resolver-client" && i.project === "feltkit");
   v.consumers = observed ? {
+    note: "Maintenance's unmodified npm collector and status classifier, pointed at the stand-in registry",
     observedLatest: observed.latestVersion,
-    resolverClient: classify({ resolved: "0.2.0", latest: observed.latestStable, latestPrerelease: observed.latestPrerelease, trackPrereleases: false, registryAvailable: true, deprecated: null, yanked: false }),
+    feltkit: feltkit ? { manifest: feltkit.manifest, declared: feltkit.declaredVersion, resolved: feltkit.resolvedVersion, classification: classify({ resolved: feltkit.resolvedVersion, latest: observed.latestStable, latestPrerelease: observed.latestPrerelease, trackPrereleases: false, registryAvailable: true, deprecated: null, yanked: false }) } : "feltkit installation not in data",
   } : "collector could not read the stand-in registry";
   writeFileSync(join(outDir, "5-independent-verification.json"), JSON.stringify(v, null, 2) + "\n");
   console.log(JSON.stringify(v, null, 2));
 } finally {
+  gh?.close(); gh?.closeAllConnections();
   for (const p of procs) p.kill("SIGTERM");
   try { execFileSync("bash", ["-c", `kill $(cat ${join(base, "feltdb", "pid")}) 2>/dev/null || true`]); } catch { /* gone */ }
 }

@@ -1,0 +1,137 @@
+{
+  "git": {
+    "branchHead": "e2773e0be48b271f50efcce0d0cf4b3eb640024f",
+    "parentOfHead": "aaab053651a9144e470c3b62c1c550ab084effe7",
+    "approvedSource": "aaab053651a9144e470c3b62c1c550ab084effe7",
+    "releaseCommit": "e2773e0be48b271f50efcce0d0cf4b3eb640024f",
+    "packages": [
+      {
+        "tag": "@appport/resolver-core@0.2.1",
+        "tagTarget": "e2773e0be48b271f50efcce0d0cf4b3eb640024f",
+        "tagIsReleaseCommit": true,
+        "manifestVersionAtTag": "0.2.1"
+      },
+      {
+        "tag": "@appport/resolver-client@0.3.1",
+        "tagTarget": "e2773e0be48b271f50efcce0d0cf4b3eb640024f",
+        "tagIsReleaseCommit": true,
+        "manifestVersionAtTag": "0.3.1"
+      },
+      {
+        "tag": "@appport/resolver@0.4.2",
+        "tagTarget": "e2773e0be48b271f50efcce0d0cf4b3eb640024f",
+        "tagIsReleaseCommit": true,
+        "manifestVersionAtTag": "0.4.2"
+      }
+    ],
+    "pinsAtReleaseCommit": {
+      "packages/client": "0.2.1",
+      "packages/server": "0.2.1"
+    }
+  },
+  "registry": [
+    {
+      "package": "@appport/resolver-core",
+      "version": "0.2.1",
+      "latest": "0.2.1",
+      "integrity": "sha512-gXGxWKf2SHcIeiZnTPjWfmQBudTfAecL2AuQwbeOo11KHUl6ok30JJzCBxnppot52pNYGYnPf71bjb6UeVrSGg==",
+      "integrityMatchesBuiltArtifact": true,
+      "tarballSha256": "b001e5edaaee97103e55647ad18856d24632d23fdd14a6a2d2ce193821ea179b",
+      "bytesMatchBuiltArtifact": true,
+      "earlierVersionsUntouched": true
+    },
+    {
+      "package": "@appport/resolver-client",
+      "version": "0.3.1",
+      "latest": "0.3.1",
+      "integrity": "sha512-k4T8jxl4P8ytaHzcrSu5r3xrm+rNdypY7W5Zr+qz2XX1+1+1rHtR2ZE4QMjGZrKRRgJgtzTBticV2kdjPTPxng==",
+      "integrityMatchesBuiltArtifact": true,
+      "tarballSha256": "eafb495680050af107e8cbfd82169186b6f654cf7cd2ff60b639a69665240664",
+      "bytesMatchBuiltArtifact": true,
+      "earlierVersionsUntouched": true
+    },
+    {
+      "package": "@appport/resolver",
+      "version": "0.4.2",
+      "latest": "0.4.2",
+      "integrity": "sha512-mujrA+1DEDQDaSvpJdYLHyVXfPSo7FokNMDfmBGmfcgvsXG2uSUkQDHcGU7nUmUe8ChzjiAVbsZ7gJ3Gi2UEdQ==",
+      "integrityMatchesBuiltArtifact": true,
+      "tarballSha256": "312ecf060a121326658aa8faf4f0060807ad364fddb0cc0a83b75205a637d3ad",
+      "bytesMatchBuiltArtifact": true,
+      "earlierVersionsUntouched": true
+    }
+  ],
+  "execution": {
+    "runId": "run_ee4c86be74f89bf47be61b95",
+    "state": "succeeded",
+    "commitBuilt": "e2773e0be48b271f50efcce0d0cf4b3eb640024f",
+    "isReleaseCommit": true,
+    "recipe": ".boundry/recipes/boundry-release.md",
+    "jobs": [
+      {
+        "key": "step-package",
+        "state": "succeeded",
+        "capabilities": [
+          "step.package@1.0.0",
+          "toolchain.node22"
+        ],
+        "artifacts": [
+          {
+            "digest": "1088d0a968c24310857fc65c474c94e65480be3028e81c60da395ce1b5fca8df",
+            "name": "package.tar",
+            "size": 266240
+          }
+        ]
+      },
+      {
+        "key": "tests",
+        "state": "succeeded",
+        "capabilities": [
+          "check.tests@1.0.0",
+          "toolchain.node22"
+        ],
+        "artifacts": [
+          {
+            "digest": "94648d58bd35927d539fb689f52e35e290ccbffe800da94dec3592a26c974afd",
+            "name": "test-results.txt",
+            "size": 19033
+          }
+        ]
+      }
+    ]
+  },
+  "githubReleases": [
+    {
+      "tag": "@appport/resolver@0.4.2",
+      "name": "@appport/resolver 0.4.2",
+      "citesEveryArtifact": true,
+      "citesCommit": true
+    },
+    {
+      "tag": "@appport/resolver-client@0.3.1",
+      "name": "@appport/resolver-client 0.3.1",
+      "citesEveryArtifact": true,
+      "citesCommit": true
+    },
+    {
+      "tag": "@appport/resolver-core@0.2.1",
+      "name": "@appport/resolver-core 0.2.1",
+      "citesEveryArtifact": true,
+      "citesCommit": true
+    }
+  ],
+  "consumers": {
+    "note": "Maintenance's unmodified npm collector and status classifier, pointed at the stand-in registry",
+    "observedLatest": "0.3.1",
+    "feltkit": {
+      "manifest": "packages/sdk/package.json",
+      "declared": "0.3.0",
+      "resolved": "0.3.0",
+      "classification": {
+        "status": "patch-behind",
+        "target": "0.3.1",
+        "bump": "patch"
+      }
+    }
+  }
+}

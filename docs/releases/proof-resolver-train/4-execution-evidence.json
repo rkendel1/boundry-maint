@@ -1,0 +1,172 @@
+{
+  "run": {
+    "actor": "boundry-maintenance",
+    "cancelInProgress": false,
+    "cancelRequested": false,
+    "concurrencyGroup": null,
+    "createdAt": 1794875368845,
+    "definitionPath": ".boundry/recipes/boundry-release.md",
+    "downstream": [],
+    "eventId": "ev_5249cb3241dc2b902a20cd504ad897a2981056c8",
+    "explanation": "# Release build: @appport/resolver 0.4.2, @appport/resolver-client 0.3.1, @appport/resolver-core 0.2.1\n\nBuild, test and package release commit e2773e0be48b271f50efcce0d0cf4b3eb640024f for Boundry Maintenance release appport-resolver@0.4.2.\n\nRecipe `.boundry/recipes/boundry-release.md` · sha256:e93f21c7cc71 · compiled by boundry-recipes/1.0.0 with boundry-capabilities/1.0.1 · definition bd87b71702d9\n\n## Runs when\n- an authorized person starts it\n\n## Project\n- Node.js project using npm (`package-lock.json`) in the repository root (evidence: `package-lock.json`, `package.json`)\n\n## Checks (one job)\n1. **The tests pass** — runs `npm test`\n   Node.js 22 · installs dependencies first · internet: yes · keeps `test-results.txt` · capability `check.tests@1.0.0`\n\n## Steps (in order, after every check passes)\n1. **Package the result** — runs `npm run build`, then `npm pack --workspaces`\n   Node.js 22 · installs dependencies first · internet: yes · keeps `package.tar` · capability `step.package@1.0.0`\n\n## Authority\n- Permissions: none\n- Secrets: none\n- Approvals: none\n- Publishes or deploys: nothing\n- Proposed changes from forks never receive secrets, release/deploy access or trusted caches.\n\n## Kept\n- `package.tar` from “Package the result” for 3650 days\n- `test-results.txt` from “The tests pass” for 30 days (also when tests fail)\n- The record: this recipe, its compiled plan, project facts, every attempt's log, inputs and outputs (always)\n\n## Afterward\n- Nothing is reported to GitHub (add “Report the result on the change” to do so)\n",
+    "finishedAt": 1794875406010,
+    "id": "run_ee4c86be74f89bf47be61b95",
+    "kind": "manual",
+    "pipeline": "Release build: @appport/resolver 0.4.2, @appport/resolver-client 0.3.1, @appport/resolver-core 0.2.1",
+    "planDigest": "954c794b3a6a92846641c434082c6327f359cd6ca8b65cdda27adfb50a045774",
+    "reason": null,
+    "recipe": {
+      "capabilities": {
+        "check.tests": "1.0.0",
+        "keep.evidence": "1.0.0",
+        "keep.package": "1.0.0",
+        "keep.test-results": "1.0.0",
+        "step.package": "1.0.0",
+        "trigger.manual": "1.0.0"
+      },
+      "catalog": "boundry-capabilities/1.0.1",
+      "compiler": "boundry-recipes/1.0.0",
+      "definitionDigest": "bd87b71702d9ba9caf071c376037402e4bffd9ac956d61352673fe1eb9e93dbf",
+      "facts": {
+        "dir": ".",
+        "ecosystems": [
+          "node"
+        ],
+        "evidence": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "node": {
+          "hints": {},
+          "lockfile": "package-lock.json",
+          "packageManager": "npm",
+          "scripts": {
+            "build": "tsc -b tsconfig.build.json",
+            "clean": "tsc -b tsconfig.build.json --clean",
+            "publish:packages": "node --env-file-if-exists=.env.local scripts/publish-packages.mjs",
+            "test": "vitest run",
+            "test:browser": "vitest run --config vitest.browser.config.ts",
+            "typecheck": "tsc -b tsconfig.build.json --pretty"
+          },
+          "workspaces": true
+        }
+      },
+      "factsDigest": "497ae868e72392c18a86be6136faa466db71713dc7d74cb01f1806141673e9b9",
+      "path": ".boundry/recipes/boundry-release.md",
+      "sourceDigest": "e93f21c7cc716debd00d5c20d6b3d85a93a7681d82a8cabc770b71c2827a371a",
+      "title": "Release build: @appport/resolver 0.4.2, @appport/resolver-client 0.3.1, @appport/resolver-core 0.2.1"
+    },
+    "ref": "refs/heads/main",
+    "repository": "rkendel1/resolver",
+    "sha": "e2773e0be48b271f50efcce0d0cf4b3eb640024f",
+    "sourceDigest": "e93f21c7cc716debd00d5c20d6b3d85a93a7681d82a8cabc770b71c2827a371a",
+    "state": "succeeded",
+    "statusPrefix": null,
+    "trusted": true
+  },
+  "trigger": {
+    "kind": "manual",
+    "ref": "refs/heads/main",
+    "sha": "e2773e0be48b271f50efcce0d0cf4b3eb640024f",
+    "actor": "boundry-maintenance",
+    "provider": "execution",
+    "deliveryId": "appport-resolver@0.4.2/c03510089358/build-1",
+    "receivedAt": 1794875368845,
+    "trusted": true
+  },
+  "definition": {
+    "path": ".boundry/recipes/boundry-release.md",
+    "sha256": "e93f21c7cc716debd00d5c20d6b3d85a93a7681d82a8cabc770b71c2827a371a",
+    "source": "# Release build: @appport/resolver 0.4.2, @appport/resolver-client 0.3.1, @appport/resolver-core 0.2.1\n\nBuild, test and package release commit e2773e0be48b271f50efcce0d0cf4b3eb640024f for Boundry Maintenance release appport-resolver@0.4.2.\n\n## When this happens\n- I start it.\n\n## Make sure\n- The tests pass.\n\n## Steps\n1. Package the result.\n\n## Keep\n- The test results.\n- The package for 3650 days.\n- The release evidence.\n"
+  },
+  "jobs": [
+    {
+      "key": "step-package",
+      "name": "Package the result",
+      "state": "succeeded",
+      "reason": null,
+      "capabilities": [
+        "step.package@1.0.0",
+        "toolchain.node22"
+      ],
+      "image": "mirror.gcr.io/library/node@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee",
+      "imageDigest": null,
+      "needs": [
+        "tests"
+      ],
+      "approval": {
+        "approvers": [],
+        "required": false
+      },
+      "permissions": {
+        "deploy": false,
+        "release": false
+      },
+      "attempts": [
+        {
+          "id": "run_ee4c86be74f89bf47be61b95-6884166bc2c82d47-a1",
+          "n": 1,
+          "worker": "proof-worker",
+          "state": "succeeded",
+          "exitCode": 0,
+          "reason": null,
+          "startedAt": 1794875396082,
+          "finishedAt": 1794875406003,
+          "inputs": [],
+          "artifacts": [
+            {
+              "digest": "1088d0a968c24310857fc65c474c94e65480be3028e81c60da395ce1b5fca8df",
+              "name": "package.tar",
+              "size": 266240
+            }
+          ],
+          "logChunks": 3
+        }
+      ]
+    },
+    {
+      "key": "tests",
+      "name": "The tests pass",
+      "state": "succeeded",
+      "reason": null,
+      "capabilities": [
+        "check.tests@1.0.0",
+        "toolchain.node22"
+      ],
+      "image": "mirror.gcr.io/library/node@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee",
+      "imageDigest": null,
+      "needs": [],
+      "approval": {
+        "approvers": [],
+        "required": false
+      },
+      "permissions": {
+        "deploy": false,
+        "release": false
+      },
+      "attempts": [
+        {
+          "id": "run_ee4c86be74f89bf47be61b95-59830ebc3a418411-a1",
+          "n": 1,
+          "worker": "proof-worker",
+          "state": "succeeded",
+          "exitCode": 0,
+          "reason": null,
+          "startedAt": 1794875369304,
+          "finishedAt": 1794875396046,
+          "inputs": [],
+          "artifacts": [
+            {
+              "digest": "94648d58bd35927d539fb689f52e35e290ccbffe800da94dec3592a26c974afd",
+              "name": "test-results.txt",
+              "size": 19033
+            }
+          ],
+          "logChunks": 3
+        }
+      ]
+    }
+  ],
+  "approvals": [],
+  "statuses": []
+}
