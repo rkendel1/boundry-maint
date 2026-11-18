@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
   "scan": {
-    "runId": "44093693442",
-    "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/44093693442",
-    "startedAt": "2026-11-17T13:32:50.811Z",
-    "finishedAt": "2026-11-17T13:34:21.610Z",
+    "runId": "44259042336",
+    "runUrl": "https://github.com/rkendel1/boundry-maint/actions/runs/44259042336",
+    "startedAt": "2026-11-18T07:28:40.190Z",
+    "finishedAt": "2026-11-18T07:30:17.713Z",
     "status": "success",
-    "trigger": "push",
-    "configCommit": "6983d1b728fd90a985c945390041d50b81946fad",
+    "trigger": "schedule",
+    "configCommit": "554a1e31972b26d953d95184f444ea7cc9b74abb",
     "counts": {
       "packages": 62,
       "packagesFailed": 0,
       "projects": 12,
       "projectsFailed": 0,
       "ciRepositories": 14,
-      "ciChecks": 157,
+      "ciChecks": 158,
       "ciChecksFailing": 4,
       "installations": 388,
-      "maintenanceOpen": 49
+      "maintenanceOpen": 47
     },
     "errors": []
   },
@@ -103,15 +103,15 @@
       "collection": "ok"
     },
     "appport-services": {
-      "latestVersion": "0.19.0",
+      "latestVersion": "0.20.0",
       "collection": "ok"
     },
     "appport-runtime": {
-      "latestVersion": "0.18.0",
+      "latestVersion": "0.19.0",
       "collection": "ok"
     },
     "create-appport": {
-      "latestVersion": "0.1.31",
+      "latestVersion": "0.1.32",
       "collection": "ok"
     },
     "appport-resolver": {
@@ -143,7 +143,7 @@
       "collection": "ok"
     },
     "feltdb-core": {
-      "latestVersion": "0.21.0",
+      "latestVersion": "0.22.0",
       "collection": "ok"
     },
     "feltdb-react": {
@@ -163,7 +163,7 @@
       "collection": "ok"
     },
     "feltdb-webllm": {
-      "latestVersion": "0.21.0",
+      "latestVersion": "0.22.0",
       "collection": "ok"
     },
     "feltdb-migration-sherpa": {
@@ -171,7 +171,7 @@
       "collection": "ok"
     },
     "create-feltdb": {
-      "latestVersion": "0.21.0",
+      "latestVersion": "0.22.0",
       "collection": "ok"
     },
     "feltdb-feltkit": {
@@ -183,15 +183,15 @@
       "collection": "ok"
     },
     "feltdb": {
-      "latestVersion": "0.6.1",
+      "latestVersion": "0.6.2",
       "collection": "ok"
     },
     "feltdb-client": {
-      "latestVersion": "0.6.1",
+      "latestVersion": "0.6.2",
       "collection": "ok"
     },
     "feltdb-server": {
-      "latestVersion": "0.6.1",
+      "latestVersion": "0.6.2",
       "collection": "ok"
     },
     "rust-ml-runtime": {
@@ -239,11 +239,11 @@
       "collection": "ok"
     },
     "authboundry-core": {
-      "latestVersion": "1.19.0",
+      "latestVersion": "1.20.0",
       "collection": "ok"
     },
     "authboundry": {
-      "latestVersion": "2.19.0",
+      "latestVersion": "2.20.0",
       "collection": "ok"
     },
     "authboundry-bridge": {
@@ -295,7 +295,7 @@
       "root": "examples/managed",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "current",
       "managed": true
     },
@@ -313,7 +313,7 @@
       "root": "examples/tasks",
       "name": "@feltdb/webllm",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "current",
       "managed": true
     },
@@ -385,7 +385,7 @@
       "root": "packages/sdk",
       "name": "@appport/services",
       "registry": "npm",
-      "resolvedVersion": "0.19.0",
+      "resolvedVersion": "0.20.0",
       "status": "current",
       "managed": true
     },
@@ -394,7 +394,7 @@
       "root": "packages/sdk",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "current",
       "managed": true
     },
@@ -412,7 +412,7 @@
       "root": "packages/sdk",
       "name": "@feltdb/webllm",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "current",
       "managed": true
     },
@@ -448,7 +448,7 @@
       "root": ".",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "current",
       "managed": true
     },
@@ -1682,7 +1682,7 @@
       "name": "@feltdb/core",
       "registry": "npm",
       "resolvedVersion": "0.21.0",
-      "status": "current",
+      "status": "minor-behind",
       "managed": true
     },
     {
@@ -1763,7 +1763,7 @@
       "name": "@feltdb/core",
       "registry": "npm",
       "resolvedVersion": "0.21.0",
-      "status": "current",
+      "status": "minor-behind",
       "managed": true
     },
     {
@@ -1969,7 +1969,7 @@
       "root": "apps/default-project",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "local",
       "managed": true
     },
@@ -2005,7 +2005,7 @@
       "root": "apps/relief-fabric",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "local",
       "managed": true
     },
@@ -2023,7 +2023,7 @@
       "root": "deploy/intent-engine",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "local",
       "managed": true
     },
@@ -2032,7 +2032,7 @@
       "root": "examples/managed-feltkit-app",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "local",
       "managed": true
     },
@@ -2041,7 +2041,7 @@
       "root": "packages/ai",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "local",
       "managed": true
     },
@@ -2050,7 +2050,7 @@
       "root": "packages/client",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "local",
       "managed": true
     },
@@ -2059,7 +2059,7 @@
       "root": "packages/jev",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "local",
       "managed": true
     },
@@ -2068,7 +2068,7 @@
       "root": "packages/quick-start",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "local",
       "managed": true
     },
@@ -2077,7 +2077,7 @@
       "root": "packages/react",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "local",
       "managed": true
     },
@@ -2086,7 +2086,7 @@
       "root": "packages/studio",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "local",
       "managed": true
     },
@@ -2104,7 +2104,7 @@
       "root": "packages/studio",
       "name": "@feltdb/webllm",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "local",
       "managed": true
     },
@@ -2113,7 +2113,7 @@
       "root": "packages/webllm",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "local",
       "managed": true
     },
@@ -2122,7 +2122,7 @@
       "root": "tools/proof",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "local",
       "managed": true
     },
@@ -2140,7 +2140,7 @@
       "root": "crates/feltdb-client",
       "name": "feltdb",
       "registry": "crates",
-      "resolvedVersion": "0.6.1",
+      "resolvedVersion": "0.6.2",
       "status": "local",
       "managed": true
     },
@@ -2167,7 +2167,7 @@
       "root": "crates/feltdb-public-api-check",
       "name": "feltdb",
       "registry": "crates",
-      "resolvedVersion": "0.6.1",
+      "resolvedVersion": "0.6.2",
       "status": "local",
       "managed": true
     },
@@ -2185,7 +2185,7 @@
       "root": "crates/feltdb-server",
       "name": "feltdb",
       "registry": "crates",
-      "resolvedVersion": "0.6.1",
+      "resolvedVersion": "0.6.2",
       "status": "local",
       "managed": true
     },
@@ -2212,7 +2212,7 @@
       "root": "crates/feltdb-server",
       "name": "feltdb-client",
       "registry": "crates",
-      "resolvedVersion": "0.6.1",
+      "resolvedVersion": "0.6.2",
       "status": "local",
       "managed": true
     },
@@ -2221,7 +2221,7 @@
       "root": "crates/feltdb-wasm",
       "name": "feltdb",
       "registry": "crates",
-      "resolvedVersion": "0.6.1",
+      "resolvedVersion": "0.6.2",
       "status": "local",
       "managed": true
     },
@@ -2266,7 +2266,7 @@
       "root": "crates/feltdb",
       "name": "feltdb",
       "registry": "crates",
-      "resolvedVersion": "0.6.1",
+      "resolvedVersion": "0.6.2",
       "status": "local",
       "managed": true
     },
@@ -2833,8 +2833,8 @@
       "root": "apps/web",
       "name": "@appport/services",
       "registry": "npm",
-      "resolvedVersion": "0.18.0",
-      "status": "minor-behind",
+      "resolvedVersion": "0.20.0",
+      "status": "current",
       "managed": true
     },
     {
@@ -2842,7 +2842,7 @@
       "root": "apps/web",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "current",
       "managed": true
     },
@@ -2869,8 +2869,8 @@
       "root": "examples/nextjs-stack",
       "name": "@appport/services",
       "registry": "npm",
-      "resolvedVersion": "0.18.0",
-      "status": "minor-behind",
+      "resolvedVersion": "0.20.0",
+      "status": "current",
       "managed": true
     },
     {
@@ -2878,7 +2878,7 @@
       "root": "examples/nextjs-stack",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "current",
       "managed": true
     },
@@ -2887,8 +2887,8 @@
       "root": ".",
       "name": "@appport/services",
       "registry": "npm",
-      "resolvedVersion": "0.18.0",
-      "status": "minor-behind",
+      "resolvedVersion": "0.20.0",
+      "status": "current",
       "managed": true
     },
     {
@@ -2896,7 +2896,7 @@
       "root": ".",
       "name": "@feltdb/core",
       "registry": "npm",
-      "resolvedVersion": "0.21.0",
+      "resolvedVersion": "0.22.0",
       "status": "current",
       "managed": true
     },
@@ -4012,7 +4012,7 @@
       "root": "packages/sdk",
       "name": "@authboundry/local",
       "registry": "npm",
-      "resolvedVersion": "0.1.0",
+      "resolvedVersion": "0.1.1",
       "status": "unknown",
       "managed": false
     },
@@ -7558,7 +7558,7 @@
       "root": "examples/nextjs-stack",
       "name": "@authboundry/core",
       "registry": "npm",
-      "resolvedVersion": "1.18.0",
+      "resolvedVersion": "1.19.0",
       "status": "unknown",
       "managed": false
     },
@@ -7648,7 +7648,7 @@
       "root": ".",
       "name": "@authboundry/core-darwin-arm64",
       "registry": "npm",
-      "resolvedVersion": "1.19.0",
+      "resolvedVersion": "1.20.0",
       "status": "unknown",
       "managed": false
     },
@@ -7657,7 +7657,7 @@
       "root": ".",
       "name": "@authboundry/core-darwin-x64",
       "registry": "npm",
-      "resolvedVersion": "1.19.0",
+      "resolvedVersion": "1.20.0",
       "status": "unknown",
       "managed": false
     },
@@ -7666,7 +7666,7 @@
       "root": ".",
       "name": "@authboundry/core-linux-arm64",
       "registry": "npm",
-      "resolvedVersion": "1.19.0",
+      "resolvedVersion": "1.20.0",
       "status": "unknown",
       "managed": false
     },
@@ -7675,7 +7675,7 @@
       "root": ".",
       "name": "@authboundry/core-linux-x64",
       "registry": "npm",
-      "resolvedVersion": "1.19.0",
+      "resolvedVersion": "1.20.0",
       "status": "unknown",
       "managed": false
     },
@@ -10859,7 +10859,7 @@
       "key": "agent-obstacle|package-lock.json|npm:@feltdb/core",
       "status": "update-required",
       "currentVersion": "0.16.0",
-      "targetVersion": "0.21.0"
+      "targetVersion": "0.22.0"
     },
     {
       "key": "appboundry|pnpm-lock.yaml|npm:@appport/authorization",
@@ -10883,7 +10883,13 @@
       "key": "appboundry|pnpm-lock.yaml|npm:@appport/services",
       "status": "update-required",
       "currentVersion": "0.16.3",
-      "targetVersion": "0.19.0"
+      "targetVersion": "0.20.0"
+    },
+    {
+      "key": "appboundry|pnpm-lock.yaml|npm:@feltdb/core",
+      "status": "update-required",
+      "currentVersion": "0.21.0",
+      "targetVersion": "0.22.0"
     },
     {
       "key": "appworks|pnpm-lock.yaml|npm:@appport/core",
@@ -10907,25 +10913,7 @@
       "key": "appworks|pnpm-lock.yaml|npm:@feltdb/core",
       "status": "update-required",
       "currentVersion": "0.18.0",
-      "targetVersion": "0.21.0"
-    },
-    {
-      "key": "authboundry|apps/web/package-lock.json|npm:@appport/services",
-      "status": "update-required",
-      "currentVersion": "0.18.0",
-      "targetVersion": "0.19.0"
-    },
-    {
-      "key": "authboundry|examples/nextjs-stack/package-lock.json|npm:@appport/services",
-      "status": "update-required",
-      "currentVersion": "0.18.0",
-      "targetVersion": "0.19.0"
-    },
-    {
-      "key": "authboundry|package-lock.json|npm:@appport/services",
-      "status": "update-required",
-      "currentVersion": "0.18.0",
-      "targetVersion": "0.19.0"
+      "targetVersion": "0.22.0"
     },
     {
       "key": "compute|packages/compute-appport/package-lock.json|npm:@appport/authorization",
@@ -10955,7 +10943,7 @@
       "key": "compute|compatibility/published-stack/package-lock.json|npm:@appport/runtime",
       "status": "update-required",
       "currentVersion": "0.4.6",
-      "targetVersion": "0.18.0"
+      "targetVersion": "0.19.0"
     },
     {
       "key": "compute|packages/compute-appport/package-lock.json|npm:@appport/schema",
@@ -10973,7 +10961,7 @@
       "key": "compute|compatibility/published-stack/package-lock.json|npm:@appport/services",
       "status": "update-required",
       "currentVersion": "0.4.11",
-      "targetVersion": "0.19.0"
+      "targetVersion": "0.20.0"
     },
     {
       "key": "compute|compatibility/published-stack/package-lock.json|npm:@appport/transport-http",
@@ -10985,19 +10973,19 @@
       "key": "compute|compatibility/published-stack/package-lock.json|npm:@feltdb/core",
       "status": "update-required",
       "currentVersion": "0.11.9",
-      "targetVersion": "0.21.0"
+      "targetVersion": "0.22.0"
     },
     {
       "key": "compute|packages/compute-state-model/package-lock.json|npm:@feltdb/core",
       "status": "update-required",
       "currentVersion": "0.11.9",
-      "targetVersion": "0.21.0"
+      "targetVersion": "0.22.0"
     },
     {
       "key": "compute|Cargo.lock|crates:feltdb-client",
       "status": "update-required",
       "currentVersion": "0.2.1",
-      "targetVersion": "0.6.1"
+      "targetVersion": "0.6.2"
     },
     {
       "key": "compute|Cargo.lock|crates:tokio",
@@ -11015,19 +11003,19 @@
       "key": "flow-db|apps/managed-authority-cert/package-lock.json|npm:@feltdb/core",
       "status": "update-required",
       "currentVersion": "0.5.5",
-      "targetVersion": "0.21.0"
+      "targetVersion": "0.22.0"
     },
     {
       "key": "flow-db|apps/release-smoke-055/package-lock.json|npm:@feltdb/core",
       "status": "update-required",
       "currentVersion": "0.5.5",
-      "targetVersion": "0.21.0"
+      "targetVersion": "0.22.0"
     },
     {
       "key": "flow-db|apps/managed-authority-cert/package-lock.json|npm:@feltdb/webllm",
       "status": "update-required",
       "currentVersion": "0.5.5",
-      "targetVersion": "0.21.0"
+      "targetVersion": "0.22.0"
     },
     {
       "key": "flow-db|Cargo.lock|crates:tokio",
@@ -11051,13 +11039,13 @@
       "key": "github-integration|package-lock.json|npm:@appport/services",
       "status": "update-required",
       "currentVersion": "0.4.6",
-      "targetVersion": "0.19.0"
+      "targetVersion": "0.20.0"
     },
     {
       "key": "github-integration|package-lock.json|npm:@feltdb/core",
       "status": "update-required",
       "currentVersion": "0.11.9",
-      "targetVersion": "0.21.0"
+      "targetVersion": "0.22.0"
     },
     {
       "key": "rust-ml-runtime|bindings/node-llama/Cargo.lock|crates:tokio",
@@ -11222,21 +11210,39 @@
       "targetVersion": "1.1.6"
     },
     {
+      "key": "authboundry|apps/web/package-lock.json|npm:@appport/services",
+      "status": "updated-unverified",
+      "currentVersion": "0.20.0",
+      "targetVersion": "0.19.0"
+    },
+    {
+      "key": "authboundry|examples/nextjs-stack/package-lock.json|npm:@appport/services",
+      "status": "updated-unverified",
+      "currentVersion": "0.20.0",
+      "targetVersion": "0.19.0"
+    },
+    {
+      "key": "authboundry|package-lock.json|npm:@appport/services",
+      "status": "updated-unverified",
+      "currentVersion": "0.20.0",
+      "targetVersion": "0.19.0"
+    },
+    {
       "key": "authboundry|apps/web/package-lock.json|npm:@feltdb/core",
-      "status": "updated-verified",
-      "currentVersion": "0.21.0",
+      "status": "updated-unverified",
+      "currentVersion": "0.22.0",
       "targetVersion": "0.21.0"
     },
     {
       "key": "authboundry|examples/nextjs-stack/package-lock.json|npm:@feltdb/core",
-      "status": "updated-verified",
-      "currentVersion": "0.21.0",
+      "status": "updated-unverified",
+      "currentVersion": "0.22.0",
       "targetVersion": "0.21.0"
     },
     {
       "key": "authboundry|package-lock.json|npm:@feltdb/core",
-      "status": "updated-verified",
-      "currentVersion": "0.21.0",
+      "status": "updated-unverified",
+      "currentVersion": "0.22.0",
       "targetVersion": "0.21.0"
     },
     {
@@ -11726,11 +11732,11 @@
       "result": "passing"
     },
     {
-      "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/test-semantic-query-composition-and-its-surface-boundaries-a",
+      "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-exact-package-tarballs-in-a-clean-consumer",
       "result": "passing"
     },
     {
-      "id": "rkendel1/flow_db:.github/workflows/ci.yml#build-packages/verify-exact-package-tarballs-in-a-clean-consumer",
+      "id": "rkendel1/flow_db:.github/workflows/ci.yml#package-tests-library/test-semantic-query-composition-and-its-surface-boundaries-a",
       "result": "passing"
     },
     {
@@ -11739,6 +11745,10 @@
     },
     {
       "id": "rkendel1/flow_db:.github/workflows/ci.yml#e2e-acceptance-test/install-locked-npm-dependencies",
+      "result": "passing"
+    },
+    {
+      "id": "rkendel1/flow_db:.github/workflows/ci.yml#e2e-acceptance-test/build-the-server-the-acceptance-tests-run",
       "result": "passing"
     },
     {
@@ -11895,47 +11905,389 @@
     }
   ],
   "changes": {
-    "newReleases": [],
-    "versionChanges": [],
+    "newReleases": [
+      {
+        "package": "appport-services",
+        "from": "0.19.0",
+        "to": "0.20.0"
+      },
+      {
+        "package": "appport-runtime",
+        "from": "0.18.0",
+        "to": "0.19.0"
+      },
+      {
+        "package": "create-appport",
+        "from": "0.1.31",
+        "to": "0.1.32"
+      },
+      {
+        "package": "feltdb-core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "package": "feltdb-webllm",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "package": "create-feltdb",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "package": "feltdb",
+        "from": "0.6.1",
+        "to": "0.6.2"
+      },
+      {
+        "package": "feltdb-client",
+        "from": "0.6.1",
+        "to": "0.6.2"
+      },
+      {
+        "package": "feltdb-server",
+        "from": "0.6.1",
+        "to": "0.6.2"
+      },
+      {
+        "package": "authboundry-core",
+        "from": "1.19.0",
+        "to": "1.20.0"
+      },
+      {
+        "package": "authboundry",
+        "from": "2.19.0",
+        "to": "2.20.0"
+      }
+    ],
+    "versionChanges": [
+      {
+        "project": "feltkit",
+        "root": "examples/managed",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "feltkit",
+        "root": "examples/tasks",
+        "name": "@feltdb/webllm",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "feltkit",
+        "root": "packages/sdk",
+        "name": "@appport/services",
+        "from": "0.19.0",
+        "to": "0.20.0"
+      },
+      {
+        "project": "feltkit",
+        "root": "packages/sdk",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "feltkit",
+        "root": "packages/sdk",
+        "name": "@feltdb/webllm",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "appport-services",
+        "root": ".",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "flow-db",
+        "root": "apps/default-project",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "flow-db",
+        "root": "apps/relief-fabric",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "flow-db",
+        "root": "deploy/intent-engine",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "flow-db",
+        "root": "examples/managed-feltkit-app",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "flow-db",
+        "root": "packages/ai",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "flow-db",
+        "root": "packages/client",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "flow-db",
+        "root": "packages/jev",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "flow-db",
+        "root": "packages/quick-start",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "flow-db",
+        "root": "packages/react",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "flow-db",
+        "root": "packages/studio",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "flow-db",
+        "root": "packages/studio",
+        "name": "@feltdb/webllm",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "flow-db",
+        "root": "packages/webllm",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "flow-db",
+        "root": "tools/proof",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "flow-db",
+        "root": "crates/feltdb-client",
+        "name": "feltdb",
+        "from": "0.6.1",
+        "to": "0.6.2"
+      },
+      {
+        "project": "flow-db",
+        "root": "crates/feltdb-public-api-check",
+        "name": "feltdb",
+        "from": "0.6.1",
+        "to": "0.6.2"
+      },
+      {
+        "project": "flow-db",
+        "root": "crates/feltdb-server",
+        "name": "feltdb",
+        "from": "0.6.1",
+        "to": "0.6.2"
+      },
+      {
+        "project": "flow-db",
+        "root": "crates/feltdb-server",
+        "name": "feltdb-client",
+        "from": "0.6.1",
+        "to": "0.6.2"
+      },
+      {
+        "project": "flow-db",
+        "root": "crates/feltdb-wasm",
+        "name": "feltdb",
+        "from": "0.6.1",
+        "to": "0.6.2"
+      },
+      {
+        "project": "flow-db",
+        "root": "crates/feltdb",
+        "name": "feltdb",
+        "from": "0.6.1",
+        "to": "0.6.2"
+      },
+      {
+        "project": "authboundry",
+        "root": "apps/web",
+        "name": "@appport/services",
+        "from": "0.18.0",
+        "to": "0.20.0"
+      },
+      {
+        "project": "authboundry",
+        "root": "apps/web",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "authboundry",
+        "root": "examples/nextjs-stack",
+        "name": "@appport/services",
+        "from": "0.18.0",
+        "to": "0.20.0"
+      },
+      {
+        "project": "authboundry",
+        "root": "examples/nextjs-stack",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "authboundry",
+        "root": ".",
+        "name": "@appport/services",
+        "from": "0.18.0",
+        "to": "0.20.0"
+      },
+      {
+        "project": "authboundry",
+        "root": ".",
+        "name": "@feltdb/core",
+        "from": "0.21.0",
+        "to": "0.22.0"
+      },
+      {
+        "project": "feltkit",
+        "root": "packages/sdk",
+        "name": "@authboundry/local",
+        "from": "0.1.0",
+        "to": "0.1.1"
+      },
+      {
+        "project": "authboundry",
+        "root": "examples/nextjs-stack",
+        "name": "@authboundry/core",
+        "from": "1.18.0",
+        "to": "1.19.0"
+      },
+      {
+        "project": "authboundry",
+        "root": ".",
+        "name": "@authboundry/core-darwin-arm64",
+        "from": "1.19.0",
+        "to": "1.20.0"
+      },
+      {
+        "project": "authboundry",
+        "root": ".",
+        "name": "@authboundry/core-darwin-x64",
+        "from": "1.19.0",
+        "to": "1.20.0"
+      },
+      {
+        "project": "authboundry",
+        "root": ".",
+        "name": "@authboundry/core-linux-arm64",
+        "from": "1.19.0",
+        "to": "1.20.0"
+      },
+      {
+        "project": "authboundry",
+        "root": ".",
+        "name": "@authboundry/core-linux-x64",
+        "from": "1.19.0",
+        "to": "1.20.0"
+      }
+    ],
     "newDependencies": [],
     "removedDependencies": [],
-    "statusChanges": [],
+    "statusChanges": [
+      {
+        "key": "appboundry|pnpm-lock.yaml|npm:@feltdb/core",
+        "from": null,
+        "to": "update-required"
+      },
+      {
+        "key": "authboundry|apps/web/package-lock.json|npm:@appport/services",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "authboundry|examples/nextjs-stack/package-lock.json|npm:@appport/services",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "authboundry|package-lock.json|npm:@appport/services",
+        "from": "update-required",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "authboundry|apps/web/package-lock.json|npm:@feltdb/core",
+        "from": "updated-verified",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "authboundry|examples/nextjs-stack/package-lock.json|npm:@feltdb/core",
+        "from": "updated-verified",
+        "to": "updated-unverified"
+      },
+      {
+        "key": "authboundry|package-lock.json|npm:@feltdb/core",
+        "from": "updated-verified",
+        "to": "updated-unverified"
+      }
+    ],
     "newEvidence": [
       {
         "project": "feltkit",
-        "commit": "6201a5b0469e196416b182a7dbd80b635a342869",
+        "commit": "d68219c40fe30f2a1b439c1dfa206757f1101089",
         "passed": false
       },
       {
         "project": "appport-services",
-        "commit": "5f396677675e05acd27067ef22cda4e7ccb9e7d0",
+        "commit": "c81d7d472f4d8ee973aebfb4cf5dc2e63f69237b",
+        "passed": false
+      },
+      {
+        "project": "flow-db",
+        "commit": "0f5049e0809b2ced6d22f967ec14245a0a670056",
         "passed": false
       }
     ],
     "ciResultChanges": [
       {
-        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/install",
-        "from": "in-progress",
+        "id": "rkendel1/flow_db:.github/workflows/ci.yml#package-tests-library/test-semantic-query-composition-and-its-surface-boundaries-a",
+        "from": null,
         "to": "passing"
       },
       {
-        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/unit-tests-sdk-incl-browser-tests-conformance-suites-create-",
-        "from": "in-progress",
-        "to": "failing"
-      },
-      {
-        "id": "rkendel1/feltkit:.github/workflows/ci.yml#test/release-check",
-        "from": "in-progress",
-        "to": "skipped"
-      },
-      {
-        "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e/install",
-        "from": "in-progress",
-        "to": "passing"
-      },
-      {
-        "id": "rkendel1/feltkit:.github/workflows/ci.yml#e2e-feltdb/install",
-        "from": "in-progress",
+        "id": "rkendel1/flow_db:.github/workflows/ci.yml#e2e-acceptance-test/build-the-server-the-acceptance-tests-run",
+        "from": null,
         "to": "passing"
       }
     ]

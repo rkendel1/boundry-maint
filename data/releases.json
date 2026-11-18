@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T13:32:50.811Z",
+  "generatedAt": "2026-11-18T07:28:40.190Z",
   "releases": [
     {
       "package": "appport-core",
@@ -1959,8 +1959,14 @@
       "package": "appport-services",
       "name": "@appport/services",
       "registry": "npm",
-      "latestVersion": "0.19.0",
+      "latestVersion": "0.20.0",
       "versions": [
+        {
+          "version": "0.20.0",
+          "publishedAt": "2026-11-17T17:16:44.481Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.19.0",
           "publishedAt": "2026-11-16T19:05:28.724Z",
@@ -2104,12 +2110,6 @@
           "publishedAt": "2026-10-01T15:14:55.502Z",
           "deprecated": null,
           "prerelease": false
-        },
-        {
-          "version": "0.4.6",
-          "publishedAt": "2026-09-28T16:23:50.734Z",
-          "deprecated": null,
-          "prerelease": false
         }
       ]
     },
@@ -2117,8 +2117,14 @@
       "package": "appport-runtime",
       "name": "@appport/runtime",
       "registry": "npm",
-      "latestVersion": "0.18.0",
+      "latestVersion": "0.19.0",
       "versions": [
+        {
+          "version": "0.19.0",
+          "publishedAt": "2026-11-17T17:13:43.583Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.18.0",
           "publishedAt": "2026-11-16T19:00:36.285Z",
@@ -2262,12 +2268,6 @@
           "publishedAt": "2026-09-21T17:27:10.830Z",
           "deprecated": null,
           "prerelease": false
-        },
-        {
-          "version": "0.4.2",
-          "publishedAt": "2026-09-21T15:41:11.575Z",
-          "deprecated": null,
-          "prerelease": false
         }
       ]
     },
@@ -2275,8 +2275,14 @@
       "package": "create-appport",
       "name": "create-appport",
       "registry": "npm",
-      "latestVersion": "0.1.31",
+      "latestVersion": "0.1.32",
       "versions": [
+        {
+          "version": "0.1.32",
+          "publishedAt": "2026-11-17T17:12:57.857Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.1.31",
           "publishedAt": "2026-11-16T18:59:58.712Z",
@@ -2418,12 +2424,6 @@
         {
           "version": "0.1.6",
           "publishedAt": "2026-09-21T17:27:32.133Z",
-          "deprecated": null,
-          "prerelease": false
-        },
-        {
-          "version": "0.1.5",
-          "publishedAt": "2026-09-21T15:41:12.619Z",
           "deprecated": null,
           "prerelease": false
         }
@@ -2681,8 +2681,14 @@
       "package": "feltdb-core",
       "name": "@feltdb/core",
       "registry": "npm",
-      "latestVersion": "0.21.0",
+      "latestVersion": "0.22.0",
       "versions": [
+        {
+          "version": "0.22.0",
+          "publishedAt": "2026-11-17T16:43:59.725Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.21.0",
           "publishedAt": "2026-11-03T20:40:49.737Z",
@@ -2824,12 +2830,6 @@
         {
           "version": "0.9.1",
           "publishedAt": "2026-09-09T14:52:10.977Z",
-          "deprecated": null,
-          "prerelease": false
-        },
-        {
-          "version": "0.9.0",
-          "publishedAt": "2026-09-09T14:38:25.478Z",
           "deprecated": null,
           "prerelease": false
         }
@@ -3057,8 +3057,14 @@
       "package": "feltdb-webllm",
       "name": "@feltdb/webllm",
       "registry": "npm",
-      "latestVersion": "0.21.0",
+      "latestVersion": "0.22.0",
       "versions": [
+        {
+          "version": "0.22.0",
+          "publishedAt": "2026-11-17T16:39:01.873Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.21.0",
           "publishedAt": "2026-11-03T20:38:52.582Z",
@@ -3202,12 +3208,6 @@
           "publishedAt": "2026-09-10T14:54:12.953Z",
           "deprecated": null,
           "prerelease": false
-        },
-        {
-          "version": "0.9.1",
-          "publishedAt": "2026-09-09T14:52:07.507Z",
-          "deprecated": null,
-          "prerelease": false
         }
       ]
     },
@@ -3241,8 +3241,14 @@
       "package": "create-feltdb",
       "name": "create-feltdb",
       "registry": "npm",
-      "latestVersion": "0.21.0",
+      "latestVersion": "0.22.0",
       "versions": [
+        {
+          "version": "0.22.0",
+          "publishedAt": "2026-11-17T16:52:43.051Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.21.0",
           "publishedAt": "2026-11-03T20:44:19.430Z",
@@ -3386,12 +3392,6 @@
           "publishedAt": "2026-09-08T18:38:31.174Z",
           "deprecated": null,
           "prerelease": false
-        },
-        {
-          "version": "0.8.6",
-          "publishedAt": "2026-09-08T17:24:28.594Z",
-          "deprecated": null,
-          "prerelease": false
         }
       ]
     },
@@ -3401,6 +3401,12 @@
       "registry": "npm",
       "latestVersion": "0.3.31",
       "versions": [
+        {
+          "version": "0.3.32",
+          "publishedAt": "2026-11-17T20:05:20.714Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.3.31",
           "publishedAt": "2026-11-16T22:04:19.438Z",
@@ -3544,12 +3550,6 @@
           "publishedAt": "2026-11-02T17:31:00.131Z",
           "deprecated": null,
           "prerelease": false
-        },
-        {
-          "version": "0.3.7",
-          "publishedAt": "2026-11-02T14:16:57.418Z",
-          "deprecated": null,
-          "prerelease": false
         }
       ]
     },
@@ -3559,6 +3559,12 @@
       "registry": "npm",
       "latestVersion": "0.3.31",
       "versions": [
+        {
+          "version": "0.3.32",
+          "publishedAt": "2026-11-17T20:00:23.261Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "0.3.31",
           "publishedAt": "2026-11-16T22:01:21.380Z",
@@ -3702,12 +3708,6 @@
           "publishedAt": "2026-11-02T17:31:56.592Z",
           "deprecated": null,
           "prerelease": false
-        },
-        {
-          "version": "0.3.7",
-          "publishedAt": "2026-11-02T14:15:10.205Z",
-          "deprecated": null,
-          "prerelease": false
         }
       ]
     },
@@ -3715,8 +3715,14 @@
       "package": "feltdb",
       "name": "feltdb",
       "registry": "crates",
-      "latestVersion": "0.6.1",
+      "latestVersion": "0.6.2",
       "versions": [
+        {
+          "version": "0.6.2",
+          "publishedAt": "2026-11-17T13:52:29.860682Z",
+          "yanked": false,
+          "prerelease": false
+        },
         {
           "version": "0.6.1",
           "publishedAt": "2026-11-03T20:09:48.191609Z",
@@ -3789,8 +3795,14 @@
       "package": "feltdb-client",
       "name": "feltdb-client",
       "registry": "crates",
-      "latestVersion": "0.6.1",
+      "latestVersion": "0.6.2",
       "versions": [
+        {
+          "version": "0.6.2",
+          "publishedAt": "2026-11-17T13:52:48.898090Z",
+          "yanked": false,
+          "prerelease": false
+        },
         {
           "version": "0.6.1",
           "publishedAt": "2026-11-03T20:31:45.068922Z",
@@ -3857,8 +3869,14 @@
       "package": "feltdb-server",
       "name": "feltdb-server",
       "registry": "crates",
-      "latestVersion": "0.6.1",
+      "latestVersion": "0.6.2",
       "versions": [
+        {
+          "version": "0.6.2",
+          "publishedAt": "2026-11-17T13:53:16.225169Z",
+          "yanked": false,
+          "prerelease": false
+        },
         {
           "version": "0.6.1",
           "publishedAt": "2026-11-03T20:22:43.359405Z",
@@ -4235,8 +4253,14 @@
       "package": "authboundry-core",
       "name": "@authboundry/core",
       "registry": "npm",
-      "latestVersion": "1.19.0",
+      "latestVersion": "1.20.0",
       "versions": [
+        {
+          "version": "1.20.0",
+          "publishedAt": "2026-11-17T19:04:52.761Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "1.19.0",
           "publishedAt": "2026-11-16T19:51:19.314Z",
@@ -4387,8 +4411,14 @@
       "package": "authboundry",
       "name": "authboundry",
       "registry": "npm",
-      "latestVersion": "2.19.0",
+      "latestVersion": "2.20.0",
       "versions": [
+        {
+          "version": "2.20.0",
+          "publishedAt": "2026-11-17T19:10:47.920Z",
+          "deprecated": null,
+          "prerelease": false
+        },
         {
           "version": "2.19.0",
           "publishedAt": "2026-11-16T19:52:58.506Z",
@@ -4531,12 +4561,6 @@
           "version": "2.0.0",
           "publishedAt": "2026-09-10T13:11:01.203Z",
           "deprecated": null,
-          "prerelease": false
-        },
-        {
-          "version": "1.0.0",
-          "publishedAt": "2026-09-10T12:56:11.759Z",
-          "deprecated": "Moved to @authboundry/core. Install @authboundry/core for new applications.",
           "prerelease": false
         }
       ]
